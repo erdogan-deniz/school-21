@@ -1,0 +1,12 @@
+{
+    "tests": [
+        {
+            "number": 0,
+            "name": "s21_cat.part1"
+        },
+        {
+            "number": 1,
+            "name": "s21_grep.part2"
+        }
+    ]
+}

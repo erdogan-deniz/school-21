@@ -1,7 +1,7 @@
 # School21
 My projects from school 21.
 
-* Linux - <span style="color:green;font-weight:700;font-size:20px">100/100 %</span> (300 xp)
+* Linux - <span style="color:green">100/100 %</span> (300 xp)
   - Misstakes: в последнем пункте неправильно указал директорию.
 * Linux Network - <span style="color:white">?/100 %</span> (? xp)
 * Decimal - <span style="color:orange">92/100 %</span> (322 xp)

@@ -1,12 +1,12 @@
 # School 21 🎓
 
-My name is: Deniz 🐯
 My nickname - charisel 🐸
 Campus - Moscow 🏙
+Target - Python, algorithms, Data Science ⚛️
 
 Projects results:
 
-  - Survival camp 🖤:
+  - Survival camp 1️⃣:
     * T01D01 - 94/100 % (94 xp);
     * T02D02 - 0/100 % (0 xp);
     * T03D03 - 71/100 % (71 xp);
@@ -29,23 +29,29 @@ Projects results:
     * T14D23 - 0/100 % (0 xp);
     * T15D24 - 0/100 % (0 xp);
     * E04D26 -  0/100 % (0 xp).
-    AVG results - 32/100 % (48 xp) 🥉
+  AVG results - 32/100 % (48 xp) 🥉
 
-  - Core programm 💙:
+  - Core programm 2️⃣:
     - C ❤️: 
       * Simple Bash - 140/140 % (350 xp)
         - Weaknesses: regex, unit-tests, docker, masks;
       * Math - 100/100 % (300 xp)
-        - Weaknesses: unit tests, docker, exhibitor.
+        - Weaknesses: unit tests, docker, exhibitor;
       * String - 150/150 % (750 xp)
-        - Misstakes: unit tests, docker, sprintf.
+        - Weaknesses: unit tests, docker, sprintf;
+      * Decimal - 92/100 % (322 xp)
+        - Weaknesses: all;
+      * Matrix - ?/100 % (? xp)
+        - Weaknesses: ?;
+      * SmartCalc_v1.0 - ?/100 % (? xp)
+        - Weaknesses: ?;
+      * 3DViewer_v1.0 - ?/100 % (? xp)   
+        - Weaknesses: ?.
 
     - DevOps 💜:
       * Linux - 100/100 % (300 xp)
         - Misstakes: в последнем пункте неправильно указал директорию.
       * Linux Network - ?/100 % (? xp)
-      * Decimal - 92/100 % (322 xp)
-        - Misstakes: исправить на 100 %.
       * Matrix - ?/100 % (? xp)
 
     - C++ 💚:

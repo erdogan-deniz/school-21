@@ -1,7 +1,9 @@
-# School 21
-<h1 style="color:green">My nickname - charisel</h1>.
-My projects from school 21.
+# School 21 🎓
 
+My nickname - charisel 🐯
+Campus - Moscow 🇷🇺
+Projects results:
+  - Survival camp:
 * Linux - <span style="color:green">100/100 %</span> (300 xp)
   - Misstakes: в последнем пункте неправильно указал директорию.
 * Linux Network - <span style="color:white">?/100 %</span> (? xp)

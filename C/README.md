@@ -1,0 +1,1 @@
+![C]([https://stankin.ru/sys/img/logo_ru.svg](https://www.codentricks.com/wp-content/uploads/2017/03/c-programming-640x360.jpg)https://www.codentricks.com/wp-content/uploads/2017/03/c-programming-640x360.jpg)

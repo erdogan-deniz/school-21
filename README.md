@@ -66,5 +66,11 @@ Projects results:
 
     - C++ 💚:
       * 1️⃣
-    - SQL :
-      * 1️⃣
+
+    - SQL 💙:
+      * 1️⃣ SQL1 - ?/100 % (? xp)
+        - Weaknesses: ?;
+      * 2️⃣ Info21 v1.0 - ?/100 % (? xp)
+        - Weaknesses: ?;
+      * 3️⃣ RetailAnalitycs v1.0 - ?/100 % (? xp)
+        - Weaknesses: ?.

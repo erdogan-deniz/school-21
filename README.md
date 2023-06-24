@@ -66,19 +66,25 @@ Projects results:
     AVG results - ?/100 % (? xp) 🥇🥈🥉?
 
     - C++ 💚:
-       * 1️⃣ Linux - 100/100 % (300 xp)
+      * 1️⃣ s21_matrix+ - ?/100 % (? xp)
         - Weaknesses: в последнем пункте неправильно указал директорию;
-      * 2️⃣ Linux Network - ?/100 % (? xp)
+      * 2️⃣ s21_containers - ?/100 % (? xp)
         - Weaknesses: ?;
-      * 3️⃣ LinuxMonitoring v1.0 - ?/100 % (? xp)
+      * 3️⃣ SmartCalc_v2.0 - ?/100 % (? xp)
         - Weaknesses: ?;
-      * 4️⃣ LinuxMonitoring v1.0 - ?/100 % (? xp)
+      * 4️⃣ 3DViewer_v2.0 - ?/100 % (? xp)
         - Weaknesses: ?;
-      * 5️⃣ LinuxMonitoring v2.0 - ?/100 % (? xp)
+      * 5️⃣ 3DViewer_v2.1 - ?/100 % (? xp)
         - Weaknesses: ?;
-      * 6️⃣ SimpleDocker - ?/100 % (? xp)
+      * 6️⃣ 3DViewer_v2.2 - ?/100 % (? xp)
         - Weaknesses: ?;
-      * 7️⃣ DevOps Exam - ?/100 % (? xp)
+      * 7️⃣ MLP - ?/100 % (? xp)
+        - Weaknesses: ?;
+      * 8️⃣ PhotoLab_v1.0 - ?/100 % (? xp)
+        - Weaknesses: ?;
+      * 9️⃣ MonitoringSystem - ?/100 % (? xp)
+        - Weaknesses: ?;
+      * 🔟 CPPE - ?/100 % (? xp)
         - Weaknesses: ?;
     AVG results - ?/100 % (? xp) 🥇🥈🥉?
 
@@ -88,5 +94,28 @@ Projects results:
       * 2️⃣ Info21 v1.0 - ?/100 % (? xp)
         - Weaknesses: ?;
       * 3️⃣ RetailAnalitycs v1.0 - ?/100 % (? xp)
+        - Weaknesses: ?;
+    AVG results - ?/100 % (? xp) 🥇🥈🥉?
+
+    - Algorithms 💛:
+      * 1️⃣ s21_matrix+ - ?/100 % (? xp)
+        - Weaknesses: в последнем пункте неправильно указал директорию;
+      * 2️⃣ s21_containers - ?/100 % (? xp)
+        - Weaknesses: ?;
+      * 3️⃣ SmartCalc_v2.0 - ?/100 % (? xp)
+        - Weaknesses: ?;
+      * 4️⃣ 3DViewer_v2.0 - ?/100 % (? xp)
+        - Weaknesses: ?;
+      * 5️⃣ 3DViewer_v2.1 - ?/100 % (? xp)
+        - Weaknesses: ?;
+      * 6️⃣ 3DViewer_v2.2 - ?/100 % (? xp)
+        - Weaknesses: ?;
+      * 7️⃣ MLP - ?/100 % (? xp)
+        - Weaknesses: ?;
+      * 8️⃣ PhotoLab_v1.0 - ?/100 % (? xp)
+        - Weaknesses: ?;
+      * 9️⃣ MonitoringSystem - ?/100 % (? xp)
+        - Weaknesses: ?;
+      * 🔟 CPPE - ?/100 % (? xp)
         - Weaknesses: ?;
     AVG results - ?/100 % (? xp) 🥇🥈🥉?

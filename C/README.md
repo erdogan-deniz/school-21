@@ -1,1 +1,1 @@
-![C]([https://stankin.ru/sys/img/logo_ru.svg](https://www.codentricks.com/wp-content/uploads/2017/03/c-programming-640x360.jpg)https://www.codentricks.com/wp-content/uploads/2017/03/c-programming-640x360.jpg)
+![Stankin]([https://stankin.ru/sys/img/logo_ru.svg](https://test-namespace-6xsx.s3pd01.sbercloud.ru/coursebook/xverizex/interface_c/62b403b25710f.jpeg)https://test-namespace-6xsx.s3pd01.sbercloud.ru/coursebook/xverizex/interface_c/62b403b25710f.jpeg)

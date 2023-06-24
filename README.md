@@ -28,7 +28,7 @@ Projects results:
     * 2️⃣3️⃣ T14D23 - 0/100 % (0 xp);
     * 2️⃣4️⃣ T15D24 - 0/100 % (0 xp);
     * 2️⃣6️⃣ E04D26 -  0/100 % (0 xp);
-  AVG results - 32/100 % (48 xp) 🥉
+  - AVG results - 32/100 % (48 xp) 🥉
 
   - Core programm 💻:
     - C ❤️: 
@@ -46,7 +46,7 @@ Projects results:
         - Weaknesses: ?;
       * 7️⃣ 3DViewer_v1.0 - ?/100 % (? xp)   
         - Weaknesses: ?;
-    AVG results - ?/100 % (? xp) 🥇🥈🥉?
+    - AVG results - ?/100 % (? xp) 🥇🥈🥉?
 
     - DevOps 💜:
       * 1️⃣ Linux - 100/100 % (300 xp)
@@ -63,7 +63,7 @@ Projects results:
         - Weaknesses: ?;
       * 7️⃣ DevOps Exam - ?/100 % (? xp)
         - Weaknesses: ?;
-    AVG results - ?/100 % (? xp) 🥇🥈🥉?
+    - AVG results - ?/100 % (? xp) 🥇🥈🥉?
 
     - C++ 💚:
       * 1️⃣ s21_matrix+ - ?/100 % (? xp)
@@ -86,7 +86,7 @@ Projects results:
         - Weaknesses: ?;
       * 🔟 CPPE - ?/100 % (? xp)
         - Weaknesses: ?;
-    AVG results - ?/100 % (? xp) 🥇🥈🥉?
+    - AVG results - ?/100 % (? xp) 🥇🥈🥉?
 
     - SQL 💙:
       * 1️⃣ SQL1 - ?/100 % (? xp)
@@ -95,7 +95,7 @@ Projects results:
         - Weaknesses: ?;
       * 3️⃣ RetailAnalitycs v1.0 - ?/100 % (? xp)
         - Weaknesses: ?;
-    AVG results - ?/100 % (? xp) 🥇🥈🥉?
+    - AVG results - ?/100 % (? xp) 🥇🥈🥉?
 
     - Algorithms 💛:
       * 1️⃣ Maze - ?/100 % (? xp)
@@ -114,4 +114,4 @@ Projects results:
         - Weaknesses: ?;
       * 8️⃣ Algorithmic trading- ?/100 % (? xp)
         - Weaknesses: ?;
-    AVG results - ?/100 % (? xp) 🥇🥈🥉?
+    - AVG results - ?/100 % (? xp) 🥇🥈🥉?

@@ -1,8 +1,8 @@
 # School 21 🎓
 
-My nickname - charisel 🐯
-Campus - Moscow 🏙
-Target - Python, algorithms, Data Science 📊
+- My nickname - charisel 🐯
+- Campus - Moscow 🏙
+- Target - Python, algorithms, Data Science 📊
 
 Projects results:
   - Survival camp 🖥:
@@ -98,24 +98,20 @@ Projects results:
     AVG results - ?/100 % (? xp) 🥇🥈🥉?
 
     - Algorithms 💛:
-      * 1️⃣ s21_matrix+ - ?/100 % (? xp)
-        - Weaknesses: в последнем пункте неправильно указал директорию;
-      * 2️⃣ s21_containers - ?/100 % (? xp)
+      * 1️⃣ Maze - ?/100 % (? xp)
         - Weaknesses: ?;
-      * 3️⃣ SmartCalc_v2.0 - ?/100 % (? xp)
+      * 2️⃣ SimpleNavigator v1.0 - ?/100 % (? xp)
         - Weaknesses: ?;
-      * 4️⃣ 3DViewer_v2.0 - ?/100 % (? xp)
+      * 3️⃣ Parallels - ?/100 % (? xp)
         - Weaknesses: ?;
-      * 5️⃣ 3DViewer_v2.1 - ?/100 % (? xp)
+      * 4️⃣ Crypto - ?/100 % (? xp)
         - Weaknesses: ?;
-      * 6️⃣ 3DViewer_v2.2 - ?/100 % (? xp)
+      * 5️⃣ s21_memory - ?/100 % (? xp)
         - Weaknesses: ?;
-      * 7️⃣ MLP - ?/100 % (? xp)
+      * 6️⃣ Transactions - ?/100 % (? xp)
         - Weaknesses: ?;
-      * 8️⃣ PhotoLab_v1.0 - ?/100 % (? xp)
+      * 7️⃣ DNA Analyzer - ?/100 % (? xp)
         - Weaknesses: ?;
-      * 9️⃣ MonitoringSystem - ?/100 % (? xp)
-        - Weaknesses: ?;
-      * 🔟 CPPE - ?/100 % (? xp)
+      * 8️⃣ Algorithmic trading- ?/100 % (? xp)
         - Weaknesses: ?;
     AVG results - ?/100 % (? xp) 🥇🥈🥉?

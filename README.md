@@ -1,4 +1,5 @@
-# School21
+# School 21
+<h1 style="color:green">My nickname - charisel</h1>.
 My projects from school 21.
 
 * Linux - <span style="color:green">100/100 %</span> (300 xp)

@@ -1,6 +1,6 @@
 # School 21 🎓
 
-- - ![Stankin](https://yt3.ggpht.com/ytc/AAUvwnh0RMLIwCIRjdiA9Bisi20WdvTCWpJjzQEj3MpT=s900-c-k-c0x00ffffff-no-rj)
+![Stankin](https://yt3.ggpht.com/ytc/AAUvwnh0RMLIwCIRjdiA9Bisi20WdvTCWpJjzQEj3MpT=s900-c-k-c0x00ffffff-no-rj)
 - My nickname - charisel 🐯
 - Campus - Moscow 🏙
 - Target - Python, algorithms, Data Science 📊

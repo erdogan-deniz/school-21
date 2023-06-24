@@ -1,12 +1,11 @@
 # School 21 🎓
 
-My nickname - charisel 🐸
+My nickname - charisel 🐯
 Campus - Moscow 🏙
-Target - Python, algorithms, Data Science ⚛️
+Target - Python, algorithms, Data Science 📊
 
 Projects results:
-
-  - Survival camp 🏝:
+  - Survival camp 🖥:
     * 1️⃣ T01D01 - 94/100 % (94 xp);
     * 2️⃣ T02D02 - 0/100 % (0 xp);
     * 3️⃣ T03D03 - 71/100 % (71 xp);
@@ -28,7 +27,7 @@ Projects results:
     * 2️⃣2️⃣ T13D22 - 18/100 % (27 xp);
     * 2️⃣3️⃣ T14D23 - 0/100 % (0 xp);
     * 2️⃣4️⃣ T15D24 - 0/100 % (0 xp);
-    * 2️⃣6️⃣ E04D26 -  0/100 % (0 xp).
+    * 2️⃣6️⃣ E04D26 -  0/100 % (0 xp);
   AVG results - 32/100 % (48 xp) 🥉
 
   - Core programm 💻:
@@ -46,7 +45,8 @@ Projects results:
       * 6️⃣ SmartCalc_v1.0 - ?/100 % (? xp)
         - Weaknesses: ?;
       * 7️⃣ 3DViewer_v1.0 - ?/100 % (? xp)   
-        - Weaknesses: ?.
+        - Weaknesses: ?;
+    AVG results - ?/100 % (? xp) 🥇🥈🥉?
 
     - DevOps 💜:
       * 1️⃣ Linux - 100/100 % (300 xp)
@@ -61,11 +61,26 @@ Projects results:
         - Weaknesses: ?;
       * 6️⃣ SimpleDocker - ?/100 % (? xp)
         - Weaknesses: ?;
-      * 7️⃣ LinuxMonitoring v1.0 - ?/100 % (? xp)
+      * 7️⃣ DevOps Exam - ?/100 % (? xp)
         - Weaknesses: ?;
+    AVG results - ?/100 % (? xp) 🥇🥈🥉?
 
     - C++ 💚:
-      * 1️⃣
+       * 1️⃣ Linux - 100/100 % (300 xp)
+        - Weaknesses: в последнем пункте неправильно указал директорию;
+      * 2️⃣ Linux Network - ?/100 % (? xp)
+        - Weaknesses: ?;
+      * 3️⃣ LinuxMonitoring v1.0 - ?/100 % (? xp)
+        - Weaknesses: ?;
+      * 4️⃣ LinuxMonitoring v1.0 - ?/100 % (? xp)
+        - Weaknesses: ?;
+      * 5️⃣ LinuxMonitoring v2.0 - ?/100 % (? xp)
+        - Weaknesses: ?;
+      * 6️⃣ SimpleDocker - ?/100 % (? xp)
+        - Weaknesses: ?;
+      * 7️⃣ DevOps Exam - ?/100 % (? xp)
+        - Weaknesses: ?;
+    AVG results - ?/100 % (? xp) 🥇🥈🥉?
 
     - SQL 💙:
       * 1️⃣ SQL1 - ?/100 % (? xp)
@@ -73,4 +88,5 @@ Projects results:
       * 2️⃣ Info21 v1.0 - ?/100 % (? xp)
         - Weaknesses: ?;
       * 3️⃣ RetailAnalitycs v1.0 - ?/100 % (? xp)
-        - Weaknesses: ?.
+        - Weaknesses: ?;
+    AVG results - ?/100 % (? xp) 🥇🥈🥉?

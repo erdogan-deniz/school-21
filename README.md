@@ -1,18 +1,42 @@
 # School 21 🎓
 
 My nickname - charisel 🐯
-Campus - Moscow 🇷🇺
+Campus - Moscow 🏙
 Projects results:
   - Survival camp:
-* Linux - <span style="color:green">100/100 %</span> (300 xp)
-  - Misstakes: в последнем пункте неправильно указал директорию.
-* Linux Network - <span style="color:white">?/100 %</span> (? xp)
-* Decimal - <span style="color:orange">92/100 %</span> (322 xp)
-  - Misstakes: исправить на 100 %.
-* Math - <span style="color:green">100/100 %</span> (300 xp)
-  - Misstakes: unit tests, docker, exponent.
-* Matrix - <span style="color:white">?/100 %</span> (? xp)
-* String - <span style="color:green">150/150 %</span> (750 xp)
-  - Misstakes: unit tests, docker, sprintf.
-* Simple Bash - <span style="color:green">140/140 %</span> (350 xp)
-  - Misstakes: regex, unit-tests, docker, masks.
+    * T01D01 - 94/100 % (94 xp);
+    * T02D02 - 0/100 % (0 xp);
+    * T03D03 - 71/100 % (71 xp);
+    * T04D04 - 10/100 % (10 xp);
+    * E01D05 - 49/100 % (74 xp);
+    * P01D06 - 76/100 % (152 xp);
+    * T05D08 - 73/100 % (110 xp);
+    * T06D09 - 19/100 % (19 xp);
+    * T07D10 - 22/100 % (33 xp);
+    * T08D11 - 0/100 % (0 xp);
+    * E02D12 - 44/100 % (66 xp);
+    * P02D13 - 91/100 % (182 xp);
+    * T09D15 - 54/100 % (81 xp);
+    * T10D16 - 0/100 % (0 xp);
+    * T11D17 - 46/100 % (69 xp);
+    * T12D18 - 0/100 % (0 xp);
+    * E03D19 - 39/100 % (59 xp);
+    * P03D20 - 0/100 % (0 xp);
+    * T13D22 - 18/100 % (27 xp);
+    * T14D23 - 0/100 % (0 xp);
+    * T15D24 - 0/100 % (0 xp);
+    * E04D26 -  0/100 % (0 xp).
+    AVG results - 32/100 % (48 xp) 🥉  
+  - Core programm:
+    * Linux - 100/100 % (300 xp)
+      - Misstakes: в последнем пункте неправильно указал директорию.
+    * Linux Network - ?/100 % (? xp)
+    * Decimal - 92/100 % (322 xp)
+      - Misstakes: исправить на 100 %.
+    * Math - 100/100 % (300 xp)
+      - Misstakes: unit tests, docker, exponent.
+    * Matrix - ?/100 % (? xp)
+    * String - 150/150 % (750 xp)
+      - Misstakes: unit tests, docker, sprintf.
+    * Simple Bash - 140/140 % (350 xp)
+      - Misstakes: regex, unit-tests, docker, masks.

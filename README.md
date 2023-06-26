@@ -52,7 +52,7 @@ Projects results:
     - DevOps 💜:
       * 1️⃣ Linux - 100/100 % (300 xp)
         - Weaknesses: в последнем пункте неправильно указал директорию;
-      * 2️⃣ Linux Network - ?/100 % (? xp)
+      * 2️⃣ Linux Network - 140/140 % (350 xp)
         - Weaknesses: ?;
       * 3️⃣ LinuxMonitoring v1.0 - ?/100 % (? xp)
         - Weaknesses: ?;

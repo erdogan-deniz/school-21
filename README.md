@@ -53,7 +53,7 @@ Projects results:
       * 1️⃣ Linux - 100/100 % (300 xp)
         - Weaknesses: в последнем пункте неправильно указал директорию;
       * 2️⃣ Linux Network - 140/140 % (350 xp)
-        - Weaknesses: моментами можно было привести более точную;
+        - Weaknesses: моментами можно было привести более точную информацию;
       * 3️⃣ LinuxMonitoring v1.0 - ?/100 % (? xp)
         - Weaknesses: ?;
       * 4️⃣ LinuxMonitoring v1.0 - ?/100 % (? xp)

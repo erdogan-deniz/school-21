@@ -1,8 +1,5 @@
 # s21_decimal 
 
-> При старте работы над проектом просим вас постараться хронометрировать время работы над проектом.
-> По завершении работы над проектом просим вас ответить на два вопроса [в этом опросе](https://forms.gle/PFAxFfM4GJuQU1x59)
-
 Implementation of your own s21_decimal.h library.
 
 The russian version of the task can be found in the repository.
@@ -186,5 +183,3 @@ The functions of the decimal.h library described [above](#information) must be i
 - It is forbidden to use the __int128 type
 - Trailing zeros can be as preserved as deleted (except for the `s21_truncate` function)
 - The defined type must support numbers from -79,228,162,514,264,337,593,543,950,335 to +79,228,162,514,264,337,593,543,950,335.
-
-💡[ Tap here](https://forms.yandex.ru/u/6357d97684227c2f9d626b7c/) **to leave your feedback on the project**. Pedago Team really tries to make your educational experience better.

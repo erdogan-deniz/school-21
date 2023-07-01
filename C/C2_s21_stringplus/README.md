@@ -235,6 +235,3 @@ Bonus assignment for extra points. You must implement some string processing fun
 - The functions must be placed in the s21_string.h library.
 - All of the requirements outlined in [the first part](#part-1-implementation-of-the-stringh-library-functions) are applied to functions implementation, 
   excluding the requirement to compare your implementation with the standard.
-
-
-💡 [Tap here](https://forms.yandex.ru/u/6357d8f4d046882e611f10cd/) **to leave your feedback on the project**. Pedago Team really tries to make your educational experience better.

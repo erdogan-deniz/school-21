@@ -34,15 +34,15 @@ Projects results:
   - Core programm 💻:
     - C ❤️: 
       * 1️⃣ Simple Bash - 140/140 % (350 xp)
-        - Weaknesses: regex, unit-tests, docker, masks;
+        - Weaknesses: regex, unit-tests, docker, masks (s);
       * 2️⃣ Math - 100/100 % (300 xp)
-        - Weaknesses: unit tests, docker, exhibitor;
+        - Weaknesses: unit tests, docker, exhibitor (s);
       * 3️⃣ String - 150/150 % (750 xp)
-        - Weaknesses: unit tests, docker, sprintf;
+        - Weaknesses: unit tests, docker, sprintf (s);
       * 4️⃣ Decimal - 92/100 % (322 xp)
-        - Weaknesses: all;
-      * 5️⃣ Matrix - ?/100 % (? xp)
-        - Weaknesses: ?;
+        - Weaknesses: all (s);
+      * 5️⃣ Matrix - 100/100 % (? xp)
+        - Weaknesses: style, docker, some tests, inverse, makefile, gcov(s);
       * 6️⃣ SmartCalc_v1.0 - ?/100 % (? xp)
         - Weaknesses: ?;
       * 7️⃣ 3DViewer_v1.0 - ?/100 % (? xp)   
@@ -53,7 +53,7 @@ Projects results:
       * 1️⃣ Linux - 100/100 % (300 xp)
         - Weaknesses: в последнем пункте неправильно указал директорию;
       * 2️⃣ Linux Network - 140/140 % (350 xp)
-        - Weaknesses: моментами можно было привести более точную информацию, теория;
+        - Weaknesses: моментами можно было привести более точную информацию, теория (s);
       * 3️⃣ LinuxMonitoring v1.0 - ?/100 % (? xp)
         - Weaknesses: ?;
       * 4️⃣ LinuxMonitoring v1.0 - ?/100 % (? xp)

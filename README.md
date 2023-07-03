@@ -54,10 +54,8 @@ Projects results:
         - Weaknesses: - ;
       * 2️⃣ Linux Network - 140/140 % (350 xp)
         - Weaknesses: моментами можно было привести более точную информацию, теория (s);
-      * 3️⃣ LinuxMonitoring v1.0 - ?/100 % (? xp)
-        - Weaknesses: ?;
-      * 4️⃣ LinuxMonitoring v1.0 - ?/100 % (? xp)
-        - Weaknesses: ?;
+      * 3️⃣ LinuxMonitoring v1.0 - 100/100 % (350 xp)
+        - Weaknesses: all (s);
       * 5️⃣ LinuxMonitoring v2.0 - ?/100 % (? xp)
         - Weaknesses: ?;
       * 6️⃣ SimpleDocker - ?/100 % (? xp)

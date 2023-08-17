@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Window_Three</class>
+ <widget class="QWidget" name="Window_Three">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1600</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label_deposit_amount">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>165</y>
+     <width>240</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>DEPOSIT AMOUNT:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_input_data">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1196</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Sylfaen</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: Purple;
+color: White;
+border-style: outset;
+border-width: 2px;
+border-color: black;
+border-top: 0;
+border-right: 0; 
+border-bottom: 2px solid;
+ border-left: 0</string>
+   </property>
+   <property name="text">
+    <string>                                                   INPUT DATA:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_deposit_term">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>260</y>
+     <width>205</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>DEPOSIT TERM:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_interest_rate">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>380</y>
+     <width>210</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>INTEREST RATE:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_tax_rate">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>475</y>
+     <width>140</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>TAX RATE:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_periodicity_of">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>570</y>
+     <width>210</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>PERIODICITY OF</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="list_with">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>470</y>
+     <width>300</width>
+     <height>325</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>System</family>
+     <pointsize>12</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: black;
+background-color: rgba(0, 0, 0, 0.1);</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_with_list">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>165</y>
+     <width>260</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>WITHDRAWAL LIST:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="line_sum">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>430</y>
+     <width>150</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>System</family>
+     <pointsize>10</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: black;
+background-color: rgba(0, 0, 0, 0.1);</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_add_with">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>325</y>
+     <width>260</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>ADD WITHDRAWAL:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_sum_2">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>380</y>
+     <width>65</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>SUM:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="line_num_month">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>430</y>
+     <width>65</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>System</family>
+     <pointsize>10</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: black;
+background-color: rgba(0, 0, 0, 0.1);</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_n_month2">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>380</y>
+     <width>135</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>N MONTH:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_output_data">
+   <property name="geometry">
+    <rect>
+     <x>1204</x>
+     <y>0</y>
+     <width>500</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Sylfaen</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #060ADE;
+color: White;
+border-style: outset;
+border-width: 2px;
+border-color: black;
+border-top: 0;
+border-right: 0; 
+border-bottom: 2px solid;
+ border-left: 0</string>
+   </property>
+   <property name="text">
+    <string>        OUTPUT DATA:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="line_deposit_amount">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>205</y>
+     <width>230</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>System</family>
+     <pointsize>10</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: blac;
+background-color: rgba(0, 0, 0, 0.1);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="line_deposit_term">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>325</y>
+     <width>190</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>System</family>
+     <pointsize>10</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: black;
+background-color: rgba(0, 0, 0, 0.1);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="line_interest_rate">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>420</y>
+     <width>200</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>System</family>
+     <pointsize>10</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: black;
+background-color: rgba(0, 0, 0, 0.1);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="line_tax_rate">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>515</y>
+     <width>130</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>System</family>
+     <pointsize>10</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: black;
+background-color: rgba(0, 0, 0, 0.1);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="line_periodicity_of">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>635</y>
+     <width>280</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>System</family>
+     <pointsize>10</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: black;
+background-color: rgba(0, 0, 0, 0.1);</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkbox_capitalization">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>690</y>
+     <width>281</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>CAPITALIZATION OF</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_repl_list">
+   <property name="geometry">
+    <rect>
+     <x>715</x>
+     <y>165</y>
+     <width>311</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>REPLENISHMENT  LIST:</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="list_repl">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>470</y>
+     <width>300</width>
+     <height>325</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>System</family>
+     <pointsize>12</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: black;
+background-color: rgba(0, 0, 0, 0.1);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="line_num_month2">
+   <property name="geometry">
+    <rect>
+     <x>880</x>
+     <y>430</y>
+     <width>65</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>System</family>
+     <pointsize>10</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: black;
+background-color: rgba(0, 0, 0, 0.1);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="line_sum2">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>430</y>
+     <width>150</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>System</family>
+     <pointsize>10</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: black;
+background-color: rgba(0, 0, 0, 0.1);</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_sum">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>380</y>
+     <width>65</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>SUM:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_n_month">
+   <property name="geometry">
+    <rect>
+     <x>880</x>
+     <y>380</y>
+     <width>135</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>N MONTH:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_accrued_int">
+   <property name="geometry">
+    <rect>
+     <x>1240</x>
+     <y>375</y>
+     <width>275</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>ACCRUED INTEREST:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="line_accrued_interest">
+   <property name="geometry">
+    <rect>
+     <x>1240</x>
+     <y>420</y>
+     <width>260</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>System</family>
+     <pointsize>10</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: black;
+background-color: rgba(0, 0, 0, 0.1);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="line_tax_amount">
+   <property name="geometry">
+    <rect>
+     <x>1240</x>
+     <y>585</y>
+     <width>190</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>System</family>
+     <pointsize>10</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: black;
+background-color: rgba(0, 0, 0, 0.1);</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_tax_amount">
+   <property name="geometry">
+    <rect>
+     <x>1240</x>
+     <y>540</y>
+     <width>200</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>28</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>TAX AMOUNT:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="line_deposit_amount_by_the_end">
+   <property name="geometry">
+    <rect>
+     <x>1240</x>
+     <y>245</y>
+     <width>240</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>System</family>
+     <pointsize>10</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: black;
+background-color: rgba(0, 0, 0, 0.1);</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_deposit_amount_2">
+   <property name="geometry">
+    <rect>
+     <x>1240</x>
+     <y>165</y>
+     <width>250</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>DEPOSIT AMOUNT:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="button_calculate">
+   <property name="geometry">
+    <rect>
+     <x>1020</x>
+     <y>585</y>
+     <width>170</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: black;
+	background-color: rgba(0, 0, 0, 0.1);</string>
+   </property>
+   <property name="text">
+    <string>CALCULATE</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_line">
+   <property name="geometry">
+    <rect>
+     <x>1196</x>
+     <y>0</y>
+     <width>8</width>
+     <height>900</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_by_the_end">
+   <property name="geometry">
+    <rect>
+     <x>1240</x>
+     <y>195</y>
+     <width>211</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>BY THE END:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="button_plus">
+   <property name="geometry">
+    <rect>
+     <x>615</x>
+     <y>430</y>
+     <width>35</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: black;
+background-color: #2FAB00;</string>
+   </property>
+   <property name="text">
+    <string>+</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_add_repl">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>325</y>
+     <width>290</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>ADD REPLENISHMENT:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_payments">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>595</y>
+     <width>290</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>PAYMENTS (MONTHS):</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_interest">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>715</y>
+     <width>140</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>INTEREST:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="button_plus2">
+   <property name="geometry">
+    <rect>
+     <x>975</x>
+     <y>430</y>
+     <width>35</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: black;
+background-color: #2FAB00;</string>
+   </property>
+   <property name="text">
+    <string>+</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_months">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>285</y>
+     <width>145</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Scheherazade</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>(MONTHS):</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1600</width>
+     <height>900</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>images/window_three_background.jpg</pixmap>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>label_deposit_amount</zorder>
+  <zorder>label_input_data</zorder>
+  <zorder>label_deposit_term</zorder>
+  <zorder>label_interest_rate</zorder>
+  <zorder>label_tax_rate</zorder>
+  <zorder>label_periodicity_of</zorder>
+  <zorder>list_with</zorder>
+  <zorder>label_with_list</zorder>
+  <zorder>line_sum</zorder>
+  <zorder>label_add_with</zorder>
+  <zorder>label_sum_2</zorder>
+  <zorder>line_num_month</zorder>
+  <zorder>label_n_month2</zorder>
+  <zorder>label_output_data</zorder>
+  <zorder>line_deposit_amount</zorder>
+  <zorder>line_deposit_term</zorder>
+  <zorder>line_interest_rate</zorder>
+  <zorder>line_tax_rate</zorder>
+  <zorder>line_periodicity_of</zorder>
+  <zorder>checkbox_capitalization</zorder>
+  <zorder>label_repl_list</zorder>
+  <zorder>list_repl</zorder>
+  <zorder>line_num_month2</zorder>
+  <zorder>line_sum2</zorder>
+  <zorder>label_sum</zorder>
+  <zorder>label_n_month</zorder>
+  <zorder>label_accrued_int</zorder>
+  <zorder>line_accrued_interest</zorder>
+  <zorder>line_tax_amount</zorder>
+  <zorder>label_tax_amount</zorder>
+  <zorder>line_deposit_amount_by_the_end</zorder>
+  <zorder>label_deposit_amount_2</zorder>
+  <zorder>button_calculate</zorder>
+  <zorder>label_line</zorder>
+  <zorder>label_by_the_end</zorder>
+  <zorder>button_plus</zorder>
+  <zorder>label_add_repl</zorder>
+  <zorder>label_payments</zorder>
+  <zorder>label_interest</zorder>
+  <zorder>button_plus2</zorder>
+  <zorder>label_months</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

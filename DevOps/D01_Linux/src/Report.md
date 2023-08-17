@@ -281,7 +281,7 @@
 ![Display size of /var/log](Screenshots/task_twelve_log.png)
 
 * Size of all contents in "/var/log*":
-![Display all of /var/log](Screenshots/task_twelve_varlog*.png)
+![Display all of /var/log](Screenshots/task_twelve_varlog.png)
 
 
 ## Installing and using the ncdu utility:

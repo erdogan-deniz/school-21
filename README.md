@@ -42,16 +42,15 @@ Projects results:
       * 4️⃣ Decimal - 92/100 % (322 xp)
         - Weaknesses: all (s);
       * 5️⃣ Matrix - 100/100 % (? xp)
-        - Weaknesses: style, docker, some tests, inverse, makefile, gcov(s);
+        - Weaknesses: style, docker, some tests, inverse, makefile, gcov (s);
       * 6️⃣ SmartCalc_v1.0 - ?/100 % (? xp)
-        - Weaknesses: ?;
+        - Weaknesses: makefile, проверки ПО, тесты, размер функций СИ > 50 строк, 1 выход из цикла;
       * 7️⃣ 3DViewer_v1.0 - ?/100 % (? xp)   
-        - Weaknesses: ?;
-    - AVG results - ?/100 % (? xp) 🥇🥈🥉?
+        - Weaknesses: all (s);
+    - AVG results - ?/100 % (? xp) 🥇🥈?
 
     - DevOps 💜:
       * 1️⃣ Linux - 100/100 % (300 xp)
-        - Weaknesses: - ;
       * 2️⃣ Linux Network - 140/140 % (350 xp)
         - Weaknesses: моментами можно было привести более точную информацию, теория (s);
       * 3️⃣ LinuxMonitoring v1.0 - 100/100 % (350 xp)
@@ -66,7 +65,7 @@ Projects results:
 
     - C++ 💚:
       * 1️⃣ s21_matrix+ - ?/100 % (? xp)
-        - Weaknesses: в последнем пункте неправильно указал директорию;
+        - Weaknesses: ?;
       * 2️⃣ s21_containers - ?/100 % (? xp)
         - Weaknesses: ?;
       * 3️⃣ SmartCalc_v2.0 - ?/100 % (? xp)

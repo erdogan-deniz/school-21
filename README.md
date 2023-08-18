@@ -43,7 +43,7 @@ Projects results:
         - Weaknesses: all (s);
       * 5️⃣ Matrix - 100/100 % (? xp)
         - Weaknesses: style, docker, some tests, inverse, makefile, gcov (s);
-      * 6️⃣ SmartCalc_v1.0 - ?/100 % (? xp)
+      * 6️⃣ SmartCalc_v1.0 - 130/100 % (650 xp)
         - Weaknesses: makefile, проверки ПО, тесты, размер функций СИ > 50 строк, 1 выход из цикла;
       * 7️⃣ 3DViewer_v1.0 - ?/100 % (? xp)   
         - Weaknesses: all (s);

@@ -41,13 +41,13 @@ Projects results:
         - Weaknesses: unit tests, docker, sprintf (s);
       * 4️⃣ Decimal - 92/100 % (322 xp)
         - Weaknesses: all (s);
-      * 5️⃣ Matrix - 100/100 % (? xp)
+      * 5️⃣ Matrix - 100/100 % (200 xp)
         - Weaknesses: style, docker, some tests, inverse, makefile, gcov (s);
-      * 6️⃣ SmartCalc_v1.0 - 130/100 % (650 xp)
+      * 6️⃣ SmartCalc_v1.0 - 130/130 % (650 xp)
         - Weaknesses: makefile, проверки ПО, тесты, размер функций СИ > 50 строк, 1 выход из цикла;
-      * 7️⃣ 3DViewer_v1.0 - ?/100 % (? xp)   
+      * 7️⃣ 3DViewer_v1.0 - 139/139 % (1043 xp)   
         - Weaknesses: all (s);
-    - AVG results - ?/100 % (? xp) 🥇🥈?
+    - AVG results - 122/123 % (516 xp) 🥇
 
     - DevOps 💜:
       * 1️⃣ Linux - 100/100 % (300 xp)

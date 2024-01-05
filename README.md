@@ -6,7 +6,7 @@
 - Targets: Python, Algorithms, ML, Data Science 📊
 
 Projects results:
-  Survival camp 🖥:
+    Survival camp 🖥:
     * 1️⃣ T01D01 - 94/100 % (94 xp)
     * 2️⃣ T02D02 - 0/100 % (0 xp)
     * 3️⃣ T03D03 - 71/100 % (71 xp)
@@ -31,8 +31,8 @@ Projects results:
     * 2️⃣6️⃣ E04D26 -  0/100 % (0 xp)
     AVG results - 32/100 % (48 xp) 🥉
 
-  Core programm 💻:
-    - C ❤️: 
+    Core programm 💻:
+      C ❤️: 
       * 1️⃣ Simple Bash Utils - 140/140 % (350 xp)
         - Weaknesses: regex, unit-tests, docker, masks (s);
       * 2️⃣ Math - 100/100 % (300 xp)
@@ -47,7 +47,7 @@ Projects results:
         - Weaknesses: makefile, проверки ПО, тесты, размер функций СИ > 50 строк, 1 выход из цикла;
       * 7️⃣ 3DViewer_v1.0 - 139/139 % (1043 xp)   
         - Weaknesses: all (s);
-    - AVG results - 122/123 % (516 xp) 🥇
+      AVG results - 122/123 % (516 xp) 🥇
 
     DevOps 💜:
       * 1️⃣ Linux - 100/100 % (300 xp)

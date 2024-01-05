@@ -5,12 +5,12 @@
 - Campus - Moscow 🏙
 - Targets: Python, Algorithms, ML, Data Science 📊
 
-Projects results:
-    Survival camp 🖥:
-    * 1️⃣ T01D01 - 94/100 % (94 xp)
-    * 2️⃣ T02D02 - 0/100 % (0 xp)
-    * 3️⃣ T03D03 - 71/100 % (71 xp)
-    * 4️⃣ T04D04 - 10/100 % (10 xp)
+        Projects results:
+            Survival camp 🖥:
+            * 1️⃣ T01D01 - 94/100 % (94 xp)
+            * 2️⃣ T02D02 - 0/100 % (0 xp)
+            * 3️⃣ T03D03 - 71/100 % (71 xp)
+            * 4️⃣ T04D04 - 10/100 % (10 xp)
     * 5️⃣ E01D05 - 49/100 % (74 xp)
     * 6️⃣ P01D06 - 76/100 % (152 xp)
     * 8️⃣ T05D08 - 73/100 % (110 xp)

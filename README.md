@@ -33,7 +33,7 @@ Projects results:
 
   - Core programm 💻:
     - C ❤️: 
-      * 1️⃣ Simple Bash - 140/140 % (350 xp)
+      * 1️⃣ Simple Bash Utils - 140/140 % (350 xp)
         - Weaknesses: regex, unit-tests, docker, masks (s);
       * 2️⃣ Math - 100/100 % (300 xp)
         - Weaknesses: unit tests, docker, exhibitor (s);

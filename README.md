@@ -31,89 +31,90 @@ Projects results:
   * 2️⃣4️⃣ T15D24 - 0/100 % (0 xp)
   * 2️⃣6️⃣ E04D26 -  0/100 % (0 xp)
   - AVG results - 32/100 % (48 xp) 🥉
-
-    Core programm 💻:
-      C ❤️: 
-      * 1️⃣ Simple Bash Utils - 140/140 % (350 xp)
-        - Weaknesses: regex, unit-tests, docker, masks (s);
-      * 2️⃣ Math - 100/100 % (300 xp)
-        - Weaknesses: unit tests, docker, exhibitor (s);
-      * 3️⃣ String - 150/150 % (750 xp)
-        - Weaknesses: unit tests, docker, sprintf (s);
-      * 4️⃣ Decimal - 92/100 % (322 xp)
-        - Weaknesses: all (s);
-      * 5️⃣ Matrix - 100/100 % (200 xp)
-        - Weaknesses: style, docker, some tests, inverse, makefile, gcov (s);
-      * 6️⃣ SmartCalc_v1.0 - 130/130 % (650 xp)
-        - Weaknesses: makefile, проверки ПО, тесты, размер функций СИ > 50 строк, 1 выход из цикла;
-      * 7️⃣ 3DViewer_v1.0 - 139/139 % (1043 xp)   
-        - Weaknesses: all (s);
-      AVG results - 122/123 % (516 xp) 🥇
-
-    DevOps 💜:
-      * 1️⃣ Linux - 100/100 % (300 xp)
-        - Weaknesses: all (s);
-      * 2️⃣ Linux Network - 140/140 % (350 xp)
-        - Weaknesses: моментами можно было привести более точную информацию, теория (s);
-      * 3️⃣ LinuxMonitoring v1.0 - 100/100 % (350 xp)
-        - Weaknesses: all (s);
-      * 5️⃣ LinuxMonitoring v2.0 - ?/100 % (? xp)
-        - Weaknesses: ?;
-      * 6️⃣ SimpleDocker - ?/100 % (? xp)
-        - Weaknesses: ?;
-      * 7️⃣ CICD - ?/100 % (? xp)
-        - Weaknesses: ?;
-      * 8️⃣ DevOps Exam - ?/100 % (? xp)
-        - Weaknesses: ?;
-    AVG results - ?/100 % (? xp) 🥇🥈🥉?
-
-    C++ 💚:
-      * 1️⃣ s21_matrix+ - 100/100 % (300 xp)
-        - Weaknesses: ?;
-      * 2️⃣ s21_containers - 143/143 % (501 xp)
-        - Weaknesses: ?;
-      * 3️⃣ SmartCalc_v2.0 - 125/125 % (750 xp)
-        - Weaknesses: ?;
-      * 4️⃣ 3DViewer_v2.0 - 140/140 % (1050 xp)
-        - Weaknesses: ?;
-      * 5️⃣ 3DViewer_v2.1 - 142/142 % (852 xp)
-        - Weaknesses: ?;
-      * 6️⃣ 3DViewer_v2.2 - 142/143 % (1136 xp)
-        - Weaknesses: ?;
-      * 7️⃣ MLP - ?/100 % (? xp)
-        - Weaknesses: ?;
-      * 8️⃣ PhotoLab_v1.0 - ?/100 % (? xp)
-        - Weaknesses: ?;
-      * 9️⃣ MonitoringSystem - ?/100 % (? xp)
-        - Weaknesses: ?;
-      * 🔟 CPPE - ?/100 % (? xp)
-        - Weaknesses: ?;
-    AVG results - ?/100 % (? xp) 🥇🥈🥉?
-
-    SQL 💙:
-      * 1️⃣ SQL1 - ?/100 % (? xp)
-        - Weaknesses: ?;
-      * 2️⃣ Info21 v1.0 - ?/100 % (? xp)
-        - Weaknesses: ?;
-      * 3️⃣ RetailAnalitycs v1.0 - ?/100 % (? xp)
-        - Weaknesses: ?;
-    AVG results - ?/100 % (? xp) 🥇🥈🥉?
-
-    - Algorithms 💛:
-      * 1️⃣ Maze - ?/100 % (? xp)
-        - Weaknesses: ?;
-      * 2️⃣ SimpleNavigator v1.0 - ?/100 % (? xp)
-        - Weaknesses: ?;
-      * 3️⃣ Parallels - ?/100 % (? xp)
-        - Weaknesses: ?;
-      * 4️⃣ Crypto - ?/100 % (? xp)
-        - Weaknesses: ?;
-      * 5️⃣ s21_memory - ?/100 % (? xp)
-        - Weaknesses: ?;
-      * 6️⃣ Transactions - ?/100 % (? xp)
-        - Weaknesses: ?;
-      * 7️⃣ DNA Analyzer - ?/100 % (? xp)
-        - Weaknesses: ?;
-      * 8️⃣ Algorithmic trading- ?/100 % (? xp)
-        - Weaknesses: ?;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  - Core programm 💻:
+    - C ❤️: 
+    * 1️⃣ Simple Bash Utils - 140/140 % (350 xp)
+      - Weaknesses: regex, unit-tests, docker, masks (s);
+    * 2️⃣ Math - 100/100 % (300 xp)
+      - Weaknesses: unit tests, docker, exhibitor (s);
+    * 3️⃣ String - 150/150 % (750 xp)
+      - Weaknesses: unit tests, docker, sprintf (s);
+    * 4️⃣ Decimal - 92/100 % (322 xp)
+      -  Weaknesses: all (s);
+    * 5️⃣ Matrix - 100/100 % (200 xp)
+      - Weaknesses: style, docker, some tests, inverse, makefile, gcov (s);
+    * 6️⃣ SmartCalc_v1.0 - 130/130 % (650 xp)
+      - Weaknesses: makefile, проверки ПО, тесты, размер функций СИ > 50 строк, 1 выход из цикла;
+    * 7️⃣ 3DViewer_v1.0 - 139/139 % (1043 xp)   
+      - Weaknesses: all (s);
+    - AVG results - 122/123 % (516 xp) 🥇
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    - DevOps 💜:
+    * 1️⃣ Linux - 100/100 % (300 xp)
+      - Weaknesses: all (s);
+    * 2️⃣ Linux Network - 140/140 % (350 xp)
+      - Weaknesses: моментами можно было привести более точную информацию, теория (s);
+    * 3️⃣ LinuxMonitoring v1.0 - 100/100 % (350 xp)
+      - Weaknesses: all (s);
+    * 5️⃣ LinuxMonitoring v2.0 - ?/100 % (? xp)
+      - Weaknesses: ?;
+    * 6️⃣ SimpleDocker - ?/100 % (? xp)
+      - Weaknesses: ?;
+    * 7️⃣ CICD - ?/100 % (? xp)
+      - Weaknesses: ?;
+    * 8️⃣ DevOps Exam - ?/100 % (? xp)
+      - Weaknesses: ?;
     - AVG results - ?/100 % (? xp) 🥇🥈🥉?
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    - C++ 💚:
+    * 1️⃣ s21_matrix+ - 100/100 % (300 xp)
+      - Weaknesses: ?;
+    * 2️⃣ s21_containers - 143/143 % (501 xp)
+      - Weaknesses: ?;
+    * 3️⃣ SmartCalc_v2.0 - 125/125 % (750 xp)
+      - Weaknesses: ?;
+    * 4️⃣ 3DViewer_v2.0 - 140/140 % (1050 xp)
+      - Weaknesses: ?;
+    * 5️⃣ 3DViewer_v2.1 - 142/142 % (852 xp)
+      - Weaknesses: ?;
+    * 6️⃣ 3DViewer_v2.2 - 142/143 % (1136 xp)
+      - Weaknesses: ?;
+    * 7️⃣ MLP - ?/100 % (? xp)
+      - Weaknesses: ?;
+    * 8️⃣ PhotoLab_v1.0 - ?/100 % (? xp)
+      - Weaknesses: ?;
+    * 9️⃣ MonitoringSystem - ?/100 % (? xp)
+      - Weaknesses: ?;
+    * 🔟 CPPE - ?/100 % (? xp)
+      - Weaknesses: ?;
+    - AVG results - ?/100 % (? xp) 🥇🥈🥉?
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    - SQL 💙:
+    * 1️⃣ SQL1 - ?/100 % (? xp)
+      - Weaknesses: ?;
+    * 2️⃣ Info21 v1.0 - ?/100 % (? xp)
+      - Weaknesses: ?;
+    * 3️⃣ RetailAnalitycs v1.0 - ?/100 % (? xp)
+      - Weaknesses: ?;
+    - AVG results - ?/100 % (? xp) 🥇🥈🥉?
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    - Algorithms 💛:
+    * 1️⃣ Maze - ?/100 % (? xp)
+      - Weaknesses: ?;
+    * 2️⃣ SimpleNavigator v1.0 - ?/100 % (? xp)
+      - Weaknesses: ?;
+    * 3️⃣ Parallels - ?/100 % (? xp)
+      - Weaknesses: ?;
+    * 4️⃣ Crypto - ?/100 % (? xp)
+      - Weaknesses: ?;
+    * 5️⃣ s21_memory - ?/100 % (? xp)
+      - Weaknesses: ?;
+    * 6️⃣ Transactions - ?/100 % (? xp)
+      - Weaknesses: ?;
+    * 7️⃣ DNA Analyzer - ?/100 % (? xp)
+      - Weaknesses: ?;
+    * 8️⃣ Algorithmic trading- ?/100 % (? xp)
+      - Weaknesses: ?;
+    - AVG results - ?/100 % (? xp) 🥇🥈🥉?
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -144,19 +144,19 @@ Projects results:
 - Python 🐍:
 * 1️⃣ Bootcamp - ?/100 % (? xp)
       * 1️⃣ Day00 - 100/100 %
-        - Weaknesses: none;
+        - Weaknesses: last task: if not 5x3 size then must be "Error", style;
       * 2️⃣ Day01 - 120/120 %
-        - Weaknesses: ?;
+        - Weaknesses: style, описка моментами вместо gold_ingot вместо gold_ingots;
       * 3️⃣ Day02 - 120/120 %
-        - Weaknesses: ?;
+        - Weaknesses: style, игра должна сейвить количество конфет из игры, а не победителей;
       * 4️⃣ Day03 - 120/120 %
-        - Weaknesses: ?;
+        - Weaknesses: style;
       * 5️⃣ Day04 - 120/120 %
-        - Weaknesses: ?;
+        - Weaknesses: style;
       * 6️⃣ Team00 - ?/100 %
         - Weaknesses: ?;
       * 7️⃣ Day05 - ?/100 %
-        - Weaknesses: ?;
+        - Weaknesses: нет допа во втором задании, разнообразие в третьем реализовано shuffle, а не рандомноситью потоков;
       * 8️⃣ Day06 - ?/100 %
         - Weaknesses: ?;
       * 9️⃣ Day07 - ?/100 %

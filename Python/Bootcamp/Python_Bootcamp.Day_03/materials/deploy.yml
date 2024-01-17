@@ -1,0 +1,22 @@
+- name: Install packages
+  ansible.built.apt:
+    pgk:
+    - python3
+    - nginx
+    state: latest
+- name: Copy file
+  ansible.builtin.copy:
+    src: exploit.py
+    dest: tmp
+    mode: '0644'
+- name: Copy file
+  ansible.builtin.copy:
+    src: consumer.py
+    dest: tmp
+    mode: '0644'
+- name: Run script
+  ansible.builtin.script:
+    cmd: python3 tmp/consumer.py -e 4815162342, 3133780085
+- name: Run script for generate data
+  ansible.builtin.script:
+    cmd: python3 tmp/producer.py -e 2

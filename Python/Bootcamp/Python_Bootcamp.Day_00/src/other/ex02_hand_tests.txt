@@ -1,0 +1,1 @@
+1) cat other/m6.txt | python mfinde.py

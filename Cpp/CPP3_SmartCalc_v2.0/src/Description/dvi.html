@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" type="text/css" href="dvi.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartCalc v1.0</title>
+</head>
+
+<body>
+  <h1 id="smartcalc-v1-0">SmartCalc v2.0</h1>
+  <h2 id="introduction">Introduction</h2>
+  <ul>
+    <li>
+      <p>This project implements an extended version of the standard calculator in C++ in the object-oriented
+        programming paradigm. In addition to basic arithmetic operations,
+        such as plus-minus and multiply-divide, the calculator is supplemented with the ability to calculate arithmetic
+        expressions with priority, as well as some mathematical functions (sine, cosine, logarithm, etc.). In addition
+        to calculating expressions, the calculator also supports using the <em>x</em> variable and building the graph of
+        the corresponding function. As an additional improvement, a credit calculator has been implemented.</p>
+    </li>
+    <li>
+      <p>The program is built using Makefile with a standard set of goals for GNU programs: all, install, uninstall,
+        clean, dvi, dist, test, gcov_report.</p>
+    </li>
+    <li>
+      <p>Implementation with GUI, based on the Qt GUI library</p>
+    </li>
+    <li>
+      <p>Construct a graph of a function defined by an expression in infix notation with variable x (with coordinate
+        axes, notation of the scale used, and a grid with adaptive step), The definition area and value area of the
+        functions are limited to at least the numbers -1000000 to 1000000</p>
+    </li>
+  </ul>
+  <div style="display: flex; justify-content: center;">
+    <p><img src="smartcalc.png" width="500" height="350"></p>
+  </div>
+  <div style="display: flex; justify-content: center;">
+    <p><img src="graph.png" width="500" height="350"></p>
+  </div>
+  <h2 id="a-special-mode-loan-calculator-is-provided-calcus-ru-is-taken-as-an-example-">A special mode &quot;loan
+    calculator&quot; is provided (calcus.ru is taken as an example):</h2>
+  <ul>
+    <li>Input: amount of credit, loan term, interest rate, type of payments(annuity, differentiated)</li>
+    <li>Outcome: monthly payment, accured interest, debt + interest</li>
+  </ul>
+  <div style="display: flex; justify-content: center;">
+    <p><img src="credit.png" width="500" height="350"></p>
+  </div>
+  <h2 id="a-special-mode-deposit-calculator-is-provided-calcus-ru-and-banki-ru-are-taken-as-samples-">A special mode
+    &quot;deposit calculator&quot; is provided (calcus.ru and banki.ru are taken as samples):</h2>
+  <ul>
+    <li>Input: amount of period, placement period, start of term(date), interest rate, tax rate, interest
+      capitalization, frequency of payments</li>
+    <li>
+      <p>Outcome: income, tax, total deposit at the end of the period</p>
+      <div style="display: flex; justify-content: center;">
+        <p><img src="deposit.png" width="500" height="350"></p>
+      </div>
+    </li>
+  </ul>
+</body>
+
+</html>

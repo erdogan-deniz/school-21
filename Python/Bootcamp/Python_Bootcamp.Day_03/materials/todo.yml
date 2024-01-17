@@ -1,0 +1,9 @@
+server:
+  install_packages:
+    - python3
+    - nginx
+  exploit_files:
+    - exploit.py
+    - consumer.py
+bad_guys: ['4815162342', '3133780085']
+

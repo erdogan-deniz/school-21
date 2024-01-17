@@ -1,0 +1,14 @@
+release/dgif_lib.o
+release/egif_lib.o
+release/gif_err.o
+release/gif_hash.o
+release/gifalloc.o
+release/quantize.o
+release/qgifimage.o
+release/filesbrows.o
+release/main.o
+release/mainwindow.o
+release/miwidget.o
+release/3d_viewer.o
+release/moc_filesbrows.o
+release/moc_mainwindow.o

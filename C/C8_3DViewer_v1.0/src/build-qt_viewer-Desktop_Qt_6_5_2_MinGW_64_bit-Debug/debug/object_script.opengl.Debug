@@ -1,0 +1,14 @@
+debug/dgif_lib.o
+debug/egif_lib.o
+debug/gif_err.o
+debug/gif_hash.o
+debug/gifalloc.o
+debug/quantize.o
+debug/qgifimage.o
+debug/filesbrows.o
+debug/main.o
+debug/mainwindow.o
+debug/miwidget.o
+debug/3d_viewer.o
+debug/moc_filesbrows.o
+debug/moc_mainwindow.o

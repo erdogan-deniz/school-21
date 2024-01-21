@@ -1,0 +1,16 @@
+.header_style {
+    padding-top: 5%;
+    text-align: center;
+    }
+
+.table_style {
+    height: 40%;
+    width: 60%;
+    padding-left: 15%;
+    }
+
+.cell_style {
+    margin-top: 10%;
+    line-height: 25%;
+    padding-down: 25%;
+}

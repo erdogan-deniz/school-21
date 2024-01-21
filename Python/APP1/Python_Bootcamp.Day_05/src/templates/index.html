@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
+<form action="/new_list" method="POST">
+    {% extends "template.html" %}
+
+    {% block title %}
+        Welcome To The Audio File Manager!
+    {% endblock %}
+
+    {% block body %}
+        <h1 class="header_style"> The Audio File Manager! </h1>
+
+        <div>
+            <table class="table_style">
+                <tr>
+                    <td colspan="2" class="cell_style" valign="bottom">
+                        <h2> Add New Track To The List: </h2>
+                    </td>
+                </tr>
+
+                <tr  class="cell_style" style="height: 20%">
+                    <td valign="top" style="width:50%">
+                        <p><input type="text" name="new_track" id="new_track" style="width:100%" /></p>
+                    </td>
+
+                    <td valign="top" align="left">
+                        <button style="width:60%" > ADD  TRACK</button>
+                    </td>
+                </tr>
+
+                {% if new_track and new_track != "Incorrect File Or Format!"%}
+                    <h2 style="text-align: center;">The: <span style="color: blue">{{new_track}}</span> Has Been Added!</h2>
+                {% elif new_track == "Incorrect File Or Format!"%}
+                    <h2 style="color: red; text-align: center;"> ERROR! The File Was Incorrect </h2>
+                {% else %}
+                    <h2></h2>
+                {% endif %}
+
+                <tr class="cell_style">
+                    <td colspan="2" valign="middle">
+                        <h2> Current List Of Tracks: </h2>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td valign="top">
+                        {% for opt in musics %}
+                            <span style="width: 100%"> {{opt}} </span><br>
+                        {% endfor %}
+                    </td>
+                </tr>
+            </table>
+        </div>
+{% endblock %}
+</form>

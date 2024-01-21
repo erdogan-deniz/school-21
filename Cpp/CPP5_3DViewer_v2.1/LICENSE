@@ -1,1 +1,0 @@
-# School 21 License

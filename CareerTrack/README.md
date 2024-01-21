@@ -1,6 +1,6 @@
 # Career track projects ⏱
 
-* 1️⃣ SQL1  - ?/? % (? xp)
+* 1️⃣ Career track - ?/? % (? xp)
   * Skills: ?;
   * Tasks:
     * Project 00 - ?/? %

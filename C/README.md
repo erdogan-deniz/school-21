@@ -4,7 +4,7 @@
   * Description: in this project you will learn and develop basic Bash utilities for working with C programming language texts;
   * Tasks: working with the cat utility, working with grep utility, implementation of some grep utility flags, implementation of grep utility flag combinations;
   * Skills: Structured programming - 140, Linux - 70, C - 105, Algorithms - 35;
-  * Weaknesses: regex, unit-tests, docker, masks;
+  * Weaknesses: regex, unit-tests, docker, masks, all;
 * 2️⃣ s21_math - 100/100 % (300 xp)
   * Description: in this project you will develop your own version of the standard math.h library in the C programming language. This library implements basic mathematical operations;
   * Tasks: implementing the math.h library functions;

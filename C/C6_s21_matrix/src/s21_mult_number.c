@@ -1,19 +1,20 @@
 #include "s21_matrix.h"
 
 int s21_mult_number(matrix_t *A, double number, matrix_t *result) {
+  int exit_code = OK;
 
-    int status = OK;
-    
-    if (!s21_is_correct(A) || !s21_is_empty(result))
-        status = INCORRECT_MATRIX;
-
-    if (!status) {
-        s21_create_matrix(A->rows, A->columns, result);
-
-        for (int i = 0; i < A->rows; ++i)
-            for (int j = 0; j < A->columns; ++j) 
-                result->matrix[i][j] = A->matrix[i][j] * number;
+  if (s21_is_matrix_exists(A) && result) {
+    exit_code = s21_create_matrix(A->rows, A->columns, result);
+    if (exit_code != CALLOC_ERROR) {
+      for (int i = 0; i < A->rows; i++) {
+        for (int j = 0; j < A->columns; j++) {
+          result->matrix[i][j] = A->matrix[i][j] * number;
+        }
+      }
     }
+  } else {
+    exit_code = MATRIX_ERROR;
+  }
 
-    return status;
+  return exit_code;
 }

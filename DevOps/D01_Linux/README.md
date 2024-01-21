@@ -341,3 +341,6 @@ Do you want to learn how to work in VIM?
 
 ##### Remove all tasks from the job scheduler.
 - Add a screenshot of the list of current tasks for CRON to the report.
+
+
+💡 [Tap here](https://forms.yandex.ru/u/6357f435c09c02345cf48f1a/) **to leave your feedback on the project**. Pedago Team really tries to make your educational experience better.

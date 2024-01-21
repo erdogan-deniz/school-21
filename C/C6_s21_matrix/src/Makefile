@@ -1,10 +1,10 @@
-CC = gcc -std=c11
-CFLAGS = -Wall -Werror -Wextra
-GCOVFLAGS = -fprofile-arcs -ftest-coverage
-SRCS = $(wildcard s21_*.c)
-OBJS = $(SRCS:.c=.o)
-TESTSFLAGS_MAC = -lcheck -lm -fsanitize=address -g
-TESTSFLAGS_LINUX = -lcheck -lm -lpthread -lrt -lsubunit -fsanitize=address -g
+CC=gcc -std=c11
+CFLAGS=-Wall -Werror -Wextra
+GCOVFLAGS=-fprofile-arcs -ftest-coverage
+SRCS=$(wildcard s21_*.c)
+OBJS=$(SRCS:.c=.o)
+TESTSFLAGS_MAC=-lcheck -lm -fsanitize=address -g
+TESTSFLAGS_LINUX=-lcheck -lm -lpthread -lrt -lsubunit -fsanitize=address -g
 
 all: clean s21_matrix.a
 

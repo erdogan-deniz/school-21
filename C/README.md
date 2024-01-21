@@ -1,4 +1,4 @@
-# C projectsC ❤️
+# C projects ❤️
 
 * 1️⃣ SimpleBashUtils - 140/140 % (350 xp)
   * Description: in this project you will learn and develop basic Bash utilities for working with C programming language texts;

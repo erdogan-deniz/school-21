@@ -1,4 +1,4 @@
-# Survival pool 🎓
+# Survival pool 🤒
   
 * 1️⃣ T01D01 - 94/100 % (94 xp)
 * 2️⃣ T02D02 - 0/100 % (0 xp)

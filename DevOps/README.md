@@ -19,21 +19,21 @@
   * Description: real-time monitoring and research of the system status;
   * Tasks: ;
   * Skills: Shell/Bash - , Linux - , Network & system administration - , DevOps - , Structured programming - ;
-  * Weaknesses: >>> ;
+  * Weaknesses: ;
 * 5️⃣ SimpleDocker - ?/100 % (? xp)
   * Description: introduction to docker. Developing a simple docker image for your own server;
   * Tasks: ;
   * Skills: Network & system administration - , C - , Structured programming - , DevOps - , Backend - , Linux - ;
-  * Weaknesses: >>> ;
+  * Weaknesses: ;
 * 6️⃣ CICD - ?/100 % (? xp)
   * Description: development of a simple CI/CD for the SimpleBashUtils project. Building, testing, deployment;
   * Tasks: ;
   * Skills: DevOps - , Shell/Bash - , Linux - ;
-  * Weaknesses: >>> ;
+  * Weaknesses: ;
 * 7️⃣ DevOps Exam - ?/100 % (? xp)
   * Description: here are your DevOps exams. You have three attempts for each exam. Average score between exams must be above 75%;
   * Tasks: ;
   * Skills: Network & system administration - , Shell/Bash - , Linux - , DevOps - ;
-  * Weaknesses: >>> ;
+  * Weaknesses: ;
 
 AVG results - ?/100 % (? xp) 🥇🥈🥉

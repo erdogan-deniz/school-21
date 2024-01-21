@@ -4,4 +4,4 @@
 
 - My nickname - charisel 🐯
 - Campus - Moscow 🏙
-- Targets: Python, Algorithms, ML, Data Science 📊
+- Targets: Python, Algorithms, ML, Linux, SQL, Data Science 📊

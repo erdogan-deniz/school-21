@@ -281,7 +281,7 @@
 ![Display size of /var/log](Screenshots/task_twelve_log.png)
 
 * Size of all contents in "/var/log*":
-![Display all of /var/log](Screenshots/task_twelve_varlog.png)
+![Display all of /var/log](Screenshots/task_twelve_varlog*.png)
 
 
 ## Installing and using the ncdu utility:
@@ -311,10 +311,10 @@
 * Redact cron list by running the command "sudo crontab -e";
 
 *  Execution of CRON jobs:
-![cron_jobs_ex](Screenshots/task_fiveteen_cron_jobs_execution.png)
+![cron_jobs_ex](screenshots/task_fiveteen_cron_jobs_execution.png)
 
 * List of current jobs for CRON was displayed by running the command "sudo crontab -l":
-![cron_jobs_list](Screenshots/task_fiveteen_cron_job_list.png)
+![cron_jobs_list](screenshots/task_fiveteen_cron_job_list.png)
 
 * List of current jobs for CRON after removing all tasksk from the job scheduler was displayed by running the command "sudo crontab -l":
-![cron_jobs_list](Screenshots/task_fiveteen_cron_remove_jobs.png)
+![cron_jobs_list](screenshots/task_fiveteen_cron_remove_jobs.png)

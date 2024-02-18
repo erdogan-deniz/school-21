@@ -1,0 +1,1203 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Guide" href="manual.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Technical documentation** - Escape From The Cyber World! 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Escape From The Cyber World! 1.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/logo.jpg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Escape From The Cyber World! 1.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="manual.html"><strong>Guide</strong></a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Technical documentation**</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="technical-documentation">
+<h1>Technical documentation**<a class="headerlink" href="#technical-documentation" title="Link to this heading">#</a></h1>
+<section id="data-modules">
+<h2><strong>Data modules</strong><a class="headerlink" href="#data-modules" title="Link to this heading">#</a></h2>
+<section id="module-load_all">
+<span id="load-all-py"></span><h3><em>load_all.py</em>:<a class="headerlink" href="#module-load_all" title="Link to this heading">#</a></h3>
+<p>The module is used to fill in the tables: NPCs, Enemies, Dialogs, Tasks, Protagonists, Locations.</p>
+<dl class="simple">
+<dt>Functions:</dt><dd><p>load_all - The function fills in the listed tables.</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="load_all.load_all">
+<span class="sig-prename descclassname"><span class="pre">load_all.</span></span><span class="sig-name descname"><span class="pre">load_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_all.load_all" title="Link to this definition">#</a></dt>
+<dd><p>The function for filling in all database tables.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>It does not return anything, but only fill the tables.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Raise<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Exception: If we get error of filling data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-load_data">
+<span id="load-data-py"></span><h3><em>load_data.py</em>:<a class="headerlink" href="#module-load_data" title="Link to this heading">#</a></h3>
+<p>The module is used to fill in the tables: NPCs, Enemies, Dialogs, Tasks, Protagonists.</p>
+<dl class="simple">
+<dt>Functions:</dt><dd><p>load_data - The function fills in the listed tables.</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="load_data.load_data">
+<span class="sig-prename descclassname"><span class="pre">load_data.</span></span><span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_data.load_data" title="Link to this definition">#</a></dt>
+<dd><p>The function for filling in all database tables without map.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>It does not return anything, but only fill the tables.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Raise<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Exception: If we get error of filling data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-load_map">
+<span id="load-map-py"></span><h3><em>load_map.py</em>:<a class="headerlink" href="#module-load_map" title="Link to this heading">#</a></h3>
+<p>The module is used to fill in the table Locations.</p>
+<dl class="simple">
+<dt>Functions:</dt><dd><p>load_map - The function fill in the table.</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="load_map.load_map">
+<span class="sig-prename descclassname"><span class="pre">load_map.</span></span><span class="sig-name descname"><span class="pre">load_map</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_map.load_map" title="Link to this definition">#</a></dt>
+<dd><p>The function for filling map table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>It does not return anything, but only fill the table.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Raise<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Exception: If we get error of filling data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-data">
+<span id="data-py"></span><h3><em>data.py</em>:<a class="headerlink" href="#module-data" title="Link to this heading">#</a></h3>
+<p>The data.</p>
+<p>This module is used as a collection of data required for uploading to databases, also file can also be imported as a
+module.</p>
+</section>
+</section>
+<section id="database-modules">
+<h2><strong>Database modules</strong><a class="headerlink" href="#database-modules" title="Link to this heading">#</a></h2>
+<section id="module-database">
+<span id="database-py"></span><h3><em>database.py</em>:<a class="headerlink" href="#module-database" title="Link to this heading">#</a></h3>
+<p>The module has the minimum and necessary functionality to work with the database.</p>
+<dl class="simple">
+<dt>Functions:</dt><dd><p>configuration_database - The function parses all the necessary database parameters.
+connection_database - The function connects to the database.
+close_connection_database - The function disconnects from the database.
+drop_tables - The function deletes all existing tables.
+create_tables - The function creates tables if they do not exist.
+load_information - The function completely fills in the table.
+get_row - The function writes one entity to a table.</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="database.close_connection_database">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">close_connection_database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#database.close_connection_database" title="Link to this definition">#</a></dt>
+<dd><p>The function to close database connection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>connection</strong> (<em>psycopg2.extensions.connection.</em>) – The connector to the database.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>It does not return anything, but only changes the state of the connector.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None.</p>
+</dd>
+<dt class="field-even">Raise<span class="colon">:</span></dt>
+<dd class="field-even"><p>Exception: If it was not possible to connect to the database.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.configuration_database">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">configuration_database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'database.ini'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">section</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'postgresql'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#database.configuration_database" title="Link to this definition">#</a></dt>
+<dd><p>The function to configure connection to the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str.</em>) – The file names for getting connection parameters.</p></li>
+<li><p><strong>section</strong> (<em>str.</em>) – The dbms names.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The dictionary of connection parameters.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict.</p>
+</dd>
+<dt class="field-even">Raise<span class="colon">:</span></dt>
+<dd class="field-even"><p>Exception: If we get incorrect argument.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.connection_database">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">connection_database</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#database.connection_database" title="Link to this definition">#</a></dt>
+<dd><p>The database connection function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The connector to the database.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>psycopg2.extensions.connection.</p>
+</dd>
+<dt class="field-odd">Raise<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Exception: If it was not possible to connect to the database.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.create_tables">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">create_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#database.create_tables" title="Link to this definition">#</a></dt>
+<dd><p>The function of creating database tables.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>It does not return anything, but only changes the state of the connector.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.drop_tables">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">drop_tables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tables</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#database.drop_tables" title="Link to this definition">#</a></dt>
+<dd><p>The function to drop all existing tables.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tables</strong> (<em>list.</em>) – The list of tables name.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>It does not return anything, but only changes the state of the connector.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None.</p>
+</dd>
+<dt class="field-even">Raise<span class="colon">:</span></dt>
+<dd class="field-even"><p>Exception: If we don’t get tables names.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.get_row">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">get_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#database.get_row" title="Link to this definition">#</a></dt>
+<dd><p>The function for getting a specific row of an arbitrary table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_number</strong> (<em>int.</em>) – The number of string in the database.</p></li>
+<li><p><strong>table_name</strong> (<em>str.</em>) – The name of the table for requests.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Return turple of values for one entity in database.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple.</p>
+</dd>
+<dt class="field-even">Raise<span class="colon">:</span></dt>
+<dd class="field-even"><p>Exception: If we get argument of incorrect type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.load_information">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">load_information</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loading_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#database.load_information" title="Link to this definition">#</a></dt>
+<dd><p>The function for uploading data to the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>loading_data</strong> (<em>list.</em>) – The list of sql queries.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>It does not return anything, but changed connector status.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None.</p>
+</dd>
+<dt class="field-even">Raise<span class="colon">:</span></dt>
+<dd class="field-even"><p>Exception: If we get argument of incorrect type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-additional">
+<span id="additional-py"></span><h3><em>additional.py</em>:<a class="headerlink" href="#module-additional" title="Link to this heading">#</a></h3>
+<p>The module of additional functions necessary for the bot to work.</p>
+<dl class="simple">
+<dt>Functions:</dt><dd><p>clear_string - The function of clearing the string of unnecessary characters.
+get_time - Function for getting a current time.
+get_date - Function for getting a current date.
+get_name - Function for getting a random name.
+get_surname - Function for getting a random surname.
+get_dialogs - A function for getting a dialog in the form of a tuple of lists.
+print_dialogs - The function prints the entire dialogue between the protagonist and the NPC.</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="additional.clear_string">
+<span class="sig-prename descclassname"><span class="pre">additional.</span></span><span class="sig-name descname"><span class="pre">clear_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#additional.clear_string" title="Link to this definition">#</a></dt>
+<dd><p>The function for clearing the text of the characters of the film adaptation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str.</em>) – The text that will be cleaned.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The cleaned line.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str.</p>
+</dd>
+<dt class="field-even">Raise<span class="colon">:</span></dt>
+<dd class="field-even"><p>Exception: If we get incorrect argument.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="additional.get_date">
+<span class="sig-prename descclassname"><span class="pre">additional.</span></span><span class="sig-name descname"><span class="pre">get_date</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#additional.get_date" title="Link to this definition">#</a></dt>
+<dd><p>The function of getting the current date.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The date.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="additional.get_dialogs">
+<span class="sig-prename descclassname"><span class="pre">additional.</span></span><span class="sig-name descname"><span class="pre">get_dialogs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#additional.get_dialogs" title="Link to this definition">#</a></dt>
+<dd><p>The function of creating a tuple of a hero’s dialogue with an unknown NPC.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>location_id</strong> (<em>int.</em>) – The location from which we take data.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A turple of replicas of each character.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple.</p>
+</dd>
+<dt class="field-even">Raise<span class="colon">:</span></dt>
+<dd class="field-even"><p>Exception: If we get incorrect argument.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="additional.get_name">
+<span class="sig-prename descclassname"><span class="pre">additional.</span></span><span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#additional.get_name" title="Link to this definition">#</a></dt>
+<dd><p>The function to get random protagonist name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The random name.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="additional.get_surname">
+<span class="sig-prename descclassname"><span class="pre">additional.</span></span><span class="sig-name descname"><span class="pre">get_surname</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#additional.get_surname" title="Link to this definition">#</a></dt>
+<dd><p>The function to get random protagonist surname.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The random surname.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="additional.get_time">
+<span class="sig-prename descclassname"><span class="pre">additional.</span></span><span class="sig-name descname"><span class="pre">get_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#additional.get_time" title="Link to this definition">#</a></dt>
+<dd><p>The function of getting the current time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The time.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="additional.print_dialogs">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">additional.</span></span><span class="sig-name descname"><span class="pre">print_dialogs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dialogs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#additional.print_dialogs" title="Link to this definition">#</a></dt>
+<dd><p>The function for displaying all dialog messages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dialogs</strong> (<em>tuple.</em>) – The phrases.</p></li>
+<li><p><strong>message</strong> (<em>Message.</em>) – The context of the bot work is necessary for output to a specific chat.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A turple of replicas of each character.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple.</p>
+</dd>
+<dt class="field-even">Raise<span class="colon">:</span></dt>
+<dd class="field-even"><p>Exception: If we get incorrect argument.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+<section id="entities-modules">
+<h2><strong>Entities modules</strong><a class="headerlink" href="#entities-modules" title="Link to this heading">#</a></h2>
+<section id="module-enemy">
+<span id="enemy-py"></span><h3><em>enemy.py</em>:<a class="headerlink" href="#module-enemy" title="Link to this heading">#</a></h3>
+<p>This one is responsible for all actions with the class representative Enemy.</p>
+<dl class="simple">
+<dt>Classes:</dt><dd><p>Enemy - A class for an analog of working with an enemy.</p>
+</dd>
+<dt>Functions:</dt><dd><p>set_enemy - A function for filling in the data fields of a class representative Enemy.</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="enemy.Enemy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enemy.</span></span><span class="sig-name descname"><span class="pre">Enemy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enemy_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enemy_armor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enemy_health</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enemy_agility</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enemy_strength</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enemy_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#enemy.Enemy" title="Link to this definition">#</a></dt>
+<dd><p>This is a conceptual class representation of an Enemy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>enemy_id</strong> (<em>int.</em>) – Unique number of the enemy.</p></li>
+<li><p><strong>enemy_armor</strong> (<em>int.</em>) – The armor of the enemy.</p></li>
+<li><p><strong>enemy_health</strong> (<em>int.</em>) – The health of the enemy.</p></li>
+<li><p><strong>enemy_agility</strong> (<em>int.</em>) – The agility of the enemy.</p></li>
+<li><p><strong>enemy_strength</strong> (<em>int.</em>) – The strength of the enemy.</p></li>
+<li><p><strong>enemy_name</strong> (<em>str.</em>) – The name of the enemy.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enemy.Enemy.print_parameters">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">print_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#enemy.Enemy.print_parameters" title="Link to this definition">#</a></dt>
+<dd><p>The method outputs the necessary information about enemy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>Message.</em>) – The context of the bot work is necessary for output to a specific chat.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>It does not return anything, but only outputs to the chat.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="enemy.set_enemy">
+<span class="sig-prename descclassname"><span class="pre">enemy.</span></span><span class="sig-name descname"><span class="pre">set_enemy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Location</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#enemy.set_enemy" title="Link to this definition">#</a></dt>
+<dd><p>The function of setting data for a specific enemy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>current_location</strong> (<em>Location.</em>) – The location from which we take data for the enemy.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A representative of the class with the completed data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Enemy.</p>
+</dd>
+<dt class="field-even">Raise<span class="colon">:</span></dt>
+<dd class="field-even"><p>Exception: If we get incorrect argument.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-location">
+<span id="location-py"></span><h3><em>location.py</em>:<a class="headerlink" href="#module-location" title="Link to this heading">#</a></h3>
+<p>This one is responsible for all actions with the class representative Location.</p>
+<dl class="simple">
+<dt>Classes:</dt><dd><p>Location - A class for an analog of working with a location.</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="location.Location">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">location.</span></span><span class="sig-name descname"><span class="pre">Location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_npc_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_top_side</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_bot_side</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_enemy_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_left_side</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_right_side</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_required_item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_area</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#location.Location" title="Link to this definition">#</a></dt>
+<dd><p>This is a conceptual class representation of a Location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>location_id</strong> (<em>int.</em>) – Unique number of the location.</p></li>
+<li><p><strong>location_item</strong> (<em>int.</em>) – The item that is located on the location.</p></li>
+<li><p><strong>location_name</strong> (<em>str.</em>) – The name of the location.</p></li>
+<li><p><strong>location_npc_id</strong> (<em>int.</em>) – The unique number of npc whose is on location.</p></li>
+<li><p><strong>location_top_side</strong> (<em>int.</em>) – The unique location number on top.</p></li>
+<li><p><strong>location_bot_side</strong> (<em>int.</em>) – The unique location number on bot.</p></li>
+<li><p><strong>location_enemy_id</strong> (<em>int.</em>) – The unique number of npc whose is on location.</p></li>
+<li><p><strong>location_type</strong> (<em>str.</em>) – The type of location.</p></li>
+<li><p><strong>location_left_side</strong> (<em>int.</em>) – The unique location number on left.</p></li>
+<li><p><strong>location_right_side</strong> (<em>int.</em>) – The unique location number on right.</p></li>
+<li><p><strong>location_description</strong> (<em>str.</em>) – Description of the location.</p></li>
+<li><p><strong>current_required_item</strong> (<em>str.</em>) – The item is necessary to complete the location.</p></li>
+<li><p><strong>location_area</strong> (<em>str.</em>) – The area of the location.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="location.Location.print_parameters">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">print_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#location.Location.print_parameters" title="Link to this definition">#</a></dt>
+<dd><p>The method outputs the necessary information about location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>Message.</em>) – The context of the bot work is necessary for output to a specific chat.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>It does not return anything, but only outputs to the chat.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-npc">
+<span id="npc-py"></span><h3><em>npc.py</em>:<a class="headerlink" href="#module-npc" title="Link to this heading">#</a></h3>
+<p>This one is responsible for all actions with the class representative NPC.</p>
+<dl class="simple">
+<dt>Classes:</dt><dd><p>NPC - A class for an analog of working with a NPC.</p>
+</dd>
+<dt>Functions:</dt><dd><p>set_npc - A method for filling in the data fields of a class representative NPC.</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="npc.NPC">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">npc.</span></span><span class="sig-name descname"><span class="pre">NPC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">npc_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">npc_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">npc_item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">npc_description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#npc.NPC" title="Link to this definition">#</a></dt>
+<dd><p>This is a conceptual class representation of an NPC.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>npc_id</strong> (<em>int.</em>) – Unique number of the NPC.</p></li>
+<li><p><strong>npc_name</strong> (<em>str.</em>) – The name of the NPC.</p></li>
+<li><p><strong>npc_item</strong> (<em>str.</em>) – The item of the NPC.</p></li>
+<li><p><strong>npc_description</strong> (<em>str.</em>) – Description of a neutral character.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="npc.NPC.print_parameters">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">print_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#npc.NPC.print_parameters" title="Link to this definition">#</a></dt>
+<dd><p>The method outputs the necessary information about NPC.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>Message.</em>) – The context of the bot work is necessary for output to a specific chat.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>It does not return anything, but only outputs to the chat.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="npc.set_npc">
+<span class="sig-prename descclassname"><span class="pre">npc.</span></span><span class="sig-name descname"><span class="pre">set_npc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Location</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#npc.set_npc" title="Link to this definition">#</a></dt>
+<dd><p>The function of setting data for a specific npc.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>current_location</strong> (<em>Location.</em>) – The location from which we take data for the npc.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A representative of the class with the completed data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>NPC.</p>
+</dd>
+<dt class="field-even">Raise<span class="colon">:</span></dt>
+<dd class="field-even"><p>Exception: If we get incorrect argument.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-protagonist">
+<span id="protagonist-py"></span><h3><em>protagonist.py</em>:<a class="headerlink" href="#module-protagonist" title="Link to this heading">#</a></h3>
+<p>This one is responsible for all actions with the class representative Protagonist.</p>
+<dl class="simple">
+<dt>Classes:</dt><dd><p>Protagonist - A class for an analog of working with a protagonist.</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="protagonist.Protagonist">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">protagonist.</span></span><span class="sig-name descname"><span class="pre">Protagonist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">protagonist_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protagonist_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#protagonist.Protagonist" title="Link to this definition">#</a></dt>
+<dd><p>This is a conceptual class representation of a Protagonist.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>protagonist_id</strong> (<em>int.</em>) – Unique number of the protagonist.</p></li>
+<li><p><strong>protagonist_type</strong> (<em>int.</em>) – The type of the protagonist.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>armor</strong> (<em>int.</em>) – The protagonist’s armor.</p>
+</dd>
+</dl>
+<p>:ivar health:The protagonist’s health.
+:vartype health: int.
+:ivar agility: The protagonist’s agility.
+:vartype agility: int.
+:ivar strength: The protagonist’s strength.
+:vartype strength: int.
+:ivar level: The protagonist’s level.
+:vartype level: int.
+:ivar name: The protagonist’s name (randomly selected by other methods).
+:vartype name: str.
+:ivar inventory: The protagonist’s inventory (contains names of items).
+:vartype inventory: list.
+:ivar talked_npcs: The list of NPCs that the main character will talk to.
+:vartype talked_npcs: list.
+:ivar passed_tasks: The list of tasks that the protagonist has passed.
+:vartype passed_tasks: list.
+:ivar current_tasks: The list of tasks that the protagonist currently has.
+:vartype current_tasks: list.
+:ivar defeated_enemies: The list of enemies that the protagonist has defeated.
+:vartype defeated_enemies: list.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="protagonist.Protagonist.fight">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_enemy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Enemy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#protagonist.Protagonist.fight" title="Link to this definition">#</a></dt>
+<dd><p>The method for a phased battle with the enemy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>current_enemy</strong> (<em>Enemy.</em>) – The entity of the enemy for the battle.</p></li>
+<li><p><strong>message</strong> (<em>Message.</em>) – The context of the bot work is necessary for output to a specific chat.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>It does not return anything, but fully displays the battle.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None.</p>
+</dd>
+<dt class="field-even">Raise<span class="colon">:</span></dt>
+<dd class="field-even"><p>Exception: If we get incorrect argument.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="protagonist.Protagonist.go">
+<span class="sig-name descname"><span class="pre">go</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Location</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#protagonist.Protagonist.go" title="Link to this definition">#</a></dt>
+<dd><p>The method of getting available transitions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>current_location</strong> (<em>Location.</em>) – The current location where is a protagonist.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>It does not return anything, but output available locations.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None.</p>
+</dd>
+<dt class="field-even">Raise<span class="colon">:</span></dt>
+<dd class="field-even"><p>Exception: If we get incorrect argument.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="protagonist.Protagonist.print_parameters">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">print_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#protagonist.Protagonist.print_parameters" title="Link to this definition">#</a></dt>
+<dd><p>The method outputs the necessary information about protagonist.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>Message.</em>) – The context of the bot work is necessary for output to a specific chat.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>It does not return anything, but only outputs to the chat.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="protagonist.Protagonist.set_level">
+<span class="sig-name descname"><span class="pre">set_level</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#protagonist.Protagonist.set_level" title="Link to this definition">#</a></dt>
+<dd><p>The method of recalculating the level of the main character.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>It does not return anything, but calculate and set level.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="protagonist.Protagonist.set_parameters">
+<span class="sig-name descname"><span class="pre">set_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#protagonist.Protagonist.set_parameters" title="Link to this definition">#</a></dt>
+<dd><p>The method calculates the characteristics of a character relative to its type and items.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>It does not return anything, but only sets parameters of protagonist.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Raise<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Exception: If we do not have item or type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="protagonist.Protagonist.set_start_item">
+<span class="sig-name descname"><span class="pre">set_start_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">protagonist_item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#protagonist.Protagonist.set_start_item" title="Link to this definition">#</a></dt>
+<dd><p>The method to add item to the protagonist inventory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>protagonist_item</strong> (<em>str.</em>) – The item for protagonist inventory.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>It does not return anything, but only adds an item to the inventory.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None.</p>
+</dd>
+<dt class="field-even">Raise<span class="colon">:</span></dt>
+<dd class="field-even"><p>Exception: If we get incorrect argument.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="protagonist.Protagonist.set_type">
+<span class="sig-name descname"><span class="pre">set_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">protagonist_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#protagonist.Protagonist.set_type" title="Link to this definition">#</a></dt>
+<dd><p>Thу method for setting the type of protagonist.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>protagonist_type</strong> (<em>str.</em>) – The type of protagonist to install.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>It does not return anything, but only sets the type.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None.</p>
+</dd>
+<dt class="field-even">Raise<span class="colon">:</span></dt>
+<dd class="field-even"><p>Exception: If we get incorrect argument.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="protagonist.Protagonist.take_hit">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">take_hit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Message</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#protagonist.Protagonist.take_hit" title="Link to this definition">#</a></dt>
+<dd><p>The method of recalculating health after taking damage.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>int.</em>) – The value of the damage received.</p></li>
+<li><p><strong>message</strong> (<em>Message.</em>) – The context of the bot work is necessary for output to a specific chat.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>It does not return anything, but calculate health after taking damage.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None.</p>
+</dd>
+<dt class="field-even">Raise<span class="colon">:</span></dt>
+<dd class="field-even"><p>Exception: If we get incorrect argument.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="protagonist.Protagonist.whereami">
+<span class="sig-name descname"><span class="pre">whereami</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Location</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#protagonist.Protagonist.whereami" title="Link to this definition">#</a></dt>
+<dd><p>The method to print current location description.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>current_location</strong> (<em>Location.</em>) – The current location where is a protagonist.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>It does not return anything, but output location description.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None.</p>
+</dd>
+<dt class="field-even">Raise<span class="colon">:</span></dt>
+<dd class="field-even"><p>Exception: If we get incorrect argument.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-task">
+<span id="task-py"></span><h3><em>task.py</em>:<a class="headerlink" href="#module-task" title="Link to this heading">#</a></h3>
+<p>This one is responsible for all actions with the class representative Task.</p>
+<dl class="simple">
+<dt>Classes:</dt><dd><p>Task - A class for an analog of working with a task.</p>
+</dd>
+<dt>Functions:</dt><dd><p>set_task - A function for filling in the data fields of a class representative Task.</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="task.Task">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">task.</span></span><span class="sig-name descname"><span class="pre">Task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_difficult</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#task.Task" title="Link to this definition">#</a></dt>
+<dd><p>This is a conceptual class representation of a Task.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>task_id</strong> (<em>str.</em>) – The unique number of task.</p></li>
+<li><p><strong>task_name</strong> – The name of task.</p></li>
+<li><p><strong>task_description</strong> (<em>str.</em>) – The description of the task.</p></li>
+<li><p><strong>task_difficult</strong> (<em>str.</em>) – The difficult of the task.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="task.Task.print_parameters">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">print_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#task.Task.print_parameters" title="Link to this definition">#</a></dt>
+<dd><p>The method outputs the necessary information about task.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>Message.</em>) – The context of the bot work is necessary for output to a specific chat.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>It does not return anything, but only outputs to the chat.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="task.set_task">
+<span class="sig-prename descclassname"><span class="pre">task.</span></span><span class="sig-name descname"><span class="pre">set_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Location</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#task.set_task" title="Link to this definition">#</a></dt>
+<dd><p>The function of setting data for a specific task.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>current_location</strong> (<em>Location.</em>) – The location from which we take data for the task.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A representative of the class with the completed data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Task.</p>
+</dd>
+<dt class="field-even">Raise<span class="colon">:</span></dt>
+<dd class="field-even"><p>Exception: If we get incorrect argument.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+<section id="bot-modules">
+<h2><strong>Bot modules</strong><a class="headerlink" href="#bot-modules" title="Link to this heading">#</a></h2>
+<section id="start-py">
+<h3><em>start.py</em>:<a class="headerlink" href="#start-py" title="Link to this heading">#</a></h3>
+</section>
+<section id="module-bot_data">
+<span id="bot-data-py"></span><h3><em>bot_data.py</em>:<a class="headerlink" href="#module-bot_data" title="Link to this heading">#</a></h3>
+<p>The module is used as a dataset for working with the bot.</p>
+<p>It can be imported into other files to work with.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="manual.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title"><strong>Guide</strong></div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, Deniz Erdogan
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Technical documentation**</a><ul>
+<li><a class="reference internal" href="#data-modules"><strong>Data modules</strong></a><ul>
+<li><a class="reference internal" href="#module-load_all"><em>load_all.py</em>:</a><ul>
+<li><a class="reference internal" href="#load_all.load_all"><code class="docutils literal notranslate"><span class="pre">load_all()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-load_data"><em>load_data.py</em>:</a><ul>
+<li><a class="reference internal" href="#load_data.load_data"><code class="docutils literal notranslate"><span class="pre">load_data()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-load_map"><em>load_map.py</em>:</a><ul>
+<li><a class="reference internal" href="#load_map.load_map"><code class="docutils literal notranslate"><span class="pre">load_map()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-data"><em>data.py</em>:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#database-modules"><strong>Database modules</strong></a><ul>
+<li><a class="reference internal" href="#module-database"><em>database.py</em>:</a><ul>
+<li><a class="reference internal" href="#database.close_connection_database"><code class="docutils literal notranslate"><span class="pre">close_connection_database()</span></code></a></li>
+<li><a class="reference internal" href="#database.configuration_database"><code class="docutils literal notranslate"><span class="pre">configuration_database()</span></code></a></li>
+<li><a class="reference internal" href="#database.connection_database"><code class="docutils literal notranslate"><span class="pre">connection_database()</span></code></a></li>
+<li><a class="reference internal" href="#database.create_tables"><code class="docutils literal notranslate"><span class="pre">create_tables()</span></code></a></li>
+<li><a class="reference internal" href="#database.drop_tables"><code class="docutils literal notranslate"><span class="pre">drop_tables()</span></code></a></li>
+<li><a class="reference internal" href="#database.get_row"><code class="docutils literal notranslate"><span class="pre">get_row()</span></code></a></li>
+<li><a class="reference internal" href="#database.load_information"><code class="docutils literal notranslate"><span class="pre">load_information()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-additional"><em>additional.py</em>:</a><ul>
+<li><a class="reference internal" href="#additional.clear_string"><code class="docutils literal notranslate"><span class="pre">clear_string()</span></code></a></li>
+<li><a class="reference internal" href="#additional.get_date"><code class="docutils literal notranslate"><span class="pre">get_date()</span></code></a></li>
+<li><a class="reference internal" href="#additional.get_dialogs"><code class="docutils literal notranslate"><span class="pre">get_dialogs()</span></code></a></li>
+<li><a class="reference internal" href="#additional.get_name"><code class="docutils literal notranslate"><span class="pre">get_name()</span></code></a></li>
+<li><a class="reference internal" href="#additional.get_surname"><code class="docutils literal notranslate"><span class="pre">get_surname()</span></code></a></li>
+<li><a class="reference internal" href="#additional.get_time"><code class="docutils literal notranslate"><span class="pre">get_time()</span></code></a></li>
+<li><a class="reference internal" href="#additional.print_dialogs"><code class="docutils literal notranslate"><span class="pre">print_dialogs()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#entities-modules"><strong>Entities modules</strong></a><ul>
+<li><a class="reference internal" href="#module-enemy"><em>enemy.py</em>:</a><ul>
+<li><a class="reference internal" href="#enemy.Enemy"><code class="docutils literal notranslate"><span class="pre">Enemy</span></code></a><ul>
+<li><a class="reference internal" href="#enemy.Enemy.print_parameters"><code class="docutils literal notranslate"><span class="pre">Enemy.print_parameters()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#enemy.set_enemy"><code class="docutils literal notranslate"><span class="pre">set_enemy()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-location"><em>location.py</em>:</a><ul>
+<li><a class="reference internal" href="#location.Location"><code class="docutils literal notranslate"><span class="pre">Location</span></code></a><ul>
+<li><a class="reference internal" href="#location.Location.print_parameters"><code class="docutils literal notranslate"><span class="pre">Location.print_parameters()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-npc"><em>npc.py</em>:</a><ul>
+<li><a class="reference internal" href="#npc.NPC"><code class="docutils literal notranslate"><span class="pre">NPC</span></code></a><ul>
+<li><a class="reference internal" href="#npc.NPC.print_parameters"><code class="docutils literal notranslate"><span class="pre">NPC.print_parameters()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#npc.set_npc"><code class="docutils literal notranslate"><span class="pre">set_npc()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-protagonist"><em>protagonist.py</em>:</a><ul>
+<li><a class="reference internal" href="#protagonist.Protagonist"><code class="docutils literal notranslate"><span class="pre">Protagonist</span></code></a><ul>
+<li><a class="reference internal" href="#protagonist.Protagonist.fight"><code class="docutils literal notranslate"><span class="pre">Protagonist.fight()</span></code></a></li>
+<li><a class="reference internal" href="#protagonist.Protagonist.go"><code class="docutils literal notranslate"><span class="pre">Protagonist.go()</span></code></a></li>
+<li><a class="reference internal" href="#protagonist.Protagonist.print_parameters"><code class="docutils literal notranslate"><span class="pre">Protagonist.print_parameters()</span></code></a></li>
+<li><a class="reference internal" href="#protagonist.Protagonist.set_level"><code class="docutils literal notranslate"><span class="pre">Protagonist.set_level()</span></code></a></li>
+<li><a class="reference internal" href="#protagonist.Protagonist.set_parameters"><code class="docutils literal notranslate"><span class="pre">Protagonist.set_parameters()</span></code></a></li>
+<li><a class="reference internal" href="#protagonist.Protagonist.set_start_item"><code class="docutils literal notranslate"><span class="pre">Protagonist.set_start_item()</span></code></a></li>
+<li><a class="reference internal" href="#protagonist.Protagonist.set_type"><code class="docutils literal notranslate"><span class="pre">Protagonist.set_type()</span></code></a></li>
+<li><a class="reference internal" href="#protagonist.Protagonist.take_hit"><code class="docutils literal notranslate"><span class="pre">Protagonist.take_hit()</span></code></a></li>
+<li><a class="reference internal" href="#protagonist.Protagonist.whereami"><code class="docutils literal notranslate"><span class="pre">Protagonist.whereami()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-task"><em>task.py</em>:</a><ul>
+<li><a class="reference internal" href="#task.Task"><code class="docutils literal notranslate"><span class="pre">Task</span></code></a><ul>
+<li><a class="reference internal" href="#task.Task.print_parameters"><code class="docutils literal notranslate"><span class="pre">Task.print_parameters()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#task.set_task"><code class="docutils literal notranslate"><span class="pre">set_task()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bot-modules"><strong>Bot modules</strong></a><ul>
+<li><a class="reference internal" href="#start-py"><em>start.py</em>:</a></li>
+<li><a class="reference internal" href="#module-bot_data"><em>bot_data.py</em>:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

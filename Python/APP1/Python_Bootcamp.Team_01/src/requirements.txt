@@ -1,0 +1,6 @@
+furo
+pytest
+sphinx
+aiogram
+sqlalchemy
+psycopg2-binary

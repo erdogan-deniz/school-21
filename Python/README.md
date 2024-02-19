@@ -1,57 +1,45 @@
 # Python projects 🐍
 
-* 1️⃣ APP1  - ?/? % (? xp)
+* 1️⃣ APP1  - 177/117 % (1750 xp)
   * Description: Python Bootcamp;
-  * Skills: ?;
+  * Skills: Web - 136, Structured programming - 191, Python - 946, Algorithms - 43, DB & Data - 109, Parallel computing - 23, Backend - 107, Types and data structures - 162, Shell/Bash - 28, Graphics - 23, Leadership - 15;
   * Tasks:
-    * Day00 - 120/120 %
-      * Description: help the world's famous detective to defend London;
-      * Tasks: blockchain, decypher, track and capture;
-      * Weaknesses: empty;
+    * Day00 - 100/100 %
+      * Description: Help the world's famous detective to defend London;
+      * Weaknesses: Empty;
     * Day01 - 120/120 %
-      * Description: help three honorable gentlemen to figure out the better way;
-      * Tasks: functional purse, splitwise, burglar alarm;
-      * Weaknesses: ;
+      * Description: Help three honorable gentlemen to figure out the better way;
+      * Weaknesses: understanding;
     * Day02 - 120/120 %
-      * Description: discover the mysteries of a closed Vault;
-      * Tasks: gaining access, morality;
-      * Weaknesses: ;
+      * Description: Discover the mysteries of a closed Vault;
+      * Weaknesses: Empty;
     * Day03 - 120/120 %
-      * Description: fight the system, help the people;
-      * Tasks: innocent prank, cash flow, deploy;
-      * Weaknesses: ;
+      * Description: Fight the system, help the people;
+      * Weaknesses: Empty;
     * Day04 - 120/120 %
-      * Description: the cake is not a lie;
-      * Tasks: energy flow, personalities, backpressure;
-      * Weaknesses: ;
+      * Description: The cake is not a lie;
+      * Weaknesses: The bonus part of the first task;
     * Team00 - 120/120 %
-      * Description: magical connections;
-      * Tasks: old style, shortcuts, greatest magicians;
-      * Weaknesses: all;
+      * Description: Magical connections;
+      * Weaknesses: All;
     * Day05 - 120/120 %
-      * Description: wibbly-wobbly, timey-wimey stuff;
-      * Tasks: ;
-      * Weaknesses: ;
+      * Description: Wibbly-wobbly, timey-wimey stuff;
+      * Weaknesses: Not fully mastered parallelism;
     * Day06 - 120/120 %
-      * Description: that Kind of Battle Training;
-      * Tasks: ;
-      * Weaknesses: ;
-    * Day07 - ?/? %
-      * Description: is there a difference;
-      * Tasks: ;
-      * Weaknesses: ;
-    * Day08 - ?/? %
-      * Description: temet Nosce;
-      * Tasks: ;
-      * Weaknesses: ;
-    * Day09 - ?/? %
-      * Description: fast and Curious;
-      * Tasks: ;
-      * Weaknesses: ;
-    * Team01 - ?/? %
-      * Description: game Night;
-      * Tasks: ;
-      * Weaknesses: ;
+      * Description: That Kind of Battle Training;
+      * Weaknesses: Empty;
+    * Day07 - 100/100 %
+      * Description: Is there a difference;
+      * Weaknesses: Empty;
+    * Day08 - 120/120 %
+      * Description: Temet Nosce;
+      * Weaknesses: Empty;
+    * Day09 - 120/120 %
+      * Description: Fast and Curious;
+      * Weaknesses: diV instead div (because Cython has div);
+    * Team01 - 120/120 %
+      * Description: Game Night;
+      * Weaknesses: Russification;
 * 2️⃣ SmartCalc_v3.0 Desktop - ?/? % (? xp)
   * Description: in this project you will implement an extended version of the usual calculator in the Python programming language, which implements the same functions as the previously developed application in the SmartCalc v2.0 project. You will improve your skills in the new programming language, learn the MVP or MVVM pattern, and add the help and history functionality to the application;
   * Tasks: ;

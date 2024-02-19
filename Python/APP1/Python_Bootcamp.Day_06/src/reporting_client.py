@@ -1,6 +1,7 @@
-# Necessary modules:
+# Necessary functions and classes:
 from __future__ import print_function
 
+# Necessary modules:
 import sys
 import grpc
 import ex00_pb2

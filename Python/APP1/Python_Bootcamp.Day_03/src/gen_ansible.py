@@ -13,7 +13,7 @@ def ansible_install_packages_module(install_packages: list):
 
             "ansible.built.apt":
             {
-                "pgk": install_packages,  # If we have than 1 package then use "pgk" else "name"
+                "pgk": install_packages,  # If we have than 1 package, then use "pgk" else "name"
                 "state": "latest"  # Install last versions
             }
         }

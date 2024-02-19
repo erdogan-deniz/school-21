@@ -35,7 +35,7 @@ class Key(object):
 if __name__ == "__main__":  # Case if we don't import module (tests)
     class TestsEx00(unittest.TestCase):
 
-        def test_one(self):  # Test from task
+        def test_one(self):  # Test from a task
             key = Key()
 
             self.assertEqual(len(key), 1337)

@@ -29,7 +29,7 @@ def define_urls():
         urls = []
 
         for url in sys.argv[1:]:
-            if check_url(url) != -1:  # Check that we have correct url
+            if check_url(url) != -1:  # Check that we have the correct url
                 urls.append(url)
 
         if len(urls) > 0:  # If we have any urls
@@ -58,17 +58,17 @@ def make_json(urls_l: list):
     return urls_d
 
 
-# Main method for post request:
+# Main method for post-request:
 async def post_request(current_url: str):
     if not isinstance(current_url, str):  # Incorrect type of argument case
         print("ERROR! INCORRECT ARGUMENT.")
 
         return -1
 
-    json_data = make_json(define_urls())  # Create list of urls and convert to JSON
+    json_data = make_json(define_urls())  # Create a list of urls and convert to JSON
 
     async with aiohttp.ClientSession() as session:
-        response = await session.post(current_url, json=json_data)  # Make post request
+        response = await session.post(current_url, json=json_data)  # Make post-request
 
     return response.read()  # Check result of request (returns coroutine)
 

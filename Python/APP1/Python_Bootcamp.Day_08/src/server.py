@@ -93,7 +93,7 @@ def clear_codes(sites_c: list):
 async def post_request(request: Request):
     global task_UUID
 
-    if task_UUID == -1:  # If we made first request
+    if task_UUID == -1:  # If we made the first request
         data = await request.json()
 
         for site in data:  # Get all urls
@@ -129,7 +129,7 @@ async def check_process(current_uuid: str):
             final_codes = clear_codes(await many_requests(final_sites))
             task_UUID = -2
 
-            return final_codes  # HERE IS A ERROR
+            return final_codes  # HERE IS an ERROR
 
 
 if __name__ == "__main__":

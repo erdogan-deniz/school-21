@@ -30,7 +30,6 @@ class Doctor:
                 (self.screwdriver_right.get_number() == self.get_number()) and
                 (self.screwdriver_left.get_status() == "took") and (self.screwdriver_right.get_status() == "took")):
             print(f"Doctor {self.get_number()}: BLAST!")
-
             self.set_status("done")
             self.drop_left()
             self.drop_right()
@@ -106,9 +105,10 @@ if __name__ == "__main__":
 
     # Randomize doctors numbers:
     doctors = list(range(9, 14))
+
     random.shuffle(doctors)
 
-    # At first, we take left and the second right:
+    # At first, we take the left and the second right:
     doctor_nine = Doctor(doctors[0], screwdriver_one, screwdriver_five)
     doctor_ten = Doctor(doctors[1], screwdriver_two, screwdriver_one)
     doctor_eleven = Doctor(doctors[2], screwdriver_three, screwdriver_two)

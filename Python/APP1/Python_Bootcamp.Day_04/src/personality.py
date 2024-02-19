@@ -1,4 +1,4 @@
-import random  # Module for randomize value of traits
+import random  # Module for randomized value of traits
 import unittest  # Module for testing
 
 
@@ -31,11 +31,13 @@ class TestStringMethods(unittest.TestCase):
     def tests(self):
         for i in range(10):
             stanley = next(turrets_generator())
+
             self.assertEqual(stanley.neuroticism + stanley.openness + stanley.conscientiousness
                              + stanley.extraversion + stanley.agreeableness, 100)
 
     def tests_methods(self):  # Check methods
         stanley = next(turrets_generator())
+
         stanley.talk()
         stanley.shoot()
         stanley.search()

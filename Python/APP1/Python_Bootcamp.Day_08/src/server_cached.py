@@ -12,7 +12,7 @@ from pydantic import BaseModel
 final_codes = []  # List of sites codes
 final_sites = []  # List of sites for requests
 url_part = "/api/v1/tasks/"  # URL for requests
-redis_url = "redis://localhost"  # URL of redis database
+redis_url = "redis://localhost"  # URL of a redis database
 task_UUID = -1  # Task id for requests after first action
 redis_connection = ""  # The variable of connection redis
 application = fastapi.FastAPI(title="Day_08")  # Tittle for site
@@ -177,7 +177,7 @@ async def post_request(request: Request):
     for site in data:  # Get all urls
         await add_int_value(await find_domain(data[site]))
 
-    if task_UUID == -1:  # If we made first request
+    if task_UUID == -1:  # If we made the first request
         for site in data:  # Get all urls
             final_sites.append(data[site])
 
@@ -211,7 +211,7 @@ async def check_process(current_uuid: str):
             final_codes = clear_codes(await many_requests(final_sites))
             task_UUID = -2
 
-            return final_codes  # HERE IS A ERROR
+            return final_codes  # HERE IS an ERROR
 
 
 if __name__ == "__main__":

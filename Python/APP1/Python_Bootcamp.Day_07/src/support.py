@@ -20,8 +20,7 @@ import json
 
 # Function to read json data:
 def read_json(file_name: str):
-    """
-    The function that serializer json to python data structure.
+    """The function that serializer json to python data structure.
 
     :param file_name: The name of json file.
     :type file_name: str
@@ -62,8 +61,7 @@ def read_json(file_name: str):
 
 # Simulation terminal typing:
 def typing(message: str):
-    """
-    The function that simulate terminal output.
+    """The function that simulates terminal output.
 
     :param message: The message that we need to output.
     :type message: str
@@ -79,7 +77,7 @@ def typing(message: str):
 
     for char in message:
         sys.stdout.write(char)
-        sys.stdout.flush()  # Print immediately character
+        sys.stdout.flush()  # Immediately print character
         time.sleep(0.045)
 
     time.sleep(1)  # Time sleep for new sentence
@@ -87,8 +85,7 @@ def typing(message: str):
 
 # Check the is correct integer value or not:
 def is_integer():
-    """
-    The function that check input is integer value.
+    """The function that check input is integer value.
 
     :rtype: int
     :return: -1 if we get error, else value.
@@ -107,8 +104,7 @@ def is_integer():
 
 # Start by this message:
 def greetings():
-    """
-    The function that make greetings to user.
+    """The function that makes greetings to user.
 
     :rtype: None
     :return: output message

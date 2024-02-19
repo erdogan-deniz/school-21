@@ -11,6 +11,7 @@ def make_process(command: str):
         return -1
 
     process = subprocess.Popen(command.split())
+
     process.communicate()
 
 
@@ -20,7 +21,7 @@ def install():
     make_process("sudo apt install plocate")
 
     location = subprocess.run("plocate Python.h", capture_output=True, text=True, shell=True).stdout
-    final_location = location.split()[-1].rsplit('/', maxsplit=1)[0]  # Find final directory where "Python.h" is
+    final_location = location.split()[-1].rsplit('/', maxsplit=1)[0]  # Find the final directory where "Python.h" is
 
     make_process(f"gcc -shared -o calculator.so calculator.c -I{final_location}")
 

@@ -30,7 +30,7 @@ def add_traitor(engine, first_name, last_name, rank):
         session.close()
 
 
-# Check that traitor is exists:
+# Check that traitor exists:
 def is_exist_traitor(engine, first_name, last_name, rank):
     session = Session(engine)
 
@@ -80,7 +80,6 @@ def delete_tables(engine):
 # Function for finding and returning list of officers of spaceship:
 def find_officers(engine, spaceship_index):
     session = Session(engine)
-
     answer = '['
 
     for officer in session.query(models.Officer):
@@ -114,7 +113,7 @@ def add_spaceship(engine, spaceship):
         session.close()
 
 
-# Functions for add new officer:
+# Functions for add a new officer:
 def add_officer(engine, officer, spaceship_id, status):
     with Session(engine) as session:
         new_officer = models.Officer(

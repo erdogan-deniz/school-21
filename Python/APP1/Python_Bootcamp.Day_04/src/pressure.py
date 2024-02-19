@@ -2,8 +2,8 @@ import time  # Module for little freezing
 import random as rd  # Module for randomize value
 
 
-def emit_gel(step: int = 2):  # Main function for generate pressure
-    # If we get incorrect step:
+def emit_gel(step: int = 2):  # Main function for generated pressure
+    # If we get an incorrect step:
     if step < 2:
         step = 2
 
@@ -13,8 +13,8 @@ def emit_gel(step: int = 2):  # Main function for generate pressure
 
     while True:  # Endless stream of number
         pressure: int = rd.randrange(left_l, right_l, random_step)
-        time.sleep(0.75)
 
+        time.sleep(0.75)
         print("The pressure is: ", pressure, end='')
         print("\tThe random step is: ", random_step)
 
@@ -37,7 +37,7 @@ def emit_gel(step: int = 2):  # Main function for generate pressure
 
 # Function which switch:
 def valve(test_case: int = 1):
-    gen = emit_gel(test_case)  # Get step for loop
+    gen = emit_gel(test_case)  # Get a step for loop
 
     while True:
         tmp = next(gen)  # Get generator

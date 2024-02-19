@@ -11,7 +11,7 @@ def generate(number_of_test: str = '0'):
     # Create connection to localhost
     connection = redis.Redis(host="localhost", port=6379, db=1)
 
-    # Check case for actions:
+    # Check a case for actions:
     if number_of_test == '0':  # Random numbers - non swap
         counter: int = 5  # Counter of messages
 
@@ -28,8 +28,9 @@ def generate(number_of_test: str = '0'):
             }
 
             serialized_data = json.dumps(json_data)  # Serialization json
+
             connection.publish("hacked_channel", serialized_data)  # Publish json message
-    elif number_of_test == '1':  # All swap case
+    elif number_of_test == '1':  # All swap cases
 
         # Json structures:
         json_data_one = {
@@ -57,7 +58,7 @@ def generate(number_of_test: str = '0'):
         connection.publish("hacked_channel", serialized_data_two)
         connection.publish("hacked_channel", serialized_data_three)
 
-    elif number_of_test == '2':  # Test from task
+    elif number_of_test == '2':  # Test from a task
         # Json structures:
         json_data_one = {
             "metadata": {"from": 1111111111, "to": 2222222222},

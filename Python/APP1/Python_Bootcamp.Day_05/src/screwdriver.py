@@ -3,31 +3,30 @@ import sys  # Module for parsing cmd args
 import yaml  # Module for working temporary file
 import atexit  # Module for "last" function
 import subprocess  # Module for using linux command
-from os import walk  # Function for working with file in current directory
+
+from os import walk  # Function for working with file in the current directory
 from flask import Flask, render_template, request  # Flask functions
 
 
-def is_audio_file(file):  # Checking file for audio format
-    if ((re.match(r"^.*\.mp3$", file) is not None) or
-            (re.match(r"^.*\.ogg$", file) is not None) or
-            (re.match(r"^.*\.wav$", file) is not None) or
-            (re.match(r"^.*\.mpeg$", file) is not None)):
+def is_audio_file(current_file):  # Checking file for audio format
+    if ((re.match(r"^.*\.mp3$", current_file) is not None) or
+            (re.match(r"^.*\.ogg$", current_file) is not None) or
+            (re.match(r"^.*\.wav$", current_file) is not None) or
+            (re.match(r"^.*\.mpeg$", current_file) is not None)):
         return True
 
     return False
 
 
 music_list = []  # Our current list of musics
-
 disk_musics = next(walk("music"), (None, None, []))[2]  # Real files on the disk
 disk_musics = [i for i in disk_musics if (":Zone.Identifier" not in i) and (is_audio_file(i))]  # Delete identifiers
-
 app = Flask(__name__)  # Main flask window
 
 
 def create_music_file(music):  # Save our musics to the file
-    with open("musics.yml", 'w') as file:
-        yaml.safe_dump({"key": music}, file)
+    with open("musics.yml", 'w') as current_file:
+        yaml.safe_dump({"key": music}, current_file)
 
 
 # Papers for watching:
@@ -37,10 +36,10 @@ def create_music_file(music):  # Save our musics to the file
 def home_page():
     # Upload new track:
     try:
-        with open("new_tracks.yml", 'r') as file:
-            data = yaml.load(file, Loader=yaml.FullLoader)
+        with open("new_tracks.yml", 'r') as current_file:
+            current_data = yaml.load(current_file, Loader=yaml.FullLoader)
 
-        music_list.append(data["key"])  # Add music in current list
+        music_list.append(current_data["key"])  # Add music in a current list
         subprocess.run("rm -rf new_tracks.yml", shell=True)  # Delete file
     except FileNotFoundError:
         pass
@@ -62,10 +61,10 @@ def convert_to_string(musics):
 @app.route("/new_list", methods=["POST", "GET"])
 def result():
     try:
-        with open("new_tracks.yml", 'r') as file:
-            data = yaml.load(file, Loader=yaml.FullLoader)
+        with open("new_tracks.yml", 'r') as current_file:
+            current_data = yaml.load(current_file, Loader=yaml.FullLoader)
 
-        music_list.append(data["key"])
+        music_list.append(current_data["key"])
         subprocess.run("rm -rf new_tracks.yml", shell=True)  # Delete uploads tracks
     except FileNotFoundError:
         pass
@@ -81,7 +80,6 @@ def result():
 
     if (new_track in disk_musics) and (new_track not in music_list):
         music_list.append(new_track)
-
         create_music_file(music_list)
 
         return render_template("index.html", new_track=new_track, musics=convert_to_string(music_list))
@@ -93,7 +91,7 @@ def result():
 
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and (str(sys.argv[1]) == "list"):  # Check current list of tracks
+    if len(sys.argv) > 1 and (str(sys.argv[1]) == "list"):  # Check a current list of tracks
         try:
             with open("musics.yml", 'r') as file:
                 data = yaml.load(file, Loader=yaml.FullLoader)

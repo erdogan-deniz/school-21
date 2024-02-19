@@ -3,9 +3,10 @@ import ctypes
 import subprocess
 
 
-# Install create so for script:
+# Install create so for a script:
 def create_library_so():
     process = subprocess.Popen("gcc -fPIC -shared -o monotonic.so monotonic.c".split())
+
     process.communicate()
 
 
@@ -24,6 +25,7 @@ def get_time(pwd: str):
         return -1
 
     library = ctypes.CDLL(pwd.strip() + "/monotonic.so", mode=ctypes.RTLD_GLOBAL)
+
     library.monotonic()
 
 

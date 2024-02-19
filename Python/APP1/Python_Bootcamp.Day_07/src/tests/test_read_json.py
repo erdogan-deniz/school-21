@@ -1,11 +1,9 @@
 import sys
 import os.path
+import support
 
 # Add our files:
 sys.path.append(os.path.abspath(os.pardir))
-
-import support
-
 
 # Test data:
 questions = {

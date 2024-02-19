@@ -3,7 +3,7 @@
 * 1️⃣ APP1  - 177/117 % (1750 xp)
   * Description: Python Bootcamp;
   * Skills: Web - 136, Structured programming - 191, Python - 946, Algorithms - 43, DB & Data - 109, Parallel computing - 23, Backend - 107, Types and data structures - 162, Shell/Bash - 28, Graphics - 23, Leadership - 15;
-  * Tasks:
+  * Days:
     * Day00 - 100/100 %
       * Description: Help the world's famous detective to defend London;
       * Weaknesses: Empty;

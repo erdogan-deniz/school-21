@@ -8,7 +8,7 @@ def filter_and_convert(cables, sockets):  # Create zip of clear items
     return list(zip(filtered_cables, filtered_sockets))
 
 
-def check_item(example: object) -> bool:  # Function clear an iteration object
+def check_item(example: object) -> bool:  # Function clears an iteration object
     if isinstance(example, str):
         if example.startswith(("plug", "socket", "cable")):
             return True

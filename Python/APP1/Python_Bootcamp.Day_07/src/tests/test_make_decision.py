@@ -1,11 +1,10 @@
 # Necessary modules:
 import sys
 import os.path
+import process
 
 # Add our files:
 sys.path.append(os.path.abspath(os.pardir))
-
-import process
 
 
 # The test functions:

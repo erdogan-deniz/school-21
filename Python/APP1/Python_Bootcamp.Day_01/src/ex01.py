@@ -1,6 +1,6 @@
-# First of all, we don't save any other elements in dictionary
-import unittest  # Module for tests
+# First of all, we don't save any other elements in the dictionary
 import ex00  # Module for functions
+import unittest  # Module for tests
 
 
 def split_booty(*args) -> tuple[dict[str, int], dict[str, int], dict[str, int]]:

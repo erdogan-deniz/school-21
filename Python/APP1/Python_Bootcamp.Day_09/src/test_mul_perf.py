@@ -49,6 +49,7 @@ def make_my_test(matrix_one: list, matrix_two: list):
 
     end = time.time()
     process_time = end - start
+
     print(f"My test time = {process_time}")
 
     return process_time
@@ -68,6 +69,7 @@ def make_example_test(matrix_one: list, matrix_two: list):
 
     end = time.time()
     process_time = end - start
+
     print(f"Python time = {process_time}")
 
     return process_time

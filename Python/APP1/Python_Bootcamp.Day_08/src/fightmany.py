@@ -51,7 +51,7 @@ if __name__ == "__main__":
         tasks.append(ioloop.create_task(fightmany(i)))
 
     wait_tasks = fight.asyncio.wait(tasks)
+
     ioloop.run_until_complete(wait_tasks)
     ioloop.close()
-
     print("\nNeo wins!\n\n")

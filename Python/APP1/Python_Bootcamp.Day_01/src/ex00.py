@@ -1,4 +1,4 @@
-# First of all, we don't save any other elements in dictionary
+# First of all, we don't save any other elements in the dictionary
 import unittest  # Module for tests
 
 

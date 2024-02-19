@@ -19,8 +19,7 @@ import support
 
 # Functions for input variables:
 def check_respiration():
-    """
-    The function that get and check respiration. Repeated input until don't get correct value.
+    """The function that gets and check respiration. Repeated input until don't get the correct value.
 
     :rtype: int
     :return: 1 if count of bpm bigger than 14, else 0.
@@ -45,8 +44,7 @@ def check_respiration():
 
 
 def check_heart_rate():
-    """
-    The function that get and check heart rate. Repeated input until don't get correct value.
+    """The function that gets and check heart rate. Repeated input until don't get the correct value.
 
     :rtype: int
     :return: 1 if count of heart rates bigger than 84, else 0.
@@ -71,11 +69,10 @@ def check_heart_rate():
 
 
 def check_blushing_level():
-    """
-    The function that get and check blushing level. Repeated input until don't get correct value.
+    """The function that gets and check blushing level. Repeated input until don't get the correct value.
 
     :rtype: int
-    :return: 1 if value of blushing_level bigger than 4, else 0.
+    :return: 1 of value of blushing_level bigger than 4, else 0.
     """
 
     support.typing("Blushing level is: ")
@@ -97,8 +94,7 @@ def check_blushing_level():
 
 
 def check_pupillary_dilation():
-    """
-    The function that get and check pupillary dilation. Repeated input until don't get correct value.
+    """The function that gets and check pupillary dilation. Repeated input until don't get the correct value.
 
     :rtype: int
     :return: 1 if value of pupillary dilation bigger than 5, else 0.
@@ -124,8 +120,7 @@ def check_pupillary_dilation():
 
 # Calculating result:
 def make_decision(points: int):
-    """
-    The function that make decision about suspect, is he replicant or not.
+    """The function that make decision about suspect, is he replicant or not.
 
     :param points: The count of replicant points of user.
     :type points: int

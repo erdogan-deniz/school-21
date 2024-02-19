@@ -57,7 +57,7 @@ def health_calculation(agent_turn: Action, neo_turn: Action, agent_health: int):
 
         return -1
 
-    # Cases when agent get kick:
+    # Cases when agent gets kick:
     if (agent_turn == Action.LOWBLOCK) and (neo_turn == Action.HIGHKICK):
         return agent_health - 1
     elif (agent_turn == Action.HIGHBLOCK) and (neo_turn == Action.LOWKICK):

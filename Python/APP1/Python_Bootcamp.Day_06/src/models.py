@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Mapped, mapped_column, DeclarativeBase
 
 
-# Base class for all entity:
+# Base class for all entities:
 class Base(DeclarativeBase):
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
 

@@ -1,4 +1,5 @@
 import unittest  # Module for testing
+
 from collections import Counter  # Necessary module
 
 
@@ -204,12 +205,12 @@ class Game(object):
                 steps(i, player1, player2)
 
             result(i, player1, player2)
-        self.update_top(player1, player2)
 
+        self.update_top(player1, player2)
         print()
 
 
-# If users have draw no one win:
+# If users have drawn no one win:
 if __name__ == "__main__":  # Case if we don't import module (tests)
     class TestsEx01(unittest.TestCase):
 
@@ -217,16 +218,18 @@ if __name__ == "__main__":  # Case if we don't import module (tests)
             game = Game()
 
             # Cheater games:
-            # № 1: Cheater vs Cooperate:
+            # № 1: Cheater versus Cooperate:
             cheater = Cheater()
             cooperate = Cooperator()
+
             game.play(cheater, cooperate)
             self.assertEqual(cheater.get_candies(), 30)
             self.assertEqual(cooperate.get_candies(), -10)
 
-            # № 2: Cheater vs Copycat:
+            # № 2: Cheater versus Copycat:
             cheater = Cheater()
             copycat = Copycat()
+
             game.play(cheater, copycat)
             self.assertEqual(cheater.get_candies(), 3)
             self.assertEqual(copycat.get_candies(), -1)
@@ -234,43 +237,49 @@ if __name__ == "__main__":  # Case if we don't import module (tests)
             # № 3: Cheater vs Grudger:
             cheater = Cheater()
             grudger = Grudger()
+
             game.play(cheater, grudger)
             self.assertEqual(cheater.get_candies(), 3)
             self.assertEqual(grudger.get_candies(), -1)
 
-            # № 4: Cheater vs Detective:
+            # № 4: Cheater versus Detective:
             cheater = Cheater()
             detective = Detective()
+
             game.play(cheater, detective)
             self.assertEqual(cheater.get_candies(), 9)
             self.assertEqual(detective.get_candies(), -3)
 
             # Cooperate games:
-            # № 1: Cooperate vs Copycat:
+            # № 1: Cooperate versus Copycat:
             cooperate = Cooperator()
             copycat = Copycat()
+
             game.play(cooperate, copycat)
             self.assertEqual(cooperate.get_candies(), 20)
             self.assertEqual(copycat.get_candies(), 20)
 
-            # № 2: Cooperate vs Grudger:
+            # № 2: Cooperate versus Grudger:
             cooperate = Cooperator()
             grudger = Grudger()
+
             game.play(cooperate, grudger)
             self.assertEqual(cooperate.get_candies(), 20)
             self.assertEqual(grudger.get_candies(), 20)
 
-            # № 3: Cooperate vs Detective:
+            # № 3: Cooperate versus Detective:
             cooperate = Cooperator()
             detective = Detective()
+
             game.play(cooperate, detective)
             self.assertEqual(cooperate.get_candies(), -1)
             self.assertEqual(detective.get_candies(), 27)
 
             # # Copycat games:
-            # № 1: Copycat vs Detective:
+            # № 1: Copycat versus Detective:
             copycat = Copycat()
             detective = Detective()
+
             game.play(copycat, detective)
             self.assertEqual(copycat.get_candies(), 18)
             self.assertEqual(detective.get_candies(), 18)
@@ -278,14 +287,16 @@ if __name__ == "__main__":  # Case if we don't import module (tests)
             # № 2: Copycat vs Grudger:
             copycat = Copycat()
             grudger = Grudger()
+
             game.play(copycat, grudger)
             self.assertEqual(copycat.get_candies(), 20)
             self.assertEqual(grudger.get_candies(), 20)
 
             # Grudger games:
-            # № 1: Grudger vs Detective:
+            # № 1: Grudger versus Detective:
             grudger = Grudger()
             detective = Detective()
+
             game.play(grudger, detective)
             self.assertEqual(grudger.get_candies(), 7)
             self.assertEqual(detective.get_candies(), 3)
@@ -297,11 +308,13 @@ if __name__ == "__main__":  # Case if we don't import module (tests)
             # One top:
             cheater = Cheater()
             cooperator = Cooperator()
+
             game.play(cheater, cooperator)
             self.assertEqual(game.top3(), [("cheater", 1)])
 
             # Two tops:
             detective = Detective()
+
             game.play(cooperator, detective)
             game.play(grudger, detective)
             game.play(cheater, detective)
@@ -338,6 +351,7 @@ if __name__ == "__main__":  # Case if we don't import module (tests)
             grudger = Grudger()
             detective = Detective()
             silver = Silver()
+
             game.play(silver, cheater)
             game.play(silver, cooperate)
             game.play(silver, copycat)

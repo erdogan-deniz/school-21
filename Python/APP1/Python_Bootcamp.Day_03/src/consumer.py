@@ -1,15 +1,16 @@
-import sys  # Module for reading arguments
-import time  # Module for output freezing
-import json  # For deserialization
 import redis  # Module for pub/sub
+import json  # For deserialization
+import time  # Module for output freezing
+import sys  # Module for reading arguments
 import logging.handlers  # For putting in the file
 import subprocess  # Module for subprocess commands
 
-connection = redis.Redis(host="localhost", port=6379, db=1)  # The same one which we create in producer
+connection = redis.Redis(host="localhost", port=6379, db=1)  # The same one, which we create in producer
 follower = connection.pubsub()  # Follow to channel
+
 follower.subscribe("hacked_channel")  # Subscribe on channel
 
-# Default from other script:
+# Default from another script:
 if __name__ != "__main__":
     while True:
         message = follower.get_message()  # Get message
@@ -17,7 +18,7 @@ if __name__ != "__main__":
         for index in range(len(sys.argv)):  # Convert args to str and delete symbol ','
             sys.argv[index] = str(sys.argv[index]).rstrip(',')
 
-        if message:  # If we get message
+        if message:  # If we get a message
             try:
                 json_data = json.loads(message["data"])  # Convert data to dict
 
@@ -29,17 +30,17 @@ if __name__ != "__main__":
                     json_data = json.dumps(json_data)  # Serialization
                     message["data"] = json_data
 
-            except TypeError:  # If we got first string of connection
+            except TypeError:  # If we got the first string of connection
                 continue
 
             logging.info(message)  # Print message
             time.sleep(0.1)  # Small-time freeze
 else:  # Testing
-
     print("What we get:")
-
     logging.basicConfig(level=logging.DEBUG)  # Set status
+
     file_handler = logging.handlers.RotatingFileHandler("logfile.txt")  # Create file
+
     logging.getLogger().addHandler(file_handler)  # Connect output to file
 
     # Lines for compare:
@@ -49,8 +50,7 @@ else:  # Testing
                      "\"from\": 3333333333, \"to\": 4444444444}, \"amount\": -3000}'}")
     test_line_three = ("{'type': 'message', 'pattern': None, 'channel': b'hacked_channel', 'data': b'{\"metadata\": {"
                        "\"from\": 2222222222, \"to\": 5555555555}, \"amount\": 5000}'}")
-
-    counter = 0  # Index of message
+    counter = 0  # Index of a message
 
     while True:
         message = follower.get_message()  # Get message
@@ -58,21 +58,20 @@ else:  # Testing
         for index in range(len(sys.argv)):  # Convert args to str and delete symbol ','
             sys.argv[index] = str(sys.argv[index]).rstrip(',')
 
-        if message:  # If we get message
-            counter += 1  # Check next message
+        if message:  # If we get a message
+            counter += 1  # Check the next message
 
             try:
                 json_data = json.loads(message["data"])  # Convert data to dict
 
                 if (str(json_data["metadata"]["to"]) in sys.argv) and (json_data["amount"] >= 0):  # Check conditions
-
                     # Swap users:
                     json_data["metadata"]["from"], json_data["metadata"]["to"] = json_data["metadata"]["to"], \
                         json_data["metadata"]["from"]
                     json_data = json.dumps(json_data)  # Serialization
                     message["data"] = json_data
 
-            except TypeError:  # If we got first string of connection
+            except TypeError:  # If we got the first string of connection
                 continue
 
             logging.debug(message)  # Add lines
@@ -82,7 +81,7 @@ else:  # Testing
                 break
 
     with open("logfile.txt", 'r') as file:  # Check result
-        lines = file.readlines()  # Read file with result
+        lines = file.readlines()  # Read file with a result
 
         for line in lines:
             if (counter == 0) and (line.rstrip() == test_line_one):

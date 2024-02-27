@@ -88,7 +88,7 @@
   
   - `doc.html` - техническая документация кода;
   
-  ![Doc](description/manual.jpg)
+  ![Doc](description/doc.jpg)
 
 - Изначально открывается `index.html`, с данной страницы можно перейти на `doc.html`, `manual.html` при помощи указателей и ссылок;
 

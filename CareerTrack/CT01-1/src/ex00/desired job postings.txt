@@ -1,0 +1,11 @@
+1) https://vk.com/jobs?w=job1020 - Python Developer в команду платформы
+2) https://www.tbank.ru/career/it/back-end-razrabotka/python-razrabotchik-backend-weekend-offer - Python-разработчик — Backend Weekend Offer
+3) https://www.tbank.ru/career/it/analitika-riskov/ds_pvr - Data Scientist в команду ПВР
+4) https://www.tbank.ru/career/it/back-end-razrabotka/python-v-data-platfrom - Python-разработчик в Data Platform
+5) https://www.tbank.ru/career/it/ml/ml-razrabotchik-v-gorod - ML-разработчик в Город
+6) https://www.tbank.ru/career/it/ml/ml_research_ai - ML-исследователь в Центр технологий искусственного интеллекта
+7) https://www.tbank.ru/career/it/ml/ml_developer - ML-разработчик рекламной платформы
+8) https://www.tbank.ru/career/it/back-end-razrabotka/python-razrabotchik-v-tedi - Python-разработчик в TEDI
+9) https://www.tbank.ru/career/it/back-end-razrabotka/python-razrabotchik-v-proteus - Python-разработчик в Proteus
+10) https://yandex.ru/jobs/vacancies/data-scientist-в-маркет-4277 - Data Scientist в Маркет
+11) https://yandex.ru/jobs/vacancies/разработчик-на-python-платформы-campaign-management-4861 - Разработчик на Python платформы Campaign Management

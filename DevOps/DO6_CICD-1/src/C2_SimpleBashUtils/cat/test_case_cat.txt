@@ -1,0 +1,134 @@
+\00\00\00\00 is 0 0		\00 is 0 0
+
+
+
+\00\00\00\00 is 0 0    \00 is 0 0
+ is 1 1		
+ is 2 2		
+ is 3 3		
+ is 4 4		
+ is 5 5		
+ is 6 6		
+ is 7 7		
+ is 8 8		
+	 is 9 9		
+
+ is 10 a		
+ is 11 b		
+ is 12 c		
+
+ is 13 d		
+ is 14 e		
+ is 15 f		
+ is 16 10		
+ is 17 11		
+ is 18 12		
+ is 19 13		
+ is 20 14		
+ is 21 15		
+ is 22 16		
+ is 23 17		
+ is 24 18		
+ is 25 19		
+ is 26 1a		
+ is 27 1b		
+ is 28 1c		
+ is 29 1d		
+ is 30 1e		
+ is 31 1f		
+  is 32 20		
+! is 33 21		
+" is 34 22		
+# is 35 23		
+$ is 36 24		
+% is 37 25		
+& is 38 26		
+' is 39 27		
+( is 40 28		
+) is 41 29		
+* is 42 2a		
++ is 43 2b		
+, is 44 2c		
+- is 45 2d		
+. is 46 2e		
+/ is 47 2f		
+0 is 48 30		
+1 is 49 31		
+2 is 50 32		
+3 is 51 33		
+4 is 52 34		
+5 is 53 35		
+6 is 54 36		
+7 is 55 37		
+8 is 56 38		
+9 is 57 39		
+: is 58 3a		
+; is 59 3b		
+< is 60 3c		
+= is 61 3d		
+> is 62 3e		
+? is 63 3f		
+@ is 64 40		
+A is 65 41		
+B is 66 42		
+C is 67 43		
+D is 68 44		
+E is 69 45		
+F is 70 46		
+G is 71 47		
+H is 72 48		
+I is 73 49		
+J is 74 4a		
+K is 75 4b		
+L is 76 4c		
+M is 77 4d		
+N is 78 4e		
+O is 79 4f		
+P is 80 50		
+Q is 81 51		
+R is 82 52		
+S is 83 53		
+T is 84 54		
+U is 85 55		
+V is 86 56		
+W is 87 57		
+X is 88 58		
+Y is 89 59		
+Z is 90 5a		
+[ is 91 5b		
+\ is 92 5c		
+] is 93 5d		
+^ is 94 5e		
+_ is 95 5f		
+` is 96 60		
+a is 97 61		
+b is 98 62		
+c is 99 63		
+d is 100 64		
+e is 101 65		
+f is 102 66		
+g is 103 67		
+h is 104 68		
+i is 105 69		
+j is 106 6a		
+k is 107 6b		
+l is 108 6c		
+m is 109 6d		
+n is 110 6e		
+o is 111 6f		
+p is 112 70		
+q is 113 71		
+r is 114 72		
+s is 115 73		
+t is 116 74		
+u is 117 75		
+v is 118 76		
+w is 119 77		
+x is 120 78		
+y is 121 79		
+z is 122 7a		
+{ is 123 7b
+| is 124 7c		
+} is 125 7d		
+~ is 126 7e		
+ is 127 7f

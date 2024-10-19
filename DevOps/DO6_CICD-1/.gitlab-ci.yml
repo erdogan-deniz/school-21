@@ -1,0 +1,83 @@
+stages:
+  - build
+  - style
+  - test
+  - deploy
+
+building:
+  stage: build
+
+  tags:
+    - build
+
+  script:
+    - echo "Start building"
+    - make src/C2_SimpleBashUtils/cat/s21_cat
+    - make src/C2_SimpleBashUtils/grep/s21_grep
+
+  artifacts:
+    paths:
+      - src/C2_SimpleBashUtils/cat/s21_cat
+      - src/C2_SimpleBashUtils/grep/s21_grep
+
+    expire_in: 30 days
+
+  only:
+    - develop
+
+  after_script:
+    - sh src/notify.sh "build"
+
+styletesting:
+  stage: style
+
+  tags:
+    - style
+
+  script:
+    - clang-format -style=Google -Werror -n src/C2_SimpleBashUtils/**/*.c
+    - clang-format -style=Google -Werror -n src/C2_SimpleBashUtils/**/*.h
+
+  when: always
+
+  only:
+    - develop
+
+  after_script:
+    - sh src/notify.sh "style"
+
+testing:
+  stage: test
+
+  tags:
+    - test
+
+  script:
+    - bash src/C2_SimpleBashUtils/cat/*.sh
+    - bash src/C2_SimpleBashUtils/grep/*sh
+
+  when: on_success
+
+  only:
+    - develop
+
+  after_script:
+    - sh src/notify.sh "test"
+
+deploying:
+  stage: deploy
+
+  tags:
+    - deploy
+
+  script:
+    - sudo chmod +x src/deploy.sh
+    - bash src/deploy.sh 
+
+  when: manual
+
+  only:
+    - develop
+
+  after_script:
+    - sh src/notify.sh "deploy"

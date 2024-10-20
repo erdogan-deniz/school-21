@@ -1,4 +1,4 @@
-Technical documentation**
+**Technical documentation**
 =========================
 
 **Data modules**

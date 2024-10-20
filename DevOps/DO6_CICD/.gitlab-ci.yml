@@ -53,8 +53,10 @@ testing:
     - test
 
   script:
-    - bash src/C2_SimpleBashUtils/cat/*.sh
-    - bash src/C2_SimpleBashUtils/grep/*sh
+    - cd src/C2_SimpleBashUtils/cat/
+    - make s21_cat_test
+    - cd ../grep
+    - make s21_grep_test
 
   when: on_success
 

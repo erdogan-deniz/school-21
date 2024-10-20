@@ -28,17 +28,20 @@
   * The build stage success:
   ![Basic CI/CD](screenshots/build_success.jpg)
 
+  * The build stage logss:
+  ![Basic CI/CD](screenshots/build_stage_logs.jpg)
+
 ## Part 3. Codestyle test
 
 * If the codefile didn't pass, `"fail"` the pipeline. In the pipeline, display the output of the *clang-format* utility.
   * The codestyle stage is:
   ![Basic CI/CD](screenshots/codestyle_stage.jpg)
 
-  * The clang-format logs are:
-  ![Basic CI/CD](screenshots/clang_format_status.jpg)
-
   * The codestyle stage success:
   ![Basic CI/CD](screenshots/codestyle_success.jpg)
+
+  * The clang-format logs are:
+  ![Basic CI/CD](screenshots/clang_format_status.jpg)
 
 ## Part 4. Integration tests
 
@@ -47,11 +50,12 @@ If tests didn't pass, `"fail"` the pipeline. In the pipeline, display the output
   * The test stage is:
   ![Basic CI/CD](screenshots/test_stage.jpg)
 
+  * The test stage success:
+  ![Basic CI/CD](screenshots/tests_success.jpg)
+
   * The tests logs are:
   ![Basic CI/CD](screenshots/tests_status.jpg)
 
-  * The test stage success:
-  ![Basic CI/CD](screenshots/tests_success.jpg)
 
 ## Part 5. Deployment stage
 
@@ -114,6 +118,9 @@ If tests didn't pass, `"fail"` the pipeline. In the pipeline, display the output
 * Let's check the deploying result.
   * The deploying result:
   ![Basic CI/CD](screenshots/deploy_result.jpg)
+
+  * Let's proof our work:
+  ![Basic CI/CD](screenshots/proof.png)
 
 ## Part 6. Bonus. Notifications
 

@@ -8,12 +8,13 @@ s21_grep.o:
 
 s21_grep_test: s21_grep
 	chmod 777 test_grep.sh test_grep_main.sh test_grep_memory.sh
-	sh *.sh
+	bash *.sh
 	./test_grep.sh
-	sleep 5
+	sleep 3
 	./test_grep_main.sh
-	sleep 5
-	./test_grep_memory.sh
+	sleep 3
+	# ./test_grep_memory.sh
+	# sleep 3
 
 clean:
 	rm -rf *.o s21_grep

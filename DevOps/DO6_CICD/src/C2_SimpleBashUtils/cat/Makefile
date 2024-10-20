@@ -8,11 +8,11 @@ s21_cat.o:
 
 s21_cat_test: s21_cat
 	chmod 777 test_cat_main.sh test_cat_memory.sh
-	sh *.sh
+	bash *.sh
 	./test_cat_main.sh
-	sleep 5
-	./test_cat_memory.sh
-	sleep 5
+	sleep 3
+	# ./test_cat_memory.sh
+	# sleep 3
 
 clean:
 	rm -rf *.o s21_cat

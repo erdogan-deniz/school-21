@@ -1,0 +1,131 @@
+# Prerequisites
+*.d
+ 
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+*.bag
+*.h5
+*.vdi
+*.sav
+*.dmp
+ 
+# Linker output
+*.ilk
+*.map
+*.exp
+ 
+# Precompiled Headers
+*.gch
+*.pch
+ 
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+*.bin
+*.sys
+ 
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+ 
+# Executables
+*.exe
+*.app
+*.i*86
+*.x86_64
+*.hex
+*.apk
+ 
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+ 
+ 
+# Packaging
+*.zip
+*.7z
+*.gz
+*.rar
+*.tar
+*.jar
+*.iso
+*.sketch
+*.apk
+*.dmg
+*.pkg
+*.rpm
+*.rom
+*.img
+*.deb
+ 
+# Audio formats
+*.mp3
+*.ogg
+*.wav
+*.aiff
+*.aif
+*.mod
+*.it
+*.s3m
+*.xm
+*.wma
+*.wmv
+*.wm
+*.flac
+*.dts
+ 
+# Video formats
+*.mov
+*.avi
+*.asf
+*.mpg
+*.mpeg
+*.mp4
+*.webp
+*.webm
+*.mkv
+*.mka
+*.dat
+*.drv
+*.f4v
+*.h264
+*.h265
+*.m4v
+*.moov
+*.mts
+*.rm
+*.rmvb
+*.ts
+*.vcd
+*.vid
+*.vob
+*.yuv
+ 
+# Animation
+*.spl
+*.swf
+*.flv
+*.f4m
+ 
+# Subtitles
+*.srt
+*.stl
+ 
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+Makefile.old
+dkms.conf

@@ -1,4 +1,4 @@
-# Career track projects ⏱
+# CAREER TRACK PROJECTS ⏱
 
 * 1️⃣ Career track - ?/? % (? xp)
   * Skills: ?;

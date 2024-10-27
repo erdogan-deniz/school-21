@@ -1,0 +1,10 @@
+john.smith@corp.com
+samuel.eto@corp.com
+kate.shtol@corp.com
+ivan.petrov@corp.com
+emma.geller@corp.com
+leonel.messi@corp.com
+yana.yadrina@corp.com
+ivan.rakitich@corp.com
+islam.machachev@corp.com
+vladimir.kozlov@corp.com

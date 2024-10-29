@@ -1,0 +1,55 @@
+# Python files
+.venv
+__pycache__
+
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.a
+*.la
+*.lo
+*.lib
+
+# Shared objects (inc. Windows DLLs)
+*.so
+*.dll
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.app
+*.hex
+*.i*86
+*.x86_64
+
+# Debug files
+*.su
+*.idb
+*.pdb
+*.dSYM/
+
+# Kernel Module Compile Results
+*.cmd
+*.mod*
+dkms.conf
+Mkfile.old
+modules.order
+.tmp_versions/
+Module.symvers

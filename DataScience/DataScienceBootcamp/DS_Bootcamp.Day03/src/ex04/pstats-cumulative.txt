@@ -1,0 +1,13 @@
+         374897 function calls (374724 primitive calls) in 1.275 seconds
+
+   Ordered by: cumulative time
+   List reduced from 942 to 5 due to restriction <5>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       83    0.001    0.000    2.544    0.031 /usr/lib/python3.12/asyncio/base_events.py:1910(_run_once)
+        3    0.000    0.000    2.542    0.847 /usr/lib/python3.12/asyncio/base_events.py:651(run_until_complete)
+        3    0.000    0.000    2.542    0.847 /usr/lib/python3.12/asyncio/base_events.py:627(run_forever)
+        1    0.000    0.000    1.275    1.275 /usr/lib/python3.12/asyncio/runners.py:160(run)
+        1    0.000    0.000    1.274    1.274 /usr/lib/python3.12/asyncio/runners.py:61(__exit__)
+
+

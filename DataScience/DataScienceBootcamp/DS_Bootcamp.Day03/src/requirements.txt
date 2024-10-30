@@ -1,0 +1,7 @@
+six
+zipp
+pytest
+wcwidth
+soupsieve
+termgraph
+beautifulsoup4

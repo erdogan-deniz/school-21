@@ -1,0 +1,3 @@
+[console_scripts]
+termgraph = termgraph.termgraph:main
+

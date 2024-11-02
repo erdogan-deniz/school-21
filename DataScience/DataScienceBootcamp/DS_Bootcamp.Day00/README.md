@@ -4,8 +4,6 @@ Summary: On the first day, we will help you to acquire the skills of using UNIX
 command-line tools for basic data science tasks. You will learn how to use curl, sort,
 uniq, jq, sed, and cat for data collection and preprocessing.
 
-💡 [Нажми сюда](https://new.oprosso.net/p/4cb31ec3f47a4596bc758ea1861fb624), **чтобы поделиться с нами обратной связью на этот проект**. Это анонимно и поможет нашей команде сделать обучение лучше. Рекомендуем заполнить опрос сразу после выполнения проекта.
-
 ## Contents
 
 1. [Chapter I](#chapter-i) \
@@ -24,8 +22,7 @@ uniq, jq, sed, and cat for data collection and preprocessing.
     7.1. [Exercise 04 : Descriptive statistics](#exercise-04-descriptive-statistics)
 8. [Chapter VIII](#chapter-viii) \
     8.1. [Exercise 05 : Partitioning and concatenation](#exercise-05-partitioning-and-concatenation)
-    
-   
+
 ## Chapter I
 
 ### Foreword
@@ -133,6 +130,7 @@ APIs but can be inconvenient for actual data analysis. So, you will need to conv
 into a more convenient CSV file.
 
 Write a shell script called json_to_csv.sh that:
+
 * executes jq with a filter written in a separate file filter.jq
 * filters the following 5 columns corresponding to the vacancies: “id”, “created_at”,
 “name”, “has_test”, and “alternate_url”
@@ -168,6 +166,7 @@ way can be efficient for later stages of data analysis. So in this exercise, you
 need to sort your CSV file with several columns.
 
 Write a shell script called sorter.sh that:
+
 * sorts the hh.csv file from the previous exercise according to the column
 “created_at” and then by the “id” in ascending order
 * saves the result in the CSV file hh_sorted.csv
@@ -202,6 +201,7 @@ algorithms, it does not give any useful information. To be honest, it is just no
 worsens data analysis.
 
 Write a shell called script cleaner.sh that:
+
 * takes “Junior”, “Middle”, “Senior” from the names of position, if the name does not
 contain any of these words use “-” (e.g. “Senior Data Scientist” -> “Senior”, “analyst
 /(data scientist)” -> “-”, “Специалист / data scientist (big data, прогностическая
@@ -244,6 +244,7 @@ result, you can understand that your data skewed somehow: for instance, there ar
 more seniors than juniors. Such facts might be useful for further analysis.
 
 Write a shell script called counter.sh that:
+
 * counts unique values of the name column in the file you prepared in the
 * previous exercise,
 * sorts the table by that count in descending order
@@ -282,6 +283,7 @@ do it by date. Each partition contains data on a specific date. In this exercise
 need to perform that task.
 
 Write one shell script called partitioner.sh that:
+
 * takes as input the result of Exercise 03
 * stores slices of data with different "created_at" dates in separate CSV files named
 for that date
@@ -293,6 +295,7 @@ See the example of such a file below:
     "36359628","2020-04-11T19:25:48+0300","Senior",false,"https://hh.ru/vacancy/36359628"
 
 Write another shell script called concatenator.sh that:
+
 * takes as input the separate files from the result of partitioner.sh
 * concatenates all separate files into one CSV file
 

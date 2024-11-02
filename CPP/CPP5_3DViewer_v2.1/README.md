@@ -4,7 +4,6 @@ Implementation of 3DViewer v2.1
 
 The russian version of the task can be found in the repository.
 
-
 ## Contents
 
 1. [Chapter I](#chapter-i) \
@@ -16,7 +15,6 @@ The russian version of the task can be found in the repository.
    3.2. [Part 2](#part-2-bonus-settings) \
    3.3. [Part 3](#part-3-bonus-record) \
    3.4. [Part 4](#part-4-bonus-texturing)
-
 
 ## Chapter I
 
@@ -42,7 +40,6 @@ To continue watching the video, you need to watch a 5-minute ad. Continue?
 ## Introduction
 
 In this project you’ll need to modify the application developed in the 3D Viewer v2.0 project. The new version should render a three-dimensional object not only in a wireframe form, but also with surface shading.
-
 
 ## Chapter II
 

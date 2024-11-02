@@ -3,8 +3,6 @@
 Summary: Today we will help you acquire basic knowledge about how to manage libraries in
 Python and work with virtual environments.
 
-💡 [Tap here](https://new.oprosso.net/p/4cb31ec3f47a4596bc758ea1861fb624) **to leave your feedback on the project**. It's anonymous and will help our team make your educational experience better. We recommend completing the survey immediately after the project.
-
 ## Contents
 
 1. [Chapter I](#chapter-i) \
@@ -25,13 +23,13 @@ Python and work with virtual environments.
     8.1. [Part 1](#exercise-04-profiling)
 9. [Chapter IX](#chapter-ix) \
     9.1. [Exercise 05 : PyTest](#exercise-05-pytest)
-    
-   
+
 ## Chapter I
 
 ### Foreword
 
 10 library rules:
+
 * Use a level 0-1 voice.
 * Use a shelf marker.
 * Turn the pages from the top corner.
@@ -74,10 +72,12 @@ ified in the subject.
 
 * No code in the global scope. Use functions!
 * Each file must be ended by a function call in a condition similar to:
+
     ```python
     if __name__ == '__main__':
         # your tests and your error handling
     ```
+
 * Any exception not caught will invalidate your work, even in the event of an error
 that you were asked you to test.
 * No imports are allowed, except those explicitly mentioned in the section “Autho-
@@ -125,10 +125,12 @@ will work with this env here and further on),
 * run Python 3 from the terminal,
 * print the virtual env name using os library,
 * write a small python script that does that thing by calling it in command-line:
+
     ```
     $ ./venv.py
     Your current virtual env is /Users/McShtuder/shtuder
     ```
+
 * deactivate the environment,
 * run the script again ...
 
@@ -194,6 +196,7 @@ list):
     wcwidth==0.1.9
     zipp==3.1.0
     ```
+
 * saves it to requirements.txt
 
 Put an archive of your env in the folder. You can put archivation in your code or you
@@ -236,6 +239,7 @@ MSFT, Total Revenue)
 later)
 
 The example:
+
 ```
 $ ./financial.py 'MSFT' 'Total Revenue'
 ('Total Revenue', '134,249,000', '125,843,000', '110,360,000',

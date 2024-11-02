@@ -3,8 +3,6 @@
 Summary: Today we will help you acquire basic knowledge of the syntax and semantics
 of Python.
 
-💡 [Tap here](https://new.oprosso.net/p/4cb31ec3f47a4596bc758ea1861fb624) **to leave your feedback on the project**. It's anonymous and will help our team make your educational experience better. We recommend completing the survey immediately after the project.
-
 ## Contents
 
 1. [Chapter I](#chapter-i) \
@@ -33,8 +31,7 @@ of Python.
     12.1. [Exercise 08 : Working with strings as lists](#exercise-08-working-with-strings-as-lists)
 13. [Chapter XIII](#chapter-xiii) \
     13.1. [Exercise 09 : Caesar cipher](#exercise-09-caesar-cipher)
-    
-   
+
 ## Chapter I
 
 ### Foreword
@@ -126,23 +123,23 @@ Turn-in directory : ex00/
 Files to turn in : data_types.py
 
 Allowed functions : any import is restricted
+
 * Like any other language, Python has several built-in data types. In this exercise,
 you will become familiar with the most popular and useful ones.
 * Create a script called data_types.py in which you need to define a data_types()
 function. In this function, you need to declare 8 variables with different types and
 print their types on the standard output.
 * You must reproduce the following output exactly:
-    
+
       > python3 data_types.py
       [int, str, float, bool, list, dict, tuple, set]
 
 * It is forbidden to explicitly write the data types in your print. Remember to call
 your function at the end of your script as explained in the instructions for the day:
 
-    
         if __name__ == '__main__':
             data_types()
-    
+
 * Put your file in the ex00 folder in the root directory of your repository.
 
 ## Chapter V
@@ -308,15 +305,15 @@ Allowed functions : import sys
 * You still have those two dictionaries from ex02. And you should still copy them
 into one of your functions in the script.
 * Write a program that has the following behavior:
-    * the program must take as an argument a string containing many expressions
-(to find whatever you want) separated by a comma 
-    * for each expression of the string, the program must detect whether it is a
-company name or a ticker symbol, or neither 
-    * the program should not be case-sensitive but be able to work with white spaces 
-    * if there are no arguments or too many arguments, the program displays nothing 
-    * when there are two commas in a row in the string, the program does not
-display anything 
-    * the program must display the results separated by a line break and use the
+* the program must take as an argument a string containing many expressions
+(to find whatever you want) separated by a comma
+* for each expression of the string, the program must detect whether it is a
+company name or a ticker symbol, or neither
+* the program should not be case-sensitive but be able to work with white spaces
+* if there are no arguments or too many arguments, the program displays nothing
+* when there are two commas in a row in the string, the program does not
+display anything
+* the program must display the results separated by a line break and use the
 following formatting:
 
           $ python3 all_stocks.py 'TSLA , aPPle, Facebook'
@@ -376,6 +373,7 @@ second list contains the email accounts of the participants in your most recent 
 viewed your most recent promotional email.
 
 In business terms, you need to:
+
 * Create a list of those who have not seen your promotional email yet. The list will
 be sent to the call center to reach those people.
 * Create a list of the participants who are not your clients. You will send them an
@@ -384,6 +382,7 @@ introductory email about your products.
 a link to the video and slides of the event.
 
 Technical details:
+
 * Create different functions that convert your lists to sets and use the set operators
 that you need to use to perform the aforementioned business tasks and return the
 required lists of email accounts.
@@ -415,7 +414,7 @@ Files to turn in : names_extractor.py, letter_starter.py
 Allowed functions : import sys
 
 * Imagine that you work in a corporation where the email accounts always have the
-same template: name.surname@corp.com.
+same template: <name.surname@corp.com>.
 * Create a script that takes the path to a file with such email accounts as an argument.
 All the emails are delimited by ’\n’ in the file. The script should return a table
 with the fields: Name, Surname, E-mail delimited by ’\t’. Name and surname

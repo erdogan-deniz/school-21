@@ -15,7 +15,6 @@ The russian version of the task can be found in the repository.
    3.2. [Part 2](#part-2-bonus-credit-calculator) \
    3.3. [Part 3](#part-3-bonus-deposit-calculator)
 
-
 ## Chapter I
 
 ![smartcalcv2.0](misc/images/smartcalcv2.0.PNG)
@@ -45,8 +44,7 @@ For more than a week now, you've been helping Chris Espinosa rewrite an object-o
 
 ## Introduction
 
-In this project you’ll need to implement an extended version of the standard calculator in C++ in the object-oriented programming paradigm, implementing the same functions as the previously developed application in SmartCalc v1.0 project. In addition to basic arithmetic operations such as add/subtract and multiply/divide, you need to supplement the calculator with the ability to calculate arithmetic expressions by following the order, as well as some mathematical functions (sine, cosine, logarithm, etc.). Besides calculating expressions, it should also support the use of the _x_ variable and the graphing of the corresponding function. As for other improvements you can consider a credit and deposit calculator.
-
+In this project you’ll need to implement an extended version of the standard calculator in C++ in the object-oriented programming paradigm, implementing the same functions as the previously developed application in SmartCalc v1.0 project. In addition to basic arithmetic operations such as add/subtract and multiply/divide, you need to supplement the calculator with the ability to calculate arithmetic expressions by following the order, as well as some mathematical functions (sine, cosine, logarithm, etc.). Besides calculating expressions, it should also support the use of the *x* variable and the graphing of the corresponding function. As for other improvements you can consider a credit and deposit calculator.
 
 ## Chapter II
 
@@ -71,7 +69,6 @@ The view includes all code associated with the program interface. An ideal inter
 
 ![](misc/images/MVC-Process.png)
 
-
 ## Chapter III
 
 ## Part 1. Implementation of SmartCalc v2.0
@@ -85,24 +82,25 @@ You need to implement the SmartCalc v2.0:
 - Prepare full coverage of expression calculation modules with unit-tests using the GTest library
 - The program must be built with Makefile which contains standard set of targets for GNU-programs: all, install, uninstall, clean, dvi, dist, tests. Installation directory could be arbitrary
 - GUI implementation, based on any GUI library with API for C++17:
-  * For Linux: GTK+, CEF, Qt, JUCE
-  * For Mac: GTK+, CEF, Qt, JUCE, SFML, Nanogui, Nngui
+  - For Linux: GTK+, CEF, Qt, JUCE
+  - For Mac: GTK+, CEF, Qt, JUCE, SFML, Nanogui, Nngui
 - The program must be implemented using the MVC pattern, and also:
-   - there should be no business logic code in the view code
-   - there should be no interface code in the controller and the model
-   - controllers must be thin
+  - there should be no business logic code in the view code
+  - there should be no interface code in the controller and the model
+  - controllers must be thin
 - Both integers and real numbers with a dot can be input into the program. You should provide the input of numbers in exponential notation
 - The calculation must be done after you complete entering the calculating expression and press the `=` symbol.
 - Calculating arbitrary bracketed arithmetic expressions in infix notation
-- Calculate arbitrary bracketed arithmetic expressions in infix notation with substitution of the value of the variable _x_ as a number
-- Plotting a graph of a function given by an expression in infix notation with the variable _x_ (with coordinate axes, mark of the used scale and an adaptive grid)
-   - It is not necessary to provide the user with the ability to change the scale
+- Calculate arbitrary bracketed arithmetic expressions in infix notation with substitution of the value of the variable *x* as a number
+- Plotting a graph of a function given by an expression in infix notation with the variable *x* (with coordinate axes, mark of the used scale and an adaptive grid)
+  - It is not necessary to provide the user with the ability to change the scale
 - Domain and codomain of a function are limited to at least numbers from -1000000 to 1000000
-   - To plot a graph of a function it is necessary to additionally specify the displayed domain and codomain
+  - To plot a graph of a function it is necessary to additionally specify the displayed domain and codomain
 - Verifiable accuracy of the fractional part is at least to 7 decimal places
 - Users must be able to enter up to 255 characters
 - Bracketed arithmetic expressions in infix notation must support the following arithmetic operations and mathematical functions:
-   - **Arithmetic operators**:
+  - **Arithmetic operators**:
+
      | Operator name | Infix notation <br /> (Classic) | Prefix notation <br /> (Polish notation) |  Postfix notation <br /> (Reverse Polish notation) |
       | --------- | ------ | ------ | ------ |
       | Brackets | (a + b) | (+ a b) | a b + |
@@ -114,8 +112,10 @@ You need to implement the SmartCalc v2.0:
       | Modulus | a mod b | mod a b | a b mod |
       | Unary plus | +a | +a | a+ |
       | Unary minus | -a | -a | a- |
+
       >Note that the multiplication operator contains the obligatory sign `*`. Processing an expression with the omitted `*` sign is optional and is left to the developer's decision
-   - **Functions**:
+  - **Functions**:
+
       | Function description | Function |
       | ------ | ------ |
       | Computes cosine | cos(x) |
@@ -131,13 +131,13 @@ You need to implement the SmartCalc v2.0:
 ## Part 2. Bonus. Credit calculator
 
 Provide a special mode "credit calculator" (you can take banki.ru and calcus.ru as an example):
+
 - Input: total credit amount, term, interest rate, type (annuity, differentiated)
 - Output: monthly payment, overpayment on credit, total payment
 
 ## Part 3. Bonus. Deposit calculator
 
 Provide a special mode "deposit profitability calculator" (you can take banki.ru and calcus.ru as an example):
+
 - Input: deposit amount, deposit term, interest rate, tax rate, periodicity of payments, capitalization of interest, replenishments list, partial withdrawals list
 - Output: accrued interest, tax amount, deposit amount by the end of the term
-
-💡 [Tap here](https://forms.yandex.ru/cloud/64181abec769f101d44293de/) **to leave your feedback on the project**. Product Team really tries to make your educational experience better.

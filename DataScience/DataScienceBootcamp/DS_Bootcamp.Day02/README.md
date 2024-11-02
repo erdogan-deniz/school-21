@@ -3,8 +3,6 @@
 Summary: Today we will help you acquire a basic knowledge of the OOP approach in
 Python.
 
-💡 [Tap here](https://new.oprosso.net/p/4cb31ec3f47a4596bc758ea1861fb624) **to leave your feedback on the project**. It's anonymous and will help our team make your educational experience better. We recommend completing the survey immediately after the project.
-
 ## Contents
 
 1. [Chapter I](#chapter-i) \
@@ -27,8 +25,7 @@ Python.
     9.1. [Exercise 05 : Config and the main program](#exercise-05-config-and-the-main-program)
 10. [Chapter X](#chapter-x) \
     10.1. [Exercise 06 : Logging](#exercise-06-logging)
-    
-   
+
 ## Chapter I
 
 ### Foreword
@@ -41,7 +38,9 @@ inefficient techniques and hard coded variables and neglects object-oriented pro
 Do not be like them.
 
 Here are the top few examples from the website mentioned above:
+
 * How to get the absolute value in just 6 lines of python
+
     ```python
     def absolute\_value(value):
         if str(value)[0]=='-':
@@ -50,7 +49,9 @@ Here are the top few examples from the website mentioned above:
         else:
             return value
     ```
+
 * How to evaluate the factorial of 40000 in approximately 1 second:
+
     ```python
     for module in next\_possible\_modules:
         import math; math.factorial(40000) # approx. a 1 second operation
@@ -58,6 +59,7 @@ Here are the top few examples from the website mentioned above:
     ```
 
 * Gotta check that date
+
     ```python
     if (SelectionAndTimeData[1] < 2000 or \
             SelectionAndTimeData[2] < 1 or SelectionAndTimeData[2] > 12 or \
@@ -100,11 +102,12 @@ ified in the subject.
 
 * No code in the global scope. Use functions!
 * Each file must end with a function call in a condition similar to:
+
     ```python
     if __name__ == '__main__':
         # your tests and your error handling
     ```
-    
+
 * Any exception not caught will invalidate your work, even in the event of an error
 that you were asked to test.
 * No imports are allowed, except those explicitly mentioned in the section “Authorized
@@ -127,6 +130,7 @@ Allowed functions : all imports are restricted
 
 This is going to be an easy warm-up exercise to get you started with object-oriented
 programming in Python.
+
 * Create a python script called first_class.py that contains a class called Must_read.
 It does the only thing reads the file data.csv and prints it. You can hardcode the
 name of the csv file inside the class. Put print() inside your class (you will learn
@@ -213,6 +217,7 @@ a solution. There can be a constructor in python classes: __init__(). It is the 
 that runs first when the instance of a class is instantiated.
 
 Modify your code in the following way:
+
 * Inside the class Research create an __init__() method that takes the path to the
 file that needs to be read as an argument.
 * Modify the method file_reader(). This method does almost the same thing as in
@@ -262,6 +267,7 @@ why not? We can still benefit from it by giving our code a clearer structure by 
 several methods in one nested class.
 
 What you need to do in this exercise:
+
 * Modify the file_reader() method by adding one more argument has_header with
 the default value True. You should use it if your file has a header, if it is not - it
 should be False. The return of this method in this exercise is not a string anymore
@@ -305,6 +311,7 @@ You have one class with many useful methods and you need another class with all 
 some of those methods? No problem! Inherit one from the other.
 
 What you need to do in this exercise:
+
 * In the previous exercise, you had the argument data in your method counts(). Let
 us move it to the constructor of the class Calculations. The same data might be
 useful for the future methods of this class, right?
@@ -342,6 +349,7 @@ parameters into a config file. We will import the config file and our module fil
 main program script.
 
 The same things in detail:
+
 * create a file called config.py where you will store all the external parameters like
 num_of_steps for predict_random()
 * delete the logic after block if __name__ == ’__main__’ from your script from
@@ -379,6 +387,7 @@ Files to turn in : config.py, analytics.py, make_report.py
 
 Allowed functions : import os, from random import randint, import logging, import
 requests (or urllib), import json
+
 * By now you have written your own module containing several classes which contain
 several methods, a program that uses that module and a config file. But what if
 there are some problems during production that you will need to debug? How are

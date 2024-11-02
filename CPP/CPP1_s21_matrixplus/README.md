@@ -4,7 +4,6 @@ Implementation of the s21_matrix_oop.h library.
 
 The russian version of the task can be found in the repository.
 
-
 ## Contents
 
 1. [Chapter I](#chapter-i) \
@@ -13,7 +12,6 @@ The russian version of the task can be found in the repository.
     2.1. [Information](#information)
 3. [Chapter III](#chapter-iii) \
     3.1. [Part 1](#part-1-implementation-of-the-s21_matrix_ooph-library-functions)
-
 
 ## Chapter I
 
@@ -47,7 +45,6 @@ John is known for his technological and algorithmic ideas and tricks, which made
 
 In this project, you will implement the matrix library that you already know from the **s21_matrix** project, but this time you will be using the object-oriented approach (see materials). The object-oriented approach allows to implement a library for matrices as a separate class whose objects have defined operations, that can be represented both as methods and as standard operators +, -, *, etc.
 
-
 ## Chapter II
 
 ## Information
@@ -58,6 +55,7 @@ C++ is a programming language based on the C language for implementing programs 
 For the most part, C++ only adds new opportunities for the programmer or modifies them rather than removes something, so when it comes to C++, it's easier to talk about the differences (see materials) than the similarities.
 
 ### An example of a matrix class in C++
+
 ```cpp
 class S21Matrix {
     private:
@@ -109,7 +107,7 @@ Note that some operations have exceptional situations that require special handl
 | `bool EqMatrix(const S21Matrix& other)` | Checks matrices for equality with each other |  |
 | `void SumMatrix(const S21Matrix& other)` | Adds the second matrix to the current one | different matrix dimensions |
 | `void SubMatrix(const S21Matrix& other)` | Subtracts another matrix from the current one | different matrix dimensions |
-| `void MulNumber(const double num) ` | Multiplies the current matrix by a number |  |
+| `void MulNumber(const double num)` | Multiplies the current matrix by a number |  |
 | `void MulMatrix(const S21Matrix& other)` | Multiplies the current matrix by the second matrix | the number of columns of the first matrix is not equal to the number of rows of the second matrix |
 | `S21Matrix Transpose()` | Creates a new transposed matrix from the current one and returns it |  |
 | `S21Matrix CalcComplements()` | Calculates the algebraic addition matrix of the current one and returns it | the matrix is not square |
@@ -121,7 +119,7 @@ Apart from those operations, you also need to implement constructors and destruc
 | Method | Description |
 | ----------- | ----------- |
 | `S21Matrix()` | A basic constructor that initialises a matrix of some predefined dimension |  
-| `S21Matrix(int rows, int cols) ` | Parametrized constructor with number of rows and columns |
+| `S21Matrix(int rows, int cols)` | Parametrized constructor with number of rows and columns |
 | `S21Matrix(const S21Matrix& other)` | Copy constructor |
 | `S21Matrix(S21Matrix&& other)` | Move constructor |
 | `~S21Matrix()` | Destructor |
@@ -140,7 +138,6 @@ And you also need to overload the following operators, partly corresponding to t
 | `*=`  | Multiplication assignment (`MulMatrix`/`MulNumber`) | the number of columns of the first matrix does not equal the number of rows of the second matrix |
 | `(int i, int j)`  | Indexation by matrix elements (row, column) | index is outside the matrix |
 
-
 ## Chapter III
 
 ## Part 1. Implementation of the s21_matrix_oop.h library functions
@@ -156,6 +153,3 @@ And you also need to overload the following operators, partly corresponding to t
 - Overload the operators according to the table in the chapter [above](#matrix-operations)
 - Prepare full coverage of library functions code with unit-tests using the GTest library
 - Provide a Makefile for building the library and tests (with targets all, clean, test, s21_matrix_oop.a)
-
-
-💡 [Tap here](https://forms.yandex.ru/cloud/64181a0deb614624afcee6b5/) **to leave your feedback on the project**. Pedago Team really tries to make your educational experience better.

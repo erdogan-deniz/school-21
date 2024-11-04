@@ -42,31 +42,92 @@ All Peer Reviews: 127
 #### Edu Progress
 
 - Name: *Real programmer*
-- Rank: 4/5
+- Rank: 4/5.
 - Description: Successfully perform 21 projects.
 <img src="content/photos/badges/Real programmer.png" width="100" height="100" alt="Real programmer">
 
 - Name: *Perfectionist*
-- Rank: 3/5
-- Task: Successfully perform 1 project with a bonus part.
+- Rank: 3/5.
+- Task: Successfully perform 10 project with a bonus part.
 <img src="content/photos/badges/Perfectionist.png" width="100" height="100" alt="Perfectionist">
 
 - Name: *Mistakes are not for me*
-- Rank: 3/5
-- Task: Successfully perform 3 projects in a row without failur.
+- Rank: 3/5.
+- Task: Successfully perform 10 projects in a row without failur.
 <img src="content/photos/badges/Mistakes are not for me.png" width="100" height="100" alt="Mistakes are not for me">
 
 - Name: *Welcome on board*
-- Rank: No rank
+- Rank: No rank.
 - Task: The Survival Camp was completed.
 <img src="content/photos/badges/Welcome on board.png" width="100" height="100" alt="Welcome on board">
 
+- Name: *3 PRP*
+- Rank: No rank.
+- Task: No task.
+<img src="content/photos/badges/3 PRP.png" width="100" height="100" alt="3 PRP">
 
 #### Academic Activities
 
+- Name: *Such a listener*
+- Rank: 5/5.
+- Task: Visit 50 lectures.
+<img src="content/photos/badges/Such a listener.png" width="100" height="100" alt="Such a listener">
+
+- Name: *Lead the World*
+- Rank: 2/5.
+- Task: Be a team lead in 5 projects.
+<img src="content/photos/badges/Lead the World.png" width="100" height="100" alt="Lead the World">
+
 #### Social Activities
 
+- Name: *Happy Halloween!*
+- Rank: No rank.
+- Task: 🎃BOOOO!🎃.
+<img src="content/photos/badges/Halloween.png" width="100" height="100" alt="Happy Halloween!">
+
+- Name: *Computer Security Day 2023*
+- Rank: No rank.
+- Task: Happy Cybersecurity Day!.
+<img src="content/photos/badges/Computer Security Day.png" width="100" height="100" alt="Happy Halloween!">
+
+- Name: *Harry New Year, Moscow!*
+- Rank: No rank.
+- Task: Happy New Year, our dear, beloved peers!.
+<img src="content/photos/badges/Happy New Year.png" width="100" height="100" alt="Harry New Year, Moscow!">
+
+- Name: *Space Exploration Day*
+- Rank: No rank.
+- Task: As Yuri Gagarin once said: `Let's go!`.
+<img src="content/photos/badges/Space Exploration.png" width="100" height="100" alt="Space Exploration Day">
+
 #### Other
+
+- Name: *Billionaire*
+- Rank: 3/5.
+- Task: Accumulate 500 coins.
+<img src="content/photos/badges/Billionaire.png" width="100" height="100" alt="Billionaire">
+
+- Name: *Happy Halloween!*
+- Rank: No rank.
+- Task: Happy Halloween!.
+<img src="content/photos/badges/Space Exploration.png" width="100" height="100" alt="Happy Halloween!">
+
+- Name: *Happy Birthday, Moscow сampus!*
+- Rank: No rank.
+- Task: The Moscow campus of School 21 has turned 5 years old!
+<img src="content/photos/badges/Space Exploration.png" width="100" height="100" alt="Happy Birthday, Moscow сampus!">
+
+- Name: *Happy birthday, Wave 16!*
+- Rank: No rank.
+- Task: With love from ADM :).
+<img src="content/photos/badges/Space Exploration.png" width="100" height="100" alt="Happy birthday, Wave 16!">
+
+#### Supporting
+
+- Name: *Will you be my peer?* ❤️
+- Rank: No rank.
+- Task: Love is School 21, which has become a second home!.
+<img src="content/photos/badges/14 Febrarue.png" width="100" height="100" alt="Will you be my peer?">
 
 ### Skills
 

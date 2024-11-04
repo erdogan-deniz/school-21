@@ -85,19 +85,19 @@ All Peer Reviews: 127
 - Task: 🎃BOOOO!🎃.
 <img src="content/photos/badges/Halloween.png" width="100" height="100" alt="Happy Halloween!">
 
-- Name: *Computer Security Day 2023*
+- Name: *Computer Security Day*
 - Rank: No rank.
-- Task: Happy Cybersecurity Day!.
+- Task: Happy Cybersecurity Day!
 <img src="content/photos/badges/Computer Security Day.png" width="100" height="100" alt="Happy Halloween!">
 
 - Name: *Harry New Year, Moscow!*
 - Rank: No rank.
-- Task: Happy New Year, our dear, beloved peers!.
+- Task: Happy New Year, our dear, beloved peers!
 <img src="content/photos/badges/Happy New Year.png" width="100" height="100" alt="Harry New Year, Moscow!">
 
 - Name: *Space Exploration Day*
 - Rank: No rank.
-- Task: As Yuri Gagarin once said: `Let's go!`.
+- Task: As Yuri Gagarin once said: `Let's go!`
 <img src="content/photos/badges/Space Exploration.png" width="100" height="100" alt="Space Exploration Day">
 
 #### Other
@@ -109,24 +109,24 @@ All Peer Reviews: 127
 
 - Name: *Happy Halloween!*
 - Rank: No rank.
-- Task: Happy Halloween!.
-<img src="content/photos/badges/Space Exploration.png" width="100" height="100" alt="Happy Halloween!">
+- Task: Happy Halloween!
+<img src="content/photos/badges/Halloween Old.png" width="100" height="100" alt="Happy Halloween!">
 
 - Name: *Happy Birthday, Moscow сampus!*
 - Rank: No rank.
 - Task: The Moscow campus of School 21 has turned 5 years old!
-<img src="content/photos/badges/Space Exploration.png" width="100" height="100" alt="Happy Birthday, Moscow сampus!">
+<img src="content/photos/badges/Happy Birthday.png" width="100" height="100" alt="Happy Birthday, Moscow сampus!">
 
 - Name: *Happy birthday, Wave 16!*
 - Rank: No rank.
-- Task: With love from ADM :).
-<img src="content/photos/badges/Space Exploration.png" width="100" height="100" alt="Happy birthday, Wave 16!">
+- Task: With love from ADM :)
+<img src="content/photos/badges/Wawe 16.png" width="100" height="100" alt="Happy birthday, Wave 16!">
 
 #### Supporting
 
 - Name: *Will you be my peer?* ❤️
 - Rank: No rank.
-- Task: Love is School 21, which has become a second home!.
+- Task: Love is School 21, which has become a second home!
 <img src="content/photos/badges/14 Febrarue.png" width="100" height="100" alt="Will you be my peer?">
 
 ### Skills

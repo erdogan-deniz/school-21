@@ -44,15 +44,13 @@ All Peer Reviews: 127
 - Name: *Real programmer*
 - Rank: 4/5
 - Description: Successfully perform 21 projects.
+![Real programmer](content/photos/badges/Real%20programmer.png)
 
 #### Academic Activities
-
 
 #### Social Activities
 
 #### Other
-
-
 
 ### Skills
 

@@ -7,6 +7,10 @@
 
 ## Info
 
+### Description
+
+**School 21** (The analogue of the *School 42*) — Free digital technology school. This is an innovative approach to learning programming. It offers free, non-profit education without traditional teachers, lessons, and grades. Instead, students learn through teamwork and project activities.
+
 ### General
 
 - Nickname - *charisel*

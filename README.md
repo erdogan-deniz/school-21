@@ -1,6 +1,6 @@
 #
 
-<!-- Logo -->
+<!-- School 21 Logo -->
 <p align="center">
     <img src="https://sun9-38.userapi.com/impg/KJR2NK87iyCNo7L8oZ9379FOTBF2nQJJ3mWvZw/mFRmaBUOkuk.jpg?size=480x360&quality=96&sign=8ffee636080944c3067db7ad320c8400&type=album" alt="School21 Logo" />
 </p>
@@ -50,31 +50,31 @@ All Peer Reviews: 127.
 
 #### Edu Progress
 
-- Name: *Real programmer*
+- Name: *Real programmer*.
 - Rank: 4/5.
 - Description: Successfully perform 21 projects.
 <!-- Badge Photo -->
 <img src="content/photos/badges/real_programmer.png" width="100" height="100" alt="Real programmer">
 
-- Name: *Perfectionist*
+- Name: *Perfectionist*.
 - Rank: 3/5.
 - Task: Successfully perform 10 project with a bonus part.
 <!-- Badge Photo -->
 <img src="content/photos/badges/perfectionist.png" width="100" height="100" alt="Perfectionist">
 
-- Name: *Mistakes are not for me*
+- Name: *Mistakes are not for me*.
 - Rank: 3/5.
 - Task: Successfully perform 10 projects in a row without failur.
 <!-- Badge Photo -->
 <img src="content/photos/badges/mistakes_are_not_for_me.png" width="100" height="100" alt="Mistakes are not for me">
 
-- Name: *Welcome on board*
+- Name: *Welcome on board*.
 - Rank: No rank.
 - Task: The Survival Camp was completed.
 <!-- Badge Photo -->
 <img src="content/photos/badges/welcome_on_board.png" width="100" height="100" alt="Welcome on board">
 
-- Name: *3 PRP*
+- Name: *3 PRP*.
 - Rank: No rank.
 - Task: No task.
 <!-- Badge Photo -->
@@ -82,13 +82,13 @@ All Peer Reviews: 127.
 
 #### Academic Activities
 
-- Name: *Such a listener*
+- Name: *Such a listener*.
 - Rank: 5/5.
 - Task: Visit 50 lectures.
 <!-- Badge Photo -->
 <img src="content/photos/badges/such_a_listener.png" width="100" height="100" alt="Such a listener">
 
-- Name: *Lead the World*
+- Name: *Lead the World*.
 - Rank: 2/5.
 - Task: Be a team lead in 5 projects.
 <!-- Badge Photo -->
@@ -102,7 +102,7 @@ All Peer Reviews: 127.
 <!-- Badge Photo -->
 <img src="content/photos/badges/halloween.png" width="100" height="100" alt="Happy Halloween!">
 
-- Name: *Computer Security Day*
+- Name: *Computer Security Day*.
 - Rank: No rank.
 - Task: Happy Cybersecurity Day!
 <!-- Badge Photo -->
@@ -114,7 +114,7 @@ All Peer Reviews: 127.
 <!-- Badge Photo -->
 <img src="content/photos/badges/happy_new_year.png" width="100" height="100" alt="Harry New Year, Moscow!">
 
-- Name: *Space Exploration Day*
+- Name: *Space Exploration Day*.
 - Rank: No rank.
 - Task: As Yuri Gagarin once said: `Let's go!`
 <!-- Badge Photo -->
@@ -122,7 +122,7 @@ All Peer Reviews: 127.
 
 #### Other
 
-- Name: *Billionaire*
+- Name: *Billionaire*.
 - Rank: 3/5.
 - Task: Accumulate 500 coins.
 <!-- Badge Photo -->

@@ -149,7 +149,7 @@ All Peer Reviews: 127
 
 ### Skills
 
-<img src="content/photos/other/Skill Wheel.png" alt="Skill Wheel">
+<img src="content/photos/profile/Skill Wheel.png" alt="Skill Wheel">
 
 - C: **1423**
 - Web: **136**

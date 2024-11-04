@@ -76,7 +76,7 @@ All Peer Reviews: 127
 - Name: *Lead the World*
 - Rank: 2/5.
 - Task: Be a team lead in 5 projects.
-<img src="content/photos/badges/Lead the World.png" width="100" height="100" alt="Lead the World">
+<img src="content/photos/badges/Lead the world.png" width="100" height="100" alt="Lead the World">
 
 #### Social Activities
 

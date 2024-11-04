@@ -23,7 +23,7 @@
 
 ### Peer Feedback
 
-😃 Nice: 4/4
+- Nice: 4/4 😃
 
 ⏲ Punctual: 4/4
 

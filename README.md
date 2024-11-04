@@ -46,6 +46,22 @@ All Peer Reviews: 127
 - Description: Successfully perform 21 projects.
 <img src="content/photos/badges/Real programmer.png" width="100" height="100" alt="Real programmer">
 
+- Name: *Perfectionist*
+- Rank: 3/5
+- Task: Successfully perform 1 project with a bonus part.
+<img src="content/photos/badges/Perfectionist.png" width="100" height="100" alt="Perfectionist">
+
+- Name: *Mistakes are not for me*
+- Rank: 3/5
+- Task: Successfully perform 3 projects in a row without failur.
+<img src="content/photos/badges/Mistakes are not for me.png" width="100" height="100" alt="Mistakes are not for me">
+
+- Name: *Welcome on board*
+- Rank: No rank
+- Task: The Survival Camp was completed.
+<img src="content/photos/badges/Welcome on board.png" width="100" height="100" alt="Welcome on board">
+
+
 #### Academic Activities
 
 #### Social Activities

@@ -175,6 +175,6 @@ All Peer Reviews: 129.
 - Leadership: **1244**.
 - Parallel computing: **23**.
 - Company experience: **3574**.
-- Structuredprogramming: **1551**.
+- Structured programming: **1551**.
 - Types and data structures: **804**.
 - Network & System administration: **506**.

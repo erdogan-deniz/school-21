@@ -13,7 +13,9 @@ This repository is a set of projects written by me during my studies at *School 
 
 **School 21** (The analogue of the *School 42*) — Free digital technology school. This is an innovative approach to learning programming. It offers free, non-profit education without traditional teachers, lessons, and grades. Instead, students learn through teamwork and project activities.
 
-## Account Data
+## Education Account Description
+
+### General
 
 - Level: **11**
 - Wawe: 22.10

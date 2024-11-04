@@ -17,11 +17,11 @@ This repository is a set of projects written by me during my studies at *School 
 
 ### General
 
-- Level: **11**
-- Wawe: 22.10
-- Campus - *Moscow*
 - Nickname - *charisel*
+- Campus - *Moscow*
 - Program: *Core program*
+- Wawe: 22.10
+- Level: **11**
 - E-mail: <charisel@student.21-school.ru>
 
 ### Points
@@ -36,3 +36,42 @@ This repository is a set of projects written by me during my studies at *School 
 - Interested: 4/4 ❓
 
 All Peer Reviews: 127
+
+### Badges
+
+#### Edu Progress
+
+- Name: *Real programmer*
+- Rank: 4/5
+- Description: Successfully perform 21 projects.
+
+#### Academic Activities
+
+
+#### Social Activities
+
+#### Other
+
+
+
+### Skills
+
+- C: **1423**
+- Web: **136**
+- C++: **1188**
+- OOP: **1156**
+- Linux: **558**
+- Python: **946**
+- DevOps: **264**
+- Backend: **117**
+- Graphics: **587**
+- Team work: **925**
+- DB & Data: **109**
+- Shell/Bash: **319**
+- Algorithms: **1881**
+- Leadership: **1244**
+- Parallel computing: **23**
+- Company experience: **3574**
+- Structuredprogramming: **1551**
+- Types and data structures: **804**
+- Network & System administration: **506**

@@ -7,36 +7,27 @@
 
 ## Repository Description
 
-This repository is a set of projects written by me during my studies at *School 21*.
+This repository is a collection of projects written while studying at *School 2️⃣1️⃣*.
 
 ## School 21 Description
 
-**School 21** (The analogue of the *School 42*) — Free digital technology school. This is an innovative approach to learning programming. It offers free, non-profit education without traditional teachers, lessons, and grades. Instead, students learn through teamwork and project activities.
+**School 2️⃣1️⃣** (the analogue of the *School 4️⃣2️⃣*) — Free digital technology school. This is an innovative approach to learning programming. It offers free, non-profit education without traditional teachers, lessons, and grades. Instead, students learn through teamwork and project activities.
 
-## Prject Program
+## Repository File Structure
 
-- Name: *C-1*
-- Projects: *SimpleBashUtils*, *s21_string+*, *s21_decimal*, *s21_matrix*, *C7_BrickGame_v1.0*, *C_Ex*.
-- Description: Basic projects in the C programming language.
-
-- Name: *DO-1*
-- Projects: *D01_Linux*, *D02_Linux_Network*, *D04_SimpleDocker*, *D06_CICD*, *D0_Ex-t*.
-- Description: Basic DevOps projects.
-
-- Name: *SQL-1*
-- Projects: *SQL-1*, *SQL_Ex*.
-- Description: Basic SQL projects.
-
-- Name: *CPP-1*
-- Projects: *s21_matrix+*, *s21_containers*, *CPP3_BrickGame_v2.0*, *3DViewer_v2.0*, *CPP_Ex*.
-- Description: Basic projects in the C++ programming language.
+- *content*: The material necessary for the design of the repository and its elements.
+- *core-program*: A set of projects where each project represents the final product.
+- *project-clusters*: A set of projects where each project consists of small projects united by one common theme.
+- *survival-camp*: A set of small projects, each of which trains and tests the developer. This stage is a qualifying stage for training.
+- *.markdownlint.json*: The main configuration file *README.md* file.
+- *README.md*: The description file of the current repository (you are reading it now).
 
 ## Education Account Description
 
 ### General
 
-- Nickname - *charisel*
-- Campus - *Moscow*
+- Nickname: *charisel*
+- Campus: *Moscow*
 - Program: *Core program*
 - Wawe: 22.10
 - Level: **11**
@@ -62,94 +53,94 @@ All Peer Reviews: 127
 - Name: *Real programmer*
 - Rank: 4/5.
 - Description: Successfully perform 21 projects.
-<img src="content/photos/badges/Real programmer.png" width="100" height="100" alt="Real programmer">
+<img src="content/photos/badges/real_programmer.png" width="100" height="100" alt="Real programmer">
 
 - Name: *Perfectionist*
 - Rank: 3/5.
 - Task: Successfully perform 10 project with a bonus part.
-<img src="content/photos/badges/Perfectionist.png" width="100" height="100" alt="Perfectionist">
+<img src="content/photos/badges/perfectionist.png" width="100" height="100" alt="Perfectionist">
 
 - Name: *Mistakes are not for me*
 - Rank: 3/5.
 - Task: Successfully perform 10 projects in a row without failur.
-<img src="content/photos/badges/Mistakes are not for me.png" width="100" height="100" alt="Mistakes are not for me">
+<img src="content/photos/badges/mistakes_are_not_for_me.png" width="100" height="100" alt="Mistakes are not for me">
 
 - Name: *Welcome on board*
 - Rank: No rank.
 - Task: The Survival Camp was completed.
-<img src="content/photos/badges/Welcome on board.png" width="100" height="100" alt="Welcome on board">
+<img src="content/photos/badges/welcome_on_board.png" width="100" height="100" alt="Welcome on board">
 
 - Name: *3 PRP*
 - Rank: No rank.
 - Task: No task.
-<img src="content/photos/badges/3 PRP.png" width="100" height="100" alt="3 PRP">
+<img src="content/photos/badges/3_prp.png" width="100" height="100" alt="3 PRP">
 
 #### Academic Activities
 
 - Name: *Such a listener*
 - Rank: 5/5.
 - Task: Visit 50 lectures.
-<img src="content/photos/badges/Such a listener.png" width="100" height="100" alt="Such a listener">
+<img src="content/photos/badges/such_a_listener.png" width="100" height="100" alt="Such a listener">
 
 - Name: *Lead the World*
 - Rank: 2/5.
 - Task: Be a team lead in 5 projects.
-<img src="content/photos/badges/Lead the world.png" width="100" height="100" alt="Lead the World">
+<img src="content/photos/badges/lead_the_world.png" width="100" height="100" alt="Lead the World">
 
 #### Social Activities
 
 - Name: *Happy Halloween!*
 - Rank: No rank.
 - Task: 🎃BOOOO!🎃.
-<img src="content/photos/badges/Halloween.png" width="100" height="100" alt="Happy Halloween!">
+<img src="content/photos/badges/halloween.png" width="100" height="100" alt="Happy Halloween!">
 
 - Name: *Computer Security Day*
 - Rank: No rank.
 - Task: Happy Cybersecurity Day!
-<img src="content/photos/badges/Computer Security Day.png" width="100" height="100" alt="Happy Halloween!">
+<img src="content/photos/badges/computer_security_day.png" width="100" height="100" alt="Happy Halloween!">
 
 - Name: *Harry New Year, Moscow!*
 - Rank: No rank.
 - Task: Happy New Year, our dear, beloved peers!
-<img src="content/photos/badges/Happy New Year.png" width="100" height="100" alt="Harry New Year, Moscow!">
+<img src="content/photos/badges/happy_new_year.png" width="100" height="100" alt="Harry New Year, Moscow!">
 
 - Name: *Space Exploration Day*
 - Rank: No rank.
 - Task: As Yuri Gagarin once said: `Let's go!`
-<img src="content/photos/badges/Space Exploration.png" width="100" height="100" alt="Space Exploration Day">
+<img src="content/photos/badges/space_exploration.png" width="100" height="100" alt="Space Exploration Day">
 
 #### Other
 
 - Name: *Billionaire*
 - Rank: 3/5.
 - Task: Accumulate 500 coins.
-<img src="content/photos/badges/Billionaire.png" width="100" height="100" alt="Billionaire">
+<img src="content/photos/badges/billionaire.png" width="100" height="100" alt="Billionaire">
 
 - Name: *Happy Halloween!*
 - Rank: No rank.
 - Task: Happy Halloween!
-<img src="content/photos/badges/Halloween Old.png" width="100" height="100" alt="Happy Halloween!">
+<img src="content/photos/badges/halloween_old.png" width="100" height="100" alt="Happy Halloween!">
 
 - Name: *Happy Birthday, Moscow сampus!*
 - Rank: No rank.
 - Task: The Moscow campus of School 21 has turned 5 years old!
-<img src="content/photos/badges/Happy Birthday.png" width="100" height="100" alt="Happy Birthday, Moscow сampus!">
+<img src="content/photos/badges/happy_birthday.png" width="100" height="100" alt="Happy Birthday, Moscow сampus!">
 
 - Name: *Happy birthday, Wave 16!*
 - Rank: No rank.
 - Task: With love from ADM :)
-<img src="content/photos/badges/Wawe 16.png" width="100" height="100" alt="Happy birthday, Wave 16!">
+<img src="content/photos/badges/wawe_16.png" width="100" height="100" alt="Happy birthday, Wave 16!">
 
 #### Supporting
 
 - Name: *Will you be my peer?* ❤️
 - Rank: No rank.
 - Task: Love is School 21, which has become a second home!
-<img src="content/photos/badges/14 Febrarue.png" width="100" height="100" alt="Will you be my peer?">
+<img src="content/photos/badges/14_febrarue.png" width="100" height="100" alt="Will you be my peer?">
 
 ### Skills
 
-<img src="content/photos/profile/Skill Wheel.png" alt="Skill Wheel">
+<img src="content/photos/profile/skill_wheel.png" alt="Skill Wheel">
 
 - C: **1423**
 - Web: **136**

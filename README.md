@@ -44,7 +44,7 @@ This repository is a collection of projects written while studying at *School 2�
 - Rigorous: 4/4 ⚖️
 - Interested: 4/4 ❓
 
-All Peer Reviews: 127.
+All Peer Reviews: 129.
 
 ### Badges
 

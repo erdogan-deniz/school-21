@@ -1,4 +1,4 @@
-# School 21 🎓
+#
 
 <!-- Logo -->
 <p align="center">

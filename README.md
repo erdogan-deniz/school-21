@@ -13,6 +13,24 @@ This repository is a set of projects written by me during my studies at *School 
 
 **School 21** (The analogue of the *School 42*) — Free digital technology school. This is an innovative approach to learning programming. It offers free, non-profit education without traditional teachers, lessons, and grades. Instead, students learn through teamwork and project activities.
 
+## Prject Program
+
+- Name: *C-1*
+- Projects: *SimpleBashUtils*, *s21_string+*, *s21_decimal*, *s21_matrix*, *C7_BrickGame_v1.0*, *C_Ex*.
+- Description: Basic projects in the C programming language.
+
+- Name: *DO-1*
+- Projects: *D01_Linux*, *D02_Linux_Network*, *D04_SimpleDocker*, *D06_CICD*, *D0_Ex-t*.
+- Description: Basic DevOps projects.
+
+- Name: *SQL-1*
+- Projects: *SQL-1*, *SQL_Ex*.
+- Description: Basic SQL projects.
+
+- Name: *CPP-1*
+- Projects: *s21_matrix+*, *s21_containers*, *CPP3_BrickGame_v2.0*, *3DViewer_v2.0*, *CPP_Ex*.
+- Description: Basic projects in the C++ programming language.
+
 ## Education Account Description
 
 ### General

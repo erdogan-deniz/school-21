@@ -53,31 +53,31 @@ All Peer Reviews: 127
 - Name: *Real programmer*
 - Rank: 4/5.
 - Description: Successfully perform 21 projects.
-<!-- Logo -->
+<!-- Badge Photo -->
 <img src="content/photos/badges/real_programmer.png" width="100" height="100" alt="Real programmer">
 
 - Name: *Perfectionist*
 - Rank: 3/5.
 - Task: Successfully perform 10 project with a bonus part.
-<!-- Logo -->
+<!-- Badge Photo -->
 <img src="content/photos/badges/perfectionist.png" width="100" height="100" alt="Perfectionist">
 
 - Name: *Mistakes are not for me*
 - Rank: 3/5.
 - Task: Successfully perform 10 projects in a row without failur.
-<!-- Logo -->
+<!-- Badge Photo -->
 <img src="content/photos/badges/mistakes_are_not_for_me.png" width="100" height="100" alt="Mistakes are not for me">
 
 - Name: *Welcome on board*
 - Rank: No rank.
 - Task: The Survival Camp was completed.
-<!-- Logo -->
+<!-- Badge Photo -->
 <img src="content/photos/badges/welcome_on_board.png" width="100" height="100" alt="Welcome on board">
 
 - Name: *3 PRP*
 - Rank: No rank.
 - Task: No task.
-<!-- Logo -->
+<!-- Badge Photo -->
 <img src="content/photos/badges/3_prp.png" width="100" height="100" alt="3 PRP">
 
 #### Academic Activities
@@ -85,13 +85,13 @@ All Peer Reviews: 127
 - Name: *Such a listener*
 - Rank: 5/5.
 - Task: Visit 50 lectures.
-<!-- Logo -->
+<!-- Badge Photo -->
 <img src="content/photos/badges/such_a_listener.png" width="100" height="100" alt="Such a listener">
 
 - Name: *Lead the World*
 - Rank: 2/5.
 - Task: Be a team lead in 5 projects.
-<!-- Logo -->
+<!-- Badge Photo -->
 <img src="content/photos/badges/lead_the_world.png" width="100" height="100" alt="Lead the World">
 
 #### Social Activities
@@ -99,25 +99,25 @@ All Peer Reviews: 127
 - Name: *Happy Halloween!*
 - Rank: No rank.
 - Task: 🎃BOOOO!🎃.
-<!-- Logo -->
+<!-- Badge Photo -->
 <img src="content/photos/badges/halloween.png" width="100" height="100" alt="Happy Halloween!">
 
 - Name: *Computer Security Day*
 - Rank: No rank.
 - Task: Happy Cybersecurity Day!
-<!-- Logo -->
+<!-- Badge Photo -->
 <img src="content/photos/badges/computer_security_day.png" width="100" height="100" alt="Happy Halloween!">
 
 - Name: *Harry New Year, Moscow!*
 - Rank: No rank.
 - Task: Happy New Year, our dear, beloved peers!
-<!-- Logo -->
+<!-- Badge Photo -->
 <img src="content/photos/badges/happy_new_year.png" width="100" height="100" alt="Harry New Year, Moscow!">
 
 - Name: *Space Exploration Day*
 - Rank: No rank.
 - Task: As Yuri Gagarin once said: `Let's go!`
-<!-- Logo -->
+<!-- Badge Photo -->
 <img src="content/photos/badges/space_exploration.png" width="100" height="100" alt="Space Exploration Day">
 
 #### Other
@@ -125,25 +125,25 @@ All Peer Reviews: 127
 - Name: *Billionaire*
 - Rank: 3/5.
 - Task: Accumulate 500 coins.
-<!-- Logo -->
+<!-- Badge Photo -->
 <img src="content/photos/badges/billionaire.png" width="100" height="100" alt="Billionaire">
 
 - Name: *Happy Halloween!*
 - Rank: No rank.
 - Task: Happy Halloween!
-<!-- Logo -->
+<!-- Badge Photo -->
 <img src="content/photos/badges/halloween_old.png" width="100" height="100" alt="Happy Halloween!">
 
 - Name: *Happy Birthday, Moscow сampus!*
 - Rank: No rank.
 - Task: The Moscow campus of School 21 has turned 5 years old!
-<!-- Logo -->
+<!-- Badge Photo -->
 <img src="content/photos/badges/happy_birthday.png" width="100" height="100" alt="Happy Birthday, Moscow сampus!">
 
 - Name: *Happy birthday, Wave 16!*
 - Rank: No rank.
 - Task: With love from ADM :)
-<!-- Logo -->
+<!-- Badge Photo -->
 <img src="content/photos/badges/wawe_16.png" width="100" height="100" alt="Happy birthday, Wave 16!">
 
 #### Supporting
@@ -151,12 +151,12 @@ All Peer Reviews: 127
 - Name: *Will you be my peer?* ❤️
 - Rank: No rank.
 - Task: Love is School 21, which has become a second home!
-<!-- Logo -->
+<!-- Badge Photo -->
 <img src="content/photos/badges/14_febrarue.png" width="100" height="100" alt="Will you be my peer?">
 
 ### Skills
 
-<!-- Logo -->
+<!-- Skill Wheel Photo -->
 <img src="content/photos/profile/skill_wheel.png" alt="Skill Wheel">
 
 - C: **1423**

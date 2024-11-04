@@ -1,0 +1,11 @@
+{
+    "default": true,
+    "line-length": false,
+
+    "no-inline-html": {
+        "allowed_elements": [
+            "p", 
+            "img"
+        ]
+    }
+}

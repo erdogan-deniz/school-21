@@ -24,12 +24,9 @@
 ### Peer Feedback
 
 - Nice: 4/4 😃
-
-⏲ Punctual: 4/4
-
-⚖️ Rigorous: 4/4
-
-❓ Interested: 4/4
+- Punctual: 4/4 ⏲
+- Rigorous: 4/4 ⚖️
+- Interested: 4/4 ❓
 
 All Peer Reviews: 127
 

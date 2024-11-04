@@ -159,22 +159,22 @@ All Peer Reviews: 127.
 <!-- Skill Wheel Photo -->
 <img src="content/photos/profile/skill_wheel.png" alt="Skill Wheel">
 
-- C: **1423**
-- Web: **136**
-- C++: **1188**
-- OOP: **1156**
-- Linux: **558**
-- Python: **946**
-- DevOps: **264**
-- Backend: **117**
-- Graphics: **587**
-- Team work: **925**
-- DB & Data: **109**
-- Shell/Bash: **319**
-- Algorithms: **1881**
-- Leadership: **1244**
-- Parallel computing: **23**
-- Company experience: **3574**
-- Structuredprogramming: **1551**
-- Types and data structures: **804**
-- Network & System administration: **506**
+- C: **1423**.
+- Web: **136**.
+- C++: **1188**.
+- OOP: **1156**.
+- Linux: **558**.
+- Python: **946**.
+- DevOps: **264**.
+- Backend: **117**.
+- Graphics: **587**.
+- Team work: **925**.
+- DB & Data: **109**.
+- Shell/Bash: **319**.
+- Algorithms: **1881**.
+- Leadership: **1244**.
+- Parallel computing: **23**.
+- Company experience: **3574**.
+- Structuredprogramming: **1551**.
+- Types and data structures: **804**.
+- Network & System administration: **506**.

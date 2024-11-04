@@ -26,16 +26,16 @@ This repository is a collection of projects written while studying at *School 2Ô
 
 ### General
 
-- Nickname: *charisel*
-- Campus: *Moscow*
-- Program: *Core program*
-- Wawe: 22.10
-- Level: **11**
-- E-mail: <charisel@student.21-school.ru>
+- Nickname: *charisel*.
+- Campus: *Moscow*.
+- Program: *Core program*.
+- Wawe: 22.10.
+- Level: **11**.
+- E-mail: <charisel@student.21-school.ru>.
 
 ### Points
 
-- XP: **16160**
+- XP: **16160**.
 
 ### Peer Feedback
 
@@ -44,7 +44,7 @@ This repository is a collection of projects written while studying at *School 2Ô
 - Rigorous: 4/4 ‚öñÔ∏è
 - Interested: 4/4 ‚ùì
 
-All Peer Reviews: 127
+All Peer Reviews: 127.
 
 ### Badges
 

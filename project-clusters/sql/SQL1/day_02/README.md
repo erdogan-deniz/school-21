@@ -1,6 +1,6 @@
 # Day 02 - Piscine SQL
 
-## _Deep diving into JOINs in SQL_
+## Deep diving into JOINs in SQL
 
 Resume: Today you will see how to get needed data based on different structures JOINs
 
@@ -35,13 +35,13 @@ Resume: Today you will see how to get needed data based on different structures 
 14. [Chapter XIV](#chapter-xiv) \
     14.1. [Exercise 10 - Find persons from one city](#exercise-10-find-persons-from-one-city)
 
-
 ## Chapter I
+
 ## Preamble
 
-![D02_01](misc/images/D02_01.png)
+![D02_01](misc/images/d02_01.png)
 
-In the picture, you can see a Relational Expression in Tree View. This expression corresponds the next SQL query 
+In the picture, you can see a Relational Expression in Tree View. This expression corresponds the next SQL query
 
     SELECT *
         FROM R CROSS JOIN S
@@ -49,16 +49,17 @@ In the picture, you can see a Relational Expression in Tree View. This expressio
 
 So, in other words we can describe any SQL in mathematical terms of Relational Algebra.
 
-The main question (which I hear from my students) is why do we need to learn Relational Algebra in a course, if we can write a SQL in a first attempt? My answer is yes and no in one time. “Yes” means you can write a SQL from the first attempt, that’s right , “No” means you have to know the main aspects of Relational Algebra, because this knowledge is in use for optimization plans and for semantic queries. 
+The main question (which I hear from my students) is why do we need to learn Relational Algebra in a course, if we can write a SQL in a first attempt? My answer is yes and no in one time. “Yes” means you can write a SQL from the first attempt, that’s right , “No” means you have to know the main aspects of Relational Algebra, because this knowledge is in use for optimization plans and for semantic queries.
 Which type of joins are existing in Relational Algebra?
 Actually, “Cross Join” is a primitive operator and it is an ancestor for other types of joins.
+
 - Natural Join
 - Theta Join
 - Semi Join
 - Anti Join
-- Left / Right / Full Joins 
+- Left / Right / Full Joins
 
-But what does a join operation between 2 tables mean? Let me present a part of pseudo code, how join operation works without indexing. 
+But what does a join operation between 2 tables mean? Let me present a part of pseudo code, how join operation works without indexing.
 
     FOR r in R LOOP
         FOR s in S LOOP
@@ -69,10 +70,8 @@ But what does a join operation between 2 tables mean? Let me present a part of p
 
 It’s just a set of loops ... Not magic at all
 
-
-
-
 ## Chapter II
+
 ## General Rules
 
 - Use this page as the only reference. Do not listen to any rumors and speculations on how to prepare your solution.
@@ -82,51 +81,61 @@ It’s just a set of loops ... Not magic at all
 - Your solutions will be evaluated by your piscine mates.
 - You should not leave in your directory any other file than those explicitly specified by the exercise instructions. It is recommended that you modify your `.gitignore` to avoid accidents.
 - Do you have a question? Ask your neighbor on the right. Otherwise, try with your neighbor on the left.
-- Your reference manual: mates / Internet / Google. 
+- Your reference manual: mates / Internet / Google.
 - Read the examples carefully. They may require things that are not otherwise specified in the subject.
 - And may the SQL-Force be with you!
 - Absolutely everything can be presented in SQL! Let’s start and have fun!
 
 ## Chapter III
+
 ## Rules of the day
 
-- Please make sure you have an own database and access for it on your PostgreSQL cluster. 
-- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community). 
+- Please make sure you have an own database and access for it on your PostgreSQL cluster.
+- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community).
 - All tasks contain a list of Allowed and Denied sections with listed database options, database types, SQL constructions etc. Please have a look at the section before you start.
-- Please take a look at the Logical View of our Database Model. 
+- Please take a look at the Logical View of our Database Model.
 
 ![schema](misc/images/schema.png)
 
-
 1. **pizzeria** table (Dictionary Table with available pizzerias)
+
 - field id - primary key
 - field name - name of pizzeria
 - field rating - average rating of pizzeria (from 0 to 5 points)
+
 2. **person** table (Dictionary Table with persons who loves pizza)
+
 - field id - primary key
 - field name - name of person
 - field age - age of person
 - field gender - gender of person
 - field address - address of person
+
 3. **menu** table (Dictionary Table with available menu and price for concrete pizza)
+
 - field id - primary key
 - field pizzeria_id - foreign key to pizzeria
 - field pizza_name - name of pizza in pizzeria
 - field price - price of concrete pizza
+
 4. **person_visits** table (Operational Table with information about visits of pizzeria)
+
 - field id - primary key
 - field person_id - foreign key to person
 - field pizzeria_id - foreign key to pizzeria
-- field visit_date - date (for example 2022-01-01) of person visit 
+- field visit_date - date (for example 2022-01-01) of person visit
+
 5. **person_order** table (Operational Table with information about persons orders)
+
 - field id - primary key
 - field person_id - foreign key to person
 - field menu_id - foreign key to menu
-- field order_date - date (for example 2022-01-01) of person order 
+- field order_date - date (for example 2022-01-01) of person order
 
 Persons' visit and persons' order are different entities and don't contain any correlation between data. For example, a client can be in one restraunt (just looking at menu) and in this time make an order in different one by phone or by mobile application. Or another case,  just be at home and again make a call with order without any visits.
 
 ## Chapter IV
+
 ## Exercise 00 - Move to the LEFT, move to the RIGHT
 
 | Exercise 00: Move to the LEFT, move to the RIGHT |                                                                                                                          |
@@ -138,10 +147,10 @@ Persons' visit and persons' order are different entities and don't contain any c
 | **Denied**                               |                                                                                                                          |
 | SQL Syntax Construction                        | `NOT IN`, `IN`, `NOT EXISTS`, `EXISTS`, `UNION`, `EXCEPT`, `INTERSECT`                                                                                              |
 
-Please write a SQL statement which returns a list of pizzerias names with corresponding rating value which have not been visited by persons. 
-
+Please write a SQL statement which returns a list of pizzerias names with corresponding rating value which have not been visited by persons.
 
 ## Chapter V
+
 ## Exercise 01 - Find data gaps
 
 | Exercise 01: Find data gaps|                                                                                                                          |
@@ -163,8 +172,8 @@ Please write a SQL statement which returns the missing days from 1st to 10th of 
 | 2022-01-05 |
 | ... |
 
-
 ## Chapter VI
+
 ## Exercise 02 - FULL means ‘completely filled’
 
 | Exercise 02: FULL means ‘completely filled’|                                                                                                                          |
@@ -190,6 +199,7 @@ Please write a SQL statement that returns a whole list of person names visited (
 | ... | ... | ... |
 
 ## Chapter VII
+
 ## Exercise 03 - Reformat to CTE
 
 | Exercise 03: Reformat to CTE |                                                                                                                          |
@@ -204,16 +214,16 @@ Please write a SQL statement that returns a whole list of person names visited (
 
 Let’s return back to Exercise #01, please rewrite your SQL by using the CTE (Common Table Expression) pattern. Please move into the CTE part of your "day generator". The result should be similar like in Exercise #01
 
-| missing_date | 
-| ------ | 
-| 2022-01-03 | 
-| 2022-01-04 | 
-| 2022-01-05 | 
+| missing_date |
+| ------ |
+| 2022-01-03 |
+| 2022-01-04 |
+| 2022-01-05 |
 | ... |
 
 ## Chapter VIII
-## Exercise 04 - Find favourite pizzas
 
+## Exercise 04 - Find favourite pizzas
 
 | Exercise 04: Find favourite pizzas |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -232,8 +242,8 @@ Find full information about all possible pizzeria names and prices to get mushro
 | ... | ... | ... |
 
 ## Chapter IX
-## Exercise 05 - Investigate Person Data
 
+## Exercise 05 - Investigate Person Data
 
 | Exercise 05: Investigate Person Data |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -244,16 +254,14 @@ Find full information about all possible pizzeria names and prices to get mushro
 
 Find names of all female persons older than 25 and order the result by name. The sample of output is presented below.
 
-| name | 
-| ------ | 
-| Elvira | 
+| name |
+| ------ |
+| Elvira |
 | ... |
 
-
-
 ## Chapter X
-## Exercise 06 - favourite pizzas for Denis and Anna
 
+## Exercise 06 - favourite pizzas for Denis and Anna
 
 | Exercise 06: favourite pizzas for Denis and Anna |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -271,8 +279,8 @@ Please find all pizza names (and corresponding pizzeria names using `menu` table
 | ... | ... |
 
 ## Chapter XI
-## Exercise 07 - Cheapest pizzeria for Dmitriy
 
+## Exercise 07 - Cheapest pizzeria for Dmitriy
 
 | Exercise 07: Cheapest pizzeria for Dmitriy |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -284,28 +292,26 @@ Please find all pizza names (and corresponding pizzeria names using `menu` table
 Please find the name of pizzeria Dmitriy visited on January 8, 2022 and could eat pizza for less than 800 rubles.
 
 ## Chapter XII
-## Exercise 08 - Continuing to research data
 
+## Exercise 08 - Continuing to research data
 
 | Exercise 08: Continuing to research data |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | Turn-in directory                     | ex08                                                                                                                     |
 | Files to turn-in                      | `day02_ex08.sql`                                                                                 |
 | **Allowed**                               |                                                                                                                          |
-| Language                        | ANSI SQL                                                                                              |           
-
+| Language                        | ANSI SQL                                                                                              |
 
 Please find the names of all males from Moscow or Samara cities who orders either pepperoni or mushroom pizzas (or both) . Please order the result by person name in descending mode. The sample of output is presented below.
 
-| name | 
-| ------ | 
-| Dmitriy | 
+| name |
+| ------ |
+| Dmitriy |
 | ... |
 
-
 ## Chapter XIII
-## Exercise 09 - Who loves cheese and pepperoni?
 
+## Exercise 09 - Who loves cheese and pepperoni?
 
 | Exercise 09: Who loves cheese and pepperoni? |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -316,15 +322,14 @@ Please find the names of all males from Moscow or Samara cities who orders eithe
 
 Please find the names of all females who ordered both pepperoni and cheese pizzas (at any time and in any pizzerias). Make sure that the result is ordered by person name. The sample of data is presented below.
 
-| name | 
-| ------ | 
-| Anna | 
+| name |
+| ------ |
+| Anna |
 | ... |
 
-
 ## Chapter XIV
-## Exercise 10 - Find persons from one city
 
+## Exercise 10 - Find persons from one city
 
 | Exercise 10: Find persons from one city |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -335,10 +340,9 @@ Please find the names of all females who ordered both pepperoni and cheese pizza
 
 Please find the names of persons who live on the same address. Make sure that the result is ordered by 1st person, 2nd person's name and common address. The  data sample is presented below. Please make sure your column names are corresponding column names below.
 
-| person_name1 | person_name2 | common_address | 
+| person_name1 | person_name2 | common_address |
 | ------ | ------ | ------ |
 | Andrey | Anna | Moscow |
 | Denis | Kate | Kazan |
 | Elvira | Denis | Kazan |
 | ... | ... | ... |
-

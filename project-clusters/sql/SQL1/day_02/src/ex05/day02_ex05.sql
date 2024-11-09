@@ -1,6 +1,9 @@
-SELECT person.name AS name
-FROM person
+SELECT
+    person.name AS name
+FROM
+    person
 WHERE
-	 (person.age > 25) AND
-	 (person.gender = 'female')
-ORDER BY name;
+    (person.age > 25)
+    AND (person.gender = 'female')
+ORDER BY
+    name;

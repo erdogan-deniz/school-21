@@ -1,10 +1,14 @@
--- Явное отключение линейного поиска:
-SET enable_seqscan TO OFF;
+-- Explicitly disabling linear search
+SET
+    enable_seqscan TO OFF;
 
-CREATE INDEX idx_person_name
-ON person UPPER(name);
+CREATE INDEX
+    idx_person_name ON person UPPER(name);
 
--- Вывод информации об запросе:
-EXPLAIN ANALYZE
-SELECT person.name AS name
-FROM person;
+-- Output of information about the request
+EXPLAIN
+ANALYZE
+SELECT
+    person.name AS name
+FROM
+    person;

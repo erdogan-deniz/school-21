@@ -1,6 +1,6 @@
 # Day 01 - Piscine SQL
 
-## _First steps working with sets and JOINs in SQL_
+## First steps working with sets and JOINs in SQL
 
 Resume: Today you will see how to get needed data based on sets constructions and simple JOINs
 
@@ -35,30 +35,32 @@ Resume: Today you will see how to get needed data based on sets constructions an
 14. [Chapter XIV](#chapter-xiv) \
     14.1. [Exercise 10 - Global JOIN](#exercise-10-global-join)
 
-
 ## Chapter I
+
 ## Preamble
 
-![D01_01](misc/images/D01_01.png)
+![D01_01](misc/images/d01_01.png)
 
 In many aspects, sets are used in Relational Databases. Not just, make UNION or find MINUS between sets. Sets are also good candidates to make recursive queries.
 
-There are the next set operators in PostgreSQL. 
+There are the next set operators in PostgreSQL.
+
 - UNION [ALL]
-- EXCEPT [ALL] 
+- EXCEPT [ALL]
 - INTERSECT [ALL]
 
 Keyword “ALL” means to save duplicates of rows in the result.
 The main rules to work with sets are below
+
 - The main SQL provides final names of attributes for whole query
 - The attributes of controlled SQL should satisfy number of columns and corresponding family types of main SQL
 
-![D01_02](misc/images/D01_02.png)
+![D01_02](misc/images/d01_02.png)
 
 Moreover, SQL sets are useful  to calculate some specific Data Science metrics, for example Jaccard distance between 2 objects based on existing data features.
 
-
 ## Chapter II
+
 ## General Rules
 
 - Use this page as the only reference. Do not listen to any rumors and speculations on how to prepare your solution.
@@ -68,51 +70,61 @@ Moreover, SQL sets are useful  to calculate some specific Data Science metrics, 
 - Your solutions will be evaluated by your piscine mates.
 - You should not leave in your directory any other file than those explicitly specified by the exercise instructions. It is recommended that you modify your `.gitignore` to avoid accidents.
 - Do you have a question? Ask your neighbor on the right. Otherwise, try with your neighbor on the left.
-- Your reference manual: mates / Internet / Google. 
+- Your reference manual: mates / Internet / Google.
 - Read the examples carefully. They may require things that are not otherwise specified in the subject.
 - And may the SQL-Force be with you!
 - Absolutely everything can be presented in SQL! Let’s start and have fun!
 
 ## Chapter III
+
 ## Rules of the day
 
-- Please make sure you have an own database and access for it on your PostgreSQL cluster. 
-- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community). 
+- Please make sure you have an own database and access for it on your PostgreSQL cluster.
+- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community).
 - All tasks contain a list of Allowed and Denied sections with listed database options, database types, SQL constructions etc. Please have a look at the section before you start.
-- Please take a look at the Logical View of our Database Model. 
+- Please take a look at the Logical View of our Database Model.
 
 ![schema](misc/images/schema.png)
 
-
 1. **pizzeria** table (Dictionary Table with available pizzerias)
+
 - field id - primary key
 - field name - name of pizzeria
 - field rating - average rating of pizzeria (from 0 to 5 points)
+
 2. **person** table (Dictionary Table with persons who loves pizza)
+
 - field id - primary key
 - field name - name of person
 - field age - age of person
 - field gender - gender of person
 - field address - address of person
+
 3. **menu** table (Dictionary Table with available menu and price for concrete pizza)
+
 - field id - primary key
 - field pizzeria_id - foreign key to pizzeria
 - field pizza_name - name of pizza in pizzeria
 - field price - price of concrete pizza
+
 4. **person_visits** table (Operational Table with information about visits of pizzeria)
+
 - field id - primary key
 - field person_id - foreign key to person
 - field pizzeria_id - foreign key to pizzeria
-- field visit_date - date (for example 2022-01-01) of person visit 
+- field visit_date - date (for example 2022-01-01) of person visit
+
 5. **person_order** table (Operational Table with information about persons orders)
+
 - field id - primary key
 - field person_id - foreign key to person
 - field menu_id - foreign key to menu
-- field order_date - date (for example 2022-01-01) of person order 
+- field order_date - date (for example 2022-01-01) of person order
 
 Persons' visit and persons' order are different entities and don't contain any correlation between data. For example, a client can be in one restraunt (just looking at menu) and in this time make an order in different one by phone or by mobile application. Or another case,  just be at home and again make a call with order without any visits.
 
 ## Chapter IV
+
 ## Exercise 00 - Let’s make UNION dance
 
 | Exercise 00: Let’s make UNION dance |                                                                                                                          |
@@ -130,9 +142,8 @@ Please write a SQL statement which returns menu’s identifier and pizza names f
 | 1 | cheese pizza |
 | ... | ... |
 
-
-
 ## Chapter V
+
 ## Exercise 01 - UNION dance with subquery
 
 | Exercise 01: UNION dance with subquery|                                                                                                                          |
@@ -153,8 +164,8 @@ Please modify a SQL statement from “exercise 00” by removing the object_id c
 | cheese pizza |
 | ... |
 
-
 ## Chapter VI
+
 ## Exercise 02 - Duplicates or not duplicates
 
 | Exercise 02: Duplicates or not duplicates|                                                                                                                          |
@@ -169,6 +180,7 @@ Please modify a SQL statement from “exercise 00” by removing the object_id c
 Please write a SQL statement which returns unique pizza names from the `menu` table and orders them by pizza_name column in descending mode. Please pay attention to the Denied section.
 
 ## Chapter VII
+
 ## Exercise 03 - “Hidden” Insights
 
 | Exercise 03: “Hidden” Insights |                                                                                                                          |
@@ -192,8 +204,8 @@ Please write a SQL statement which returns common rows for attributes order_date
 | ... | ... |
 
 ## Chapter VIII
-## Exercise 04 - Difference? Yep, let's find the difference between multisets.
 
+## Exercise 04 - Difference? Yep, let's find the difference between multisets
 
 | Exercise 04: Difference? Yep, let's find the difference between multisets. |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -207,8 +219,8 @@ Please write a SQL statement which returns common rows for attributes order_date
 Please write a SQL statement which returns a difference (minus) of person_id column values with saving duplicates between `person_order` table and `person_visits` table for order_date and visit_date are for 7th of January of 2022
 
 ## Chapter IX
-## Exercise 05 - Did you hear about Cartesian Product?
 
+## Exercise 05 - Did you hear about Cartesian Product?
 
 | Exercise 05: Did you hear about Cartesian Product? |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -225,10 +237,9 @@ Please write a SQL statement which returns all possible combinations between `pe
 | 1 | Anna | 16 | female | Moscow | 2 | Dominos | 4.3 |
 | ... | ... | ... | ... | ... | ... | ... | ... |
 
-
 ## Chapter X
-## Exercise 06 - Lets see on “Hidden” Insights
 
+## Exercise 06 - Lets see on “Hidden” Insights
 
 | Exercise 06: Lets see on “Hidden” Insights |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -247,8 +258,8 @@ Let's return our mind back to exercise #03 and change our SQL statement to retur
 | ... | ... |
 
 ## Chapter XI
-## Exercise 07 - Just make a JOIN
 
+## Exercise 07 - Just make a JOIN
 
 | Exercise 07: Just make a JOIN |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -266,10 +277,9 @@ Please write a SQL statement which returns the date of order from the `person_or
 | 2022-01-01 | Anna (age:16) |
 | ... | ... |
 
-
 ## Chapter XII
-## Exercise 08 - Migrate JOIN to NATURAL JOIN
 
+## Exercise 08 - Migrate JOIN to NATURAL JOIN
 
 | Exercise 08: Migrate JOIN to NATURAL JOIN |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -284,8 +294,8 @@ Please write a SQL statement which returns the date of order from the `person_or
 Please rewrite a SQL statement from exercise #07 by using NATURAL JOIN construction. The result must be the same like for exercise #07.  
 
 ## Chapter XIII
-## Exercise 09 - IN versus EXISTS
 
+## Exercise 09 - IN versus EXISTS
 
 | Exercise 09: IN versus EXISTS |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -297,8 +307,8 @@ Please rewrite a SQL statement from exercise #07 by using NATURAL JOIN construct
 Please write 2 SQL statements which return a list of pizzerias names which have not been visited by persons by using IN for 1st one and EXISTS for the 2nd one.
 
 ## Chapter XIV
-## Exercise 10 - Global JOIN
 
+## Exercise 10 - Global JOIN
 
 | Exercise 10: Global JOIN |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -307,13 +317,12 @@ Please write 2 SQL statements which return a list of pizzerias names which have 
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 
-Please write a SQL statement which returns a list of the person names which made an order for pizza in the corresponding pizzeria. 
+Please write a SQL statement which returns a list of the person names which made an order for pizza in the corresponding pizzeria.
 The sample result (with named columns) is provided below and yes ... please make ordering by 3 columns (`person_name`, `pizza_name`, `pizzeria_name`) in ascending mode.
 
-| person_name | pizza_name | pizzeria_name | 
+| person_name | pizza_name | pizzeria_name |
 | ------ | ------ | ------ |
 | Andrey | cheese pizza | Dominos |
 | Andrey | mushroom pizza | Dominos |
 | Anna | cheese pizza | Pizza Hut |
 | ... | ... | ... |
-

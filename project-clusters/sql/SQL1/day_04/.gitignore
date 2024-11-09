@@ -17,35 +17,35 @@
 *.pch
 
 # Libraries
-*.lib
 *.a
 *.la
 *.lo
+*.lib
 
 # Shared objects (inc. Windows DLLs)
-*.dll
 *.so
+*.dll
 *.so.*
 *.dylib
 
 # Executables
 *.exe
 *.app
+*.hex
 *.i*86
 *.x86_64
-*.hex
 
 # Debug files
-*.dSYM/
 *.su
 *.idb
 *.pdb
+*.dSYM/
 
 # Kernel Module Compile Results
-*.mod*
 *.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
+*.mod*
 dkms.conf
+Mkfile.old
+modules.order
+.tmp_versions/
+Module.symvers

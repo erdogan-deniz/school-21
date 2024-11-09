@@ -1,6 +1,6 @@
 # Day 03 - Piscine SQL
 
-## _Continuing to JOIN and make change in data_
+## Continuing to JOIN and make change in data
 
 Resume: Today you will see how to change data based on DML language.
 
@@ -35,16 +35,17 @@ Resume: Today you will see how to change data based on DML language.
 14. [Chapter XIV](#chapter-xiv) \
     14.1. [Exercise 10 - New visits means new orders](#exercise-10-new-visits-means-new-orders)
 15. [Chapter XV](#chapter-xv) \
-    15.1. [Exercise 11 - “Improve” a price for clients](#exercise-11-improve-a-price-for-clients)    
+    15.1. [Exercise 11 - “Improve” a price for clients](#exercise-11-improve-a-price-for-clients)
 16. [Chapter XVI](#chapter-xvi) \
     16.1. [Exercise 12 - New orders are coming!](#exercise-12-new-orders-are-coming)
 17. [Chapter XVII](#chapter-xvii) \
     17.1. [Exercise 13 - Money back to our customers](#exercise-13-money-back-to-our-customers)
 
 ## Chapter I
+
 ## Preamble
 
-![D03_01](misc/images/D03_01.png)
+![D03_01](misc/images/d03_01.png)
 
 Relation Theory is a mathematical foundation for modern Relational Databases. EEvery aspect of databases has a corresponding mathematical and logical justification. Including INSERT / UPDATE / DELETE operators. (Dr. Edgar Frank Codd is in the picture).
 
@@ -71,12 +72,12 @@ What’s about the DELETE statement?
 
 The last case with UPDATE statement is really interesting, because in other words you add a new tuple and after that make a MINUS of the old row. Same behavior in the physical implementation! Actually, `UPDATE = DELETE + INSERT` and there is a special term "Tombstone" status for a particular deleted/updated row. Then if you have a lot of Tombstones then you have a bad TPS metric and you need to control your dead data!
 
-![D03_02](misc/images/D03_02.png)
+![D03_02](misc/images/d03_02.png)
 
 Let’s make a cheese of our data! :-)
 
-
 ## Chapter II
+
 ## General Rules
 
 - Use this page as your only reference. Do not listen to rumors and speculations about how to prepare your solution.
@@ -86,51 +87,61 @@ Let’s make a cheese of our data! :-)
 - Your solutions will be evaluated by your peers.
 - You should not leave any files in your directory other than those explicitly specified by the exercise instructions. It is recommended that you modify your `.gitignore` to avoid accidents.
 - Got a question? Ask your neighbor to the right. Otherwise, try your neighbor on the left.
-- Your reference manual: mates / Internet / Google. 
+- Your reference manual: mates / Internet / Google.
 - Read the examples carefully. You may need things not specified in the topic.
 - And may the SQL-Force be with you!
 Absolutely anything can be represented in SQL! Let's get started and have fun!
 
 ## Chapter III
+
 ## Rules of the day
 
-- Please make sure you have your own database and access for it on your PostgreSQL cluster. 
-- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community). 
+- Please make sure you have your own database and access for it on your PostgreSQL cluster.
+- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community).
 - All tasks contain a list of Allowed and Denied sections with listed database options, database types, SQL constructions etc. Please have a look at this section before you start.
-- Please take a look at the Logical View of our Database Model. 
+- Please take a look at the Logical View of our Database Model.
 
 ![schema](misc/images/schema.png)
 
-
 1. **pizzeria** table (Dictionary Table with available pizzerias)
+
 - field id - primary key
 - field name - name of pizzeria
 - field rating - average rating of pizzeria (from 0 to 5 points)
+
 2. **person** table (Dictionary Table with persons who loves pizza)
+
 - field id - primary key
 - field name - name of person
 - field age - age of person
 - field gender - gender of person
 - field address - address of person
+
 3. **menu** table (Dictionary Table with available menu and price for concrete pizza)
+
 - field id - primary key
 - field pizzeria_id - foreign key to pizzeria
 - field pizza_name - name of pizza in pizzeria
 - field price - price of concrete pizza
+
 4. **person_visits** table (Operational Table with information about visits of pizzeria)
+
 - field id - primary key
 - field person_id - foreign key to person
 - field pizzeria_id - foreign key to pizzeria
-- field visit_date - date (for example 2022-01-01) of person visit 
+- field visit_date - date (for example 2022-01-01) of person visit
+
 5. **person_order** table (Operational Table with information about persons orders)
+
 - field id - primary key
 - field person_id - foreign key to person
 - field menu_id - foreign key to menu
-- field order_date - date (for example 2022-01-01) of person order 
+- field order_date - date (for example 2022-01-01) of person order
 
 Persons' visit and persons' order are different entities and don't contain any correlation between data. For example, a client can be in one restraunt (just looking at menu) and in this time make an order in different one by phone or by mobile application. Or another case,  just be at home and again make a call with order without any visits.
 
 ## Chapter IV
+
 ## Exercise 00 - Let’s find appropriate prices for Kate
 
 | Exercise 00: Let’s find appropriate prices for Kate |                                                                                                                          |
@@ -149,8 +160,8 @@ Please write a SQL statement that returns a list of pizza names, pizza prices, p
 | pepperoni pizza | 800 | DinoPizza | 2022-01-04 |
 | ... | ... | ... | ... |
 
-
 ## Chapter V
+
 ## Exercise 01 - Let’s find forgotten menus
 
 | Exercise 01: Let’s find forgotten menus|                                                                                                                          |
@@ -170,8 +181,8 @@ Find all menu identifiers that are not ordered by anyone. The result should be s
 | 10 |
 | ... |
 
-
 ## Chapter VI
+
 ## Exercise 02 - Let’s find forgotten pizza and pizzerias
 
 | Exercise 02: Let’s find forgotten pizza and pizzerias|                                                                                                                          |
@@ -190,6 +201,7 @@ Please use the SQL statement from Exercise #01 and display the names of pizzas f
 | ... | ... | ... |
 
 ## Chapter VII
+
 ## Exercise 03 - Let’s compare visits
 
 | Exercise 03: Let’s compare visits |                                                                                                                          |
@@ -201,16 +213,15 @@ Please use the SQL statement from Exercise #01 and display the names of pizzas f
 
 Please find pizzerias that have been visited more often by women or by men. Save duplicates for any SQL operators with sets (UNION ALL, EXCEPT ALL, INTERSECT ALL constructions). Please sort a result by the name of the pizzeria. The sample data is shown below.
 
-
-| pizzeria_name | 
-| ------ | 
-| Best Pizza | 
+| pizzeria_name |
+| ------ |
+| Best Pizza |
 | Dominos |
 | ... |
 
 ## Chapter VIII
-## Exercise 04 - Let’s compare orders
 
+## Exercise 04 - Let’s compare orders
 
 | Exercise 04: Let’s compare orders |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -221,14 +232,13 @@ Please find pizzerias that have been visited more often by women or by men. Save
 
 Find a union of pizzerias that have orders from either women or men. In other words, you should find a set of names of pizzerias that have been ordered only by women and make "UNION" operation with set of names of pizzerias that have been ordered only by men. Please be careful with word "only" for both genders. For all SQL operators with sets don't store duplicates (`UNION`, `EXCEPT`, `INTERSECT`).  Please sort a result by the name of the pizzeria. The sample data is shown below.
 
-
-| pizzeria_name | 
-| ------ | 
-| Papa Johns | 
+| pizzeria_name |
+| ------ |
+| Papa Johns |
 
 ## Chapter IX
-## Exercise 05 - Visited but did not make any order
 
+## Exercise 05 - Visited but did not make any order
 
 | Exercise 05: Visited but did not make any order |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -239,16 +249,13 @@ Find a union of pizzerias that have orders from either women or men. In other wo
 
 Write an SQL statement that returns a list of pizzerias that Andrey visited but did not order from. Please order by the name of the pizzeria. The sample data is shown below.
 
-
-| pizzeria_name | 
-| ------ | 
-| Pizza Hut | 
-
-
+| pizzeria_name |
+| ------ |
+| Pizza Hut |
 
 ## Chapter X
-## Exercise 06 - Find price-similarity pizzas
 
+## Exercise 06 - Find price-similarity pizzas
 
 | Exercise 06: Find price-similarity pizzas |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -265,8 +272,8 @@ Find the same pizza names that have the same price, but from different pizzerias
 | ... | ... | ... | ... |
 
 ## Chapter XI
-## Exercise 07 - Let’s cook a new type of pizza
 
+## Exercise 07 - Let’s cook a new type of pizza
 
 | Exercise 07: Let’s cook a new type of pizza |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -278,27 +285,25 @@ Find the same pizza names that have the same price, but from different pizzerias
 Please register a new pizza with the name "greek pizza" (use id = 19) with the price of 800 rubles in the restaurant "Dominos" (pizzeria_id = 2).
 **Warning**: this exercise is likely to cause the modification of data in the wrong way. Actually, you can restore the original database model with data from the [link](materials/model.sql).
 
-
 ## Chapter XII
-## Exercise 08 - Let’s cook a new type of pizza with more dynamics
 
+## Exercise 08 - Let’s cook a new type of pizza with more dynamics
 
 | Exercise 08: Let’s cook a new type of pizza with more dynamics |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | Turn-in directory                     | ex08                                                                                                                     |
 | Files to turn-in                      | `day03_ex08.sql`                                                                                 |
 | **Allowed**                               |                                                                                                                          |
-| Language                        | ANSI SQL                                                                                              |           
+| Language                        | ANSI SQL                                                                                              |
 | **Denied**                               |                                                                                                                          |
-| SQL Syntax Pattern                        | Don’t use direct numbers for identifiers of Primary Key and pizzeria                                                                                               |       
+| SQL Syntax Pattern                        | Don’t use direct numbers for identifiers of Primary Key and pizzeria                                                                                               |
 
 Please register a new pizza with the name "sicilian pizza" (whose id should be calculated by the formula "maximum id value + 1") with the price of 900 rubles in the restaurant "Dominos" (please use internal query to get the identifier of the pizzeria).
 **Warning**: This exercise is likely to cause the modification of data in the wrong way. Actually, you can restore the original database model with data from the link in the "Rules of the day" section and replay the script from Exercise 07.
 
-
 ## Chapter XIII
-## Exercise 09 - New pizza means new visits
 
+## Exercise 09 - New pizza means new visits
 
 | Exercise 09: New pizza means new visits |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -307,15 +312,14 @@ Please register a new pizza with the name "sicilian pizza" (whose id should be c
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 | **Denied**                               |                                                                                                                          |
-| SQL Syntax Pattern                        | Don’t use direct numbers for identifiers of Primary Key and pizzeria                                                                                               |       
+| SQL Syntax Pattern                        | Don’t use direct numbers for identifiers of Primary Key and pizzeria                                                                                               |
 
 Please record new visits to Domino's restaurant by Denis and Irina on February 24, 2022.
 **Warning**: This exercise is likely to cause the modification of data in the wrong way. Actually, you can restore the original database model with data from the link in the "Rules of the Day" section and replay the script from Exercises 07 and 08.
 
-
 ## Chapter XIV
-## Exercise 10 - New visits means new orders
 
+## Exercise 10 - New visits means new orders
 
 | Exercise 10: New visits means new orders |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -324,16 +328,14 @@ Please record new visits to Domino's restaurant by Denis and Irina on February 2
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 | **Denied**                               |                                                                                                                          |
-| SQL Syntax Pattern                        | Don’t use direct numbers for identifiers of Primary Key and pizzeria                                                                                               |     
-
+| SQL Syntax Pattern                        | Don’t use direct numbers for identifiers of Primary Key and pizzeria                                                                                               |
 
 Please register new orders from Denis and Irina on February 24, 2022 for the new menu with "sicilian pizza".
 **Warning**: This exercise will probably cause you to change data in the wrong way. Actually, you can restore the original database model with data from the link in the Rules of the Day section and replay the script from Exercises 07, 08 and 09.
 
-
 ## Chapter XV
-## Exercise 11 - “Improve” a price for clients
 
+## Exercise 11 - “Improve” a price for clients
 
 | Exercise 11: “Improve” a price for clients|                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -341,14 +343,13 @@ Please register new orders from Denis and Irina on February 24, 2022 for the new
 | Files to turn-in                      | `day03_ex11.sql`                                                                                 |
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
-    
+
 Please change the price of "greek pizza" to -10% of the current value.
 **Warning**: This exercise is likely to cause you to change data in the wrong way. Actually, you can rebuild the original database model with data from the link in the "Rules of the Day" section and replay the script from Exercises 07, 08, 09, and 10.
 
-
 ## Chapter XVI
-## Exercise 12 - New orders are coming!
 
+## Exercise 12 - New orders are coming
 
 | Exercise 12: New orders are coming!|                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -360,17 +361,17 @@ Please change the price of "greek pizza" to -10% of the current value.
 | SQL Syntax Patten                        | Please use “insert-select” pattern
 `INSERT INTO ... SELECT ...`|
 | **Denied**                               |                                                                                                                          |
-| SQL Syntax Patten                        | - Don’t use direct numbers for identifiers of Primary Key, and menu 
+| SQL Syntax Patten                        | - Don’t use direct numbers for identifiers of Primary Key, and menu
+
 - Don’t use window functions like `ROW_NUMBER( )`
 - Don’t use atomic `INSERT` statements |
 
 Please register new orders of all persons for "greek pizza" on February 25, 2022.
 **Warning**: This exercise will probably cause you to change data in the wrong way. Actually, you can restore the original database model with data from the link in the "Rules of the Day" section and replay the script from Exercises 07, 08, 09, 10 and 11.
 
-
 ## Chapter XVII
-## Exercise 13 - Money back to our customers
 
+## Exercise 13 - Money back to our customers
 
 | Exercise 13: Money back to our customers|                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -378,6 +379,6 @@ Please register new orders of all persons for "greek pizza" on February 25, 2022
 | Files to turn-in                      | `day03_ex13.sql`                                                                                 |
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
-    
-Write 2 SQL (DML) statements that delete all new orders from Exercise #12 based on the order date. Then delete "greek pizza" from the menu. 
+
+Write 2 SQL (DML) statements that delete all new orders from Exercise #12 based on the order date. Then delete "greek pizza" from the menu.
 **Warning**: This exercise is likely to cause you to modify data in the wrong way. Actually, you can rebuild the original database model with data from the link in the "Rules of the Day section" and replay the script from Exercises 07, 08, 09, 10, 11, 12, and 13.

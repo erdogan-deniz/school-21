@@ -1,4 +1,13 @@
-# SQL projects 💙
+#
+
+<!-- SQL Logo -->
+<p align="center">
+    <img src="https://www.tshirtgeek.com.br/wp-content/uploads/2021/09/com037-scaled.jpg" alt="SQL Logo" />
+</p>
+
+## Repository Description
+
+
 
 * 1️⃣ SQL1  - ?/? % (? xp)
   * Description: SQL Bootcamp;

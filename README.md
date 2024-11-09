@@ -16,9 +16,9 @@ This repository is a collection of projects written while studying at *School 2ï
 ## Repository File Structure
 
 - *content*: The material necessary for the design of the repository and its elements.
-- *core-program*: A set of projects where each project represents the final product.
-- *project-clusters*: A set of projects where each project consists of small projects united by one common theme.
-- *survival-camp*: A set of small projects, each of which trains and tests the developer. This stage is a qualifying stage for training.
+- *core_program*: A set of projects where each project represents the final product.
+- *project_clusters*: A set of projects where each project consists of small projects united by one common theme.
+- *survival_camp*: A set of small projects, each of which trains and tests the developer. This stage is a qualifying stage for training.
 - *.markdownlint.json*: The main configuration file *README.md* file.
 - *README.md*: The description file of the current repository (you are reading it now).
 

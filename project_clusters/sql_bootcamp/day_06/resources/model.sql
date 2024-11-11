@@ -41,8 +41,8 @@ CREATE TABLE person_visits (
     pizzeria_id BIGINT NOT NULL,
     visit_date DATE NOT NULL DEFAULT CURRENT_DATE,
     CONSTRAINT uk_person_visits UNIQUE (person_id, pizzeria_id, visit_date),
-    CONSTRAINT fk_person_visits_person_id FOREIGN KEY (person_id) REFERENCES person(id),
-    CONSTRAINT fk_person_visits_pizzeria_id FOREIGN KEY (pizzeria_id) REFERENCES pizzeria(id)
+    CONSTRAINT fk_person_visits_person_id FOREIGN KEY (person_id) REFERENCES person (id),
+    CONSTRAINT fk_person_visits_pizzeria_id FOREIGN KEY (pizzeria_id) REFERENCES pizzeria (id)
 );
 
 INSERT INTO person_visits VALUES (1, 1, 1, '2022-01-01');
@@ -70,54 +70,54 @@ CREATE TABLE menu (
     pizzeria_id BIGINT NOT NULL,
     pizza_name VARCHAR NOT NULL,
     price NUMERIC NOT NULL DEFAULT 1,
-    CONSTRAINT fk_menu_pizzeria_id FOREIGN KEY (pizzeria_id) REFERENCES pizzeria(id)
+    CONSTRAINT fk_menu_pizzeria_id FOREIGN KEY (pizzeria_id) REFERENCES pizzeria (id)
 );
 
-INSERT INTO menu VALUES (1, 1,'cheese pizza',900);
-INSERT INTO menu VALUES (2 ,1,'pepperoni pizza',1200);
-INSERT INTO menu VALUES (3 ,1,'sausage pizza',1200);
-INSERT INTO menu VALUES (4 ,1,'supreme pizza',1200);
-INSERT INTO menu VALUES (5 ,6,'cheese pizza',950);
-INSERT INTO menu VALUES (6 ,6,'pepperoni pizza',800);
-INSERT INTO menu VALUES (7 ,6,'sausage pizza',1000);
-INSERT INTO menu VALUES (8 ,2,'cheese pizza',800);
-INSERT INTO menu VALUES (9 ,2,'mushroom pizza',1100);
-INSERT INTO menu VALUES (10 ,3,'cheese pizza',780);
-INSERT INTO menu VALUES (11 ,3,'supreme pizza',850);
-INSERT INTO menu VALUES (12 ,4,'cheese pizza',700);
-INSERT INTO menu VALUES (13 ,4,'mushroom pizza',950);
-INSERT INTO menu VALUES (14 ,4,'pepperoni pizza',1000);
-INSERT INTO menu VALUES (15 ,4,'sausage pizza',950);
-INSERT INTO menu VALUES (16 ,5,'cheese pizza',700);
-INSERT INTO menu VALUES (17 ,5,'pepperoni pizza',800);
-INSERT INTO menu VALUES (18 ,5,'supreme pizza',850);
+INSERT INTO menu VALUES (1, 1, 'cheese pizza', 900);
+INSERT INTO menu VALUES (2, 1, 'pepperoni pizza', 1200);
+INSERT INTO menu VALUES (3, 1, 'sausage pizza', 1200);
+INSERT INTO menu VALUES (4, 1, 'supreme pizza', 1200);
+INSERT INTO menu VALUES (5, 6, 'cheese pizza', 950);
+INSERT INTO menu VALUES (6, 6, 'pepperoni pizza', 800);
+INSERT INTO menu VALUES (7, 6, 'sausage pizza', 1000);
+INSERT INTO menu VALUES (8, 2, 'cheese pizza', 800);
+INSERT INTO menu VALUES (9, 2, 'mushroom pizza', 1100);
+INSERT INTO menu VALUES (10, 3, 'cheese pizza', 780);
+INSERT INTO menu VALUES (11, 3, 'supreme pizza', 850);
+INSERT INTO menu VALUES (12, 4, 'cheese pizza', 700);
+INSERT INTO menu VALUES (13, 4, 'mushroom pizza', 950);
+INSERT INTO menu VALUES (14, 4, 'pepperoni pizza', 1000);
+INSERT INTO menu VALUES (15, 4, 'sausage pizza', 950);
+INSERT INTO menu VALUES (16, 5, 'cheese pizza', 700);
+INSERT INTO menu VALUES (17, 5, 'pepperoni pizza', 800);
+INSERT INTO menu VALUES (18, 5, 'supreme pizza', 850);
 
 CREATE TABLE person_order (
     id BIGINT PRIMARY KEY,
     person_id BIGINT NOT NULL,
     menu_id BIGINT NOT NULL,
     order_date DATE NOT NULL DEFAULT CURRENT_DATE,
-    CONSTRAINT fk_order_person_id FOREIGN KEY(person_id) REFERENCES person(id),
-    CONSTRAINT fk_order_menu_id FOREIGN KEY(menu_id) REFERENCES menu(id)
+    CONSTRAINT fk_order_person_id FOREIGN KEY (person_id) REFERENCES person (id),
+    CONSTRAINT fk_order_menu_id FOREIGN KEY (menu_id) REFERENCES menu (id)
 );
 
-INSERT INTO person_order VALUES(1 ,1 ,1 ,'2022-01-01');
-INSERT INTO person_order VALUES(2 ,1 ,2 ,'2022-01-01');
-INSERT INTO person_order VALUES(3 ,2 ,8 ,'2022-01-01');
-INSERT INTO person_order VALUES(4 ,2 ,9 ,'2022-01-01');
-INSERT INTO person_order VALUES(5 ,3 ,16 ,'2022-01-04');
-INSERT INTO person_order VALUES(6 ,4 ,16 ,'2022-01-07');
-INSERT INTO person_order VALUES(7 ,4 ,17 ,'2022-01-07');
-INSERT INTO person_order VALUES(8 ,4 ,18 ,'2022-01-07');
-INSERT INTO person_order VALUES(9 ,4 ,6 ,'2022-01-08');
-INSERT INTO person_order VALUES(10 ,4 ,7 ,'2022-01-08');
-INSERT INTO person_order VALUES(11 ,5 ,6 ,'2022-01-09');
-INSERT INTO person_order VALUES(12 ,5 ,7 ,'2022-01-09');
-INSERT INTO person_order VALUES(13 ,6 ,13 ,'2022-01-01');
-INSERT INTO person_order VALUES(14 ,7 ,3 ,'2022-01-03');
-INSERT INTO person_order VALUES(15 ,7 ,9 ,'2022-01-05');
-INSERT INTO person_order VALUES(16 ,7 ,4 ,'2022-01-05');
-INSERT INTO person_order VALUES(17 ,8 ,8 ,'2022-01-06');
-INSERT INTO person_order VALUES(18 ,8 ,14 ,'2022-01-07');
-INSERT INTO person_order VALUES(19 ,9 ,18 ,'2022-01-09');
-INSERT INTO person_order VALUES(20 ,9 ,6 ,'2022-01-10');
+INSERT INTO person_order VALUES (1, 1, 1, '2022-01-01');
+INSERT INTO person_order VALUES (2, 1, 2, '2022-01-01');
+INSERT INTO person_order VALUES (3, 2, 8, '2022-01-01');
+INSERT INTO person_order VALUES (4, 2, 9, '2022-01-01');
+INSERT INTO person_order VALUES (5, 3, 16, '2022-01-04');
+INSERT INTO person_order VALUES (6, 4, 16, '2022-01-07');
+INSERT INTO person_order VALUES (7, 4, 17, '2022-01-07');
+INSERT INTO person_order VALUES (8, 4, 18, '2022-01-07');
+INSERT INTO person_order VALUES (9, 4, 6, '2022-01-08');
+INSERT INTO person_order VALUES (10, 4, 7, '2022-01-08');
+INSERT INTO person_order VALUES (11, 5, 6, '2022-01-09');
+INSERT INTO person_order VALUES (12, 5, 7, '2022-01-09');
+INSERT INTO person_order VALUES (13, 6, 13, '2022-01-01');
+INSERT INTO person_order VALUES (14, 7, 3, '2022-01-03');
+INSERT INTO person_order VALUES (15, 7, 9, '2022-01-05');
+INSERT INTO person_order VALUES (16, 7, 4, '2022-01-05');
+INSERT INTO person_order VALUES (17, 8, 8, '2022-01-06');
+INSERT INTO person_order VALUES (18, 8, 14, '2022-01-07');
+INSERT INTO person_order VALUES (19, 9, 18, '2022-01-09');
+INSERT INTO person_order VALUES (20, 9, 6, '2022-01-10');

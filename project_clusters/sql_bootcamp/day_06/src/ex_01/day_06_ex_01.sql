@@ -1,6 +1,6 @@
 INSERT INTO person_discounts (id, person_id, pizzeria_id, discount)
 SELECT
-    -- The default "ROW_NUMBER() OVER()" returns a sequence of 1's.
+    -- The default "ROW_NUMBER() OVER()" returns a sequence of 1s.
     (
         ROW_NUMBER() OVER () + (
             SELECT

@@ -13,6 +13,6 @@ SELECT setval(
         COALESCE((SELECT MAX(person_discounts.id) FROM person_discounts), 0) + 1
     );
 
--- A "nextval" is used to get a next value after a pointer.
+-- A "nextval" is used to get the next value after a pointer.
 ALTER TABLE person_discounts
     ALTER COLUMN id SET DEFAULT nextval('seq_person_discounts');

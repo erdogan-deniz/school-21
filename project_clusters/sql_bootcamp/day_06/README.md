@@ -31,17 +31,17 @@ Resume: Today you will see how to add a new business feature into our data model
 
 ## Preamble
 
-![D06_01](misc/images/d06_01.png)
+![D06_01](content/images/day_06_01.png)
 
 Why is a diamond one of the most durable objects? The reason lies in its structure. Each atom knows its place in the topology of the diamond and makes the whole diamond unbreakable.
 
 A logical structure is like a diamond. If you find a suitable structure for your own Database Model, you will find gold (or diamond :-). There are two aspects to Database Modeling. The first is a logical view, in other words, how your model will smoothly describe the real business world.
 
-![D06_02](misc/images/d06_02.png)
+![D06_02](content/images/day_06_02.png)
 
 On the other hand, your model should solve your functional tasks with minimal impact. This means transforming the logical model view into the physical model view, and not just from table and attribute descriptions. But actually, from performance and budget perspectives, which are more important today. How to find a balance? For this case, there are 3 steps to create a very good design. Just take a look at the image below.
 
-![D06_03](misc/images/d06_03.png)
+![D06_03](content/images/day_06_03.png)
 
 ## Chapter II
 
@@ -64,11 +64,11 @@ Absolutely anything can be represented in SQL! Let's get started and have fun!
 ## Rules of the day
 
 - Please make sure you have your own database and access to it on your PostgreSQL cluster.
-- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community). **Our knowledge way is incremental and linear therefore please be aware that all changes you made in Day03 during Exercises 07-13 and in Day04 during Exercise 07 should be on place (its similar like in real world when we applied a release and need to be consistent with data for new changes).**
+- Please download a [script](resources/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community). **Our knowledge way is incremental and linear therefore please be aware that all changes you made in Day03 during Exercises 07-13 and in Day04 during Exercise 07 should be on place (its similar like in real world when we applied a release and need to be consistent with data for new changes).**
 - All tasks contain a list of Allowed and Denied sections with listed database options, database types, SQL constructions etc. Please review this section before starting.
 - Please take a look at the Logical View of our Database Model.
 
-![schema](misc/images/schema.png)
+![schema](content/images/schema.png)
 
 1. **pizzeria** table (Dictionary Table with available pizzerias)
 
@@ -113,8 +113,8 @@ People's visit and people's order are different entities and don't contain any c
 
 | Exercise 00: Discounts, discounts , everyone loves discounts |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| Turn-in directory                     | ex00                                                                                                                     |
-| Files to turn-in                      | `day06_ex00.sql`                                                                                 |
+| Turn-in directory                     | ex_00                                                                                                                     |
+| Files to turn-in                      | `day_06_ex_00.sql`                                                                                 |
 | **Allowed**                               |                                                                                                                          |
 | Language                        | SQL, DML, DDL                                                                                              |
 
@@ -134,8 +134,8 @@ Think about personal discounts for people from one side and pizza restaurants fr
 
 | Exercise 01: Let’s set personal discounts|                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| Turn-in directory                     | ex01                                                                                                                     |
-| Files to turn-in                      | `day06_ex01.sql`                                                                                 |
+| Turn-in directory                     | ex_01                                                                                                                     |
+| Files to turn-in                      | `day_06_ex_01.sql`                                                                                 |
 | **Allowed**                               |                                                                                                                          |
 | Language                        | SQL, DML, DDL                                                                                              |
 
@@ -163,8 +163,8 @@ So, there is a table `person_order` which stores the history of a person's order
 
 | Exercise 02: Let’s recalculate a history of orders|                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| Turn-in directory                     | ex02                                                                                                                     |
-| Files to turn-in                      | `day06_ex02.sql`                                                                                 |
+| Turn-in directory                     | ex_02                                                                                                                     |
+| Files to turn-in                      | `day_06_ex_02.sql`                                                                                 |
 | **Allowed**                               |                                                                                                                          |
 | Language                        | SQL, DML, DDL                                                                                              |
 
@@ -182,8 +182,8 @@ Write a SQL statement that returns the orders with actual price and price with d
 
 | Exercise 03: Improvements are in a way |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| Turn-in directory                     | ex03                                                                                                                     |
-| Files to turn-in                      | `day06_ex03.sql`                                                                                 |
+| Turn-in directory                     | ex_03                                                                                                                     |
+| Files to turn-in                      | `day_06_ex_03.sql`                                                                                 |
 | **Allowed**                               |                                                                                                                          |
 | Language                        | SQL, DML, DDL                                                                                              |
 
@@ -202,8 +202,8 @@ The proof example is below:
 
 | Exercise 04: We need more Data Consistency |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| Turn-in directory                     | ex04                                                                                                                     |
-| Files to turn-in                      | `day06_ex04.sql`                                                                                 |
+| Turn-in directory                     | ex_04                                                                                                                     |
+| Files to turn-in                      | `day_06_ex_04.sql`                                                                                 |
 | **Allowed**                               |                                                                                                                          |
 | Language                        | SQL, DML, DDL                                                                                              |
 
@@ -221,8 +221,8 @@ Please add the following constraint rules for existing columns of the `person_di
 
 | Exercise 05: Data Governance Rules|                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| Turn-in directory                     | ex05                                                                                                                     |
-| Files to turn-in                      | `day06_ex05.sql`                                                                                 |
+| Turn-in directory                     | ex_05                                                                                                                     |
+| Files to turn-in                      | `day_06_ex_05.sql`                                                                                 |
 | **Allowed**                               |                                                                                                                          |
 | Language                        |  SQL, DML, DDL                                                                                              |
 
@@ -234,8 +234,8 @@ To comply with Data Governance Policies, you need to add comments for the table 
 
 | Exercise 06: Let’s automate Primary Key generation|                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| Turn-in directory                     | ex06                                                                                                                     |
-| Files to turn-in                      | `day06_ex06.sql`                                                                                 |
+| Turn-in directory                     | ex_06                                                                                                                     |
+| Files to turn-in                      | `day_06_ex_06.sql`                                                                                 |
 | **Allowed**                               |                                                                                                                          |
 | Language                        | SQL, DML, DDL                                                                                              |
 | **Denied**                               |                                                                                                                          |

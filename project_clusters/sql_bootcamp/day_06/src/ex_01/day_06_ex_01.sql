@@ -13,7 +13,7 @@ SELECT
     person_order.person_id AS person_id,
     menu.pizzeria_id AS pizzeria_id,
     CASE
-        -- A count of grouped lines
+        -- A count of grouped lines.
         WHEN COUNT(*) = 1 THEN 10.5
         WHEN COUNT(*) = 2 THEN 22
         ELSE 30

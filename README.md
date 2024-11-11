@@ -53,31 +53,31 @@ All peer reviews: 133.
 - Rank: 4/5.
 - Description: successfully perform 21 projects.
 <!-- Badge Photo -->
-<img src="content/photos/badges/real_programmer.png" width="100" height="100" alt="Real programmer">
+<img src="content/images/badges/real_programmer.png" width="100" height="100" alt="Real programmer">
 
 - Name: *Perfectionist*.
 - Rank: 3/5.
 - Task: successfully perform 10 project with a bonus part.
 <!-- Badge Photo -->
-<img src="content/photos/badges/perfectionist.png" width="100" height="100" alt="Perfectionist">
+<img src="content/images/badges/perfectionist.png" width="100" height="100" alt="Perfectionist">
 
 - Name: *Mistakes are not for me*.
 - Rank: 3/5.
 - Task: successfully perform 10 projects in a row without failur.
 <!-- Badge Photo -->
-<img src="content/photos/badges/mistakes_are_not_for_me.png" width="100" height="100" alt="Mistakes are not for me">
+<img src="content/images/badges/mistakes_are_not_for_me.png" width="100" height="100" alt="Mistakes are not for me">
 
 - Name: *Welcome on board*.
 - Rank: no rank.
 - Task: the *survival camp* was completed.
 <!-- Badge Photo -->
-<img src="content/photos/badges/welcome_on_board.png" width="100" height="100" alt="Welcome on board">
+<img src="content/images/badges/welcome_on_board.png" width="100" height="100" alt="Welcome on board">
 
 - Name: *3 PRP*.
 - Rank: no rank.
 - Task: no task.
 <!-- Badge Photo -->
-<img src="content/photos/badges/3_prp.png" width="100" height="100" alt="3 PRP">
+<img src="content/images/badges/3_prp.png" width="100" height="100" alt="3 PRP">
 
 #### Academic Activities
 
@@ -85,13 +85,13 @@ All peer reviews: 133.
 - Rank: 5/5.
 - Task: visit 50 lectures.
 <!-- Badge Photo -->
-<img src="content/photos/badges/such_a_listener.png" width="100" height="100" alt="Such a listener">
+<img src="content/images/badges/such_a_listener.png" width="100" height="100" alt="Such a listener">
 
 - Name: *Lead the World*.
 - Rank: 2/5.
 - Task: be a team lead in 5 projects.
 <!-- Badge Photo -->
-<img src="content/photos/badges/lead_the_world.png" width="100" height="100" alt="Lead the World">
+<img src="content/images/badges/lead_the_world.png" width="100" height="100" alt="Lead the World">
 
 #### Social Activities
 
@@ -99,25 +99,25 @@ All peer reviews: 133.
 - Rank: no rank.
 - Task: BOOOO!
 <!-- Badge Photo -->
-<img src="content/photos/badges/halloween.png" width="100" height="100" alt="Happy Halloween!">
+<img src="content/images/badges/halloween.png" width="100" height="100" alt="Happy Halloween!">
 
 - Name: *Computer Security Day*.
 - Rank: no rank.
 - Task: *Happy Cybersecurity Day*!
 <!-- Badge Photo -->
-<img src="content/photos/badges/computer_security_day.png" width="100" height="100" alt="Happy Halloween!">
+<img src="content/images/badges/computer_security_day.png" width="100" height="100" alt="Happy Halloween!">
 
 - Name: *Harry New Year, Moscow!*
 - Rank: no rank.
 - Task: *Happy New Year*, our dear, beloved peers!
 <!-- Badge Photo -->
-<img src="content/photos/badges/happy_new_year.png" width="100" height="100" alt="Harry New Year, Moscow!">
+<img src="content/images/badges/happy_new_year.png" width="100" height="100" alt="Harry New Year, Moscow!">
 
 - Name: *Space Exploration Day*.
 - Rank: no rank.
 - Task: as *Yuri Gagarin* once said: `Let's go!`
 <!-- Badge Photo -->
-<img src="content/photos/badges/space_exploration.png" width="100" height="100" alt="Space Exploration Day">
+<img src="content/images/badges/space_exploration.png" width="100" height="100" alt="Space Exploration Day">
 
 #### Other
 
@@ -125,25 +125,25 @@ All peer reviews: 133.
 - Rank: 3/5.
 - Task: accumulate 500 coins.
 <!-- Badge Photo -->
-<img src="content/photos/badges/billionaire.png" width="100" height="100" alt="Billionaire">
+<img src="content/images/badges/billionaire.png" width="100" height="100" alt="Billionaire">
 
 - Name: *Happy Halloween!*
 - Rank: no rank.
 - Task: *Happy Halloween*!
 <!-- Badge Photo -->
-<img src="content/photos/badges/halloween_old.png" width="100" height="100" alt="Happy Halloween!">
+<img src="content/images/badges/halloween_old.png" width="100" height="100" alt="Happy Halloween!">
 
 - Name: *Happy Birthday, Moscow сampus!*
 - Rank: no rank.
 - Task: the *Moscow* campus of *School 21* has turned 5 years old!
 <!-- Badge Photo -->
-<img src="content/photos/badges/happy_birthday.png" width="100" height="100" alt="Happy Birthday, Moscow сampus!">
+<img src="content/images/badges/happy_birthday.png" width="100" height="100" alt="Happy Birthday, Moscow сampus!">
 
 - Name: *Happy birthday, Wave 16!*
 - Rank: no rank.
 - Task: with love from ADM.
 <!-- Badge Photo -->
-<img src="content/photos/badges/wawe_16.png" width="100" height="100" alt="Happy birthday, Wave 16!">
+<img src="content/images/badges/wawe_16.png" width="100" height="100" alt="Happy birthday, Wave 16!">
 
 #### Supporting
 
@@ -151,12 +151,12 @@ All peer reviews: 133.
 - Rank: no rank.
 - Task: love is *School 21*, which has become a second home!
 <!-- Badge Photo -->
-<img src="content/photos/badges/14_febrarue.png" width="100" height="100" alt="Will you be my peer?">
+<img src="content/images/badges/14_febrarue.png" width="100" height="100" alt="Will you be my peer?">
 
 ### Skills
 
 <!-- Skill Wheel Photo -->
-<img src="content/photos/profile/skill_wheel.png" alt="Skill Wheel">
+<img src="content/images/profile/skill_wheel.png" alt="Skill Wheel">
 
 - *C*: **1423**.
 - *Web*: **136**.

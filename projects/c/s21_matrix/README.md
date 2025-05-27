@@ -1,23 +1,6 @@
 # s21_matrix  
 
-> При старте работы над проектом просим вас постараться хронометрировать время работы над проектом.
-> По завершении работы над проектом просим вас ответить на два вопроса [в этом опросе](https://forms.gle/vpUwLY2KyV1B1B3o9)
-
-
-Implementation of the matrix.h library.   
-
-The russian version of the task can be found in the repository.
-
-
-## Contents  
-
-1. [Chapter I](#chapter-i) \
-   1.1. [Introduction](#introduction)
-2. [Chapter II](#chapter-ii) \
-   2.1. [Information](#information)
-3. [Chapter III](#chapter-iii) \
-   3.1. [Part 1](#part-1-implementation-of-the-matrixh-library-functions)
-
+Implementation of the matrix.h library.
 
 # Chapter I  
 
@@ -30,7 +13,7 @@ Planet Earth, USA, Texas, Dallas County, 1703 Matthew Street, September 13, 2000
 *- Yes, I agree, so glad we were invited here, this place is very energetic!*  
 
 *-- Absolutely! So, for a few days now, the main id Software tech team has been discussing the new technology we would like to introduce in our upcoming game Doom 3. What creates the most sense of reality in a picture? Of course it's a game of light and shadows, which now takes too long to compute, putting a lot of strain on the CPU. John is known for his technological and algorithmic ideas and tricks, which made it possible to achieve crazy breakthroughs in speed and code optimisation.* \
-*What was I talking about… Our chief technician and founder John Carmack presented a theoretical development that would allow you to cast shadows on a scene after going through the entire graphics pipeline, using a depth and a stencil buffer.* 
+*What was I talking about… Our chief technician and founder John Carmack presented a theoretical development that would allow you to cast shadows on a scene after going through the entire graphics pipeline, using a depth and a stencil buffer.*
 
 *- Oh wow, it gives me goosebumps, tell us more!*
 
@@ -44,7 +27,6 @@ Planet Earth, USA, Texas, Dallas County, 1703 Matthew Street, September 13, 2000
 ## Introduction
 
 In this project you will implement your own library for processing numerical matrices in the C programming language. Matrices are one of the basic data structures in programming, e.g. they are used to represent table values, for computational tasks and neural networks. As part of the project you will learn more about matrices and solidify knowledge of structured programming.
-
 
 # Chapter II
 
@@ -124,7 +106,7 @@ A = 0 4 5
     0 0 6
 ```
 
-### Matrix structure in C language:
+### Matrix structure in C language
 
 ```c
 typedef struct matrix_struct {
@@ -133,9 +115,11 @@ typedef struct matrix_struct {
     int columns;
 } matrix_t;
 ```
+
 ## Matrix operations
 
 All operations (except matrix comparison) should return the resulting code:
+
 - 0 - OK
 - 1 - Error, incorrect matrix
 - 2 - Calculation error (mismatched matrix sizes; matrix for which calculations cannot be performed, etc.)
@@ -176,7 +160,6 @@ The sum of two matrices A = m × n and B = m × n of the same size is a matrix C
 
 The difference of two matrices A = m × n and B = m × n of the same size is a matrix C = m × n = A - B of the same size whose elements are defined by the equations C(i,j) = A(i,j) - B(i,j).
 
-
 ```
             1 2 3   1 0 0   2 2 3
 С = A + B = 0 4 5 + 2 0 0 = 2 4 5
@@ -205,6 +188,7 @@ The product of A = m × k by B = k × n is a matrix C = m × n = A × B of size 
 C = A × B = 2 5  × 2  3  4 = 12 13 22
             3 6              15 15 27
 ```
+
 The components of matrix C are calculated as follows:
 
 ```
@@ -216,7 +200,7 @@ C(2,2) = A(2,1) × B(1,2) + A(2,2) × B(2,2) = 2 × (-1) + 5 × 3 = (-2) + 15 = 
 C(2,3) = A(2,1) × B(1,3) + A(2,2) × B(2,3) = 2 × 1 + 5 × 4 = 2 + 20 = 22
 C(3,1) = A(3,1) × B(1,1) + A(3,2) × B(2,1) = 3 × 1 + 6 × 2 = 3 + 12 = 15
 C(3,2) = A(3,1) × B(1,2) + A(3,2) × B(2,2) = 3 × (-1) + 6 × 3 = (-3) + 18 = 15
-C(3,3) = A(3,1) × B(1,3) + A(3,2) × B(2,3) = 3 × 1 + 6 × 4 = 3 + 24 = 27			
+C(3,3) = A(3,1) × B(1,3) + A(3,2) × B(2,3) = 3 × 1 + 6 × 4 = 3 + 24 = 27   
 ```
 
 ### Matrix transpose (transpose)
@@ -232,7 +216,9 @@ The transpose of matrix A is in switching its rows with its columns with their n
 A = A^T = 2 5 = 4 5 6
           3 6
 ```
+
 ### Minor of matrix and matrix of algebraic complements (calc_complements)
+
 ```c
 int s21_calc_complements(matrix_t *A, matrix_t *result);
 ```
@@ -291,7 +277,7 @@ Finding the determinant of matrix A by the first row:
     1 2 3
 A = 4 5 6
     7 8 9
-	
+ 
 |A| = 1 × 5 6 - 2 × 4 6 + 3 × 4 5 = 1 × (5 × 9 - 8 × 6) - 2 × (4 × 9 - 6 × 7) + 3 × (4 × 8 - 7 × 5)
           8 9       7 9       7 8
 |A| = 1 × (45 - 48) - 2 × (36 - 42) + 3 × (32 - 35) = -3 + 12 + (-9) = 0
@@ -332,7 +318,6 @@ Construction of minor matrix:
     -1 -34 -24
 ```
 
-
 The matrix of algebraic complements:
 
 ```
@@ -357,7 +342,6 @@ A^(-1) =  1/|A| * M^T. = -38  41 -34
                           27 -29  24 
 ```
 
-
 # Chapter III
 
 ## Part 1. Implementation of the matrix.h library functions
@@ -365,7 +349,7 @@ A^(-1) =  1/|A| * M^T. = -38  41 -34
 Implement basic operations with matrices (partially described [above](#matrix-operations)): create_matrix (creation), remove_matrix (cleaning and destruction), eq_matrix (comparison), sum_matrix (addition), sub_matrix (subtraction), mult_matrix (multiplication), mult_number (multiplication by number), transpose (transpose), determinant (calculation of determinant), calc_complements (calculation of matrix of algebraic complements), inverse_matrix (finding inverse of the matrix).
 
 - The library must be developed in C language of C11 standard using gcc compiler
-- The library code must be located in the src folder on the develop branch   
+- The library code must be located in the src folder on the develop branch
 - Do not use outdated and legacy language constructions and library functions. Pay attention to the legacy and obsolete marks in the official documentation on the language and the libraries used. Use the POSIX.1-2017 standard.
 - When writing code it is necessary to follow the Google style
 - Make it as a static library (with the s21_matrix.h header file)
@@ -374,9 +358,6 @@ Implement basic operations with matrices (partially described [above](#matrix-op
 - Prepare full coverage of library functions code with unit-tests using the Check library
 - Unit tests must cover at least 80% of each function (checked using gcov)  
 - Provide a Makefile for building the library and tests (with targets all, clean, test, s21_matrix.a, gcov_report)
-- The gcov_report target should generate a gcov report in the form of an html page. Unit tests must be run with gcov flags to do this 
+- The gcov_report target should generate a gcov report in the form of an html page. Unit tests must be run with gcov flags to do this
 - The matrix must be implemented as the structure described [above](#matrix-structure-in-c-language)
 - Verifiable accuracy of the fractional part is up to 6 decimal places
-
-
-💡 [Tap here](https://forms.yandex.ru/cloud/6418147073cee70b89478999/) **to leave your feedback on the project**. Pedago Team really tries to make your educational experience better.

@@ -2,19 +2,6 @@
 
 Implementation of SmartCalc v2.0.
 
-The russian version of the task can be found in the repository.
-
-## Contents
-
-1. [Chapter I](#chapter-i) \
-   1.1. [Introduction](#introduction)
-2. [Chapter II](#chapter-ii) \
-   2.1. [Information](#information)
-3. [Chapter III](#chapter-iii) \
-   3.1. [Part 1](#part-1-implementation-of-smartcalc-v20) \
-   3.2. [Part 2](#part-2-bonus-credit-calculator) \
-   3.3. [Part 3](#part-3-bonus-deposit-calculator)
-
 ## Chapter I
 
 ![smartcalcv2.0](misc/images/smartcalcv2.0.PNG)

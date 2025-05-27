@@ -4,35 +4,6 @@
 
 Resume: Today you will see how relational model works and how to get needed data based on basic constructions of  SQL
 
-## Contents
-
-1. [Chapter I](#chapter-i) \
-    1.1. [Preamble](#preamble)
-2. [Chapter II](#chapter-ii) \
-    2.1. [General Rules](#general-rules)
-3. [Chapter III](#chapter-iii) \
-    3.1. [Rules of the day](#rules-of-the-day)  
-4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 00 - First steps into SQL world](#exercise-00-first-steps-into-sql-world)  
-5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 01 - First steps into SQL world](#exercise-01-first-steps-into-sql-world)  
-6. [Chapter VI](#chapter-vi) \
-    6.1. [Exercise 02 - First steps into SQL world](#exercise-02-first-steps-into-sql-world)  
-7. [Chapter VII](#chapter-vii) \
-    7.1. [Exercise 03 - First steps into SQL world](#exercise-03-first-steps-into-sql-world)  
-8. [Chapter VIII](#chapter-viii) \
-    8.1. [Exercise 04 - First steps into SQL world](#exercise-04-first-steps-into-sql-world)
-9. [Chapter IX](#chapter-ix) \
-    9.1. [Exercise 05 - First steps into SQL world](#exercise-05-first-steps-into-sql-world)
-10. [Chapter X](#chapter-x) \
-    10.1. [Exercise 06 - First steps into SQL world](#exercise-06-first-steps-into-sql-world)
-11. [Chapter XI](#chapter-xi) \
-    11.1. [Exercise 07 - First steps into SQL world](#exercise-07-first-steps-into-sql-world)
-12. [Chapter XII](#chapter-xii) \
-    12.1. [Exercise 08 - First steps into SQL world](#exercise-08-first-steps-into-sql-world)
-13. [Chapter XIII](#chapter-xiii) \
-    13.1. [Exercise 09 - First steps into SQL world](#exercise-09-first-steps-into-sql-world)
-
 ## Chapter I
 
 ## Preamble

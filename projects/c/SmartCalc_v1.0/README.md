@@ -1,25 +1,8 @@
 # SmartCalc v1.0
 
-> При старте работы над проектом просим вас постараться хронометрировать время работы над проектом.
-> По завершении работы над проектом просим вас ответить на два вопроса [в этом опросе](https://forms.gle/MAxcabZjBPmTmhPv5)
-
 Implementation of SmartCalc v1.0.
 
 The russian version of the task can be found in the repository.
-
-
-## Contents
-
-0. [Preamble](#preamble)
-1. [Chapter I](#chapter-i) \
-   1.1. [Introduction](#introduction)
-2. [Chapter II](#chapter-ii) \
-   2.1. [Information](#information)
-3. [Chapter III](#chapter-iii) \
-   3.1. [Part 1](#part-1-implementation-of-smartcalc-v10)  
-   3.2. [Part 2](#part-2-bonus-credit-calculator)  
-   3.3. [Part 3](#part-3-bonus-deposit-calculator)
-
 
 ## Preamble
 
@@ -56,17 +39,15 @@ You waited until everybody had left and then came to him to offer your help:
 
 He became incredibly happy and immediately brought you up to speed. Well, you saved his job, all that’s left is to implement a calculator!
 
-
 ## Chapter I
 
 ## Introduction
 
 In this project you will implement an extended version of the usual calculator, which can be found in the standard applications of each operating system in the C programming language using structured programming. In addition to basic arithmetic operations such as add/subtract and multiply/divide, you need to supplement the calculator with the ability to calculate arithmetic expressions by following the order, as well as some mathematical functions (sine, cosine, logarithm, etc.).
 
-Besides calculating expressions, it should also support the use of the _x_ variable and the graphing of the corresponding function.
+Besides calculating expressions, it should also support the use of the *x* variable and the graphing of the corresponding function.
 
 As for other improvements you can consider a credit and deposit calculator.
-
 
 ## Chapter II
 
@@ -135,7 +116,7 @@ The expression written in Reverse Polish (bracketless) notation:
 
 Edsger Dijkstra invented an algorithm for converting expressions (including functions) from infix to Reverse Polish notation. The algorithm was named the "shunting-yard algorithm", because its operation resembles that of a railroad shunting yard.
 
->Before we look at the algorithm itself, let's make a small remark and introduce the token. A token is the simplest unit of morphological parsing of an expression. So, the expression 2 / (3 + 2) * 5 (the blanks are added for easy perception and do not carry any semantic sense), broken down into tokens, will look like this [2], [/], [(], [3], [+], [2], [)], [*], [5], where [2, 3, 5] are numerical tokens, [/, (, +, ), *] - are tokens-operations.
+>Before we look at the algorithm itself, let's make a small remark and introduce the token. A token is the simplest unit of morphological parsing of an expression. So, the expression 2 / (3 + 2) *5 (the blanks are added for easy perception and do not carry any semantic sense), broken down into tokens, will look like this [2], [/], [(], [3], [+], [2], [)], [*], [5], where [2, 3, 5] are numerical tokens, [/, (, +, ), *] - are tokens-operations.
 
 The Shunting-yard algorithm is stack-based. There are two text variables involved in the conversion: the input and the output string. The conversion process uses the stack to store operations not yet added to the output string. The conversion program sequentially reads each token from the input string and on each step does some actions based on which tokens have been read.
 
@@ -144,31 +125,32 @@ The Shunting-yard algorithm is stack-based. There are two text variables involve
 As long as there are unprocessed tokens in the input string, read the next token:
 
 If the token is:
+
 - A number – put it into the output queue
 
 - A function or a left parenthesis – push it onto the stack
 
 - A function arguments separator (e.g. comma):
-    - Move operators from the stack to the output queue until the token at the top of the stack is a left parenthesis. If there is no left parenthesis in the stack, there is an error in the expression.
+  - Move operators from the stack to the output queue until the token at the top of the stack is a left parenthesis. If there is no left parenthesis in the stack, there is an error in the expression.
 
 - Operator (O1):
-    - While there is an token-operator O2 at the top of the stack, that has greater precedence than O1 or they have the same precedence and O1 is left-associative:
-    - Pop O2 from the stack into the output queue
-    - Push O1 onto the stack
+  - While there is an token-operator O2 at the top of the stack, that has greater precedence than O1 or they have the same precedence and O1 is left-associative:
+  - Pop O2 from the stack into the output queue
+  - Push O1 onto the stack
 
 - A right parenthesis:
-    - While the token at the top of the stack is not a left parenthesis, pop the token-operators from the stack into the output queue.
-    - Pop the left parenthesis from the stack and discard it.
-    - If there is a function token at the top of the stack, then pop the function from the stack into the output queue
-    - If the stack ended before the left parenthesis was read, there is an error in the expression.
+  - While the token at the top of the stack is not a left parenthesis, pop the token-operators from the stack into the output queue.
+  - Pop the left parenthesis from the stack and discard it.
+  - If there is a function token at the top of the stack, then pop the function from the stack into the output queue
+  - If the stack ended before the left parenthesis was read, there is an error in the expression.
 
 If there are no more tokens left in the input string:
+
 - As long as there are operators in the stack:
-    - If there is a parenthesis at the top of the stack - there is an error in the expression.
-    - Pop the operator from the stack onto the output queue
+  - If there is a parenthesis at the top of the stack - there is an error in the expression.
+  - Pop the operator from the stack onto the output queue
 
 End.
-
 
 ## Chapter III
 
@@ -182,21 +164,21 @@ The SmartCalc v1.0 program must be implemented:
 - The program must be developed according to the principles of structured programming
 - When writing code it is necessary to follow the Google style
 - Prepare full coverage of modules related to calculating expressions with unit-tests using the Check library
-- GUI implementation, based on any GUI library with API for C89/C99/C11 
+- GUI implementation, based on any GUI library with API for C89/C99/C11
 <br/>For Linux: GTK+, CEF, Qt
 <br/>For Mac: GTK+, Nuklear, raygui, microui, libagar, libui, IUP, LCUI, CEF, Qt
 - Both integers and real numbers with a dot can be input into the program. You can optionally provide the input of numbers in exponential notation
 - The calculation must be done after you complete entering the calculating expression and press the `=` symbol.
 - Calculating arbitrary bracketed arithmetic expressions in infix notation
-- Calculate arbitrary bracketed arithmetic expressions in infix notation with substitution of the value of the variable _x_ as a number
-- Plotting a graph of a function given by an expression in infix notation with the variable _x_ (with coordinate axes, mark of the used scale and an adaptive grid)
-    - It is not necessary to provide the user with the ability to change the scale
+- Calculate arbitrary bracketed arithmetic expressions in infix notation with substitution of the value of the variable *x* as a number
+- Plotting a graph of a function given by an expression in infix notation with the variable *x* (with coordinate axes, mark of the used scale and an adaptive grid)
+  - It is not necessary to provide the user with the ability to change the scale
 - Domain and codomain of a function are limited to at least numbers from -1000000 to 1000000
-    - To plot a graph of a function it is necessary to additionally specify the displayed domain and codomain
+  - To plot a graph of a function it is necessary to additionally specify the displayed domain and codomain
 - Verifiable accuracy of the fractional part is at least to 7 decimal places
 - Users must be able to enter up to 255 characters
 - Bracketed arithmetic expressions in infix notation must support the following arithmetic operations and mathematical functions:
-    - **Arithmetic operators**:
+  - **Arithmetic operators**:
 
       | Operator name | Infix notation <br /> (Classic) | Prefix notation <br /> (Polish notation) |  Postfix notation <br /> (Reverse Polish notation) |
       | --------- | ------ | ------ | ------ |
@@ -212,7 +194,7 @@ The SmartCalc v1.0 program must be implemented:
 
       >Note that the multiplication operator contains the obligatory sign `*`. Processing an expression with the omitted `*` sign is optional and is left to the developer's decision
 
-    - **Functions**:
+  - **Functions**:
   
       | Function description | Function |
       | ------ | ------ |
@@ -226,20 +208,16 @@ The SmartCalc v1.0 program must be implemented:
       | Computes natural logarithm | ln(x) |
       | Computes common logarithm | log(x) |
 
-
 ## Part 2. Bonus. Credit calculator
 
 Provide a special mode "credit calculator" (you can take banki.ru and calcus.ru as an example):
+
 - Input: total credit amount, term, interest rate, type (annuity, differentiated)
 - Output: monthly payment, overpayment on credit, total payment
-
 
 ## Part 3. Bonus. Deposit calculator
 
 Provide a special mode "deposit profitability calculator" (you can take banki.ru and calcus.ru as an example):
+
 - Input: deposit amount, deposit term, interest rate, tax rate, periodicity of payments, capitalization of interest, replenishments list, partial withdrawals list
 - Output: accrued interest, tax amount, deposit amount by the end of the term
-
-
-
-💡 [Tap here](https://forms.yandex.ru/cloud/6418155a6938722388a12878/) **to leave your feedback on the project**. Pedago Team really tries to make your educational experience better.

@@ -4,28 +4,6 @@
 
 Resume: Today you will see how and when to create database indexes
 
-## Contents
-
-1. [Chapter I](#chapter-i) \
-    1.1. [Preamble](#preamble)
-2. [Chapter II](#chapter-ii) \
-    2.1. [General Rules](#general-rules)
-3. [Chapter III](#chapter-iii) \
-    3.1. [Rules of the day](#rules-of-the-day)  
-4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 00 - Let’s create indexes for every foreign key](#exercise-00-lets-create-indexes-for-every-foreign-key)  
-5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 01 - How to see that index works?](#exercise-01-how-to-see-that-index-works)  
-6. [Chapter VI](#chapter-vi) \
-    6.1. [Exercise 02 - Formula is in the index. Is it Ok?](#exercise-02-formula-is-in-the-index-is-it-ok)  
-7. [Chapter VII](#chapter-vii) \
-    7.1. [Exercise 03 - Multicolumn index for our goals](#exercise-03-multicolumn-index-for-our-goals)  
-8. [Chapter VIII](#chapter-viii) \
-    8.1. [Exercise 04 - Uniqueness for data](#exercise-04-uniqueness-for-data)
-9. [Chapter IX](#chapter-ix) \
-    9.1. [Exercise 05 - Partial uniqueness for data](#exercise-05-partial-uniqueness-for-data)
-10. [Chapter X](#chapter-x) \
-    10.1. [Exercise 06 - Let’s make performance improvement](#exercise-06-lets-make-performance-improvement)
 
 ## Chapter I
 

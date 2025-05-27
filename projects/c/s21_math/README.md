@@ -1,21 +1,8 @@
 # s21_math  
 
-> При старте работы над проектом просим вас постараться хронометрировать время работы над проектом.
-> По завершении работы над проектом просим вас ответить на два вопроса [в этом опросе](https://forms.gle/6nduWymT5Stz9N9D8)
-
 Implementation of your own version of the math.h library.  
 
 The russian version of the task can be found in the repository.
-
-## Contents
-0. [Preamble](#preamble)
-1. [Chapter I](#chapter-i) \
-   1.1. [Introduction](#introduction)
-2. [Chapter II](#chapter-ii) \
-   2.1. [Information](#information)
-3. [Chapter III](#chapter-iii) \
-   3.1. [Part 1](#part-1-implementing-the-mathh-library-functions)
-
 
 ## Preamble  
 
@@ -98,5 +85,3 @@ The functions of the math.h library must be implemented (only those directly des
 - You must follow the logic of the standard library (in terms of checks, working with memory and behavior in emergency situations - tests will help you with that)
 - The total verifiable accuracy is 16 significant digits
 - Verifiable accuracy of the fractional part is up to 6 decimal places.
-
-💡 [Tap here](https://forms.yandex.ru/u/6357d9355d2a06307fd4c1f6/) **to leave your feedback on the project**. Pedago Team really tries to make your educational experience better.

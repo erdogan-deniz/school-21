@@ -2,21 +2,6 @@
 
 ## Magical connections
 
-## Contents
-
-1. [Chapter I](#chapter-i) \
-    1.1. [General rules](#general-rules)
-2. [Chapter II](#chapter-ii) \
-    2.1. [Rules of the day](#rules-of-the-day)
-3. [Chapter III](#chapter-iii) \
-    3.1. [Intro](#intro)
-4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 00: Old Style](#exercise-00-old-style)
-5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 01: Shortcuts](#exercise-01-shortcuts)
-6. [Chapter VI](#chapter-vi) \
-    6.1. [Exercise 02: Greatest Magicians](#exercise-02-greatest-magicians)
-
 <h2 id="chapter-i" >Chapter I</h2>
 <h2 id="general-rules" >General rules</h2>
 
@@ -35,26 +20,24 @@
 <h2 id="chapter-iii" >Chapter III</h2>
 <h2 id="intro" >Intro</h2>
 
-
-Albus Percival Wulfric Brian Dumbledore was sitting in his chair and looked on a young boy with 
+Albus Percival Wulfric Brian Dumbledore was sitting in his chair and looked on a young boy with
 a lightning bolt-shaped scar on his forehead.
 
  "So, Harry, you're saying all muggles are connected to each other with just [six handshakes](https://en.wikipedia.org/wiki/Six_degrees_of_separation)?"
 
- "It is not strictly proven, obviously," Harry straightened his glasses. "But it applies 
+ "It is not strictly proven, obviously," Harry straightened his glasses. "But it applies
  not to just muggles, but everyone!"
- 
+
  "I find this a pretty bold assumption. Any other examples of these... *graphs* you can give me?"
- 
+
  "One of the largest public encyclopaedias in the world is called Wikipedia..."
- 
+
  "It should be a pretty large book! Even a whole series..."
 
  Harry sighed.
 
  "It is not a book, it is a website. But the idea is similar to, say, dictionaries - various
  entities are linked to each other..."
-
 
 <h2 id="chapter-iv" >Chapter IV</h2>
 <h3 id="ex00">Exercise 00: Old Style</h3>
@@ -94,8 +77,8 @@ other default starting page. Don't forget to keep track of the links leading to 
 already visited. If page A links to page B and page B links to page A - it is two directed graph
 edges, not one.
 
-Every page your code visits should be logged to stdout using `logging` Python module with log 
-level set to 'INFO'. 
+Every page your code visits should be logged to stdout using `logging` Python module with log
+level set to 'INFO'.
 
 There are no strict requirements on the format of JSON file your code produces, but keep in mind
 you'll need to work further with this file in next exercises, so you may consider using existing
@@ -109,16 +92,16 @@ database](https://neo4j.com/download/).
 
  "I see. But why are Welsh Corgi so close to King Solomon?"
 
-Harry wanted to say that he has no idea, but then he noticed the smiling eyes of the wizard. 
+Harry wanted to say that he has no idea, but then he noticed the smiling eyes of the wizard.
 
  "Frankly speaking, I highly doubt it's the weirdest connection there," said the boy, "but
  don't you think, sir, it's..."
- 
+
  "..absolutely fascinating!" finished the wizard. "I think I've underestimated muggles'
- technologies here, well done. Anyway, but how do we figure out how closely are two pages 
+ technologies here, well done. Anyway, but how do we figure out how closely are two pages
  connected to each other?"
 
-Harry thought for a moment. 
+Harry thought for a moment.
 
  "I assume we can try and find the shortest path from one page to another. This is a pretty
  complicated task with a regular book, but it becomes a lot easier on a serialized graph."
@@ -128,7 +111,7 @@ Harry thought for a moment.
 Now you should write the program called `shortest_path.py`, which will need to find the *shortest*
 path length between two pages in your serialized database (if these pages are there):
 
-```
+```console
 ~$ python shortest_path.py --from 'Welsh Corgi' --to 'Solomon'
 3
 ~$ python shortest_path.py --from 'Solomon' --to 'Welsh Corgi' --non-directed
@@ -139,8 +122,8 @@ Mind the `--non-directed` flag. It means we treat all links as 'non-directed' or
 every edge is treated equally in both directions. In this case, a path exists betweeh *any* two
 nodes in your serialized graph.
 
-By default (when `--non-directed` is not specified) we are only following the directed edges of 
-the graph. This means, not all pages in the database can be reachable from other pages, especially 
+By default (when `--non-directed` is not specified) we are only following the directed edges of
+the graph. This means, not all pages in the database can be reachable from other pages, especially
 if they  have a small amount of inbound links. If the path doesn't exist, your script should print
 'Path not found'.
 
@@ -149,7 +132,7 @@ the database file is not found, the code should print 'Database not found'.
 
 Additionally, please add `-v` flag, which will enable logging of the found path, like this:
 
-```
+```console
 ~$ python shortest_path.py -v --from 'Welsh Corgi' --to 'Solomon'
 'Welsh Corgi' -> 'Dog training' -> 'King Solomon's Ring (book)' -> 'Solomon'
 3
@@ -158,11 +141,10 @@ Additionally, please add `-v` flag, which will enable logging of the found path,
 In this exercise, you shouldn't be using an existing implementation of a 'shortest path'
 algorithm provided by an existing libraries. Please write it yourself instead.
 
-
 <h2 id="chapter-vi" >Chapter VI</h2>
 <h3 id="ex01">Exercise 02: Greatest Magicians</h3>
 
-  "Now I can see the relation with "six handshakes" rule you mentioned. Great magicians 
+  "Now I can see the relation with "six handshakes" rule you mentioned. Great magicians
  can be quite popular, right?"
 
 The boy stared at him, trying to understand what's going on in old wizard's head.
@@ -181,7 +163,7 @@ shouldn't be that hard...
 
 ...Draco Malfoy managed to escape from being caught eavesdropping. He was hiding around the corner
 from the headmaster's office when Dumbledore left, and now his mind was filled with thoughts about
-'greatest wizards'. He firmly decided that the next owl he will send to his father will be about 
+'greatest wizards'. He firmly decided that the next owl he will send to his father will be about
 connecting Malfoy Manor to the Internet.
 
 -----
@@ -190,7 +172,7 @@ Your next script `render_graph.py` should render a visualization your graph of p
 generated in EX00, also reading it from a `WIKI_FILE` env variable) as a PNG image
 `wiki_graph.png`, with nodes and edges. You may use any third-party library for that.
 
-The main rule here is that the size of the node should correspond to the number of incoming 
+The main rule here is that the size of the node should correspond to the number of incoming
 connections. The more connections - the larger the node in render. This way the 'greatest pages'
 in your dataset will be the best visible ones.
 
@@ -198,6 +180,5 @@ You can get additional score in this task if your script optionally can generate
 file, but also a `wiki_graph.html` page which will show an interactive visualization of the same
 graph. You can use libraries like [Altair](https://altair-viz.github.io/) or [Bokeh](https://docs.bokeh.org/en/latest/index.html)
 to do that.
-
 
 **Please leave your feedback [here](https://forms.gle/ZmAjM5qJ3uEnADen6)**

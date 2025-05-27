@@ -1,7 +1,7 @@
 # UNIX command line tools
 
-Summary: on the first day, we will help you to acquire the skills of using
-UNIX command line tools for basic data science tasks.
+Summary: on the first day, we will help you to acquire the skills of using *UNIX*
+command line tools for basic data science tasks.
 You will learn how to use: `curl`, `sort`, `uniq`, `jq`, `sed`, `cat` for data
 collection and preprocessing.
 

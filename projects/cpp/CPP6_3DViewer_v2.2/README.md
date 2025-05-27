@@ -2,20 +2,6 @@
 
 Implementation of 3DViewer v2.2
 
-The russian version of the task can be found in the repository.
-
-## Contents
-
-1. [Chapter I](#chapter-i) \
-   1.1. [Introduction](#introduction)
-2. [Chapter II](#chapter-ii) \
-   2.1. [Information](#information)
-3. [Chapter III](#chapter-iii) \
-   3.1. [Part 1](#part-1-3dviewer-v22) \
-   3.2. [Part 2](#part-2-bonus-settings) \
-   3.3. [Part 3](#part-3-bonus-optimization)
-
-
 ## Chapter I
 
 ![3dviewer2.2](misc/images/3Dviewer2.2.PNG)
@@ -118,5 +104,3 @@ Modify 3DViewer v2.1.
 ## Part 3. Bonus. Optimization
 
 - Implement partitioning of the scene space using the KD-tree and optimize the search for intersections of rays with scene objects through a binary tree search 
-
-💡 [Tap here](https://forms.yandex.ru/cloud/64181be484227c2507957cfe/) **to leave your feedback on the project**. Product Team really tries to make your educational experience better.

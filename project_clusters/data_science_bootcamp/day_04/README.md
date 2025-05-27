@@ -2,30 +2,6 @@
 
 Summary: Today we will help you write code that works faster.
 
-💡 [Tap here](https://new.oprosso.net/p/4cb31ec3f47a4596bc758ea1861fb624) **to leave your feedback on the project**. It's anonymous and will help our team make your educational experience better. We recommend completing the survey immediately after the project.
-
-## Contents
-
-1. [Chapter I](#chapter-i) \
-    1.1. [Foreword](#foreword)
-2. [Chapter II](#chapter-ii) \
-    2.1. [Instructions](#instructions)
-3. [Chapter III](#chapter-iii) \
-    3.1. [Specific instructions for the day](#specific-instructions-for-the-day)
-4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 00 : List comprehensions](#exercise-00-list-comprehensions)
-5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 01 : Map](#exercise-01-map)
-6. [Chapter VI](#chapter-vi) \
-    6.1. [Exercise 02 : Filter](#exercise-02-filter)
-7. [Chapter VII](#chapter-vii) \
-    7.1. [Exercise 03 : Reduce](#exercise-03-reduce)
-8. [Chapter VIII](#chapter-viii) \
-    8.1. [Exercise 04 : Counter](#exercise-04-counter)
-9. [Chapter IX](#chapter-ix) \
-    9.1. [Exercise 05 : Generator](#exercise-05-generator)
-    
-   
 ## Chapter I
 
 ### Foreword
@@ -72,6 +48,7 @@ ified in the subject.
 
 * No code in the global scope. Use functions!
 * Each file must end with a function call in a condition similar to:
+
     ```python
     if __name__ == '__main__':
         # your tests and your error handling
@@ -118,7 +95,8 @@ loop” if not,
 * also, add the time values at the end, after the print described above. Order them
 from shortest to longest.
 
-Please, use the following list of email addresses: 
+Please, use the following list of email addresses:
+
 ```
 emails = [’john@gmail.com’, ’james@gmail.com’, ’alice@yahoo.com’, 
 ’anna@live.com’, ’philipp@gmail.com’]
@@ -170,6 +148,7 @@ time values with the same condition: they should be in the ascending order by
 length.
 
 The example:
+
 ```
 $ ./benchmark.py
 it is better to use a map
@@ -202,6 +181,7 @@ perform for the benchmark. In return, it should give the time spent to make that
 number of calls of the function.
 
 The examples:
+
 ```
 $ ./benchmark.py loop 10000000
 6.230267604
@@ -243,6 +223,7 @@ the sum of the calculation of squares. In return, it should give the time spent 
 that number of calls of the function.
 
 The example:
+
 ```
 $ ./benchmark.py loop 10000000 5
 6.230267604
@@ -283,6 +264,7 @@ the numbers and the values are the counts, the input is the list
 Counter and without it
 
 Example:
+
 ```
 $ ./benchmark.py
 my function: 0.4501532
@@ -327,6 +309,7 @@ System mode time in seconds. If you have Windows OS, use the corresponding
 functions to get the same metrics.
 
 Example:
+
 ```
 $ ./ordinary.py ratings.csv
 Peak Memory Usage = 2.114 GB

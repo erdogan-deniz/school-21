@@ -4,25 +4,6 @@ Summary: On the first day, we will help you to acquire the skills of using UNIX
 command-line tools for basic data science tasks. You will learn how to use curl, sort,
 uniq, jq, sed, and cat for data collection and preprocessing.
 
-## Contents
-
-1. [Chapter I](#chapter-i) \
-    1.1. [Foreword](#foreword)
-2. [Chapter II](#chapter-ii) \
-    2.1. [Instructions](#instructions)
-3. [Chapter III](#chapter-iii) \
-    3.1. [Exercise 00 : First shell script](#exercise-00-first-shell-script)
-4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 01 : Transforming JSON to CSV](#exercise-01-transforming-json-to-csv)
-5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 02 : Sorting a file](#exercise-02-sorting-a-file)
-6. [Chapter VI](#chapter-vi) \
-    6.1. [Exercise 03 : Replacing strings in a file](#exercise-03-replacing-strings-in-a-file)
-7. [Chapter VII](#chapter-vii) \
-    7.1. [Exercise 04 : Descriptive statistics](#exercise-04-descriptive-statistics)
-8. [Chapter VIII](#chapter-viii) \
-    8.1. [Exercise 05 : Partitioning and concatenation](#exercise-05-partitioning-and-concatenation)
-
 ## Chapter I
 
 ### Foreword

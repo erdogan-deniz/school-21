@@ -2,23 +2,6 @@
 
 ## Wibbly-wobbly, timey-wimey stuff
 
-## Contents
-
-1. [Chapter I](#chapter-i) \
-    1.1. [General rules](#general-rules)
-2. [Chapter II](#chapter-ii) \
-    2.1. [Rules of the day](#rules-of-the-day)
-3. [Chapter III](#chapter-iii) \
-    3.1. [Intro](#intro)
-4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 00: Fool Me Once](#exercise-00-fool-me-once)
-5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 01: Screwdriver Song](#exercise-01-screwdriver-song)
-6. [Chapter VI](#chapter-vi) \
-    6.1. [Exercise 02: Good Timing](#exercise-02-good-timing)
-7. [Chapter VI](#chapter-vii) \
-    7.1. [Reading](#reading)
-
 <h2 id="chapter-i" >Chapter I</h2>
 <h2 id="general-rules" >General rules</h2>
 
@@ -235,5 +218,3 @@ another for the next turn to grab two screwdrivers. The code itself should be in
 - [Concurrency](https://realpython.com/python-concurrency/)
 - [Python Synchronization primitives](https://hackernoon.com/synchronization-primitives-in-python-564f89fee732)
 - [Dining Philosophers](https://en.wikipedia.org/wiki/Dining_philosophers_problem)
-
-**Please leave your feedback [here](https://forms.gle/5LkuABmjcwPwj6WX9)**

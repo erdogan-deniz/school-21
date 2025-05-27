@@ -3,29 +3,6 @@
 Summary: Today we will help you acquire a basic knowledge of the OOP approach in
 Python.
 
-## Contents
-
-1. [Chapter I](#chapter-i) \
-    1.1. [Foreword](#foreword)
-2. [Chapter II](#chapter-ii) \
-    2.1. [Instructions](#instructions)
-3. [Chapter III](#chapter-iii) \
-    3.1. [Specific instructions of the day](#specific-instructions-of-the-day)
-4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 00 : Simple class](#exercise-00-simple-class)
-5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 01 : Method](#exercise-01-method)
-6. [Chapter VI](#chapter-vi) \
-    6.1. [Exercise 02 : Constructor](#exercise-02-constructor)
-7. [Chapter VII](#chapter-vii) \
-    7.1. [Exercise 03 : Nested class](#exercise-03-nested-class)
-8. [Chapter VIII](#chapter-viii) \
-    8.1. [Exercise 04 : Inheritance](#exercise-04-inheritance)
-9. [Chapter IX](#chapter-ix) \
-    9.1. [Exercise 05 : Config and the main program](#exercise-05-config-and-the-main-program)
-10. [Chapter X](#chapter-x) \
-    10.1. [Exercise 06 : Logging](#exercise-06-logging)
-
 ## Chapter I
 
 ### Foreword
@@ -232,6 +209,7 @@ path to the file should be given as an argument to the script. It needs to displ
 the content of the file data.csv. Save the script with the name first_constructor.py.
 
 Example of launching the script:
+
 ```
 $ python3 first_class.py data.csv
 head,tail
@@ -285,6 +263,7 @@ calculates fractions in percents, for example, 30 and 70
   * the fractions from fractions()
 
 Here is an example:
+
 ```
 $ python3 first\_nest.py data.csv
 [[0, 1], [1, 0], [0, 1], [1, 0], [0, 1], [0, 1], [0, 1], [1, 0], [1,

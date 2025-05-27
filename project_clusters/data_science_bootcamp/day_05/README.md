@@ -203,7 +203,7 @@ Turn-in directory: `ex04/`
 
 Files to turn in: `enrichment.ipynb`
 
-Allowed functions: `import pandas as pd, import numpy as np, import requests`
+Allowed functions: `import pandas as pd`, `import numpy as np`, `import requests`
 
 Cool.
 But the more data you have the better the analysis you can conduct.
@@ -265,7 +265,7 @@ Turn-in directory: `ex05/`
 
 Files to turn in: `optimizations.ipynb`
 
-Allowed functions: `import pandas as pd, import gc`
+Allowed functions: `import pandas as pd`, `import gc`
 
 We are returning to the idea of code efficiency.
 By now you know the basics of *Pandas*.

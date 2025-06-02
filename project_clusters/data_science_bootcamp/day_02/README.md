@@ -3,9 +3,7 @@
 Summary: Today we will help you acquire a basic knowledge of the OOP approach in
 Python.
 
-## Chapter I
-
-### Foreword
+## Foreword
 
 A common complaint to data scientists is that they write shitcode (by the way, only for
 educational purposes you may find a lot of examples of Python shitcode [here](https://shitcode.net/latest/language/python), provided
@@ -49,9 +47,7 @@ Here are the top few examples from the website mentioned above:
         print('***********************************************************')
     ```
 
-## Chapter II
-
-### Instructions
+## Instructions
 
 * Use this page as your only reference. Do not listen to any rumors or speculations
 about how to prepare your solution.
@@ -73,9 +69,7 @@ on the left.
 ified in the subject.
 * And may the Force be with you!
 
-## Chapter III
-
-### Specific instructions of the day
+## Specific instructions of the day
 
 * No code in the global scope. Use functions!
 * Each file must end with a function call in a condition similar to:
@@ -91,13 +85,7 @@ that you were asked to test.
 functions” of the title block of each exercise.
 * Any built-in function is allowed.
 
-## Chapter IV
-
-### Exercise 00 : Simple class
-
-Exercise 00
-
-Simple class
+## Exercise 00 : Simple class
 
 Turn-in directory : ex00/
 
@@ -147,13 +135,7 @@ Example of launching the script:
     1,0
     ```
 
-## Chapter V
-
 ### Exercise 01 : Method
-
-Exercise 01
-
-Method
 
 Turn-in directory : ex01/
 
@@ -173,13 +155,7 @@ with return() in the method. Change the name of the class to Research.
 * The script still must have the exact same behavior. It needs to display the content
 of the file data.csv. Save the script with the name first_method.py.
 
-## Chapter VI
-
-### Exercise 02 : Constructor
-
-Exercise 02
-
-Constructor
+## Exercise 02 : Constructor
 
 Turn-in directory : ex02/
 
@@ -226,13 +202,7 @@ head,tail
 1,0
 ```
 
-## Chapter VII
-
-### Exercise 03 : Nested class
-
-Exercise 03
-
-Nested class
+## Exercise 03 : Nested class
 
 Turn-in directory : ex03/
 
@@ -272,13 +242,7 @@ $ python3 first\_nest.py data.csv
 41.66666666666667 58.333333333333336
 ```
 
-## Chapter VIII
-
-### Exercise 04 : Inheritance
-
-Exercise 04
-
-Inheritance
+## Exercise 04 : Inheritance
 
 Turn-in directory : ex04/
 
@@ -309,13 +273,7 @@ useful for the future methods of this class, right?
   * the list of lists from predict_random() for the 3 steps
   * the list from predict_last()
 
-## Chapter IX
-
-### Exercise 05 : Config and the main program
-
-Exercise 05
-
-Config and the main program
+## Exercise 05 : Config and the main program
 
 Turn-in directory : ex05/
 
@@ -352,13 +310,7 @@ In this exercise config.py may have code in the global scope (for variables).
 In this exercise config.py and analytics.py do not have to contain the block if __name__
 == ’__main__’.
 
-## Chapter X
-
-### Exercise 06 : Logging
-
-Exercise 06
-
-Logging
+## Exercise 06 : Logging
 
 Turn-in directory : ex06/
 

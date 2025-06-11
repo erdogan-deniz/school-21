@@ -27,7 +27,7 @@ Turn-in directory: `ex_00/`
 
 Files to turn in: `00_line_chart.ipynb`
 
-Allowed functions: `import pandas as pd, import sqlite3`
+Allowed functions: `import pandas as pd`, `import sqlite3`
 
 Today, you will work with the same datasets that you used on the previous day.
 We will try to understand the data about how the students of the educational company behave.
@@ -55,7 +55,7 @@ Turn-in directory: `ex_01/`
 
 Files to turn in: `01_line_chart_styles.ipynb`
 
-Allowed functions: `import pandas as pd, import sqlite3`
+Allowed functions: `import pandas as pd`, `import sqlite3`
 
 Cool!
 Remember that we have the data about the commits?
@@ -77,7 +77,7 @@ Turn-in directory: `ex_02/`
 
 Files to turn in: `02_bar_chart.ipynb`
 
-Allowed functions: `import pandas as pd, import sqlite3`
+Allowed functions: `import pandas as pd`, `import sqlite3`
 
 We have another question for you to answer: `when do our users usually commit the labs: in the night, morning, afternoon, or evening?`
 And how has it changed over time?
@@ -91,7 +91,7 @@ Do what you need to do to create a graph like this:
 * choose a palette that you really enjoy, you do not have to replicate it from the graph above.
 * at the end of *Jupyter Notebook*, create a markdown cell and insert the questions:
   `“When do our users usually commit the labs: in the night, morning, afternoon, or evening?”`, the answer is the two most common periods.
-* Which day has:
+* which day has:
   * the most number of commits?
   * and at the same time, the number of commits in the evening is higher than in the afternoon?
 
@@ -101,7 +101,7 @@ Turn-in directory: `ex_03/`
 
 Files to turn in: `03_bar_charts.ipynb`
 
-Allowed functions: `import pandas as pd, import sqlite3`
+Allowed functions: `import pandas as pd`, `import sqlite3`
 
 What if the average number of commits is different when it is a working day or weekend?
 Do what you need to do to create a graph like this:
@@ -122,7 +122,7 @@ Turn-in directory: `ex_04/`
 
 Files to turn in: `04_histogram.ipynb`
 
-Allowed functions: `import pandas as pd, import sqlite3, import matplotlib.pyplot as plt`
+Allowed functions: `import pandas as pd`, `import sqlite3`, `import matplotlib.pyplot as plt`
 
 In the previous exercise, you had to draw a distribution grouping the values using *Pandas*.
 Wouldn’t it be nice if we could draw it in a more automatic way?
@@ -147,7 +147,7 @@ Turn-in directory: `ex_05/`
 
 Files to turn in: `05_boxplot.ipynb`
 
-Allowed functions: `import pandas as pd, import matplotlib.pyplot as plt`
+Allowed functions: `import pandas as pd`, `import matplotlib.pyplot as plt`
 
 Remember how we tried to figure out if the newsfeed affected the behavior of the test and control users?
 Last time, we just calculated the average values.
@@ -173,7 +173,7 @@ Turn-in directory: `ex_06/`
 
 Files to turn in: `06_scatter_matrix.ipynb`
 
-Allowed functions: `import pandas as pd, import sqlite3, from pandas.plotting import scatter_matrix`
+Allowed functions: `import pandas as pd`, `import sqlite3`, `from pandas.plotting import scatter_matrix`
 
 Remember how we tried to find out if there was a correlation between the number of visits to the `Newsfeed` and the average difference between the first commit and the lab deadline?
 The problem is that the correlation coefficient shows whether there is a linear relationship between the two variables.
@@ -202,7 +202,7 @@ Turn-in directory: `ex_07/`
 
 Files to turn in: `07_heatmap.ipynb`
 
-Allowed functions: `import pandas as pd, import sqlite3, import matplotlib.pyplot as plt, from mpl_toolkits.axes_grid1 import make_axes_locatable`
+Allowed functions: `import pandas as pd`, `import sqlite3`, `import matplotlib.pyplot as plt`, `from mpl_toolkits.axes_grid1`, `import make_axes_locatable`
 
 Several exercises back, we wanted to see if there are different patterns for users during working days and weekends.
 In this exercise, let us find out if there are different patterns for users between different weekdays and between different hours.
@@ -226,7 +226,7 @@ Turn-in directory: `ex_08/`
 
 Files to turn in: `08_seaborn.ipynb`
 
-Allowed functions: `import pandas as pd, import sqlite3, import matplotlib.pyplot as plt, import seaborn as sns`
+Allowed functions: `import pandas as pd`, `import sqlite3`, `import matplotlib.pyplot as plt`, `import seaborn as sns`
 
 Ok, sometimes in the previous exercises we ignored `project1` in our calculations.
 The project was a competition.
@@ -256,7 +256,7 @@ Turn-in directory: `ex_09/`
 
 Files to turn in: `09_plotly.ipynb`
 
-Allowed functions: `import pandas as pd, import sqlite3, import plotly.graph_objects as go, import numpy as np`
+Allowed functions: `import pandas as pd`, `import sqlite3`, `import plotly.graph_objects as go`, `import numpy as np`
 
 *Matplotlib* and *Seaborn* are really powerful libraries and you can use them for most of the tasks that you may have related to *DataViz*.
 But they do not offer you the functionality of creating interactive charts and animations.

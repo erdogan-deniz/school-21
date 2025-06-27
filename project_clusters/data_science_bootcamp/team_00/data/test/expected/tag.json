@@ -1,0 +1,37 @@
+{
+    "get_most_words_tags": {
+        "Something for everyone in this one... saw it without and plan on seeing it with kids!": 16,
+        "the catholic church is the most corrupt organization in history": 10,
+        "Oscar (Best Music - Original Score)": 6,
+        "based on a true story": 5,
+        "Everything you want is here": 5
+    },
+    "get_longest_tags": [
+        "Something for everyone in this one... saw it without and plan on seeing it with kids!",
+        "the catholic church is the most corrupt organization in history",
+        "audience intelligence underestimated",
+        "Oscar (Best Music - Original Score)",
+        "assassin-in-training (scene)"
+    ],
+    "get_most_words_and_longest_tags": [
+        "Something for everyone in this one... saw it without and plan on seeing it with kids!",
+        "the catholic church is the most corrupt organization in history"
+    ],
+    "get_popular_tags": {
+        "funny": 15,
+        "sci-fi": 14,
+        "dark comedy": 12,
+        "twist ending": 12
+    },
+    "get_unique_with_word_tags_in": [
+        "Something for everyone in this one... saw it without and plan on seeing it with kids!",
+        "heroine in tight suit",
+        "the catholic church is the most corrupt organization in history"
+    ],
+    "get_unique_with_word_tags_the": [
+        "Guardians of the Galaxy",
+        "end of the world",
+        "lord of the rings",
+        "the catholic church is the most corrupt organization in history"
+    ]
+}

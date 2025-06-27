@@ -3,7 +3,7 @@ day_01 -
 day_02 - 
 day_03 - 
 day_04 - 
-team_00 - 
+team_00 - excellent
 day_05 -
 day_06 - 
 day_07 - excellent

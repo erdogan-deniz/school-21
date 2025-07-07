@@ -77,7 +77,7 @@ class Movie:
         """
         Initializes the `Movie` analyzer.
 
-        :Params:
+        :Parameters:
             file_path (str): Path to the directory containing the `.csv` file.
             file (str): `.csv` file containing movies data.
                         Default: "movies.csv".
@@ -95,7 +95,7 @@ class Movie:
         """
         Loads and stores a subset of data from the `.csv` file.
 
-        :Params:
+        :Parameters:
             size (int): Number of data rows to load (excluding header).
                         Default: 1000.
 
@@ -128,7 +128,7 @@ class Movie:
         """
         Loads movies IDs from a `.csv` file.
 
-        :Params:
+        :Parameters:
             size (int): Number of movies IDs to load.
                         Default: 1000.
 
@@ -165,7 +165,7 @@ class Movie:
         """
         Loads movies titles from a `.csv` file.
 
-        :Params:
+        :Parameters:
             size (int): Number of movies titles to load.
                         Default: 1000.
 
@@ -215,7 +215,7 @@ class Movie:
         """
         Loads movies genres from a `.csv` file.
 
-        :Params:
+        :Parameters:
             size (int): Number of movies genres to load.
                         Default: 1000.
 
@@ -398,7 +398,7 @@ class Movie:
         """
         Retrieves top movies by genre count.
 
-        :Params:
+        :Parameters:
             cnt (int): Number of movies to return.
                        Default: 10.
 
@@ -436,7 +436,7 @@ class Movie:
         """
         Retrieves top movies by rating count sorted.
 
-        :Params:
+        :Parameters:
             cnt (int): Number of movies to return.
                        Default: 10.
 
@@ -492,7 +492,7 @@ class Movie:
         """
         Retrieve top target feature values by rating metric.
 
-        :Params:
+        :Parameters:
             cnt (int): Number of top to return.
                        Default: 10.
             metric (Literal["min", "max", "mean", "median", "var", "std", ]):

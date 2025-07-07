@@ -53,7 +53,7 @@ class Tag:
         """
         Initializes the `Tag` analyzer.
 
-        :Params:
+        :Parameters:
             file_path (str): Path to the directory containing the `.csv` file.
             file (str): `.csv` file containing tags data.
                         Default: "tags.csv".
@@ -72,7 +72,7 @@ class Tag:
         """
         Loads a subset of data rows from the `.csv` file.
 
-        :Params:
+        :Parameters:
             size (int): Number of data rows to load (excluding header).
                         Default: 1000.
 
@@ -106,7 +106,7 @@ class Tag:
         """
         Loads users IDs from a `.csv` file.
 
-        :Params:
+        :Parameters:
             size (int): Number of users IDs to load.
                         Default: 1000.
 
@@ -143,7 +143,7 @@ class Tag:
         """
         Loads movies IDs from a `.csv` file.
 
-        :Params:
+        :Parameters:
             size (int): Number of movies IDs to load.
                         Default: 1000.
 
@@ -180,7 +180,7 @@ class Tag:
         """
         Loads tags from a `.csv` file.
 
-        :Params:
+        :Parameters:
             size (int): Number of tags to load.
                         Default: 1000.
 
@@ -217,7 +217,7 @@ class Tag:
         """
         Loads timestamps from a `.csv` file.
 
-        :Params:
+        :Parameters:
             size (int): Number of timestamps to load.
                         Default: 1000.
 
@@ -354,7 +354,7 @@ class Tag:
         """
         Retrieves top tags containing the most words sorted.
 
-        :Params:
+        :Parameters:
             cnt (int): Number of tags to return.
                        Default: 10.
 
@@ -395,7 +395,7 @@ class Tag:
         """
         Retrieves the longest tags sorted.
 
-        :Params:
+        :Parameters:
             cnt (int): Number of tags to return.
                        Default: 10.
 
@@ -432,7 +432,7 @@ class Tag:
         """
         Retrieves tags that rank highly in word count and length.
 
-        :Params:
+        :Parameters:
             cnt (int): Number of tags to return.
                        Default: 10.
 
@@ -466,7 +466,7 @@ class Tag:
         """
         Retrieves the most popular tags sorted.
 
-        :Params:
+        :Parameters:
             cnt (int): Number of tags to return.
                        Default: 10.
 
@@ -506,7 +506,7 @@ class Tag:
         """
         Retrieves unique tags containing the word, sorted alphabetically.
 
-        :Params:
+        :Parameters:
             word (str): The word to search for within tags.
 
         :Returns:

@@ -88,7 +88,7 @@ class User(Movie):
         """
         Retrieves top users by rating metric.
 
-        :Params:
+        :Parameters:
             cnt (int): Number of users to return.
                        Default: 10.
             metric (Literal["min", "max", "mean", "median", "var", "std", ]):

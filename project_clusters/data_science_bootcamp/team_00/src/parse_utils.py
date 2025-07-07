@@ -82,7 +82,7 @@ def fetch_webpage_text(url: str, headers: dict[str, str]) -> str | None:
     """
     Fetch and return the text of a webpage.
 
-    :Params:
+    :Parameters:
         url (str): The URL to fetch.
         headers (dict[str, str]): HTTP headers.
 
@@ -144,7 +144,7 @@ def fetch_movie_webpage_text_fields(
     """
     Fetch movie fields from webpage text.
 
-    :Params:
+    :Parameters:
         movie_id (str): Movie ID.
         movie_webpage_text (str): Movie webpage text.
         fields (Literal["gross", "title", "budget", "rating", "writer",
@@ -191,7 +191,7 @@ def fetch_movie_webpage_text_field(
     """
     Fetch movie field.
 
-    :Params:
+    :Parameters:
         soup (BeautifulSoup): Parsed webpage.
         field (str): Field name.
 
@@ -328,7 +328,7 @@ def fetch_movies_webpage_text_fields(
     """
     Fetch movies webpage fields.
 
-    :Params:
+    :Parameters:
         movies_ids (list[str]): Movies IDs.
         fields (list[Literal["gross", "title", "budget", "rating", "writer",
                              "runtime", "release", "country", "director",

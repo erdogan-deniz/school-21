@@ -87,7 +87,7 @@ class Link:
         """
         Initializes the `Link` analyzer.
 
-        :Params:
+        :Parameters:
             file_path (str): Path to the directory containing the `.csv` file.
             file (str): `.csv` file containing links data.
                         Default: "links.csv".
@@ -108,7 +108,7 @@ class Link:
         """
         Loads and stores a subset of data from the `.csv` file.
 
-        :Params:
+        :Parameters:
             size (int): Number of data rows to load (excluding header).
                         Default: 1000.
 
@@ -142,7 +142,7 @@ class Link:
         """
         Loads movies IDs from a `.csv` file and save them.
 
-        :Params:
+        :Parameters:
             size (int): Number of movies IDs to load.
                         Default: 1000.
 
@@ -179,7 +179,7 @@ class Link:
         """
         Loads IMDB IDs from a `.csv` file and save them.
 
-        :Params:
+        :Parameters:
             size (int): Number of IMDB IDs to load.
                         Default: 1000.
 
@@ -216,7 +216,7 @@ class Link:
         """
         Loads TMDB IDs from a `.csv` file and save them.
 
-        :Params:
+        :Parameters:
             size (int): Number of TMDB IDs to load.
                         Default: 1000.
 
@@ -271,7 +271,7 @@ class Link:
         """
         Loads movies data from IMDB website.
 
-        :Params:
+        :Parameters:
             movies_ids (list[str]): Movies IDs.
             fields (list[Literal["gross", "title", "budget", "rating", "writers"
                                  ,"runtime",  "release", "country", "director",
@@ -422,7 +422,7 @@ class Link:
         """
         Retrieves the most popular directors sorted by movie counts.
 
-        :Params:
+        :Parameters:
             cnt (int): Number of directors to return.
                        Default: 10.
 
@@ -460,7 +460,7 @@ class Link:
         """
         Retrieves the highest budget movies sorted.
 
-        :Params:
+        :Parameters:
             cnt (int): Number of movies to return.
                        Default: 10.
 
@@ -506,7 +506,7 @@ class Link:
         """
         Retrives the most profitable movies.
 
-        :Params:
+        :Parameters:
             cnt (int): Number of movies to return.
                        Default: 10.
 
@@ -553,7 +553,7 @@ class Link:
         """
         Retrieve the longest movies.
 
-        :Params:
+        :Parameters:
             cnt (int): Number of movies to return.
                        Default: 10.
 
@@ -601,7 +601,7 @@ class Link:
         """
         Retrives movies with the highest cost per minute.
 
-        :Params:
+        :Parameters:
             cnt (int): Number of movies to return.
                        Default: 10.
 

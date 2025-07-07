@@ -22,7 +22,7 @@ def get_min_value(vals: list[int | float]) -> int | float | None:
     """
     Return the minimum value in a list of numbers.
 
-    :Params:
+    :Parameters:
         vals (list[int | float]): List of numbers.
 
     :Returns:
@@ -51,7 +51,7 @@ def get_max_value(vals: list[int | float]) -> int | float | None:
     """
     Return the maximum value in a list of numbers.
 
-    :Params:
+    :Parameters:
         vals (list[int | float]): List of numbers.
 
     :Returns:
@@ -80,7 +80,7 @@ def calculate_mean_value(vals: list[int | float]) -> float | None:
     """
     Calculate the mean of numbers.
 
-    :Params:
+    :Parameters:
         vals (list[int | float]): List of numbers.
 
     :Returns:
@@ -112,7 +112,7 @@ def calculate_median_value(vals: list[int | float]) -> float | None:
     """
     Calculate the median of numbers.
 
-    :Params:
+    :Parameters:
         vals (list[int | float]): List of numbers.
 
     :Returns:
@@ -149,7 +149,7 @@ def calculate_variance_value(vals: list[int | float]) -> float | None:
     """
     Calculate the variance of numbers.
 
-    :Params:
+    :Parameters:
         vals (list[int | float]): List of numbers.
 
     :Returns:
@@ -181,7 +181,7 @@ def calculate_std_value(vals: list[int | float]) -> float | None:
     """
     Calculate the standard deviation of numbers.
 
-    :Params:
+    :Parameters:
         vals (list[int | float]): List of numbers.
 
     :Returns:
@@ -220,7 +220,7 @@ def calculate_metric(
     """
     Calculate the statistical metric for a list of numbers.
 
-    :Params:
+    :Parameters:
         vals (list[int | float]): List of numbers.
         metric (Literal["min", "max", "mean", "median", "var", "std", ]):
             The metric to calculate.
@@ -269,7 +269,7 @@ def extract_minutes_from_string(time: str | None) -> int | None:
     """
     Extract total minutes from a time string.
 
-    :Params:
+    :Parameters:
         time (str | None): Time string.
 
     :Returns:
@@ -305,7 +305,7 @@ def extract_price_from_string(price: str | None) -> int | None:
     """
     Extract price from a string.
 
-    :Params:
+    :Parameters:
         price (str | None): Price string.
 
     :Returns:

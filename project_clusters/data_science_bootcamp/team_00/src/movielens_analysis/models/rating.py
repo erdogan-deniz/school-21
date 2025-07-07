@@ -53,7 +53,7 @@ class Rating:
         """
         Initializes the `Rating` analyzer.
 
-        :Params:
+        :Parameters:
             file_path (str): Path to the directory containing the `.csv` file.
             file (str): `.csv` file containing ratings data.
                         Default: "ratings.csv".
@@ -72,7 +72,7 @@ class Rating:
         """
         Loads and stores a subset of data rows from the `.csv` file.
 
-        :Params:
+        :Parameters:
             size (int): Number of data rows to load (excluding header).
                         Default: 1000.
 
@@ -105,7 +105,7 @@ class Rating:
         """
         Loads users IDs from a `.csv` file.
 
-        :Params:
+        :Parameters:
             size (int): Number of users IDs to load.
                         Default: 1000.
 
@@ -142,7 +142,7 @@ class Rating:
         """
         Loads movies IDs from a `.csv` file.
 
-        :Params:
+        :Parameters:
             size (int): Number of movies IDs to load.
                         Default: 1000.
 
@@ -179,7 +179,7 @@ class Rating:
         """
         Loads ratings from a `.csv` file.
 
-        :Params:
+        :Parameters:
             size (int): Number of ratings to load.
                         Default: 1000.
 
@@ -216,7 +216,7 @@ class Rating:
         """
         Loads timestamps from a `.csv` file.
 
-        :Params:
+        :Parameters:
             size (int): Number of timestamps to load.
                         Default: 1000.
 

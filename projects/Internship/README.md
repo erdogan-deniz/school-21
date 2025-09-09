@@ -2,15 +2,6 @@
 
 Internship in the company and the preparation of a report based on the results of the internship.
 
-## Contents
-
-1. [Chapter I](#chapter-i) \
-    1.1. [Introduction](#introduction)
-2. [Chapter II](#chapter-ii) \
-    2.1. [Part 0](#part-0-vacancy-search-and-selection) \
-    2.2. [Part 1](#part-1-the-internship) \
-    2.3. [Part 2](#part-2-making-a-report-on-the-results-of-the-internship)
-
 ## Chapter I
 
 ![internship_final](misc/images/internship_final.png)

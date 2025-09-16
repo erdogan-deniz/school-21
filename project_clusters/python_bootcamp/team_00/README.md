@@ -2,14 +2,12 @@
 
 ## Magical connections
 
-<h2 id="chapter-i" >Chapter I</h2>
 <h2 id="general-rules" >General rules</h2>
 
 - Your scripts should not quit unexpectedly (giving an error on a valid input). If this happens, your project will be considered non functional and will receive a 0 during the evaluation.
 - We encourage you to create test programs for your project even though this work won't have to be submitted and won't be graded. It will give you a chance to easily test your work and your peers' work. You will find those tests especially useful during your defence. Indeed, during defence, you are free to use your tests and/or the tests of the peer you are evaluating.
 - Submit your work to your assigned git repository. Only the work in the git repository will be graded.
 
-<h2 id="chapter-ii" >Chapter II</h2>
 <h2 id="rules-of-the-day" >Rules of the day</h2>
 
 - You should turn in `*.py` files and `requirements.txt` if your code uses third-party modules. Image/HTML file generated in EX02 can also be included, but your code should still be able to produce a similar one.
@@ -17,7 +15,6 @@
 - The work on this day can and should be parallelized. While someone is parsing Wikipedia for EX00, another team member can play around with algorithms for shortest path, and someone else can research the image rendering part.
 - Inspiration: [Harry Potter and Methods of Rationality](http://www.hpmor.com/), for playing around with graphs you can try [Gephi](https://gephi.org/).
 
-<h2 id="chapter-iii" >Chapter III</h2>
 <h2 id="intro" >Intro</h2>
 
 Albus Percival Wulfric Brian Dumbledore was sitting in his chair and looked on a young boy with
@@ -39,7 +36,6 @@ a lightning bolt-shaped scar on his forehead.
  "It is not a book, it is a website. But the idea is similar to, say, dictionaries - various
  entities are linked to each other..."
 
-<h2 id="chapter-iv" >Chapter IV</h2>
 <h3 id="ex00">Exercise 00: Old Style</h3>
 
 During next several minutes, Harry was still explaining to Dumbledore what a 'website' is, but
@@ -87,7 +83,6 @@ Python libraries for graph processing, which support reading/writing JSON files.
 To earn some extra score for this exercise, your code can also support storing graph in a [Neo4J
 database](https://neo4j.com/download/).
 
-<h2 id="chapter-v" >Chapter V</h2>
 <h3 id="ex01">Exercise 01: Shortcuts</h3>
 
  "I see. But why are Welsh Corgi so close to King Solomon?"
@@ -141,7 +136,6 @@ Additionally, please add `-v` flag, which will enable logging of the found path,
 In this exercise, you shouldn't be using an existing implementation of a 'shortest path'
 algorithm provided by an existing libraries. Please write it yourself instead.
 
-<h2 id="chapter-vi" >Chapter VI</h2>
 <h3 id="ex01">Exercise 02: Greatest Magicians</h3>
 
   "Now I can see the relation with "six handshakes" rule you mentioned. Great magicians

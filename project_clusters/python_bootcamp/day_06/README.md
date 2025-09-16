@@ -2,37 +2,17 @@
 
 ## That Kind of Battle Training
 
-## Contents
-
-1. [Chapter I](#chapter-i) \
-    1.1. [General rules](#general-rules)
-2. [Chapter II](#chapter-ii) \
-    2.1. [Rules of the day](#rules-of-the-day)
-3. [Chapter III](#chapter-iii) \
-    3.1. [Intro](#intro)
-4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 00: Kirov Reporting](#exercise-00-kirov-reporting)
-5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 01: Data Quality](#exercise-01-data-quality)
-6. [Chapter VI](#chapter-vi) \
-    6.1. [Exercise 02: Keeping Records](#exercise-02-keeping-records)
-7. [Chapter VI](#chapter-vii) \
-    7.1. [Reading](#reading)
-
-<h2 id="chapter-i" >Chapter I</h2>
-<h2 id="general-rules" >General rules</h2>
+General rules
 
 - Your scripts should not quit unexpectedly (giving an error on a valid input). If this happens, your project will be considered non functional and will receive a 0 during the evaluation.
 - We encourage you to create test programs for your project even though this work won't have to be submitted and won't be graded. It will give you a chance to easily test your work and your peers' work. You will find those tests especially useful during your defence. Indeed, during defence, you are free to use your tests and/or the tests of the peer you are evaluating.
 - Submit your work to your assigned git repository. Only the work in the git repository will be graded.
 
-<h2 id="chapter-ii" >Chapter II</h2>
 <h2 id="rules-of-the-day" >Rules of the day</h2>
 
 - You should turn in `*.py`, `*.proto` and `requirements.txt` files for this task. Also, optionally, config files and migrations for Alembic, if you decide to go for a bonus. You can also add a `README` file explaining how to start your application
 - It is encouraged to write some tests for various cases inside your scripts as well. To make them run only when script is executed directly and not imported from somewhere else you can use `if __name__ == "__main__":` statement. You can read more about it [here](https://www.geeksforgeeks.org/what-does-the-if-__name__-__main__-do/)
 
-<h2 id="chapter-iii" >Chapter III</h2>
 <h2 id="intro" >Intro</h2>
 
  "You wanted to see me, sir?"
@@ -73,7 +53,6 @@ process it.
 And Colonel Graff will keep silently watching the boy's actions from the bridge the whole time.
 Even though Ender kinda got used to it already.
 
-<h2 id="chapter-iv" >Chapter IV</h2>
 <h3 id="exercise-00-kirov-reporting">Exercise 00: Kirov Reporting</h3>
 
 The main protocol used for interspace communication was called 'Protobuf 2.0'. The entries were
@@ -86,7 +65,7 @@ he likes), and responds with a stream of Spaceship entries.
 
 As this is currently a test environment, even though every Spaceship should still have all the 
 parameters mentioned, they could be random. Also, they should be strictly typed, e.g.:
- 
+
  - Alignment is an enum
  - Name is a string
  - Length is a float
@@ -101,16 +80,16 @@ The workflow should go like this:
 
 1) the server is started
 2) the client is started given a set of coordinates in some chosen form, e.g.:
-    
+
 `~$ ./reporting_client.py 17 45 40.0409 −29 00 28.118`
 
   An example given is galactic coordinates for [Sagittarius A\*](https://en.wikipedia.org/wiki/Sagittarius_A*)
-3) these coordinates are sent to the server, and server responds with a random (1-10) number
+1) these coordinates are sent to the server, and server responds with a random (1-10) number
   of Spaceships in a gRPC stream to the client
-4) the client prints to standard output all the received ships as a set of serialized JSON
+2) the client prints to standard output all the received ships as a set of serialized JSON
   strings, like:
 
-  ```
+  ```json
   {
     "alignment": "Ally",
     "name": "Normandy",
@@ -133,7 +112,6 @@ The workflow should go like this:
 
 NOTE: this output here is formatted for readability, your code can still print one JSON per string
 
-<h2 id="chapter-v" >Chapter V</h2>
 <h3 id="exercise-01-data-quality">Exercise 01: Data Quality</h3>
 
  "Sir, can I ask a legitimate question?"
@@ -169,7 +147,6 @@ table above. The rest should be printed exactly as in EX00.
 Additionally, from the first part Ender already knew that Name could be 'Unknown' ONLY for enemy
 ships.
 
-<h2 id="chapter-vi" >Chapter VI</h2>
 <h3 id="exercise-02-keeping-records">Exercise 02: Keeping Records</h3>
 
 How good are reports if we are not storing them? For the last Storage layer there had to be yet
@@ -197,7 +174,7 @@ And listing of traitors would be
 
 which should print a list of JSON strings with "traitors'" names:
 
-```
+```json
 {"first_name": "Lando", "last_name": "Calrissian", "rank": "Entrepreneur"}
 {"first_name": "Red", "last_name": "Guy", "rank": "Impostor"}
 ```
@@ -206,7 +183,6 @@ OPTIONAL BONUS: Graff also proposed Ender to think about what happens if the sto
 change. Try using Alembic (see Reading section) to generate migrations to bootstrap your database
 and then an additional migration with adding the optional "speed" field to the Spaceship model.
 
-<h2 id="chapter-vii" >Chapter VII</h2>
 <h3 id="reading">Reading</h3>
 
 [Protocol Buffers using Python](https://developers.google.com/protocol-buffers/docs/pythontutorial)

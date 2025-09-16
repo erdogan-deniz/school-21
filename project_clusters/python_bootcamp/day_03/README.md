@@ -4,24 +4,6 @@
 
 Fight the system, help the people!
 
-## Contents
-
-1. [Chapter I](#chapter-i) \
-    1.1. [General rules](#general-rules)
-2. [Chapter II](#chapter-ii) \
-    2.1. [Rules of the day](#rules-of-the-day)
-3. [Chapter III](#chapter-iii) \
-    3.1. [Intro](#intro)
-4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 00: Innocent Prank](#exercise-00-innocent-prank)
-5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 01: Cash Flow](#exercise-01-cash-flow)
-6. [Chapter VI](#chapter-vi) \
-    6.1. [Exercise 02: Deploy](#exercise-02-deploy)
-7. [Chapter VII](#chapter-vii) \
-    7.1. [Reading and tips](#reading-and-tips)
-
-## Chapter I
 ### General rules
 
 - Your scripts should not quit unexpectedly (giving an error on a valid input). If this happens, your project will be considered non functional and will receive a 0 during the evaluation.
@@ -31,24 +13,21 @@ Fight the system, help the people!
 - It is recommended (though not strictly required) that your code is formatted according to [PEP8 style guides](https://peps.python.org/pep-0008/) (modern IDEs can check that automatically). For a short tutorial you can refer e.g. to [this article](https://realpython.com/python-pep8/).
 - It is also recommended (though not strictly required) that you use type hinting in your code. You can refer to [this article](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html) for a short tutorial.
 
-## Chapter II
 ### Rules of the day
 
 - You should only turn in `*.py` files
 - It is encouraged to write some tests for various cases inside your scripts as well. To make them run only when script is executed directly and not imported from somewhere else you can use `if __name__ == "__main__":` statement. You can read more about it [here](https://www.geeksforgeeks.org/what-does-the-if-__name__-__main__-do/)
 
-## Chapter III
 ### Intro
 
 It was a pretty quiet evening outside, but the work was far from finished inside abandoned arcade. Mobley and Trenton
 were in the middle of a fierce debate on various attack vectors, while Darlene was looking at a pinboard with photos
 of high members of Evil Corp's management. Elliot was sitting at the corner, while as always mumbling something to
-himself. 
+himself.
 
  &mdash; Okay everybody, listen up! - Darlene was loud as always, so even arguing hackers shut up immediately. - Let's
  start with small things. We need to show the people that Evil Corp is not to be trusted with their money.
 
-## Chapter IV
 ### Exercise 00: Innocent Prank
 
  "Mobley, do you have an example money transfer form?"
@@ -100,7 +79,6 @@ You need to write a Python script 'exploit.py' that will do several things:
 The new HTML file should be named "evilcorp_hacked.html" and placed in the same directory as the source
 "evilcorp.html" file.
 
-## Chapter V
 ### Exercise 01: Cash Flow
 
 After a while, Elliot turned his laptop on the table, showing the script. Mobley gave him a thumbs up and 
@@ -119,7 +97,7 @@ You need to write two scripts - `producer.py` and `consumer.py`.
 
 Producer needs to generate JSON messages like this:
 
-```
+```json
 {
    "metadata": {
        "from": 1023461745,
@@ -144,7 +122,7 @@ the transaction. But this should happend *only* in case "amount" is not negative
 
 For example, if producer generates three messages like these:
 
-```
+```json
 {"metadata": {"from": 1111111111,"to": 2222222222},"amount": 10000}
 {"metadata": {"from": 3333333333,"to": 4444444444},"amount": -3000}
 {"metadata": {"from": 2222222222,"to": 5555555555},"amount": 5000}
@@ -152,7 +130,7 @@ For example, if producer generates three messages like these:
 
 consumer started like `~$ python consumer.py -e 2222222222,4444444444` should print out:
 
-```
+```json
 {"metadata": {"from": 2222222222,"to": 1111111111},"amount": 10000}
 {"metadata": {"from": 3333333333,"to": 4444444444},"amount": -3000}
 {"metadata": {"from": 2222222222,"to": 5555555555},"amount": 5000}
@@ -161,12 +139,11 @@ consumer started like `~$ python consumer.py -e 2222222222,4444444444` should pr
 Notice that only the first line was changed. Second one wasn't because "amount" was negative (even
 though receiver is a bad guy). Third one wasn't changed because bad guy is a sender, not a receiver.
 
-## Chapter VI
 ### Exercise 02: Deploy
 
  "Perfecto!" Darlene was enthusiastic. "Now all we need to do is write a deployment script."
- 
- "I can do that!" Trenton had pretty good [Ansible](https://docs.ansible.com/ansible/latest/index.html) skills. 
+
+ "I can do that!" Trenton had pretty good [Ansible](https://docs.ansible.com/ansible/latest/index.html) skills.
  "Once Elliot is inside, all he has to do is install a bunch of packages on a server, copy over our
  exploit and consumer and run them!"
 
@@ -188,25 +165,24 @@ on copying files). The script should be named 'gen_ansible.py'.
 
 Thus, your code should convert Elliot's 'todo.yml' into 'deploy.yml' following this notation.
 
-## Chapter VII
 ### Reading and tips
 
-Working with HTML is one of the typical tasks when you are writing parsers and various server 
-code using Python. Two libraries that are most widely used for this are [lxml](https://lxml.de/) and 
+Working with HTML is one of the typical tasks when you are writing parsers and various server
+code using Python. Two libraries that are most widely used for this are [lxml](https://lxml.de/) and
 aforementioned [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/). They are not mutually exclusive,
 though, as lxml can be used as a parsing backend for BS4, combining great performance with pretty
 good API flexibility. You can read about parsing backends [here](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-a-parser).
 
-Working with Redis is also a pretty common task to encounter in the world of applied Python. 
+Working with Redis is also a pretty common task to encounter in the world of applied Python.
 And it can also be optimized by using an optional [low-level C wrapper](https://github.com/redis/hiredis-py). It is not a necessary requirement in this task, but still a good module to know about.
 
 Working with YAML is also a very common task, for which [PyYAML](https://pyyaml.org/) is often used. Parsing config
-files or writing Ansible plugins is something you can encounter often if Python is used in your 
+files or writing Ansible plugins is something you can encounter often if Python is used in your
 team as a language for dealing with infrastructure. It would require a lot of time and text to
 introduce a specific YAML format for this task, that's why an existing standard is chosen here.
-Even though it requires a bit of time and effort to study, it can be really helpful to know the 
+Even though it requires a bit of time and effort to study, it can be really helpful to know the
 very basics of Ansible for your future job or just daily automation tasks.
 
-By the way, just in case you're curious, Ansible [does support Windows](https://docs.ansible.com/ansible/latest/user_guide/windows_usage.html) as well!    
+By the way, just in case you're curious, Ansible [does support Windows](https://docs.ansible.com/ansible/latest/user_guide/windows_usage.html) as well!
 
 **Please leave your feedback [here](https://forms.gle/dfKBUNyBKs9mvcWYA)**

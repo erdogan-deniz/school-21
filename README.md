@@ -91,7 +91,7 @@ All peer reviews: 187
 #### Education Progress
 
 | Badge Name: | Badge Rank: | Badge Description: | Badge Image: |
-|:-----------:|:-----------:|:-------------------|:------------:|
+|:-----------:|:-----------:|:------------------:|:------------:|
 | *Real Programmer* | 5/5 | Successfully perform `50` projects. | <img src="content/images/badges/real_programmer.png" width="100" height="100" alt="Real programmer" /> |
 | *Perfectionist* | 5/5 | Successfully perform `21` projects with a bonus part. | <img src="content/images/badges/perfectionist.png" width="100" height="100" alt="Perfectionist" /> |
 | *Mistakes Are Not For Me* | 5/5 | Successfully perform `21` projects in a row without failur. | <img src="content/images/badges/mistakes_are_not_for_me.png" width="100" height="100" alt="Mistakes Are Not For Me" /> |
@@ -104,14 +104,14 @@ All peer reviews: 187
 #### Academic Activities
 
 | Badge Name: | Badge Rank: | Badge Description: | Badge Image: |
-|:-----------:|:-----------:|:-------------------|:------------:|
+|:-----------:|:-----------:|:------------------:|:------------:|
 | *Such A Listener* | 5/5 | Visit `50` lectures`. | <img src="content/images/badges/such_a_listener.png" width="100" height="100" alt="Such A Listener" /> |
 | *Lead The World* | 3/5 | Be a team lead in `5` projects. | <img src="content/images/badges/lead_the_world.png" width="100" height="100" alt="Lead The World" /> |
 
 #### Social Activities
 
 | Badge Name: | Badge Rank: | Badge Description: | Badge Image: |
-|:-----------:|:-----------:|:-------------------|:------------:|
+|:-----------:|:-----------:|:------------------:|:------------:|
 | *Happy Halloween!* | - | BOOOO! | <img src="content/images/badges/halloween.png" width="100" height="100" alt="Such Happy Halloween!" /> |
 | *Computer Security Day 2023* | - | Happy Cybersecurity Day! | <img src="content/images/badges/computer_security_day.png" width="100" height="100" alt="Computer Security Day 2023" /> |
 | *Harry New Year, Moscow!* | - | *Happy New Year*, our dear, beloved peers! | <img src="content/images/badges/happy_new_year.png" width="100" height="100" alt="Harry New Year, Moscow!" /> |
@@ -120,7 +120,7 @@ All peer reviews: 187
 #### Other
 
 | Badge Name: | Badge Rank: | Badge Description: | Badge Image: |
-|:-----------:|:-----------:|:-------------------|:------------:|
+|:-----------:|:-----------:|:------------------:|:------------:|
 | *Billionaire* | 3/5 | Accumulate 500 coins. | <img src="content/images/badges/billionaire.png" width="100" height="100" alt="Billionaire" /> |
 | *Happy Halloween!* | - | Happy Halloween! | <img src="content/images/badges/halloween_old.png" width="100" height="100" alt="Happy Halloween!" /> |
 | *Happy Birthday, Moscow сampus!* | - | The *Moscow* campus of *School 21* has turned `5` years old! | <img src="content/images/badges/happy_birthday.png" width="100" height="100" alt="Happy Birthday, Moscow сampus!" /> |
@@ -129,11 +129,13 @@ All peer reviews: 187
 #### Supporting
 
 | Badge Name: | Badge Rank: | Badge Description: | Badge Image: |
-|:-----------:|:-----------:|:-------------------|:------------:|
+|:-----------:|:-----------:|:------------------:|:------------:|
 | *Will you be my peer?* | - | Love is *School 21*, which has become a second home! | <img src="content/images/badges/14_febrarue.png" width="100" height="100" alt="Will you be my peer?" /> |
 
 ### About Me
 
 Telegram: @deniz_erdogan
+
 E-mail: <erdogan33@mail.ru>
+
 Specialization: Python backend developer & Data Scientist

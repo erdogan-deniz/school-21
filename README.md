@@ -8,7 +8,7 @@
     />
 </p>
 
-## *School 21* Description
+## About *School 21*
 
 **School 2️⃣1️⃣** (the analogue of the *School 4️⃣2️⃣*) — is a free digital
 technology school.
@@ -20,7 +20,7 @@ Students learn teamwork and project activities.
 
 A repository is a collection of completed *School 2️⃣1️⃣* projects.
 
-## Source Repository File Structure
+## Repository Source File Structure
 
 - `content`: a folder with materials for the design of the repository and its
   elements.
@@ -88,124 +88,52 @@ All peer reviews: 187
 
 ### Learning Badges
 
-#### Edu Progress
+#### Education Progress
 
-- Name: *Real programmer*.
-- Rank: 4/5.
-- Description: successfully perform 21 projects.
-
-<!-- Badge Photo -->
-<img src="content/images/badges/real_programmer.png" width="100" height="100" alt="Real programmer">
-
-- Name: *Perfectionist*.
-- Rank: 3/5.
-- Task: successfully perform 10 project with a bonus part.
-
-<!-- Badge Photo -->
-<img src="content/images/badges/perfectionist.png" width="100" height="100" alt="Perfectionist">
-
-- Name: *Mistakes are not for me*.
-- Rank: 3/5.
-- Task: successfully perform 10 projects in a row without failur.
-
-<!-- Badge Photo -->
-<img src="content/images/badges/mistakes_are_not_for_me.png" width="100" height="100" alt="Mistakes are not for me">
-
-- Name: *Welcome on board*.
-- Rank: no rank.
-- Task: the *survival camp* was completed.
-
-<!-- Badge Photo -->
-<img src="content/images/badges/welcome_on_board.png" width="100" height="100" alt="Welcome on board">
-
-- Name: *3 PRP*.
-- Rank: no rank.
-- Task: no task.
-
-<!-- Badge Photo -->
-<img src="content/images/badges/3_prp.png" width="100" height="100" alt="3 PRP">
+| Badge Name: | Badge Rank: | Badge Description: | Badge Image: |
+|:-----------:|:-----------:|:-------------------|:------------:|
+| *Real Programmer* | 5/5 | Successfully perform `50` projects. | <img src="content/images/badges/real_programmer.png" width="100" height="100" alt="Real programmer" /> |
+| *Perfectionist* | 5/5 | Successfully perform `21` projects with a bonus part. | <img src="content/images/badges/perfectionist.png" width="100" height="100" alt="Perfectionist" /> |
+| *Mistakes Are Not For Me* | 5/5 | Successfully perform `21` projects in a row without failur. | <img src="content/images/badges/mistakes_are_not_for_me.png" width="100" height="100" alt="Mistakes Are Not For Me" /> |
+| *King Of Study* | - | Two badges for studies were obtained. | <img src="content/images/badges/king_of_study.png" width="100" height="100" alt="King Of Study" /> |
+| *Welcome On Board* | - | The *Survival Camp* was completed. | <img src="content/images/badges/welcome_on_board.png" width="100" height="100" alt="Welcome On Board" /> |
+| *Pollinator* | - | Successfully perform `15` group projects with `15` different partners in a team. | <img src="content/images/badges/pollinator.png" width="100" height="100" alt="Pollinator" /> |
+| *3 PRP* | - | - | <img src="content/images/badges/3_prp.png" width="100" height="100" alt="3 PRP" /> |
+| *Finale Exam Passed* | - | - | <img src="content/images/badges/final_exam_passed.png" width="100" height="100" alt="Finale Exam Passed" /> |
 
 #### Academic Activities
 
-- Name: *Such a listener*.
-- Rank: 5/5.
-- Task: visit 50 lectures.
-
-<!-- Badge Photo -->
-<img src="content/images/badges/such_a_listener.png" width="100" height="100" alt="Such a listener">
-
-- Name: *Lead the World*.
-- Rank: 2/5.
-- Task: be a team lead in 5 projects.
-
-<!-- Badge Photo -->
-<img src="content/images/badges/lead_the_world.png" width="100" height="100" alt="Lead the World">
+| Badge Name: | Badge Rank: | Badge Description: | Badge Image: |
+|:-----------:|:-----------:|:-------------------|:------------:|
+| *Such A Listener* | 5/5 | Visit `50` lectures`. | <img src="content/images/badges/such_a_listener.png" width="100" height="100" alt="Such A Listener" /> |
+| *Lead The World* | 3/5 | Be a team lead in `5` projects. | <img src="content/images/badges/lead_the_world.png" width="100" height="100" alt="Lead The World" /> |
 
 #### Social Activities
 
-- Name: *Happy Halloween!*
-- Rank: no rank.
-- Task: BOOOO!
-
-<!-- Badge Photo -->
-<img src="content/images/badges/halloween.png" width="100" height="100" alt="Happy Halloween!">
-
-- Name: *Computer Security Day*.
-- Rank: no rank.
-- Task: *Happy Cybersecurity Day*!
-
-<!-- Badge Photo -->
-<img src="content/images/badges/computer_security_day.png" width="100" height="100" alt="Happy Halloween!">
-
-- Name: *Harry New Year, Moscow!*
-- Rank: no rank.
-- Task: *Happy New Year*, our dear, beloved peers!
-
-<!-- Badge Photo -->
-<img src="content/images/badges/happy_new_year.png" width="100" height="100" alt="Harry New Year, Moscow!">
-
-- Name: *Space Exploration Day*.
-- Rank: no rank.
-- Task: as *Yuri Gagarin* once said: `Let's go!`
-
-<!-- Badge Photo -->
-<img src="content/images/badges/space_exploration.png" width="100" height="100" alt="Space Exploration Day">
+| Badge Name: | Badge Rank: | Badge Description: | Badge Image: |
+|:-----------:|:-----------:|:-------------------|:------------:|
+| *Happy Halloween!* | - | BOOOO! | <img src="content/images/badges/halloween.png" width="100" height="100" alt="Such Happy Halloween!" /> |
+| *Computer Security Day 2023* | - | Happy Cybersecurity Day! | <img src="content/images/badges/computer_security_day.png" width="100" height="100" alt="Computer Security Day 2023" /> |
+| *Harry New Year, Moscow!* | - | *Happy New Year*, our dear, beloved peers! | <img src="content/images/badges/happy_new_year.png" width="100" height="100" alt="Harry New Year, Moscow!" /> |
+| *Space Exploration Day* | - | As *Yuri Gagarin* once said: `Let's go!` | <img src="content/images/badges/space_exploration.png" width="100" height="100" alt="Space Exploration Day" /> |
 
 #### Other
 
-- Name: *Billionaire*.
-- Rank: 3/5.
-- Task: accumulate 500 coins.
-
-<!-- Badge Photo -->
-<img src="content/images/badges/billionaire.png" width="100" height="100" alt="Billionaire">
-
-- Name: *Happy Halloween!*
-- Rank: no rank.
-- Task: *Happy Halloween*!
-
-<!-- Badge Photo -->
-<img src="content/images/badges/halloween_old.png" width="100" height="100" alt="Happy Halloween!">
-
-- Name: *Happy Birthday, Moscow сampus!*
-- Rank: no rank.
-- Task: the *Moscow* campus of *School 21* has turned 5 years old!
-
-<!-- Badge Photo -->
-<img src="content/images/badges/happy_birthday.png" width="100" height="100" alt="Happy Birthday, Moscow сampus!">
-
-- Name: *Happy birthday, Wave 16!*
-- Rank: no rank.
-- Task: with love from ADM.
-
-<!-- Badge Photo -->
-<img src="content/images/badges/wawe_16.png" width="100" height="100" alt="Happy birthday, Wave 16!">
+| Badge Name: | Badge Rank: | Badge Description: | Badge Image: |
+|:-----------:|:-----------:|:-------------------|:------------:|
+| *Billionaire* | 3/5 | Accumulate 500 coins. | <img src="content/images/badges/billionaire.png" width="100" height="100" alt="Billionaire" /> |
+| *Happy Halloween!* | - | Happy Halloween! | <img src="content/images/badges/halloween_old.png" width="100" height="100" alt="Happy Halloween!" /> |
+| *Happy Birthday, Moscow сampus!* | - | The *Moscow* campus of *School 21* has turned `5` years old! | <img src="content/images/badges/happy_birthday.png" width="100" height="100" alt="Happy Birthday, Moscow сampus!" /> |
+| *Happy birthday, Wave `16`!* | - | With love from ADM. | <img src="content/images/badges/wawe_16.png" width="100" height="100" alt="Happy birthday, Wave 16!" /> |
 
 #### Supporting
 
-- Name: *Will you be my peer?*
-- Rank: no rank.
-- Task: love is *School 21*, which has become a second home!
+| Badge Name: | Badge Rank: | Badge Description: | Badge Image: |
+|:-----------:|:-----------:|:-------------------|:------------:|
+| *Will you be my peer?* | - | Love is *School 21*, which has become a second home! | <img src="content/images/badges/14_febrarue.png" width="100" height="100" alt="Will you be my peer?" /> |
 
-<!-- Badge Photo -->
-<img src="content/images/badges/14_febrarue.png" width="100" height="100" alt="Will you be my peer?">
+### About Me
+
+Telegram: @deniz_erdogan
+E-mail: <erdogan33@mail.ru>
+Specialization: Python backend developer & Data Scientist

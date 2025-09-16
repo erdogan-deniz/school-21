@@ -46,7 +46,7 @@ A repository is a collection of completed *School 2️⃣1️⃣* projects.
 
 <!-- Acquired Skills Wheel Photo -->
 <img
-    src="content/images/profile/skill_wheel.png"
+    src="content/images/account/skill_wheel.png"
     alt="Skill Wheel"
 />
 

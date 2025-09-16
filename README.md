@@ -134,8 +134,6 @@ All peer reviews: 187
 
 ### About Me
 
-Telegram: @deniz_erdogan
-
-E-mail: <erdogan33@mail.ru>
-
-Specialization: Python backend developer & Data Scientist
+- Telegram: @deniz_erdogan
+- E-mail: <erdogan33@mail.ru>
+- Specialization: Python backend developer & Data Scientist

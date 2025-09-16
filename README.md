@@ -2,59 +2,91 @@
 
 <!-- School 21 Logo -->
 <p align="center">
-    <img src="https://sun9-38.userapi.com/impg/KJR2NK87iyCNo7L8oZ9379FOTBF2nQJJ3mWvZw/mFRmaBUOkuk.jpg?size=480x360&quality=96&sign=8ffee636080944c3067db7ad320c8400&type=album" alt="School 21 Logo" />
+    <img
+    src="https://sun9-38.userapi.com/impg/KJR2NK87iyCNo7L8oZ9379FOTBF2nQJJ3mWvZw/mFRmaBUOkuk.jpg?size=480x360&quality=96&sign=8ffee636080944c3067db7ad320c8400&type=album"
+    alt="School 21 Logo"
+    />
 </p>
+
+## *School 21* Description
+
+**School 2️⃣1️⃣** (the analogue of the *School 4️⃣2️⃣*) — is a free digital
+technology school.
+It offers: free and non-profit education without: traditional teachers, lessons,
+grades.
+Students learn teamwork and project activities.
 
 ## Repository Description
 
-This repository is a collection of projects written while studying at
-*School 2️⃣1️⃣*.
+A repository is a collection of completed *School 2️⃣1️⃣* projects.
 
-## School 21 Description
+## Source Repository File Structure
 
-**School 2️⃣1️⃣** (the analogue of the *School 4️⃣2️⃣*) — free digital technology
-school.
-This is an innovative approach to learning programming.
-It offers free, non-profit education without traditional teachers, lessons, and
-grades.
-Instead, students learn through teamwork and project activities.
-
-## Repository File Structure
-
-- *content*: the material necessary for the design of the repository and it's
+- `content`: a folder with materials for the design of the repository and its
   elements.
-- *project_clusters*: a set of projects where each project consists of small
-  projects united by one common theme.
-- *projects*: a set of projects where each project represents the final product.
-- *.markdownlint.json*: the main configuration file *README.md* file.
-- *README.md*: the description file of the current repository (you are reading
-  it now).
+- `project_clusters`: a folder with projects, where each project consists of
+  small projects united by a theme.
+- `projects`: a folder of projects, each of which represents a product.
+- `.markdownlint.json`: the configuration file `README.md` file.
+- `README.md`: the description file of the repository (you read it).
 
-## Education Account Description
+## About My Platform Account
 
-### General
+### General Information
 
-- Nickname: *charisel*.
-- Campus: *Moscow*.
-- Program: *Core program*.
-- Wawe: 22.10.
-- Level: **11**.
-- E-mail: <charisel@student.21-school.ru>.
+- Campus location: *Moscow*
+- Wawe: 10.2022
+- Nickname: *charisel*
+- Program: *Core program*
+- Level: 12
+- XP: 20055
+- *E-mail*: <charisel@student.21-school.ru>
 
-### Points
+### Acquired Skills
 
-- XP: **16160**.
+<!-- Acquired Skills Wheel Photo -->
+<img
+    src="content/images/profile/skill_wheel.png"
+    alt="Skill Wheel"
+/>
 
-### Peer Feedback
+| Skill Name: | Skill Points: |
+|:------------:|:--------------------:|
+| Math | 55 |
+| *QA* | 200 |
+| *C* | 1423 |
+| *OOP* | 1284 |
+| *C++* | 1188 |
+| *SQL* | 1183 |
+| DevOps | 264 |
+| *Linux* | 558 |
+| Backend | 117 |
+| Analysis | 122 |
+| Graphics | 704 |
+| *Python* | 1756 |
+| Team Work | 940 |
+| DB & Data | 576 |
+| *ML* & *AI* | 423 |
+| Algorithms | 2055 |
+| Leadership | 1339 |
+| Web Development | 136 |
+| *Shell* & *Bash* | 411 |
+| Parallel Computing | 23 |
+| Company Experience | 3574 |
+| Structured Programming | 1551 |
+| Types & Data Structures | 873 |
+| Network & System Administration | 506 |
+
+### Peers Feedback
 
 - Nice: 4/4 😃
 - Punctual: 4/4 ⏲
 - Rigorous: 4/4 ⚖️
 - Interested: 4/4 ❓
 
-All peer reviews: 133.
+All peer reviews: 187
 
-### Badges
+### Learning Badges
 
 #### Edu Progress
 
@@ -177,28 +209,3 @@ All peer reviews: 133.
 
 <!-- Badge Photo -->
 <img src="content/images/badges/14_febrarue.png" width="100" height="100" alt="Will you be my peer?">
-
-### Skills
-
-<!-- Skill Wheel Photo -->
-<img src="content/images/profile/skill_wheel.png" alt="Skill Wheel">
-
-- *C*: **1423**.
-- *Web*: **136**.
-- *C++*: **1188**.
-- *OOP*: **1156**.
-- *Linux*: **558**.
-- *Python*: **946**.
-- *DevOps*: **264**.
-- Graphics: **587**.
-- *Backend*: **117**.
-- Team work: **925**.
-- DB & Data: **109**.
-- Algorithms: **1881**.
-- Leadership: **1244**.
-- *Shell* / *Bash*: **319**.
-- Parallel computing: **23**.
-- Company experience: **3574**.
-- Types & data structures: **804**.
-- *Structured programming*: **1551**.
-- Network & System administration: **506**.

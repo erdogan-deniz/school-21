@@ -6,7 +6,7 @@ Help the world's famous detective to defend London!
 
 ### General rules
 
-- Your scripts should not quit unexpectedly (giving an error on a valid input).
+- Your scripts should not quit unexp.
   If this happens, your project will be considered non functional and will
   receive a 0 during the evaluation.
 - We encourage you to create test programs for your project even though this
@@ -15,24 +15,16 @@ Help the world's famous detective to defend London!
   You will find those tests especially useful during your defence.
   Indeed, during defence, you are free to use your tests and/or the tests of the
   peer you are evaluating.
-- Submit your work to your assigned git repository.
-- Only the work in the git repository will be graded.
-- It is recommended to have Python at least version 3.7.
-  You can manage different interpreter versions using
-  [pyenv](https://github.com/pyenv/pyenv)
 - It is recommended (though not strictly required) that your code is formatted
   according to [PEP8 style guides](https://peps.python.org/pep-0008/).
   For a short tutorial you can refer e.g. to
   [this article](https://realpython.com/python-pep8/).
-- It is also recommended (though not strictly required) that you use type
-  hinting in your code.
   You can refer to
   [this article](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html) for
   a short tutorial.
 
 ### Rules of the day
 
-- You should only turn in `*.py` files
 - This day's programs in EX00 and EX02 should receive text from standard input
   and NOT read it from files.
   EX01 should just receive an input as a command line argument.

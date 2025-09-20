@@ -7,8 +7,6 @@
 
 ## Repository Description
 
-
-
 * 1️⃣ SQL1  - ?/? % (? xp)
   * Description: SQL Bootcamp;
   * Skills: ?;

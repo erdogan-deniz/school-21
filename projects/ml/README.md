@@ -16,7 +16,8 @@ Project workflow:
    - Identified the training features and the target variable.
 
 2. Statistical analysis and data preprocessing:
-   - Investigated the distribution of the target variable, visualized its outliers.
+   - Investigated the distribution of the target variable, visualized its
+     outliers.
    - Cleansed the data of outliers.
 
 3. Feature analysis and Feature Engineering:

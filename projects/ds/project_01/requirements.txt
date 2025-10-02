@@ -1,0 +1,8 @@
+nltk
+spacy
+gensim
+pandas
+ipykernel
+symspellpy
+scikit-learn
+scipy==1.10.1

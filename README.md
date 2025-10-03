@@ -39,7 +39,7 @@ A repository is a collection of completed *School 2️⃣1️⃣* projects.
 - Nickname: *charisel*
 - Program: *Core program*
 - Level: 12
-- XP: 20055
+- XP: 20975
 - *E-mail*: <charisel@student.21-school.ru>
 
 ### Acquired Skills
@@ -52,27 +52,29 @@ A repository is a collection of completed *School 2️⃣1️⃣* projects.
 
 | Skill Name: | Skill Points: |
 |:------------:|:--------------------:|
-| Math | 55 |
-| *QA* | 200 |
+| Math | 91 |
+| *QA* | 400 |
 | *C* | 1423 |
 | *OOP* | 1284 |
 | *C++* | 1188 |
 | *SQL* | 1183 |
 | DevOps | 264 |
 | *Linux* | 558 |
-| Backend | 117 |
+| Backend | 153 |
 | Analysis | 122 |
 | Graphics | 704 |
-| *Python* | 1756 |
+| *Python* | 1936 |
 | Team Work | 940 |
 | DB & Data | 576 |
-| *ML* & *AI* | 423 |
-| Algorithms | 2055 |
+| *ML* & *AI* | 639 |
+| Algorithms | 2091 |
 | Leadership | 1339 |
 | Web Development | 136 |
 | *Shell* & *Bash* | 411 |
 | Parallel Computing | 23 |
 | Company Experience | 3574 |
+| Information Security | 36 |
+| Functional Programming | 180 |
 | Structured Programming | 1551 |
 | Types & Data Structures | 873 |
 | Network & System Administration | 506 |
@@ -84,7 +86,7 @@ A repository is a collection of completed *School 2️⃣1️⃣* projects.
 - Rigorous: 4/4 ⚖️
 - Interested: 4/4 ❓
 
-All peer reviews: 187
+All peer reviews: 196
 
 ### Learning Badges
 

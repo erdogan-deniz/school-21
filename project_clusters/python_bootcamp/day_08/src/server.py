@@ -129,7 +129,7 @@ async def check_process(current_uuid: str):
             final_codes = clear_codes(await many_requests(final_sites))
             task_UUID = -2
 
-            return final_codes  # HERE IS an ERROR
+            return {"Status": "running", "Result": final_codes}
 
 
 if __name__ == "__main__":

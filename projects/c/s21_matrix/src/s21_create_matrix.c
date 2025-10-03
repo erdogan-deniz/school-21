@@ -11,7 +11,16 @@ int s21_create_matrix(int rows, int columns, matrix_t *result) {
     if (result->matrix) {
       for (int i = 0; i < rows; i++) {
         result->matrix[i] = calloc(columns, sizeof(double));
-        if (!result->matrix[i]) exit_code = CALLOC_ERROR;
+        if (!result->matrix[i]) {
+          // Free previously allocated memory to prevent memory leak
+          for (int j = 0; j < i; j++) {
+            free(result->matrix[j]);
+          }
+          free(result->matrix);
+          result->matrix = NULL;
+          exit_code = CALLOC_ERROR;
+          break;
+        }
       }
     } else {
       exit_code = CALLOC_ERROR;

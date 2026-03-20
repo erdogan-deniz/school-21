@@ -1,0 +1,40 @@
+# --- Python bytecode ---
+__pycache__/
+*.py[cod]
+*.pyo
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+
+# --- Environment variables ---
+.env
+.env.*
+
+# --- Type checkers & linters ---
+.mypy_cache/
+.ruff_cache/
+.dmypy.json
+dmypy.json
+
+# --- Testing ---
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Distribution & packaging ---
+dist/
+build/
+*.egg-info/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- IDE ---
+.vscode/
+
+# --- OS artifacts ---
+Thumbs.db
+desktop.ini
+.DS_Store

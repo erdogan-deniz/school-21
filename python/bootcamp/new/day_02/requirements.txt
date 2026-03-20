@@ -1,0 +1,11 @@
+# Dependencies
+# Python >= 3.12 required
+
+# --- Runtime ---
+aiohttp>=3.9.0          # Async HTTP client (exercise_02)
+
+# --- Linting & Formatting ---
+ruff==0.14.14           # Fast Python linter and formatter
+
+# --- Type Checking ---
+mypy>=1.0.0             # Static type checker

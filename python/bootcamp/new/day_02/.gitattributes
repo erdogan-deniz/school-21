@@ -1,0 +1,17 @@
+# --- Default: normalize line endings automatically ---
+* text=auto
+
+# --- Source code: enforce LF ---
+*.py    text eol=lf
+*.md    text eol=lf
+*.txt   text eol=lf
+*.json  text eol=lf
+*.toml  text eol=lf
+*.cfg   text eol=lf
+
+# --- Images: treat as binary (downloaded by exercise_02) ---
+*.jpg   binary
+*.jpeg  binary
+*.png   binary
+*.gif   binary
+*.webp  binary

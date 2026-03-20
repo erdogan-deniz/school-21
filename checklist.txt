@@ -1,8 +1,0 @@
-projects:
-- c:
-- cpp:
-- devops:
-- intership:
-- ml:
-- qa:
-    - project_01: done

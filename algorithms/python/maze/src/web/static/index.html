@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Maze</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { display: flex; height: 100vh; font-family: sans-serif; background: #1e1e2e; color: #cdd6f4; }
+
+    /* Light theme */
+    body.light { background: #FAF6F0; color: #222222; }
+    body.light #panel { background: #f0ece4; border-right-color: #d0c8be; }
+    body.light label { color: #6B5040; }
+    body.light input[type=number] { background: #fff; border-color: #c0b8ae; color: #222; }
+    body.light button { background: #DDD0BC; color: #1a1a1a; border-color: #b8a898; box-shadow: 0 1px 3px rgba(0,0,0,.15); }
+    body.light button:hover { background: #C9BAA4; border-color: #9e8e7e; }
+    body.light button.primary { background: #4a9eff; color: #fff; border-color: #2d87f0; }
+    body.light button.primary:hover { background: #2d87f0; border-color: #1a6fd4; }
+    body.light button.danger { background: #e05070; color: #fff; border-color: #c03050; }
+    body.light button.danger:hover { background: #c03050; border-color: #a02040; }
+    body.light #status { color: #2a7a2a; }
+    body.light #error { color: #c0392b; }
+    body.light #canvas-area { background: #FAF6F0; }
+    body.light canvas { border-color: #222222; }
+    body.light #themeBtn { background: #EDE5D8; color: #222; }
+
+    #panel {
+      width: 300px; min-width: 300px; padding: 18px;
+      display: flex; flex-direction: column; gap: 20px;
+      background: #181825; border-right: 1px solid #313244;
+      overflow-y: auto;
+    }
+
+    #panel h2 { font-size: 36px; color: #89b4fa; text-transform: uppercase; letter-spacing: .08em; text-align: center; margin-bottom: 40px; }
+
+    .group { display: flex; flex-direction: column; gap: 6px; }
+    .row { display: flex; gap: 8px; align-items: center; overflow: hidden; }
+    .row input[type=number] { flex: 1; min-width: 0; width: auto; }
+    label { font-size: .8rem; color: #a6adc8; }
+    .group > label { font-weight: bold; }
+
+    input[type=number] {
+      width: 56px; padding: 4px 6px; border-radius: 4px;
+      border: 1px solid #45475a; background: #313244; color: #cdd6f4;
+    }
+
+    button {
+      padding: 7px 12px; border-radius: 6px; border: 1px solid #585b70; cursor: pointer;
+      font-size: .85rem; font-weight: 500; background: #45475a; color: #cdd6f4;
+      transition: background .15s, border-color .15s;
+      box-shadow: 0 1px 3px rgba(0,0,0,.4);
+    }
+    button:hover { background: #585b70; border-color: #7c7f93; }
+    button:disabled { opacity: .4; cursor: default; box-shadow: none; }
+    button.primary { background: #89b4fa; color: #1e1e2e; border-color: #74c7ec; }
+    button.primary:hover { background: #74c7ec; border-color: #89dceb; }
+    button.danger { background: #f38ba8; color: #1e1e2e; border-color: #eba0ac; }
+    button.danger:hover { background: #eba0ac; border-color: #f5c2e7; }
+
+    #theme-switcher {
+      display: flex; gap: 6px; margin-top: auto;
+    }
+    #theme-switcher button {
+      flex: 1; padding: 5px 0; font-size: .75rem; border-radius: 4px;
+    }
+    #theme-switcher button.active {
+      border: 2px solid #89b4fa;
+    }
+    body.light #theme-switcher button.active {
+      border: 2px solid #6B5040;
+    }
+
+    #status {
+      font-size: .8rem; font-weight: bold; text-transform: uppercase;
+      letter-spacing: .05em; text-align: center;
+      color: #a6e3a1; border: 1px solid #45475a; border-radius: 4px;
+      padding: 6px 8px; min-height: 2.4em; word-break: break-word;
+    }
+    body.light #status {
+      color: #2a7a2a; border-color: #b8a898;
+    }
+    #error { font-size: .8rem; color: #f38ba8; min-height: 1.2em; }
+
+    #canvas-area {
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      background: #1e1e2e;
+    }
+
+    canvas {
+      cursor: crosshair; border: 2px solid #45475a;
+    }
+  </style>
+</head>
+<body>
+
+<div id="panel">
+  <h2>Maze</h2>
+
+  <div class="group">
+    <label>FILE:</label>
+    <input type="file" id="fileInput" accept=".txt" style="display:none">
+    <div class="row">
+      <button style="flex:1" onclick="document.getElementById('fileInput').click()">LOAD</button>
+      <button style="flex:1" id="saveBtn" onclick="saveMaze()" disabled>SAVE</button>
+    </div>
+  </div>
+
+  <div class="group">
+    <label>FIELD:</label>
+    <div class="row">
+      <label>ROWS</label>
+      <input type="number" id="rows" value="10" min="1" max="50" oninput="clampDim(this)">
+      <label>COLUMNS</label>
+      <input type="number" id="cols" value="10" min="1" max="50" oninput="clampDim(this)">
+    </div>
+    <button class="primary" onclick="generateMaze()">GENERATE</button>
+  </div>
+
+  <div id="status">Load or generate field</div>
+
+  <div class="group">
+    <label>ALGORITHM:</label>
+    <button id="solveBtn" onclick="triggerSolve()" disabled>SOLVE</button>
+  </div>
+
+
+  <div id="error"></div>
+  <div id="theme-switcher">
+    <button id="btnDark" class="active" onclick="setTheme('dark')">Dark</button>
+    <button id="btnLight" onclick="setTheme('light')">Light</button>
+  </div>
+</div>
+
+<div id="canvas-area">
+  <canvas id="maze"></canvas>
+</div>
+
+<script>
+// --- Theme ---
+function setTheme(theme) {
+  document.body.classList.toggle('light', theme === 'light');
+  document.getElementById('btnDark').classList.toggle('active', theme === 'dark');
+  document.getElementById('btnLight').classList.toggle('active', theme === 'light');
+  redraw();
+}
+
+// --- State ---
+let mazeData   = null;
+let solveStart = null;
+let solveEnd   = null;
+let solvePath  = [];
+
+// --- DOM refs ---
+const canvas   = document.getElementById('maze');
+const ctx      = canvas.getContext('2d');
+const statusEl = document.getElementById('status');
+const errorEl  = document.getElementById('error');
+
+// --- Grid math (mirrors BaseGrider exactly) ---
+const W = 500, H = 500, T = 2;
+
+// --- HiDPI canvas setup ---
+const dpr = window.devicePixelRatio || 1;
+canvas.width  = W * dpr;
+canvas.height = H * dpr;
+canvas.style.width  = W + 'px';
+canvas.style.height = H + 'px';
+ctx.scale(dpr, dpr);
+
+function gridGeometry(rows, cols) {
+  const cellW = Math.floor((W - T * (cols + 1)) / cols);
+  const cellH = Math.floor((H - T * (rows + 1)) / rows);
+  const remX  = (W - T * (cols + 1)) % cols;
+  const remY  = (H - T * (rows + 1)) % rows;
+  const offX  = Math.floor(remX / 2);
+  const offY  = Math.floor(remY / 2);
+  const offXe = remX - offX;
+  const offYe = remY - offY;
+  return { cellW, cellH, offX, offY, offXe, offYe };
+}
+
+function cellTopLeft(r, c, geo) {
+  return {
+    x: geo.offX + T + c * (geo.cellW + T),
+    y: geo.offY + T + r * (geo.cellH + T),
+  };
+}
+
+function pixelToCell(px, py, rows, cols) {
+  const geo = gridGeometry(rows, cols);
+  const c = Math.floor((px - geo.offX - T) / (geo.cellW + T));
+  const r = Math.floor((py - geo.offY - T) / (geo.cellH + T));
+  if (r < 0 || r >= rows || c < 0 || c >= cols) return null;
+  return [r, c];
+}
+
+// --- Rendering ---
+function redraw() {
+  ctx.clearRect(0, 0, W, H);
+  if (!mazeData) {
+    ctx.fillStyle = document.body.classList.contains('light') ? '#a0988c' : '#45475a';
+    ctx.font = '24px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('NO MAZE', W / 2, H / 2);
+    return;
+  }
+
+  const { rows, cols, vertical_walls, horizontal_walls } = mazeData;
+  const geo = gridGeometry(rows, cols);
+
+  // path: 2px line through cell centers
+  if (solvePath.length >= 2) {
+    ctx.strokeStyle = '#0064DC';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    for (let i = 0; i < solvePath.length; i++) {
+      const [r, c] = solvePath[i];
+      const { x, y } = cellTopLeft(r, c, geo);
+      const cx = x + Math.floor(geo.cellW / 2);
+      const cy = y + Math.floor(geo.cellH / 2);
+      if (i === 0) ctx.moveTo(cx, cy); else ctx.lineTo(cx, cy);
+    }
+    ctx.stroke();
+  }
+  // start / end markers (filled circle)
+  function drawMarker(cell, color) {
+    const { x, y } = cellTopLeft(cell[0], cell[1], geo);
+    const cx = x + Math.floor(geo.cellW / 2);
+    const cy = y + Math.floor(geo.cellH / 2);
+    const r  = Math.min(5, Math.floor(Math.min(geo.cellW, geo.cellH) / 3));
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  if (solveStart) drawMarker(solveStart, '#00B400');
+  if (solveEnd)   drawMarker(solveEnd,   '#C80000');
+
+  // walls
+  ctx.strokeStyle = '#000';
+  ctx.lineWidth = T;
+
+  // outer border
+  ctx.strokeRect(
+    geo.offX + T / 2,
+    geo.offY + T / 2,
+    W - geo.offX - geo.offXe - T,
+    H - geo.offY - geo.offYe - T
+  );
+
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const { x, y } = cellTopLeft(r, c, geo);
+      // right wall
+      if (vertical_walls[r][c]) {
+        const wx = x + geo.cellW + T / 2;
+        ctx.beginPath();
+        ctx.moveTo(wx, y - T / 2);
+        ctx.lineTo(wx, y + geo.cellH + T / 2);
+        ctx.stroke();
+      }
+      // bottom wall
+      if (horizontal_walls[r][c]) {
+        const wy = y + geo.cellH + T / 2;
+        ctx.beginPath();
+        ctx.moveTo(x - T / 2, wy);
+        ctx.lineTo(x + geo.cellW + T / 2, wy);
+        ctx.stroke();
+      }
+    }
+  }
+}
+
+// --- API helpers ---
+function setError(msg) { errorEl.textContent = msg; }
+function clearError()  { errorEl.textContent = ''; }
+
+async function apiFetch(url, options) {
+  clearError();
+  const resp = await fetch(url, options || {});
+  if (!resp.ok) {
+    const msg = await resp.text().catch(() => resp.statusText);
+    setError('Error ' + resp.status + ': ' + msg);
+    return null;
+  }
+  return resp;
+}
+
+function setMazeData(data) {
+  mazeData = data;
+  solveStart = solveEnd = null;
+  solvePath = [];
+  document.getElementById('saveBtn').disabled = !data;
+  document.getElementById('solveBtn').disabled = true;
+  if (data) {
+    document.getElementById('rows').value = data.rows;
+    document.getElementById('cols').value = data.cols;
+  }
+  updateStatus();
+  redraw();
+}
+
+// --- Dimension validation ---
+function clampDim(el) {
+  const min = parseInt(el.min, 10);
+  const max = parseInt(el.max, 10);
+  let v = parseInt(el.value, 10);
+  if (isNaN(v) || v < min) v = min;
+  if (v > max) v = max;
+  el.value = v;
+}
+
+// --- Actions ---
+async function generateMaze() {
+  const rows = parseInt(document.getElementById('rows').value, 10);
+  const cols = parseInt(document.getElementById('cols').value, 10);
+  const resp = await apiFetch('/api/maze/generate', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ rows: rows, cols: cols }),
+  });
+  if (resp) setMazeData(await resp.json());
+}
+
+document.getElementById('fileInput').addEventListener('change', async function(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const form = new FormData();
+  form.append('file', file);
+  const resp = await apiFetch('/api/maze/upload', { method: 'POST', body: form });
+  if (resp) setMazeData(await resp.json());
+  e.target.value = '';
+});
+
+async function saveMaze() {
+  const resp = await apiFetch('/api/maze/download');
+  if (!resp) return;
+  const blob = await resp.blob();
+  if (window.showSaveFilePicker) {
+    try {
+      const handle = await window.showSaveFilePicker({
+        suggestedName: 'maze.txt',
+        types: [{ description: 'Text file', accept: { 'text/plain': ['.txt'] } }],
+      });
+      const writable = await handle.createWritable();
+      await writable.write(blob);
+      await writable.close();
+      return;
+    } catch (err) {
+      if (err.name === 'AbortError') return;
+    }
+  }
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'maze.txt';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+
+async function triggerSolve() {
+  const resp = await apiFetch('/api/maze/solve', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ start: solveStart, end: solveEnd }),
+  });
+  if (!resp) return;
+  const data = await resp.json();
+  solvePath = data.path;
+  if (solvePath.length === 0) setError('No path found between these cells.');
+  redraw();
+}
+
+// --- Canvas click ---
+canvas.addEventListener('click', async function(e) {
+  if (!mazeData) return;
+  const rect = canvas.getBoundingClientRect();
+  const px = (e.clientX - rect.left) * (W / rect.width);
+  const py = (e.clientY - rect.top)  * (H / rect.height);
+  const cell = pixelToCell(px, py, mazeData.rows, mazeData.cols);
+  if (!cell) return;
+
+  if (!solveStart || solveEnd) {
+    solveStart = cell; solveEnd = null; solvePath = [];
+    document.getElementById('solveBtn').disabled = true;
+  } else {
+    solveEnd = cell;
+    document.getElementById('solveBtn').disabled = false;
+  }
+  updateStatus();
+  redraw();
+});
+
+function updateStatus() {
+  if (!mazeData)    { statusEl.textContent = 'Load or generate field'; return; }
+  if (!solveStart)  { statusEl.textContent = 'Click a cell to set the start'; return; }
+  if (!solveEnd)    { statusEl.textContent = 'Click a cell to set the end'; return; }
+  const fmt = c => '(' + c[0] + ', ' + c[1] + ')';
+  statusEl.textContent = 'Start ' + fmt(solveStart) + ' \u2192 End ' + fmt(solveEnd);
+}
+
+redraw();
+</script>
+</body>
+</html>

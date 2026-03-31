@@ -1,0 +1,106 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# Project metadata
+# ──────────────────────────────────────────────────────────────────────────────
+
+[project]
+name            = "Maze"
+version         = "1.0.0"
+requires-python = ">=3.12"
+readme          = "README.md"
+license         = { file = "LICENSE" }
+dependencies = [
+    "PyQt5==5.15.11",
+    "fastapi==0.128.1",
+    "uvicorn[standard]==0.40.0",
+    "python-multipart==0.0.22",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==8.3.3",
+    "pytest-cov==7.0.0",
+    "pytest-qt==4.5.0",
+    "httpx==0.28.1",
+    "ruff==0.14.14",
+]
+
+[build-system]
+requires      = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# ──────────────────────────────────────────────────────────────────────────────
+# pytest
+# ──────────────────────────────────────────────────────────────────────────────
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths  = ["tests"]
+addopts    = "--strict-markers -q"
+qt_api     = "pyqt5"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Ruff — linter & formatter
+# Docs: https://docs.astral.sh/ruff/configuration/
+# ──────────────────────────────────────────────────────────────────────────────
+
+[tool.ruff]
+line-length    = 80
+target-version = "py312"
+src            = ["src"]
+
+exclude = [
+    ".git",
+    ".venv",
+    ".ruff_cache",
+    "__pycache__",
+    "build",
+    "dist",
+]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes (undefined names, unused imports, …)
+    "I",   # isort (import order)
+    "UP",  # pyupgrade (modernise syntax)
+    "B",   # flake8-bugbear (likely bugs and design issues)
+    "C4",  # flake8-comprehensions (simpler comprehensions)
+    "SIM", # flake8-simplify (simplifiable code patterns)
+]
+ignore = [
+    "SIM108", # ternary operator — often less readable than if/else
+    "B008",   # FastAPI uses File(...) / Depends(...) as default arguments by design
+]
+
+[tool.ruff.lint.isort]
+known-first-party      = ["app", "controller", "core", "handlers", "models", "utils", "web"]
+split-on-trailing-comma = true
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Ruff — formatter
+# ──────────────────────────────────────────────────────────────────────────────
+
+[tool.ruff.format]
+quote-style          = "double"
+indent-style         = "space"
+docstring-code-format = true
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Coverage
+# ──────────────────────────────────────────────────────────────────────────────
+
+[tool.coverage.run]
+source = ["src"]
+branch = true
+omit   = ["src/main.py"]
+
+[tool.coverage.report]
+show_missing  = true
+exclude_also  = [
+    "if __name__ == .__main__.:",
+    "pragma: no cover",
+]

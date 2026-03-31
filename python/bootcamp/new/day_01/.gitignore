@@ -57,3 +57,8 @@ Mkfile.old
 modules.order
 .tmp_versions/
 Module.symvers
+
+# Python packaging artefacts
+*.egg-info/
+dist/
+build/

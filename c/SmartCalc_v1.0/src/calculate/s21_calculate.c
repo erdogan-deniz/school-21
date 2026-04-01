@@ -1,4 +1,5 @@
 #include "s21_calculate.h"
+
 #include <float.h>
 
 long double s21_calculate(s21_list* list, int* status) {

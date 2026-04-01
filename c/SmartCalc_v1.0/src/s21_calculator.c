@@ -1,6 +1,6 @@
 #include "s21_main.h"
 
-long double s21_calculator(char* string, long double* x) {
+S21_API long double s21_calculator(char* string, long double* x) {
   s21_stack* stack = NULL;
   s21_list* list = NULL;
   long double result = empty;

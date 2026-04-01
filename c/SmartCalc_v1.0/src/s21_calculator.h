@@ -10,6 +10,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-long double s21_calculator(char* string, long double* x);
+#ifdef _WIN32
+#  define S21_API __declspec(dllexport)
+#else
+#  define S21_API
+#endif
+
+S21_API long double s21_calculator(char* string, long double* x);
 
 #endif  // SRC_S21_CALCULATOR_H_

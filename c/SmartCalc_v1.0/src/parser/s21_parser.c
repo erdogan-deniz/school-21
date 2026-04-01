@@ -86,10 +86,10 @@ s21_stack* s21_parser(char* string) {
           stack = s21_push_stack(stack, "mod");
           i += 2;
         } else {
-          char* operator= operator= s21_char_to_string(string[i]);
+          char* op = s21_char_to_string(string[i]);
 
-          stack = s21_push_stack(stack, operator);
-          free(operator);
+          stack = s21_push_stack(stack, op);
+          free(op);
         }
 
         continue;

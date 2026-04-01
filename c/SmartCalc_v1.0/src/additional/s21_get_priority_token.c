@@ -11,7 +11,7 @@ s21_token_priority s21_get_priority_token(char *token) {
       priority = func;
     else if (!strcmp("^", token))
       priority = pows;
-    else if (!strcmp("*", token) || !strcmp("/", token) || !strcmp("m", token))
+    else if (!strcmp("*", token) || !strcmp("/", token) || !strcmp("mod", token))
       priority = mult_or_div_or_mod;
     else if (!strcmp("-u", token) || !strcmp("+u", token))
       priority = unary;

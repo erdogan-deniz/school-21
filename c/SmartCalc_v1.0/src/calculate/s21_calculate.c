@@ -11,9 +11,7 @@ long double s21_calculate(s21_list* list, int* status) {
       list = s21_free_node_list(list);
     } else if (!strcmp(list->token, "sin")) {
       list->prev = s21_set_value(list->prev, sin(s21_get_value(list->prev)));
-
-      if (list) list = s21_free_node_list(list);
-
+      list = s21_free_node_list(list);
     } else if (!strcmp(list->token, "tan")) {
       list->prev = s21_set_value(list->prev, tan(s21_get_value(list->prev)));
       list = s21_free_node_list(list);

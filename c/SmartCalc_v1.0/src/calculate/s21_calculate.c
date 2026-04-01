@@ -1,4 +1,5 @@
 #include "s21_calculate.h"
+#include <float.h>
 
 long double s21_calculate(s21_list* list, int* status) {
   long double result = empty;
@@ -38,7 +39,7 @@ long double s21_calculate(s21_list* list, int* status) {
         break;
       }
 
-      list->prev = s21_set_value(list->prev, log10(s21_get_value(list->prev)));
+      list->prev = s21_set_value(list->prev, log(s21_get_value(list->prev)));
       list = s21_free_node_list(list);
     } else if (!strcmp(list->token, "log")) {
       if (s21_get_value(list->prev) <= 0) {
@@ -46,7 +47,7 @@ long double s21_calculate(s21_list* list, int* status) {
         break;
       }
 
-      list->prev = s21_set_value(list->prev, log(s21_get_value(list->prev)));
+      list->prev = s21_set_value(list->prev, log10(s21_get_value(list->prev)));
       list = s21_free_node_list(list);
     } else if (!strcmp(list->token, "+")) {
       list->prev->prev =
@@ -67,7 +68,7 @@ long double s21_calculate(s21_list* list, int* status) {
       list = s21_free_node_list(list);
       list = s21_free_node_list(list);
     } else if (!strcmp(list->token, "/")) {
-      if (s21_get_value(list->prev) == 0) {
+      if (fabsl(s21_get_value(list->prev)) < LDBL_EPSILON) {
         *status = CALCULATION_ERROR;
         break;
       }
@@ -84,7 +85,7 @@ long double s21_calculate(s21_list* list, int* status) {
       list = s21_free_node_list(list);
       list = s21_free_node_list(list);
     } else if (!strcmp(list->token, "mod")) {
-      if (s21_get_value(list->prev) == 0) {
+      if (fabsl(s21_get_value(list->prev)) < LDBL_EPSILON) {
         *status = CALCULATION_ERROR;
         break;
       }

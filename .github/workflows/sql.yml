@@ -1,0 +1,38 @@
+name: sql
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'sql/**'
+      - '.github/workflows/sql.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'sql/**'
+      - '.github/workflows/sql.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sql-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  sqlfluff:
+    name: sqlfluff (lint)
+    runs-on: ubuntu-latest
+    continue-on-error: true  # informational until a deliberate format pass lands
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install sqlfluff
+        run: python -m pip install --upgrade pip sqlfluff==3.2.5
+      - name: Lint
+        # PostgreSQL is the canonical School 21 dialect; days 08/09
+        # demonstrate transaction isolation and triggers respectively.
+        run: sqlfluff lint sql/ --dialect postgres || true

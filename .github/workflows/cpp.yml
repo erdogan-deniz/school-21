@@ -1,0 +1,124 @@
+name: cpp
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cpp/**'
+      - '.clang-format'
+      - '.github/workflows/cpp.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'cpp/**'
+      - '.clang-format'
+      - '.github/workflows/cpp.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cpp-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  format-check:
+    name: clang-format check
+    runs-on: ubuntu-latest
+    continue-on-error: true  # informational until we land a repo-wide format pass
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install clang-format
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang-format
+      - name: Check C++ source formatting
+        run: |
+          mapfile -t files < <(
+            find cpp/ \( -name '*.cc' -o -name '*.cpp' -o -name '*.h' -o -name '*.hh' -o -name '*.hpp' \) \
+              -not -path '*/Qt/*' \
+              -not -path '*/build*/*' \
+              -not -path '*moc_*' \
+              -not -path '*ui_*'
+          )
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "No C++ sources found."
+            exit 0
+          fi
+          echo "Checking ${#files[@]} files..."
+          clang-format --dry-run -Werror "${files[@]}"
+
+  build-and-test:
+    # Library subprojects: full build + GoogleTest run.
+    name: build & test
+    runs-on: ubuntu-latest
+    continue-on-error: true  # initial pass: collect data without gating
+    strategy:
+      fail-fast: false
+      matrix:
+        subproject:
+          - s21_containers
+          - s21_matrix+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            libgtest-dev googletest \
+            lcov gcovr
+          # libgtest-dev ships sources only on older Ubuntu — make the
+          # canonical static libs available system-wide.
+          if [ ! -f /usr/lib/x86_64-linux-gnu/libgtest.a ]; then
+            ( cd /usr/src/googletest && sudo cmake -B build && sudo cmake --build build && sudo cmake --install build )
+          fi
+      - name: Build & test
+        working-directory: cpp/${{ matrix.subproject }}/src
+        run: make test || true
+      - name: Coverage report (best-effort)
+        working-directory: cpp/${{ matrix.subproject }}/src
+        run: make gcov_report 2>/dev/null || true
+        continue-on-error: true
+
+  apps-cpp-tests:
+    # GUI applications: only the C++-business-logic test target,
+    # which does not depend on Qt. The qmake-driven Qt GUI build is
+    # handled in a separate Qt-aware job (planned, not yet implemented).
+    name: apps C++-only tests
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        subproject:
+          - 3DViewer_v2.0
+          - CPP5_3DViewer_v2.1
+          - CPP6_3DViewer_v2.2
+          - SmartCalc_v2.0
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            libgtest-dev googletest \
+            lcov gcovr
+          if [ ! -f /usr/lib/x86_64-linux-gnu/libgtest.a ]; then
+            ( cd /usr/src/googletest && sudo cmake -B build && sudo cmake --build build && sudo cmake --install build )
+          fi
+      - name: Run C++-only tests
+        working-directory: cpp/${{ matrix.subproject }}/src
+        run: |
+          # Try a 'test' Makefile target first, then fall back to a
+          # 'tests' target name some subprojects use.
+          if make -n test >/dev/null 2>&1; then
+            make test || true
+          elif make -n tests >/dev/null 2>&1; then
+            make tests || true
+          else
+            echo "no 'test' or 'tests' Makefile target — skipping"
+          fi
+        continue-on-error: true

@@ -1,10 +1,63 @@
-# 3DViewer v2.1
+# `CPP5_3DViewer_v2.1`
+
+[![CI](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *3DViewer v2.1 — extends [v2.0](../3DViewer_v2.0/) with surface shading (Gouraud / Phong), normals support, lighting model, and bonus texture mapping.*
+
+## Quick start
+
+```bash
+cd cpp/CPP5_3DViewer_v2.1/src
+
+# Build the Qt GUI (requires Qt + qmake on PATH)
+make install
+
+# Run the C++-only test suite (no Qt needed)
+make tests
+```
+
+For a fully reproducible environment, build inside a Linux container with the
+School 21 toolchain (`g++17`, `libgtest-dev` + googletest, `lcov`) plus
+`qt6-base-dev` for the GUI portion. The C++-only test job is wired into
+[`.github/workflows/cpp.yml`](../../.github/workflows/cpp.yml).
+
+## Demo
+
+> **TODO** — short GIF showing wireframe → flat shading → Gouraud → Phong toggle is planned in the cpp/ Phase 2 demo slice.
+
+## Documentation
+
+- [Visualization of "solids"](#visualization-of-solids) section below.
+- Source layout: `src/3DViewer/` (Qt UI), `src/Makefile`.
+- Doxygen API reference: planned in the cpp/ Phase 2 docs slice.
+
+## Tests
+
+- Framework: **GoogleTest** for the C++-only model + affine/lighting layer.
+- GUI smoke tests: planned via `xvfb-run` in the Qt-aware CI follow-up.
+- Performance contract: UI responsive (no >0.5 s freeze) for models up to
+  1,000,000 vertices.
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+The `LICENSE` file inside this subproject (`# School 21 License`) is preserved
+as educational attribution and historical artefact; it does not override the
+repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
 
 Implementation of 3DViewer v2.1
 
 The russian version of the task can be found in the repository.
 
-## Contents
+### Contents
 
 1. [Chapter I](#chapter-i) \
    1.1. [Introduction](#introduction)
@@ -16,7 +69,7 @@ The russian version of the task can be found in the repository.
    3.3. [Part 3](#part-3-bonus-record) \
    3.4. [Part 4](#part-4-bonus-texturing)
 
-## Chapter I
+### Chapter I
 
 ![3dviewer2.1](misc/images/3DViewer_v2.1.PNG)
 
@@ -37,15 +90,15 @@ The russian version of the task can be found in the repository.
 
 To continue watching the video, you need to watch a 5-minute ad. Continue?
 
-## Introduction
+### Introduction
 
 In this project you’ll need to modify the application developed in the 3D Viewer v2.0 project. The new version should render a three-dimensional object not only in a wireframe form, but also with surface shading.
 
-## Chapter II
+### Chapter II
 
-## Information
+### Information
 
-### Historical background
+#### Historical background
 
 In 1960, William Fetter, an engineer at Boeing who designs airplanes, first coined the term "computer graphics" to refer to his work in technical documentation. His work consisted of creating graphic images using a computer, and already in 1964 William created the first well-known frame model of a person, which was later used in television commercials in the 70s.
 
@@ -53,23 +106,20 @@ Henri Gouraud in 1971, Jim Blinn in 1972, and Bui Tuong Phong in 1973 developed 
 Shaded objects in most cases are not transparent, so the edges of polygonal models should be shaded according to their visibility relative to the viewpoint. This means that when rendering a three-dimensional model, hidden polygons should not be eventually visible. The problem is not so trivial, and there have been plenty solutions proposed for it. We can highlight two main approaches that use different concept:
 
 - *Z-buffer*, an approach first described in 1974 by Wolfgang Strasser, the main idea of which is to buffer the depth of each pixel.
-
 - *Ray casting*, first described in 1982, inspired by the actual process of image synthesis in the human eye and using the concept of rays.
 
-### Visualization of "solids"
+#### Visualization of "solids"
 
 The simplified solids imaging pipelines include two steps:
 
 - Obtaining two-dimensional polygon projections of a three-dimensional object.
-
 - Shading of intensities pixel by pixel according to visible or non-overlapping object polygons.
 
 Besides intensity, the surface of each object can also have a whole set of visual properties that require additional calculations. For example, textures that can be overlaid on the surface of an object according to its UV-mapping.
 
+### Chapter III
 
-## Chapter III
-
-## Part 1. 3DViewer v2.1
+### Part 1. 3DViewer v2.1
 
 Develop a program to visualize the 3D model.
 
@@ -81,32 +131,32 @@ Develop a program to visualize the 3D model.
 - Prepare full coverage of modules related to model loading and affine transformations with unit-tests
 - There should be only one model on the screen at a time
 - The program must provide the ability to:
-    - Load a model from an obj file (vertices, surfaces and normal list support).
-    - Translate the model by a given distance in relation to the X, Y, Z axes.
-    - Rotate the model by a given angle in relation to its X, Y, Z axes.
-    - Scale the model by a given value.
-    - Toggle the type of object display: wireframe model, flat shading and smooth shading (by Gouraud or Phong methods)
-    - Set the light source, its base intensity (via the three components: R, G, B) and position.
-- GUI implementation, based on any GUI library with API for C++ 
-  * For Linux: GTK+, CEF, Qt, JUCE
-  * For Mac: GTK+, CEF, Qt, JUCE, SFML, Nanogui, Nngui
-  The graphical user interface must contain:
-    - A button to select the model file and a field to output its name.
-    - A visualization area for the model.
-    - Button/buttons and input fields for translating the model.
-    - Button/buttons and input fields for rotating the model.
-    - Button/buttons and input fields for scaling the model.
-    - Information about the uploaded model - file name, number of vertices and edges.
+  - Load a model from an obj file (vertices, surfaces and normal list support).
+  - Translate the model by a given distance in relation to the X, Y, Z axes.
+  - Rotate the model by a given angle in relation to its X, Y, Z axes.
+  - Scale the model by a given value.
+  - Toggle the type of object display: wireframe model, flat shading and smooth shading (by Gouraud or Phong methods)
+  - Set the light source, its base intensity (via the three components: R, G, B) and position.
+- GUI implementation, based on any GUI library with API for C++
+  - For Linux: GTK+, CEF, Qt, JUCE
+  - For Mac: GTK+, CEF, Qt, JUCE, SFML, Nanogui, Nngui
+- The graphical user interface must contain:
+  - A button to select the model file and a field to output its name.
+  - A visualization area for the model.
+  - Button/buttons and input fields for translating the model.
+  - Button/buttons and input fields for rotating the model.
+  - Button/buttons and input fields for scaling the model.
+  - Information about the uploaded model - file name, number of vertices and edges.
 - The program must correctly processes and allows user to view models with details up to 100, 1000, 10,000, 100,000, 1,000,000  vertices without freezing (a freeze is an interface inactivity of more than 0.5 seconds)
 - The program must be implemented using the MVC pattern, and also:
-    - there should be no business code in the view code
-    - there should be no interface code in the controller and the model
-    - controllers must be thin
+  - there should be no business code in the view code
+  - there should be no interface code in the controller and the model
+  - controllers must be thin
 - There should be at least three different design patterns (e.g. facade, strategy and command)
 - Classes must be implemented within the `s21` namespace
 - To perform affine transformations, you can use the matrices from the library of the previous s21_matrix+ project
 
-## Part 2. Bonus. Settings
+### Part 2. Bonus. Settings
 
 - The program must allow customizing the type of projection (parallel and central)
 - The program must allow setting up the type (solid, dashed), color and thickness of the edges, display method (none, circle, square), color and size of the vertices
@@ -114,13 +164,13 @@ Develop a program to visualize the 3D model.
 - The program must allow selecting the base color of the object
 - Settings must be saved between program restarts
 
-## Part 3. Bonus. Record
+### Part 3. Bonus. Record
 
 - The program must allow saving the captured (rendered) images as bmp and jpeg files.
 - The program must allow recording small screencasts - the current custom affine transformation of the loaded object into gif-animation (640x480, 10fps, 5s) by a special button
 - The program must allow saving a short preview of the model - gif-animation (640x480, 10fps, 5s) with rotation of the object around one axis by a special button.
 
-## Part 4. Bonus. Texturing
+### Part 4. Bonus. Texturing
 
 - The program must allow applying a texture to an object (texture mapping) that has a UV-map
 - When rendering, the polygons of the model must be shaded according to the UV-mapping

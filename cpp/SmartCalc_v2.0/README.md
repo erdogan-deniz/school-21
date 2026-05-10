@@ -1,8 +1,65 @@
-# SmartCalc v2.0
+# `SmartCalc_v2.0`
+
+[![CI](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *Object-oriented C++ rewrite of [SmartCalc v1.0](../../c/SmartCalc_v1.0/) — Qt-based scientific calculator under MVC, with `f(x)` plotting plus credit and deposit calculators.*
+
+## Quick start
+
+```bash
+cd cpp/SmartCalc_v2.0/src
+
+# Build the Qt GUI (requires Qt + qmake on PATH)
+make install
+
+# Uninstall
+make uninstall
+
+# Run the C++-only test suite (GoogleTest, no Qt needed)
+make tests
+```
+
+For a fully reproducible environment, build inside a Linux container with the
+School 21 toolchain (`g++17`, `libgtest-dev` + googletest, `lcov`) plus
+`qt6-base-dev` for the GUI portion. The C++-only test job is wired into
+[`.github/workflows/cpp.yml`](../../.github/workflows/cpp.yml).
+
+## Demo
+
+> **TODO** — short GIF of evaluating expressions and plotting `f(x)` is planned in the cpp/ Phase 2 demo slice.
+
+## Documentation
+
+- [MVC pattern](#mvc-pattern) section below — model is the calculator library,
+  controller a thin facade, view the Qt UI.
+- Source layout: `src/Model/` (calculator), `src/Controller/`, `src/View/`
+  (Qt UI), `src/UnitTests/` (GoogleTest).
+- Doxygen API reference: planned in the cpp/ Phase 2 docs slice.
+
+## Tests
+
+- Framework: **GoogleTest** ([google/googletest](https://github.com/google/googletest)).
+- C++-only `make tests` covers the calculator model — no Qt dependency.
+- Verifiable accuracy: ≥ 7 decimal places of the fractional part.
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+The `LICENSE` file inside this subproject (`# School 21 License`) is preserved
+as educational attribution and historical artefact; it does not override the
+repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
 
 Implementation of SmartCalc v2.0.
 
-## Chapter I
+### Chapter I
 
 ![smartcalcv2.0](misc/images/smartcalcv2.0.PNG)
 
@@ -12,7 +69,7 @@ Chris put a paper cup of coffee next to you on the table, so that woke you up.
 
 *-- Pure black americano, I heard you like it. It'll help you wake up.*
 
-*- Oh, yes, I really need it, thanks. Where were we?* - you asked, drinking your hot coffee.
+*- Oh, yes, I really need it, thanks. Where were we?* — you asked, drinking your hot coffee.
 
 *-- Did you finish the basic logic for the calculator?*
 
@@ -29,17 +86,17 @@ For more than a week now, you've been helping Chris Espinosa rewrite an object-o
 
 *- Sounds like exactly what we need! I'm all ears.*
 
-## Introduction
+### Introduction
 
 In this project you’ll need to implement an extended version of the standard calculator in C++ in the object-oriented programming paradigm, implementing the same functions as the previously developed application in SmartCalc v1.0 project. In addition to basic arithmetic operations such as add/subtract and multiply/divide, you need to supplement the calculator with the ability to calculate arithmetic expressions by following the order, as well as some mathematical functions (sine, cosine, logarithm, etc.). Besides calculating expressions, it should also support the use of the *x* variable and the graphing of the corresponding function. As for other improvements you can consider a credit and deposit calculator.
 
-## Chapter II
+### Chapter II
 
-## Information
+### Information
 
 Note that you should use *Dijkstra's algorithm* to translate expressions into *reverse Polish notation* to implement the calculator. You can find all the necessary information in the SmartCalc v1.0 project description to refresh your knowledge.
 
-### MVC pattern
+#### MVC pattern
 
 The Model-View-Controller (MVC) pattern is a scheme of separating application modules into three macro-components: a model that contains the business logic, a view that is a UI form to interact with the program, and a controller that modifies the model by user action.
 
@@ -54,11 +111,11 @@ A controller is a thin macro component that performs model modifications. It is 
 
 The view includes all code associated with the program interface. An ideal interface code should not contain any business logic. It only represents the form for interaction with the user.
 
-![](misc/images/MVC-Process.png)
+![MVC process](misc/images/MVC-Process.png)
 
-## Chapter III
+### Chapter III
 
-## Part 1. Implementation of SmartCalc v2.0
+### Part 1. Implementation of SmartCalc v2.0
 
 You need to implement the SmartCalc v2.0:
 
@@ -86,43 +143,45 @@ You need to implement the SmartCalc v2.0:
 - Verifiable accuracy of the fractional part is at least to 7 decimal places
 - Users must be able to enter up to 255 characters
 - Bracketed arithmetic expressions in infix notation must support the following arithmetic operations and mathematical functions:
-  - **Arithmetic operators**:
 
-     | Operator name | Infix notation <br /> (Classic) | Prefix notation <br /> (Polish notation) |  Postfix notation <br /> (Reverse Polish notation) |
-      | --------- | ------ | ------ | ------ |
-      | Brackets | (a + b) | (+ a b) | a b + |
-      | Addition | a + b | + a b | a b + |
-      | Subtraction | a - b | - a b | a b - |
-      | Multiplication | a * b | * a b | a b * |
-      | Division | a / b | / a b | a b \ |
-      | Power | a ^ b | ^ a b | a b ^ |
-      | Modulus | a mod b | mod a b | a b mod |
-      | Unary plus | +a | +a | a+ |
-      | Unary minus | -a | -a | a- |
+#### Arithmetic operators
 
-      >Note that the multiplication operator contains the obligatory sign `*`. Processing an expression with the omitted `*` sign is optional and is left to the developer's decision
-  - **Functions**:
+| Operator name  | Infix (Classic) | Prefix (Polish) | Postfix (Reverse Polish) |
+| -------------- | --------------- | --------------- | ------------------------ |
+| Brackets       | (a + b)         | (+ a b)         | a b +                    |
+| Addition       | a + b           | + a b           | a b +                    |
+| Subtraction    | a - b           | - a b           | a b -                    |
+| Multiplication | a * b           | * a b           | a b *                    |
+| Division       | a / b           | / a b           | a b \                    |
+| Power          | a ^ b           | ^ a b           | a b ^                    |
+| Modulus        | a mod b         | mod a b         | a b mod                  |
+| Unary plus     | +a              | +a              | a+                       |
+| Unary minus    | -a              | -a              | a-                       |
 
-      | Function description | Function |
-      | ------ | ------ |
-      | Computes cosine | cos(x) |
-      | Computes sine | sin(x) |
-      | Computes tangent | tan(x) |
-      | Computes arc cosine | acos(x) |
-      | Computes arc sine | asin(x) |
-      | Computes arc tangent | atan(x) |
-      | Computes square root | sqrt(x) |
-      | Computes natural logarithm | ln(x) |
-      | Computes common logarithm | log(x) |
+> Note that the multiplication operator contains the obligatory sign `*`. Processing an expression with the omitted `*` sign is optional and is left to the developer's decision.
 
-## Part 2. Bonus. Credit calculator
+#### Functions
+
+| Function description       | Function |
+| -------------------------- | -------- |
+| Computes cosine            | cos(x)   |
+| Computes sine              | sin(x)   |
+| Computes tangent           | tan(x)   |
+| Computes arc cosine        | acos(x)  |
+| Computes arc sine          | asin(x)  |
+| Computes arc tangent       | atan(x)  |
+| Computes square root       | sqrt(x)  |
+| Computes natural logarithm | ln(x)    |
+| Computes common logarithm  | log(x)   |
+
+### Part 2. Bonus. Credit calculator
 
 Provide a special mode "credit calculator" (you can take banki.ru and calcus.ru as an example):
 
 - Input: total credit amount, term, interest rate, type (annuity, differentiated)
 - Output: monthly payment, overpayment on credit, total payment
 
-## Part 3. Bonus. Deposit calculator
+### Part 3. Bonus. Deposit calculator
 
 Provide a special mode "deposit profitability calculator" (you can take banki.ru and calcus.ru as an example):
 

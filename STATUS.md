@@ -5,6 +5,13 @@ subproject. Updated on every batch commit. Secondary views (GitHub
 Projects board, GitHub Issues + milestones) are derived from this
 file — never edited by hand.
 
+For **per-subproject detail** — DoD checklist with `[x]` / `[~]` / `[ ]`
+ticks, free-form tasks, and a history log — see
+[`docs/plans/<track>/<subproject>.md`](docs/plans/). Each subproject
+has its own plan file generated from
+[`docs/plans/_TEMPLATE.md`](docs/plans/_TEMPLATE.md). The matrix below
+stays high-level; the plans hold the detail.
+
 ## Legend
 
 | Symbol | Meaning                                           |

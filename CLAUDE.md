@@ -60,10 +60,11 @@ DoD is the universal acceptance criteria. If a pragmatic exception is needed for
 ## 6. Repo conventions (to be filled in as decided)
 
 - **Tracking mechanism:**
-  - **Primary:** `STATUS.md` at repo root — single source of truth. Markdown table, rows = subprojects, columns = DoD letters A–H, cells ∈ {✓, ✗, ◐ partial, n/a}.
+  - **Top-level dashboard:** `STATUS.md` at repo root — single source of truth for high-level progress. Markdown table, rows = subprojects, columns = DoD letters A–H, cells ∈ {✓, ✗, ◐ partial, n/a}.
+  - **Per-subproject detail:** `docs/plans/<track>/<subproject>.md` (37 files). Each plan has an "At a glance" header, the eight-item DoD checklist with `[x]` / `[~]` / `[ ]` ticks, subproject-specific tasks, and a chronological History log linked to commits. Template: `docs/plans/_TEMPLATE.md`.
   - **Secondary view:** GitHub Projects board (kanban/table) — read-mostly mirror of `STATUS.md`.
   - **Secondary view:** GitHub Issues + milestones — one issue per non-trivial gap, milestones group by subproject. Generated from `STATUS.md`, not edited by hand.
-  - **Rule:** never edit secondary views as a primary write path. If the board or an issue diverges from `STATUS.md`, regenerate the secondary view.
+  - **Rule:** never edit secondary views as a primary write path. If the board or an issue diverges from `STATUS.md`, regenerate the secondary view. Plans and STATUS.md must move together — every batch updates both.
 - **License — dual structure:**
   - Repo-root `LICENSE` = **MIT** (governs the repo as an open-source whole, makes GitHub recognise the licence, allows reuse).
   - Per-subproject `LICENSE` = **keep the existing "School 21 License" placeholder** as educational attribution / historical artefact. Do not delete or replace.

@@ -5,29 +5,26 @@
 ## At a glance
 
 - **Path:** [`internship`](../../internship/)
-- **Kind:** internship deliverable
-- **Language:** varies
-- **Build system:** varies
-- **Tests on disk:** varies
+- **Kind:** internship deliverable (report)
 - **Flagship:** no
 
 ## Definition of Done — checklist
 
-- [ ] **A.** README adopts the repo template (production fold + preserved task)
-- [ ] **B.** Unit tests + coverage % visible in README
-- [ ] **C.** GitHub Actions CI green + badge in README
-- [ ] **D.** Linter / formatter applied
-- [ ] **E.** Reproducible build (Dockerfile or Makefile — one command)
-- [ ] **F.** `LICENSE` present (MIT root + School 21 placeholder kept)
-- [ ] **G.** Demo (gif / screenshot / asciinema)
-- [ ] **H.** Doxygen / Sphinx API docs
+- [x] **A.** README adopts the repo template (production fold + preserved task)
+- [ ] **B.** n/a (report subproject)
+- [ ] **C.** n/a
+- [ ] **D.** n/a
+- [ ] **E.** n/a
+- [~] **F.** Root MIT `LICENSE` ✓; subproject `LICENSE` is the School 21 placeholder
+- [ ] **G.** Demo — n/a (text artefact)
+- [ ] **H.** Sphinx — n/a
+
+> Legend: `[x]` done · `[~]` partial · `[ ]` not started.
 
 ## Subproject-specific tasks
 
-- [ ] (placeholder — fill in during per-subproject review)
+- [ ] Confirm internship report `src/` content is anonymised where appropriate (no NDA-violating company details).
 
 ## History
 
-<!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/Deniz211/school-21/commit/<sha>)) -->
-
-- *(no entries yet)*
+- 2026-05-11: README adopted from repo template + Original task preserved.

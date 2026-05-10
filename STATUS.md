@@ -54,15 +54,15 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject | A | B | C | D | E | F | G | H | Flagship | Notes |
 | ---------- | - | - | - | - | - | - | - | - | -------- | ----- |
-| `ct_00`    | ✗ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          |       |
-| `ct_01`    | ✗ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          |       |
-| `ct_02`    | ✗ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          |       |
-| `ct_03`    | ✗ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          |       |
-| `ct_04`    | ✗ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          |       |
-| `ct_05`    | ✗ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          |       |
-| `ct_06`    | ✗ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          |       |
-| `ct_07`    | ✗ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          |       |
-| `ct_08`    | ✗ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          |       |
+| `ct_00`    | ✓ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | text-only career project |
+| `ct_01`    | ✓ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | text-only career project |
+| `ct_02`    | ✓ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | text-only career project |
+| `ct_03`    | ✓ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | text-only career project |
+| `ct_04`    | ✓ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | text-only career project |
+| `ct_05`    | ✓ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | text-only career project |
+| `ct_06`    | ✓ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | text-only career project |
+| `ct_07`    | ✓ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | text-only career project |
+| `ct_08`    | ✓ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | text-only career project |
 
 ### `cpp/`
 
@@ -96,13 +96,13 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject     | A | B | C | D | E | F | G | H | Flagship | Notes |
 | -------------- | - | - | - | - | - | - | - | - | -------- | ----- |
-| `internship`   | ✗ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          |       |
+| `internship`   | ✓ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | report subproject |
 
 ### `machine_learning/`
 
 | Subproject   | A | B | C | D | E | F | G | H | Flagship | Notes |
 | ------------ | - | - | - | - | - | - | - | - | -------- | ----- |
-| `project_01` | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |          |       |
+| `project_01` | ✓ | ✗ | ◐ | ◐ | ✗ | ✗ | ✗ | ✗ |          | covered by python.yml ruff |
 
 ### `python/`
 
@@ -114,8 +114,8 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject   | A | B | C | D | E | F | G | H | Flagship | Notes |
 | ------------ | - | - | - | - | - | - | - | - | -------- | ----- |
-| `project_01` | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |          |       |
-| `project_02` | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |          |       |
+| `project_01` | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | report subproject; ruff via python.yml |
+| `project_02` | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | report subproject; ruff via python.yml |
 
 ### `sql/`
 
@@ -127,7 +127,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject       | A | B | C | D | E | F | G | H | Flagship | Notes |
 | ---------------- | - | - | - | - | - | - | - | - | -------- | ----- |
-| `survival_camp`  | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |          |       |
+| `survival_camp`  | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |          | historical record |
 
 ## Roll-up
 
@@ -135,17 +135,17 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | -------------------- | ----------- | ---------------- | -------- |
 | `algorithms/`        | 1           | 3 / 8            | 38 %     |
 | `c/`                 | 7           | 25.5 / 56        | 46 %     |
-| `career_track/`      | 9           | 9 / 72           | 13 %     |
+| `career_track/`      | 9           | 13.5 / 72        | 19 %     |
 | `cpp/`               | 6           | 21 / 48          | 44 %     |
 | `data_science/`      | 2           | 6 / 16           | 38 %     |
 | `devops/`            | 5           | 17 / 40          | 43 %     |
-| `internship/`        | 1           | 1 / 8            | 13 %     |
-| `machine_learning/`  | 1           | 0 / 8            | 0 %      |
+| `internship/`        | 1           | 1.5 / 8          | 19 %     |
+| `machine_learning/`  | 1           | 2 / 8            | 25 %     |
 | `python/`            | 1           | 3.5 / 8          | 44 %     |
-| `qa/`                | 2           | 0 / 16           | 0 %      |
+| `qa/`                | 2           | 5 / 16           | 31 %     |
 | `sql/`               | 1           | 2.5 / 8          | 31 %     |
-| `survival_camp/`     | 1           | 0 / 8            | 0 %      |
-| **Total**            | **37**      | **88.5 / 296**   | **30 %** |
+| `survival_camp/`     | 1           | 1 / 8            | 13 %     |
+| **Total**            | **37**      | **111.5 / 296**  | **38 %** |
 
 > "DoD cells filled" counts ✓ as 1 and ◐ as 0.5. The "School 21
 > License" placeholders count ◐ for the F column — they are

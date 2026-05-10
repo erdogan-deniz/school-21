@@ -1,4 +1,30 @@
-# Введение в тестирование
+# `qa/project_01`
+
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *Introduction to manual QA — the basics of working as a QA engineer focused on manual testing.*
+
+## Quick start
+
+This subproject is **report-driven** — the artefact is a Markdown report
+describing the manual-testing methodology learned in the course. No code to
+build.
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+The `LICENSE` file inside this subproject (`# School 21 License`) is preserved
+as educational attribution and historical artefact; it does not override the
+repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
+
+### Введение в тестирование
 
 Ты познакомишься с основами работы *QA* инженера по ручному тестированию.
 

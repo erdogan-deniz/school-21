@@ -65,10 +65,14 @@ The `LICENSE` file inside this subproject (`# School 21 License`) is preserved a
 
 ---
 
-# Original task (School 21)
+## Original task (School 21)
 
 <!--
   Below this divider, paste the existing School 21 task content verbatim:
   Preamble (story), Chapter I/II/III headings, Information sections,
   Part 1 / Part 2 requirement lists, etc. Do NOT trim or paraphrase.
+
+  Use H2 ("##") for the divider heading — markdownlint MD025 forbids
+  multiple H1s in the same document. The horizontal rule above plus the
+  H2 already produces a clear visual break.
 -->

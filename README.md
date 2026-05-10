@@ -20,14 +20,35 @@ Students learn teamwork and project activities.
 
 A repository is a collection of completed *School 2️⃣1️⃣* projects.
 
+## Production readiness
+
+This repo is undergoing a production-grade overhaul (2026-05). Live status:
+
+[![lint](https://github.com/Deniz211/school-21/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/lint.yml)
+[![c](https://github.com/Deniz211/school-21/actions/workflows/c.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/c.yml)
+[![cpp](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml)
+[![python](https://github.com/Deniz211/school-21/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/python.yml)
+[![sql](https://github.com/Deniz211/school-21/actions/workflows/sql.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/sql.yml)
+[![devops](https://github.com/Deniz211/school-21/actions/workflows/devops.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/devops.yml)
+[![docs](https://github.com/Deniz211/school-21/actions/workflows/docs.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/docs.yml)
+[![pages](https://github.com/Deniz211/school-21/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/pages.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+- **Top-level dashboard:** [`STATUS.md`](STATUS.md) — production-readiness matrix
+  for all 37 subprojects across 8 Definition-of-Done items.
+- **Per-subproject plans:** [`docs/plans/`](docs/plans/) — checklist + history
+  per subproject.
+- **Design doc:** [`docs/specs/2026-05-11-production-grade-overhaul.md`](docs/specs/2026-05-11-production-grade-overhaul.md).
+- **Working agreement:** [`CLAUDE.md`](CLAUDE.md) — repo-wide rules and conventions.
+- **Generated docs site:** [Deniz211.github.io/school-21](https://Deniz211.github.io/school-21/) — Doxygen + Sphinx HTML, built and deployed by [`pages.yml`](.github/workflows/pages.yml).
+
 ## Repository Source File Structure
 
-- `content`: a folder with materials for the design of the repository and its
-  elements.
-- `project_clusters`: a folder with projects, where each project consists of
-  small projects united by a theme.
-- `projects`: a folder of projects, each of which represents a product.
-- `.markdownlint.json`: the configuration file `README.md` file.
+- [`algorithms/`](algorithms/), [`c/`](c/), [`career_track/`](career_track/), [`cpp/`](cpp/), [`data_science/`](data_science/), [`devops/`](devops/), [`internship/`](internship/), [`machine_learning/`](machine_learning/), [`python/`](python/), [`qa/`](qa/), [`sql/`](sql/), [`survival_camp/`](survival_camp/) — language / track folders, each with one or more subprojects.
+- [`content/`](content/) — materials for the repo's design (badge images) and templates ([`content/templates/SUBPROJECT_README.md`](content/templates/SUBPROJECT_README.md)).
+- [`docs/`](docs/) — design specs and per-subproject plans.
+- [`.github/workflows/`](.github/workflows/) — 8 CI workflows (lint, c, cpp, python, sql, devops, docs, pages).
+- [`CLAUDE.md`](CLAUDE.md), [`STATUS.md`](STATUS.md), [`LICENSE`](LICENSE), [`.clang-format`](.clang-format), [`.ruff.toml`](.ruff.toml), [`.gitignore`](.gitignore), [`.markdownlint.json`](.markdownlint.json) — repo-wide configuration and rules.
 - `README.md`: the description file of the repository (you read it).
 
 ## About My Platform Account

@@ -1,4 +1,29 @@
-# Career track. Project 02
+# `career_track/ct_02`
+
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *School 21 career-track project 02 — career planning, job-search skills, professional development.*
+
+## Quick start
+
+This subproject is **report-driven** — no code to build. The original task
+description is preserved verbatim below the divider.
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+The `LICENSE` file inside this subproject (`# School 21 License`) is preserved
+as educational attribution and historical artefact; it does not override the
+repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
+
+### Career track. Project 02
 
 In this project, you will write your own resume according to the basic rules for your chosen job or internship, properly describing skills, experience, and financial expectations, and write a cover letter with your own job desires and expectations in mind.
 
@@ -342,4 +367,3 @@ Action Algorithm:
 2. Answer the two main questions in your cover letter:
   - Why does the company need you?
   - Why do you need the company?
-

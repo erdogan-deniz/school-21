@@ -1,4 +1,29 @@
-# Образовательная траектория
+# `career_track/ct_08`
+
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *School 21 career-track project 08 — career planning, job-search skills, professional development.*
+
+## Quick start
+
+This subproject is **report-driven** — no code to build. The original task
+description is preserved verbatim below the divider.
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+The `LICENSE` file inside this subproject (`# School 21 License`) is preserved
+as educational attribution and historical artefact; it does not override the
+repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
+
+### Образовательная траектория
 Резюме: в этом проекте ты проанализируешь персональную образовательную траекторию, актуализируешь карьерную цель и определишь план действий для ее достижения. 
 
 💡 [Нажми сюда](https://new.oprosso.net/p/4cb31ec3f47a4596bc758ea1861fb624), **чтобы поделиться с нами обратной связью на этот проект**. Это анонимно и поможет нашей команде сделать обучение лучше. Рекомендуем заполнить опрос сразу после выполнения проекта.

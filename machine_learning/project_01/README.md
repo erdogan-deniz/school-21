@@ -1,4 +1,36 @@
-# *Machine Learning* introduction
+# `machine_learning/project_01`
+
+[![CI](https://github.com/Deniz211/school-21/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/python.yml)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *Introduction to Machine Learning + data analysis — practical project covering exploratory analysis, classical algorithms, and evaluation.*
+
+## Quick start
+
+```bash
+cd machine_learning/project_01
+
+# Lint (ruff respects the repo-wide .ruff.toml)
+ruff check .
+
+# Run the notebooks
+jupyter notebook
+```
+
+For a fully reproducible environment, use Python 3.12 inside a Linux container —
+see [`.github/workflows/python.yml`](../../.github/workflows/python.yml).
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+---
+
+## Original task (School 21)
+
+### *Machine Learning* introduction
 
 Summary: the project is introduction into *Machine Learning* and *data analysis*
 with practical.

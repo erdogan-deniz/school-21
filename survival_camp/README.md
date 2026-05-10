@@ -1,4 +1,25 @@
-# Survival Camp
+# `survival_camp`
+
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../LICENSE)
+
+> *School 21 introductory survival camp — first-week intensive that gates entry into the Core program.*
+
+## Quick start
+
+This subproject is **report-driven** — no code to build. The original list
+below documents the camp results.
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../LICENSE).
+
+---
+
+## Original task (School 21)
+
+### Survival Camp
 
 * 1️⃣ T01D01 - 94/100 % (94 xp)
 * 2️⃣ T02D02 - 0/100 % (0 xp)

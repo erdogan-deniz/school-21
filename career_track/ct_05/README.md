@@ -1,4 +1,29 @@
-# Career track. Project 05
+# `career_track/ct_05`
+
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *School 21 career-track project 05 — career planning, job-search skills, professional development.*
+
+## Quick start
+
+This subproject is **report-driven** — no code to build. The original task
+description is preserved verbatim below the divider.
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+The `LICENSE` file inside this subproject (`# School 21 License`) is preserved
+as educational attribution and historical artefact; it does not override the
+repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
+
+### Career track. Project 05
 
 In this project, you will learn what corporate culture is and how to immerse yourself in it, as well as how to handle corporate information safely.
 

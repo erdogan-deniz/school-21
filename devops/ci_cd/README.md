@@ -1,4 +1,53 @@
-# Basic CI/CD
+# `devops/ci_cd`
+
+[![CI](https://github.com/Deniz211/school-21/actions/workflows/devops.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/devops.yml)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *GitLab CI/CD pipeline for [`c/SimpleBashUtils`](../../c/SimpleBashUtils/) — runner setup, build/codestyle/integration test stages, deploy via SSH/SCP, Telegram notifications.*
+
+## Quick start
+
+This subproject is **report-driven**: the artefacts are a `gitlab-ci.yml`,
+shell scripts under `src/`, and a Markdown report describing the configured
+runner + pipeline. There is nothing to compile here. To reproduce locally:
+
+```bash
+# Inspect the pipeline definition
+cat src/.gitlab-ci.yml
+
+# Lint helper bash scripts (shellcheck via devops.yml)
+shellcheck src/**/*.sh
+```
+
+## Demo
+
+> **TODO** — short asciinema cast of the pipeline running end-to-end (build → codestyle → integration → deploy → Telegram notification) is planned in the devops/ Phase 2 demo slice.
+
+## Documentation
+
+- Per-part report under `src/README.md` (Markdown, with screenshots).
+- `gitlab-ci.yml` is the canonical pipeline definition.
+
+## Tests
+
+- The pipeline itself runs SimpleBashUtils integration tests as Stage 4.
+- shellcheck linting in [`.github/workflows/devops.yml`](../../.github/workflows/devops.yml).
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+The `LICENSE` file inside this subproject (`# School 21 License`) is preserved
+as educational attribution and historical artefact; it does not override the
+repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
+
+### Basic CI/CD
 
 Development of a simple **CI/CD** for the *SimpleBashUtils* project. Building, testing, deployment.
 

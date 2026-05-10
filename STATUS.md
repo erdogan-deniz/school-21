@@ -7,14 +7,14 @@ file — never edited by hand.
 
 ## Legend
 
-| Symbol | Meaning                           |
-| ------ | --------------------------------- |
-| ✓      | Done                              |
-| ◐      | Partially done / in progress      |
-| ✗      | Not done                          |
-| n/a    | Not applicable for this subproject |
+| Symbol | Meaning                                           |
+| ------ | ------------------------------------------------- |
+| ✓      | Done                                              |
+| ◐      | Partially done / in progress                      |
+| ✗      | Not done                                          |
+| n/a    | Not applicable for this subproject                |
 | ★      | Flagship — also targets DoD-C (use as dependency) |
-| ⚠      | Known broken / blocked by a tactical issue |
+| ⚠      | Known broken / blocked by a tactical issue        |
 
 ## Definition of Done — column key
 
@@ -35,13 +35,13 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject         | A | B | C | D | E | F | G | H | Flagship | Notes                                                       |
 | ------------------ | - | - | - | - | - | - | - | - | -------- | ----------------------------------------------------------- |
-| `3DViewer_v1.0`    | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present                                    |
-| `SimpleBashUtils`  | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present                                    |
-| `s21_decimal`      | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present                                    |
-| `s21_math`         | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present                                    |
-| `s21_matrix`       | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present                                    |
-| `s21_string+`      | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present                                    |
-| `SmartCalc_v1.0`   | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present; rename resolved (commit a6744d9d) |
+| `3DViewer_v1.0`    | ◐ | ✗ | ✗ | ◐ | ✗ | ◐ | ✗ | ✗ |          | Qt app — CI deferred to follow-up (needs Qt6 runner)        |
+| `SimpleBashUtils`  | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | CI in c.yml matrix (build/test informational)               |
+| `s21_decimal`      | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | CI in c.yml matrix (build/test informational)               |
+| `s21_math`         | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | CI in c.yml matrix (build/test informational)               |
+| `s21_matrix`       | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | CI in c.yml matrix (build/test informational)               |
+| `s21_string+`      | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | CI in c.yml matrix (build/test informational)               |
+| `SmartCalc_v1.0`   | ◐ | ✗ | ✗ | ◐ | ✗ | ◐ | ✗ | ✗ |          | Qt app — CI deferred to follow-up; rename in a6744d9d       |
 
 ### `career_track/`
 
@@ -59,8 +59,8 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 ### `cpp/`
 
-| Subproject              | A | B | C | D | E | F | G | H | Flagship | Notes |
-| ----------------------- | - | - | - | - | - | - | - | - | -------- | ----- |
+| Subproject              | A | B | C | D | E | F | G | H | Flagship | Notes                    |
+| ----------------------- | - | - | - | - | - | - | - | - | -------- | ------------------------ |
 | `3DViewer_v2.0`         | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present |
 | `CPP5_3DViewer_v2.1`    | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present |
 | `CPP6_3DViewer_v2.2`    | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present |
@@ -70,10 +70,10 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 ### `data_science/`
 
-| Subproject   | A | B | C | D | E | F | G | H | Flagship | Notes |
-| ------------ | - | - | - | - | - | - | - | - | -------- | ----- |
-| `bootcamp`   | ✗ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | committed venv — Phase 1 op 1.3 |
-| `project_01` | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |          |       |
+| Subproject   | A | B | C | D | E | F | G | H | Flagship | Notes                                                 |
+| ------------ | - | - | - | - | - | - | - | - | -------- | ----------------------------------------------------- |
+| `bootcamp`   | ✗ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | committed venv evicted from index (op 1.3 / 554dc46a) |
+| `project_01` | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |          |                                                       |
 
 ### `devops/`
 
@@ -124,21 +124,21 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 ## Roll-up
 
-| Track          | Subprojects | DoD cells filled | % done |
-| -------------- | ----------- | ---------------- | ------ |
-| `algorithms/`  | 1           | 0 / 8            | 0 %    |
-| `c/`           | 7           | 14 / 56          | 25 %   |
-| `career_track/`| 9           | 9 / 72           | 13 %   |
-| `cpp/`         | 6           | 12 / 48          | 25 %   |
-| `data_science/`| 2           | 1 / 16           | 6 %    |
-| `devops/`      | 5           | 5 / 40           | 13 %   |
-| `internship/`  | 1           | 1 / 8            | 13 %   |
-| `machine_learning/` | 1      | 0 / 8            | 0 %    |
-| `python/`      | 1           | 1 / 8            | 13 %   |
-| `qa/`          | 2           | 0 / 16           | 0 %    |
-| `sql/`         | 1           | 1 / 8            | 13 %   |
-| `survival_camp/` | 1         | 0 / 8            | 0 %    |
-| **Total**      | **37**      | **44 / 296**     | **15 %** |
+| Track                | Subprojects | DoD cells filled | % done   |
+| -------------------- | ----------- | ---------------- | -------- |
+| `algorithms/`        | 1           | 0 / 8            | 0 %      |
+| `c/`                 | 7           | 21 / 56          | 38 %     |
+| `career_track/`      | 9           | 9 / 72           | 13 %     |
+| `cpp/`               | 6           | 12 / 48          | 25 %     |
+| `data_science/`      | 2           | 1 / 16           | 6 %      |
+| `devops/`            | 5           | 5 / 40           | 13 %     |
+| `internship/`        | 1           | 1 / 8            | 13 %     |
+| `machine_learning/`  | 1           | 0 / 8            | 0 %      |
+| `python/`            | 1           | 1 / 8            | 13 %     |
+| `qa/`                | 2           | 0 / 16           | 0 %      |
+| `sql/`               | 1           | 1 / 8            | 13 %     |
+| `survival_camp/`     | 1           | 0 / 8            | 0 %      |
+| **Total**            | **37**      | **51 / 296**     | **17 %** |
 
 > "DoD cells filled" counts ✓ as 1 and ◐ as 0.5. The "School 21
 > License" placeholders count ◐ for the F column — they are

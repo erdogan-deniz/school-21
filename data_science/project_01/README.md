@@ -1,4 +1,57 @@
-# Tweets
+# `data_science/project_01`
+
+[![CI](https://github.com/Deniz211/school-21/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/python.yml)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *"Tweets" — NLP project: sentiment-analysis classifier on labelled tweets via bag-of-words / TF-IDF / word2vec, with stemming, lemmatisation, cosine-similarity top-10 and ≥ 0.832 accuracy target.*
+
+## Quick start
+
+```bash
+cd data_science/project_01
+
+# Create venv + install deps (Makefile handles cross-platform venv path)
+make check
+pip install -r requirements.txt
+python -m spacy download en_core_web_lg
+
+# Open the notebooks
+jupyter notebook notebooks/preprocessing.ipynb
+jupyter notebook notebooks/analysis.ipynb
+```
+
+For a fully reproducible environment, use Python 3.12 inside a Linux container.
+
+## Demo
+
+> **TODO** — short asciinema cast / sample run with similarity-output preview is planned in the python/ Phase 2 demo slice.
+
+## Documentation
+
+- [Workflow](#workflow) section below.
+- Notebooks: `notebooks/preprocessing.ipynb`, `notebooks/analysis.ipynb`.
+- Models: `notebooks/models/`, utilities: `notebooks/utilities/`.
+- Source: `src/`.
+
+## Tests
+
+- Workflow validates against the original task accuracy bounds: ≥ `0.832`
+  baseline, ≥ `0.873` bonus.
+- CI lint coverage via `ruff` in [`.github/workflows/python.yml`](../../.github/workflows/python.yml).
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+The `LICENSE` file inside this subproject is preserved as educational
+attribution and historical artefact; it does not override the repo-wide MIT
+licence.
+
+---
+
+## Original task (School 21)
 
 Summary: project is an introduction to *Natural Language Processing*: *bag of
 words*, *TFIDF*, *Stemming*, *Lemmatization*, stop-words, *Cosine Similarity*,
@@ -55,32 +108,32 @@ The tweets labeled as: `positive`, `negative`, `neutral`.
 
 General:
 
-* Use the *NLTK* or other library.
-* You can enrich the dataset with other datasets.
+- Use the *NLTK* or other library.
+- You can enrich the dataset with other datasets.
 
 Similarity:
 
-* Use the datasets and *cosine similarity* to find the top `10` pairs of tweets.
+- Use the datasets and *cosine similarity* to find the top `10` pairs of tweets.
 
 Preprocessing:
 
-* Try approaches:
+- Try approaches:
 
   ![processing approaches](./content/images/tables/processing_options.png)
 
-* Split on the train and test datasets with stratification `20` %.
+- Split on the train and test datasets with stratification `20` %.
 
 *Machine Learning*:
 
-* Try algorithms and datasets to solve the classification task - *sentiment*
+- Try algorithms and datasets to solve the classification task — *sentiment*
   *analysis*.
 
 ## Bonus functionality
 
-* Use `word2vec` to get vectorization of text.
-* Get *accuracy* on the test dataset bigger then `0.873`.
+- Use `word2vec` to get vectorization of text.
+- Get *accuracy* on the test dataset bigger then `0.873`.
 
 ## Submission
 
-* Achieve an *accuracy* `0.832` on the test dataset.
-* The top `10` similar tweets for each of a preprocessing.
+- Achieve an *accuracy* `0.832` on the test dataset.
+- The top `10` similar tweets for each of a preprocessing.

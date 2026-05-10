@@ -1,8 +1,62 @@
-# 3DViewer v2.2
+# `CPP6_3DViewer_v2.2`
+
+[![CI](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *3DViewer v2.2 — extends [v2.1](../CPP5_3DViewer_v2.1/) with ray-traced rendering, multi-model scenes, primitive-pool objects (sphere, cylinder, cone, cube, pyramid), KD-tree intersection optimisation.*
+
+## Quick start
+
+```bash
+cd cpp/CPP6_3DViewer_v2.2/src
+
+# Build the Qt GUI (requires Qt + qmake on PATH)
+make install
+
+# Run the C++-only test suite (no Qt needed)
+make tests
+```
+
+For a fully reproducible environment, build inside a Linux container with the
+School 21 toolchain (`g++17`, `libgtest-dev` + googletest, `lcov`) plus
+`qt6-base-dev` for the GUI portion. The C++-only test job is wired into
+[`.github/workflows/cpp.yml`](../../.github/workflows/cpp.yml).
+
+## Demo
+
+> **TODO** — comparison GIF (wireframe → flat → Gouraud → Phong → ray-traced) is planned in the cpp/ Phase 2 demo slice. A still ray-traced render of the cornell box would also work for the README header image.
+
+## Documentation
+
+- [Rendering with ray tracing](#rendering-with-ray-tracing) section below.
+- Source layout: `src/3DViewer/` (Qt UI + KD-tree), `src/Makefile`.
+- Doxygen API reference: planned in the cpp/ Phase 2 docs slice.
+
+## Tests
+
+- Framework: **GoogleTest** for the C++-only model, scene, KD-tree, and ray
+  intersection layer.
+- GUI smoke tests: planned via `xvfb-run` in the Qt-aware CI follow-up.
+- Performance contract: UI responsive (no >0.5 s freeze) for models up to
+  1,000,000 vertices, plus up to 5 additional models per scene.
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+The `LICENSE` file inside this subproject (`# School 21 License`) is preserved
+as educational attribution and historical artefact; it does not override the
+repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
 
 Implementation of 3DViewer v2.2
 
-## Chapter I
+### Chapter I
 
 ![3dviewer2.2](misc/images/3Dviewer2.2.PNG)
 
@@ -12,7 +66,7 @@ Implementation of 3DViewer v2.2
 
 *-- So the path tracing should be a simpler operation than the ray tracing?*
 
-*-- Yes, that's right. You see, after one ray bounces off an object, it can turn into 10 rays, and those 10 can turn into 100, 1000, and so on. So we get an exponential increase in the number of rays. It is possible to visualize one frame, but I dread to imagine how long it would take to calculate all these rays for several frames. For that reason, a less complicated version of ray tracing - path tracing - is used. The rays only produce a single ray per bounce and do not follow a set line, but rather shoot off in a random direction. So, for greater reliability of the resulting image in the tracing path, instead of sending out one ray it sends out tens, hundreds or even thousands of rays. And, yet, it is still faster than classical ray tracing.*\
+*-- Yes, that's right. You see, after one ray bounces off an object, it can turn into 10 rays, and those 10 can turn into 100, 1000, and so on. So we get an exponential increase in the number of rays. It is possible to visualize one frame, but I dread to imagine how long it would take to calculate all these rays for several frames. For that reason, a less complicated version of ray tracing - path tracing - is used. The rays only produce a single ray per bounce and do not follow a set line, but rather shoot off in a random direction. So, for greater reliability of the resulting image in the tracing path, instead of sending out one ray it sends out tens, hundreds or even thousands of rays. And, yet, it is still faster than classical ray tracing.* \
 *And even despite this acceleration, people still come up with various ways to speed up the algorithm even more: reduced rendering resolution when bouncing rays, limitations on the distance to which they can escape, and so on.*
 
 *-- And what about the quality of the algorithms? Shouldn't ray tracing produce higher quality renders?*
@@ -21,22 +75,21 @@ Implementation of 3DViewer v2.2
 
 Buffering 15%... 35%.. 50%.. 77%...
 
-## Introduction
+### Introduction
 
 In this project you’ll need to modify the application developed in the 3D Viewer v2.1 project. The new version should render a three-dimensional scene using ray tracing.
 
+### Chapter II
 
-## Chapter II
+### Information
 
-## Information
-
-### Historical background
+#### Historical background
 
 Originally, computer graphics focused on imitating the visual characteristics of objects. This included the visibility and shading of object polygons by certain approaches to achieve a result similar to reality. However, with the introduction of ray tracing comes the idea of applying concepts and models that have a real physical meaning to computer graphics. They decided to try rendering images by taking into account the reflection and refraction of light coming from light sources. Yet developers Arthur Appel, Robert Goldstein and Roger Nagel, who first attempted rendering by ray tracing in the early 60s, and who were severely limited in resources and technology, came to the conclusion that it was not necessary to trace all rays coming from a light source. The only rays relevant to rendering are those that enter the observer's "eye". Given the laws of optics (e.g., the fact that the angle of incidence is equal to the angle of reflection) it is quite easy to show that if you trace the rays backwards, the result will be almost the same, but it will take significantly fewer resources. Hence, in 1963 at the University of Maryland the first image using ray tracing was obtained.
 
 Later, more complex raytracing models began to appear, taking into account global illumination, indirect illumination from other objects, refraction, and more. Ray tracing is what has become a long-established algorithm for photorealistic images in computer graphics.
 
-### Rendering with ray tracing
+#### Rendering with ray tracing
 
 The ray-tracing algorithm, with its conceptual simplicity, involves a lot of calculations, the number of which depends on the accuracy degree in modelling the rays' travel through the scene. As already mentioned, backward ray tracing is used in practice, i.e. the rays come from the observer's eye, as in the case of ray casting. However, the difference between these two methods is quite significant, although some of the authors of study guides see the two methods as synonymous.
 
@@ -44,10 +97,9 @@ With backwards ray tracing, the rays emitted from the observer not only determin
 
 Read more about rendering with ray tracing in the materials.
 
+### Chapter III
 
-## Chapter III
-
-## Part 1. 3DViewer v2.2
+### Part 1. 3DViewer v2.2
 
 Modify 3DViewer v2.1.
 
@@ -66,12 +118,12 @@ Modify 3DViewer v2.1.
   - Toggle the type of object display: wireframe model, flat shading, smooth shading (by Gouraud or Phong methods)
   - Set a directional light source with the corresponding characteristics (position, intensity and color via 3 RGB components), set the global illumination (intensity and color via 3 RGB components).
   - Render an image into a separate file in bmp, jpeg or png format by ray tracing with a user-specified resolution (up to 1920x1440) image by pressing the button; after rendering, the image should be displayed in a separate preview window in the GUI
-  -  Enable or disable the display of the "floor" - the plane on which the model is placed by default
+  - Enable or disable the display of the "floor" - the plane on which the model is placed by default
   - Add up to 5 additional models to the scene. Provide the ability to switch between models to apply affine transformations and change properties for each specific model
   - Set visual properties of the object: coefficient of transparency, refraction, reflection, surface roughness
-- GUI implementation, based on any GUI library with API for C++ 
-  * For Linux: GTK+, CEF, Qt, JUCE
-  * For Mac: GTK+, CEF, Qt, JUCE, SFML, Nanogui, Nngui
+- GUI implementation, based on any GUI library with API for C++
+  - For Linux: GTK+, CEF, Qt, JUCE
+  - For Mac: GTK+, CEF, Qt, JUCE, SFML, Nanogui, Nngui
 - The graphical user interface must contain:
   - A button to select the model file and a field to output its name.
   - A scene visualization area.
@@ -92,15 +144,15 @@ Modify 3DViewer v2.1.
 - Classes must be implemented within the `s21` namespace
 - To perform affine transformations, you can use the matrices from the library of the previous s21_matrix+ project
 
-## Part 2. Bonus. Settings
+### Part 2. Bonus. Settings
 
 - The program must allow customizing the type of projection (parallel and central)
 - The program must allow setting up the type (solid, dashed), color and thickness of the edges, display method (none, circle, square), color and size of the vertices
 - The program must allow choosing the background color
-  -The program must allow selecting the base color of the object
+- The program must allow selecting the base color of the object
 - Settings must be saved between program restarts
 - Provide the ability to add up to 5 new point light sources with the setting of their own parameters (position, intensity and color through three RGB components)
 
-## Part 3. Bonus. Optimization
+### Part 3. Bonus. Optimization
 
-- Implement partitioning of the scene space using the KD-tree and optimize the search for intersections of rays with scene objects through a binary tree search 
+- Implement partitioning of the scene space using the KD-tree and optimize the search for intersections of rays with scene objects through a binary tree search

@@ -33,15 +33,15 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 ### `c/`
 
-| Subproject         | A | B | C | D | E | F | G | H | Flagship | Notes |
-| ------------------ | - | - | - | - | - | - | - | - | -------- | ----- |
-| `3DViewer_v1.0`    | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present |
-| `SimpleBashUtils`  | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present |
-| `s21_decimal`      | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present |
-| `s21_math`         | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present |
-| `s21_matrix`       | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present |
-| `s21_string+`      | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present |
-| `SmartCalc_v1.0`   | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ | ⚠        | disk/index drift — Phase 1 op 1.1 |
+| Subproject         | A | B | C | D | E | F | G | H | Flagship | Notes                                                       |
+| ------------------ | - | - | - | - | - | - | - | - | -------- | ----------------------------------------------------------- |
+| `3DViewer_v1.0`    | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present                                    |
+| `SimpleBashUtils`  | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present                                    |
+| `s21_decimal`      | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present                                    |
+| `s21_math`         | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present                                    |
+| `s21_matrix`       | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present                                    |
+| `s21_string+`      | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present                                    |
+| `SmartCalc_v1.0`   | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | School 21 README present; rename resolved (commit a6744d9d) |
 
 ### `career_track/`
 
@@ -99,9 +99,9 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 ### `python/`
 
-| Subproject  | A | B | C | D | E | F | G | H | Flagship | Notes |
-| ----------- | - | - | - | - | - | - | - | - | -------- | ----- |
-| `bootcamp`  | ✗ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | README2.md to be merged here — Phase 1 op 1.5 |
+| Subproject  | A | B | C | D | E | F | G | H | Flagship | Notes                                                       |
+| ----------- | - | - | - | - | - | - | - | - | -------- | ----------------------------------------------------------- |
+| `bootcamp`  | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | README adopted from former root README2.md (op 1.5)         |
 
 ### `qa/`
 

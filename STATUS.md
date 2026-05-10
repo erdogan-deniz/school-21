@@ -36,7 +36,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject  | A | B | C | D | E | F | G | H | Flagship | Notes |
 | ----------- | - | - | - | - | - | - | - | - | -------- | ----- |
-| `python/`   | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |          |       |
+| `python/maze` | ✓ | ✗ | ◐ | ◐ | ✓ | ◐ | ✗ | ✗ |          | README templated; covered by python.yml ruff job |
 
 ### `c/`
 
@@ -133,7 +133,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Track                | Subprojects | DoD cells filled | % done   |
 | -------------------- | ----------- | ---------------- | -------- |
-| `algorithms/`        | 1           | 0 / 8            | 0 %      |
+| `algorithms/`        | 1           | 3 / 8            | 38 %     |
 | `c/`                 | 7           | 25.5 / 56        | 46 %     |
 | `career_track/`      | 9           | 9 / 72           | 13 %     |
 | `cpp/`               | 6           | 21 / 48          | 44 %     |
@@ -145,7 +145,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `qa/`                | 2           | 0 / 16           | 0 %      |
 | `sql/`               | 1           | 1 / 8            | 13 %     |
 | `survival_camp/`     | 1           | 0 / 8            | 0 %      |
-| **Total**            | **37**      | **67 / 296**     | **23 %** |
+| **Total**            | **37**      | **70 / 296**     | **24 %** |
 
 > "DoD cells filled" counts ✓ as 1 and ◐ as 0.5. The "School 21
 > License" placeholders count ◐ for the F column — they are

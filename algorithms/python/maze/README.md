@@ -1,4 +1,65 @@
-# Maze
+# `algorithms/python/maze`
+
+[![CI](https://github.com/Deniz211/school-21/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/python.yml)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../../LICENSE)
+
+> *Python maze + cave generator/renderer/solver — Eller's algorithm for perfect mazes, cellular-automaton caves, A* / Q-learning agents, GUI + web interface.*
+
+## Quick start
+
+```bash
+cd algorithms/python/maze
+
+# Install in editable mode
+pip install -e .
+
+# Run the test suite (pytest)
+pytest -v
+
+# Lint (ruff respects the repo-wide .ruff.toml)
+ruff check .
+
+# Open the GUI (target depends on Makefile setup)
+make all
+```
+
+For a fully reproducible environment, use Python 3.12 inside a Linux container —
+see [`.github/workflows/python.yml`](../../../.github/workflows/python.yml) for
+the canonical install line.
+
+## Demo
+
+> **TODO** — short asciinema cast of generating a 50×50 maze with Eller's algorithm and the Q-learning agent solving it is planned in the python/ Phase 2 demo slice.
+
+## Documentation
+
+- [Maze description](#maze-description), [Generation using a cellular automaton](#generation-using-a-cellular-automaton),
+  [Caves description](#caves-description) sections below.
+- Sphinx HTML docs: planned in the docs slice (Sphinx already in use elsewhere
+  in the bootcamp — Day 07).
+- API reference under `docs/`.
+
+## Tests
+
+- Framework: **pytest**.
+- Coverage targets per task: maze generation module, maze solving module,
+  cave generation module, agent training module — all with full unit-test
+  coverage per the original requirements.
+- Run: `pytest -v` from the project root.
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../../LICENSE).
+
+The `LICENSE` file inside this subproject is preserved as educational
+attribution and historical artefact; it does not override the repo-wide MIT
+licence.
+
+---
+
+## Original task (School 21)
 
 ![Project header](content/images/project_header.jpg)
 

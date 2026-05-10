@@ -6,6 +6,9 @@ on:
     paths:
       - 'python/**'
       - 'algorithms/python/**'
+      - 'data_science/**'
+      - 'machine_learning/**'
+      - 'qa/**'
       - '.ruff.toml'
       - '.github/workflows/python.yml'
   pull_request:
@@ -13,6 +16,9 @@ on:
     paths:
       - 'python/**'
       - 'algorithms/python/**'
+      - 'data_science/**'
+      - 'machine_learning/**'
+      - 'qa/**'
       - '.ruff.toml'
       - '.github/workflows/python.yml'
   workflow_dispatch:
@@ -37,9 +43,9 @@ jobs:
       - name: Install ruff
         run: python -m pip install --upgrade pip ruff==0.6.9
       - name: Lint
-        run: ruff check python/ algorithms/python/ || true
+        run: ruff check python/ algorithms/python/ data_science/ machine_learning/ qa/ || true
       - name: Format check
-        run: ruff format --check python/ algorithms/python/ || true
+        run: ruff format --check python/ algorithms/python/ data_science/ machine_learning/ qa/ || true
 
   pytest:
     name: pytest (${{ matrix.day }})

@@ -13,21 +13,27 @@
 
 ## Definition of Done — checklist
 
-- [ ] **A.** README adopts the repo template (production fold + preserved task)
-- [ ] **B.** Unit tests + coverage % visible in README
-- [ ] **C.** GitHub Actions CI green + badge in README
-- [ ] **D.** Linter / formatter applied
-- [ ] **E.** Reproducible build (Dockerfile or Makefile — one command)
-- [ ] **F.** `LICENSE` present (MIT root + School 21 placeholder kept)
-- [ ] **G.** Demo (gif / screenshot / asciinema)
-- [ ] **H.** Doxygen / Sphinx API docs
+- [x] **A.** Top-level `data_science/bootcamp/README.md` adopts the repo template (per-day index)
+- [ ] **B.** Per-day pytest TBD (no day in this bootcamp ships test files yet)
+- [~] **C.** Covered by `python.yml` ruff job (lint over `data_science/`)
+- [~] **D.** Repo-wide `.ruff.toml`; deliberate format pass pending
+- [ ] **E.** Per-day reproducible build varies (notebooks vs scripts vs venvs)
+- [~] **F.** Root MIT `LICENSE` ✓; per-day `LICENSE` files preserved as School 21 placeholders
+- [ ] **G.** Demo (asciinema) — choose a representative day (Day 06 SQL or Day 08 ML)
+- [ ] **H.** Sphinx HTML for the bootcamp as a whole
+
+> Legend: `[x]` done · `[~]` partial / pending follow-up · `[ ]` not started.
 
 ## Subproject-specific tasks
 
-- [ ] (placeholder — fill in during per-subproject review)
+- [ ] Adopt the repo README template per-day (10 days + 2 team projects).
+- [ ] Backfill pytest for at least 2-3 days (most likely Day 04 NumPy or Day 05 pandas).
+- [ ] Confirm `charisel/` venv eviction (commit 554dc46a) didn't leave stragglers in other days.
+- [ ] Cross-link Day 06 SQL day with `sql/bootcamp` once that subproject lands.
 
 ## History
 
 <!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/Deniz211/school-21/commit/<sha>)) -->
 
-- *(no entries yet)*
+- 2026-05-11: Committed virtualenv (`charisel/`) evicted from index ([554dc46a](https://github.com/Deniz211/school-21/commit/554dc46a)).
+- 2026-05-11: Top-level README created from repo template + day-by-day index; `python.yml` extended to lint `data_science/` (this commit).

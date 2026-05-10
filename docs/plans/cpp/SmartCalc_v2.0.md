@@ -13,21 +13,27 @@
 
 ## Definition of Done — checklist
 
-- [ ] **A.** README adopts the repo template (production fold + preserved task)
-- [ ] **B.** Unit tests + coverage % visible in README
-- [ ] **C.** GitHub Actions CI green + badge in README
-- [ ] **D.** Linter / formatter applied
-- [ ] **E.** Reproducible build (Dockerfile or Makefile — one command)
-- [ ] **F.** `LICENSE` present (MIT root + School 21 placeholder kept)
-- [ ] **G.** Demo (gif / screenshot / asciinema)
-- [ ] **H.** Doxygen / Sphinx API docs
+- [x] **A.** README adopts the repo template (production fold + preserved task)
+- [ ] **B.** Unit tests — `src/UnitTests/`, coverage badge pending
+- [~] **C.** C++-only test job in `cpp.yml` `apps-cpp-tests` matrix; Qt-aware GUI build job pending
+- [~] **D.** Repo-wide `.clang-format`; deliberate format pass pending
+- [~] **E.** `make install` requires Qt6 / qmake
+- [~] **F.** Root MIT `LICENSE` ✓; subproject `LICENSE` is the School 21 placeholder (kept by design)
+- [ ] **G.** Demo (gif) — RPN evaluation + `f(x)` plot in action
+- [ ] **H.** Doxygen API reference
+
+> Legend: `[x]` done · `[~]` partial / pending follow-up · `[ ]` not started.
 
 ## Subproject-specific tasks
 
-- [ ] (placeholder — fill in during per-subproject review)
+- [ ] Document MVC layering (Model/Controller/View) in README + Doxygen.
+- [ ] Cross-test the calculator model against `c/SmartCalc_v1.0` reference outputs.
+- [ ] Add Qt-aware CI job for the GUI build.
+- [ ] Decide flagship status — strong candidate (packaged-release potential).
 
 ## History
 
 <!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/Deniz211/school-21/commit/<sha>)) -->
 
-- *(no entries yet)*
+- 2026-05-11: Included in `cpp.yml` `apps-cpp-tests` matrix ([cc0ebb33](https://github.com/Deniz211/school-21/commit/cc0ebb33)).
+- 2026-05-11: README adopted from repo template + Original task preserved (this commit).

@@ -13,21 +13,27 @@
 
 ## Definition of Done — checklist
 
-- [ ] **A.** README adopts the repo template (production fold + preserved task)
-- [ ] **B.** Unit tests + coverage % visible in README
-- [ ] **C.** GitHub Actions CI green + badge in README
-- [ ] **D.** Linter / formatter applied
-- [ ] **E.** Reproducible build (Dockerfile or Makefile — one command)
-- [ ] **F.** `LICENSE` present (MIT root + School 21 placeholder kept)
-- [ ] **G.** Demo (gif / screenshot / asciinema)
-- [ ] **H.** Doxygen / Sphinx API docs
+- [x] **A.** README adopts the repo template (production fold + preserved task)
+- [ ] **B.** Unit tests + coverage % visible in README — tests exist (`s21_string_test.c`), coverage badge pending
+- [~] **C.** GitHub Actions CI in `c.yml` matrix (informational); flip to green-gating after slice 4
+- [~] **D.** Repo-wide `.clang-format`; deliberate format pass pending (slice 4)
+- [x] **E.** `make` target reproducible on the canonical Linux toolchain
+- [~] **F.** Root MIT `LICENSE` ✓; subproject `LICENSE` is the School 21 placeholder (kept by design)
+- [ ] **G.** Demo (gif / screenshot / asciinema) — `sprintf` formatter showcase
+- [ ] **H.** Doxygen API reference
+
+> Legend: `[x]` done · `[~]` partial / pending follow-up · `[ ]` not started.
 
 ## Subproject-specific tasks
 
-- [ ] (placeholder — fill in during per-subproject review)
+- [ ] Verify `sprintf` against glibc reference for the full flag × width × precision × length matrix.
+- [ ] Cross-platform `strerror` table (Linux vs macOS sys_errlist) — confirm both branches still build.
+- [ ] Add Doxygen comments for `s21_string.h`.
+- [ ] Embed coverage badge in README from `make gcov_report`.
 
 ## History
 
 <!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/Deniz211/school-21/commit/<sha>)) -->
 
-- *(no entries yet)*
+- 2026-05-11: README adopted from repo template + Original task preserved (this commit).
+- 2026-05-11: Included in `c.yml` build/test matrix ([8c5bd24d](https://github.com/Deniz211/school-21/commit/8c5bd24d)).

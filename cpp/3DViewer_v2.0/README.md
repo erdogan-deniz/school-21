@@ -1,10 +1,68 @@
-# 3DViewer v2.0
+# `3DViewer_v2.0`
+
+[![CI](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *Object-oriented C++ rewrite of [3DViewer v1.0](../../c/3DViewer_v1.0/) — Qt-based desktop viewer for `.obj` wireframe models, organised under MVC + at least three additional design patterns.*
+
+## Quick start
+
+```bash
+cd cpp/3DViewer_v2.0/src
+
+# Build the Qt GUI (requires Qt + qmake on PATH)
+make install
+
+# Uninstall
+make uninstall
+
+# Run the C++-only test suite (no Qt needed)
+make tests
+```
+
+For a fully reproducible environment, build inside a Linux container with the
+School 21 toolchain (`g++17`, `libgtest-dev` + googletest, `lcov`) plus
+`qt6-base-dev` for the GUI portion. The C++-only test job is wired into
+[`.github/workflows/cpp.yml`](../../.github/workflows/cpp.yml); a Qt-aware
+GUI job is planned in the cpp/ Phase 2 follow-up.
+
+## Demo
+
+> **TODO** — short GIF of orbiting a 1M-vertex `.obj` model is planned in the cpp/ Phase 2 demo slice.
+
+## Documentation
+
+- [MVC pattern usage](#information) section below — there should be ≥ 3 design
+  patterns in addition to MVC (e.g. Facade, Strategy, Command).
+- Source layout: `src/3DViewer/` (Qt UI), `src/tests/` (GoogleTest).
+- Doxygen API reference: planned in the cpp/ Phase 2 docs slice.
+
+## Tests
+
+- Framework: **GoogleTest** for the C++-only model + affine-transform layer.
+- GUI smoke tests: planned via `xvfb-run` in the Qt-aware CI follow-up.
+- Performance contract: UI responsive (no >0.5 s freeze) for models up to
+  1,000,000 vertices.
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+The `LICENSE` file inside this subproject (`# School 21 License`) is preserved
+as educational attribution and historical artefact; it does not override the
+repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
 
 Implementation of 3DViewer v2.0
 
 The russian version of the task can be found in the repository.
 
-## Contents
+### Contents
 
 1. [Chapter I](#chapter-i) \
    1.1. [Introduction](#introduction)
@@ -15,7 +73,7 @@ The russian version of the task can be found in the repository.
    3.2. [Part 2](#part-2-bonus-settings) \
    3.3. [Part 3](#part-3-bonus-record)
 
-## Chapter I
+### Chapter I
 
 ![3dviewer2.0](misc/images/3dviewer2.0.PNG)
 
@@ -29,20 +87,20 @@ Somewhere near a coffee machine in the 90s:
 
 *- You know, I think the same. I even have several ideas somewhere.*
 
-*-- I think we should start with the most important thing - the preview screen. Good luck!* - having said these words, Lasseter finished his coffee, washed his mug and left the break room, leaving you alone with your thoughts. The door closed slowly after he had gone, leaving only the painfully familiar white glow in the cracks.
+*-- I think we should start with the most important thing - the preview screen. Good luck!* — having said these words, Lasseter finished his coffee, washed his mug and left the break room, leaving you alone with your thoughts. The door closed slowly after he had gone, leaving only the painfully familiar white glow in the cracks.
 
-*- It would be convenient to prepare several rendering strategies in advance...* - you said thoughtfully out loud, - *And also hide all the business logic implementation behind some kind of facade, then it will be easier to work with the UI. And commands to handle user actions, right, right...* - the sudden sound of a dial-up modem somewhere in the distance distracted you from your thoughts. You had to urgently discuss the task with the team and design the architecture of the future application. Time waits for no one! \
+*- It would be convenient to prepare several rendering strategies in advance...* — you said thoughtfully out loud, — *And also hide all the business logic implementation behind some kind of facade, then it will be easier to work with the UI. And commands to handle user actions, right, right...* — the sudden sound of a dial-up modem somewhere in the distance distracted you from your thoughts. You had to urgently discuss the task with the team and design the architecture of the future application. Time waits for no one! \
 You opened the door and a bright light flooded your face. Your determination is unshakable; the planned cartoon is destined to make history!
 
-## Introduction
+### Introduction
 
 In this project you’ll need to implement an application for viewing 3D wireframe models in C++ in the object-oriented programming paradigm, implementing the same functions as the previously developed application in 3DViewer v1.0 project.
 
-## Chapter II
+### Chapter II
 
-## Information
+### Information
 
-### Design patterns
+#### Design patterns
 
 Each human activity, such as cooking or nuclear physics experiments, has a set of established practices that deal with basic elementary tasks. They do not require an individual approach and are usually resolved by well-established approaches developed over time, based on the experience of previous cooks or nuclear physicists. For example, baking a pie, even an unusual one, will most likely require dough whose cooking technology is known in advance and usually does not need some creativity. It's the same with programming, when designing you often have elementary tasks that a huge number of programmers have faced before you, and their experience has developed into established design patterns.
 
@@ -59,9 +117,9 @@ The business logic domain is responsible for the main functionality of the syste
 
 You can see an example of a suggested class diagram for a business logic domain in materials.
 
-## Chapter III
+### Chapter III
 
-## Part 1. 3DViewer v2.0
+### Part 1. 3DViewer v2.0
 
 Develop a program to visualise the 3D wireframe models.
 
@@ -98,14 +156,14 @@ Develop a program to visualise the 3D wireframe models.
 
 *Note:* **Don't upload heavy files (>10 mb) to git.**
 
-## Part 2. Bonus. Settings
+### Part 2. Bonus. Settings
 
 - The program must allow customizing the type of projection (parallel and central)
 - The program must allow setting up the type (solid, dashed), color and thickness of the edges, display method (none, circle, square), color and size of the vertices
 - The program must allow choosing the background color
 - Settings must be saved between program restarts
 
-## Part 3. Bonus. Record
+### Part 3. Bonus. Record
 
 - The program must allow saving the captured (rendered) images as bmp and jpeg files.
 - The program must allow recording small screencasts - the current custom affine transformation of the loaded object into gif-animation (640x480, 10fps, 5s) by a special button

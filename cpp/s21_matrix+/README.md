@@ -1,10 +1,65 @@
-# s21_matrix+
+# `s21_matrix+`
+
+[![CI](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *Object-oriented C++ matrix library — `s21::S21Matrix` class with overloaded operators (`+`, `-`, `*`, `==`, `=`, `+=`, `-=`, `*=`, `(i, j)`), packaged as a static library `s21_matrix_oop.a`.*
+
+## Quick start
+
+```bash
+cd cpp/s21_matrix+/src
+
+# Build the static library
+make s21_matrix_oop.a
+
+# Build and run the GoogleTest suite
+make test
+./test
+```
+
+For a fully reproducible environment, build inside a Linux container with the
+School 21 toolchain (`g++`, `libgtest-dev` + googletest sources, `lcov`) — see
+[`.github/workflows/cpp.yml`](../../.github/workflows/cpp.yml) for the canonical
+install line.
+
+## Demo
+
+> **TODO** — terminal capture of representative `S21Matrix` operator usage is planned in the cpp/ Phase 2 demo slice.
+
+## Documentation
+
+- [Matrix operations](#matrix-operations) section below.
+- API headers: `src/s21_matrix_oop.h`.
+- Doxygen API reference: planned in the cpp/ Phase 2 docs slice.
+
+## Tests
+
+- Framework: **GoogleTest** ([google/googletest](https://github.com/google/googletest)).
+- Pattern: each `S21Matrix` method and overloaded operator verified against
+  hand-computed cases for square, rectangular, identity, triangular, and
+  degenerate matrices.
+- Run: `make test` (runs the suite immediately).
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+The `LICENSE` file inside this subproject (`# School 21 License`) is preserved
+as educational attribution and historical artefact; it does not override the
+repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
 
 Implementation of the s21_matrix_oop.h library.
 
 The russian version of the task can be found in the repository.
 
-## Contents
+### Contents
 
 1. [Chapter I](#chapter-i) \
     1.1. [Introduction](#introduction)
@@ -13,7 +68,7 @@ The russian version of the task can be found in the repository.
 3. [Chapter III](#chapter-iii) \
     3.1. [Part 1](#part-1-implementation-of-the-s21_matrix_ooph-library-functions)
 
-## Chapter I
+### Chapter I
 
 ![s21_matrix](misc/images/s21_matrix.png)
 
@@ -41,20 +96,20 @@ John is known for his technological and algorithmic ideas and tricks, which made
 
 *-- Perfect! Who knows, maybe……..*
 
-## Introduction
+### Introduction
 
 In this project, you will implement the matrix library that you already know from the **s21_matrix** project, but this time you will be using the object-oriented approach (see materials). The object-oriented approach allows to implement a library for matrices as a separate class whose objects have defined operations, that can be represented both as methods and as standard operators +, -, *, etc.
 
-## Chapter II
+### Chapter II
 
-## Information
+### Information
 
-### C++ and C
+#### C++ and C
 
 C++ is a programming language based on the C language for implementing programs using an object-oriented approach. This means that the C++ syntax rules are directly derived from C, and so, most of the C code can be copied into programs with C++ and successfully compiled.
 For the most part, C++ only adds new opportunities for the programmer or modifies them rather than removes something, so when it comes to C++, it's easier to talk about the differences (see materials) than the similarities.
 
-### An example of a matrix class in C++
+#### An example of a matrix class in C++
 
 ```cpp
 class S21Matrix {
@@ -67,22 +122,22 @@ class S21Matrix {
         S21Matrix();              // Default constructor
         ~S21Matrix();             // Destructor
 
-        void SumMatrix(const S21Matrix& other); 
+        void SumMatrix(const S21Matrix& other);
         // Other methods..
 }
 ```
 
-### A reminder of the matrix basics
+#### A reminder of the matrix basics
 
 Matrix is a rectangular table of numbers arranged in m rows and n columns
 
-```
+```text
     1 2 3
 A = 4 5 6
     7 8 9
 ```
 
-```
+```text
      1  2  3  4
 В =  5  6  7  8
      9 10 11 12
@@ -96,51 +151,51 @@ The main diagonal of a square matrix is the diagonal from the upper left to the 
 A rectangular matrix (B) is a matrix with the number of rows not equal to the number of columns. \
 A square matrix (A) is a matrix with the number of rows equal to the number of columns.
 
-## Matrix operations
+### Matrix operations
 
 There is a brief description of the matrix operations below that need to be implemented in the developing library.
 They are similar to the operations you performed earlier in «structured programming», so you can see a more detailed description of them there.
 Note that some operations have exceptional situations that require special handling using the exception mechanism.
 
-| Operation | Description | Exceptional situations |
-| ----------- | ----------- | ----------- |
-| `bool EqMatrix(const S21Matrix& other)` | Checks matrices for equality with each other |  |
-| `void SumMatrix(const S21Matrix& other)` | Adds the second matrix to the current one | different matrix dimensions |
-| `void SubMatrix(const S21Matrix& other)` | Subtracts another matrix from the current one | different matrix dimensions |
-| `void MulNumber(const double num)` | Multiplies the current matrix by a number |  |
-| `void MulMatrix(const S21Matrix& other)` | Multiplies the current matrix by the second matrix | the number of columns of the first matrix is not equal to the number of rows of the second matrix |
-| `S21Matrix Transpose()` | Creates a new transposed matrix from the current one and returns it |  |
-| `S21Matrix CalcComplements()` | Calculates the algebraic addition matrix of the current one and returns it | the matrix is not square |
-| `double Determinant()` | Calculates and returns the determinant of the current matrix | the matrix is not square |
-| `S21Matrix InverseMatrix()` | Calculates and returns the inverse matrix | matrix determinant is 0 |
+| Operation                                | Description                                                         | Exceptional situations                                                                            |
+| ---------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `bool EqMatrix(const S21Matrix& other)`  | Checks matrices for equality with each other                        |                                                                                                   |
+| `void SumMatrix(const S21Matrix& other)` | Adds the second matrix to the current one                           | different matrix dimensions                                                                       |
+| `void SubMatrix(const S21Matrix& other)` | Subtracts another matrix from the current one                       | different matrix dimensions                                                                       |
+| `void MulNumber(const double num)`       | Multiplies the current matrix by a number                           |                                                                                                   |
+| `void MulMatrix(const S21Matrix& other)` | Multiplies the current matrix by the second matrix                  | the number of columns of the first matrix is not equal to the number of rows of the second matrix |
+| `S21Matrix Transpose()`                  | Creates a new transposed matrix from the current one and returns it |                                                                                                   |
+| `S21Matrix CalcComplements()`            | Calculates the algebraic addition matrix and returns it             | the matrix is not square                                                                          |
+| `double Determinant()`                   | Calculates and returns the determinant of the current matrix        | the matrix is not square                                                                          |
+| `S21Matrix InverseMatrix()`              | Calculates and returns the inverse matrix                           | matrix determinant is 0                                                                           |
 
 Apart from those operations, you also need to implement constructors and destructors:
 
-| Method | Description |
-| ----------- | ----------- |
-| `S21Matrix()` | A basic constructor that initialises a matrix of some predefined dimension |  
-| `S21Matrix(int rows, int cols)` | Parametrized constructor with number of rows and columns |
-| `S21Matrix(const S21Matrix& other)` | Copy constructor |
-| `S21Matrix(S21Matrix&& other)` | Move constructor |
-| `~S21Matrix()` | Destructor |
+| Method                              | Description                                                                |
+| ----------------------------------- | -------------------------------------------------------------------------- |
+| `S21Matrix()`                       | A basic constructor that initialises a matrix of some predefined dimension |
+| `S21Matrix(int rows, int cols)`     | Parametrized constructor with number of rows and columns                   |
+| `S21Matrix(const S21Matrix& other)` | Copy constructor                                                           |
+| `S21Matrix(S21Matrix&& other)`      | Move constructor                                                           |
+| `~S21Matrix()`                      | Destructor                                                                 |
 
 And you also need to overload the following operators, partly corresponding to the operations above:
 
-| Operator | Description | Exceptional situations |
-| ----------- | ----------- | ----------- |
-| `+`      | Addition of two matrices | different matrix dimensions |
-| `-`   | Subtraction of one matrix from another | different matrix dimensions |
-| `*`  | Matrix multiplication and matrix multiplication by a number | the number of columns of the first matrix does not equal the number of rows of the second matrix |
-| `==`  | Checks for matrices equality (`EqMatrix`) | |
-| `=`  | Assignment of values from one matrix to another one | |
-| `+=`  | Addition assignment (`SumMatrix`) | different matrix dimensions |
-| `-=`  | Difference assignment (`SubMatrix`) | different matrix dimensions |
-| `*=`  | Multiplication assignment (`MulMatrix`/`MulNumber`) | the number of columns of the first matrix does not equal the number of rows of the second matrix |
-| `(int i, int j)`  | Indexation by matrix elements (row, column) | index is outside the matrix |
+| Operator         | Description                                                 | Exceptional situations                                                                            |
+| ---------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `+`              | Addition of two matrices                                    | different matrix dimensions                                                                       |
+| `-`              | Subtraction of one matrix from another                      | different matrix dimensions                                                                       |
+| `*`              | Matrix multiplication and matrix multiplication by a number | the number of columns of the first matrix does not equal the number of rows of the second matrix |
+| `==`             | Checks for matrices equality (`EqMatrix`)                   |                                                                                                   |
+| `=`              | Assignment of values from one matrix to another one         |                                                                                                   |
+| `+=`             | Addition assignment (`SumMatrix`)                           | different matrix dimensions                                                                       |
+| `-=`             | Difference assignment (`SubMatrix`)                         | different matrix dimensions                                                                       |
+| `*=`             | Multiplication assignment (`MulMatrix`/`MulNumber`)         | the number of columns of the first matrix does not equal the number of rows of the second matrix |
+| `(int i, int j)` | Indexation by matrix elements (row, column)                 | index is outside the matrix                                                                       |
 
-## Chapter III
+### Chapter III
 
-## Part 1. Implementation of the s21_matrix_oop.h library functions
+### Part 1. Implementation of the s21_matrix_oop.h library functions
 
 - The program must be developed in C++ language of C++17 standard using gcc compiler
 - The program code must be located in the src folder

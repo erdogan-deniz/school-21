@@ -1,4 +1,50 @@
-# Linux Network
+# `devops/linux_network`
+
+[![CI](https://github.com/Deniz211/school-21/actions/workflows/devops.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/devops.yml)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *Linux networking on VMs — `ipcalc`, static + dynamic routing, `iperf3` benchmarks, `iptables` firewall, DHCP, NAT (SNAT + DNAT), SSH local/remote tunnels.*
+
+## Quick start
+
+This subproject is **report-driven**: the artefact is a Markdown report under
+`src/` documenting the 8 networking tasks, plus VM `etc/netplan/`, `firewall.sh`,
+and `dhcpd.conf` snippets in `materials/`.
+
+```bash
+# Read the assembled report
+ls src/
+ls materials/
+```
+
+## Demo
+
+> **TODO** — short asciinema cast of the multi-VM static-routing demo (Part 5) is planned in the devops/ Phase 2 demo slice.
+
+## Documentation
+
+- Per-part report under `src/` (Markdown, with screenshots).
+- Sample firewall rules / netplan configs under `materials/`.
+
+## Tests
+
+- shellcheck linting in [`.github/workflows/devops.yml`](../../.github/workflows/devops.yml).
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+The `LICENSE` file inside this subproject (`# School 21 License`) is preserved
+as educational attribution and historical artefact; it does not override the
+repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
+
+### Linux Network
 
 Linux networks configuration on virtual machines.
 

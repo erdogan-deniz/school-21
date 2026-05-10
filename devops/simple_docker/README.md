@@ -1,4 +1,55 @@
-# Simple Docker
+# `devops/simple_docker`
+
+[![CI](https://github.com/Deniz211/school-21/actions/workflows/devops.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/devops.yml)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *Docker fundamentals — official `nginx` image operations (pull/run/inspect/exec/cp/export/import), custom C+FastCGI mini-server in a Dockerfile, Dockle security scan, multi-container Docker Compose.*
+
+## Quick start
+
+```bash
+cd devops/simple_docker/src
+
+# Build the custom image (Part 4)
+docker build -t school21/mini-server .
+
+# Run mapped to localhost:80
+docker run -d -p 80:81 --name mini school21/mini-server
+
+# Or via Docker Compose (Part 6)
+docker-compose build
+docker-compose up
+```
+
+## Demo
+
+> **TODO** — short asciinema cast of `docker-compose up` and the `localhost:80` page response is planned in the devops/ Phase 2 demo slice.
+
+## Documentation
+
+- Per-part report under `src/` (Markdown, with screenshots).
+- `Dockerfile`, `docker-compose.yml`, `nginx/nginx.conf` under `src/`.
+
+## Tests
+
+- hadolint Dockerfile linting in [`.github/workflows/devops.yml`](../../.github/workflows/devops.yml).
+- Dockle security scan is part of the original task (Part 5) — run locally per the project's report.
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+The `LICENSE` file inside this subproject (`# School 21 License`) is preserved
+as educational attribution and historical artefact; it does not override the
+repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
+
+### Simple Docker
 
 Introduction to docker. Developing a simple docker image for your own server.
 

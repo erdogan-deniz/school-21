@@ -86,11 +86,11 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject              | A | B | C | D | E | F | G | H | Flagship | Notes |
 | ----------------------- | - | - | - | - | - | - | - | - | -------- | ----- |
-| `ci_cd`                 | ✗ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          |       |
-| `linux`                 | ✗ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          |       |
-| `linux_monitoring_v1.0` | ✗ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          |       |
-| `linux_network`         | ✗ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          |       |
-| `simple_docker`         | ✗ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          |       |
+| `ci_cd`                 | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | report-driven; shellcheck via devops.yml |
+| `linux`                 | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | report-driven; shellcheck via devops.yml |
+| `linux_monitoring_v1.0` | ✓ | ✗ | ◐ | ◐ | ✓ | ◐ | ✗ | ✗ |          | bash 0x/main.sh; shellcheck via devops.yml |
+| `linux_network`         | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | report-driven; shellcheck via devops.yml |
+| `simple_docker`         | ✓ | ✗ | ◐ | ◐ | ✓ | ◐ | ✗ | ✗ |          | docker-compose; hadolint via devops.yml  |
 
 ### `internship/`
 
@@ -138,14 +138,14 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `career_track/`      | 9           | 9 / 72           | 13 %     |
 | `cpp/`               | 6           | 21 / 48          | 44 %     |
 | `data_science/`      | 2           | 6 / 16           | 38 %     |
-| `devops/`            | 5           | 5 / 40           | 13 %     |
+| `devops/`            | 5           | 17 / 40          | 43 %     |
 | `internship/`        | 1           | 1 / 8            | 13 %     |
 | `machine_learning/`  | 1           | 0 / 8            | 0 %      |
 | `python/`            | 1           | 3.5 / 8          | 44 %     |
 | `qa/`                | 2           | 0 / 16           | 0 %      |
 | `sql/`               | 1           | 2.5 / 8          | 31 %     |
 | `survival_camp/`     | 1           | 0 / 8            | 0 %      |
-| **Total**            | **37**      | **76.5 / 296**   | **26 %** |
+| **Total**            | **37**      | **88.5 / 296**   | **30 %** |
 
 > "DoD cells filled" counts ✓ as 1 and ◐ as 0.5. The "School 21
 > License" placeholders count ◐ for the F column — they are

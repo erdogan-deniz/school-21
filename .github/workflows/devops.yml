@@ -1,0 +1,68 @@
+name: devops
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'devops/**'
+      - '.github/workflows/devops.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'devops/**'
+      - '.github/workflows/devops.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: devops-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  shellcheck:
+    name: shellcheck (bash lint)
+    runs-on: ubuntu-latest
+    continue-on-error: true  # informational until a deliberate format pass lands
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install shellcheck
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y shellcheck
+      - name: Lint
+        run: |
+          mapfile -t files < <(find devops/ \( -name '*.sh' -o -name '*.bash' \))
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "No shell scripts found."
+            exit 0
+          fi
+          echo "Checking ${#files[@]} files..."
+          shellcheck "${files[@]}" || true
+
+  hadolint:
+    name: hadolint (Dockerfile lint)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Find Dockerfiles
+        id: find
+        run: |
+          files=$(find devops/ -name 'Dockerfile*' -not -path '*/.git/*' || true)
+          if [ -z "$files" ]; then
+            echo "no_files=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "no_files=false" >> "$GITHUB_OUTPUT"
+            echo "files<<EOF" >> "$GITHUB_OUTPUT"
+            echo "$files" >> "$GITHUB_OUTPUT"
+            echo "EOF" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Run hadolint
+        if: steps.find.outputs.no_files == 'false'
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          recursive: true
+          dockerfile: 'devops/**/Dockerfile*'
+          failure-threshold: warning

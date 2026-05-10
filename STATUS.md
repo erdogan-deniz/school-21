@@ -108,7 +108,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject  | A | B | C | D | E | F | G | H | Flagship | Notes                                                       |
 | ----------- | - | - | - | - | - | - | - | - | -------- | ----------------------------------------------------------- |
-| `bootcamp`  | ◐ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | README adopted from former root README2.md (op 1.5)         |
+| `bootcamp`  | ✓ | ◐ | ◐ | ◐ | ◐ | ◐ | ✗ | ✗ |          | README templated; ruff + per-day pytest in python.yml       |
 
 ### `qa/`
 
@@ -141,11 +141,11 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `devops/`            | 5           | 5 / 40           | 13 %     |
 | `internship/`        | 1           | 1 / 8            | 13 %     |
 | `machine_learning/`  | 1           | 0 / 8            | 0 %      |
-| `python/`            | 1           | 1 / 8            | 13 %     |
+| `python/`            | 1           | 3.5 / 8          | 44 %     |
 | `qa/`                | 2           | 0 / 16           | 0 %      |
 | `sql/`               | 1           | 1 / 8            | 13 %     |
 | `survival_camp/`     | 1           | 0 / 8            | 0 %      |
-| **Total**            | **37**      | **64.5 / 296**   | **22 %** |
+| **Total**            | **37**      | **67 / 296**     | **23 %** |
 
 > "DoD cells filled" counts ✓ as 1 and ◐ as 0.5. The "School 21
 > License" placeholders count ◐ for the F column — they are

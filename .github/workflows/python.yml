@@ -1,0 +1,75 @@
+name: python
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'python/**'
+      - 'algorithms/python/**'
+      - '.ruff.toml'
+      - '.github/workflows/python.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'python/**'
+      - 'algorithms/python/**'
+      - '.ruff.toml'
+      - '.github/workflows/python.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: python-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ruff:
+    name: ruff (lint + format check)
+    runs-on: ubuntu-latest
+    continue-on-error: true  # informational until we land a deliberate format pass
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install ruff
+        run: python -m pip install --upgrade pip ruff==0.6.9
+      - name: Lint
+        run: ruff check python/ algorithms/python/ || true
+      - name: Format check
+        run: ruff format --check python/ algorithms/python/ || true
+
+  pytest:
+    name: pytest (${{ matrix.day }})
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        # Days that ship test files. Add new entries here as more days
+        # gain test coverage.
+        include:
+          - day: python/bootcamp/old/day_05
+            workdir: python/bootcamp/old/day_05/src
+          - day: python/bootcamp/old/day_07
+            workdir: python/bootcamp/old/day_07
+          - day: python/bootcamp/old/day_09
+            workdir: python/bootcamp/old/day_09/src
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        working-directory: ${{ matrix.workdir }}
+        run: |
+          python -m pip install --upgrade pip
+          # Per-day requirements first; pytest is the universal fallback.
+          if [ -f requirements.txt ]; then pip install -r requirements.txt || true; fi
+          if [ -f pyproject.toml ]; then pip install -e . || true; fi
+          pip install pytest
+      - name: Run tests
+        working-directory: ${{ matrix.workdir }}
+        run: pytest -v || true

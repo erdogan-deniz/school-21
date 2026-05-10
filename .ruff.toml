@@ -1,0 +1,51 @@
+# Repo-wide ruff configuration for school-21.
+#
+# Sane defaults for a polyglot, day-by-day educational repo: we keep the
+# ruleset modest so existing per-day code from years past doesn't drown
+# in style violations. Per-day pyproject.toml under python/bootcamp/new/
+# can tighten further; this file defines the floor.
+
+target-version = "py312"
+line-length = 100
+indent-width = 4
+
+extend-exclude = [
+    # User-committed virtualenvs (charisel was the worst, evicted in
+    # commit 554dc46a but might recur for other days).
+    "**/charisel/**",
+    "**/venv/**",
+    "**/.venv/**",
+    # Anything inside site-packages (vendored dependencies).
+    "**/site-packages/**",
+    # Build / cache directories.
+    "**/build/**",
+    "**/dist/**",
+    "**/__pycache__/**",
+    "**/.pytest_cache/**",
+    "**/.ruff_cache/**",
+    "**/.mypy_cache/**",
+    # Sphinx / docs builds.
+    "**/docs/_build/**",
+]
+
+[lint]
+# Modest ruleset: pycodestyle errors (E), pyflakes (F), warnings (W),
+# isort (I) for import order. Add B (bugbear), UP (pyupgrade) and SIM
+# once a deliberate format pass lands across all days.
+select = ["E", "F", "W", "I"]
+
+ignore = [
+    # E501 — line too long. Already loose via line-length=100; let
+    # the formatter handle wraps where it can.
+    "E501",
+]
+
+[lint.per-file-ignores]
+# Allow `print` and looser typing in bootcamp-day scripts.
+"python/bootcamp/**/*.py" = ["F401"]
+# Notebook helpers may legitimately use star imports.
+"**/__init__.py" = ["F401", "F403"]
+
+[format]
+quote-style = "double"
+indent-style = "space"

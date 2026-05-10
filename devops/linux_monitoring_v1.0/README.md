@@ -1,4 +1,50 @@
-# Linux Monitoring v1.0
+# `devops/linux_monitoring_v1.0`
+
+[![CI](https://github.com/Deniz211/school-21/actions/workflows/devops.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/devops.yml)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *Bash scripting suite for system & filesystem inspection — input validation, system summary (`HOSTNAME`, `RAM_*`, `SPACE_ROOT_*`), colourised output via configurable parameters / config file, deep filesystem traversal with size/hash/extension stats.*
+
+## Quick start
+
+```bash
+cd devops/linux_monitoring_v1.0/src
+
+# Each task is in its own 0x/ subfolder; main entry is main.sh.
+bash 01/main.sh some_text
+bash 02/main.sh                  # interactive: prompts to save .status file
+bash 03/main.sh 1 3 4 5          # parameter-based colour palette
+bash 04/main.sh                  # config-file-based colour palette
+bash 05/main.sh /var/log/        # deep filesystem report
+```
+
+## Demo
+
+> **TODO** — short asciinema cast of `02/main.sh` (system snapshot) and `05/main.sh` (filesystem report) is planned in the devops/ Phase 2 demo slice.
+
+## Documentation
+
+- Per-task entry under `src/0x/main.sh` (decomposed into helper scripts).
+
+## Tests
+
+- shellcheck linting in [`.github/workflows/devops.yml`](../../.github/workflows/devops.yml).
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+The `LICENSE` file inside this subproject (`# School 21 License`) is preserved
+as educational attribution and historical artefact; it does not override the
+repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
+
+### Linux Monitoring v1.0
 
 Linux basic bash scripting and system research.
 

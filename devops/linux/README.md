@@ -1,4 +1,48 @@
-# UNIX/Linux operating systems (Basic).
+# `devops/linux`
+
+[![CI](https://github.com/Deniz211/school-21/actions/workflows/devops.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/devops.yml)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *Ubuntu Server 20.04 administration basics — VirtualBox install, users, networking, sudo, SSHd, top/htop, fdisk/df/du/ncdu, syslog, CRON.*
+
+## Quick start
+
+This subproject is **report-driven**: the artefact is a Markdown report under
+`src/` describing each of the 15 administration tasks with screenshots. There
+is nothing to compile.
+
+```bash
+# Read the assembled report
+ls src/
+```
+
+## Demo
+
+> **TODO** — screenshot collage from the report (htop, sudo, CRON output) is planned in the devops/ Phase 2 demo slice.
+
+## Documentation
+
+- Per-part report under `src/` (Markdown, with screenshots).
+
+## Tests
+
+- shellcheck linting in [`.github/workflows/devops.yml`](../../.github/workflows/devops.yml) (covers any helper scripts in `src/`).
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+The `LICENSE` file inside this subproject (`# School 21 License`) is preserved
+as educational attribution and historical artefact; it does not override the
+repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
+
+### UNIX/Linux operating systems (Basic)
 
 Linux system installation and updates. Administration basics.
 

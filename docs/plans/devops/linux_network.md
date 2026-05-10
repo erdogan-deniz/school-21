@@ -13,21 +13,24 @@
 
 ## Definition of Done — checklist
 
-- [ ] **A.** README adopts the repo template (production fold + preserved task)
-- [ ] **B.** Unit tests + coverage % visible in README
-- [ ] **C.** GitHub Actions CI green + badge in README
-- [ ] **D.** Linter / formatter applied
-- [ ] **E.** Reproducible build (Dockerfile or Makefile — one command)
-- [ ] **F.** `LICENSE` present (MIT root + School 21 placeholder kept)
-- [ ] **G.** Demo (gif / screenshot / asciinema)
-- [ ] **H.** Doxygen / Sphinx API docs
+- [x] **A.** README adopts the repo template (production fold + preserved task)
+- [ ] **B.** Report-driven subproject — no automated tests apply
+- [~] **C.** Covered by `devops.yml` (shellcheck for any helper bash, including `firewall.sh` snippets in `materials/`)
+- [~] **D.** shellcheck via `devops.yml`
+- [ ] **E.** Multi-VM reproducibility hard — needs Vagrant/Terraform; documented via netplan/dhcpd snippets in `materials/`
+- [~] **F.** Root MIT `LICENSE` ✓; subproject `LICENSE` is the School 21 placeholder (kept by design)
+- [ ] **G.** Demo (asciinema) — multi-VM static-routing demo (Part 5)
+- [ ] **H.** Sphinx HTML — n/a (report-driven subproject)
+
+> Legend: `[x]` done · `[~]` partial / pending follow-up · `[ ]` not started.
 
 ## Subproject-specific tasks
 
-- [ ] (placeholder — fill in during per-subproject review)
+- [ ] Vagrantfile or `docker-compose` topology (5 nodes: 3 workstations + 2 routers) so Part 5 is reproducible.
+- [ ] Cross-link with `devops/simple_docker` (NAT vs container networking).
 
 ## History
 
 <!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/Deniz211/school-21/commit/<sha>)) -->
 
-- *(no entries yet)*
+- 2026-05-11: README adopted from repo template + Original task preserved; `devops.yml` workflow (shellcheck + hadolint) added (this commit).

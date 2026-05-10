@@ -13,21 +13,24 @@
 
 ## Definition of Done — checklist
 
-- [ ] **A.** README adopts the repo template (production fold + preserved task)
-- [ ] **B.** Unit tests + coverage % visible in README
-- [ ] **C.** GitHub Actions CI green + badge in README
-- [ ] **D.** Linter / formatter applied
-- [ ] **E.** Reproducible build (Dockerfile or Makefile — one command)
-- [ ] **F.** `LICENSE` present (MIT root + School 21 placeholder kept)
-- [ ] **G.** Demo (gif / screenshot / asciinema)
-- [ ] **H.** Doxygen / Sphinx API docs
+- [x] **A.** README adopts the repo template (production fold + preserved task)
+- [ ] **B.** Report-driven subproject — no automated tests apply
+- [~] **C.** Covered by `devops.yml` (shellcheck for any helper bash in `src/`)
+- [~] **D.** shellcheck via `devops.yml`
+- [ ] **E.** VirtualBox + Ubuntu 20.04 Server LTS image — not reproducible in CI; `materials/` documents the steps
+- [~] **F.** Root MIT `LICENSE` ✓; subproject `LICENSE` is the School 21 placeholder (kept by design)
+- [ ] **G.** Demo (screenshot collage) — htop + sudo + CRON output from the report
+- [ ] **H.** Sphinx HTML — n/a (report-driven subproject)
+
+> Legend: `[x]` done · `[~]` partial / pending follow-up · `[ ]` not started.
 
 ## Subproject-specific tasks
 
-- [ ] (placeholder — fill in during per-subproject review)
+- [ ] Add a Vagrantfile or cloud-init recipe so the Ubuntu Server admin tasks can be reproduced reproducibly.
+- [ ] Convert the per-task screenshots in the report into asciinema casts where applicable.
 
 ## History
 
 <!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/Deniz211/school-21/commit/<sha>)) -->
 
-- *(no entries yet)*
+- 2026-05-11: README adopted from repo template + Original task preserved; `devops.yml` workflow (shellcheck + hadolint) added (this commit).

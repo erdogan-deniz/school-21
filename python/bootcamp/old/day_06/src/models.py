@@ -20,7 +20,7 @@ class Spaceship(Base):
 
 # Class for officers:
 class Officer(Base):
-    __tablename__ = 'officers'
+    __tablename__ = "officers"
 
     first_name: Mapped[str]
     last_name: Mapped[str]
@@ -31,7 +31,7 @@ class Officer(Base):
 
 # Class of traitors:
 class Traitors(Base):
-    __tablename__ = 'traitors'
+    __tablename__ = "traitors"
 
     first_name: Mapped[str]
     last_name: Mapped[str]

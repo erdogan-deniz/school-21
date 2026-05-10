@@ -30,14 +30,14 @@ class Student:
 
         self.name: str = name
         self.gender: str = gender
-        self.status: str = 'In queue'
+        self.status: str = "In queue"
         self.finish_time: float | None = None
         self.queue_pos: int = queue_pos
 
     def __repr__(self) -> str:
         """Return an unambiguous representation for debugging."""
 
-        return f'Student(name={self.name!r}, status={self.status!r})'
+        return f"Student(name={self.name!r}, status={self.status!r})"
 
 
 class Examiner:
@@ -73,7 +73,7 @@ class Examiner:
         self.failed: int = 0
         self.work_time: float = 0.0
 
-    def __add__(self, other: 'Examiner') -> 'Examiner':
+    def __add__(self, other: "Examiner") -> "Examiner":
         """
         Aggregate two Examiner instances into one combined totals object.
 
@@ -86,7 +86,7 @@ class Examiner:
                 ``work_time`` are the element-wise sums of both operands.
         """
 
-        result = Examiner(name=f'{self.name}+{other.name}', gender=self.gender)
+        result = Examiner(name=f"{self.name}+{other.name}", gender=self.gender)
         result.total = self.total + other.total
         result.failed = self.failed + other.failed
         result.work_time = self.work_time + other.work_time
@@ -96,7 +96,7 @@ class Examiner:
     def __repr__(self) -> str:
         """Return an unambiguous representation for debugging."""
 
-        return f'Examiner(name={self.name!r}, total={self.total})'
+        return f"Examiner(name={self.name!r}, total={self.total})"
 
 
 class Question:
@@ -127,4 +127,4 @@ class Question:
     def __repr__(self) -> str:
         """Return an unambiguous representation for debugging."""
 
-        return f'Question({self.text!r})'
+        return f"Question({self.text!r})"

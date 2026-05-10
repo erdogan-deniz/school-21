@@ -10,10 +10,10 @@ args = parser.parse_args()  # Parse arguments
 
 # Output all first letters in lowercase of our argument:
 for ch in args.string.strip():
-    if ch == ' ':
+    if ch == " ":
         is_first_letter = True
     elif is_first_letter:
-        print(ch.lower(), end='')
+        print(ch.lower(), end="")
 
         is_first_letter = False
 

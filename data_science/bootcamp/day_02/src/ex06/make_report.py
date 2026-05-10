@@ -42,9 +42,7 @@ if __name__ == "__main__":
         element_fractions,
     )
 
-    analytic.save_data_to_file(
-        report_content, FILE_PATH, FILE_NAME, FILE_FORMAT
-    )
+    analytic.save_data_to_file(report_content, FILE_PATH, FILE_NAME, FILE_FORMAT)
 
     request_status: int = researcher.send_program_status_to_telegram(
         FILE_NAME + FILE_FORMAT, BOT_TOKEN, CHAT_ID, BASE_URL

@@ -6,9 +6,9 @@ import subprocess
 def check_command(command, expected_output, test_number):
     result = subprocess.run(command, capture_output=True, text=True, shell=True)
 
-    print("************Тест № ", test_number, ':************', sep='')
-    print("Ожидаемый вывод:\n", expected_output, sep='')
-    print("Наш вывод:\n", result.stdout, sep='')
+    print("************Тест № ", test_number, ":************", sep="")
+    print("Ожидаемый вывод:\n", expected_output, sep="")
+    print("Наш вывод:\n", result.stdout, sep="")
 
     if expected_output in result.stdout:  # Check are they equal
         print(f"*********Тест - пройден!*********\n")

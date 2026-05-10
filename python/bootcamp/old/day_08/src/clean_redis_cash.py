@@ -11,7 +11,7 @@ def input_time():
 
             break
         except ValueError:
-            print("ERROR! INCORRECT INPUT.", end='\n')
+            print("ERROR! INCORRECT INPUT.", end="\n")
 
     t.sleep(abs(timeout))
 

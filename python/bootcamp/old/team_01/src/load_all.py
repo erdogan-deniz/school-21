@@ -20,7 +20,9 @@ def load_all():
 
     try:
         print("\nSTART FILLING DATA...\n")
-        database.drop_tables(["Dialogs", "Enemies", "Locations", "NPCs", "Protagonists", "Tasks"])  # Drop all tables
+        database.drop_tables(
+            ["Dialogs", "Enemies", "Locations", "NPCs", "Protagonists", "Tasks"]
+        )  # Drop all tables
         database.create_tables()  # Create databases if there are not exist
         database.load_information(data.npcs_data)
         database.load_information(data.tasks_data)

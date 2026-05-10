@@ -39,9 +39,7 @@ def get_gmails_list_compr(emails: list) -> list:
 def get_gmails_map(emails: list) -> list:
     """"""
 
-    gmails: list = list(
-        map(get_gmail, emails)
-    )  # You can remove list() and map will be really fast
+    gmails: list = list(map(get_gmail, emails))  # You can remove list() and map will be really fast
 
     return gmails
 

@@ -15,7 +15,7 @@ def emit_gel(step: int = 2):  # Main function for generated pressure
         pressure: int = rd.randrange(left_l, right_l, random_step)
 
         time.sleep(0.75)
-        print("The pressure is: ", pressure, end='')
+        print("The pressure is: ", pressure, end="")
         print("\tThe random step is: ", random_step)
 
         if (pressure > 100) or (pressure < 0):

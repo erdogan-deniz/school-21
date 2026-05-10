@@ -49,9 +49,7 @@ def installing_libraries() -> None:
                 check=True,
             )
 
-            print(
-                "\n\nThe installed packages are:\n", cmd_result.stdout, sep=""
-            )
+            print("\n\nThe installed packages are:\n", cmd_result.stdout, sep="")
         else:
             raise Exception("You are in the incorrect venv.")
     except Exception as err:

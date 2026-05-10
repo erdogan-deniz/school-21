@@ -18,40 +18,33 @@ _RENDER_INTERVAL: float = 0.1  # seconds between live display refreshes
 def main() -> None:
     """Load input files, run the exam simulation, and print the final report."""
 
-    base: str = os.path.join(
-        os.path.dirname(os.path.abspath(__file__)), '..', '..', 'data'
-    )
+    base: str = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "data")
 
-    with open(os.path.join(base, 'examiners.txt'), encoding='utf-8') as fh:
+    with open(os.path.join(base, "examiners.txt"), encoding="utf-8") as fh:
         examiner_lines: list[str] = [line.strip() for line in fh if line.strip()]
 
-    with open(os.path.join(base, 'students.txt'), encoding='utf-8') as fh:
+    with open(os.path.join(base, "students.txt"), encoding="utf-8") as fh:
         student_lines: list[str] = [line.strip() for line in fh if line.strip()]
 
-    with open(os.path.join(base, 'questions.txt'), encoding='utf-8') as fh:
-        questions: list[Question] = [
-            Question(line.strip()) for line in fh if line.strip()
-        ]
+    with open(os.path.join(base, "questions.txt"), encoding="utf-8") as fh:
+        questions: list[Question] = [Question(line.strip()) for line in fh if line.strip()]
 
     examiners_data: list[tuple[str, str]] = [
-        (parts[0], parts[1]) for parts in
-        (line.split() for line in examiner_lines)
+        (parts[0], parts[1]) for parts in (line.split() for line in examiner_lines)
     ]
     students_data: list[tuple[str, str]] = [
-        (parts[0], parts[1]) for parts in
-        (line.split() for line in student_lines)
+        (parts[0], parts[1]) for parts in (line.split() for line in student_lines)
     ]
 
-    if sys.platform == 'win32':
-        os.system('')  # Enable ANSI escape codes on Windows
+    if sys.platform == "win32":
+        os.system("")  # Enable ANSI escape codes on Windows
 
     students: list[Student] = [
         Student(name=name, gender=gender, queue_pos=i)
         for i, (name, gender) in enumerate(students_data)
     ]
     examiners: list[Examiner] = [
-        Examiner(name=name, gender=gender)
-        for name, gender in examiners_data
+        Examiner(name=name, gender=gender) for name, gender in examiners_data
     ]
     q_stats: dict[str, dict[str, int]] = {}
     total_students: int = len(students)
@@ -89,15 +82,13 @@ def main() -> None:
 
         if now - last_render >= _RENDER_INTERVAL:
             last_render = now
-            output: str = render_live(
-                students, examiners, total_students, now - exam_start
-            )
+            output: str = render_live(students, examiners, total_students, now - exam_start)
 
             clear_lines(prev_lines)
-            sys.stdout.write(output + '\n')
+            sys.stdout.write(output + "\n")
             sys.stdout.flush()
 
-            prev_lines = output.count('\n') + 1
+            prev_lines = output.count("\n") + 1
 
     while True:
         try:
@@ -116,5 +107,5 @@ def main() -> None:
     print(render_final(students, examiners, total_time, q_stats))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -15,7 +15,6 @@ class Action(Enum):
 
 # Class of agent:
 class Agent:
-
     def __aiter__(self, health=5):
         self.health = health
         self.actions = list(Action)
@@ -45,8 +44,11 @@ def neos_turn(action: Action):
 
 # Calculate agent health:
 def health_calculation(agent_turn: Action, neo_turn: Action, agent_health: int):
-    if ((not isinstance(agent_turn, Action)) or (not isinstance(neo_turn, Action)) or
-            (not isinstance(agent_health, int))):  # Check argument
+    if (
+        (not isinstance(agent_turn, Action))
+        or (not isinstance(neo_turn, Action))
+        or (not isinstance(agent_health, int))
+    ):  # Check argument
         print("\nERROR! INCORRECT ARGUMENT TYPE.\n")
 
         return -1
@@ -82,8 +84,10 @@ async def fight():
 
     # Run process:
     while agent.health > 0:
-        print(f"Agent: {agent_turn}, Neo: {neo_turn}, Agent Health: "
-              f"{health_calculation(agent_turn, neo_turn, agent.health)}")
+        print(
+            f"Agent: {agent_turn}, Neo: {neo_turn}, Agent Health: "
+            f"{health_calculation(agent_turn, neo_turn, agent.health)}"
+        )
 
         agent.health = health_calculation(agent_turn, neo_turn, agent.health)
         agent_turn = await agent.__anext__()

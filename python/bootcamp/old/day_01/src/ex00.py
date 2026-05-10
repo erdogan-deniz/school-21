@@ -29,8 +29,8 @@ def empty(purse: dict[str, int]) -> dict[str, int]:
 
 
 if __name__ == "__main__":  # Case if we don't import module (tests)
-    class TestsEx00(unittest.TestCase):
 
+    class TestsEx00(unittest.TestCase):
         def tests_add_ingot(self):
             self.assertEqual(add_ingot({}), {"gold_ingot": 1})
             self.assertEqual(add_ingot({"something": 1}), {"gold_ingot": 1})
@@ -59,6 +59,8 @@ if __name__ == "__main__":  # Case if we don't import module (tests)
             self.assertEqual(add_ingot(add_ingot(add_ingot({}))), {"gold_ingot": 3})
             self.assertEqual(get_ingot(get_ingot(get_ingot({"gold_ingot": 5}))), {"gold_ingot": 2})
             self.assertEqual(get_ingot(add_ingot(get_ingot({"gold_ingot": 5}))), {"gold_ingot": 4})
-            self.assertEqual(add_ingot(get_ingot(add_ingot(empty({"gold_ingot": 1})))), {"gold_ingot": 1})
+            self.assertEqual(
+                add_ingot(get_ingot(add_ingot(empty({"gold_ingot": 1})))), {"gold_ingot": 1}
+            )
 
     unittest.main()

@@ -15,21 +15,12 @@ def create_employees_table_from_emails() -> None:
         file_content.insert(0, "Name\tSurname\tE-mail\n")
 
         for file_row_idx in range(1, len(file_content)):
-            employee_name: str = (
-                file_content[file_row_idx].split(".")[0].capitalize()
-            )
+            employee_name: str = file_content[file_row_idx].split(".")[0].capitalize()
             employee_surname: str = (
-                file_content[file_row_idx]
-                .split(".")[1]
-                .split("@")[0]
-                .capitalize()
+                file_content[file_row_idx].split(".")[1].split("@")[0].capitalize()
             )
             file_content[file_row_idx] = (
-                employee_name
-                + "\t"
-                + employee_surname
-                + "\t"
-                + f"{file_content[file_row_idx]}"
+                employee_name + "\t" + employee_surname + "\t" + f"{file_content[file_row_idx]}"
             )
 
         with open("employees.tsv", "w+") as work_file:

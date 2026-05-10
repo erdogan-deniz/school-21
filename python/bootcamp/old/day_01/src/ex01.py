@@ -24,21 +24,31 @@ def split_booty(*args) -> tuple[dict[str, int], dict[str, int], dict[str, int]]:
 
 
 if __name__ == "__main__":  # Case if we don't import module (tests)
+
     class TestsEx01(unittest.TestCase):
-
         def tests_split_booty(self):
-            self.assertEqual(split_booty({}), ({"gold_ingots": 0}, {"gold_ingots": 0}, {"gold_ingots": 0}))
-            self.assertEqual(split_booty({"something": 2}, {"some_something": 3}), ({"gold_ingots": 0},
-                                                                                    dict(gold_ingots=0),
-                                                                                    dict(gold_ingots=0)))
-            self.assertEqual(split_booty({"gold_ingots": 3}, {"gold_ingots": 2}, {"apples": 10}),
-                             ({"gold_ingots": 2}, {"gold_ingots": 2}, {"gold_ingots": 1}))
-            self.assertEqual(split_booty({"gold_ingots": -2}, {"gold_ingots": 0}, {"apples": 10}),
-                             ({"gold_ingots": 0}, {"gold_ingots": 0}, {"gold_ingots": 0}))
-            self.assertEqual(split_booty({"gold_ingots": 3}, {"gold_ingots": 3}, {"apples": 10}),
-                             ({"gold_ingots": 2}, {"gold_ingots": 2}, {"gold_ingots": 2}))
-            self.assertEqual(split_booty({"gold_ingots": 3}, {"gold_ingots": 4}, {"apples": 10}),
-                             ({"gold_ingots": 3}, {"gold_ingots": 2}, {"gold_ingots": 2}))
-
+            self.assertEqual(
+                split_booty({}), ({"gold_ingots": 0}, {"gold_ingots": 0}, {"gold_ingots": 0})
+            )
+            self.assertEqual(
+                split_booty({"something": 2}, {"some_something": 3}),
+                ({"gold_ingots": 0}, dict(gold_ingots=0), dict(gold_ingots=0)),
+            )
+            self.assertEqual(
+                split_booty({"gold_ingots": 3}, {"gold_ingots": 2}, {"apples": 10}),
+                ({"gold_ingots": 2}, {"gold_ingots": 2}, {"gold_ingots": 1}),
+            )
+            self.assertEqual(
+                split_booty({"gold_ingots": -2}, {"gold_ingots": 0}, {"apples": 10}),
+                ({"gold_ingots": 0}, {"gold_ingots": 0}, {"gold_ingots": 0}),
+            )
+            self.assertEqual(
+                split_booty({"gold_ingots": 3}, {"gold_ingots": 3}, {"apples": 10}),
+                ({"gold_ingots": 2}, {"gold_ingots": 2}, {"gold_ingots": 2}),
+            )
+            self.assertEqual(
+                split_booty({"gold_ingots": 3}, {"gold_ingots": 4}, {"apples": 10}),
+                ({"gold_ingots": 3}, {"gold_ingots": 2}, {"gold_ingots": 2}),
+            )
 
     unittest.main()

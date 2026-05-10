@@ -7,18 +7,68 @@ import ex00_pb2
 import ex00_pb2_grpc
 
 # Ship data:
-ship_list = ["Normandy", "Executor", "Rocket", "Starship", "Probe", "Juno", "Hubble", "Viking", "Spirit", "Unknown"]
+ship_list = [
+    "Normandy",
+    "Executor",
+    "Rocket",
+    "Starship",
+    "Probe",
+    "Juno",
+    "Hubble",
+    "Viking",
+    "Spirit",
+    "Unknown",
+]
 
 # Officer data:
-name_list = ["Alan", "Abbe", "Abbey", "Abbie", "Abbot", "Abby", "Abe", "Abel", "Aberdeen", "Abie", "Abner"]
-surname_list = ["Shepard", "Ayrton", "Bothell", "Carroll", "Dutton", "Farrell", "Gill", "Hodges", "James", "Keat"]
-rank_list = ["Commander", "Marshal", "Chief", "Captain", "Major", "General", "Albay", "Colonel", "Zaxer", "Cruzer"]
+name_list = [
+    "Alan",
+    "Abbe",
+    "Abbey",
+    "Abbie",
+    "Abbot",
+    "Abby",
+    "Abe",
+    "Abel",
+    "Aberdeen",
+    "Abie",
+    "Abner",
+]
+surname_list = [
+    "Shepard",
+    "Ayrton",
+    "Bothell",
+    "Carroll",
+    "Dutton",
+    "Farrell",
+    "Gill",
+    "Hodges",
+    "James",
+    "Keat",
+]
+rank_list = [
+    "Commander",
+    "Marshal",
+    "Chief",
+    "Captain",
+    "Major",
+    "General",
+    "Albay",
+    "Colonel",
+    "Zaxer",
+    "Cruzer",
+]
 
 
 class Ex00Servicer(ex00_pb2_grpc.Ex00Servicer):
     def GetShips(self, request, context):
         # Check coordinate data:
-        if (request.height >= -90) and (request.height <= 90) and (request.azimuth >= 0) and (request.azimuth <= 360):
+        if (
+            (request.height >= -90)
+            and (request.height <= 90)
+            and (request.azimuth >= 0)
+            and (request.azimuth <= 360)
+        ):
             for _ in range(random.randint(0, 10)):
                 ship = ex00_pb2.Spaceship()  # Create new ship
 

@@ -24,6 +24,8 @@ class TestGetAssetsDir:
         self, tmp_path: Path
     ) -> None:
         """Falls back to root/assets when root.parent/assets does not exist."""
-        with patch.object(ProjectPaths, "get_project_root", return_value=tmp_path):
+        with patch.object(
+            ProjectPaths, "get_project_root", return_value=tmp_path
+        ):
             result = ProjectPaths.get_assets_dir()
         assert result == tmp_path / "assets"

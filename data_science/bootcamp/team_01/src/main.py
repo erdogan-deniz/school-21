@@ -2,7 +2,6 @@
 The launch point module of the nutriologist's app.
 """
 
-
 from typing import Any
 from pandas import DataFrame, read_csv
 
@@ -20,7 +19,7 @@ def main(
     recipes_descriptions_file: str,
     recipes_descriptions_file_path: str,
     ingredients_nutrients_percentage_file: str,
-    ingredients_nutrients_percentage_file_path: str
+    ingredients_nutrients_percentage_file_path: str,
 ) -> None:
     """
     Outputs the necessary data for the task.
@@ -56,18 +55,21 @@ def main(
 
     try:
         script_args: list[Any] | None = get_script_arguments()
-        model: Any | None = unpack_model(model_file, model_file_path, )
-        features: DataFrame = read_csv(features_file_path + features_file, )
+        model: Any | None = unpack_model(
+            model_file,
+            model_file_path,
+        )
+        features: DataFrame = read_csv(
+            features_file_path + features_file,
+        )
         food_recipes: DataFrame = read_csv(
             food_recipes_file_path + food_recipes_file,
         )
         recipes_descriptions: DataFrame = read_csv(
-            recipes_descriptions_file_path +
-            recipes_descriptions_file,
+            recipes_descriptions_file_path + recipes_descriptions_file,
         )
         ingredients_nutrients_percentage: DataFrame = read_csv(
-            ingredients_nutrients_percentage_file_path +
-            ingredients_nutrients_percentage_file,
+            ingredients_nutrients_percentage_file_path + ingredients_nutrients_percentage_file,
         )
         nutritionist: Nutritionist = Nutritionist(
             model,
@@ -79,19 +81,23 @@ def main(
         pred_recipe_rating: float | None = nutritionist.predict_recipe_rating(
             script_args,
         )
-        Nutritionist.print_predicted_recipe_rating(pred_recipe_rating, )
-        nutritionist.print_ingredients_nutrients_facts(script_args, )
-        nutritionist.print_top_three_similar_recipes(script_args, )
+        Nutritionist.print_predicted_recipe_rating(
+            pred_recipe_rating,
+        )
+        nutritionist.print_ingredients_nutrients_facts(
+            script_args,
+        )
+        nutritionist.print_top_three_similar_recipes(
+            script_args,
+        )
         nutritionist.print_menu_for_day()
     except FileNotFoundError as file_not_found_err:
         raise FileNotFoundError(
-            f"\nFile: {__file__}\n" +
-            f"Message: {file_not_found_err}.",
+            f"\nFile: {__file__}\n" + f"Message: {file_not_found_err}.",
         )
     except Exception as err:
         raise Exception(
-            f"\nFile: {__file__}\n" +
-            f"Message: {err}.",
+            f"\nFile: {__file__}\n" + f"Message: {err}.",
         )
 
 

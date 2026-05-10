@@ -2,9 +2,14 @@ import unittest  # Module for testing
 
 
 class Key(object):
-    def __init__(self, len_in_bytes: int = 1337, value_404: int = 3, value: int = 10000, passphrase: str = "zax2rulez",
-                 string: str = "GeneralTsoKeycard"):
-
+    def __init__(
+        self,
+        len_in_bytes: int = 1337,
+        value_404: int = 3,
+        value: int = 10000,
+        passphrase: str = "zax2rulez",
+        string: str = "GeneralTsoKeycard",
+    ):
         if len_in_bytes < 0:
             self.len_in_bytes = 0
         else:
@@ -33,8 +38,8 @@ class Key(object):
 
 
 if __name__ == "__main__":  # Case if we don't import module (tests)
-    class TestsEx00(unittest.TestCase):
 
+    class TestsEx00(unittest.TestCase):
         def test_one(self):  # Test from a task
             key = Key()
 
@@ -61,6 +66,5 @@ if __name__ == "__main__":  # Case if we don't import module (tests)
             self.assertEqual(key > 9000, True)
             self.assertEqual(key.passphrase, "abc")
             self.assertEqual(str(key), "def")
-
 
     unittest.main()

@@ -18,7 +18,7 @@ species = {
     "Sontaran": "General Staal",
     "Time Lord": "Rassilon",
     "Weeping Angel": "The Division Representative",
-    "Zygon": "Broton"
+    "Zygon": "Broton",
 }
 
 
@@ -29,7 +29,7 @@ def application(environ, start_response):
 
     # Returns a dictionary in which the values are lists:
     parsed_string = parse_qs(environ["QUERY_STRING"])
-    credentials = parsed_string.get("species", [''])[0]  # Parse strings
+    credentials = parsed_string.get("species", [""])[0]  # Parse strings
     credentials = escape(credentials)  # Delete scripts
 
     # Check species:
@@ -47,7 +47,7 @@ def application(environ, start_response):
 
 
 # Instantiate the server:
-http_server = make_server('localhost', 8888, application)
+http_server = make_server("localhost", 8888, application)
 
 # Start endless server:
 http_server.serve_forever()

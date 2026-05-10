@@ -10,7 +10,7 @@ sys.path.append(os.path.abspath(os.pardir))
 def test_input_arguments():
     assert support.typing(2) == -1
     assert support.typing(True) == -1
-    assert support.typing(['d', 's', 3]) == -1
+    assert support.typing(["d", "s", 3]) == -1
     assert support.typing("Hello") != -1
 
 

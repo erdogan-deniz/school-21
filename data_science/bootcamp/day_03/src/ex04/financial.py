@@ -8,9 +8,7 @@ import requests
 def main() -> None:
     """"""
 
-    request_base_url: str = (
-        "https://finance.yahoo.com/quote/@TICKET@/financials/"
-    )
+    request_base_url: str = "https://finance.yahoo.com/quote/@TICKET@/financials/"
 
     request_headers: dict = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,"
@@ -87,13 +85,9 @@ def get_parsed_data(request_base_url: str, request_headers: dict) -> tuple:
     if response.status_code == 200:
         try:
             response_content: str = response.text
-            soup: bs4.BeautifulSoup = bs4.BeautifulSoup(
-                response_content, "html.parser"
-            )
+            soup: bs4.BeautifulSoup = bs4.BeautifulSoup(response_content, "html.parser")
 
-            temp_elements: list = soup.find_all(
-                "div", attrs={"title": required_field}
-            )
+            temp_elements: list = soup.find_all("div", attrs={"title": required_field})
 
             required_data_fields: list = (
                 temp_elements[0]
@@ -101,9 +95,7 @@ def get_parsed_data(request_base_url: str, request_headers: dict) -> tuple:
                 .find_parent()
                 .find_all(
                     "div",
-                    attrs={
-                        "class": ["column yf-t22klz", "column yf-t22klz alt"]
-                    },
+                    attrs={"class": ["column yf-t22klz", "column yf-t22klz alt"]},
                 )
             )
 

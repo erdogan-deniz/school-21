@@ -101,7 +101,10 @@ async def post_request(request: Request):
 
         task_UUID = uuid.uuid4()  # Generate current new UUID
 
-        return {"Code Status": "201 Created", "Object": ObjectX(status="running", dimensions=task_UUID)}
+        return {
+            "Code Status": "201 Created",
+            "Object": ObjectX(status="running", dimensions=task_UUID),
+        }
 
     else:
         return "Request already done!"

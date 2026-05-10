@@ -13,14 +13,11 @@ while True:
 
         counter += 1
 
-        if counter == 1 and \
-                (re.fullmatch(r"\*([^*]+)\*", sample) is None):
+        if counter == 1 and (re.fullmatch(r"\*([^*]+)\*", sample) is None):
             answer *= False
-        elif counter == 2 and \
-                (re.fullmatch(r"\*\*[^*]*\*\*", sample) is None):
+        elif counter == 2 and (re.fullmatch(r"\*\*[^*]*\*\*", sample) is None):
             answer *= False
-        elif counter == 3 and \
-                (re.fullmatch(r"\*[^*]*\*[^*]*\*", sample) is None):
+        elif counter == 3 and (re.fullmatch(r"\*[^*]*\*[^*]*\*", sample) is None):
             answer *= False
 
     except EOFError:

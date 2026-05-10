@@ -22,11 +22,7 @@ class Matrix:
                        Default: None.
     """
 
-    def __init__(
-        self,
-        n: int | None = None,
-        matrix: list[list[int]] | None = None
-    ) -> None:
+    def __init__(self, n: int | None = None, matrix: list[list[int]] | None = None) -> None:
         """
         Initializes the `Matrix` class representative.
 
@@ -40,11 +36,7 @@ class Matrix:
         self.n: int | None = n
         self.matrix: list = matrix or []
 
-    def fill_matrix_from_file(
-        self,
-        file: str,
-        file_path: str
-    ) -> None:
+    def fill_matrix_from_file(self, file: str, file_path: str) -> None:
         """
         Fill `Matrix` class representative with file matrix.
 
@@ -69,26 +61,29 @@ class Matrix:
                 matrix_rows = file.readlines()
 
             for matrix_row in matrix_rows:
-                self.matrix.append(list(map(int, matrix_row.split(), ), ), )
-        except FileNotFoundError  as file_not_found_err:
-            raise FileNotFoundError (
-                f"\nFile: {__file__}\n" +
-                f"Message: {file_not_found_err}.",
+                self.matrix.append(
+                    list(
+                        map(
+                            int,
+                            matrix_row.split(),
+                        ),
+                    ),
+                )
+        except FileNotFoundError as file_not_found_err:
+            raise FileNotFoundError(
+                f"\nFile: {__file__}\n" + f"Message: {file_not_found_err}.",
             )
         except ValueError as val_err:
             raise ValueError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {val_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {val_err}.",
             )
         except TypeError as type_err:
             raise TypeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {type_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {type_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )
 
     def define_dimension(self) -> None:
@@ -103,26 +98,24 @@ class Matrix:
         """
 
         try:
-            self.n = len(self.matrix, )
+            self.n = len(
+                self.matrix,
+            )
         except AttributeError as attr_err:
             raise AttributeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {attr_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {attr_err}.",
             )
         except NameError as name_err:
             raise NameError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {name_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {name_err}.",
             )
         except TypeError as type_err:
             raise TypeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {type_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {type_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )
 
     def count_matrix_squares(self) -> int | None:
@@ -143,47 +136,52 @@ class Matrix:
         squares_cnt: int = 0
 
         try:
-            for idx in range(self.n - 1, ):
-                for jdx in range(self.n - 1, ):
-                    if (self.matrix[idx][jdx] == 1):
+            for idx in range(
+                self.n - 1,
+            ):
+                for jdx in range(
+                    self.n - 1,
+                ):
+                    if self.matrix[idx][jdx] == 1:
                         if (
-                            (idx == 0) and (jdx == 0)
-                        ) or (
-                            (idx == 0) and (jdx != 0) and
-                            (self.matrix[idx][jdx - 1] == 0) and
-                            (self.matrix[idx + 1][jdx - 1] == 0)
-                        ) or (
-                            (idx != 0) and (jdx == 0) and
-                            (self.matrix[idx - 1][jdx] == 0) and
-                            (self.matrix[idx - 1][jdx + 1] == 0)
-                        ) or (
-                            (self.matrix[idx - 1][jdx] == 0) and
-                            (self.matrix[idx - 1][jdx + 1] == 0) and
-                            (self.matrix[idx][jdx - 1] == 0) and
-                            (self.matrix[idx + 1][jdx - 1] == 0)
+                            ((idx == 0) and (jdx == 0))
+                            or (
+                                (idx == 0)
+                                and (jdx != 0)
+                                and (self.matrix[idx][jdx - 1] == 0)
+                                and (self.matrix[idx + 1][jdx - 1] == 0)
+                            )
+                            or (
+                                (idx != 0)
+                                and (jdx == 0)
+                                and (self.matrix[idx - 1][jdx] == 0)
+                                and (self.matrix[idx - 1][jdx + 1] == 0)
+                            )
+                            or (
+                                (self.matrix[idx - 1][jdx] == 0)
+                                and (self.matrix[idx - 1][jdx + 1] == 0)
+                                and (self.matrix[idx][jdx - 1] == 0)
+                                and (self.matrix[idx + 1][jdx - 1] == 0)
+                            )
                         ):
                             squares_cnt += 1
 
             return squares_cnt
         except IndexError as idx_err:
             raise IndexError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {idx_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {idx_err}.",
             )
         except ValueError as val_err:
             raise ValueError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {val_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {val_err}.",
             )
         except TypeError as type_err:
             raise TypeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {type_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {type_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )
 
     def count_matrix_circles(self) -> int | None:
@@ -204,33 +202,30 @@ class Matrix:
         circles_cnt: int = 0
 
         try:
-            for idx in range(self.n - 1, ):
-                for jdx in range(self.n - 1, ):
-                    if (self.matrix[idx][jdx] == 0):
-                        if (
-                            (self.matrix[idx][jdx + 1] == 1) and
-                            (self.matrix[idx + 1][jdx] == 1)
-                        ):
+            for idx in range(
+                self.n - 1,
+            ):
+                for jdx in range(
+                    self.n - 1,
+                ):
+                    if self.matrix[idx][jdx] == 0:
+                        if (self.matrix[idx][jdx + 1] == 1) and (self.matrix[idx + 1][jdx] == 1):
                             circles_cnt += 1
 
             return circles_cnt
         except IndexError as idx_err:
             raise IndexError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {idx_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {idx_err}.",
             )
         except ValueError as val_err:
             raise ValueError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {val_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {val_err}.",
             )
         except TypeError as type_err:
             raise TypeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {type_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {type_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )

@@ -50,9 +50,7 @@ def define_entity() -> None:
                         STOCKS[company_ticket]}"
                 )
             else:
-                print(
-                    entity, "is an unknown company or an unknown ticker symbol"
-                )
+                print(entity, "is an unknown company or an unknown ticker symbol")
 
 
 if __name__ == "__main__":

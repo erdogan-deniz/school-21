@@ -1,4 +1,6 @@
-#
+# Python Bootcamp
+
+> *Day-by-day School 21 Python Bootcamp curriculum and team projects.*
 
 Project topic: Python Bootcamp.
 

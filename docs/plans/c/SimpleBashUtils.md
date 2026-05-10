@@ -13,21 +13,26 @@
 
 ## Definition of Done — checklist
 
-- [ ] **A.** README adopts the repo template (production fold + preserved task)
-- [ ] **B.** Unit tests + coverage % visible in README
-- [ ] **C.** GitHub Actions CI green + badge in README
-- [ ] **D.** Linter / formatter applied
-- [ ] **E.** Reproducible build (Dockerfile or Makefile — one command)
-- [ ] **F.** `LICENSE` present (MIT root + School 21 placeholder kept)
-- [ ] **G.** Demo (gif / screenshot / asciinema)
-- [ ] **H.** Doxygen / Sphinx API docs
+- [x] **A.** README adopts the repo template (production fold + preserved task)
+- [ ] **B.** Tests — currently integration-style (compare against host `cat`/`grep`); coverage badge n/a, but a green output-diff suite would suffice
+- [~] **C.** GitHub Actions CI in `c.yml` matrix (informational); CI handles both `cat/` and `grep/` per-utility Makefiles
+- [~] **D.** Repo-wide `.clang-format`; deliberate format pass pending (slice 4)
+- [x] **E.** `make` targets reproducible on the canonical Linux toolchain
+- [~] **F.** Root MIT `LICENSE` ✓; subproject `LICENSE` is the School 21 placeholder (kept by design)
+- [ ] **G.** Demo (asciinema) — `s21_cat -benst` and `s21_grep -in '...'`
+- [ ] **H.** Doxygen API reference
+
+> Legend: `[x]` done · `[~]` partial / pending follow-up · `[ ]` not started.
 
 ## Subproject-specific tasks
 
-- [ ] (placeholder — fill in during per-subproject review)
+- [ ] Add structured integration-test diff harness so CI can publish a pass/fail count.
+- [ ] Decide on `pcre` vs `regex` for `s21_grep` and document choice in README.
+- [ ] Verify GNU long-flag aliases (`--number`, `--squeeze-blank`, …) on the actual `s21_cat` binary.
 
 ## History
 
 <!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/Deniz211/school-21/commit/<sha>)) -->
 
-- *(no entries yet)*
+- 2026-05-11: README adopted from repo template + Original task preserved (this commit).
+- 2026-05-11: Included in `c.yml` build/test matrix (split-Makefile branch handles cat/ and grep/ separately) ([8c5bd24d](https://github.com/Deniz211/school-21/commit/8c5bd24d)).

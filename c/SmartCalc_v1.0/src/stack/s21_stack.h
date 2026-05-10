@@ -22,7 +22,6 @@ typedef struct s21_stack {
 } s21_stack;
 
 // Main functions:
-s21_stack* s21_free_stack(s21_stack* stack);
 s21_stack* s21_pop_stack(s21_stack* stack);
 s21_stack* s21_push_stack(s21_stack* stack, char* token);
 

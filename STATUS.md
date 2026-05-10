@@ -121,7 +121,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject  | A | B | C | D | E | F | G | H | Flagship | Notes |
 | ----------- | - | - | - | - | - | - | - | - | -------- | ----- |
-| `bootcamp`  | ✗ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          |       |
+| `bootcamp`  | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README templated; sqlfluff in sql.yml      |
 
 ### `survival_camp/`
 
@@ -143,9 +143,9 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `machine_learning/`  | 1           | 0 / 8            | 0 %      |
 | `python/`            | 1           | 3.5 / 8          | 44 %     |
 | `qa/`                | 2           | 0 / 16           | 0 %      |
-| `sql/`               | 1           | 1 / 8            | 13 %     |
+| `sql/`               | 1           | 2.5 / 8          | 31 %     |
 | `survival_camp/`     | 1           | 0 / 8            | 0 %      |
-| **Total**            | **37**      | **75 / 296**     | **25 %** |
+| **Total**            | **37**      | **76.5 / 296**   | **26 %** |
 
 > "DoD cells filled" counts ✓ as 1 and ◐ as 0.5. The "School 21
 > License" placeholders count ◐ for the F column — they are

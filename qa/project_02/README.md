@@ -1,4 +1,29 @@
-# Артефакты тестирования
+# `qa/project_02`
+
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *Testing artefacts — learning to author test cases, checklists, and bug reports.*
+
+## Quick start
+
+This subproject is **report-driven** — the artefacts are sample test cases,
+checklists, and bug reports under `src/`. No code to build.
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+The `LICENSE` file inside this subproject (`# School 21 License`) is preserved
+as educational attribution and historical artefact; it does not override the
+repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
+
+### Артефакты тестирования
 
 Ты научишься создавать: тест-кейсы, чек-листы, баг-репорты.
 

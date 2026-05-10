@@ -1,4 +1,29 @@
-# Internship
+# `internship`
+
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../LICENSE)
+
+> *School 21 internship at a partner company — report of work performed, technologies learned, and project outcomes.*
+
+## Quick start
+
+This subproject is **report-driven** — the artefact is a Markdown report
+describing the internship experience. No code to build.
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../LICENSE).
+
+The `LICENSE` file inside this subproject is preserved as educational
+attribution and historical artefact; it does not override the repo-wide MIT
+licence.
+
+---
+
+## Original task (School 21)
+
+### Internship
 
 Internship in the company and the preparation of a report based on the results
 of the internship

@@ -52,9 +52,7 @@ jobs:
           clang-format --dry-run -Werror "${files[@]}"
 
   build-and-test:
-    # Library subprojects only — Qt-using applications (3DViewer_v1.0,
-    # SmartCalc_v1.0) need Qt6 in the runner and are addressed in a
-    # follow-up batch.
+    # Library subprojects: full make + make test in c/<sub>/src.
     name: build & test
     runs-on: ubuntu-latest
     continue-on-error: true  # initial pass: collect data without gating
@@ -111,4 +109,43 @@ jobs:
         working-directory: c/${{ matrix.subproject }}/src
         run: |
           make gcov_report 2>/dev/null || true
+        continue-on-error: true
+
+  apps-c-tests:
+    # GUI applications: only the C-business-logic test target, which
+    # does not depend on Qt. The qmake-driven GUI build is handled in
+    # a separate Qt-aware job (planned, not yet implemented).
+    name: apps C-only tests
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        subproject:
+          - 3DViewer_v1.0
+          - SmartCalc_v1.0
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            check libsubunit-dev \
+            lcov gcovr
+      - name: Run C-only tests
+        working-directory: c/${{ matrix.subproject }}/src
+        run: |
+          # SmartCalc_v1.0 has a dedicated 'test' target that compiles
+          # only business logic (no qmake). 3DViewer_v1.0 historically
+          # uses 3d_viewer_test.c with the same Check-based pattern;
+          # try 'make test' first, fall back to a direct compile.
+          if make -n test >/dev/null 2>&1; then
+            make test
+          else
+            echo "no 'test' target; attempting direct compile of *_test.c"
+            $(CC=${CC:-gcc}; $CC -Wall -Wextra -Wno-error -std=c11 \
+              *.c -lcheck -lsubunit -lpthread -lrt -lm -o test_bin) || true
+            ./test_bin || true
+          fi
         continue-on-error: true

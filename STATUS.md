@@ -35,13 +35,13 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject         | A | B | C | D | E | F | G | H | Flagship | Notes                                                       |
 | ------------------ | - | - | - | - | - | - | - | - | -------- | ----------------------------------------------------------- |
-| `3DViewer_v1.0`    | ◐ | ✗ | ✗ | ◐ | ✗ | ◐ | ✗ | ✗ |          | Qt app — CI deferred to follow-up (needs Qt6 runner)        |
+| `3DViewer_v1.0`    | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | C tests in c.yml; Qt GUI build deferred to follow-up        |
 | `SimpleBashUtils`  | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | CI in c.yml matrix (build/test informational)               |
 | `s21_decimal`      | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | CI in c.yml matrix (build/test informational)               |
 | `s21_math`         | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | CI in c.yml matrix (build/test informational)               |
 | `s21_matrix`       | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | CI in c.yml matrix (build/test informational)               |
 | `s21_string+`      | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | CI in c.yml matrix (build/test informational)               |
-| `SmartCalc_v1.0`   | ◐ | ✗ | ✗ | ◐ | ✗ | ◐ | ✗ | ✗ |          | Qt app — CI deferred to follow-up; rename in a6744d9d       |
+| `SmartCalc_v1.0`   | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | C tests in c.yml; Qt GUI build deferred; rename in a6744d9d |
 
 ### `career_track/`
 
@@ -127,7 +127,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | Track                | Subprojects | DoD cells filled | % done   |
 | -------------------- | ----------- | ---------------- | -------- |
 | `algorithms/`        | 1           | 0 / 8            | 0 %      |
-| `c/`                 | 7           | 21 / 56          | 38 %     |
+| `c/`                 | 7           | 22 / 56          | 39 %     |
 | `career_track/`      | 9           | 9 / 72           | 13 %     |
 | `cpp/`               | 6           | 12 / 48          | 25 %     |
 | `data_science/`      | 2           | 1 / 16           | 6 %      |
@@ -138,7 +138,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `qa/`                | 2           | 0 / 16           | 0 %      |
 | `sql/`               | 1           | 1 / 8            | 13 %     |
 | `survival_camp/`     | 1           | 0 / 8            | 0 %      |
-| **Total**            | **37**      | **51 / 296**     | **17 %** |
+| **Total**            | **37**      | **52 / 296**     | **18 %** |
 
 > "DoD cells filled" counts ✓ as 1 and ◐ as 0.5. The "School 21
 > License" placeholders count ◐ for the F column — they are

@@ -32,9 +32,7 @@ def get_company_stock_price() -> None:
 
     if len(script_args) == 2:
         if script_args[1].upper() in COMPANIES.values():
-            company_name: str = get_dict_key_by_val(
-                COMPANIES, script_args[1].upper()
-            )
+            company_name: str = get_dict_key_by_val(COMPANIES, script_args[1].upper())
             company_ticket: str = script_args[1].upper()
 
             print(company_name, STOCKS[company_ticket])

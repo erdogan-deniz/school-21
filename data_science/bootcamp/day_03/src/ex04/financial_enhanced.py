@@ -14,18 +14,14 @@ async def get_url_content(request_url: str, request_headers: dict) -> str:
     async with aiohttp.ClientSession(
         max_field_size=8190 * 2,
     ) as session:
-        async with session.get(
-            request_url, headers=request_headers
-        ) as response:
+        async with session.get(request_url, headers=request_headers) as response:
             if response.status == 200:
                 return await response.text()
             else:
                 raise Exception("ERROR! Incorrect URL.")
 
 
-async def get_parsed_data(
-    request_base_url: str, request_headers: dict
-) -> tuple:
+async def get_parsed_data(request_base_url: str, request_headers: dict) -> tuple:
     """"""
 
     correct_tickets: list = [
@@ -84,16 +80,10 @@ async def get_parsed_data(
     request_url: str = request_base_url.replace("@TICKET@", request_ticket)
 
     try:
-        response_content: str = await get_url_content(
-            request_url, request_headers
-        )
-        soup: bs4.BeautifulSoup = bs4.BeautifulSoup(
-            response_content, "html.parser"
-        )
+        response_content: str = await get_url_content(request_url, request_headers)
+        soup: bs4.BeautifulSoup = bs4.BeautifulSoup(response_content, "html.parser")
 
-        temp_elements: list = soup.find_all(
-            "div", attrs={"title": required_field}
-        )
+        temp_elements: list = soup.find_all("div", attrs={"title": required_field})
 
         required_data_fields: list = (
             temp_elements[0]
@@ -116,9 +106,7 @@ async def get_parsed_data(
 async def main() -> None:
     """"""
 
-    request_base_url: str = (
-        "https://finance.yahoo.com/quote/@TICKET@/financials/"
-    )
+    request_base_url: str = "https://finance.yahoo.com/quote/@TICKET@/financials/"
 
     request_headers: dict = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,"
@@ -127,9 +115,7 @@ async def main() -> None:
         + " Gecko/20100101 Firefox/131.0",
     }
 
-    parsed_data: tuple = await get_parsed_data(
-        request_base_url, request_headers
-    )
+    parsed_data: tuple = await get_parsed_data(request_base_url, request_headers)
 
     print(parsed_data)
 

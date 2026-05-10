@@ -6,9 +6,7 @@ from urllib.parse import urlparse
 import aiohttp
 
 
-async def download_image(
-    sess: aiohttp.ClientSession, url: str, save_dir: str
-) -> tuple[str, str]:
+async def download_image(sess: aiohttp.ClientSession, url: str, save_dir: str) -> tuple[str, str]:
     """
     Download a single image from *url* and save it to *save_dir*.
 

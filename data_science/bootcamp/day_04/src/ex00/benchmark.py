@@ -54,9 +54,7 @@ def print_fastest_func_worktime() -> None:
         "philipp@gmail.com",
     ]
 
-    cycle_approach_time: float = timeit.timeit(
-        lambda: get_gmails_cycle(emails), number=90000000
-    )
+    cycle_approach_time: float = timeit.timeit(lambda: get_gmails_cycle(emails), number=90000000)
     list_compr_approach_time: float = timeit.timeit(
         lambda: get_gmails_list_compr(emails), number=90000000
     )

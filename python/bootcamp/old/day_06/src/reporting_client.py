@@ -32,8 +32,12 @@ def run():
             try:
                 coordinates = ex00_pb2.Coordinate(height=int(sys.argv[1]), azimuth=int(sys.argv[2]))
 
-                if (int(sys.argv[1]) >= -90) and (int(sys.argv[1]) <= 90) and (int(sys.argv[2]) >= 0) and (
-                        int(sys.argv[2]) <= 360):
+                if (
+                    (int(sys.argv[1]) >= -90)
+                    and (int(sys.argv[1]) <= 90)
+                    and (int(sys.argv[2]) >= 0)
+                    and (int(sys.argv[2]) <= 360)
+                ):
                     output(stub.GetShips(coordinates))
 
                 else:
@@ -47,7 +51,7 @@ def run():
 def output(spaceships):
     if spaceships is not None:
         for ship in spaceships:
-            print('{\n' + str(ship))  # JSON like serialized data
+            print("{\n" + str(ship))  # JSON like serialized data
 
 
 if __name__ == "__main__":

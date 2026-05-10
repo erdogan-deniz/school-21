@@ -26,16 +26,12 @@ def make_table(headers: list[str], rows: list[tuple[Any, ...]]) -> str:
         for i, cell in enumerate(row):
             widths[i] = max(widths[i], len(str(cell)))
 
-    sep: str = '+' + '+'.join('-' * (w + 2) for w in widths) + '+'
+    sep: str = "+" + "+".join("-" * (w + 2) for w in widths) + "+"
 
     def fmt(cells: tuple[Any, ...] | list[str]) -> str:
         """Format a row of cells with centred text and vertical separators."""
 
-        return (
-            '| '
-            + ' | '.join(str(c).center(w) for c, w in zip(cells, widths))
-            + ' |'
-        )
+        return "| " + " | ".join(str(c).center(w) for c, w in zip(cells, widths)) + " |"
 
     lines: list[str] = [sep, fmt(headers), sep]
 
@@ -44,7 +40,7 @@ def make_table(headers: list[str], rows: list[tuple[Any, ...]]) -> str:
 
     lines.append(sep)
 
-    return '\n'.join(lines)
+    return "\n".join(lines)
 
 
 def render_live(
@@ -67,43 +63,41 @@ def render_live(
     """
 
     in_queue: list[tuple[str, int]] = sorted(
-        [
-            (s.name, s.queue_pos)
-            for s in students
-            if s.status == 'In queue'
-        ],
+        [(s.name, s.queue_pos) for s in students if s.status == "In queue"],
         key=lambda x: x[1],
     )
-    passed: list[str] = [s.name for s in students if s.status == 'Passed']
-    failed: list[str] = [s.name for s in students if s.status == 'Failed']
+    passed: list[str] = [s.name for s in students if s.status == "Passed"]
+    failed: list[str] = [s.name for s in students if s.status == "Failed"]
     s_rows: list[tuple[Any, ...]] = (
-        [(n, 'In queue') for n, _ in in_queue]
-        + [(n, 'Passed') for n in passed]
-        + [(n, 'Failed') for n in failed]
+        [(n, "In queue") for n, _ in in_queue]
+        + [(n, "Passed") for n in passed]
+        + [(n, "Failed") for n in failed]
     )
-    s_table: str = make_table(['Student', 'Status'], s_rows)
+    s_table: str = make_table(["Student", "Status"], s_rows)
     e_rows: list[tuple[Any, ...]] = [
         (
             e.name,
-            e.current or '-',
+            e.current or "-",
             e.total,
             e.failed,
-            f'{e.work_time:.2f}',
+            f"{e.work_time:.2f}",
         )
         for e in examiners
     ]
-    e_headers: list[str] = [
-        'Examiner', 'Current Student', 'Total Students', 'Failed', 'Work Time'
-    ]
+    e_headers: list[str] = ["Examiner", "Current Student", "Total Students", "Failed", "Work Time"]
     e_table: str = make_table(e_headers, e_rows)
     in_q_count: int = len(in_queue)
 
-    return '\n'.join([
-        s_table, '',
-        e_table, '',
-        f'Remaining in queue: {in_q_count} out of {total_students}',
-        f'Time since exam started: {elapsed:.2f}',
-    ])
+    return "\n".join(
+        [
+            s_table,
+            "",
+            e_table,
+            "",
+            f"Remaining in queue: {in_q_count} out of {total_students}",
+            f"Time since exam started: {elapsed:.2f}",
+        ]
+    )
 
 
 def render_final(
@@ -127,27 +121,19 @@ def render_final(
     """
 
     passed: list[tuple[str, float | None]] = [
-        (s.name, s.finish_time)
-        for s in students
-        if s.status == 'Passed'
+        (s.name, s.finish_time) for s in students if s.status == "Passed"
     ]
     failed: list[tuple[str, float | None]] = [
-        (s.name, s.finish_time)
-        for s in students
-        if s.status == 'Failed'
+        (s.name, s.finish_time) for s in students if s.status == "Failed"
     ]
-    s_rows: list[tuple[Any, ...]] = (
-        [(n, 'Passed') for n, _ in passed]
-        + [(n, 'Failed') for n, _ in failed]
-    )
-    s_table: str = make_table(['Student', 'Status'], s_rows)
+    s_rows: list[tuple[Any, ...]] = [(n, "Passed") for n, _ in passed] + [
+        (n, "Failed") for n, _ in failed
+    ]
+    s_table: str = make_table(["Student", "Status"], s_rows)
     e_rows: list[tuple[Any, ...]] = [
-        (e.name, e.total, e.failed, f'{e.work_time:.2f}')
-        for e in examiners
+        (e.name, e.total, e.failed, f"{e.work_time:.2f}") for e in examiners
     ]
-    e_table: str = make_table(
-        ['Examiner', 'Total Students', 'Failed', 'Work Time'], e_rows
-    )
+    e_table: str = make_table(["Examiner", "Total Students", "Failed", "Work Time"], e_rows)
     top_students: list[str] = []
 
     if passed:
@@ -156,9 +142,7 @@ def render_final(
 
     top_examiners: list[str] = []
     rates: list[tuple[str, float]] = [
-        (e.name, e.failed / e.total)
-        for e in examiners
-        if e.total > 0
+        (e.name, e.failed / e.total) for e in examiners if e.total > 0
     ]
 
     if rates:
@@ -174,40 +158,38 @@ def render_final(
     best_qs: list[str] = []
 
     if q_stats:
-        max_correct: int = max(v['correct'] for v in q_stats.values())
-        best_qs = [
-            q for q, v in q_stats.items() if v['correct'] == max_correct
-        ]
+        max_correct: int = max(v["correct"] for v in q_stats.values())
+        best_qs = [q for q, v in q_stats.items() if v["correct"] == max_correct]
 
     total: int = len(students)
     pass_count: int = len(passed)
-    result: str = (
-        'Exam passed'
-        if total > 0 and pass_count / total > 0.85
-        else 'Exam failed'
-    )
-    totals_line: str = ''
+    result: str = "Exam passed" if total > 0 and pass_count / total > 0.85 else "Exam failed"
+    totals_line: str = ""
 
     if examiners:
         totals: Examiner = sum(examiners[1:], examiners[0])
         totals_line = (
-            f'Total across all examiners: '
-            f'{totals.total} students, '
-            f'{totals.failed} failed, '
-            f'{totals.work_time:.2f}s work time'
+            f"Total across all examiners: "
+            f"{totals.total} students, "
+            f"{totals.failed} failed, "
+            f"{totals.work_time:.2f}s work time"
         )
 
-    return '\n'.join([
-        s_table, '',
-        e_table, '',
-        f'Time from exam start to finish: {total_time:.2f}',
-        *([totals_line] if totals_line else []),
-        f'Top-performing students: {", ".join(top_students)}',
-        f'Top examiners: {", ".join(top_examiners)}',
-        f'Students to be expelled: {", ".join(expelled)}',
-        f'Best questions: {", ".join(best_qs)}',
-        f'Result: {result}',
-    ])
+    return "\n".join(
+        [
+            s_table,
+            "",
+            e_table,
+            "",
+            f"Time from exam start to finish: {total_time:.2f}",
+            *([totals_line] if totals_line else []),
+            f'Top-performing students: {", ".join(top_students)}',
+            f'Top examiners: {", ".join(top_examiners)}',
+            f'Students to be expelled: {", ".join(expelled)}',
+            f'Best questions: {", ".join(best_qs)}',
+            f"Result: {result}",
+        ]
+    )
 
 
 def clear_lines(n: int) -> None:
@@ -219,4 +201,4 @@ def clear_lines(n: int) -> None:
     """
 
     if n > 0:
-        sys.stdout.write(f'\033[{n}A\033[J')
+        sys.stdout.write(f"\033[{n}A\033[J")

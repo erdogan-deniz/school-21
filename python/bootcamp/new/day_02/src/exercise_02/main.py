@@ -17,9 +17,7 @@ async def main() -> None:
 
     async with aiohttp.ClientSession() as session:
         while True:
-            url: str = await asyncio.to_thread(
-                input, "Enter image URL (empty line to stop): "
-            )
+            url: str = await asyncio.to_thread(input, "Enter image URL (empty line to stop): ")
             url = url.strip()
 
             if not url:
@@ -31,9 +29,7 @@ async def main() -> None:
 
             tasks.append(task)
 
-        pending: list[asyncio.Task[tuple[str, str]]] = [
-            t for t in tasks if not t.done()
-        ]
+        pending: list[asyncio.Task[tuple[str, str]]] = [t for t in tasks if not t.done()]
 
         if pending:
             print(f"Waiting for {len(pending)} download(s) to finish...")

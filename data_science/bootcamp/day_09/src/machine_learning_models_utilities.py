@@ -2,7 +2,6 @@
 Utilities for machine learning models.
 """
 
-
 from pandas import DataFrame
 from tqdm.notebook import tqdm
 from typing import Any, Literal
@@ -35,7 +34,7 @@ def print_classification_model_cross_validation(
         "roc_auc",
         "accuracy",
         "precision",
-    ] = "accuracy"
+    ] = "accuracy",
 ) -> None:
     """
     Prints K-Fold cross-validation results for a classification model.
@@ -70,26 +69,39 @@ def print_classification_model_cross_validation(
     )
 
     try:
-        for train_idx, test_idx in k_fold.split(X, ):
+        for train_idx, test_idx in k_fold.split(
+            X,
+        ):
             X_train, X_test = X.iloc[train_idx], X.iloc[test_idx]
             y_train, y_test = y.iloc[train_idx], y.iloc[test_idx]
 
-            classification_model.fit(X_train, y_train, )
+            classification_model.fit(
+                X_train,
+                y_train,
+            )
 
-            metric_vals.append(round(
-                metrics_funcs[metric_name](
-                    classification_model.predict(X_train, ),
-                    y_train,
+            metric_vals.append(
+                round(
+                    metrics_funcs[metric_name](
+                        classification_model.predict(
+                            X_train,
+                        ),
+                        y_train,
+                    ),
+                    3,
                 ),
-                3,
-            ), )
-            metric_vals.append(round(
-                metrics_funcs[metric_name](
-                    classification_model.predict(X_test, ),
-                    y_test,
+            )
+            metric_vals.append(
+                round(
+                    metrics_funcs[metric_name](
+                        classification_model.predict(
+                            X_test,
+                        ),
+                        y_test,
+                    ),
+                    3,
                 ),
-                3,
-            ), )
+            )
 
             print(
                 f"train {metric_name} - {
@@ -97,8 +109,8 @@ def print_classification_model_cross_validation(
                         classification_model.predict(X_train, ),
                         y_train,
                     ):.3f
-                }" +
-                f" | test {metric_name} - {
+                }"
+                + f" | test {metric_name} - {
                     metrics_funcs[metric_name](
                         classification_model.predict(X_test, ),
                         y_test,
@@ -106,17 +118,28 @@ def print_classification_model_cross_validation(
                 }",
             )
 
-        print(f"\nClassification model STD is {std(metric_vals, ):.3f}.", )
         print(
-            f"Classification model average {metric_name} on cross-validation " +
-            f"is {(sum(metric_vals, ) / len(metric_vals, )):.3f}.\n",
+            f"\nClassification model STD is {std(metric_vals, ):.3f}.",
+        )
+        print(
+            f"Classification model average {metric_name} on cross-validation "
+            + f"is {(sum(metric_vals, ) / len(metric_vals, )):.3f}.\n",
         )
     except ValueError as val_err:
-        print("ValueError:", val_err, )
+        print(
+            "ValueError:",
+            val_err,
+        )
     except TypeError as type_err:
-        print("TypeError:", type_err, )
+        print(
+            "TypeError:",
+            type_err,
+        )
     except Exception as err:
-        print("Exception:", err, )
+        print(
+            "Exception:",
+            err,
+        )
 
 
 def get_classification_model_grid_search_results(
@@ -130,7 +153,7 @@ def get_classification_model_grid_search_results(
         "accuracy",
         "precision",
     ] = "accuracy",
-    num_of_splits: int = 5
+    num_of_splits: int = 5,
 ) -> DataFrame | None:
     """
     Performs grid-search with cross-validation for a classification model and
@@ -160,9 +183,11 @@ def get_classification_model_grid_search_results(
     """
 
     df_data: list[dict[str, Any]] = []
-    classification_model_params_grid: list = list(ParameterGrid(
-        classification_model_params_grid,
-    ), )
+    classification_model_params_grid: list = list(
+        ParameterGrid(
+            classification_model_params_grid,
+        ),
+    )
 
     try:
         for classification_model_params in tqdm(
@@ -181,37 +206,52 @@ def get_classification_model_grid_search_results(
                 estimator=loc_classification_model,
             )
 
-            df_data.append({
-                **classification_model_params,
-                f"std_{metric_name}": round(
-                    std(loc_classification_metric_scores, ),
-                    3,
-                ),
-                f"mean_{metric_name}": round(
-                    mean(loc_classification_metric_scores, ),
-                    3,
-                ),
-            }, )
+            df_data.append(
+                {
+                    **classification_model_params,
+                    f"std_{metric_name}": round(
+                        std(
+                            loc_classification_metric_scores,
+                        ),
+                        3,
+                    ),
+                    f"mean_{metric_name}": round(
+                        mean(
+                            loc_classification_metric_scores,
+                        ),
+                        3,
+                    ),
+                },
+            )
 
-        return DataFrame(
-            df_data
-        ).sort_values(
+        return DataFrame(df_data).sort_values(
             ascending=False,
-            by=[f"mean_{metric_name}", ],
+            by=[
+                f"mean_{metric_name}",
+            ],
         )
     except ValueError as val_err:
-        print("ValueError:", val_err, )
+        print(
+            "ValueError:",
+            val_err,
+        )
     except TypeError as type_err:
-        print("TypeError:", type_err, )
+        print(
+            "TypeError:",
+            type_err,
+        )
     except Exception as err:
-        print("Exception:", err, )
+        print(
+            "Exception:",
+            err,
+        )
 
 
 def get_classification_models_metrics_values(
     classification_models: list[Any],
     classification_models_params: list[dict[str, Any]],
     X: DataFrame,
-    y: ndarray
+    y: ndarray,
 ) -> dict[str, dict[str, float]] | None:
     """
     Evaluates multiple classification models and returns their performance
@@ -254,21 +294,30 @@ def get_classification_models_metrics_values(
                 **classification_model_params,
             )
 
-            loc_classification_model.fit(X_train, y_train, )
+            loc_classification_model.fit(
+                X_train,
+                y_train,
+            )
 
             classification_models_metrics_vals[
-                str(loc_classification_model.__name__, )
+                str(
+                    loc_classification_model.__name__,
+                )
             ] = {
                 "accuracy": round(
                     accuracy_score(
-                        loc_classification_model.predict(X_test, ),
+                        loc_classification_model.predict(
+                            X_test,
+                        ),
                         y_test,
                     ),
                     3,
                 ),
                 "precision": round(
                     precision_score(
-                        loc_classification_model.predict(X_test, ),
+                        loc_classification_model.predict(
+                            X_test,
+                        ),
                         y_test,
                         average="weighted",
                     ),
@@ -276,27 +325,42 @@ def get_classification_models_metrics_values(
                 ),
                 "recall": round(
                     recall_score(
-                        loc_classification_model.predict(X_test, ),
+                        loc_classification_model.predict(
+                            X_test,
+                        ),
                         y_test,
                         average="weighted",
                     ),
                     3,
                 ),
-                "roc-auc": float(round(
-                    roc_auc_score(
-                        loc_classification_model.predict_proba(X_test, ),
-                        y_test,
-                        multi_class="ovo",
-                        average="weighted",
+                "roc-auc": float(
+                    round(
+                        roc_auc_score(
+                            loc_classification_model.predict_proba(
+                                X_test,
+                            ),
+                            y_test,
+                            multi_class="ovo",
+                            average="weighted",
+                        ),
+                        3,
                     ),
-                    3,
-                ), ),
+                ),
             }
 
         return classification_models_metrics_vals
     except ValueError as val_err:
-        print("ValueError:", val_err, )
+        print(
+            "ValueError:",
+            val_err,
+        )
     except TypeError as type_err:
-        print("TypeError:", type_err, )
+        print(
+            "TypeError:",
+            type_err,
+        )
     except Exception as err:
-        print("Exception:", err, )
+        print(
+            "Exception:",
+            err,
+        )

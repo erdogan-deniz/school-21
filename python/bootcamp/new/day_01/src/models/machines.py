@@ -38,7 +38,7 @@ class Machines:
         num_of_machines: int | None = None,
         costs: list[int] | None = None,
         runn_times: list[int] | None = None,
-        manufact_years: list[int] | None = None
+        manufact_years: list[int] | None = None,
     ) -> None:
         """
         Initializes the `Machines` class representative.
@@ -74,34 +74,46 @@ class Machines:
         """
 
         try:
-            self.num_of_machines, self.cert_time = map(int, input().split(), )
+            self.num_of_machines, self.cert_time = map(
+                int,
+                input().split(),
+            )
 
-            for _ in range(self.num_of_machines, ):
-                machine_data: list = list(map(int, input().split(), ), )
+            for _ in range(
+                self.num_of_machines,
+            ):
+                machine_data: list = list(
+                    map(
+                        int,
+                        input().split(),
+                    ),
+                )
 
-                self.costs.append(machine_data[1], )
-                self.runn_times.append(machine_data[2], )
-                self.manufact_years.append(machine_data[0], )
+                self.costs.append(
+                    machine_data[1],
+                )
+                self.runn_times.append(
+                    machine_data[2],
+                )
+                self.manufact_years.append(
+                    machine_data[0],
+                )
 
         except IndexError as idx_err:
             raise IndexError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {idx_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {idx_err}.",
             )
         except ValueError as val_err:
             raise ValueError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {val_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {val_err}.",
             )
         except TypeError as type_err:
             raise TypeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {type_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {type_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )
 
     def find_two_suitable_machines_cost(self) -> float | None:
@@ -122,40 +134,34 @@ class Machines:
         try:
             total_cost: int = 0
 
-            for idx in range(self.num_of_machines, ):
-                for jdx in range(self.num_of_machines, ):
+            for idx in range(
+                self.num_of_machines,
+            ):
+                for jdx in range(
+                    self.num_of_machines,
+                ):
                     if (
-                        (
-                            (self.runn_times[idx] + self.runn_times[jdx]) ==\
-                            self.cert_time
-                        ) and
-                        (idx != jdx) and
-                        (self.manufact_years[idx] == self.manufact_years[jdx])
+                        ((self.runn_times[idx] + self.runn_times[jdx]) == self.cert_time)
+                        and (idx != jdx)
+                        and (self.manufact_years[idx] == self.manufact_years[jdx])
                     ):
-                        if (
-                            (total_cost == 0) or
-                            ((self.costs[idx] + self.costs[jdx]) < total_cost)
-                        ):
+                        if (total_cost == 0) or ((self.costs[idx] + self.costs[jdx]) < total_cost):
                             total_cost = self.costs[idx] + self.costs[jdx]
 
             return total_cost
         except IndexError as idx_err:
             raise IndexError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {idx_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {idx_err}.",
             )
         except ValueError as val_err:
             raise ValueError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {val_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {val_err}.",
             )
         except TypeError as type_err:
             raise TypeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {type_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {type_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )

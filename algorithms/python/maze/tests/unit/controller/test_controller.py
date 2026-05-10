@@ -68,9 +68,7 @@ class TestLoadMazeFromFile:
         ):
             assert ctrl.load_maze_from_file("/bad/path.txt") is False
 
-    def test_model_unchanged_on_error(
-        self, ctrl_with_maze: Controller
-    ) -> None:
+    def test_model_unchanged_on_error(self, ctrl_with_maze: Controller) -> None:
         """The current field model is unchanged when an exception occurs."""
         old_model = ctrl_with_maze.get_current_field_model()
         with patch.object(

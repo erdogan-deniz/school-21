@@ -107,7 +107,7 @@ def examiner_worker(
         except queue.Empty:
             break
 
-        update_q.put(('start', name, student_name))
+        update_q.put(("start", name, student_name))
 
         duration: float = random.uniform(name_len - 1, name_len + 1)
         passed: bool
@@ -118,16 +118,23 @@ def examiner_worker(
         finish_time: float = time.time() - exam_start
         work_time: float = time.time() - work_start
 
-        update_q.put((
-            'done', name, student_name,
-            passed, finish_time, q_results, work_time,
-        ))
+        update_q.put(
+            (
+                "done",
+                name,
+                student_name,
+                passed,
+                finish_time,
+                q_results,
+                work_time,
+            )
+        )
 
         if not took_break and time.time() - exam_start >= _BREAK_AFTER_SECONDS:
             took_break = True
 
-            update_q.put(('break', name))
+            update_q.put(("break", name))
             time.sleep(random.uniform(_BREAK_MIN, _BREAK_MAX))
-            update_q.put(('back', name, time.time() - work_start))
+            update_q.put(("back", name, time.time() - work_start))
 
-    update_q.put(('finished', name, time.time() - work_start))
+    update_q.put(("finished", name, time.time() - work_start))

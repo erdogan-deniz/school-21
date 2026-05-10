@@ -22,7 +22,7 @@ def print_summary(res: list[tuple[str, str]]) -> None:
     def fmt_row(r: tuple[str, str]) -> str:
         """
         Format a single row of the table.
-        
+
         :Parameters:
             r (tuple[str, str]): A tuple containing the URL and its download
                 status.

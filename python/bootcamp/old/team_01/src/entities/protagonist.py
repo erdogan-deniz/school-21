@@ -4,7 +4,6 @@ Classes:
     Protagonist - A class for an analog of working with a protagonist.
 """
 
-
 # Necessary modules:
 import time
 import random
@@ -66,7 +65,7 @@ class Protagonist:
         self.level: int = 1
         self.id: int = protagonist_id
         self.type: str = protagonist_type
-        self.name: str = additional.get_name() + ' ' + additional.get_surname()
+        self.name: str = additional.get_name() + " " + additional.get_surname()
 
         # Other:
         self.inventory: list = []
@@ -103,11 +102,11 @@ class Protagonist:
         """
 
         await message.answer(
-                                "<u>YOUR HERO IS</u>:\n\n"
-                                f"<b>Name</b>: <code>{clear_string(self.name)}</code>\n" +
-                                f"<b>Type</b>: <code>{clear_string(self.type)}</code>\n" +
-                                f"<b>Level</b>: <code>{self.level}</code>\n"
-                            )
+            "<u>YOUR HERO IS</u>:\n\n"
+            f"<b>Name</b>: <code>{clear_string(self.name)}</code>\n"
+            + f"<b>Type</b>: <code>{clear_string(self.type)}</code>\n"
+            + f"<b>Level</b>: <code>{self.level}</code>\n"
+        )
 
     def set_start_item(self, protagonist_item: str):
         """The method to add item to the protagonist inventory.
@@ -195,13 +194,18 @@ class Protagonist:
 
         while enemy_health > 0:
             your_stats = self.strength + self.agility + self.armor + random.randint(1, 6)
-            enemy_stats = current_enemy.agility + current_enemy.strength + current_enemy.armor + random.randint(1, 6)
+            enemy_stats = (
+                current_enemy.agility
+                + current_enemy.strength
+                + current_enemy.armor
+                + random.randint(1, 6)
+            )
 
             await message.answer(
-                                    f"<u>Round №</u> {current_round}:\n\n" +
-                                    f"<b>Your skills</b>: <code>{your_stats}</code>\n" +
-                                    f"<b>Enemy skills</b>: <code>{enemy_stats}</code>\n"
-                                )
+                f"<u>Round №</u> {current_round}:\n\n"
+                + f"<b>Your skills</b>: <code>{your_stats}</code>\n"
+                + f"<b>Enemy skills</b>: <code>{enemy_stats}</code>\n"
+            )
 
             current_round += 1
 

@@ -6,7 +6,13 @@ locker = threading.Lock()  # Locker
 
 
 class Doctor:
-    def __init__(self, number: int = 0, screwdriver_left=None, screwdriver_right=None, status: str = "waiting"):
+    def __init__(
+        self,
+        number: int = 0,
+        screwdriver_left=None,
+        screwdriver_right=None,
+        status: str = "waiting",
+    ):
         self.number = number
         self.status = status
         self.screwdriver_left = screwdriver_left
@@ -26,9 +32,12 @@ class Doctor:
         self.number = number
 
     def blast(self):
-        if ((self.screwdriver_left.get_number() == self.get_number()) and
-                (self.screwdriver_right.get_number() == self.get_number()) and
-                (self.screwdriver_left.get_status() == "took") and (self.screwdriver_right.get_status() == "took")):
+        if (
+            (self.screwdriver_left.get_number() == self.get_number())
+            and (self.screwdriver_right.get_number() == self.get_number())
+            and (self.screwdriver_left.get_status() == "took")
+            and (self.screwdriver_right.get_status() == "took")
+        ):
             print(f"Doctor {self.get_number()}: BLAST!")
             self.set_status("done")
             self.drop_left()

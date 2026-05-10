@@ -27,9 +27,13 @@ while True:
             break
 
         # Check is correct line:
-        if not sample.startswith("000000") and sample.startswith("00000") and \
-                len(sample) == 32 and argument_value > 0:
-            answer += sample + '\n'  # Update answer
+        if (
+            not sample.startswith("000000")
+            and sample.startswith("00000")
+            and len(sample) == 32
+            and argument_value > 0
+        ):
+            answer += sample + "\n"  # Update answer
 
     # End loop when we get empty line:
     except EOFError:

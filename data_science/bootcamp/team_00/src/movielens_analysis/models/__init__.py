@@ -2,7 +2,6 @@
 Movielens models file.
 """
 
-
 from .tag import *
 from .link import *
 from .user import *

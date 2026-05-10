@@ -116,9 +116,7 @@ class TestMazeCanvas:
         canvas = MazeCanvas()
         qtbot.addWidget(canvas)
         canvas.show_image(maze_image)
-        canvas.resizeEvent(
-            QResizeEvent(QSize(200, 200), canvas.size())
-        )
+        canvas.resizeEvent(QResizeEvent(QSize(200, 200), canvas.size()))
         assert canvas.pixmap() is not None
         assert not canvas.pixmap().isNull()
 

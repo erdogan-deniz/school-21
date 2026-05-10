@@ -6,14 +6,10 @@ import random
 from collections import Counter
 
 
-def get_generated_numbers(
-    iters_count: int, min_num_val: int, max_num_val
-) -> list:
+def get_generated_numbers(iters_count: int, min_num_val: int, max_num_val) -> list:
     """"""
 
-    generated_nums: list = [
-        random.randint(min_num_val, max_num_val) for _ in range(iters_count)
-    ]
+    generated_nums: list = [random.randint(min_num_val, max_num_val) for _ in range(iters_count)]
 
     return generated_nums
 
@@ -56,9 +52,9 @@ def get_top_numbers_counts_cycle(nums: list, top_length: int) -> dict:
 
     top_nums_counts: dict = {
         key: val
-        for key, val in sorted(
-            nums_counts.items(), key=lambda pair: pair[1], reverse=True
-        )[:top_length]
+        for key, val in sorted(nums_counts.items(), key=lambda pair: pair[1], reverse=True)[
+            :top_length
+        ]
     }
 
     return top_nums_counts

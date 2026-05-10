@@ -138,6 +138,6 @@ def test_solve_from_file() -> None:
             assert path is not None, f"No path from (0,0) to ({r},{c})"
             assert path[0] == (0, 0)
             assert path[-1] == (r, c)
-            assert _is_valid_path(maze, path), (
-                f"Path to ({r},{c}) passes through a wall"
-            )
+            assert _is_valid_path(
+                maze, path
+            ), f"Path to ({r},{c}) passes through a wall"

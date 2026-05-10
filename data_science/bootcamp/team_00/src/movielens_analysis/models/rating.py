@@ -20,7 +20,6 @@ Examples of usage:
     >>> print(inst.get_top_ratings(), )
 """
 
-
 from datetime import datetime
 
 
@@ -45,11 +44,7 @@ class Rating:
                     Default: None.
     """
 
-    def __init__(
-        self,
-        file_path: str,
-        file: str = "ratings.csv"
-    ) -> None:
+    def __init__(self, file_path: str, file: str = "ratings.csv") -> None:
         """
         Initializes the `Rating` analyzer.
 
@@ -85,21 +80,37 @@ class Rating:
         try:
             with open(
                 file=self.file_path + self.file,
-                mode='r',
+                mode="r",
                 encoding="utf-8",
             ) as file:
-                next(file, )  # Skip header
+                next(
+                    file,
+                )  # Skip header
 
                 self.data = [
                     line.rstrip()
-                    for line, _ in zip(file, range(size, ), )
+                    for line, _ in zip(
+                        file,
+                        range(
+                            size,
+                        ),
+                    )
                 ]
         except FileNotFoundError as file_not_found_err:
-            print("FileNotFoundError:", file_not_found_err, )
+            print(
+                "FileNotFoundError:",
+                file_not_found_err,
+            )
         except IOError as io_err:
-            print("IOError:", io_err, )
+            print(
+                "IOError:",
+                io_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def load_users_ids(self, size: int = 1000) -> None:
         """
@@ -119,24 +130,44 @@ class Rating:
         try:
             with open(
                 file=self.file_path + self.file,
-                mode='r',
+                mode="r",
                 encoding="utf-8",
             ) as file:
-                next(file, )  # Skip header
+                next(
+                    file,
+                )  # Skip header
 
                 self.users_ids = [
-                    line.rstrip().split(',', )[0]
-                    for line, _
-                    in zip(file, range(size, ), )
+                    line.rstrip().split(
+                        ",",
+                    )[0]
+                    for line, _ in zip(
+                        file,
+                        range(
+                            size,
+                        ),
+                    )
                 ]
         except FileNotFoundError as file_not_found_err:
-            print("FileNotFoundError:", file_not_found_err, )
+            print(
+                "FileNotFoundError:",
+                file_not_found_err,
+            )
         except IOError as io_err:
-            print("IOError:", io_err, )
+            print(
+                "IOError:",
+                io_err,
+            )
         except IndexError as idx_err:
-            print("IndexError:", idx_err, )
+            print(
+                "IndexError:",
+                idx_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def load_movies_ids(self, size: int = 1000) -> None:
         """
@@ -156,24 +187,44 @@ class Rating:
         try:
             with open(
                 file=self.file_path + self.file,
-                mode='r',
+                mode="r",
                 encoding="utf-8",
             ) as file:
-                next(file, )  # Skip header
+                next(
+                    file,
+                )  # Skip header
 
                 self.movies_ids = [
-                    line.rstrip().split(',', )[1]
-                    for line, _
-                    in zip(file, range(size, ), )
+                    line.rstrip().split(
+                        ",",
+                    )[1]
+                    for line, _ in zip(
+                        file,
+                        range(
+                            size,
+                        ),
+                    )
                 ]
         except FileNotFoundError as file_not_found_err:
-            print("FileNotFoundError:", file_not_found_err, )
+            print(
+                "FileNotFoundError:",
+                file_not_found_err,
+            )
         except IOError as io_err:
-            print("IOError:", io_err, )
+            print(
+                "IOError:",
+                io_err,
+            )
         except IndexError as idx_err:
-            print("IndexError:", idx_err, )
+            print(
+                "IndexError:",
+                idx_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def load_ratings(self, size: int = 1000) -> None:
         """
@@ -193,24 +244,44 @@ class Rating:
         try:
             with open(
                 file=self.file_path + self.file,
-                mode='r',
+                mode="r",
                 encoding="utf-8",
             ) as file:
-                next(file, )  # Skip header
+                next(
+                    file,
+                )  # Skip header
 
                 self.ratings = [
-                    line.rstrip().split(',', )[2]
-                    for line, _
-                    in zip(file, range(size, ), )
+                    line.rstrip().split(
+                        ",",
+                    )[2]
+                    for line, _ in zip(
+                        file,
+                        range(
+                            size,
+                        ),
+                    )
                 ]
         except FileNotFoundError as file_not_found_err:
-            print("FileNotFoundError:", file_not_found_err, )
+            print(
+                "FileNotFoundError:",
+                file_not_found_err,
+            )
         except IOError as io_err:
-            print("IOError:", io_err, )
+            print(
+                "IOError:",
+                io_err,
+            )
         except IndexError as idx_err:
-            print("IndexError:", idx_err, )
+            print(
+                "IndexError:",
+                idx_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def load_timestamps(self, size: int = 1000) -> None:
         """
@@ -230,24 +301,44 @@ class Rating:
         try:
             with open(
                 file=self.file_path + self.file,
-                mode='r',
+                mode="r",
                 encoding="utf-8",
             ) as file:
-                next(file, )  # Skip header
+                next(
+                    file,
+                )  # Skip header
 
                 self.tss = [
-                    line.rstrip().split(',', )[3]
-                    for line, _
-                    in zip(file, range(size, ), )
+                    line.rstrip().split(
+                        ",",
+                    )[3]
+                    for line, _ in zip(
+                        file,
+                        range(
+                            size,
+                        ),
+                    )
                 ]
         except FileNotFoundError as file_not_found_err:
-            print("FileNotFoundError:", file_not_found_err, )
+            print(
+                "FileNotFoundError:",
+                file_not_found_err,
+            )
         except IOError as io_err:
-            print("IOError:", io_err, )
+            print(
+                "IOError:",
+                io_err,
+            )
         except IndexError as idx_err:
-            print("IndexError:", idx_err, )
+            print(
+                "IndexError:",
+                idx_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def print_data(self) -> None:
         """
@@ -260,14 +351,28 @@ class Rating:
         """
 
         try:
-            for idx, data in enumerate(self.data, 1, ):
-                print(f"row index: {idx}, data: {data}", )
+            for idx, data in enumerate(
+                self.data,
+                1,
+            ):
+                print(
+                    f"row index: {idx}, data: {data}",
+                )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except UnicodeEncodeError as unicode_encode_err:
-            print("UnicodeEncodeError:", unicode_encode_err, )
+            print(
+                "UnicodeEncodeError:",
+                unicode_encode_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def print_users_ids(self) -> None:
         """
@@ -280,14 +385,28 @@ class Rating:
         """
 
         try:
-            for idx, user_id in enumerate(self.users_ids, 1, ):
-                print(f"row index: {idx}, user ID: {user_id}", )
+            for idx, user_id in enumerate(
+                self.users_ids,
+                1,
+            ):
+                print(
+                    f"row index: {idx}, user ID: {user_id}",
+                )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except UnicodeEncodeError as unicode_encode_err:
-            print("UnicodeEncodeError:", unicode_encode_err, )
+            print(
+                "UnicodeEncodeError:",
+                unicode_encode_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def print_movies_ids(self) -> None:
         """
@@ -300,14 +419,28 @@ class Rating:
         """
 
         try:
-            for idx, movie_id in enumerate(self.movies_ids, 1, ):
-                print(f"row index: {idx}, movie ID: {movie_id}", )
+            for idx, movie_id in enumerate(
+                self.movies_ids,
+                1,
+            ):
+                print(
+                    f"row index: {idx}, movie ID: {movie_id}",
+                )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except UnicodeEncodeError as unicode_encode_err:
-            print("UnicodeEncodeError:", unicode_encode_err, )
+            print(
+                "UnicodeEncodeError:",
+                unicode_encode_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def print_ratings(self) -> None:
         """
@@ -320,14 +453,28 @@ class Rating:
         """
 
         try:
-            for idx, rating in enumerate(self.ratings, 1, ):
-                print(f"row index: {idx}, rating: {rating}", )
+            for idx, rating in enumerate(
+                self.ratings,
+                1,
+            ):
+                print(
+                    f"row index: {idx}, rating: {rating}",
+                )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except UnicodeEncodeError as unicode_encode_err:
-            print("UnicodeEncodeError:", unicode_encode_err, )
+            print(
+                "UnicodeEncodeError:",
+                unicode_encode_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def print_timestamps(self) -> None:
         """
@@ -340,14 +487,28 @@ class Rating:
         """
 
         try:
-            for idx, ts in enumerate(self.tss, 1, ):
-                print(f"row index: {idx}, timestamp: {ts}", )
+            for idx, ts in enumerate(
+                self.tss,
+                1,
+            ):
+                print(
+                    f"row index: {idx}, timestamp: {ts}",
+                )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except UnicodeEncodeError as unicode_encode_err:
-            print("UnicodeEncodeError:", unicode_encode_err, )
+            print(
+                "UnicodeEncodeError:",
+                unicode_encode_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def get_top_release_years(self) -> dict[str, int] | None:
         """
@@ -367,22 +528,46 @@ class Rating:
 
         try:
             years: list[str] = [
-                datetime.fromtimestamp(int(ts, ), ).year
-                for ts
-                in self.tss
+                datetime.fromtimestamp(
+                    int(
+                        ts,
+                    ),
+                ).year
+                for ts in self.tss
             ]
 
-            return dict(sorted([
-                (str(year, ), years.count(year, ), )
-                for year
-                in set(years, )
-            ], ), )
+            return dict(
+                sorted(
+                    [
+                        (
+                            str(
+                                year,
+                            ),
+                            years.count(
+                                year,
+                            ),
+                        )
+                        for year in set(
+                            years,
+                        )
+                    ],
+                ),
+            )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except TypeError as type_err:
-            print("TypeError:", type_err, )
+            print(
+                "TypeError:",
+                type_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def get_top_ratings(self) -> dict[str, int] | None:
         """
@@ -404,12 +589,31 @@ class Rating:
             ratings_freqs: dict[str, int] = {}
 
             for rating in self.ratings:
-                ratings_freqs[rating] = ratings_freqs.get(rating, 0, ) + 1
+                ratings_freqs[rating] = (
+                    ratings_freqs.get(
+                        rating,
+                        0,
+                    )
+                    + 1
+                )
 
-            return dict(sorted(ratings_freqs.items(), ), )
+            return dict(
+                sorted(
+                    ratings_freqs.items(),
+                ),
+            )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except TypeError as type_err:
-            print("TypeError:", type_err, )
+            print(
+                "TypeError:",
+                type_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )

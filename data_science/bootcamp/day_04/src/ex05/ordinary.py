@@ -40,9 +40,7 @@ def main() -> None:
     time_usage_end: float = main_process.cpu_times()
     memory_usage_end: float = main_process.memory_info().rss
 
-    peak_usage_memory: float = (memory_usage_end - memory_usage_start) / (
-        1024**3
-    )
+    peak_usage_memory: float = (memory_usage_end - memory_usage_start) / (1024**3)
     usage_time: float = (time_usage_end.user + time_usage_end.system) - (
         time_usage_start.user + time_usage_start.system
     )

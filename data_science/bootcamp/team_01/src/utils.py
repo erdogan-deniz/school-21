@@ -2,14 +2,13 @@
 Additional utilities module.
 """
 
-
 import sys
 
 from typing import Any
 from joblib import load
 
 
-def get_conversion_multiplier_to_g(unit: str = 'g') -> float | None:
+def get_conversion_multiplier_to_g(unit: str = "g") -> float | None:
     """
     Returns the multiplicatior for converting units of weight measurement to
     grams.
@@ -30,7 +29,7 @@ def get_conversion_multiplier_to_g(unit: str = 'g') -> float | None:
 
     try:
         match unit.lower():
-            case 'g':
+            case "g":
                 return 1.0
             case "mg":
                 return 0.001
@@ -39,14 +38,20 @@ def get_conversion_multiplier_to_g(unit: str = 'g') -> float | None:
             case "iu":
                 return 0.0000003
     except ValueError as val_err:
-        print("ValueError:", val_err, )
+        print(
+            "ValueError:",
+            val_err,
+        )
     except TypeError as type_err:
-        print("TypeError:", type_err, )
+        print(
+            "TypeError:",
+            type_err,
+        )
     except Exception as err:
         raise Exception(
-            f"\nFile: {__file__}\n" +
-            f"Message: {err}.",
+            f"\nFile: {__file__}\n" + f"Message: {err}.",
         )
+
 
 def get_clear_string(string: str) -> str | None:
     """
@@ -65,14 +70,19 @@ def get_clear_string(string: str) -> str | None:
     """
 
     try:
-        return string.strip('"', ).strip()
+        return string.strip(
+            '"',
+        ).strip()
     except TypeError as type_err:
-        print("TypeError:", type_err, )
+        print(
+            "TypeError:",
+            type_err,
+        )
     except Exception as err:
         raise Exception(
-            f"\nFile: {__file__}\n" +
-            f"Message: {err}.",
+            f"\nFile: {__file__}\n" + f"Message: {err}.",
         )
+
 
 def get_script_arguments() -> list[Any] | None:
     """
@@ -92,18 +102,27 @@ def get_script_arguments() -> list[Any] | None:
     try:
         script_args: list[Any] = sys.argv
 
-        return script_args[1: ]
+        return script_args[1:]
     except AttributeError as attr_err:
-        print("AttributeError:", attr_err, )
+        print(
+            "AttributeError:",
+            attr_err,
+        )
     except IndexError as idx_err:
-        print("IndexError:", idx_err, )
+        print(
+            "IndexError:",
+            idx_err,
+        )
     except TypeError as type_err:
-        print("TypeError:", type_err, )
+        print(
+            "TypeError:",
+            type_err,
+        )
     except Exception as err:
         raise Exception(
-            f"\nFile: {__file__}\n" +
-            f"Message: {err}.",
+            f"\nFile: {__file__}\n" + f"Message: {err}.",
         )
+
 
 def unpack_model(model_file: str, model_file_path: str) -> Any | None:
     """
@@ -124,15 +143,22 @@ def unpack_model(model_file: str, model_file_path: str) -> Any | None:
     """
 
     try:
-        model: Any = load(model_file_path + model_file, )
+        model: Any = load(
+            model_file_path + model_file,
+        )
 
         return model
     except FileNotFoundError as file_not_found_err:
-        print("FileNotFoundError:", file_not_found_err, )
+        print(
+            "FileNotFoundError:",
+            file_not_found_err,
+        )
     except TypeError as type_err:
-        print("TypeError:", type_err, )
+        print(
+            "TypeError:",
+            type_err,
+        )
     except Exception as err:
         raise Exception(
-            f"\nFile: {__file__}\n" +
-            f"Message: {err}.",
+            f"\nFile: {__file__}\n" + f"Message: {err}.",
         )

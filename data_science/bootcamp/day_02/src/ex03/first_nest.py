@@ -4,9 +4,7 @@ import sys
 def is_latin_letter(symbol: str) -> bool:
     """"""
 
-    symbol_is_latin_letter: bool = (
-        symbol in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    )
+    symbol_is_latin_letter: bool = symbol in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
     return symbol_is_latin_letter
 
@@ -32,9 +30,7 @@ class Research:
                 if (symbol != ",") and (not is_latin_letter(symbol)):
                     raise Exception("ERROR! Incorrect file content header.")
 
-            if (len(file_content[0].split(",")) != 2) or (
-                file_content[0].count(",") > 1
-            ):
+            if (len(file_content[0].split(",")) != 2) or (file_content[0].count(",") > 1):
                 raise Exception("ERROR! Incorrect file content header.")
 
         for file_row in file_content[1:]:
@@ -42,9 +38,7 @@ class Research:
                 raise Exception("ERROR! Incorrect file content.")
 
         file_content = [pair.rstrip().split(",") for pair in file_content[1:]]
-        file_content = [
-            [int(num) for num in sublist] for sublist in file_content
-        ]
+        file_content = [[int(num) for num in sublist] for sublist in file_content]
 
         return file_content
 
@@ -80,9 +74,7 @@ if __name__ == "__main__":
     digit_pairs: list = researcher.file_reader()
 
     element_counters: tuple = researcher.Calculations.counts(digit_pairs)
-    element_fractions: tuple = researcher.Calculations.fractions(
-        *element_counters
-    )
+    element_fractions: tuple = researcher.Calculations.fractions(*element_counters)
 
     print(digit_pairs)
     print(*element_counters)

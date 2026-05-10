@@ -9,10 +9,12 @@ from flask import Flask, render_template, request  # Flask functions
 
 
 def is_audio_file(current_file):  # Checking file for audio format
-    if ((re.match(r"^.*\.mp3$", current_file) is not None) or
-            (re.match(r"^.*\.ogg$", current_file) is not None) or
-            (re.match(r"^.*\.wav$", current_file) is not None) or
-            (re.match(r"^.*\.mpeg$", current_file) is not None)):
+    if (
+        (re.match(r"^.*\.mp3$", current_file) is not None)
+        or (re.match(r"^.*\.ogg$", current_file) is not None)
+        or (re.match(r"^.*\.wav$", current_file) is not None)
+        or (re.match(r"^.*\.mpeg$", current_file) is not None)
+    ):
         return True
 
     return False
@@ -20,23 +22,25 @@ def is_audio_file(current_file):  # Checking file for audio format
 
 music_list = []  # Our current list of musics
 disk_musics = next(walk("music"), (None, None, []))[2]  # Real files on the disk
-disk_musics = [i for i in disk_musics if (":Zone.Identifier" not in i) and (is_audio_file(i))]  # Delete identifiers
+disk_musics = [
+    i for i in disk_musics if (":Zone.Identifier" not in i) and (is_audio_file(i))
+]  # Delete identifiers
 app = Flask(__name__)  # Main flask window
 
 
 def create_music_file(music):  # Save our musics to the file
-    with open("musics.yml", 'w') as current_file:
+    with open("musics.yml", "w") as current_file:
         yaml.safe_dump({"key": music}, current_file)
 
 
 # Papers for watching:
-@app.route('/', methods=["POST", "GET"])
+@app.route("/", methods=["POST", "GET"])
 @app.route("/main", methods=["POST", "GET"])
 @app.route("/home", methods=["POST", "GET"])
 def home_page():
     # Upload new track:
     try:
-        with open("new_tracks.yml", 'r') as current_file:
+        with open("new_tracks.yml", "r") as current_file:
             current_data = yaml.load(current_file, Loader=yaml.FullLoader)
 
         music_list.append(current_data["key"])  # Add music in a current list
@@ -61,7 +65,7 @@ def convert_to_string(musics):
 @app.route("/new_list", methods=["POST", "GET"])
 def result():
     try:
-        with open("new_tracks.yml", 'r') as current_file:
+        with open("new_tracks.yml", "r") as current_file:
             current_data = yaml.load(current_file, Loader=yaml.FullLoader)
 
         music_list.append(current_data["key"])
@@ -82,18 +86,23 @@ def result():
         music_list.append(new_track)
         create_music_file(music_list)
 
-        return render_template("index.html", new_track=new_track, musics=convert_to_string(music_list))
+        return render_template(
+            "index.html", new_track=new_track, musics=convert_to_string(music_list)
+        )
     else:
         create_music_file(music_list)
 
-        return render_template("index.html", new_track="Incorrect File Or Format!",
-                               musics=convert_to_string(music_list))
+        return render_template(
+            "index.html",
+            new_track="Incorrect File Or Format!",
+            musics=convert_to_string(music_list),
+        )
 
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and (str(sys.argv[1]) == "list"):  # Check a current list of tracks
         try:
-            with open("musics.yml", 'r') as file:
+            with open("musics.yml", "r") as file:
                 data = yaml.load(file, Loader=yaml.FullLoader)
 
             for value in data["key"]:
@@ -102,11 +111,11 @@ if __name__ == "__main__":
         except FileNotFoundError:
             pass
     elif (len(sys.argv) > 2) and (str(sys.argv[1]) == "upload"):  # If we upload track
-        if is_audio_file(str(sys.argv[2].split('/ ')[-1])):
+        if is_audio_file(str(sys.argv[2].split("/ ")[-1])):
             subprocess.run(f"cp {sys.argv[2]} music/", shell=True)
 
-            with open("new_tracks.yml", 'w') as file:
-                yaml.safe_dump({"key": str(sys.argv[2]).split('/')[-1]}, file)
+            with open("new_tracks.yml", "w") as file:
+                yaml.safe_dump({"key": str(sys.argv[2]).split("/")[-1]}, file)
         else:
             print("ERROR!")
     else:

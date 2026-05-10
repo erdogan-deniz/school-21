@@ -59,9 +59,12 @@ class Task:
     """
 
     def __init__(
-                    self, task_id: int = None, task_name: str = None, task_description: str = None,
-                    task_difficult: str = None
-                ):
+        self,
+        task_id: int = None,
+        task_name: str = None,
+        task_description: str = None,
+        task_difficult: str = None,
+    ):
         """Constructor method.
 
         :return: It does not return anything, but only set parameters of task.
@@ -84,8 +87,8 @@ class Task:
         """
 
         await message.answer(
-                                f"<u>THIS IS TASK</u> № {self.id}:\n\n" +
-                                f"<b>Task difficult</b>: <code>{self.difficult}</code>\n" +
-                                f"<b>Task name</b>: <code>{clear_string(self.name)}</code>\n" +
-                                f"<b>Task description</b>: <i>{clear_string(self.description)}</i>\n"
-                            )
+            f"<u>THIS IS TASK</u> № {self.id}:\n\n"
+            + f"<b>Task difficult</b>: <code>{self.difficult}</code>\n"
+            + f"<b>Task name</b>: <code>{clear_string(self.name)}</code>\n"
+            + f"<b>Task description</b>: <i>{clear_string(self.description)}</i>\n"
+        )

@@ -7,13 +7,14 @@ Examples of usage:
     >>> fdc.set_configuration()
 """
 
-
 import os
 import sys
 
 sys.path.append(
     os.path.dirname(
-        os.path.abspath(__file__, ),
+        os.path.abspath(
+            __file__,
+        ),
     ),
 )
 
@@ -40,10 +41,7 @@ class FDC:
                        Default: {}.
     """
 
-    def __init__(
-        self,
-        config: dict[str, Any] | None = None
-    ) -> None:
+    def __init__(self, config: dict[str, Any] | None = None) -> None:
         """
         Initializes the "Food Data Central" class representative.
 
@@ -57,7 +55,7 @@ class FDC:
 
     @staticmethod
     def parse_ingredient_nutrients_data(
-        ingredient_data: dict[str, Any]
+        ingredient_data: dict[str, Any],
     ) -> list[list[str | None, float, str]] | None:
         """
         Extracts a nutrients data from ingredient data.
@@ -88,41 +86,40 @@ class FDC:
             )
 
             for nutrient_data in nutrients_data:
-                ingredient_nutrients_data.append([
-                    nutrient_data.get(
-                        "nutrientName",
-                        None,
-                    ),
-                    nutrient_data.get(
-                        "value",
-                        0,
-                    ),
-                    nutrient_data.get(
-                        "unitName",
-                        'g',
-                    ),
-                ], )
+                ingredient_nutrients_data.append(
+                    [
+                        nutrient_data.get(
+                            "nutrientName",
+                            None,
+                        ),
+                        nutrient_data.get(
+                            "value",
+                            0,
+                        ),
+                        nutrient_data.get(
+                            "unitName",
+                            "g",
+                        ),
+                    ],
+                )
 
             return ingredient_nutrients_data
         except IndexError as idx_err:
             raise IndexError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {idx_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {idx_err}.",
             )
         except KeyError as key_err:
             raise KeyError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {key_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {key_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )
 
     @staticmethod
     def parse_ingredients_nutrients_data(
-        ingredients_data: list[dict[str, Any]]
+        ingredients_data: list[dict[str, Any]],
     ) -> list[list[list[str | None, float, str]]] | None:
         """
         Extracts a nutrients data from ingredients data.
@@ -145,24 +142,24 @@ class FDC:
         try:
             for ingredient_data in ingredients_data:
                 ingredients_nutrients_data.append(
-                    FDC.parse_ingredient_nutrients_data(ingredient_data, ),
+                    FDC.parse_ingredient_nutrients_data(
+                        ingredient_data,
+                    ),
                 )
 
             return ingredients_nutrients_data
         except ValueError as val_err:
             raise ValueError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {val_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {val_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )
 
     @staticmethod
     def standardize_ingredient_nutrient_data(
-        ingredient_nutrient_data: list[str | None, float, str]
+        ingredient_nutrient_data: list[str | None, float, str],
     ) -> list[str, float] | None:
         """
         Standardize an ingredient nutrient data.
@@ -189,235 +186,263 @@ class FDC:
                 case "protein":
                     return [
                         "protein",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "total lipid (fat)":
                     return [
                         "fat",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "carbohydrate, by difference":
                     return [
                         "carbohydrate",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "total sugars":
                     return [
                         "sugars",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "fiber, total dietary":
                     return [
                         "fiber",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "calcium, ca":
                     return [
                         "calcium",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "iron, fe":
                     return [
                         "iron",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "sodium, na":
                     return [
                         "sodium",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "vitamin a, iu" | "vitamin a, rae":
                     return [
                         "vitamin a",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "vitamin c, total ascorbic acid":
                     return [
                         "vitamin c",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "cholesterol":
                     return [
                         "cholesterol",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "fatty acids, total saturated":
                     return [
                         "saturated fat",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "potassium, k":
                     return [
                         "potassium",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
-                case "vitamin d (d2 + d3), international units" |\
-                    "vitamin d (d2 + d3)":
+                case "vitamin d (d2 + d3), international units" | "vitamin d (d2 + d3)":
                     return [
                         "vitamin d",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "magnesium, mg":
                     return [
                         "magnesium",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "phosphorus, p":
                     return [
                         "phosphorus",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "zinc, zn":
                     return [
                         "zinc",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "copper, cu":
                     return [
                         "copper",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "selenium, se":
                     return [
                         "selenium",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "vitamin e (alpha-tocopherol)":
                     return [
                         "vitamin e",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "thiamin":
                     return [
                         "thiamin",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "riboflavin":
                     return [
                         "riboflavin",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "niacin":
                     return [
                         "niacin",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "vitamin b-6":
                     return [
                         "vitamin b 6",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "folate, total":
                     return [
                         "folate",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "vitamin b-12":
                     return [
                         "vitamin b 12",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "choline, total":
                     return [
                         "choline",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "vitamin k (phylloquinone)":
                     return [
                         "vitamin k",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "manganese, mn":
                     return [
                         "manganese",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "pantothenic acid":
                     return [
                         "pantothenic acid",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
                 case "biotin":
                     return [
                         "biotin",
-                        nutrient_num * get_conversion_multiplier_to_g(
+                        nutrient_num
+                        * get_conversion_multiplier_to_g(
                             nutrient_unit,
                         ),
                     ]
         except AttributeError as attr_err:
             raise AttributeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {attr_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {attr_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )
 
     @staticmethod
     def standardize_ingredient_nutrients_data(
-        ingredient_nutrients_data: list[list[str | None, float, str]]
+        ingredient_nutrients_data: list[list[str | None, float, str]],
     ) -> list[list[str, float]] | None:
         """
         Standardize an ingredient nutrients data.
@@ -439,10 +464,10 @@ class FDC:
             std_ingredient_nutrients_data: list = []
 
             for ingredient_nutrient_data in ingredient_nutrients_data:
-                loc_ingredient_nutrient_data: list[
-                    str, float
-                ] | None = FDC.standardize_ingredient_nutrient_data(
-                    ingredient_nutrient_data,
+                loc_ingredient_nutrient_data: list[str, float] | None = (
+                    FDC.standardize_ingredient_nutrient_data(
+                        ingredient_nutrient_data,
+                    )
                 )
 
                 if loc_ingredient_nutrient_data is not None:
@@ -453,18 +478,16 @@ class FDC:
             return std_ingredient_nutrients_data
         except TypeError as type_err:
             raise TypeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {type_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {type_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )
 
     @staticmethod
     def standardize_ingredients_nutrients_data(
-        ingredients_nutrients_data: list[list[list[str | None, float, str]]]
+        ingredients_nutrients_data: list[list[list[str | None, float, str]]],
     ) -> list[list[list[str, float]]] | None:
         """
         Standardize an ingredients nutrients data.
@@ -497,19 +520,16 @@ class FDC:
             return std_ingredients_nutrients_data
         except TypeError as type_err:
             raise TypeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {type_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {type_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )
 
     @staticmethod
     def get_standardized_ingredient_nutrients_data(
-        necess_nutrients: list[str],
-        std_ingredient_nutrients_data: list[list[str, float]]
+        necess_nutrients: list[str], std_ingredient_nutrients_data: list[list[str, float]]
     ) -> dict[str, float] | None:
         """
         Returns an ingredient nutrients standardized data.
@@ -530,38 +550,30 @@ class FDC:
         """
 
         try:
-            nutrients: dict[str, float] = {
-                nutrient: 0
-                for nutrient
-                in necess_nutrients
-            }
+            nutrients: dict[str, float] = {nutrient: 0 for nutrient in necess_nutrients}
 
             for std_ingredient_nutrient_data in std_ingredient_nutrients_data:
-                nutrients[std_ingredient_nutrient_data[0]] =\
-                    std_ingredient_nutrient_data[1]
+                nutrients[std_ingredient_nutrient_data[0]] = std_ingredient_nutrient_data[1]
 
             return nutrients
         except ValueError as val_err:
             raise ValueError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {val_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {val_err}.",
             )
         except KeyError as key_err:
             raise KeyError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {key_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {key_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )
 
     @staticmethod
     def get_standardized_ingredients_nutrients_data(
         necess_nutrients_file: str,
         necess_nutrients_file_path: str,
-        std_ingredients_nutrients_data: list[list[list[str, float]]]
+        std_ingredients_nutrients_data: list[list[list[str, float]]],
     ) -> list[dict[str, float]] | None:
         """
         Returns an ingredients nutrients standardized data.
@@ -588,7 +600,9 @@ class FDC:
                 encoding="utf-8",
                 file=necess_nutrients_file_path + necess_nutrients_file,
             ) as file:
-                food_data: dict[str, list[str]] = load(file, )
+                food_data: dict[str, list[str]] = load(
+                    file,
+                )
                 necess_nutrients: list[str] = food_data["nutrients"]
 
             res_ingredients_nutrients_data: list = []
@@ -604,19 +618,16 @@ class FDC:
             return res_ingredients_nutrients_data
         except JSONDecodeError as json_dec_err:
             raise JSONDecodeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {json_dec_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {json_dec_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )
 
     @staticmethod
     def get_standardized_ingredients_nutrients_dataframe(
-        necess_nutrients: list[str],
-        std_ingredients_nutrients_data: list[dict[str, float]]
+        necess_nutrients: list[str], std_ingredients_nutrients_data: list[dict[str, float]]
     ) -> DataFrame | None:
         """
         Returns an ingredients nutrients standardized Pandas dataframe.
@@ -647,16 +658,16 @@ class FDC:
                     std_ingredient_nutrients_data,
                 )
 
-            return DataFrame(res_ingredients_nutrients_data, )
+            return DataFrame(
+                res_ingredients_nutrients_data,
+            )
         except ValueError as val_err:
             raise ValueError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {val_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {val_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )
 
     def set_configuration(self) -> None:
@@ -672,23 +683,23 @@ class FDC:
         try:
             load_dotenv()
 
-            self.config["URL"] = os.getenv("FDC_URL", )
-            self.config["API_KEY"] = os.getenv("FDC_API_KEY", )
+            self.config["URL"] = os.getenv(
+                "FDC_URL",
+            )
+            self.config["API_KEY"] = os.getenv(
+                "FDC_API_KEY",
+            )
         except AttributeError as attr_err:
             raise AttributeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {attr_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {attr_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )
 
     async def fetch_ingredient_data(
-        self,
-        ingredient_name: str,
-        async_client: AsyncClient
+        self, ingredient_name: str, async_client: AsyncClient
     ) -> dict[str, Any] | None:
         """
         Fetchs the ingredient data from the API.
@@ -725,34 +736,29 @@ class FDC:
                 return ingredient_data
 
             print(
-                "ERROR!\n" +
-                f"Ingredient: {ingredient_name}.\n" +
-                f"Status code: {resp.status_code}.\n",
+                "ERROR!\n"
+                + f"Ingredient: {ingredient_name}.\n"
+                + f"Status code: {resp.status_code}.\n",
             )
         except JSONDecodeError as json_dec_err:
             raise JSONDecodeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {json_dec_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {json_dec_err}.",
             )
         except ConnectTimeout as conn_timeout_err:
             raise ConnectTimeout(
-                f"\nFile: {__file__}\n" +
-                f"Message: {conn_timeout_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {conn_timeout_err}.",
             )
         except HTTPError as http_err:
             raise HTTPError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {http_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {http_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )
 
     async def fetch_ingredients_data(
-        self,
-        ingredients_names: list[str]
+        self, ingredients_names: list[str]
     ) -> list[dict[str, Any] | None] | None:
         """
         Fetchs the ingredients data from the API.
@@ -777,19 +783,19 @@ class FDC:
 
             async with AsyncClient() as async_client:
                 for ingredient_name in ingredients_names:
-                    ingredients_data.append(await self.fetch_ingredient_data(
-                        ingredient_name,
-                        async_client,
-                    ), )
+                    ingredients_data.append(
+                        await self.fetch_ingredient_data(
+                            ingredient_name,
+                            async_client,
+                        ),
+                    )
 
             return ingredients_data
         except ValueError as val_err:
             raise ValueError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {val_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {val_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )

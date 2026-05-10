@@ -7,7 +7,6 @@ Examples of usage:
     >>> pytest user.py -m calculations -v
 """
 
-
 import os
 import sys
 import json
@@ -15,7 +14,9 @@ import pytest
 
 sys.path.append(
     os.path.dirname(
-        os.path.dirname(__file__, ),
+        os.path.dirname(
+            __file__,
+        ),
     ),
 )
 
@@ -38,14 +39,18 @@ class TestUser:
         Automatically initializes a `User` instance before each test.
         """
 
-        self.user: User = User(file_path="data/datasets/", )
+        self.user: User = User(
+            file_path="data/datasets/",
+        )
 
         with open(
             "data/test/expected/user.json",
-            'r',
+            "r",
             encoding="utf-8",
         ) as file:
-            self.correct_answers: dict | None = json.load(file, )
+            self.correct_answers: dict | None = json.load(
+                file,
+            )
 
     @pytest.mark.returned_data_types
     def test_user_returned_data_types(self) -> None:
@@ -54,10 +59,16 @@ class TestUser:
         """
 
         # User.get_users_rating_counts():
-        assert isinstance(self.user.get_users_rating_counts(), dict, )
+        assert isinstance(
+            self.user.get_users_rating_counts(),
+            dict,
+        )
 
         # User.get_top_ratings_metric_users():
-        assert isinstance(self.user.get_top_ratings_metric_users(), dict, )
+        assert isinstance(
+            self.user.get_top_ratings_metric_users(),
+            dict,
+        )
 
     @pytest.mark.sequence_elements_data_types
     def test_user_sequence_elements_data_types(self) -> None:
@@ -67,21 +78,29 @@ class TestUser:
 
         # User.get_users_rating_counts():
         assert isinstance(
-            list(self.user.get_users_rating_counts().keys(), )[0],
+            list(
+                self.user.get_users_rating_counts().keys(),
+            )[0],
             str,
         )
         assert isinstance(
-            list(self.user.get_users_rating_counts().values(), )[0],
+            list(
+                self.user.get_users_rating_counts().values(),
+            )[0],
             int,
         )
 
         # User.get_top_ratings_metric_users():
         assert isinstance(
-            list(self.user.get_top_ratings_metric_users().keys(), )[0],
+            list(
+                self.user.get_top_ratings_metric_users().keys(),
+            )[0],
             str,
         )
         assert isinstance(
-            list(self.user.get_top_ratings_metric_users().values(), )[0],
+            list(
+                self.user.get_top_ratings_metric_users().values(),
+            )[0],
             float,
         )
 
@@ -92,16 +111,25 @@ class TestUser:
         """
 
         # User.get_users_rating_counts():
-        assert dict(sorted(
-            self.correct_answers["get_users_rating_counts"].items(),
-            key=lambda user_data: user_data[1],
-        ), ) == self.user.get_users_rating_counts()
+        assert (
+            dict(
+                sorted(
+                    self.correct_answers["get_users_rating_counts"].items(),
+                    key=lambda user_data: user_data[1],
+                ),
+            )
+            == self.user.get_users_rating_counts()
+        )
 
         # User.get_top_ratings_metric_users(metric="min", ):
-        assert dict(sorted(
-            self.correct_answers["get_top_ratings_metric_users_min"].items(),
-            key=lambda user_data: -user_data[1],
-        ), ) == self.user.get_top_ratings_metric_users(metric="min", )
+        assert dict(
+            sorted(
+                self.correct_answers["get_top_ratings_metric_users_min"].items(),
+                key=lambda user_data: -user_data[1],
+            ),
+        ) == self.user.get_top_ratings_metric_users(
+            metric="min",
+        )
 
     @pytest.mark.calculations
     def test_user_calculations(self) -> None:
@@ -110,35 +138,54 @@ class TestUser:
         """
 
         # User.get_users_rating_counts():
-        assert self.user.get_users_rating_counts(
-        ) == self.correct_answers["get_users_rating_counts"]
+        assert (
+            self.user.get_users_rating_counts() == self.correct_answers["get_users_rating_counts"]
+        )
 
         # User.get_top_ratings_metric_users(metric="min", ):
-        assert self.user.get_top_ratings_metric_users(
-            metric="min",
-        ) == self.correct_answers["get_top_ratings_metric_users_min"]
+        assert (
+            self.user.get_top_ratings_metric_users(
+                metric="min",
+            )
+            == self.correct_answers["get_top_ratings_metric_users_min"]
+        )
 
         # User.get_top_ratings_metric_users(metric="max", ):
-        assert self.user.get_top_ratings_metric_users(
-            metric="max",
-        ) == self.correct_answers["get_top_ratings_metric_users_max"]
+        assert (
+            self.user.get_top_ratings_metric_users(
+                metric="max",
+            )
+            == self.correct_answers["get_top_ratings_metric_users_max"]
+        )
 
         # User.get_top_ratings_metric_users(metric="mean", ):
-        assert self.user.get_top_ratings_metric_users(
-            metric="mean",
-        ) == self.correct_answers["get_top_ratings_metric_users_mean"]
+        assert (
+            self.user.get_top_ratings_metric_users(
+                metric="mean",
+            )
+            == self.correct_answers["get_top_ratings_metric_users_mean"]
+        )
 
         # User.get_top_ratings_metric_users(metric="median", ):
-        assert self.user.get_top_ratings_metric_users(
-            metric="median",
-        ) == self.correct_answers["get_top_ratings_metric_users_median"]
+        assert (
+            self.user.get_top_ratings_metric_users(
+                metric="median",
+            )
+            == self.correct_answers["get_top_ratings_metric_users_median"]
+        )
 
         # User.get_top_ratings_metric_users(metric="var", ):
-        assert self.user.get_top_ratings_metric_users(
-            metric="var",
-        ) == self.correct_answers["get_top_ratings_metric_users_var"]
+        assert (
+            self.user.get_top_ratings_metric_users(
+                metric="var",
+            )
+            == self.correct_answers["get_top_ratings_metric_users_var"]
+        )
 
         # User.get_top_ratings_metric_users(metric="std", ):
-        assert self.user.get_top_ratings_metric_users(
-            metric="std",
-        ) == self.correct_answers["get_top_ratings_metric_users_std"]
+        assert (
+            self.user.get_top_ratings_metric_users(
+                metric="std",
+            )
+            == self.correct_answers["get_top_ratings_metric_users_std"]
+        )

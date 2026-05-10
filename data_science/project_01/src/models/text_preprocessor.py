@@ -18,7 +18,6 @@ Text preprocessing Python module.
     >>> stemmed_text: str = text_preprocessor.stem_text(clean_text, )
 """
 
-
 import os
 import sys
 import string
@@ -26,7 +25,9 @@ import string
 sys.path.append(
     os.path.abspath(
         os.path.join(
-            os.path.dirname(__file__, ),
+            os.path.dirname(
+                __file__,
+            ),
             "..",
         ),
     ),
@@ -80,19 +81,25 @@ class TextPreprocessor:
         """
 
         try:
-            symbs_to_del: str = string.punctuation.replace("'", "", )
+            symbs_to_del: str = string.punctuation.replace(
+                "'",
+                "",
+            )
             translator: dict[int, int] = str.maketrans(
-                '',
-                '',
+                "",
+                "",
                 symbs_to_del + string.digits,
             )
-            clean_text: str = text.lower().translate(translator, )
+            clean_text: str = text.lower().translate(
+                translator,
+            )
 
-            return " ".join(clean_text.split(), )
+            return " ".join(
+                clean_text.split(),
+            )
         except TypeError as type_err:
             print(
-                f"\nError file: {__file__}" +
-                f"\nError message: {type_err}",
+                f"\nError file: {__file__}" + f"\nError message: {type_err}",
             )
 
     @handle_errors
@@ -102,7 +109,7 @@ class TextPreprocessor:
         lang_dict_file_path: str,
         pref_len: int = 6,
         max_edit_dist: int = 3,
-        nlp_model_name: str = "en_core_web_lg"
+        nlp_model_name: str = "en_core_web_lg",
     ) -> None:
         """
         Initialize text processing tools.
@@ -125,8 +132,13 @@ class TextPreprocessor:
 
         try:
             self.stemmer = PorterStemmer()
-            self.nlp = load(nlp_model_name, )
-            self.sym_spell = SymSpell(max_edit_dist, pref_len, )
+            self.nlp = load(
+                nlp_model_name,
+            )
+            self.sym_spell = SymSpell(
+                max_edit_dist,
+                pref_len,
+            )
 
             self.sym_spell.load_dictionary(
                 lang_dict_file_path + lang_dict_file,
@@ -135,18 +147,15 @@ class TextPreprocessor:
             )
         except FileNotFoundError as file_not_found_err:
             print(
-                f"\nError file: {__file__}" +
-                f"\nError message: {file_not_found_err}",
+                f"\nError file: {__file__}" + f"\nError message: {file_not_found_err}",
             )
         except OSError as os_err:
             print(
-                f"\nError file: {__file__}" +
-                f"\nError message: {os_err}",
+                f"\nError file: {__file__}" + f"\nError message: {os_err}",
             )
         except ValueError as val_err:
             print(
-                f"\nError file: {__file__}" +
-                f"\nError message: {val_err}",
+                f"\nError file: {__file__}" + f"\nError message: {val_err}",
             )
 
     @handle_errors
@@ -174,8 +183,7 @@ class TextPreprocessor:
             return suggs[0].term if suggs else text
         except TypeError as type_err:
             print(
-                f"\nError file: {__file__}" +
-                f"\nError message: {type_err}",
+                f"\nError file: {__file__}" + f"\nError message: {type_err}",
             )
 
     @handle_errors
@@ -195,22 +203,21 @@ class TextPreprocessor:
         """
 
         try:
-            text_tokens: list[str] = self.nlp(text.lower(), )
+            text_tokens: list[str] = self.nlp(
+                text.lower(),
+            )
             text_tokens = [
                 text_token.text
                 for text_token in text_tokens
-                if not (
-                    text_token.is_punct or
-                    text_token.is_space or
-                    text_token.like_num
-                )
+                if not (text_token.is_punct or text_token.is_space or text_token.like_num)
             ]
 
-            return " ".join(text_tokens, )
+            return " ".join(
+                text_tokens,
+            )
         except OSError as os_err:
             print(
-                f"\nError file: {__file__}" +
-                f"\nError message: {os_err}",
+                f"\nError file: {__file__}" + f"\nError message: {os_err}",
             )
 
     @handle_errors
@@ -230,19 +237,20 @@ class TextPreprocessor:
         """
 
         try:
-            text_lemms: list[str] = self.nlp(text.lower(), )
+            text_lemms: list[str] = self.nlp(
+                text.lower(),
+            )
 
-            return " ".join([
-                lemm_token.lemma_ for
-                lemm_token in
-                text_lemms if not
-                lemm_token.is_punct and not
-                lemm_token.is_space
-            ], )
+            return " ".join(
+                [
+                    lemm_token.lemma_
+                    for lemm_token in text_lemms
+                    if not lemm_token.is_punct and not lemm_token.is_space
+                ],
+            )
         except OSError as os_err:
             print(
-                f"\nError file: {__file__}" +
-                f"\nError message: {os_err}",
+                f"\nError file: {__file__}" + f"\nError message: {os_err}",
             )
 
     @handle_errors
@@ -263,14 +271,16 @@ class TextPreprocessor:
 
         try:
             text_stems: list[str] = [
-                self.stemmer.stem(token, ) for
-                token in
-                text.split()
+                self.stemmer.stem(
+                    token,
+                )
+                for token in text.split()
             ]
 
-            return " ".join(text_stems, )
+            return " ".join(
+                text_stems,
+            )
         except TypeError as type_err:
             print(
-                f"\nError file: {__file__}" +
-                f"\nError message: {type_err}",
+                f"\nError file: {__file__}" + f"\nError message: {type_err}",
             )

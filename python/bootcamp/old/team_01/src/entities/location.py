@@ -44,11 +44,21 @@ class Location:
     """
 
     def __init__(
-                    self, location_id: int, location_item: str, location_name: str, location_npc_id: int,
-                    location_top_side: int, location_bot_side: int, location_enemy_id: int, location_type: str,
-                    location_left_side: int, location_right_side: int, location_description: str,
-                    current_required_item: str, location_area: str
-                ):
+        self,
+        location_id: int,
+        location_item: str,
+        location_name: str,
+        location_npc_id: int,
+        location_top_side: int,
+        location_bot_side: int,
+        location_enemy_id: int,
+        location_type: str,
+        location_left_side: int,
+        location_right_side: int,
+        location_description: str,
+        current_required_item: str,
+        location_area: str,
+    ):
         """Constructor method.
 
         :return: It does not return anything, but only set parameters of location.
@@ -87,10 +97,12 @@ class Location:
         # Open existing photo for chat answer:
         photo = FSInputFile(f"photos/{self.id}.jpg", "rb")
 
-        await message.answer_photo(photo, caption=f"<u>THIS IS LOCATION</u> № {self.id}:\n\n" +
-                                                  f"<b>Time</b>: <code>{clear_string(additional.get_time())}</code>\n" +
-                                                  f"<b>Data</b>: <code>{clear_string(additional.get_date())}</code>\n" +
-                                                  f"<b>Area</b>: <code>{clear_string(self.area)}</code>\n" +
-                                                  f"<b>Name</b>: <code>{clear_string(self.name)}</code>\n" +
-                                                  f"<b>Description</b>: <i>{clear_string(self.description)} </i>"
-                                   )
+        await message.answer_photo(
+            photo,
+            caption=f"<u>THIS IS LOCATION</u> № {self.id}:\n\n"
+            + f"<b>Time</b>: <code>{clear_string(additional.get_time())}</code>\n"
+            + f"<b>Data</b>: <code>{clear_string(additional.get_date())}</code>\n"
+            + f"<b>Area</b>: <code>{clear_string(self.area)}</code>\n"
+            + f"<b>Name</b>: <code>{clear_string(self.name)}</code>\n"
+            + f"<b>Description</b>: <i>{clear_string(self.description)} </i>",
+        )

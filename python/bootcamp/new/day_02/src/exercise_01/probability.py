@@ -2,7 +2,7 @@
 
 import random
 
-PHI: float = (1 + 5 ** 0.5) / 2  # Golden ratio ≈ 1.618
+PHI: float = (1 + 5**0.5) / 2  # Golden ratio ≈ 1.618
 
 
 def golden_probs(n: int, reverse: bool = False) -> list[float]:
@@ -50,7 +50,7 @@ def pick_word(question: str, gender: str) -> str:
     """
 
     words: list[str] = question.split()
-    probs: list[float] = golden_probs(len(words), reverse=(gender == 'F'))
+    probs: list[float] = golden_probs(len(words), reverse=(gender == "F"))
 
     return random.choices(words, weights=probs, k=1)[0]
 
@@ -70,7 +70,7 @@ def examiner_answers(question: str, gender: str) -> set[str]:
 
     words: list[str] = question.split()
     n: int = len(words)
-    probs: list[float] = golden_probs(n, reverse=(gender == 'F'))
+    probs: list[float] = golden_probs(n, reverse=(gender == "F"))
     chosen: set[int] = set()
     idx: int = random.choices(range(n), weights=probs, k=1)[0]
 

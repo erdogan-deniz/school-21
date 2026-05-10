@@ -31,7 +31,6 @@ Examples of usage:
     >>> print(inst.get_top_cost_per_minute_movies(), )
 """
 
-
 import os
 import sys
 
@@ -39,11 +38,13 @@ sys.path.append(
     os.path.normpath(
         os.path.join(
             os.path.dirname(
-                os.path.abspath(__file__, ),
+                os.path.abspath(
+                    __file__,
+                ),
             ),
-            '..',
-            '..',
-            '..',
+            "..",
+            "..",
+            "..",
         ),
     ),
 )
@@ -79,11 +80,7 @@ class Link:
                             Default: None.
     """
 
-    def __init__(
-        self,
-        file_path: str,
-        file: str = "links.csv"
-    ) -> None:
+    def __init__(self, file_path: str, file: str = "links.csv") -> None:
         """
         Initializes the `Link` analyzer.
 
@@ -121,22 +118,37 @@ class Link:
         try:
             with open(
                 file=self.file_path + self.file,
-                mode='r',
+                mode="r",
                 encoding="utf-8",
             ) as file:
-                next(file, )  # Skip header
+                next(
+                    file,
+                )  # Skip header
 
                 self.data = [
                     line.rstrip()
-                    for line, _
-                    in zip(file, range(size, ), )
+                    for line, _ in zip(
+                        file,
+                        range(
+                            size,
+                        ),
+                    )
                 ]
         except FileNotFoundError as file_not_found_err:
-            print("FileNotFoundError:", file_not_found_err, )
+            print(
+                "FileNotFoundError:",
+                file_not_found_err,
+            )
         except IOError as io_err:
-            print("IOError:", io_err, )
+            print(
+                "IOError:",
+                io_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def load_movies_ids(self, size: int = 1000) -> None:
         """
@@ -156,24 +168,44 @@ class Link:
         try:
             with open(
                 file=self.file_path + self.file,
-                mode='r',
+                mode="r",
                 encoding="utf-8",
             ) as file:
-                next(file, )  # Skip header
+                next(
+                    file,
+                )  # Skip header
 
                 self.movies_ids = [
-                    line.rstrip().split(',', )[0]
-                    for line, _
-                    in zip(file, range(size, ), )
+                    line.rstrip().split(
+                        ",",
+                    )[0]
+                    for line, _ in zip(
+                        file,
+                        range(
+                            size,
+                        ),
+                    )
                 ]
         except FileNotFoundError as file_not_found_err:
-            print("FileNotFoundError:", file_not_found_err, )
+            print(
+                "FileNotFoundError:",
+                file_not_found_err,
+            )
         except IOError as io_err:
-            print("IOError:", io_err, )
+            print(
+                "IOError:",
+                io_err,
+            )
         except IndexError as idx_err:
-            print("IndexError:", idx_err, )
+            print(
+                "IndexError:",
+                idx_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def load_imdb_ids(self, size: int = 1000) -> None:
         """
@@ -193,24 +225,44 @@ class Link:
         try:
             with open(
                 file=self.file_path + self.file,
-                mode='r',
+                mode="r",
                 encoding="utf-8",
             ) as file:
-                next(file, )  # Skip header
+                next(
+                    file,
+                )  # Skip header
 
                 self.imdb_ids = [
-                    line.rstrip().split(',', )[1]
-                    for line, _
-                    in zip(file, range(size, ), )
+                    line.rstrip().split(
+                        ",",
+                    )[1]
+                    for line, _ in zip(
+                        file,
+                        range(
+                            size,
+                        ),
+                    )
                 ]
         except FileNotFoundError as file_not_found_err:
-            print("FileNotFoundError:", file_not_found_err, )
+            print(
+                "FileNotFoundError:",
+                file_not_found_err,
+            )
         except IOError as io_err:
-            print("IOError:", io_err, )
+            print(
+                "IOError:",
+                io_err,
+            )
         except IndexError as idx_err:
-            print("IndexError:", idx_err, )
+            print(
+                "IndexError:",
+                idx_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def load_tmdb_ids(self, size: int = 1000) -> None:
         """
@@ -230,32 +282,62 @@ class Link:
         try:
             with open(
                 file=self.file_path + self.file,
-                mode='r',
+                mode="r",
                 encoding="utf-8",
             ) as file:
-                next(file, )  # Skip header
+                next(
+                    file,
+                )  # Skip header
 
                 self.tmdb_ids = [
-                    line.rstrip().split(',', )[2]
-                    for line, _
-                    in zip(file, range(size, ), )
+                    line.rstrip().split(
+                        ",",
+                    )[2]
+                    for line, _ in zip(
+                        file,
+                        range(
+                            size,
+                        ),
+                    )
                 ]
         except FileNotFoundError as file_not_found_err:
-            print("FileNotFoundError:", file_not_found_err, )
+            print(
+                "FileNotFoundError:",
+                file_not_found_err,
+            )
         except IOError as io_err:
-            print("IOError:", io_err, )
+            print(
+                "IOError:",
+                io_err,
+            )
         except IndexError as idx_err:
-            print("IndexError:", idx_err, )
+            print(
+                "IndexError:",
+                idx_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def load_movies_data(
         self,
-        movies_ids : list[str],
-        fields: list[Literal["gross", "title", "budget", "rating", "writer",
-                             "runtime", "release", "country", "director",
-                             "language",
-        ]] = [
+        movies_ids: list[str],
+        fields: list[
+            Literal[
+                "gross",
+                "title",
+                "budget",
+                "rating",
+                "writer",
+                "runtime",
+                "release",
+                "country",
+                "director",
+                "language",
+            ]
+        ] = [
             "gross",
             "title",
             "budget",
@@ -266,7 +348,7 @@ class Link:
             "country",
             "director",
             "language",
-        ]
+        ],
     ) -> None:
         """
         Loads movies data from IMDB website.
@@ -292,12 +374,20 @@ class Link:
             self.movies_data = fetch_movies_webpage_text_fields(
                 movies_ids=movies_ids,
                 fields=fields,
-                req_config_path=self.file_path.split("dataset", )[0],
+                req_config_path=self.file_path.split(
+                    "dataset",
+                )[0],
             )
         except ValueError as val_err:
-            print("ValueError:", val_err, )
+            print(
+                "ValueError:",
+                val_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def print_data(self) -> None:
         """
@@ -310,14 +400,28 @@ class Link:
         """
 
         try:
-            for idx, data in enumerate(self.data, 1, ):
-                print(f"row index: {idx}, data: {data}", )
+            for idx, data in enumerate(
+                self.data,
+                1,
+            ):
+                print(
+                    f"row index: {idx}, data: {data}",
+                )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except UnicodeEncodeError as unicode_encode_err:
-            print("UnicodeEncodeError:", unicode_encode_err, )
+            print(
+                "UnicodeEncodeError:",
+                unicode_encode_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def print_movies_ids(self) -> None:
         """
@@ -330,14 +434,28 @@ class Link:
         """
 
         try:
-            for idx, movie_id in enumerate(self.movies_ids, 1, ):
-                print(f"row index: {idx}, movie_id: {movie_id}", )
+            for idx, movie_id in enumerate(
+                self.movies_ids,
+                1,
+            ):
+                print(
+                    f"row index: {idx}, movie_id: {movie_id}",
+                )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except UnicodeEncodeError as unicode_encode_err:
-            print("UnicodeEncodeError:", unicode_encode_err, )
+            print(
+                "UnicodeEncodeError:",
+                unicode_encode_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def print_imdb_ids(self) -> None:
         """
@@ -350,14 +468,28 @@ class Link:
         """
 
         try:
-            for idx, imdb_id in enumerate(self.imdb_ids, 1, ):
-                print(f"row index: {idx}, IMDB ID: {imdb_id}", )
+            for idx, imdb_id in enumerate(
+                self.imdb_ids,
+                1,
+            ):
+                print(
+                    f"row index: {idx}, IMDB ID: {imdb_id}",
+                )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except UnicodeEncodeError as unicode_encode_err:
-            print("UnicodeEncodeError:", unicode_encode_err, )
+            print(
+                "UnicodeEncodeError:",
+                unicode_encode_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def print_tmdb_ids(self) -> None:
         """
@@ -370,14 +502,28 @@ class Link:
         """
 
         try:
-            for idx, tmdb_id in enumerate(self.tmdb_ids, 1, ):
-                print(f"row index: {idx}, TMDB ID: {tmdb_id}", )
+            for idx, tmdb_id in enumerate(
+                self.tmdb_ids,
+                1,
+            ):
+                print(
+                    f"row index: {idx}, TMDB ID: {tmdb_id}",
+                )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except UnicodeEncodeError as unicode_encode_err:
-            print("UnicodeEncodeError:", unicode_encode_err, )
+            print(
+                "UnicodeEncodeError:",
+                unicode_encode_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def print_extracted_fields(self) -> None:
         """
@@ -390,13 +536,24 @@ class Link:
         """
 
         try:
-            print(f"Extracted movies fields: {self.fields}", )
+            print(
+                f"Extracted movies fields: {self.fields}",
+            )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except UnicodeEncodeError as unicode_encode_err:
-            print("UnicodeEncodeError:", unicode_encode_err, )
+            print(
+                "UnicodeEncodeError:",
+                unicode_encode_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def print_movies_data(self) -> None:
         """
@@ -409,14 +566,28 @@ class Link:
         """
 
         try:
-            for idx, movie_data in enumerate(self.movies_data, 1, ):
-                print(f"row index: {idx}, movie_data: {movie_data}", )
+            for idx, movie_data in enumerate(
+                self.movies_data,
+                1,
+            ):
+                print(
+                    f"row index: {idx}, movie_data: {movie_data}",
+                )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except UnicodeEncodeError as unicode_encode_err:
-            print("UnicodeEncodeError:", unicode_encode_err, )
+            print(
+                "UnicodeEncodeError:",
+                unicode_encode_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def get_popular_directors(self, cnt: int = 10) -> dict[str, int] | None:
         """
@@ -439,22 +610,37 @@ class Link:
         """
 
         try:
-            directors_idx: int = self.fields.index("director", ) + 1
-            directors_with_cnts: defaultdict = defaultdict(int, )
+            directors_idx: int = (
+                self.fields.index(
+                    "director",
+                )
+                + 1
+            )
+            directors_with_cnts: defaultdict = defaultdict(
+                int,
+            )
 
             for movie_data in self.movies_data:
                 directors_with_cnts[movie_data[directors_idx]] += 1
 
-            return dict(sorted(
-                directors_with_cnts.items(),
-                key=lambda cnt: -cnt[1])[: cnt],
+            return dict(
+                sorted(directors_with_cnts.items(), key=lambda cnt: -cnt[1])[:cnt],
             )
         except ValueError as val_err:
-            print("ValueError:", val_err, )
+            print(
+                "ValueError:",
+                val_err,
+            )
         except IndexError as idx_err:
-            print("IndexError:", idx_err, )
+            print(
+                "IndexError:",
+                idx_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def get_most_expensive_movies(self, cnt: int = 10) -> dict[str, str] | None:
         """
@@ -478,31 +664,54 @@ class Link:
         """
 
         try:
-            titles_idx: int = self.fields.index("title", ) + 1
-            budgets_idx: int = self.fields.index("budget", ) + 1
+            titles_idx: int = (
+                self.fields.index(
+                    "title",
+                )
+                + 1
+            )
+            budgets_idx: int = (
+                self.fields.index(
+                    "budget",
+                )
+                + 1
+            )
             movies_with_budget: dict[str, str] = {
                 movie_data[titles_idx]: movie_data[budgets_idx]
                 for movie_data in self.movies_data
                 if movie_data[budgets_idx]
             }
 
-            return dict(sorted(
-                movies_with_budget.items(),
-                key=lambda movie: -extract_price_from_string(movie[1], ),
-            )[: cnt], )
+            return dict(
+                sorted(
+                    movies_with_budget.items(),
+                    key=lambda movie: -extract_price_from_string(
+                        movie[1],
+                    ),
+                )[:cnt],
+            )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except ValueError as val_err:
-            print("ValueError:", val_err, )
+            print(
+                "ValueError:",
+                val_err,
+            )
         except IndexError as idx_err:
-            print("IndexError:", idx_err, )
+            print(
+                "IndexError:",
+                idx_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
-    def get_most_profitable_movies(
-        self,
-        cnt: int = 10
-    ) -> dict[str, int] | None:
+    def get_most_profitable_movies(self, cnt: int = 10) -> dict[str, int] | None:
         """
         Retrives the most profitable movies.
 
@@ -524,30 +733,61 @@ class Link:
         """
 
         try:
-            gross_idx: int = self.fields.index("gross", ) + 1
-            titles_idx: int = self.fields.index("title", ) + 1
-            budgets_idx: int = self.fields.index("budget", ) + 1
+            gross_idx: int = (
+                self.fields.index(
+                    "gross",
+                )
+                + 1
+            )
+            titles_idx: int = (
+                self.fields.index(
+                    "title",
+                )
+                + 1
+            )
+            budgets_idx: int = (
+                self.fields.index(
+                    "budget",
+                )
+                + 1
+            )
             movies_with_diffs: dict[str, int] = {
-                movie_data[titles_idx]:
-                    extract_price_from_string(movie_data[gross_idx], ) -
-                    extract_price_from_string(movie_data[budgets_idx], )
+                movie_data[titles_idx]: extract_price_from_string(
+                    movie_data[gross_idx],
+                )
+                - extract_price_from_string(
+                    movie_data[budgets_idx],
+                )
                 for movie_data in self.movies_data
-                if movie_data[gross_idx] is not None and
-                   movie_data[budgets_idx] is not None
+                if movie_data[gross_idx] is not None and movie_data[budgets_idx] is not None
             }
 
-            return dict(sorted(
-                movies_with_diffs.items(),
-                key=lambda movie_with_diff: -movie_with_diff[1],
-            )[: cnt], )
+            return dict(
+                sorted(
+                    movies_with_diffs.items(),
+                    key=lambda movie_with_diff: -movie_with_diff[1],
+                )[:cnt],
+            )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except ValueError as val_err:
-            print("ValueError:", val_err, )
+            print(
+                "ValueError:",
+                val_err,
+            )
         except IndexError as idx_err:
-            print("IndexError:", idx_err, )
+            print(
+                "IndexError:",
+                idx_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def get_most_longest_movies(self, cnt: int = 10) -> dict[str, str] | None:
         """
@@ -571,33 +811,54 @@ class Link:
         """
 
         try:
-            titles_idx: int = self.fields.index("title", ) + 1
-            runtimes_idx: int = self.fields.index("runtime", ) + 1
+            titles_idx: int = (
+                self.fields.index(
+                    "title",
+                )
+                + 1
+            )
+            runtimes_idx: int = (
+                self.fields.index(
+                    "runtime",
+                )
+                + 1
+            )
             movies_with_runtimes: dict[str, str] = {
                 movie_data[titles_idx]: movie_data[runtimes_idx]
                 for movie_data in self.movies_data
                 if movie_data[runtimes_idx] is not None
             }
 
-            return dict(sorted(
-                movies_with_runtimes.items(),
-                key=lambda movie_data: -extract_minutes_from_string(
-                    movie_data[1],
-                ),
-            )[: cnt], )
+            return dict(
+                sorted(
+                    movies_with_runtimes.items(),
+                    key=lambda movie_data: -extract_minutes_from_string(
+                        movie_data[1],
+                    ),
+                )[:cnt],
+            )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except ValueError as val_err:
-            print("ValueError:", val_err, )
+            print(
+                "ValueError:",
+                val_err,
+            )
         except IndexError as idx_err:
-            print("IndexError:", idx_err, )
+            print(
+                "IndexError:",
+                idx_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
-    def get_top_cost_per_minute_movies(
-        self,
-        cnt: int = 10
-    ) -> dict[str, float] | None:
+    def get_top_cost_per_minute_movies(self, cnt: int = 10) -> dict[str, float] | None:
         """
         Retrives movies with the highest cost per minute.
 
@@ -619,9 +880,24 @@ class Link:
         """
 
         try:
-            titles_idx: int = self.fields.index("title", ) + 1
-            budgets_idx: int = self.fields.index("budget", ) + 1
-            runtimes_idx: int = self.fields.index("runtime", ) + 1
+            titles_idx: int = (
+                self.fields.index(
+                    "title",
+                )
+                + 1
+            )
+            budgets_idx: int = (
+                self.fields.index(
+                    "budget",
+                )
+                + 1
+            )
+            runtimes_idx: int = (
+                self.fields.index(
+                    "runtime",
+                )
+                + 1
+            )
             movies_min_costs: dict[str, float] = {}
 
             for movie_data in self.movies_data:
@@ -633,18 +909,38 @@ class Link:
                     movie_data[runtimes_idx],
                 )
 
-                if None not in (budget, runtime, ):
-                    movies_min_costs[title] = round(budget / runtime, 2, )
+                if None not in (
+                    budget,
+                    runtime,
+                ):
+                    movies_min_costs[title] = round(
+                        budget / runtime,
+                        2,
+                    )
 
-            return dict(sorted(
-                movies_min_costs.items(),
-                key=lambda movie_data: -movie_data[1],
-            )[: cnt], )
+            return dict(
+                sorted(
+                    movies_min_costs.items(),
+                    key=lambda movie_data: -movie_data[1],
+                )[:cnt],
+            )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except ValueError as val_err:
-            print("ValueError:", val_err, )
+            print(
+                "ValueError:",
+                val_err,
+            )
         except IndexError as idx_err:
-            print("IndexError:", idx_err, )
+            print(
+                "IndexError:",
+                idx_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )

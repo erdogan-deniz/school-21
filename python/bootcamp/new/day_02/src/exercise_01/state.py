@@ -29,7 +29,7 @@ def apply_update(
 
     mtype: str = msg[0]
 
-    if mtype == 'start':
+    if mtype == "start":
         ex_name: str = msg[1]
         st_name: str = msg[2]
 
@@ -39,7 +39,7 @@ def apply_update(
 
                 break
 
-    elif mtype == 'done':
+    elif mtype == "done":
         ex_name = msg[1]
         st_name = msg[2]
         passed: bool = msg[3]
@@ -61,21 +61,21 @@ def apply_update(
 
         for s in students:
             if s.name == st_name:
-                s.status = 'Passed' if passed else 'Failed'
+                s.status = "Passed" if passed else "Failed"
                 s.finish_time = finish_time
 
                 break
 
         for q, ok in q_results.items():
             if q not in q_stats:
-                q_stats[q] = {'correct': 0, 'total': 0}
+                q_stats[q] = {"correct": 0, "total": 0}
 
-            q_stats[q]['total'] += 1
+            q_stats[q]["total"] += 1
 
             if ok:
-                q_stats[q]['correct'] += 1
+                q_stats[q]["correct"] += 1
 
-    elif mtype == 'break':
+    elif mtype == "break":
         ex_name = msg[1]
 
         for e in examiners:
@@ -84,7 +84,7 @@ def apply_update(
 
                 break
 
-    elif mtype == 'back':
+    elif mtype == "back":
         ex_name = msg[1]
         work_time = msg[2]
 
@@ -94,7 +94,7 @@ def apply_update(
 
                 break
 
-    elif mtype == 'finished':
+    elif mtype == "finished":
         ex_name = msg[1]
         work_time = msg[2]
 

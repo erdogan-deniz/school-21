@@ -30,7 +30,7 @@ class Polynomial:
         self,
         dim: int | None = None,
         point_val: float | None = None,
-        coeffs: list[int] | None = None
+        coeffs: list[int] | None = None,
     ) -> None:
         """
         Initializes the `Polynomial` class representative.
@@ -60,26 +60,34 @@ class Polynomial:
         """
 
         try:
-            self.dim, self.point_val = map(float, input().split(), )
-            self.dim = int(self.dim, )
+            self.dim, self.point_val = map(
+                float,
+                input().split(),
+            )
+            self.dim = int(
+                self.dim,
+            )
 
-            for _ in range(self.dim + 1, ):
-                self.coeffs.append(float(input(), ), )
+            for _ in range(
+                self.dim + 1,
+            ):
+                self.coeffs.append(
+                    float(
+                        input(),
+                    ),
+                )
 
         except ValueError as val_err:
             raise ValueError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {val_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {val_err}.",
             )
         except TypeError as type_err:
             raise TypeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {type_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {type_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )
 
     def calculate_polynomial_derivative_at_point(self) -> float | None:
@@ -101,28 +109,28 @@ class Polynomial:
             idx: int = 0
             res: int = 0
 
-            for n in range(self.dim, 0, -1, ):
+            for n in range(
+                self.dim,
+                0,
+                -1,
+            ):
                 res += self.coeffs[idx] * n * self.point_val ** (n - 1)
                 idx += 1
 
             return res
         except IndexError as idx_err:
             raise IndexError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {idx_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {idx_err}.",
             )
         except ValueError as val_err:
             raise ValueError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {val_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {val_err}.",
             )
         except TypeError as type_err:
             raise TypeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {type_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {type_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )

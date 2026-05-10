@@ -2,7 +2,6 @@
 A collection of components for building machine learning pipelines.
 """
 
-
 from typing import Any
 from joblib import dump
 from tqdm.notebook import tqdm
@@ -23,10 +22,7 @@ class FeatureExtractor(BaseEstimator, TransformerMixin):
                                Default: None.
     """
 
-    def __init__(
-        self,
-        df: DataFrame | None = None
-    ) -> None:
+    def __init__(self, df: DataFrame | None = None) -> None:
         """
         Initializes `FeatureExtractor` with data.
 
@@ -36,11 +32,7 @@ class FeatureExtractor(BaseEstimator, TransformerMixin):
 
         self.df: DataFrame | None = df
 
-    def fit(
-        self,
-        X: DataFrame,
-        y: ndarray | None = None
-    ) -> None:
+    def fit(self, X: DataFrame, y: ndarray | None = None) -> None:
         """
         Fits the transformer to the data.
 
@@ -65,7 +57,9 @@ class FeatureExtractor(BaseEstimator, TransformerMixin):
         try:
             self.df["hour"] = self.df["timestamp"].dt.hour
         except Exception as err:
-            print(err, )
+            print(
+                err,
+            )
 
     def exctract_weekdays_from_timestamps(self) -> None:
         """
@@ -78,9 +72,16 @@ class FeatureExtractor(BaseEstimator, TransformerMixin):
         try:
             self.df["weekday"] = self.df["timestamp"].dt.day_of_week
         except Exception as err:
-            print(err, )
+            print(
+                err,
+            )
 
-    def drop_columns(self, cols_names: list[str] = ["timestamp", ]) -> None:
+    def drop_columns(
+        self,
+        cols_names: list[str] = [
+            "timestamp",
+        ],
+    ) -> None:
         """
         Removes columns from the Pandas dataframe.
 
@@ -93,9 +94,13 @@ class FeatureExtractor(BaseEstimator, TransformerMixin):
         """
 
         try:
-            self.df = self.df.drop(columns=cols_names, )
+            self.df = self.df.drop(
+                columns=cols_names,
+            )
         except Exception as err:
-            print(err, )
+            print(
+                err,
+            )
 
     def process_dataframe(self) -> None:
         """
@@ -110,7 +115,9 @@ class FeatureExtractor(BaseEstimator, TransformerMixin):
             self.exctract_weekdays_from_timestamps()
             self.drop_columns()
         except Exception as err:
-            print(err, )
+            print(
+                err,
+            )
 
     def transform(self, X: DataFrame | None = None) -> DataFrame | None:
         """
@@ -133,7 +140,9 @@ class FeatureExtractor(BaseEstimator, TransformerMixin):
 
             return self.df
         except Exception as err:
-            print(err, )
+            print(
+                err,
+            )
 
 
 class MyOneHotEncoder(BaseEstimator, TransformerMixin):
@@ -146,11 +155,7 @@ class MyOneHotEncoder(BaseEstimator, TransformerMixin):
                                Default: None.
     """
 
-    def __init__(
-        self,
-        target_col_name: str,
-        df: DataFrame | None = None
-    ) -> None:
+    def __init__(self, target_col_name: str, df: DataFrame | None = None) -> None:
         """
         Initializes `MyOneHotEncoder` with the data and target column name.
 
@@ -163,11 +168,7 @@ class MyOneHotEncoder(BaseEstimator, TransformerMixin):
         self.df: DataFrame | None = df
         self.target_col_name: str = target_col_name
 
-    def fit(
-        self,
-        X: DataFrame,
-        y: ndarray | None = None
-    ) -> None:
+    def fit(self, X: DataFrame, y: ndarray | None = None) -> None:
         """
         Fits the transformer to the data.
 
@@ -197,7 +198,9 @@ class MyOneHotEncoder(BaseEstimator, TransformerMixin):
             df: DataFrame = self.df
 
             if self.target_col_name in df.columns:
-                df = df.drop(self.target_col_name, )
+                df = df.drop(
+                    self.target_col_name,
+                )
 
             return df.select_dtypes(
                 include=[
@@ -207,7 +210,9 @@ class MyOneHotEncoder(BaseEstimator, TransformerMixin):
                 ],
             ).columns.tolist()
         except Exception as err:
-            print(err, )
+            print(
+                err,
+            )
 
     def transform_categorical_features(self) -> None:
         """
@@ -230,9 +235,17 @@ class MyOneHotEncoder(BaseEstimator, TransformerMixin):
                 ),
                 index=self.df.index,
             )
-            self.df = concat([self.df, encoded_df, ], axis=1, )
+            self.df = concat(
+                [
+                    self.df,
+                    encoded_df,
+                ],
+                axis=1,
+            )
         except Exception as err:
-            print(err, )
+            print(
+                err,
+            )
 
     def drop_columns(self, cols_names: list[str]) -> None:
         """
@@ -246,9 +259,13 @@ class MyOneHotEncoder(BaseEstimator, TransformerMixin):
         """
 
         try:
-            self.df = self.df.drop(columns=cols_names, )
+            self.df = self.df.drop(
+                columns=cols_names,
+            )
         except Exception as err:
-            print(err, )
+            print(
+                err,
+            )
 
     def process_categorical_features(self) -> None:
         """
@@ -260,14 +277,15 @@ class MyOneHotEncoder(BaseEstimator, TransformerMixin):
 
         try:
             self.transform_categorical_features()
-            self.drop_columns(self.get_categorical_features_names(), )
+            self.drop_columns(
+                self.get_categorical_features_names(),
+            )
         except Exception as err:
-            print(err, )
+            print(
+                err,
+            )
 
-    def transform(
-        self,
-        X: DataFrame | None= None
-    ) -> DataFrame | None:
+    def transform(self, X: DataFrame | None = None) -> DataFrame | None:
         """
         Returns processed features.
 
@@ -288,7 +306,9 @@ class MyOneHotEncoder(BaseEstimator, TransformerMixin):
 
             return self.df
         except Exception as err:
-            print(err, )
+            print(
+                err,
+            )
 
 
 class TrainValidationTest:
@@ -300,11 +320,7 @@ class TrainValidationTest:
         y (ndarray): Target array.
     """
 
-    def __init__(
-        self,
-        X: DataFrame,
-        y: ndarray
-    ) -> None:
+    def __init__(self, X: DataFrame, y: ndarray) -> None:
         """
         Initializes `TrainValidationTest` with data.
 
@@ -346,7 +362,9 @@ class TrainValidationTest:
 
             return X_train, X_valid, X_test, y_train, y_valid, y_test
         except Exception as err:
-            print(err, )
+            print(
+                err,
+            )
 
 
 class ModelSelection:
@@ -359,11 +377,7 @@ class ModelSelection:
         models_data (dict[int, str]): Models names dictionary.
     """
 
-    def __init__(
-        self,
-        grid_searches: list[GridSearchCV],
-        models_data: dict[int, str]
-    ) -> None:
+    def __init__(self, grid_searches: list[GridSearchCV], models_data: dict[int, str]) -> None:
         """
         Initializes `ModelSelection` with grid searches and model data.
 
@@ -376,11 +390,7 @@ class ModelSelection:
         self.models_data: dict[int, str] = models_data
 
     def get_best_classification_model_name(
-        self,
-        X_train: DataFrame,
-        y_train: ndarray,
-        X_valid: DataFrame,
-        y_valid: ndarray
+        self, X_train: DataFrame, y_train: ndarray, X_valid: DataFrame, y_valid: ndarray
     ) -> str | None:
         """
         Identifies the best performing classification model based on validation
@@ -404,14 +414,24 @@ class ModelSelection:
         best_classification_model_score: float = 0.0
 
         try:
-            for idx, grid_search in enumerate(self.grid_searches, ):
-                print(f"\nEstimator is {self.models_data[idx]}:", )
+            for idx, grid_search in enumerate(
+                self.grid_searches,
+            ):
+                print(
+                    f"\nEstimator is {self.models_data[idx]}:",
+                )
 
-                fits_cnt: int = prod([
-                    len(params, )
-                    for params
-                    in grid_search.param_grid.values()
-                    ], ) * 2
+                fits_cnt: int = (
+                    prod(
+                        [
+                            len(
+                                params,
+                            )
+                            for params in grid_search.param_grid.values()
+                        ],
+                    )
+                    * 2
+                )
 
                 with tqdm(
                     ncols=1000,
@@ -419,19 +439,27 @@ class ModelSelection:
                     total=fits_cnt,
                     desc=f"{self.models_data[idx]}",
                 ) as progress_bar:
-                    grid_search.fit(X_train, y_train, )
+                    grid_search.fit(
+                        X_train,
+                        y_train,
+                    )
 
-                    loc_score: float = grid_search.score(X_valid, y_valid, )
+                    loc_score: float = grid_search.score(
+                        X_valid,
+                        y_valid,
+                    )
 
                     if loc_score > best_classification_model_score:
                         best_classification_model_score = loc_score
                         best_classification_model_name = self.models_data[idx]
 
-                    progress_bar.update(fits_cnt, )
+                    progress_bar.update(
+                        fits_cnt,
+                    )
 
                     print(
-                        "Best classification model parameters are " +
-                        f"{grid_search.best_params_}.",
+                        "Best classification model parameters are "
+                        + f"{grid_search.best_params_}.",
                     )
                     print(
                         f"Classification model training accuracy metric is {
@@ -439,25 +467,22 @@ class ModelSelection:
                         }.",
                     )
                     print(
-                        "Classification model validation accuracy metric " +
-                        f"is {loc_score:.3f}.",
+                        "Classification model validation accuracy metric " + f"is {loc_score:.3f}.",
                     )
 
             print(
-                "\nClassification model with best validation accuracy " +
-                f"metric is {best_classification_model_name}.",
+                "\nClassification model with best validation accuracy "
+                + f"metric is {best_classification_model_name}.",
             )
 
             return best_classification_model_name
         except Exception as err:
-            print(err, )
+            print(
+                err,
+            )
 
     def get_the_best_classification_models_results(
-        self,
-        X_train: DataFrame,
-        y_train: ndarray,
-        X_valid: DataFrame,
-        y_valid: ndarray
+        self, X_train: DataFrame, y_train: ndarray, X_valid: DataFrame, y_valid: ndarray
     ) -> DataFrame | None:
         """
         Generates comparison Pandas dataframe of all models performance.
@@ -477,25 +502,43 @@ class ModelSelection:
         """
 
         models_names: list[str] = []
-        models_params: list[dict[str, Any]] =  []
+        models_params: list[dict[str, Any]] = []
         models_scores: list[float] = []
 
         try:
-            for idx, grid_search in enumerate(self.grid_searches, ):
+            for idx, grid_search in enumerate(
+                self.grid_searches,
+            ):
                 loc_model_name: str = self.models_data[idx]
 
-                grid_search.fit(X_train, y_train, )
-                models_names.append(loc_model_name, )
-                models_params.append(grid_search.best_params_, )
-                models_scores.append(grid_search.score(X_valid, y_valid, ), )
+                grid_search.fit(
+                    X_train,
+                    y_train,
+                )
+                models_names.append(
+                    loc_model_name,
+                )
+                models_params.append(
+                    grid_search.best_params_,
+                )
+                models_scores.append(
+                    grid_search.score(
+                        X_valid,
+                        y_valid,
+                    ),
+                )
 
-            return DataFrame({
-                "model": models_names,
-                "parameters" : models_params,
-                "validation_score": models_scores,
-            }, )
+            return DataFrame(
+                {
+                    "model": models_names,
+                    "parameters": models_params,
+                    "validation_score": models_scores,
+                },
+            )
         except Exception as err:
-            print(err, )
+            print(
+                err,
+            )
 
 
 class Finalize:
@@ -517,11 +560,7 @@ class Finalize:
         self.classification_model: Any = classification_model
 
     def get_final_score(
-        self,
-        X_train: DataFrame,
-        y_train: ndarray,
-        X_test: DataFrame,
-        y_test: ndarray
+        self, X_train: DataFrame, y_train: ndarray, X_test: DataFrame, y_test: ndarray
     ) -> float | None:
         """
         Evaluates and returns the classification model's accuracy metric on test
@@ -542,7 +581,10 @@ class Finalize:
         """
 
         try:
-            self.classification_model.fit(X_train, y_train, )
+            self.classification_model.fit(
+                X_train,
+                y_train,
+            )
 
             print(
                 f"Accuracy metric of the classification model is {
@@ -555,18 +597,19 @@ class Finalize:
 
             return round(
                 accuracy_score(
-                    self.classification_model.predict(X_test, ),
+                    self.classification_model.predict(
+                        X_test,
+                    ),
                     y_test,
                 ),
                 3,
             )
         except Exception as err:
-            print(err, )
+            print(
+                err,
+            )
 
-    def save_classification_model(
-        self,
-        classification_model_path: str = "../../models/"
-    ) -> None:
+    def save_classification_model(self, classification_model_path: str = "../../models/") -> None:
         """
         Serializes and saves the classification model.
 
@@ -585,8 +628,9 @@ class Finalize:
                 classification_model_path,
             )
             print(
-                "Classification model was successfuly saved:" +
-                f" {classification_model_path}.",
+                "Classification model was successfuly saved:" + f" {classification_model_path}.",
             )
         except Exception as err:
-            print(err, )
+            print(
+                err,
+            )

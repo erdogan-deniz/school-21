@@ -53,7 +53,13 @@ class NPC:
     :type npc_description: str.
     """
 
-    def __init__(self, npc_id: int = None, npc_name: str = None, npc_item: str = None, npc_description: str = None):
+    def __init__(
+        self,
+        npc_id: int = None,
+        npc_name: str = None,
+        npc_item: str = None,
+        npc_description: str = None,
+    ):
         """Constructor method.
 
         :return: It does not return anything, but only set parameters of NPC.
@@ -76,7 +82,7 @@ class NPC:
         """
 
         await message.answer(
-                                f"<u>NPC DATA:</u>\n\n" +
-                                f"<b>NPC name</b>: <code>{clear_string(self.name)}</code>\n" +
-                                f"<b>NPC description</b>: <code>{clear_string(self.description)}</code>\n"
-                            )
+            f"<u>NPC DATA:</u>\n\n"
+            + f"<b>NPC name</b>: <code>{clear_string(self.name)}</code>\n"
+            + f"<b>NPC description</b>: <code>{clear_string(self.description)}</code>\n"
+        )

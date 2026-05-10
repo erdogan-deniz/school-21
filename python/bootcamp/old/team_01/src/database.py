@@ -31,7 +31,9 @@ def configuration_database(filename: str = "database.ini", section: str = "postg
     :raise: Exception: If we get incorrect argument.
     """
 
-    if (not isinstance(filename, str)) or (not isinstance(section, str)):  # Incorrect type of argument
+    if (not isinstance(filename, str)) or (
+        not isinstance(section, str)
+    ):  # Incorrect type of argument
         raise Exception("ERROR! INCORRECT ARGUMENT.")
 
     database = {}
@@ -129,7 +131,7 @@ def create_tables():
 
     # Table "Dialogs":
     cursor.execute(
-                    """CREATE TABLE IF NOT EXISTS public."Dialogs"
+        """CREATE TABLE IF NOT EXISTS public."Dialogs"
                     (
                         id bigint NOT NULL,
                         phrase text COLLATE pg_catalog."default" NOT NULL,
@@ -139,11 +141,11 @@ def create_tables():
                         CONSTRAINT "Dialogs_pkey" PRIMARY KEY (id)
                     )
                     """
-                   )
+    )
 
     # Table "Enemies":
     cursor.execute(
-                    """CREATE TABLE IF NOT EXISTS public."Enemies"
+        """CREATE TABLE IF NOT EXISTS public."Enemies"
                     (
                         id bigint NOT NULL,
                         armor bigint NOT NULL DEFAULT 0,
@@ -154,11 +156,11 @@ def create_tables():
                         CONSTRAINT "Enemies_pkey" PRIMARY KEY (id)
                     )
                     """
-                  )
+    )
 
     # Table "Locations":
     cursor.execute(
-                    """CREATE TABLE IF NOT EXISTS public."Locations"
+        """CREATE TABLE IF NOT EXISTS public."Locations"
                     (
                         id bigint NOT NULL,
                         item text COLLATE pg_catalog."default",
@@ -175,11 +177,11 @@ def create_tables():
                         area text COLLATE pg_catalog."default" NOT NULL,
                         CONSTRAINT "Locations_pkey" PRIMARY KEY (id)
                     )"""
-                  )
+    )
 
     # Table "NPCs":
     cursor.execute(
-                    """CREATE TABLE IF NOT EXISTS public."NPCs"
+        """CREATE TABLE IF NOT EXISTS public."NPCs"
                     (
                         id bigint NOT NULL,
                         name text COLLATE pg_catalog."default" NOT NULL,
@@ -187,11 +189,11 @@ def create_tables():
                         description text COLLATE pg_catalog."default" NOT NULL,
                         CONSTRAINT "NPCs_pkey" PRIMARY KEY (id)
                     )"""
-                  )
+    )
 
     # Table "Protagonists":
     cursor.execute(
-                    """CREATE TABLE IF NOT EXISTS public."Protagonists"
+        """CREATE TABLE IF NOT EXISTS public."Protagonists"
                     (
                         id bigint NOT NULL,
                         type text COLLATE pg_catalog."default" NOT NULL DEFAULT 'bladerunner'::text,
@@ -206,11 +208,11 @@ def create_tables():
                         inventory text[] COLLATE pg_catalog."default",
                         CONSTRAINT "Protagonist_pkey" PRIMARY KEY (id)
                     )"""
-                  )
+    )
 
     # Table "Tasks":
     cursor.execute(
-                    """CREATE TABLE IF NOT EXISTS public."Tasks"
+        """CREATE TABLE IF NOT EXISTS public."Tasks"
                     (
                         id bigint NOT NULL,
                         name text COLLATE pg_catalog."default" NOT NULL,
@@ -218,7 +220,7 @@ def create_tables():
                         difficult text COLLATE pg_catalog."default" NOT NULL,
                         CONSTRAINT "Tasks_pkey" PRIMARY KEY (id)
                     )"""
-                  )
+    )
 
     connection.commit()  # Save changes
     cursor.close()
@@ -276,7 +278,9 @@ def get_row(data_number: int, table_name: str):
     connection = connection_database()
     cursor = connection.cursor()
 
-    cursor.execute(f'SELECT * FROM public."{table_name}" WHERE id = {data_number}')  # Take necessary string
+    cursor.execute(
+        f'SELECT * FROM public."{table_name}" WHERE id = {data_number}'
+    )  # Take necessary string
 
     row = cursor.fetchone()  # Put it in tuple
 

@@ -1,0 +1,8 @@
+---
+# Repo-wide C / C++ style for school-21.
+# Matches the in-tree School 21 .clang-format files
+# (materials/linters/.clang-format) — Google style is the
+# School 21 convention. Override per-subproject by placing a
+# .clang-format file inside the subtree if a project ever needs
+# something different.
+BasedOnStyle: Google

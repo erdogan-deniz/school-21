@@ -26,7 +26,6 @@ s21_list* s21_set_value(s21_list* list, long double value);  // s21_free_list()
 // Validation functions:
 int s21_count_points(char* string);
 int s21_have_number(char* string);
-int s21_have_point(char* string);
 int s21_have_x(char* string);
 int s21_is_int(char* string);
 int s21_is_sign(char symbol);

@@ -42,13 +42,13 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject         | A | B | C | D | E | F | G | H | Flagship | Notes                                                       |
 | ------------------ | - | - | - | - | - | - | - | - | -------- | ----------------------------------------------------------- |
-| `3DViewer_v1.0`    | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; C tests in c.yml; Qt GUI build deferred     |
+| `3DViewer_v1.0`    | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; C tests + Qt GUI build in c.yml (xvfb)      |
 | `SimpleBashUtils`  | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; CI in c.yml matrix (informational)          |
 | `s21_decimal`      | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; CI in c.yml matrix (informational)          |
 | `s21_math`         | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; CI in c.yml matrix (informational)          |
 | `s21_matrix`       | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; CI in c.yml matrix (informational)          |
 | `s21_string+`      | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; CI in c.yml matrix (informational)          |
-| `SmartCalc_v1.0`   | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; C tests in c.yml; rename in a6744d9d        |
+| `SmartCalc_v1.0`   | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; C tests + Qt GUI build in c.yml (xvfb)      |
 
 ### `career_track/`
 
@@ -68,10 +68,10 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject              | A | B | C | D | E | F | G | H | Flagship | Notes                                                    |
 | ----------------------- | - | - | - | - | - | - | - | - | -------- | -------------------------------------------------------- |
-| `3DViewer_v2.0`         | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; C++ tests in cpp.yml; Qt GUI build deferred |
-| `CPP5_3DViewer_v2.1`    | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; C++ tests in cpp.yml; Qt GUI build deferred |
-| `CPP6_3DViewer_v2.2`    | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; C++ tests in cpp.yml; Qt GUI build deferred |
-| `SmartCalc_v2.0`        | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; C++ tests in cpp.yml; Qt GUI build deferred |
+| `3DViewer_v2.0`         | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; C++ tests + Qt GUI build in cpp.yml (xvfb)  |
+| `CPP5_3DViewer_v2.1`    | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; C++ tests + Qt GUI build in cpp.yml (xvfb)  |
+| `CPP6_3DViewer_v2.2`    | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; C++ tests + Qt GUI build in cpp.yml (xvfb)  |
+| `SmartCalc_v2.0`        | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; C++ tests + Qt GUI build in cpp.yml (xvfb)  |
 | `s21_containers`        | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; CI in cpp.yml matrix (informational)        |
 | `s21_matrix+`           | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; CI in cpp.yml matrix (informational)        |
 

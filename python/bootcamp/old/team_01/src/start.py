@@ -81,8 +81,12 @@ bot = Bot(token=TOKEN_API, parse_mode="HTML")
 
 # The function to generate all available actions and buttons:
 def get_actions(
-        current_location: Location = None, current_protagonist: Protagonist = None, current_npc: NPC = None,
-        current_task: Task = None, current_enemy: Enemy = None, is_test: bool = True
+    current_location: Location = None,
+    current_protagonist: Protagonist = None,
+    current_npc: NPC = None,
+    current_task: Task = None,
+    current_enemy: Enemy = None,
+    is_test: bool = True,
 ):
     """The function is used to continuously update the user actions panel.
 
@@ -117,7 +121,9 @@ def get_actions(
                 buttons.insert(0, [KeyboardButton(text="⬇️BOT_TEST⬇️")])
 
             if current_location.right_side is not None:
-                list_of_actions = "➡️  <b>RIGHT_TEST</b> - to go right location  ➡️\n" + list_of_actions
+                list_of_actions = (
+                    "➡️  <b>RIGHT_TEST</b> - to go right location  ➡️\n" + list_of_actions
+                )
                 buttons.insert(0, [KeyboardButton(text="➡️RIGHT_TEST➡️")])
 
             if current_location.top_side is not None:
@@ -152,10 +158,14 @@ def get_actions(
                 buttons.insert(0, [KeyboardButton(text="⬆️TOP⬆️")])
 
             # Add actions to talk with npc and fight with enemy:
-            if (current_location.type == "NPC") and (current_npc.id not in current_protagonist.talked_npcs):
+            if (current_location.type == "NPC") and (
+                current_npc.id not in current_protagonist.talked_npcs
+            ):
                 list_of_actions = "🗣  <b>TALK</b> - to talk with NPC  🗣\n" + list_of_actions
                 buttons.insert(0, [KeyboardButton(text="🗣TALK🗣")])
-            elif (current_location.type == "Enemy") and (current_enemy.id not in current_protagonist.defeated_enemies):
+            elif (current_location.type == "Enemy") and (
+                current_enemy.id not in current_protagonist.defeated_enemies
+            ):
                 list_of_actions = "⚔️  <b>FIGHT</b> - to fight with enemy  ⚔️\n" + list_of_actions
                 buttons.insert(0, [KeyboardButton(text="⚔️FIGHT⚔️")])
 
@@ -167,21 +177,30 @@ def get_actions(
 
             # Add action to take task:
             if current_task.name is not None:
-                if (current_task.id not in current_protagonist.current_tasks) and \
-                        (current_task.id not in current_protagonist.passed_tasks):
+                if (current_task.id not in current_protagonist.current_tasks) and (
+                    current_task.id not in current_protagonist.passed_tasks
+                ):
                     list_of_actions = "💽  <b>TAKE</b> - to take npc task  💽\n" + list_of_actions
                     buttons.insert(0, [KeyboardButton(text="💽TAKE💽")])
 
         # Check that we have task to pass:
-        if (((1 in current_protagonist.defeated_enemies) and (1 in current_protagonist.current_tasks) and
-             (current_location.id == 2)) or (("Titanium Shackles" in current_protagonist.inventory) and
-                                             (2 in current_protagonist.current_tasks) and (current_location.id == 10))):
+        if (
+            (1 in current_protagonist.defeated_enemies)
+            and (1 in current_protagonist.current_tasks)
+            and (current_location.id == 2)
+        ) or (
+            ("Titanium Shackles" in current_protagonist.inventory)
+            and (2 in current_protagonist.current_tasks)
+            and (current_location.id == 10)
+        ):
             list_of_actions = "💵  <b>PASS</b> - to pass npc task  💵\n" + list_of_actions
             buttons.insert(0, [KeyboardButton(text="💵PASS💵")])
 
         # Check that we have task to pass:
         if (current_location.id == 18) and ("E-key" in current_protagonist.inventory):
-            list_of_actions = '🗽  <b>ESCAPE</b> - to escape from "Cyber World"  🗽\n' + list_of_actions
+            list_of_actions = (
+                '🗽  <b>ESCAPE</b> - to escape from "Cyber World"  🗽\n' + list_of_actions
+            )
             buttons.insert(0, [KeyboardButton(text="🗽ESCAPE🗽")])
 
         return list_of_actions, buttons
@@ -202,26 +221,32 @@ async def escape(message: Message):
     audio = FSInputFile("audios/end.mpeg")
 
     await bot.send_audio(message.chat.id, audio)
-    await message.answer('CONGRATULATIONS, YOU HAVE <s>LOS...</s> ESCAPED FROM <b>"The Cyber World"</b>!')
+    await message.answer(
+        'CONGRATULATIONS, YOU HAVE <s>LOS...</s> ESCAPED FROM <b>"The Cyber World"</b>!'
+    )
     await sleep(1)
-    await message.answer("The whole story turned out to be real, it turns out that you saved someones life.")
-    await message.answer("If you have any comments or suggestions, please write to the author at <b>@Denzi333</b>.")
+    await message.answer(
+        "The whole story turned out to be real, it turns out that you saved someones life."
+    )
+    await message.answer(
+        "If you have any comments or suggestions, please write to the author at <b>@Denzi333</b>."
+    )
     await sleep(3)
     await message.answer("<b> THANK YOU!</b>")
 
     buttons = [
         [KeyboardButton(text="🗡SET ITEM🗡"), KeyboardButton(text="🎭SET TYPE🎭")],
-        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")]
+        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")],
     ]
     keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
     await message.answer(
         "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n"
-        "1️⃣  SET ITEM - to choice a protagonist item\n" +
-        "2️⃣  SET TYPE - to choice a protagonist type\n" +
-        '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n' +
-        "4️⃣  EXIT - to exit from settings",
-        reply_markup=keyboard
+        "1️⃣  SET ITEM - to choice a protagonist item\n"
+        + "2️⃣  SET TYPE - to choice a protagonist type\n"
+        + '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n'
+        + "4️⃣  EXIT - to exit from settings",
+        reply_markup=keyboard,
     )
 
 
@@ -259,12 +284,16 @@ async def pass_task(message: Message):
         await message.answer('You get <b>"E-key"</b>!')
         main_protagonist.inventory.append("E-key")
 
-    actions, buttons = get_actions(main_location, main_protagonist, main_npc, main_task, main_enemy, is_test=False)
+    actions, buttons = get_actions(
+        main_location, main_protagonist, main_npc, main_task, main_enemy, is_test=False
+    )
 
     if buttons is not None:
         keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-        await message.answer("<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard)
+        await message.answer(
+            "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard
+        )
 
 
 @dispatcher.message(F.text == "⚔️FIGHT⚔️")
@@ -289,12 +318,16 @@ async def fight(message: Message):
     await main_enemy.print_parameters(message)
     await main_protagonist.fight(main_enemy, message)
 
-    actions, buttons = get_actions(main_location, main_protagonist, main_npc, main_task, main_enemy, is_test=False)
+    actions, buttons = get_actions(
+        main_location, main_protagonist, main_npc, main_task, main_enemy, is_test=False
+    )
 
     if buttons is not None:
         keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-        await message.answer("<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard)
+        await message.answer(
+            "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard
+        )
 
 
 @dispatcher.message(F.text == "💽TAKE💽")
@@ -319,12 +352,16 @@ async def take(message: Message):
     await main_task.print_parameters(message)
     main_protagonist.current_tasks.append(main_task.id)
 
-    actions, buttons = get_actions(main_location, main_protagonist, main_npc, main_task, main_enemy, is_test=False)
+    actions, buttons = get_actions(
+        main_location, main_protagonist, main_npc, main_task, main_enemy, is_test=False
+    )
 
     if buttons is not None:
         keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-        await message.answer("<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard)
+        await message.answer(
+            "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard
+        )
 
 
 @dispatcher.message(F.text == "🖐PICK🖐")
@@ -349,12 +386,16 @@ async def pick(message: Message):
     await message.answer(f"You have picked up <b>{main_location.item}</b>!")
     main_protagonist.inventory.append(main_location.item)
 
-    actions, buttons = get_actions(main_location, main_protagonist, main_npc, main_task, main_enemy, is_test=False)
+    actions, buttons = get_actions(
+        main_location, main_protagonist, main_npc, main_task, main_enemy, is_test=False
+    )
 
     if buttons is not None:
         keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-        await message.answer("<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard)
+        await message.answer(
+            "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard
+        )
 
 
 @dispatcher.message(F.text == "🗣TALK🗣")
@@ -377,30 +418,36 @@ async def talk(message: Message):
 
     main_protagonist.set_level()
     main_protagonist.talked_npcs.append(main_npc.id)
-    actions, buttons = get_actions(main_location, main_protagonist, main_npc, main_task, main_enemy, is_test=False)
+    actions, buttons = get_actions(
+        main_location, main_protagonist, main_npc, main_task, main_enemy, is_test=False
+    )
     await print_dialogs(get_dialogs(main_location.id), message)
 
     if buttons is not None:
         keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-        await message.answer("<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard)
+        await message.answer(
+            "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard
+        )
 
 
 @dispatcher.message(F.text == "⬅️LEFT_TEST⬅️")
 async def left_test_location(message: Message):
     """The handler to go to the left location in the test.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     global main_location
 
     # Set next location:
-    main_location = entities.location.Location(*database.get_row(main_location.left_side, "Locations"))
+    main_location = entities.location.Location(
+        *database.get_row(main_location.left_side, "Locations")
+    )
     actions, buttons = get_actions(main_location, is_test=True)
 
     await main_location.print_parameters(message)
@@ -408,31 +455,37 @@ async def left_test_location(message: Message):
     if buttons is not None:
         keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-        await message.answer("<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard)
+        await message.answer(
+            "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard
+        )
 
 
 @dispatcher.message(F.text == "⬅️LEFT⬅️")
 async def left_location(message: Message):
     """The handler to go to the left location.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     global main_location, main_protagonist, main_npc, main_task, main_enemy
 
     # Set next entities:
-    main_location = entities.location.Location(*database.get_row(main_location.left_side, "Locations"))
+    main_location = entities.location.Location(
+        *database.get_row(main_location.left_side, "Locations")
+    )
     main_npc = set_npc(main_location)
     main_task = set_task(main_location)
     main_enemy = set_enemy(main_location)
 
     main_protagonist.set_level()
 
-    actions, buttons = get_actions(main_location, main_protagonist, main_npc, main_task, main_enemy, is_test=False)
+    actions, buttons = get_actions(
+        main_location, main_protagonist, main_npc, main_task, main_enemy, is_test=False
+    )
 
     await main_location.print_parameters(message)
 
@@ -442,19 +495,21 @@ async def left_location(message: Message):
     if buttons is not None:
         keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-        await message.answer("<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard)
+        await message.answer(
+            "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard
+        )
 
 
 @dispatcher.message(F.text == "⬇️BOT⬇️")
 async def bot_location(message: Message):
     """The handler to go to the bot location.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     global main_location, main_protagonist, main_npc, main_task, main_enemy
 
@@ -462,38 +517,47 @@ async def bot_location(message: Message):
         await message.answer("<b>THE LEVEL IS TOO SMALL!</b>\n\n")
     else:
         # Set next entities:
-        main_location = entities.location.Location(*database.get_row(main_location.bot_side, "Locations"))
+        main_location = entities.location.Location(
+            *database.get_row(main_location.bot_side, "Locations")
+        )
         main_npc = set_npc(main_location)
         main_task = set_task(main_location)
         main_enemy = set_enemy(main_location)
 
         main_protagonist.set_level()
 
-        actions, buttons = get_actions(main_location, main_protagonist, main_npc, main_task, main_enemy, is_test=False)
+        actions, buttons = get_actions(
+            main_location, main_protagonist, main_npc, main_task, main_enemy, is_test=False
+        )
 
         await main_location.print_parameters(message)
 
         if buttons is not None:
             keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-            await message.answer("<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard)
+            await message.answer(
+                "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions,
+                reply_markup=keyboard,
+            )
 
 
 @dispatcher.message(F.text == "⬇️BOT_TEST⬇️")
 async def bot_test_location(message: Message):
     """The handler to go to the bot location in the test.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     global main_location
 
     # Set next location:
-    main_location = entities.location.Location(*database.get_row(main_location.bot_side, "Locations"))
+    main_location = entities.location.Location(
+        *database.get_row(main_location.bot_side, "Locations")
+    )
     actions, buttons = get_actions(main_location, is_test=True)
 
     await main_location.print_parameters(message)
@@ -501,7 +565,9 @@ async def bot_test_location(message: Message):
     if buttons is not None:
         keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-        await message.answer("<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard)
+        await message.answer(
+            "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard
+        )
 
 
 @dispatcher.message(F.text == "➡️RIGHT➡️")
@@ -509,67 +575,81 @@ async def right_location(message: Message):
     global main_location, main_protagonist, main_npc, main_task, main_enemy
 
     # Set next entities:
-    main_location = entities.location.Location(*database.get_row(main_location.right_side, "Locations"))
+    main_location = entities.location.Location(
+        *database.get_row(main_location.right_side, "Locations")
+    )
     main_npc = set_npc(main_location)
     main_task = set_task(main_location)
     main_enemy = set_enemy(main_location)
     main_protagonist.set_level()
-    actions, buttons = get_actions(main_location, main_protagonist, main_npc, main_task, main_enemy, is_test=False)
+    actions, buttons = get_actions(
+        main_location, main_protagonist, main_npc, main_task, main_enemy, is_test=False
+    )
 
     await main_location.print_parameters(message)
 
     if buttons is not None:
         keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-        await message.answer("<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard)
+        await message.answer(
+            "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard
+        )
 
 
 @dispatcher.message(F.text == "⬆️TOP⬆️")
 async def top_location(message: Message):
     """The handler to go to the top location.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     global main_location, main_protagonist, main_npc, main_task, main_enemy
 
     # Set next entities:
-    main_location = entities.location.Location(*database.get_row(main_location.top_side, "Locations"))
+    main_location = entities.location.Location(
+        *database.get_row(main_location.top_side, "Locations")
+    )
     main_npc = set_npc(main_location)
     main_task = set_task(main_location)
     main_enemy = set_enemy(main_location)
 
     main_protagonist.set_level()
 
-    actions, buttons = get_actions(main_location, main_protagonist, main_npc, main_task, main_enemy, is_test=False)
+    actions, buttons = get_actions(
+        main_location, main_protagonist, main_npc, main_task, main_enemy, is_test=False
+    )
 
     await main_location.print_parameters(message)
 
     if buttons is not None:
         keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-        await message.answer("<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard)
+        await message.answer(
+            "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard
+        )
 
 
 @dispatcher.message(F.text == "➡️RIGHT_TEST➡️")
 async def right_test_location(message: Message):
     """The handler to go to the right location in the test.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     global main_location
 
     # Set next location:
-    main_location = entities.location.Location(*database.get_row(main_location.right_side, "Locations"))
+    main_location = entities.location.Location(
+        *database.get_row(main_location.right_side, "Locations")
+    )
     actions, buttons = get_actions(main_location, is_test=True)
 
     await main_location.print_parameters(message)
@@ -577,24 +657,28 @@ async def right_test_location(message: Message):
     if buttons is not None:
         keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-        await message.answer("<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard)
+        await message.answer(
+            "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard
+        )
 
 
 @dispatcher.message(F.text == "⬆️TOP_TEST⬆️")
 async def top_test_location(message: Message):
     """The handler to go to the top location in the test.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     global main_location
 
     # Set next location:
-    main_location = entities.location.Location(*database.get_row(main_location.top_side, "Locations"))
+    main_location = entities.location.Location(
+        *database.get_row(main_location.top_side, "Locations")
+    )
     actions, buttons = get_actions(main_location, is_test=True)
 
     await main_location.print_parameters(message)
@@ -602,65 +686,75 @@ async def top_test_location(message: Message):
     if buttons is not None:
         keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-        await message.answer("<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard)
+        await message.answer(
+            "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard
+        )
 
 
 @dispatcher.message(F.text == "👾END👾")
 async def end(message: Message):
     """The handler to end test.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     global main_location
 
     buttons = [[KeyboardButton(text="⚠️TEST⚠️"), KeyboardButton(text="✅SET UP✅")]]
     keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-    await message.answer(f'Hello new hero, <b>{message.from_user.first_name}</b>!' +
-                         f'\nWelcome to the game 🏃‍♂️<tg-spoiler>️"Escape From Cyber World"</tg-spoiler> 🌐\n')
-    await message.answer("<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" +
-                         '1️⃣  TEST - to get to know the "Cyber World"\n' +
-                         "2️⃣  SET UP - to customize your character, start the adventure\n",
-                         reply_markup=keyboard)
+    await message.answer(
+        f"Hello new hero, <b>{message.from_user.first_name}</b>!"
+        + f'\nWelcome to the game 🏃‍♂️<tg-spoiler>️"Escape From Cyber World"</tg-spoiler> 🌐\n'
+    )
+    await message.answer(
+        "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n"
+        + '1️⃣  TEST - to get to know the "Cyber World"\n'
+        + "2️⃣  SET UP - to customize your character, start the adventure\n",
+        reply_markup=keyboard,
+    )
 
 
 @dispatcher.message(Command("start"))
 async def start(message: Message):
     """The handler to start work with bot.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     buttons = [[KeyboardButton(text="⚠️TEST⚠️"), KeyboardButton(text="✅SET UP✅")]]
     keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-    await message.answer(f'Hello new hero, <b>{message.from_user.first_name}</b>!' +
-                         f'\nWelcome to the game 🏃‍♂️<tg-spoiler>️"Escape From Cyber World"</tg-spoiler> 🌐\n')
-    await message.answer("<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" +
-                         '1️⃣  TEST - to get to know the "Cyber World"\n' +
-                         "2️⃣  SET UP - to customize your character, start the adventure\n",
-                         reply_markup=keyboard)
+    await message.answer(
+        f"Hello new hero, <b>{message.from_user.first_name}</b>!"
+        + f'\nWelcome to the game 🏃‍♂️<tg-spoiler>️"Escape From Cyber World"</tg-spoiler> 🌐\n'
+    )
+    await message.answer(
+        "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n"
+        + '1️⃣  TEST - to get to know the "Cyber World"\n'
+        + "2️⃣  SET UP - to customize your character, start the adventure\n",
+        reply_markup=keyboard,
+    )
 
 
 @dispatcher.message(F.text == "⚠️TEST⚠️")
 async def test(message: Message):
     """The handler test.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     global main_location
 
@@ -673,33 +767,35 @@ async def test(message: Message):
     if buttons is not None:
         keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-        await message.answer("<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard)
+        await message.answer(
+            "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard
+        )
 
 
 @dispatcher.message(F.text == "🏳️GIVE UP🏳️")
 async def give_up(message: Message):
     """The handler to lose game.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     buttons = [
         [KeyboardButton(text="🗡SET ITEM🗡"), KeyboardButton(text="🎭SET TYPE🎭")],
-        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")]
+        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")],
     ]
     keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
     await message.answer(
         "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n"
-        "1️⃣  SET ITEM - to choice a protagonist item\n" +
-        "2️⃣  SET TYPE - to choice a protagonist type\n" +
-        '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n' +
-        "4️⃣  EXIT - to exit from settings",
-        reply_markup=keyboard
+        "1️⃣  SET ITEM - to choice a protagonist item\n"
+        + "2️⃣  SET TYPE - to choice a protagonist type\n"
+        + '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n'
+        + "4️⃣  EXIT - to exit from settings",
+        reply_markup=keyboard,
     )
 
 
@@ -707,26 +803,26 @@ async def give_up(message: Message):
 async def set_up(message: Message):
     """The handler to set reference of game.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     buttons = [
         [KeyboardButton(text="🗡SET ITEM🗡"), KeyboardButton(text="🎭SET TYPE🎭")],
-        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")]
+        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")],
     ]
     keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
     await message.answer(
         "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n"
-        "1️⃣  SET ITEM - to choice a protagonist item\n" +
-        "2️⃣  SET TYPE - to choice a protagonist type\n" +
-        '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n' +
-        "4️⃣  EXIT - to exit from settings",
-        reply_markup=keyboard
+        "1️⃣  SET ITEM - to choice a protagonist item\n"
+        + "2️⃣  SET TYPE - to choice a protagonist type\n"
+        + '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n'
+        + "4️⃣  EXIT - to exit from settings",
+        reply_markup=keyboard,
     )
 
 
@@ -734,48 +830,52 @@ async def set_up(message: Message):
 async def exit_menu(message: Message):
     """The handler to exit to the menu.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     buttons = [[KeyboardButton(text="⚠️TEST⚠️"), KeyboardButton(text="✅SET UP✅")]]
     keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-    await message.answer(f'Hello new hero, <b>{message.from_user.first_name}</b>!' +
-                         f'\nWelcome to the game 🏃‍♂️<tg-spoiler>️"Escape From Cyber World"</tg-spoiler> 🌐\n')
-    await message.answer("<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" +
-                         '1️⃣  TEST - to get to know the "Cyber World"\n' +
-                         "2️⃣  SET UP - to customize your character, start the adventure\n",
-                         reply_markup=keyboard)
+    await message.answer(
+        f"Hello new hero, <b>{message.from_user.first_name}</b>!"
+        + f'\nWelcome to the game 🏃‍♂️<tg-spoiler>️"Escape From Cyber World"</tg-spoiler> 🌐\n'
+    )
+    await message.answer(
+        "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n"
+        + '1️⃣  TEST - to get to know the "Cyber World"\n'
+        + "2️⃣  SET UP - to customize your character, start the adventure\n",
+        reply_markup=keyboard,
+    )
 
 
 @dispatcher.message(F.text == "🚶‍♂️BACK🚶‍♂️")
 async def back(message: Message):
     """The handler to go back to the settings.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     buttons = [
         [KeyboardButton(text="🗡SET ITEM🗡"), KeyboardButton(text="🎭SET TYPE🎭")],
-        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")]
+        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")],
     ]
     keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
     await message.answer(
         "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n"
-        "1️⃣  SET ITEM - to choice a protagonist item\n" +
-        "2️⃣  SET TYPE - to choice a protagonist type\n" +
-        '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n' +
-        "4️⃣  EXIT - to exit from settings",
-        reply_markup=keyboard
+        "1️⃣  SET ITEM - to choice a protagonist item\n"
+        + "2️⃣  SET TYPE - to choice a protagonist type\n"
+        + '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n'
+        + "4️⃣  EXIT - to exit from settings",
+        reply_markup=keyboard,
     )
 
 
@@ -783,30 +883,30 @@ async def back(message: Message):
 async def chain_select(message: Message):
     """The handler to choice item sea chain.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     global hero_item
 
     hero_item = "The Sea Chain"
     buttons = [
         [KeyboardButton(text="🗡SET ITEM🗡"), KeyboardButton(text="🎭SET TYPE🎭")],
-        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")]
+        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")],
     ]
     keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
     await message.answer("<b>THE CHARACTER'S STARTING ITEM HAS BEEN SELECTED!</b>")
     await message.answer(
         "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n"
-        "1️⃣  SET ITEM - to choice a protagonist item\n" +
-        "2️⃣  SET TYPE - to choice a protagonist type\n" +
-        '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n' +
-        "4️⃣  EXIT - to exit from settings",
-        reply_markup=keyboard
+        "1️⃣  SET ITEM - to choice a protagonist item\n"
+        + "2️⃣  SET TYPE - to choice a protagonist type\n"
+        + '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n'
+        + "4️⃣  EXIT - to exit from settings",
+        reply_markup=keyboard,
     )
 
 
@@ -814,30 +914,30 @@ async def chain_select(message: Message):
 async def uniform_select(message: Message):
     """The handler to choice item real madrid uniform.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     global hero_item
 
     hero_item = "Real Madrid Uniform"
     buttons = [
         [KeyboardButton(text="🗡SET ITEM🗡"), KeyboardButton(text="🎭SET TYPE🎭")],
-        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")]
+        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")],
     ]
     keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
     await message.answer("<b>THE CHARACTER'S STARTING ITEM HAS BEEN SELECTED!</b>")
     await message.answer(
         "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n"
-        "1️⃣  SET ITEM - to choice a protagonist item\n" +
-        "2️⃣  SET TYPE - to choice a protagonist type\n" +
-        '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n' +
-        "4️⃣  EXIT - to exit from settings",
-        reply_markup=keyboard
+        "1️⃣  SET ITEM - to choice a protagonist item\n"
+        + "2️⃣  SET TYPE - to choice a protagonist type\n"
+        + '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n'
+        + "4️⃣  EXIT - to exit from settings",
+        reply_markup=keyboard,
     )
 
 
@@ -845,30 +945,30 @@ async def uniform_select(message: Message):
 async def mantle_select(message: Message):
     """The handler to choice item cyber policeman's mantle.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     global hero_item
 
     hero_item = "Cyber Policemans Mantle"
     buttons = [
         [KeyboardButton(text="🗡SET ITEM🗡"), KeyboardButton(text="🎭SET TYPE🎭")],
-        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")]
+        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")],
     ]
     keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
     await message.answer("<b>THE CHARACTER'S STARTING ITEM HAS BEEN SELECTED!</b>")
     await message.answer(
         "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n"
-        "1️⃣  SET ITEM - to choice a protagonist item\n" +
-        "2️⃣  SET TYPE - to choice a protagonist type\n" +
-        '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n' +
-        "4️⃣  EXIT - to exit from settings",
-        reply_markup=keyboard
+        "1️⃣  SET ITEM - to choice a protagonist item\n"
+        + "2️⃣  SET TYPE - to choice a protagonist type\n"
+        + '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n'
+        + "4️⃣  EXIT - to exit from settings",
+        reply_markup=keyboard,
     )
 
 
@@ -876,12 +976,12 @@ async def mantle_select(message: Message):
 async def gloves_select(message: Message):
     """The handler to choice item gradient gloves.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     global hero_item
 
@@ -889,7 +989,7 @@ async def gloves_select(message: Message):
 
     buttons = [
         [KeyboardButton(text="🗡SET ITEM🗡"), KeyboardButton(text="🎭SET TYPE🎭")],
-        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")]
+        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")],
     ]
     keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
@@ -897,11 +997,11 @@ async def gloves_select(message: Message):
 
     await message.answer(
         "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n"
-        "1️⃣  SET ITEM - to choice a protagonist item\n" +
-        "2️⃣  SET TYPE - to choice a protagonist type\n" +
-        '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n' +
-        "4️⃣  EXIT - to exit from settings",
-        reply_markup=keyboard
+        "1️⃣  SET ITEM - to choice a protagonist item\n"
+        + "2️⃣  SET TYPE - to choice a protagonist type\n"
+        + '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n'
+        + "4️⃣  EXIT - to exit from settings",
+        reply_markup=keyboard,
     )
 
 
@@ -909,28 +1009,31 @@ async def gloves_select(message: Message):
 async def set_item(message: Message):
     """The handler to set protagonist item.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     buttons = [
-        [KeyboardButton(text="🧤GRADIENT GLOVES🧤"), KeyboardButton(text="👮‍♂️CYBER POLICEMANS MANTLE👮‍♂️")],
+        [
+            KeyboardButton(text="🧤GRADIENT GLOVES🧤"),
+            KeyboardButton(text="👮‍♂️CYBER POLICEMANS MANTLE👮‍♂️"),
+        ],
         [KeyboardButton(text="⚽️REAL MADRID UNIFORM⚽️"), KeyboardButton(text="🌊THE SEA CHAIN🌊")],
-        [KeyboardButton(text="🚶‍♂️BACK🚶‍♂️")]
+        [KeyboardButton(text="🚶‍♂️BACK🚶‍♂️")],
     ]
     keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
     await message.answer(
         "<u>PLEASE, CHOICE A HERO START ITEM</u>:\n\n"
-        '1️⃣  GRADIENT GLOVES - to choice the character item "Gradient Gloves"\n' +
-        '2️⃣  CYBER POLICEMANS MANTLE - to choice the character item "Cyber Policemans Mantle"\n' +
-        '3️⃣  REAL MADRID UNIFORM  - to choice the character item "Real Madrid Uniform "\n' +
-        '4️⃣  THE SEA CHAIN - to choice the character item "The Sea Chain"' +
-        '5️⃣  BACK - to return back to set up',
-        reply_markup=keyboard
+        '1️⃣  GRADIENT GLOVES - to choice the character item "Gradient Gloves"\n'
+        + '2️⃣  CYBER POLICEMANS MANTLE - to choice the character item "Cyber Policemans Mantle"\n'
+        + '3️⃣  REAL MADRID UNIFORM  - to choice the character item "Real Madrid Uniform "\n'
+        + '4️⃣  THE SEA CHAIN - to choice the character item "The Sea Chain"'
+        + "5️⃣  BACK - to return back to set up",
+        reply_markup=keyboard,
     )
 
 
@@ -938,28 +1041,30 @@ async def set_item(message: Message):
 async def set_type(message: Message):
     """The handler to set protagonist type.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     buttons = [
         [KeyboardButton(text="🌀BLADERUNNER🌀"), KeyboardButton(text="🎴PHANTOM-GHOST🎴")],
         [KeyboardButton(text="😎REAL-JES😎"), KeyboardButton(text="⚡️ELECTRO-PSYCHO⚡️")],
-        [KeyboardButton(text="🚶‍♂️BACK🚶‍♂️"), ]
+        [
+            KeyboardButton(text="🚶‍♂️BACK🚶‍♂️"),
+        ],
     ]
     keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
     await message.answer(
         "<u>PLEASE, CHOICE A HERO TYPE</u>:\n\n"
-        '1️⃣  BLADERUNNER - to set the character type "Bladerunner"\n' +
-        '2️⃣  PHANTOM-GHOST - to set the character type "Phantom-Ghost"\n' +
-        '3️⃣  REAL-JES  - to set the character type "Real-Jes"\n' +
-        '4️⃣  ELECTRO-PSYCHO - to set the character type "Electro-Psycho"' +
-        '5️⃣  BACK - to return back to set up',
-        reply_markup=keyboard
+        '1️⃣  BLADERUNNER - to set the character type "Bladerunner"\n'
+        + '2️⃣  PHANTOM-GHOST - to set the character type "Phantom-Ghost"\n'
+        + '3️⃣  REAL-JES  - to set the character type "Real-Jes"\n'
+        + '4️⃣  ELECTRO-PSYCHO - to set the character type "Electro-Psycho"'
+        + "5️⃣  BACK - to return back to set up",
+        reply_markup=keyboard,
     )
 
 
@@ -967,30 +1072,30 @@ async def set_type(message: Message):
 async def bladerunner_select(message: Message):
     """The handler to choice type bladerunner.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     global hero_type
 
     hero_type = "Bladerunner"
     buttons = [
         [KeyboardButton(text="🗡SET ITEM🗡"), KeyboardButton(text="🎭SET TYPE🎭")],
-        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")]
+        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")],
     ]
     keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
     await message.answer("<b>THE CHARACTER TYPE HAS BEEN SELECTED!</b>")
     await message.answer(
         "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n"
-        "1️⃣  SET ITEM - to choice a protagonist item\n" +
-        "2️⃣  SET TYPE - to choice a protagonist type\n" +
-        '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n' +
-        "4️⃣  EXIT - to exit from settings",
-        reply_markup=keyboard
+        "1️⃣  SET ITEM - to choice a protagonist item\n"
+        + "2️⃣  SET TYPE - to choice a protagonist type\n"
+        + '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n'
+        + "4️⃣  EXIT - to exit from settings",
+        reply_markup=keyboard,
     )
 
 
@@ -998,30 +1103,30 @@ async def bladerunner_select(message: Message):
 async def phantom_select(message: Message):
     """The handler to choice type phantom-ghost.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     global hero_type
 
     hero_type = "Phantom-Ghost"
     buttons = [
         [KeyboardButton(text="🗡SET ITEM🗡"), KeyboardButton(text="🎭SET TYPE🎭")],
-        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")]
+        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")],
     ]
     keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
     await message.answer("<b>THE CHARACTER TYPE HAS BEEN SELECTED!</b>")
     await message.answer(
         "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n"
-        "1️⃣  SET ITEM - to choice a protagonist item\n" +
-        "2️⃣  SET TYPE - to choice a protagonist type\n" +
-        '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n' +
-        "4️⃣  EXIT - to exit from settings",
-        reply_markup=keyboard
+        "1️⃣  SET ITEM - to choice a protagonist item\n"
+        + "2️⃣  SET TYPE - to choice a protagonist type\n"
+        + '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n'
+        + "4️⃣  EXIT - to exit from settings",
+        reply_markup=keyboard,
     )
 
 
@@ -1029,30 +1134,30 @@ async def phantom_select(message: Message):
 async def jes_select(message: Message):
     """The handler to choice type real-jes.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     global hero_type
 
     hero_type = "Real-Jes"
     buttons = [
         [KeyboardButton(text="🗡SET ITEM🗡"), KeyboardButton(text="🎭SET TYPE🎭")],
-        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")]
+        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")],
     ]
     keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
     await message.answer("<b>THE CHARACTER TYPE HAS BEEN SELECTED!</b>")
     await message.answer(
         "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n"
-        "1️⃣  SET ITEM - to choice a protagonist item\n" +
-        "2️⃣  SET TYPE - to choice a protagonist type\n" +
-        '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n' +
-        "4️⃣  EXIT - to exit from settings",
-        reply_markup=keyboard
+        "1️⃣  SET ITEM - to choice a protagonist item\n"
+        + "2️⃣  SET TYPE - to choice a protagonist type\n"
+        + '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n'
+        + "4️⃣  EXIT - to exit from settings",
+        reply_markup=keyboard,
     )
 
 
@@ -1060,30 +1165,30 @@ async def jes_select(message: Message):
 async def electro_select(message: Message):
     """The handler to choice type electro-psycho.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     global hero_type
 
     hero_type = "Electro-Psycho"
     buttons = [
         [KeyboardButton(text="🗡SET ITEM🗡"), KeyboardButton(text="🎭SET TYPE🎭")],
-        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")]
+        [KeyboardButton(text="👹LEEEROY JENKIS...👹"), KeyboardButton(text="🌚EXIT🌚")],
     ]
     keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
     await message.answer("<b>THE CHARACTER TYPE HAS BEEN SELECTED!</b>")
     await message.answer(
         "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n"
-        "1️⃣  SET ITEM - to choice a protagonist item\n" +
-        "2️⃣  SET TYPE - to choice a protagonist type\n" +
-        '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n' +
-        "4️⃣  EXIT - to exit from settings",
-        reply_markup=keyboard
+        "1️⃣  SET ITEM - to choice a protagonist item\n"
+        + "2️⃣  SET TYPE - to choice a protagonist type\n"
+        + '3️⃣  LEEEROY JENKIS... - to immerse yourself in "Cyber World"\n'
+        + "4️⃣  EXIT - to exit from settings",
+        reply_markup=keyboard,
     )
 
 
@@ -1091,12 +1196,12 @@ async def electro_select(message: Message):
 async def game_launched(message: Message):
     """The handler to start the game.
 
-     :param message: The context of the telegram chat.
-     :type message: Message.
+    :param message: The context of the telegram chat.
+    :type message: Message.
 
-     :return: Does not return anything, but only works in the Telegram.
-     :rtype: None.
-     """
+    :return: Does not return anything, but only works in the Telegram.
+    :rtype: None.
+    """
 
     global main_location, main_protagonist, hero_type, hero_item, main_task
 
@@ -1110,7 +1215,9 @@ async def game_launched(message: Message):
     main_protagonist.set_parameters()  # Set protagonist stats
     main_protagonist.set_level()
 
-    actions, buttons = get_actions(main_location, main_protagonist, main_npc, main_task, main_enemy, False)
+    actions, buttons = get_actions(
+        main_location, main_protagonist, main_npc, main_task, main_enemy, False
+    )
 
     await main_protagonist.print_parameters(message)
     await main_location.print_parameters(message)
@@ -1118,7 +1225,9 @@ async def game_launched(message: Message):
     if buttons is not None:
         keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-        await message.answer("<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard)
+        await message.answer(
+            "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n" + actions, reply_markup=keyboard
+        )
 
 
 @dispatcher.message()

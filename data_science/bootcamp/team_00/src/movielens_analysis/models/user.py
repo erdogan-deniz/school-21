@@ -8,7 +8,6 @@ Examples of usage:
     >>> print(inst.get_top_ratings_metric_users(), )
 """
 
-
 import os
 import sys
 
@@ -16,11 +15,13 @@ sys.path.append(
     os.path.normpath(
         os.path.join(
             os.path.dirname(
-                os.path.abspath(__file__, ),
+                os.path.abspath(
+                    __file__,
+                ),
             ),
-            '..',
-            '..',
-            '..',
+            "..",
+            "..",
+            "..",
         ),
     ),
 )
@@ -53,25 +54,42 @@ class User(Movie):
         """
 
         try:
-            inst: Rating = Rating(file_path=self.file_path, )
+            inst: Rating = Rating(
+                file_path=self.file_path,
+            )
 
             inst.load_users_ids()
 
             users_rating_cnts: dict[str, int] = {
-                user_id: inst.users_ids.count(user_id, )
-                for user_id in set(inst.users_ids, )
+                user_id: inst.users_ids.count(
+                    user_id,
+                )
+                for user_id in set(
+                    inst.users_ids,
+                )
             }
 
-            return dict(sorted(
-                users_rating_cnts.items(),
-                key=lambda user_rating_cnt: user_rating_cnt[1],
-            ), )
+            return dict(
+                sorted(
+                    users_rating_cnts.items(),
+                    key=lambda user_rating_cnt: user_rating_cnt[1],
+                ),
+            )
         except ValueError as val_err:
-            print("ValueError:", val_err, )
+            print(
+                "ValueError:",
+                val_err,
+            )
         except TypeError as type_err:
-            print("TypeError:", type_err, )
+            print(
+                "TypeError:",
+                type_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def get_top_ratings_metric_users(
         self,
@@ -83,7 +101,7 @@ class User(Movie):
             "median",
             "var",
             "std",
-        ] = "mean"
+        ] = "mean",
     ) -> dict[str, float] | None:
         """
         Retrieves top users by rating metric.
@@ -114,11 +132,20 @@ class User(Movie):
             return self.get_top_ratings_metric_features(
                 cnt=cnt,
                 metric=metric,
-                target_feat = "userId",
+                target_feat="userId",
             )
         except ValueError as val_err:
-            print("ValueError:", val_err, )
+            print(
+                "ValueError:",
+                val_err,
+            )
         except TypeError as type_err:
-            print("TypeError:", type_err, )
+            print(
+                "TypeError:",
+                type_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )

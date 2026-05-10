@@ -13,7 +13,9 @@ final_url = "http://127.0.0.1:8888/api/v1/tasks/"  # Url for request
 
 # Function for checking urls:
 def check_url(url):
-    if str(url).startswith("https://") or str(url).startswith("http://"):  # If we know that is an url
+    if str(url).startswith("https://") or str(url).startswith(
+        "http://"
+    ):  # If we know that is an url
         return str(url)
 
     print(f"ERROR! INCORRECT URL - {url}.")
@@ -88,7 +90,9 @@ async def get_request(current_url: str):
 
 # The final result description function:
 def print_result(codes: list, sites: list):
-    if (not isinstance(codes, list)) or (not isinstance(sites, list)):  # Incorrect type of argument case
+    if (not isinstance(codes, list)) or (
+        not isinstance(sites, list)
+    ):  # Incorrect type of argument case
         print("ERROR! INCORRECT ARGUMENT.")
 
         return -1
@@ -100,7 +104,7 @@ def print_result(codes: list, sites: list):
     print()
 
     for index in range(len(codes)):  # Print all pares
-        print(f"URL: {sites[index]}, CODE: {codes[index]}", end='\n')
+        print(f"URL: {sites[index]}, CODE: {codes[index]}", end="\n")
 
     print()
 

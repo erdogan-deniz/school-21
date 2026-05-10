@@ -7,7 +7,6 @@ Examples of usage:
     >>> pytest rating.py -m calculations -v
 """
 
-
 import os
 import sys
 import json
@@ -15,7 +14,9 @@ import pytest
 
 sys.path.append(
     os.path.dirname(
-        os.path.dirname(__file__, ),
+        os.path.dirname(
+            __file__,
+        ),
     ),
 )
 
@@ -38,7 +39,9 @@ class TestRating:
         Automatically initializes a `Rating` instance before each test.
         """
 
-        self.ratings: Rating = Rating(file_path="data/datasets/", )
+        self.ratings: Rating = Rating(
+            file_path="data/datasets/",
+        )
 
         self.ratings.load_data()
         self.ratings.load_users_ids()
@@ -48,10 +51,12 @@ class TestRating:
 
         with open(
             "data/test/expected/rating.json",
-            'r',
+            "r",
             encoding="utf-8",
         ) as file:
-            self.correct_answers: dict | None = json.load(file, )
+            self.correct_answers: dict | None = json.load(
+                file,
+            )
 
     @pytest.mark.returned_data_types
     def test_rating_returned_data_types(self) -> None:
@@ -60,10 +65,16 @@ class TestRating:
         """
 
         # Rating.get_top_release_years():
-        assert isinstance(self.ratings.get_top_release_years(), dict, )
+        assert isinstance(
+            self.ratings.get_top_release_years(),
+            dict,
+        )
 
         # Rating.get_top_ratings():
-        assert isinstance(self.ratings.get_top_ratings(), dict, )
+        assert isinstance(
+            self.ratings.get_top_ratings(),
+            dict,
+        )
 
     @pytest.mark.sequence_elements_data_types
     def test_rating_sequence_elements_data_types(self) -> None:
@@ -73,21 +84,29 @@ class TestRating:
 
         # Rating.get_top_release_years():
         assert isinstance(
-            list(self.ratings.get_top_release_years().keys(), )[0],
+            list(
+                self.ratings.get_top_release_years().keys(),
+            )[0],
             str,
         )
         assert isinstance(
-            list(self.ratings.get_top_release_years().values(), )[0],
+            list(
+                self.ratings.get_top_release_years().values(),
+            )[0],
             int,
         )
 
         # Rating.get_top_ratings():
         assert isinstance(
-            list(self.ratings.get_top_ratings().keys(), )[0],
+            list(
+                self.ratings.get_top_ratings().keys(),
+            )[0],
             str,
         )
         assert isinstance(
-            list(self.ratings.get_top_ratings().values(), )[0],
+            list(
+                self.ratings.get_top_ratings().values(),
+            )[0],
             int,
         )
 
@@ -98,16 +117,26 @@ class TestRating:
         """
 
         # Rating.get_top_release_years():
-        assert dict(sorted(
-            self.correct_answers["get_top_release_years"].items(),
-            key=lambda year_data: -year_data[1],
-        ), ) == self.ratings.get_top_release_years()
+        assert (
+            dict(
+                sorted(
+                    self.correct_answers["get_top_release_years"].items(),
+                    key=lambda year_data: -year_data[1],
+                ),
+            )
+            == self.ratings.get_top_release_years()
+        )
 
         # Rating.get_top_ratings():
-        assert dict(sorted(
-            self.correct_answers["get_top_ratings"].items(),
-            key=lambda rating_data: -rating_data[1],
-        ), ) == self.ratings.get_top_ratings()
+        assert (
+            dict(
+                sorted(
+                    self.correct_answers["get_top_ratings"].items(),
+                    key=lambda rating_data: -rating_data[1],
+                ),
+            )
+            == self.ratings.get_top_ratings()
+        )
 
     @pytest.mark.calculations
     def test_rating_calculations(self) -> None:
@@ -116,9 +145,7 @@ class TestRating:
         """
 
         # Rating.get_top_release_years():
-        assert self.ratings.get_top_release_years(
-        ) == self.correct_answers["get_top_release_years"]
+        assert self.ratings.get_top_release_years() == self.correct_answers["get_top_release_years"]
 
         # Rating.get_top_ratings():
-        assert self.ratings.get_top_ratings(
-        ) == self.correct_answers["get_top_ratings"]
+        assert self.ratings.get_top_ratings() == self.correct_answers["get_top_ratings"]

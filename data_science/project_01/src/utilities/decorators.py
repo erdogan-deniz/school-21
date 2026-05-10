@@ -2,7 +2,6 @@
 Decorators Python module.
 """
 
-
 import sys
 import functools
 
@@ -40,11 +39,13 @@ def handle_errors(func: Callable) -> Callable:
         """
 
         try:
-            return func(*args, **kwargs, )
+            return func(
+                *args,
+                **kwargs,
+            )
         except Exception as err:
             print(
-                f"\nError file: {func.__module__}" +
-                f"\nError message: {err}",
+                f"\nError file: {func.__module__}" + f"\nError message: {err}",
             )
 
     return wrapper

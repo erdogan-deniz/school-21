@@ -2,12 +2,17 @@
 Exercise 04: a "Pascal's triangle" - solution module.
 """
 
-
 import sys
 
 from pathlib import Path
 
-sys.path.append(str(Path(__file__, ).parent.parent, ),  )
+sys.path.append(
+    str(
+        Path(
+            __file__,
+        ).parent.parent,
+    ),
+)
 
 from models.pascal_triangle import PascalTriangle
 
@@ -29,8 +34,7 @@ def main() -> None:
         triangle.print_triangle()
     except Exception as err:
         raise Exception(
-            f"\nFile: {__file__}\n" +
-            f"Message: {err}.",
+            f"\nFile: {__file__}\n" + f"Message: {err}.",
         )
 
 

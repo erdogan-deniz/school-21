@@ -12,7 +12,6 @@ Examples of usage:
     >>> print(vec.input_vector_coordinates(vec_one, vec_two, ), )
 """
 
-
 from __future__ import annotations
 
 
@@ -27,11 +26,7 @@ class Vector:
                        Default: [0.0, ].
     """
 
-    def __init__(
-        self,
-        dim: int = 3,
-        coords: list| None = None
-    ) -> None:
+    def __init__(self, dim: int = 3, coords: list | None = None) -> None:
         """
         Initializes the `Vector` class representative.
 
@@ -43,13 +38,16 @@ class Vector:
         """
 
         self.dim: int = dim
-        self.coords: list = coords or [0.0, ] * dim
+        self.coords: list = (
+            coords
+            or [
+                0.0,
+            ]
+            * dim
+        )
 
     @staticmethod
-    def calculate_vectors_scalar_product(
-        vec_one: Vector,
-        vec_two: Vector
-    ) -> float | None:
+    def calculate_vectors_scalar_product(vec_one: Vector, vec_two: Vector) -> float | None:
         """
         Returns calculated scalar product of two vectors.
 
@@ -83,23 +81,19 @@ class Vector:
             return scal_prod_val
         except AttributeError as attr_err:
             raise AttributeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {attr_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {attr_err}.",
             )
         except ValueError as val_err:
             raise ValueError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {val_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {val_err}.",
             )
         except TypeError as type_err:
             raise TypeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {type_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {type_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )
 
     def input_vector_coordinates(self) -> None:
@@ -113,25 +107,31 @@ class Vector:
         """
 
         try:
-            self.coords = list(map(float, input().split(), ), )
+            self.coords = list(
+                map(
+                    float,
+                    input().split(),
+                ),
+            )
 
-            if len(self.coords, ) != self.dim:
+            if (
+                len(
+                    self.coords,
+                )
+                != self.dim
+            ):
                 raise Exception(
-                    f"\nFile: {__file__}\n" +
-                    f"Message: incorrect vector dimension values.",
+                    f"\nFile: {__file__}\n" + f"Message: incorrect vector dimension values.",
                 )
         except ValueError as val_err:
             raise ValueError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {val_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {val_err}.",
             )
         except TypeError as type_err:
             raise TypeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {type_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {type_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )

@@ -65,7 +65,6 @@ Examples of usage:
     >>> ], ), )
 """
 
-
 from typing import Literal
 from bs4 import BeautifulSoup
 from requests import Response, get
@@ -106,13 +105,26 @@ def fetch_webpage_text(url: str, headers: dict[str, str]) -> str | None:
 
         return res.text if res.status_code == 200 else None
     except Timeout as timeout_err:
-        print("Timeout:", timeout_err, )
+        print(
+            "Timeout:",
+            timeout_err,
+        )
     except HTTPError as http_err:
-        print("HTTPError:", http_err, )
+        print(
+            "HTTPError:",
+            http_err,
+        )
     except RequestException as req_err:
-        print("RequestException:", req_err, )
+        print(
+            "RequestException:",
+            req_err,
+        )
     except Exception as err:
-        print("Exception:", err, )
+        print(
+            "Exception:",
+            err,
+        )
+
 
 def fetch_movie_webpage_text_fields(
     movie_id: str,
@@ -139,7 +151,7 @@ def fetch_movie_webpage_text_fields(
         "country",
         "director",
         "language",
-    ]
+    ],
 ) -> list[str] | None:
     """
     Fetch movie fields from webpage text.
@@ -165,29 +177,46 @@ def fetch_movie_webpage_text_fields(
     """
 
     try:
-        fields_vals: list[str] = [movie_id, ]
-        soup: BeautifulSoup = BeautifulSoup(movie_webpage_text, "html.parser", )
+        fields_vals: list[str] = [
+            movie_id,
+        ]
+        soup: BeautifulSoup = BeautifulSoup(
+            movie_webpage_text,
+            "html.parser",
+        )
 
         for field in fields:
-            fields_vals.append(fetch_movie_webpage_text_field(
-                field=field,
-                soup=soup,
-            ), )
+            fields_vals.append(
+                fetch_movie_webpage_text_field(
+                    field=field,
+                    soup=soup,
+                ),
+            )
 
         return fields_vals
     except TypeError as type_err:
-        print("TypeError:", type_err, )
+        print(
+            "TypeError:",
+            type_err,
+        )
     except ValueError as val_err:
-        print("ValueError:", val_err, )
-    except ParserRejectedMarkup  as parser_rej_markup_err:
-        print("ParserRejectedMarkup:", parser_rej_markup_err, )
+        print(
+            "ValueError:",
+            val_err,
+        )
+    except ParserRejectedMarkup as parser_rej_markup_err:
+        print(
+            "ParserRejectedMarkup:",
+            parser_rej_markup_err,
+        )
     except Exception as err:
-        print("Exception:", err, )
+        print(
+            "Exception:",
+            err,
+        )
 
-def fetch_movie_webpage_text_field(
-    soup: BeautifulSoup,
-    field: str
-) -> str | None:
+
+def fetch_movie_webpage_text_field(soup: BeautifulSoup, field: str) -> str | None:
     """
     Fetch movie field.
 
@@ -208,57 +237,101 @@ def fetch_movie_webpage_text_field(
     try:
         match field.lower():
             case "gross":
-                return soup.find(
-                    "section",
-                    attrs={"data-testid": "BoxOffice", },
-                ).find(
-                    "li",
-                    attrs={
-                        "data-testid":
-                            "title-boxoffice-cumulativeworldwidegross",
-                    },
-                ).find(
-                    "span",
-                    class_="ipc-metadata-list-item__list-content-item ipc-btn" +
-                           "--not-interactable",
-                ).get_text(strip=True, )
+                return (
+                    soup.find(
+                        "section",
+                        attrs={
+                            "data-testid": "BoxOffice",
+                        },
+                    )
+                    .find(
+                        "li",
+                        attrs={
+                            "data-testid": "title-boxoffice-cumulativeworldwidegross",
+                        },
+                    )
+                    .find(
+                        "span",
+                        class_="ipc-metadata-list-item__list-content-item ipc-btn"
+                        + "--not-interactable",
+                    )
+                    .get_text(
+                        strip=True,
+                    )
+                )
 
             case "title":
-                return soup.find(
-                    "h1",
-                    attrs={"data-testid": "hero__pageTitle", },
-                ).find("span", ).get_text()
+                return (
+                    soup.find(
+                        "h1",
+                        attrs={
+                            "data-testid": "hero__pageTitle",
+                        },
+                    )
+                    .find(
+                        "span",
+                    )
+                    .get_text()
+                )
 
             case "budget":
-                return soup.find(
-                    "section",
-                    attrs={"data-testid": "BoxOffice", },
-                ).find(
-                    "li",
-                    attrs={"data-testid": "title-boxoffice-budget", },
-                ).find(
-                    "span",
-                    class_="ipc-metadata-list-item__list-content-item ipc-btn" +
-                           "--not-interactable",
-                ).get_text(strip=True, ).split()[0]
+                return (
+                    soup.find(
+                        "section",
+                        attrs={
+                            "data-testid": "BoxOffice",
+                        },
+                    )
+                    .find(
+                        "li",
+                        attrs={
+                            "data-testid": "title-boxoffice-budget",
+                        },
+                    )
+                    .find(
+                        "span",
+                        class_="ipc-metadata-list-item__list-content-item ipc-btn"
+                        + "--not-interactable",
+                    )
+                    .get_text(
+                        strip=True,
+                    )
+                    .split()[0]
+                )
 
             case "rating":
-                return soup.find(
-                    "div",
-                    attrs={
-                        "data-testid":
-                            "hero-rating-bar__aggregate-rating__score",
-                    },
-                ).find("span", ).get_text()
+                return (
+                    soup.find(
+                        "div",
+                        attrs={
+                            "data-testid": "hero-rating-bar__aggregate-rating__score",
+                        },
+                    )
+                    .find(
+                        "span",
+                    )
+                    .get_text()
+                )
 
             case "runtime":
-                return soup.find(
-                    "section",
-                    attrs={"data-testid": "TechSpecs", },
-                ).find(
-                    "li",
-                    attrs={"data-testid": "title-techspec_runtime", },
-                ).find("div", ).get_text()
+                return (
+                    soup.find(
+                        "section",
+                        attrs={
+                            "data-testid": "TechSpecs",
+                        },
+                    )
+                    .find(
+                        "li",
+                        attrs={
+                            "data-testid": "title-techspec_runtime",
+                        },
+                    )
+                    .find(
+                        "div",
+                    )
+                    .get_text()
+                )
 
             case "writer":
                 return soup.find(
@@ -267,50 +340,109 @@ def fetch_movie_webpage_text_field(
                 ).get_text()
 
             case "release":
-                return soup.find(
-                    "section",
-                    attrs={"data-testid": "Details", },
-                ).find(
-                    "li",
-                    attrs={"data-testid": "title-details-releasedate", },
-                ).get_text().split('(', )[0].split("Release date", )[1]
+                return (
+                    soup.find(
+                        "section",
+                        attrs={
+                            "data-testid": "Details",
+                        },
+                    )
+                    .find(
+                        "li",
+                        attrs={
+                            "data-testid": "title-details-releasedate",
+                        },
+                    )
+                    .get_text()
+                    .split(
+                        "(",
+                    )[0]
+                    .split(
+                        "Release date",
+                    )[1]
+                )
 
             case "country":
-                return soup.find(
-                    "section",
-                    attrs={"data-testid": "Details", },
-                ).find(
-                    "li",
-                    attrs={"data-testid": "title-details-origin", },
-                ).find('a', ).get_text()
+                return (
+                    soup.find(
+                        "section",
+                        attrs={
+                            "data-testid": "Details",
+                        },
+                    )
+                    .find(
+                        "li",
+                        attrs={
+                            "data-testid": "title-details-origin",
+                        },
+                    )
+                    .find(
+                        "a",
+                    )
+                    .get_text()
+                )
 
             case "director":
                 return soup.find(
-                    'a',
+                    "a",
                     class_="ipc-metadata-list-item__list-content-item",
-                ).get_text(strip=True, )
+                ).get_text(
+                    strip=True,
+                )
 
             case "language":
-                return soup.find(
-                    "section",
-                    attrs={"data-testid": "Details", },
-                ).find(
-                    "li",
-                    attrs={"data-testid": "title-details-languages", },
-                ).find('a', ).get_text().lower()
+                return (
+                    soup.find(
+                        "section",
+                        attrs={
+                            "data-testid": "Details",
+                        },
+                    )
+                    .find(
+                        "li",
+                        attrs={
+                            "data-testid": "title-details-languages",
+                        },
+                    )
+                    .find(
+                        "a",
+                    )
+                    .get_text()
+                    .lower()
+                )
     except TypeError as type_err:
-        print("TypeError:", type_err, )
+        print(
+            "TypeError:",
+            type_err,
+        )
     except ValueError as val_err:
-        print("ValueError:", val_err, )
+        print(
+            "ValueError:",
+            val_err,
+        )
     except Exception as err:
-        print("Exception:", err, )
+        print(
+            "Exception:",
+            err,
+        )
+
 
 def fetch_movies_webpage_text_fields(
-    movies_ids : list[str],
-    fields: list[Literal[
-        "gross", "title", "budget", "rating", "writer", "runtime", "release",
-        "country", "director", "language",
-    ]] = [
+    movies_ids: list[str],
+    fields: list[
+        Literal[
+            "gross",
+            "title",
+            "budget",
+            "rating",
+            "writer",
+            "runtime",
+            "release",
+            "country",
+            "director",
+            "language",
+        ]
+    ] = [
         "gross",
         "title",
         "budget",
@@ -323,7 +455,7 @@ def fetch_movies_webpage_text_fields(
         "language",
     ],
     req_config_path: str = "data/",
-    req_config_file: str = "request.json"
+    req_config_file: str = "request.json",
 ) -> list[list[str]] | None:
     """
     Fetch movies webpage fields.
@@ -351,27 +483,31 @@ def fetch_movies_webpage_text_fields(
             JSONDecodeError: When used incorrect JSON value.
             ValueError: When used incorrect data types.
             Exception: All other errors.
-        """
+    """
 
     try:
         with open(
             file=req_config_path + req_config_file,
-            mode='r',
+            mode="r",
             encoding="utf-8",
         ) as file:
-            req_config: dict[str, str] = load(file, )
+            req_config: dict[str, str] = load(
+                file,
+            )
 
         movies_data: list[list[str]] = []
 
         for movie_id in movies_ids:
-            movies_data.append(fetch_movie_webpage_text_fields(
-                movie_id=movie_id,
-                movie_webpage_text=fetch_webpage_text(
-                    url=req_config["imdb_url"] + movie_id,
-                    headers=req_config["headers"],
+            movies_data.append(
+                fetch_movie_webpage_text_fields(
+                    movie_id=movie_id,
+                    movie_webpage_text=fetch_webpage_text(
+                        url=req_config["imdb_url"] + movie_id,
+                        headers=req_config["headers"],
+                    ),
+                    fields=fields,
                 ),
-                fields=fields,
-            ), )
+            )
 
         return sorted(
             movies_data,
@@ -379,10 +515,22 @@ def fetch_movies_webpage_text_fields(
             reverse=True,
         )
     except FileNotFoundError as file_not_found_err:
-        print("FileNotFoundError:", file_not_found_err, )
+        print(
+            "FileNotFoundError:",
+            file_not_found_err,
+        )
     except JSONDecodeError as json_dec_err:
-        print("JSONDecodeError:", json_dec_err, )
+        print(
+            "JSONDecodeError:",
+            json_dec_err,
+        )
     except ValueError as val_err:
-        print("ValueError:", val_err, )
+        print(
+            "ValueError:",
+            val_err,
+        )
     except Exception as err:
-        print("Exception:", err, )
+        print(
+            "Exception:",
+            err,
+        )

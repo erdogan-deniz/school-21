@@ -13,14 +13,15 @@ Text-to-features conversion Python module.
     >>> vectorized_texts_df: DataFrame = converter.vectorize_texts(texts, )
 """
 
-
 import os
 import sys
 
 sys.path.append(
     os.path.abspath(
         os.path.join(
-            os.path.dirname(__file__, ),
+            os.path.dirname(
+                __file__,
+            ),
             "..",
         ),
     ),
@@ -31,7 +32,6 @@ from pandas import Series, DataFrame
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from numpy import (
     ndarray,
-
     mean,
     zeros,
 )
@@ -68,11 +68,7 @@ class TextToFeaturesConverter:
         self.bin_cnt_vectorizer: CountVectorizer | None = None
 
     @handle_errors
-    def initialize_tools(
-        self,
-        vec_size: int = 250,
-        window_size: int = 5
-    ) -> None:
+    def initialize_tools(self, vec_size: int = 250, window_size: int = 5) -> None:
         """
         Initialize text features extraction tools.
 
@@ -86,14 +82,18 @@ class TextToFeaturesConverter:
 
         self.tfidf_model = TfidfVectorizer()
         self.cnt_vectorizer = CountVectorizer()
-        self.bin_cnt_vectorizer = CountVectorizer(binary=True, )
-        self.vectorizer = Word2Vec(**{
-            "sg": 1,
-            "epochs": 100,
-            "min_count": 1,
-            "window": window_size,
-            "vector_size": vec_size,
-        }, )
+        self.bin_cnt_vectorizer = CountVectorizer(
+            binary=True,
+        )
+        self.vectorizer = Word2Vec(
+            **{
+                "sg": 1,
+                "epochs": 100,
+                "min_count": 1,
+                "window": window_size,
+                "vector_size": vec_size,
+            },
+        )
 
     @handle_errors
     def one_hot_texts_encoding(self, texts: Series) -> DataFrame | None:
@@ -113,15 +113,16 @@ class TextToFeaturesConverter:
 
         try:
             encoded_texts: DataFrame = DataFrame(
-                self.bin_cnt_vectorizer.fit_transform(texts, ).toarray(),
+                self.bin_cnt_vectorizer.fit_transform(
+                    texts,
+                ).toarray(),
                 columns=self.bin_cnt_vectorizer.get_feature_names_out(),
             )
 
             return encoded_texts
         except TypeError as type_err:
             print(
-                f"\nError file: {__file__}" +
-                f"\nError message: {type_err}",
+                f"\nError file: {__file__}" + f"\nError message: {type_err}",
             )
 
     @handle_errors
@@ -138,7 +139,9 @@ class TextToFeaturesConverter:
         """
 
         encoded_texts: DataFrame = DataFrame(
-            self.cnt_vectorizer.fit_transform(texts, ).toarray(),
+            self.cnt_vectorizer.fit_transform(
+                texts,
+            ).toarray(),
             columns=self.cnt_vectorizer.get_feature_names_out(),
         )
 
@@ -158,7 +161,9 @@ class TextToFeaturesConverter:
         """
 
         encoded_texts: DataFrame = DataFrame(
-            self.tfidf_model.fit_transform(texts, ).toarray(),
+            self.tfidf_model.fit_transform(
+                texts,
+            ).toarray(),
             columns=self.tfidf_model.get_feature_names_out(),
         )
 
@@ -182,20 +187,23 @@ class TextToFeaturesConverter:
 
         try:
             vec: ndarray = [
-                self.vectorizer.wv[text_token] for
-                text_token in
-                text_tokens if
-                text_token in self.vectorizer.wv
+                self.vectorizer.wv[text_token]
+                for text_token in text_tokens
+                if text_token in self.vectorizer.wv
             ]
 
             if vec:
-                return mean(vec, axis=0, )
+                return mean(
+                    vec,
+                    axis=0,
+                )
 
-            return zeros(self.vectorizer.vector_size, )
+            return zeros(
+                self.vectorizer.vector_size,
+            )
         except TypeError as type_err:
             print(
-                f"\nError file: {__file__}" +
-                f"\nError message: {type_err}",
+                f"\nError file: {__file__}" + f"\nError message: {type_err}",
             )
 
     @handle_errors
@@ -216,31 +224,35 @@ class TextToFeaturesConverter:
 
         try:
             word_corpus: list[list] = texts.str.split().tolist()
-            self.vectorizer = Word2Vec(**{
-                "epochs": 100,
-                "sentences": word_corpus,
-                "sg": self.vectorizer.sg,
-                "window": self.vectorizer.window,
-                "min_count": self.vectorizer.min_count,
-                "vector_size": self.vectorizer.vector_size,
-            }, )
+            self.vectorizer = Word2Vec(
+                **{
+                    "epochs": 100,
+                    "sentences": word_corpus,
+                    "sg": self.vectorizer.sg,
+                    "window": self.vectorizer.window,
+                    "min_count": self.vectorizer.min_count,
+                    "vector_size": self.vectorizer.vector_size,
+                },
+            )
             vecs: list[list[float]] = texts.apply(
                 str.split,
             ).apply(
-                lambda tokens: self.vectorize_text_tokens(tokens, ),
+                lambda tokens: self.vectorize_text_tokens(
+                    tokens,
+                ),
             )
             encoded_texts: DataFrame = DataFrame(
                 vecs.tolist(),
                 columns=[
-                    f"dimension_{idx}" for
-                    idx in
-                    range(vecs[0].shape[0], )
+                    f"dimension_{idx}"
+                    for idx in range(
+                        vecs[0].shape[0],
+                    )
                 ],
             )
 
             return encoded_texts
         except TypeError as type_err:
             print(
-                f"\nError file: {__file__}" +
-                f"\nError message: {type_err}",
+                f"\nError file: {__file__}" + f"\nError message: {type_err}",
             )

@@ -2,7 +2,7 @@ import yaml  # Module for working with yaml file
 
 
 def get_yaml_data(file_path: str):  # Get yaml data as data structure
-    with open(file_path, 'r') as yaml_file:
+    with open(file_path, "r") as yaml_file:
         return yaml.safe_load(yaml_file)
 
 
@@ -10,12 +10,10 @@ def ansible_install_packages_module(install_packages: list):
     return [
         {
             "name": "Install packages",
-
-            "ansible.built.apt":
-            {
+            "ansible.built.apt": {
                 "pgk": install_packages,  # If we have than 1 package, then use "pgk" else "name"
-                "state": "latest"  # Install last versions
-            }
+                "state": "latest",  # Install last versions
+            },
         }
     ]
 
@@ -24,13 +22,7 @@ def ansible_copy_files_module(files: list, file_destination: str):
     return [
         {
             "name": "Copy file",
-
-            "ansible.builtin.copy":
-            {
-                "src": _,
-                "dest": file_destination,
-                "mode": "0644"
-            }
+            "ansible.builtin.copy": {"src": _, "dest": file_destination, "mode": "0644"},
         }
         for _ in files  # Cycle for taking all files from yaml
     ]
@@ -40,11 +32,9 @@ def ansible_run_file_module(script_path: str, bad_guys: list):
     return [
         {
             "name": "Run script",
-
-            "ansible.builtin.script":
-            {
+            "ansible.builtin.script": {
                 "cmd": f"python3 {script_path}/consumer.py -e {', '.join(bad_guys)}"
-            }
+            },
         }
     ]
 
@@ -53,17 +43,13 @@ def ansible_generate_data_module(script_path: str):
     return [
         {
             "name": "Run script for generate data",
-
-            "ansible.builtin.script":
-            {
-                "cmd": f"python3 {script_path}/producer.py -e 2"
-            }
+            "ansible.builtin.script": {"cmd": f"python3 {script_path}/producer.py -e 2"},
         }
     ]
 
 
 def yaml_save_data(yaml_data, file_src):
-    with open(file_src, 'w') as yaml_file:
+    with open(file_src, "w") as yaml_file:
         yaml.dump(yaml_data, yaml_file, Dumper=yaml.Dumper, sort_keys=False)
 
 

@@ -12,13 +12,14 @@ Examples of usage:
     >>> ], )
 """
 
-
 import os
 import sys
 
 sys.path.append(
     os.path.dirname(
-        os.path.abspath(__file__, ),
+        os.path.abspath(
+            __file__,
+        ),
     ),
 )
 
@@ -43,10 +44,7 @@ class Epicurious:
                        Default: {}.
     """
 
-    def __init__(
-        self,
-        config: dict[str, Any] | None = None
-    ) -> None:
+    def __init__(self, config: dict[str, Any] | None = None) -> None:
         """
         Initializes the "Epicurious" class representative.
 
@@ -71,23 +69,21 @@ class Epicurious:
         try:
             load_dotenv()
 
-            self.config["URL"] = os.getenv("EPICURIOUS_URL", )
+            self.config["URL"] = os.getenv(
+                "EPICURIOUS_URL",
+            )
             self.config["BASE_URL"] = "https://www.epicurious.com"
         except AttributeError as attr_err:
             raise AttributeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {attr_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {attr_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )
 
     async def fetch_recipe_url_from_website_page(
-        self,
-        req_args: str,
-        async_client: AsyncClient
+        self, req_args: str, async_client: AsyncClient
     ) -> str | None:
         """
         Fetch recipe URL from web-site page.
@@ -108,10 +104,17 @@ class Epicurious:
         """
 
         try:
-            req_args = get_clear_string(req_args, )
+            req_args = get_clear_string(
+                req_args,
+            )
             resp: Any = await async_client.get(
                 self.config["URL"],
-                params={"q": req_args.replace(' ', '+', ), },
+                params={
+                    "q": req_args.replace(
+                        " ",
+                        "+",
+                    ),
+                },
             )
 
             if resp.status_code == 200:
@@ -120,31 +123,34 @@ class Epicurious:
                     "html.parser",
                 )
                 page_urls: list = soup.find_all(
-                    'a',
+                    "a",
                     string=lambda text: text and req_args in text,
                 )
 
-                if len(page_urls, ) > 0:
-                    return self.config["BASE_URL"] + page_urls[0].get("href", )
+                if (
+                    len(
+                        page_urls,
+                    )
+                    > 0
+                ):
+                    return self.config["BASE_URL"] + page_urls[0].get(
+                        "href",
+                    )
         except ConnectTimeout as conn_timeout_err:
             raise ConnectTimeout(
-                f"\nFile: {__file__}\n" +
-                f"Message: {conn_timeout_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {conn_timeout_err}.",
             )
         except HTTPError as http_err:
             raise HTTPError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {http_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {http_err}.",
             )
         except IndexError as idx_err:
             raise IndexError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {idx_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {idx_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )
 
     async def fetch_recipes_urls_from_website_pages(
@@ -181,11 +187,9 @@ class Epicurious:
             return res_urls
         except TypeError as type_err:
             raise TypeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {type_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {type_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )

@@ -53,9 +53,7 @@ def is_latin_letter(symbol: str) -> bool:
 
     info("Check that the symbol refers to a Latin letter.")
 
-    symbol_is_latin_letter: bool = (
-        symbol in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    )
+    symbol_is_latin_letter: bool = symbol in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
     return symbol_is_latin_letter
 
@@ -85,9 +83,7 @@ class Research:
                 if (symbol != ",") and (not is_latin_letter(symbol)):
                     raise Exception("ERROR! Incorrect file content header.")
 
-            if (len(file_content[0].split(",")) != 2) or (
-                file_content[0].count(",") > 1
-            ):
+            if (len(file_content[0].split(",")) != 2) or (file_content[0].count(",") > 1):
                 raise Exception("ERROR! Incorrect file content header.")
 
         for file_row in file_content[1:]:
@@ -95,9 +91,7 @@ class Research:
                 raise Exception("ERROR! Incorrect file content.")
 
         file_content = [pair.rstrip().split(",") for pair in file_content[1:]]
-        file_content = [
-            [int(num) for num in sublist] for sublist in file_content
-        ]
+        file_content = [[int(num) for num in sublist] for sublist in file_content]
 
         return file_content
 
@@ -120,9 +114,7 @@ class Research:
             "text": message,
         }
 
-        response: object = requests.post(
-            base_url.replace("@TOKEN@", bot_token), data=payload
-        )
+        response: object = requests.post(base_url.replace("@TOKEN@", bot_token), data=payload)
 
         return response.status_code
 
@@ -191,10 +183,7 @@ class Analytics(Research.Calculations):
     ) -> None:
         """"""
 
-        info(
-            "Save the data to a file with the required"
-            + " format along the required path."
-        )
+        info("Save the data to a file with the required" + " format along the required path.")
 
         with open(file_path + file_name + file_format, "w+") as work_file:
             work_file.writelines(data)

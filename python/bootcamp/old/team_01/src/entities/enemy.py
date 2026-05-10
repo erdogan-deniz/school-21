@@ -58,9 +58,14 @@ class Enemy:
     """
 
     def __init__(
-                    self, enemy_id: int = None, enemy_armor: int = None, enemy_health: int = None,
-                    enemy_agility: int = None, enemy_strength: int = None, enemy_name: str = None
-                ):
+        self,
+        enemy_id: int = None,
+        enemy_armor: int = None,
+        enemy_health: int = None,
+        enemy_agility: int = None,
+        enemy_strength: int = None,
+        enemy_name: str = None,
+    ):
         """Constructor method.
 
         :return: It does not return anything, but only set parameters of enemy.
@@ -88,10 +93,10 @@ class Enemy:
         """
 
         await message.answer(
-                                f"<u>ENEMY DATA</u>:\n\n" +
-                                f"<b>Enemy name</b>: <code>{clear_string(self.name)}</code>\n" +
-                                f"<b>Enemy armor</b>: <code>{self.armor}</code>\n" +
-                                f"<b>Enemy health</b>: <code>{self.health}</code>\n" +
-                                f"<b>Enemy agility</b>: <code>{self.agility}</code>\n" +
-                                f"<b>Enemy strength</b>: <code>{self.strength} </code>"
-                            )
+            f"<u>ENEMY DATA</u>:\n\n"
+            + f"<b>Enemy name</b>: <code>{clear_string(self.name)}</code>\n"
+            + f"<b>Enemy armor</b>: <code>{self.armor}</code>\n"
+            + f"<b>Enemy health</b>: <code>{self.health}</code>\n"
+            + f"<b>Enemy agility</b>: <code>{self.agility}</code>\n"
+            + f"<b>Enemy strength</b>: <code>{self.strength} </code>"
+        )

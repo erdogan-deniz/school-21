@@ -2,7 +2,6 @@
 Exercise 01: a scalar product - solution module.
 """
 
-
 from models.vector import Vector
 
 
@@ -25,8 +24,7 @@ def main() -> None:
         )
     except Exception as err:
         raise Exception(
-            f"\nFile: {__file__}\n" +
-            f"Message: {err}.",
+            f"\nFile: {__file__}\n" + f"Message: {err}.",
         )
 
 

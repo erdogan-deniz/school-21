@@ -13,7 +13,6 @@ Examples of usage:
     >>> print(extract_price_from_string(price="$11,000,000", ), )
 """
 
-
 from re import search
 from typing import Literal
 
@@ -39,13 +38,25 @@ def get_min_value(vals: list[int | float]) -> int | float | None:
         if not vals:
             return 0.0
 
-        return min(vals, )
+        return min(
+            vals,
+        )
     except ValueError as val_err:
-        print("ValueError:", val_err, )
+        print(
+            "ValueError:",
+            val_err,
+        )
     except TypeError as type_err:
-        print("TypeError:", type_err, )
+        print(
+            "TypeError:",
+            type_err,
+        )
     except Exception as err:
-        print("Exception:", err, )
+        print(
+            "Exception:",
+            err,
+        )
+
 
 def get_max_value(vals: list[int | float]) -> int | float | None:
     """
@@ -68,13 +79,25 @@ def get_max_value(vals: list[int | float]) -> int | float | None:
         if not vals:
             return 0.0
 
-        return max(vals, )
+        return max(
+            vals,
+        )
     except ValueError as val_err:
-        print("ValueError:", val_err, )
+        print(
+            "ValueError:",
+            val_err,
+        )
     except TypeError as type_err:
-        print("TypeError:", type_err, )
+        print(
+            "TypeError:",
+            type_err,
+        )
     except Exception as err:
-        print("Exception:", err, )
+        print(
+            "Exception:",
+            err,
+        )
+
 
 def calculate_mean_value(vals: list[int | float]) -> float | None:
     """
@@ -98,15 +121,36 @@ def calculate_mean_value(vals: list[int | float]) -> float | None:
         if not vals:
             return 0.0
 
-        return round(sum(vals, ) / len(vals, ), 2, )
+        return round(
+            sum(
+                vals,
+            )
+            / len(
+                vals,
+            ),
+            2,
+        )
     except ZeroDivisionError as zero_div_err:
-        print("ZeroDivisionError:", zero_div_err, )
+        print(
+            "ZeroDivisionError:",
+            zero_div_err,
+        )
     except ValueError as val_err:
-        print("ValueError:", val_err, )
+        print(
+            "ValueError:",
+            val_err,
+        )
     except TypeError as type_err:
-        print("TypeError:", type_err, )
+        print(
+            "TypeError:",
+            type_err,
+        )
     except Exception as err:
-        print("Exception:", err, )
+        print(
+            "Exception:",
+            err,
+        )
+
 
 def calculate_median_value(vals: list[int | float]) -> float | None:
     """
@@ -129,21 +173,55 @@ def calculate_median_value(vals: list[int | float]) -> float | None:
         if not vals:
             return 0.0
 
-        mid_idx: int = len(vals, ) // 2
+        mid_idx: int = (
+            len(
+                vals,
+            )
+            // 2
+        )
 
-        if len(vals, ) % 2 == 1:
-            return round(sorted(vals, )[mid_idx], 2, )
+        if (
+            len(
+                vals,
+            )
+            % 2
+            == 1
+        ):
+            return round(
+                sorted(
+                    vals,
+                )[mid_idx],
+                2,
+            )
 
         return round(
-            (sorted(vals, )[mid_idx - 1] + sorted(vals, )[mid_idx]) / 2,
+            (
+                sorted(
+                    vals,
+                )[mid_idx - 1]
+                + sorted(
+                    vals,
+                )[mid_idx]
+            )
+            / 2,
             2,
         )
     except ValueError as val_err:
-        print("ValueError:", val_err, )
+        print(
+            "ValueError:",
+            val_err,
+        )
     except TypeError as type_err:
-        print("TypeError:", type_err, )
+        print(
+            "TypeError:",
+            type_err,
+        )
     except Exception as err:
-        print("Exception:", err, )
+        print(
+            "Exception:",
+            err,
+        )
+
 
 def calculate_variance_value(vals: list[int | float]) -> float | None:
     """
@@ -166,16 +244,38 @@ def calculate_variance_value(vals: list[int | float]) -> float | None:
         if not vals:
             return 0.0
 
-        mean_val: float = sum(vals, ) / len(vals, )
+        mean_val: float = sum(
+            vals,
+        ) / len(
+            vals,
+        )
         squared_diff: list[float] = [(val - mean_val) ** 2 for val in vals]
 
-        return round(sum(squared_diff, ) / len(vals, ), 2, )
+        return round(
+            sum(
+                squared_diff,
+            )
+            / len(
+                vals,
+            ),
+            2,
+        )
     except ValueError as val_err:
-        print("ValueError:", val_err, )
+        print(
+            "ValueError:",
+            val_err,
+        )
     except TypeError as type_err:
-        print("TypeError:", type_err, )
+        print(
+            "TypeError:",
+            type_err,
+        )
     except Exception as err:
-        print("Exception:", err, )
+        print(
+            "Exception:",
+            err,
+        )
+
 
 def calculate_std_value(vals: list[int | float]) -> float | None:
     """
@@ -198,13 +298,29 @@ def calculate_std_value(vals: list[int | float]) -> float | None:
         if not vals:
             return 0.0
 
-        return round(calculate_variance_value(vals=vals, ) ** 0.5, 2, )
+        return round(
+            calculate_variance_value(
+                vals=vals,
+            )
+            ** 0.5,
+            2,
+        )
     except ValueError as val_err:
-        print("ValueError:", val_err, )
+        print(
+            "ValueError:",
+            val_err,
+        )
     except TypeError as type_err:
-        print("TypeError:", type_err, )
+        print(
+            "TypeError:",
+            type_err,
+        )
     except Exception as err:
-        print("Exception:", err, )
+        print(
+            "Exception:",
+            err,
+        )
+
 
 def calculate_metric(
     vals: list[int | float],
@@ -215,7 +331,7 @@ def calculate_metric(
         "median",
         "var",
         "std",
-    ] = "mean"
+    ] = "mean",
 ) -> int | float | None:
     """
     Calculate the statistical metric for a list of numbers.
@@ -242,28 +358,50 @@ def calculate_metric(
 
         match metric:
             case "min":
-                return get_min_value(vals=vals, )
+                return get_min_value(
+                    vals=vals,
+                )
 
             case "max":
-                return get_max_value(vals=vals, )
+                return get_max_value(
+                    vals=vals,
+                )
 
             case "mean":
-                return calculate_mean_value(vals=vals, )
+                return calculate_mean_value(
+                    vals=vals,
+                )
 
             case "median":
-                return calculate_median_value(vals=vals, )
+                return calculate_median_value(
+                    vals=vals,
+                )
 
             case "var":
-                return calculate_variance_value(vals=vals, )
+                return calculate_variance_value(
+                    vals=vals,
+                )
 
             case "std":
-                return calculate_std_value(vals=vals, )
+                return calculate_std_value(
+                    vals=vals,
+                )
     except ValueError as val_err:
-        print("ValueError:", val_err, )
+        print(
+            "ValueError:",
+            val_err,
+        )
     except TypeError as type_err:
-        print("TypeError:", type_err, )
+        print(
+            "TypeError:",
+            type_err,
+        )
     except Exception as err:
-        print("Exception:", err, )
+        print(
+            "Exception:",
+            err,
+        )
+
 
 def extract_minutes_from_string(time: str | None) -> int | None:
     """
@@ -289,17 +427,41 @@ def extract_minutes_from_string(time: str | None) -> int | None:
         hours: int = 0
 
         if "hour" in time:
-            hours = int(search(r'(\d+)\s*hour', time, ).group(1, ), )
+            hours = int(
+                search(
+                    r"(\d+)\s*hour",
+                    time,
+                ).group(
+                    1,
+                ),
+            )
 
-        mins: int = int(search(r'(\d+)\s*minute', time, ).group(1, ), )
+        mins: int = int(
+            search(
+                r"(\d+)\s*minute",
+                time,
+            ).group(
+                1,
+            ),
+        )
 
         return hours * 60 + mins
     except TypeError as type_err:
-        print("TypeError:", type_err, )
+        print(
+            "TypeError:",
+            type_err,
+        )
     except ValueError as val_err:
-        print("ValueError:", val_err, )
+        print(
+            "ValueError:",
+            val_err,
+        )
     except Exception as err:
-        print("Exception:", err, )
+        print(
+            "Exception:",
+            err,
+        )
+
 
 def extract_price_from_string(price: str | None) -> int | None:
     """
@@ -320,19 +482,32 @@ def extract_price_from_string(price: str | None) -> int | None:
 
     try:
         if price is not None:
-            return int(price.replace(
-                '$',
-                '',
-            ).replace(
-                '£',
-                '',
-            ).replace(
-                ',',
-                '',
-            ), )
+            return int(
+                price.replace(
+                    "$",
+                    "",
+                )
+                .replace(
+                    "£",
+                    "",
+                )
+                .replace(
+                    ",",
+                    "",
+                ),
+            )
     except TypeError as type_err:
-        print("TypeError:", type_err, )
+        print(
+            "TypeError:",
+            type_err,
+        )
     except ValueError as val_err:
-        print("ValueError:", val_err, )
+        print(
+            "ValueError:",
+            val_err,
+        )
     except Exception as err:
-        print("Exception:", err, )
+        print(
+            "Exception:",
+            err,
+        )

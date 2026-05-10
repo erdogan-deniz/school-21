@@ -15,9 +15,7 @@ def patched_app():
         patch("app.app.ProjectPaths") as mock_paths,
     ):
         mock_paths.get_assets_dir.return_value = MagicMock(
-            __truediv__=lambda self, other: MagicMock(
-                exists=lambda: False
-            )
+            __truediv__=lambda self, other: MagicMock(exists=lambda: False)
         )
         yield mock_ctypes
 

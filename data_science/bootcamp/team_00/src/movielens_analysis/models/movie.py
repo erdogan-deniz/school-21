@@ -21,7 +21,6 @@ Examples of usage:
     >>> print(inst.get_top_ratings_metric_features(), )
 """
 
-
 import os
 import sys
 
@@ -29,11 +28,13 @@ sys.path.append(
     os.path.normpath(
         os.path.join(
             os.path.dirname(
-                os.path.abspath(__file__, ),
+                os.path.abspath(
+                    __file__,
+                ),
             ),
-            '..',
-            '..',
-            '..',
+            "..",
+            "..",
+            "..",
         ),
     ),
 )
@@ -69,11 +70,7 @@ class Movie:
                               Default: None.
     """
 
-    def __init__(
-        self,
-        file_path: str,
-        file: str = "movies.csv"
-    ) -> None:
+    def __init__(self, file_path: str, file: str = "movies.csv") -> None:
         """
         Initializes the `Movie` analyzer.
 
@@ -108,21 +105,37 @@ class Movie:
         try:
             with open(
                 file=self.file_path + self.file,
-                mode='r',
+                mode="r",
                 encoding="utf-8",
             ) as file:
-                next(file, )  # Skip header
+                next(
+                    file,
+                )  # Skip header
 
                 self.data = [
                     line.rstrip()
-                    for line, _ in zip(file, range(size, ), )
+                    for line, _ in zip(
+                        file,
+                        range(
+                            size,
+                        ),
+                    )
                 ]
         except FileNotFoundError as file_not_found_err:
-            print("FileNotFoundError:", file_not_found_err, )
+            print(
+                "FileNotFoundError:",
+                file_not_found_err,
+            )
         except IOError as io_err:
-            print("IOError:", io_err, )
+            print(
+                "IOError:",
+                io_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def load_movies_ids(self, size: int = 1000) -> None:
         """
@@ -142,26 +155,46 @@ class Movie:
         try:
             with open(
                 file=self.file_path + self.file,
-                mode='r',
+                mode="r",
                 encoding="utf-8",
             ) as file:
-                next(file, )  # Skip header
+                next(
+                    file,
+                )  # Skip header
 
                 self.movies_ids = [
-                    line.rstrip().split(',', )[0]
-                    for line, _
-                    in zip(file, range(size, ), )
+                    line.rstrip().split(
+                        ",",
+                    )[0]
+                    for line, _ in zip(
+                        file,
+                        range(
+                            size,
+                        ),
+                    )
                 ]
         except FileNotFoundError as file_not_found_err:
-            print("FileNotFoundError:", file_not_found_err, )
+            print(
+                "FileNotFoundError:",
+                file_not_found_err,
+            )
         except IOError as io_err:
-            print("IOError:", io_err, )
+            print(
+                "IOError:",
+                io_err,
+            )
         except IndexError as idx_err:
-            print("IndexError:", idx_err, )
+            print(
+                "IndexError:",
+                idx_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
-    def load_titles(self,  size: int = 1000) -> None:
+    def load_titles(self, size: int = 1000) -> None:
         """
         Loads movies titles from a `.csv` file.
 
@@ -178,16 +211,22 @@ class Movie:
 
         try:
             self.titles = []
-            title_regex: Any = compile(r'(?:^|,)(?:"([^"]+)"|([^",]+))', )
+            title_regex: Any = compile(
+                r'(?:^|,)(?:"([^"]+)"|([^",]+))',
+            )
 
             with open(
                 file=self.file_path + self.file,
-                mode='r',
+                mode="r",
                 encoding="utf-8",
             ) as file:
-                next(file, )  # Skip header
+                next(
+                    file,
+                )  # Skip header
 
-                for idx, title in enumerate(file, ):
+                for idx, title in enumerate(
+                    file,
+                ):
                     if idx >= size:
                         break
 
@@ -195,21 +234,38 @@ class Movie:
                         title.strip(),
                     )
                     title: list[str] = [
-                        match[0] or match[1]
-                        for match in title_matches
-                        if match[0] or match[1]
+                        match[0] or match[1] for match in title_matches if match[0] or match[1]
                     ]
 
-                    if len(title, ) > 1:
-                        self.titles.append(title[1], )
+                    if (
+                        len(
+                            title,
+                        )
+                        > 1
+                    ):
+                        self.titles.append(
+                            title[1],
+                        )
         except FileNotFoundError as file_not_found_err:
-            print("FileNotFoundError:", file_not_found_err, )
+            print(
+                "FileNotFoundError:",
+                file_not_found_err,
+            )
         except IOError as io_err:
-            print("IOError:", io_err, )
+            print(
+                "IOError:",
+                io_err,
+            )
         except IndexError as idx_err:
-            print("IndexError:", idx_err, )
+            print(
+                "IndexError:",
+                idx_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def load_genres(self, size: int = 1000) -> None:
         """
@@ -229,24 +285,48 @@ class Movie:
         try:
             with open(
                 file=self.file_path + self.file,
-                mode='r',
+                mode="r",
                 encoding="utf-8",
             ) as file:
-                next(file, )  # Skip header
+                next(
+                    file,
+                )  # Skip header
 
                 self.genres = [
-                    line.rstrip().split(',', )[-1].split('|', )
-                    for line, _
-                    in zip(file, range(size, ), )
+                    line.rstrip()
+                    .split(
+                        ",",
+                    )[-1]
+                    .split(
+                        "|",
+                    )
+                    for line, _ in zip(
+                        file,
+                        range(
+                            size,
+                        ),
+                    )
                 ]
         except FileNotFoundError as file_not_found_err:
-            print("FileNotFoundError:", file_not_found_err, )
+            print(
+                "FileNotFoundError:",
+                file_not_found_err,
+            )
         except IOError as io_err:
-            print("IOError:", io_err, )
+            print(
+                "IOError:",
+                io_err,
+            )
         except IndexError as idx_err:
-            print("IndexError:", idx_err, )
+            print(
+                "IndexError:",
+                idx_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def print_data(self) -> None:
         """
@@ -259,14 +339,28 @@ class Movie:
         """
 
         try:
-            for idx, data in enumerate(self.data, 1, ):
-                print(f"row index: {idx}, movie data: {data}", )
+            for idx, data in enumerate(
+                self.data,
+                1,
+            ):
+                print(
+                    f"row index: {idx}, movie data: {data}",
+                )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except UnicodeEncodeError as unicode_encode_err:
-            print("UnicodeEncodeError:", unicode_encode_err, )
+            print(
+                "UnicodeEncodeError:",
+                unicode_encode_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def print_movies_ids(self) -> None:
         """
@@ -279,14 +373,28 @@ class Movie:
         """
 
         try:
-            for idx, movie_id in enumerate(self.movies_ids, 1, ):
-                print(f"row index: {idx}, movie ID: {movie_id}", )
+            for idx, movie_id in enumerate(
+                self.movies_ids,
+                1,
+            ):
+                print(
+                    f"row index: {idx}, movie ID: {movie_id}",
+                )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except UnicodeEncodeError as unicode_encode_err:
-            print("UnicodeEncodeError:", unicode_encode_err, )
+            print(
+                "UnicodeEncodeError:",
+                unicode_encode_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def print_titles(self) -> None:
         """
@@ -299,14 +407,28 @@ class Movie:
         """
 
         try:
-            for idx, title in enumerate(self.titles, 1, ):
-                print(f"row index: {idx}, movie title: {title}", )
+            for idx, title in enumerate(
+                self.titles,
+                1,
+            ):
+                print(
+                    f"row index: {idx}, movie title: {title}",
+                )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except UnicodeEncodeError as unicode_encode_err:
-            print("UnicodeEncodeError:", unicode_encode_err, )
+            print(
+                "UnicodeEncodeError:",
+                unicode_encode_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def print_genres(self) -> None:
         """
@@ -319,14 +441,28 @@ class Movie:
         """
 
         try:
-            for idx, genre in enumerate(self.genres, 1, ):
-                print(f"row index: {idx}, movie genres: {genre}", )
+            for idx, genre in enumerate(
+                self.genres,
+                1,
+            ):
+                print(
+                    f"row index: {idx}, movie genres: {genre}",
+                )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except UnicodeEncodeError as unicode_encode_err:
-            print("UnicodeEncodeError:", unicode_encode_err, )
+            print(
+                "UnicodeEncodeError:",
+                unicode_encode_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def get_release_years_movie_counts(self) -> OrderedDict[str, int] | None:
         """
@@ -346,25 +482,49 @@ class Movie:
         """
 
         try:
-            years_with_cnts: defaultdict = defaultdict(int, )
-            year_regex: Any = compile(r'\((\d{4})\)[^()]*$', )
+            years_with_cnts: defaultdict = defaultdict(
+                int,
+            )
+            year_regex: Any = compile(
+                r"\((\d{4})\)[^()]*$",
+            )
 
             for title in self.titles:
-                year_matches: list | None = year_regex.search(title, )
-                years_with_cnts[year_matches.group(1, )] += 1
+                year_matches: list | None = year_regex.search(
+                    title,
+                )
+                years_with_cnts[
+                    year_matches.group(
+                        1,
+                    )
+                ] += 1
 
-            return OrderedDict(sorted(
-                years_with_cnts.items(),
-                key=lambda year_with_cnt: -year_with_cnt[1],
-            ), )
+            return OrderedDict(
+                sorted(
+                    years_with_cnts.items(),
+                    key=lambda year_with_cnt: -year_with_cnt[1],
+                ),
+            )
         except error as regex_err:
-            print("RegexError:", regex_err, )
+            print(
+                "RegexError:",
+                regex_err,
+            )
         except AttributeError as attr_err:
-            print("AttributeError:", attr_err, )
+            print(
+                "AttributeError:",
+                attr_err,
+            )
         except TypeError as type_err:
-            print("TypeError:", type_err, )
+            print(
+                "TypeError:",
+                type_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def get_genres_counts(self) -> dict[str, int] | None:
         """
@@ -382,17 +542,23 @@ class Movie:
         """
 
         try:
-            genres: list = [
-                genre
-                for sublist in self.genres
-                for genre in sublist
-            ]
+            genres: list = [genre for sublist in self.genres for genre in sublist]
 
-            return dict(Counter(genres, ).most_common(), )
+            return dict(
+                Counter(
+                    genres,
+                ).most_common(),
+            )
         except TypeError as type_err:
-            print("TypeError:", type_err, )
+            print(
+                "TypeError:",
+                type_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def get_most_genres_movies(self, cnt: int = 10) -> dict[str, int] | None:
         """
@@ -416,21 +582,38 @@ class Movie:
 
         try:
             genres_cnts: dict[str, int] = {
-                title: len(genres, )
-                for title, genres
-                in dict(zip(self.titles, self.genres, ), ).items()
+                title: len(
+                    genres,
+                )
+                for title, genres in dict(
+                    zip(
+                        self.titles,
+                        self.genres,
+                    ),
+                ).items()
             }
 
-            return dict(sorted(
-                genres_cnts.items(),
-                key=lambda cnt: -cnt[1],
-            )[: cnt], )
+            return dict(
+                sorted(
+                    genres_cnts.items(),
+                    key=lambda cnt: -cnt[1],
+                )[:cnt],
+            )
         except ValueError as val_err:
-            print("ValueError:", val_err, )
+            print(
+                "ValueError:",
+                val_err,
+            )
         except TypeError as type_err:
-            print("TypeError:", type_err, )
+            print(
+                "TypeError:",
+                type_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def get_most_ratings_movies(self, cnt: int = 10) -> dict[str, int] | None:
         """
@@ -453,28 +636,45 @@ class Movie:
         """
 
         try:
-            inst: Rating = Rating(file_path=self.file_path, )
+            inst: Rating = Rating(
+                file_path=self.file_path,
+            )
 
             inst.load_movies_ids()
 
-            movies_with_ids: dict[str, int] = dict(zip(
-                self.titles,
-                self.movies_ids,
-            ), )
+            movies_with_ids: dict[str, int] = dict(
+                zip(
+                    self.titles,
+                    self.movies_ids,
+                ),
+            )
 
-            return dict(sorted({
-                    title: inst.movies_ids.count(ratings_cnt, )
-                    for title, ratings_cnt
-                    in movies_with_ids.items()
-                }.items(),
-                key=lambda ratings_cnt: -ratings_cnt[1],
-            )[: cnt], )
+            return dict(
+                sorted(
+                    {
+                        title: inst.movies_ids.count(
+                            ratings_cnt,
+                        )
+                        for title, ratings_cnt in movies_with_ids.items()
+                    }.items(),
+                    key=lambda ratings_cnt: -ratings_cnt[1],
+                )[:cnt],
+            )
         except ValueError as val_err:
-            print("ValueError:", val_err, )
+            print(
+                "ValueError:",
+                val_err,
+            )
         except TypeError as type_err:
-            print("TypeError:", type_err, )
+            print(
+                "TypeError:",
+                type_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )
 
     def get_top_ratings_metric_features(
         self,
@@ -487,7 +687,10 @@ class Movie:
             "var",
             "std",
         ] = "mean",
-        target_feat: Literal["movieId", "userId", ] = "movieId"
+        target_feat: Literal[
+            "movieId",
+            "userId",
+        ] = "movieId",
     ) -> dict[str, float] | None:
         """
         Retrieve top target feature values by rating metric.
@@ -516,28 +719,38 @@ class Movie:
 
         try:
             res: dict[str, float] = {}
-            inst: Rating = Rating(file_path=self.file_path, )
+            inst: Rating = Rating(
+                file_path=self.file_path,
+            )
 
             inst.load_ratings()
 
             if target_feat == "movieId":
                 inst.load_movies_ids()
 
-                movies_data: dict[str, str] = dict(zip(
-                    self.movies_ids,
-                    self.titles,
-                ), )
-                movies_ratings: dict[str, str] = list(zip(
-                    inst.movies_ids,
-                    inst.ratings,
-                ), )
+                movies_data: dict[str, str] = dict(
+                    zip(
+                        self.movies_ids,
+                        self.titles,
+                    ),
+                )
+                movies_ratings: dict[str, str] = list(
+                    zip(
+                        inst.movies_ids,
+                        inst.ratings,
+                    ),
+                )
 
                 for movie_id in movies_data.keys():
                     movie_ratings: list[float] = []
 
                     for rating in movies_ratings:
                         if rating[0] == movie_id:
-                            movie_ratings.append(float(rating[1], ), )
+                            movie_ratings.append(
+                                float(
+                                    rating[1],
+                                ),
+                            )
 
                     res[movie_id] = calculate_metric(
                         vals=movie_ratings,
@@ -546,17 +759,23 @@ class Movie:
             elif target_feat == "userId":
                 inst.load_users_ids()
 
-                users_with_ratings: dict[str, str] = list(zip(
-                    inst.users_ids,
-                    inst.ratings,
-                ), )
+                users_with_ratings: dict[str, str] = list(
+                    zip(
+                        inst.users_ids,
+                        inst.ratings,
+                    ),
+                )
 
                 for user_id in inst.users_ids:
                     user_ratings: list[float] = []
 
                     for user_with_rating in users_with_ratings:
                         if user_with_rating[0] == user_id:
-                            user_ratings.append(float(user_with_rating[1], ), )
+                            user_ratings.append(
+                                float(
+                                    user_with_rating[1],
+                                ),
+                            )
 
                     res[user_id] = calculate_metric(
                         vals=user_ratings,
@@ -564,19 +783,27 @@ class Movie:
                     )
 
             clean_res: dict[str, float] = {
-                title: metric_val
-                for title, metric_val
-                in res.items()
-                if metric_val is not None
+                title: metric_val for title, metric_val in res.items() if metric_val is not None
             }
 
-            return dict(sorted(
-                clean_res.items(),
-                key=lambda pair: -pair[1],
-            )[: cnt], )
+            return dict(
+                sorted(
+                    clean_res.items(),
+                    key=lambda pair: -pair[1],
+                )[:cnt],
+            )
         except ValueError as val_err:
-            print("ValueError:", val_err, )
+            print(
+                "ValueError:",
+                val_err,
+            )
         except TypeError as type_err:
-            print("TypeError:", type_err, )
+            print(
+                "TypeError:",
+                type_err,
+            )
         except Exception as err:
-            print("Exception:", err, )
+            print(
+                "Exception:",
+                err,
+            )

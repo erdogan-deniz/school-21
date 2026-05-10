@@ -22,11 +22,7 @@ class PascalTriangle:
                                        Default: None.
     """
 
-    def __init__(
-        self,
-        rows_cnt: int | None = None,
-        rows: list[list[int]] | None = None
-    ) -> None:
+    def __init__(self, rows_cnt: int | None = None, rows: list[list[int]] | None = None) -> None:
         """
         Initializes the `Pascal's triangle` class representative.
 
@@ -38,7 +34,15 @@ class PascalTriangle:
         """
 
         self.rows_cnt: int | None = rows_cnt
-        self.rows: list[list[int]] | None = rows or [[1, ], [1, 1, ], ]
+        self.rows: list[list[int]] | None = rows or [
+            [
+                1,
+            ],
+            [
+                1,
+                1,
+            ],
+        ]
 
     def fill_rows_count(self) -> None:
         """
@@ -50,16 +54,16 @@ class PascalTriangle:
         """
 
         try:
-            self.rows_cnt = int(input(), )
+            self.rows_cnt = int(
+                input(),
+            )
         except ValueError as val_err:
             raise ValueError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {val_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {val_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )
 
     def build_triangle(self) -> None:
@@ -74,36 +78,43 @@ class PascalTriangle:
         """
 
         try:
-            for idx in range(1, self.rows_cnt + 1, ):
+            for idx in range(
+                1,
+                self.rows_cnt + 1,
+            ):
                 if idx > 2:
-                    row: list[int] = [1, ]
+                    row: list[int] = [
+                        1,
+                    ]
 
-                    for jdx in range(idx - 2, ):
+                    for jdx in range(
+                        idx - 2,
+                    ):
                         row.append(
                             self.rows[-1][jdx] + self.rows[-1][jdx + 1],
                         )
 
-                    row.append(1, )
-                    self.rows.append(row, )
+                    row.append(
+                        1,
+                    )
+                    self.rows.append(
+                        row,
+                    )
         except AttributeError as attr_err:
             raise AttributeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {attr_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {attr_err}.",
             )
         except IndexError as idx_err:
             raise IndexError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {idx_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {idx_err}.",
             )
         except TypeError as type_err:
             raise TypeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {type_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {type_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )
 
     def print_triangle(self) -> None:
@@ -117,20 +128,19 @@ class PascalTriangle:
         """
 
         try:
-            for row in  self.rows:
-                print(*row, )
+            for row in self.rows:
+                print(
+                    *row,
+                )
         except AttributeError as attr_err:
             raise AttributeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {attr_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {attr_err}.",
             )
         except TypeError as type_err:
             raise TypeError(
-                f"\nFile: {__file__}\n" +
-                f"Message: {type_err}.",
+                f"\nFile: {__file__}\n" + f"Message: {type_err}.",
             )
         except Exception as err:
             raise Exception(
-                f"\nFile: {__file__}\n" +
-                f"Message: {err}.",
+                f"\nFile: {__file__}\n" + f"Message: {err}.",
             )

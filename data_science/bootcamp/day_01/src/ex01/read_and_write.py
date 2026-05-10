@@ -16,21 +16,13 @@ def read_csv_file(
 
     for file_row_idx in range(1, len(file_content)):
         if ('",') in file_content[file_row_idx]:
-            file_content[file_row_idx] = file_content[file_row_idx].replace(
-                '",', '"\t'
-            )
+            file_content[file_row_idx] = file_content[file_row_idx].replace('",', '"\t')
         if (',"') in file_content[file_row_idx]:
-            file_content[file_row_idx] = file_content[file_row_idx].replace(
-                ',"', '\t"'
-            )
+            file_content[file_row_idx] = file_content[file_row_idx].replace(',"', '\t"')
         if ("true,") in file_content[file_row_idx]:
-            file_content[file_row_idx] = file_content[file_row_idx].replace(
-                "true,", "true\t"
-            )
+            file_content[file_row_idx] = file_content[file_row_idx].replace("true,", "true\t")
         if ("false,") in file_content[file_row_idx]:
-            file_content[file_row_idx] = file_content[file_row_idx].replace(
-                "false,", "false\t"
-            )
+            file_content[file_row_idx] = file_content[file_row_idx].replace("false,", "false\t")
 
     with open(res_file, res_file_access_mode) as work_file:
         work_file.writelines(file_content)

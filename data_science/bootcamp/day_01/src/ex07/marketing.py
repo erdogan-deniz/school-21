@@ -29,9 +29,7 @@ def get_not_visited_person_emails_list(
     """"""
 
     tmp_set: set = set(clients_list) | set(recipients_list)
-    not_visited_person_emails_list: list = list(
-        tmp_set - set(participants_list)
-    )
+    not_visited_person_emails_list: list = list(tmp_set - set(participants_list))
 
     return not_visited_person_emails_list
 
@@ -71,17 +69,11 @@ def get_necessary_emails_list() -> list | None:
 
     if len(script_args) == 2:
         if script_args[1] == "call_center":
-            return get_unnoticed_person_emails_list(
-                clients, participants, recipients
-            )
+            return get_unnoticed_person_emails_list(clients, participants, recipients)
         elif script_args[1] == "potential_clients":
-            return get_not_client_emails_list(
-                clients, participants, recipients
-            )
+            return get_not_client_emails_list(clients, participants, recipients)
         elif script_args[1] == "loyalty_program":
-            return get_not_visited_person_emails_list(
-                clients, participants, recipients
-            )
+            return get_not_visited_person_emails_list(clients, participants, recipients)
         else:
             raise f"ERROR! Incorrect the argument name {script_args[1]}."
 

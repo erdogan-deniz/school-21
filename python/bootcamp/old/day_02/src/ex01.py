@@ -155,7 +155,6 @@ class Silver(Player):  # My class
 
 
 class Game(object):
-
     def __init__(self, matches: int = 10):
         if matches < 1:
             self.matches = 1
@@ -167,7 +166,7 @@ class Game(object):
     def top3(self):
         #     # print("\n\nTop players are:")
         #     # print(*self.registry.most_common()[0:2])
-        return self.registry.most_common()[0: 2]
+        return self.registry.most_common()[0:2]
 
     # For updating collections:
     def update_top(self, player1: object, player2: object):
@@ -177,15 +176,25 @@ class Game(object):
             self.registry.update([player2.get_behavior_type()])
 
     def play(self, player1: object, player2: object):
-        print("\n\nBefore the game players have:", player1.get_candies(), " - ", player2.get_candies(), end="\n\n")
+        print(
+            "\n\nBefore the game players have:",
+            player1.get_candies(),
+            " - ",
+            player2.get_candies(),
+            end="\n\n",
+        )
 
         for i in range(0, self.matches):
             # Both cheaters:
-            if (player1.get_next_step() == player2.get_next_step()) and (player1.get_next_step() == cheat_step()):
+            if (player1.get_next_step() == player2.get_next_step()) and (
+                player1.get_next_step() == cheat_step()
+            ):
                 steps(i, player1, player2)
 
             # Both cooperate:
-            elif (player1.get_next_step() == player2.get_next_step()) and (player1.get_next_step() == cooperate_step()):
+            elif (player1.get_next_step() == player2.get_next_step()) and (
+                player1.get_next_step() == cooperate_step()
+            ):
                 player1.change_candies(2)
                 player2.change_candies(2)
 
@@ -212,8 +221,8 @@ class Game(object):
 
 # If users have drawn no one win:
 if __name__ == "__main__":  # Case if we don't import module (tests)
-    class TestsEx01(unittest.TestCase):
 
+    class TestsEx01(unittest.TestCase):
         def tests_cheater(self):
             game = Game()
 
@@ -340,7 +349,7 @@ if __name__ == "__main__":  # Case if we don't import module (tests)
             game.play(copycat, detective)
             game.play(copycat, grudger)
             game.play(grudger, detective)
-            self.assertEqual(game.top3(), [('cheater', 4), ('copycat', 3)])
+            self.assertEqual(game.top3(), [("cheater", 4), ("copycat", 3)])
 
         # Tests for bonus part (top 2 after cheater):
         def tests_bonus(self):

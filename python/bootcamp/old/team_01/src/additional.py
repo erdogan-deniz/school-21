@@ -36,14 +36,14 @@ def clear_string(text: str):
     if not isinstance(text, str):
         raise Exception("ERROR! INCORRECT ARGUMENT TYPE.")
 
-    while '\n' in text:
-        text = text.replace('\n', ' ')
+    while "\n" in text:
+        text = text.replace("\n", " ")
 
-    while '\t' in text:
-        text = text.replace('\t', ' ')
+    while "\t" in text:
+        text = text.replace("\t", " ")
 
-    while '  ' in text:
-        text = text.replace('  ', ' ')
+    while "  " in text:
+        text = text.replace("  ", " ")
 
     return text
 
@@ -110,7 +110,9 @@ def get_dialogs(location_id: int):
     connection = database.connection_database()
     cursor = connection.cursor()
 
-    cursor.execute(f'SELECT * FROM public."Dialogs" WHERE location_id = {location_id}')  # Take necessary string
+    cursor.execute(
+        f'SELECT * FROM public."Dialogs" WHERE location_id = {location_id}'
+    )  # Take necessary string
 
     dialogs = cursor.fetchall()  # Put it in tuple
 

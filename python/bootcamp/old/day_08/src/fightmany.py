@@ -32,8 +32,10 @@ async def fightmany(agent_number: int):
     while agent.health > 0:
         await fight.asyncio.sleep(random.randint(1, 5))
 
-        print(f"Agent {agent_number + 1}: {agent_turn}, Neo: {neo_turn}, Agent {agent_number + 1} Health: "
-              f"{fight.health_calculation(agent_turn, neo_turn, agent.health)}")
+        print(
+            f"Agent {agent_number + 1}: {agent_turn}, Neo: {neo_turn}, Agent {agent_number + 1} Health: "
+            f"{fight.health_calculation(agent_turn, neo_turn, agent.health)}"
+        )
 
         agent.health = fight.health_calculation(agent_turn, neo_turn, agent.health)
         agent_turn = await agent.__anext__()

@@ -6,21 +6,64 @@ module.
 
 # The names for name randomization:
 protagonist_names = [
-                     "Snake", "Duke", "Shepard", "Kratos", "Link", "Ellie", "Lara", "Jalen", "Gordon", "Jack", "James",
-                     "Cloud", "Kyle", "Booker", "Sheppard", "Sam", "Max", "Frank", "Marcus", "Tracer", "Crash", "Spyro",
-                     "Nathan", "Price", "Geralt", "Dante", "Ratchet"
-                    ]
+    "Snake",
+    "Duke",
+    "Shepard",
+    "Kratos",
+    "Link",
+    "Ellie",
+    "Lara",
+    "Jalen",
+    "Gordon",
+    "Jack",
+    "James",
+    "Cloud",
+    "Kyle",
+    "Booker",
+    "Sheppard",
+    "Sam",
+    "Max",
+    "Frank",
+    "Marcus",
+    "Tracer",
+    "Crash",
+    "Spyro",
+    "Nathan",
+    "Price",
+    "Geralt",
+    "Dante",
+    "Ratchet",
+]
 
 # The surnames for name randomization:
 protagonist_surnames = [
-                        "Smith", "Johnson", "Williams", "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor",
-                        "Anderson", "Thomas", "Jackson", "White", "Harris", "Martin", "Thompson", "Garcia", "Rodriguez",
-                        "Lewis", "Walker", "Hughes", "Evans"
-                       ]
+    "Smith",
+    "Johnson",
+    "Williams",
+    "Brown",
+    "Davis",
+    "Miller",
+    "Wilson",
+    "Moore",
+    "Taylor",
+    "Anderson",
+    "Thomas",
+    "Jackson",
+    "White",
+    "Harris",
+    "Martin",
+    "Thompson",
+    "Garcia",
+    "Rodriguez",
+    "Lewis",
+    "Walker",
+    "Hughes",
+    "Evans",
+]
 
 # The basic protagonists for download:
 protagonist_data = [
-                    """INSERT INTO public."Protagonists" (
+    """INSERT INTO public."Protagonists" (
                                                             id, type, armor, level, strength, completed_tasks, name, 
                                                             health, passed_npcs, defeated_enemies, inventory
                                                          ) 
@@ -29,12 +72,12 @@ protagonist_data = [
                             'Billy'::text, '10'::bigint, '{}'::text[], '{}'::text[], '{}'::text[]
                             )
                     returning id;"""
-                    ]
+]
 
 # Tasks for filling the database:
 tasks_data = [
-                # № 1:
-                '''
+    # № 1:
+    """
                 INSERT INTO public."Tasks" (
                                             id, name, description, difficult
                                            ) 
@@ -44,9 +87,9 @@ tasks_data = [
                         Ill need a weapon...'::text, 'EASY'::text
                        )
                 returning id;
-                ''',
-                # № 2:
-                '''
+                """,
+    # № 2:
+    """
                 INSERT INTO public."Tasks" (
                                             id, name, description, difficult
                                            ) 
@@ -56,13 +99,13 @@ tasks_data = [
                         today.'::text, 'MEDIUM'::text
                        )
                 returning id;
-                '''
-             ]
+                """,
+]
 
 # NPCs for filling the database:
 npcs_data = [
-                # № 1:
-                '''
+    # № 1:
+    """
                 INSERT INTO public."NPCs" (
                                             id, name, item, description
                                           ) 
@@ -73,9 +116,9 @@ npcs_data = [
                          apparently they are convenient to pick through the garbage.'::text
                        )
                 returning id;
-                ''',
-                # № 2:
-                '''
+                """,
+    # № 2:
+    """
                 INSERT INTO public."NPCs" (
                                             id, name, description
                                           ) 
@@ -85,9 +128,9 @@ npcs_data = [
                         it seems that I know what her creator played all his youth.'::text
                        )
                 returning id;
-                ''',
-                # № 3:
-                '''
+                """,
+    # № 3:
+    """
                 INSERT INTO public."NPCs" (
                                             id, name, item, description
                                           ) 
@@ -99,13 +142,13 @@ npcs_data = [
                         look at his face, you can get lost... A terrible creature!'::text
                        )
                 returning id;
-                '''
-               ]
+                """,
+]
 
 # Enemies for filling the database:
 enemies_data = [
-                # № 1:
-                '''
+    # № 1:
+    """
                 INSERT INTO public."Enemies" (
                                                id, armor, health, agility, strength, name
                                              ) 
@@ -113,9 +156,9 @@ enemies_data = [
                         '1'::bigint, '3'::bigint, '3'::bigint, '1'::bigint, '2'::bigint, 'Titanium Bio-Lizard'::text
                        )
                 returning id;
-                ''',
-                # № 2:
-                '''
+                """,
+    # № 2:
+    """
                 INSERT INTO public."Enemies" (
                                                id, armor, health, agility, strength, name
                                              ) 
@@ -123,9 +166,9 @@ enemies_data = [
                         '2'::bigint, '2'::bigint, '2'::bigint, '4'::bigint, '6'::bigint, 'Merc Scarecrow'::text
                        )
                 returning id;
-                ''',
-                # № 3:
-                '''
+                """,
+    # № 3:
+    """
                 INSERT INTO public."Enemies" (
                                               id, armor, health, agility, strength, name
                                              ) 
@@ -133,9 +176,9 @@ enemies_data = [
                         '3'::bigint, '4'::bigint, '2'::bigint, '4'::bigint, '4'::bigint, 'Softhead Angel'::text
                        )
                 returning id;
-                ''',
-                # № 4:
-                '''
+                """,
+    # № 4:
+    """
                 INSERT INTO public."Enemies" (
                                               id, armor, health, agility, strength, name
                                              ) 
@@ -143,13 +186,13 @@ enemies_data = [
                         '4'::bigint, '2'::bigint, '1'::bigint, '3'::bigint, '8'::bigint, 'Matrix Bomber '::text
                        )
                 returning id;
-                '''
-               ]
+                """,
+]
 
 # Dialogs for filling the database:
 dialogs_data = [
-                # № 1 - Bio-cyborg:
-                '''
+    # № 1 - Bio-cyborg:
+    """
                 INSERT INTO public."Dialogs" (
                                               id, phrase, answer, number, location_id
                                              ) 
@@ -158,9 +201,8 @@ dialogs_data = [
                         '2'::bigint
                        )
                 returning id;
-                ''',
-
-                '''
+                """,
+    """
                 INSERT INTO public."Dialogs" (
                                               id, phrase, answer, number, location_id
                                              ) 
@@ -171,9 +213,8 @@ dialogs_data = [
                         '::text, '2'::bigint, '2'::bigint
                        )
                 returning id;
-                ''',
-
-                '''
+                """,
+    """
                 INSERT INTO public."Dialogs" (
                                               id, phrase, answer, number, location_id
                                              ) 
@@ -182,9 +223,8 @@ dialogs_data = [
                         '::text, 'Its hard to say. For whom as...'::text, '3'::bigint, '2'::bigint
                        )
                 returning id;
-                ''',
-
-                '''
+                """,
+    """
                 INSERT INTO public."Dialogs" (
                                               id, phrase, answer, number, location_id
                                              ) 
@@ -195,9 +235,8 @@ dialogs_data = [
                         rid us of his despotism, I can give you something as a reward.'::text, '4'::bigint, '2'::bigint
                        )
                 returning id;
-                ''',
-
-                '''
+                """,
+    """
                 INSERT INTO public."Dialogs" (
                                               id, phrase, answer, number, location_id
                                              ) 
@@ -205,9 +244,9 @@ dialogs_data = [
                         '5'::bigint, 'OK, thanks.'::text, '...'::text, '5'::bigint, '2'::bigint
                        )
                 returning id;
-                ''',
-                # № 2 - Digital Tiny Tina:
-                '''
+                """,
+    # № 2 - Digital Tiny Tina:
+    """
                 INSERT INTO public."Dialogs" (
                                               id, phrase, answer, number, location_id
                                              ) 
@@ -217,9 +256,8 @@ dialogs_data = [
                         '10'::bigint
                        )
                 returning id;
-                ''',
-
-                '''
+                """,
+    """
                 INSERT INTO public."Dialogs" (
                                               id, phrase, answer, number, location_id
                                              ) 
@@ -228,9 +266,8 @@ dialogs_data = [
                         me?'::text, 'Well I do not know...'::text, '2'::bigint, '10'::bigint
                        )
                 returning id;
-                ''',
-
-                '''
+                """,
+    """
                 INSERT INTO public."Dialogs" (
                                               id, phrase, answer, number, location_id
                                              ) 
@@ -239,9 +276,8 @@ dialogs_data = [
                         get out of here. But no more.'::text, '3'::bigint, '10'::bigint
                        )
                 returning id;
-                ''',
-
-                '''
+                """,
+    """
                 INSERT INTO public."Dialogs" (
                                               id, phrase, answer, number, location_id
                                              ) 
@@ -251,9 +287,8 @@ dialogs_data = [
                         '10'::bigint
                        )
                 returning id;
-                ''',
-
-                '''
+                """,
+    """
                 INSERT INTO public."Dialogs" (
                                               id, phrase, answer, number, location_id
                                              ) 
@@ -262,9 +297,9 @@ dialogs_data = [
                         '10'::bigint
                        )
                 returning id;
-                ''',
-                # № 3 - The Space Tadpole:
-                '''
+                """,
+    # № 3 - The Space Tadpole:
+    """
                 INSERT INTO public."Dialogs" (
                                               id, phrase, answer, number, location_id
                                              ) 
@@ -272,9 +307,8 @@ dialogs_data = [
                         '11'::bigint, '...'::text, 'Greetings wanderer!'::text, '1'::bigint, '16'::bigint
                        )
                 returning id;
-                ''',
-
-                '''
+                """,
+    """
                 INSERT INTO public."Dialogs" (
                                               id, phrase, answer, number, location_id
                                              ) 
@@ -282,9 +316,8 @@ dialogs_data = [
                         '12'::bigint, 'Hello.'::text, '...'::text, '2'::bigint, '16'::bigint
                        )
                 returning id;
-                ''',
-
-                '''
+                """,
+    """
                 INSERT INTO public."Dialogs" (
                                               id, phrase, answer, number, location_id
                                              ) 
@@ -293,9 +326,8 @@ dialogs_data = [
                         everything about the world should look like?'::text, '3'::bigint, '16'::bigint
                        )
                 returning id;
-                ''',
-
-                '''
+                """,
+    """
                 INSERT INTO public."Dialogs" (
                                               id, phrase, answer, number, location_id
                                              ) 
@@ -304,9 +336,8 @@ dialogs_data = [
                         'And which one are you interested in?'::text, '4'::bigint, '16'::bigint
                        )
                 returning id;
-                ''',
-
-                '''
+                """,
+    """
                 INSERT INTO public."Dialogs" (
                                               id, phrase, answer, number, location_id
                                              ) 
@@ -315,9 +346,8 @@ dialogs_data = [
                         listen up.'::text, '5'::bigint, '16'::bigint
                        )
                 returning id;
-                ''',
-
-                '''
+                """,
+    """
                 INSERT INTO public."Dialogs" (
                                               id, phrase, answer, number, location_id
                                              ) 
@@ -328,9 +358,8 @@ dialogs_data = [
                         which your fate will be determined.'::text, 'And whats next?'::text, '6'::bigint, '16'::bigint
                        )
                 returning id;
-                ''',
-
-                '''
+                """,
+    """
                 INSERT INTO public."Dialogs" (
                                               id, phrase, answer, number, location_id
                                              ) 
@@ -339,14 +368,13 @@ dialogs_data = [
                         '16'::bigint
                         )
                 returning id;
-                '''
-
-                ]
+                """,
+]
 
 # Locations for filling the database:
 locations_data = [
-                    # № 1:
-                    '''
+    # № 1:
+    """
                     INSERT INTO public."Locations" (
                                                     id, name, bot_side, type, description, area
                                                    ) 
@@ -356,9 +384,9 @@ locations_data = [
                             go.'::text, 'Digital Slums'::text
                            )
                     returning id;
-                    ''',
-                    # № 2:
-                    '''
+                    """,
+    # № 2:
+    """
                     INSERT INTO public."Locations" (
                                                     id, item, name, npc_id, top_side, bot_side, type, description, area
                                                    ) 
@@ -369,9 +397,9 @@ locations_data = [
                             going on here.'::text, 'Digital Slums'::text
                            )
                     returning id;
-                    ''',
-                    # № 3:
-                    '''
+                    """,
+    # № 3:
+    """
                     INSERT INTO public."Locations" (
                                                     id, name, top_side, bot_side, enemy_id, type, description, area
                                                    ) 
@@ -383,9 +411,9 @@ locations_data = [
                             s not good...'::text, 'Digital Slums'::text
                            )
                     returning id;
-                    ''',
-                    # № 4:
-                    '''
+                    """,
+    # № 4:
+    """
                     INSERT INTO public."Locations" (
                                                     id, name, top_side, bot_side, type, left_side, right_side, 
                                                     description, area
@@ -397,9 +425,9 @@ locations_data = [
                              I go?'::text, 'Celestial Crossroads'::text
                            )
                     returning id;
-                    ''',
-                    # № 5:
-                    '''
+                    """,
+    # № 5:
+    """
                     INSERT INTO public."Locations" (
                                                     id, name, type, left_side, right_side, description, area
                                                    ) 
@@ -411,9 +439,9 @@ locations_data = [
                             inside.'::text, 'Danger Lane'::text
                            )
                     returning id;
-                    ''',
-                    # № 6:
-                    '''
+                    """,
+    # № 6:
+    """
                     INSERT INTO public."Locations" (
                                                     id, item, name, bot_side, enemy_id, type, right_side, description, 
                                                     area
@@ -426,9 +454,9 @@ locations_data = [
                             the pile of corpse meat. Who could it be?'::text, 'Danger Lane'::text
                            )
                     returning id;
-                    ''',
-                    # № 7:
-                    '''
+                    """,
+    # № 7:
+    """
                     INSERT INTO public."Locations" (
                                                     id, name, top_side, type, left_side, description, area
                                                    ) 
@@ -439,9 +467,9 @@ locations_data = [
                             probably.'::text, 'Danger Lane'::text
                            )
                     returning id;
-                    ''',
-                    # № 8:
-                    '''
+                    """,
+    # № 8:
+    """
                     INSERT INTO public."Locations" (
                                                     id, name, type, right_side, description, area
                                                    ) 
@@ -452,9 +480,9 @@ locations_data = [
                              counts. This seems to be where my story ends...'::text, 'ERROR 404'::text
                            )
                     returning id;
-                    ''',
-                    # № 9:
-                    '''
+                    """,
+    # № 9:
+    """
                     INSERT INTO public."Locations" (
                                                     id, name, type, left_side, right_side, description, area
                                                    ) 
@@ -465,9 +493,9 @@ locations_data = [
                             collapse everything here... Okay, I wont get distracted.'::text, 'Rotting Fields'::text
                            )
                     returning id;
-                    ''',
-                    # № 10:
-                    '''
+                    """,
+    # № 10:
+    """
                     INSERT INTO public."Locations" (
                                                     id, name, npc_id, top_side, type, left_side, description, area
                                                    ) 
@@ -481,9 +509,9 @@ locations_data = [
                              Fields'::text
                            )
                     returning id;
-                    ''',
-                    # № 11:
-                    '''
+                    """,
+    # № 11:
+    """
                     INSERT INTO public."Locations" (
                                                     id, item, name, bot_side, type, description, area
                                                    ) 
@@ -495,9 +523,9 @@ locations_data = [
                             digging around...'::text, 'Rotting Fields'::text
                            )
                     returning id;
-                    ''',
-                    # № 12:
-                    '''
+                    """,
+    # № 12:
+    """
                     INSERT INTO public."Locations" (
                                                     id, name, top_side, bot_side, type, description, area
                                                    ) 
@@ -509,9 +537,9 @@ locations_data = [
                             mechanisms. Maybe theres a way out at the other end.'::text, 'Heavenly Ascent'::text
                            )
                     returning id;
-                    ''',
-                    # № 13:
-                    '''
+                    """,
+    # № 13:
+    """
                     INSERT INTO public."Locations" (
                                                     id, item, name, top_side, bot_side, type, description, area
                                                    ) 
@@ -524,9 +552,9 @@ locations_data = [
                             looking around, maybe theres someone there.'::text, 'Heavenly Ascent'::text
                            )
                     returning id;
-                    ''',
-                    # № 14:
-                    '''
+                    """,
+    # № 14:
+    """
                     INSERT INTO public."Locations" (
                                                     id, name, top_side, bot_side, type, left_side, right_side, 
                                                     description, area
@@ -538,9 +566,9 @@ locations_data = [
                             me to go left. Is it worth listening to him?'::text, 'Heavenly Ascent'::text
                            )
                     returning id;
-                    ''',
-                    # № 15:
-                    '''
+                    """,
+    # № 15:
+    """
                     INSERT INTO public."Locations" (
                                                     id, name, enemy_id, type, left_side, description, area
                                                    ) 
@@ -552,9 +580,9 @@ locations_data = [
                             'Heavenly Ascent'::text
                            )
                     returning id;
-                    ''',
-                    # № 16:
-                    '''
+                    """,
+    # № 16:
+    """
                     INSERT INTO public."Locations" (
                                                     id, item, name, npc_id, type, right_side, description, area
                                                    ) 
@@ -565,9 +593,9 @@ locations_data = [
                             but he doesnt seem to growl, so its worth trying to talk.'::text, 'Heavenly Ascent'::text
                            )
                     returning id;
-                    ''',
-                    # № 17:
-                    '''
+                    """,
+    # № 17:
+    """
                     INSERT INTO public."Locations" (
                                                     id, name, top_side, bot_side, enemy_id, type, 
                                                     description, area
@@ -578,9 +606,9 @@ locations_data = [
                             a joker. I guess Ill have to have some fun with the jerk.'::text, 'Heavenly Ascent'::text
                            )
                     returning id;
-                    ''',
-                    # № 18:
-                    '''
+                    """,
+    # № 18:
+    """
                     INSERT INTO public."Locations" (
                                                     id, name, top_side, type, description, required_item, area
                                                    ) 
@@ -592,5 +620,5 @@ locations_data = [
                             Ascent'::text
                            )
                     returning id;
-                    '''
-                ]
+                    """,
+]

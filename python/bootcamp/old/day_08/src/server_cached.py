@@ -37,7 +37,7 @@ async def find_domain(url: str):
 
         return -1
 
-    return url.split('/')[2]
+    return url.split("/")[2]
 
 
 # Function to connect redis cash db:
@@ -92,7 +92,9 @@ async def many_requests(site_l: list):
 
     for site in site_l:
         if (await get_value(str(site)) != -1) and (await get_value(str(site)) != "empty"):
-            sites_codes.append((await get_value(str(site))).decode("utf-8"))  # Add http code from cash
+            sites_codes.append(
+                (await get_value(str(site))).decode("utf-8")
+            )  # Add http code from cash
         else:
             sites_codes.append(await single_request(site))
             await add_value(site, sites_codes[-1])
@@ -123,7 +125,9 @@ def clear_codes(sites_c: list):
 
 # Add key and value to cash:
 async def add_value(key: str, value: str):
-    if (not isinstance(key, str)) or (not isinstance(value, str)):  # Incorrect type of argument case
+    if (not isinstance(key, str)) or (
+        not isinstance(value, str)
+    ):  # Incorrect type of argument case
         print("ERROR! INCORRECT ARGUMENT.")
 
         return -1
@@ -142,10 +146,10 @@ async def add_int_value(key: str):
 
     global redis_connection
 
-    if await get_value(key + '/') != -1:
-        await redis_connection.set(key + '/', str(int(await get_value(key + '/')) + 1))
+    if await get_value(key + "/") != -1:
+        await redis_connection.set(key + "/", str(int(await get_value(key + "/")) + 1))
     else:
-        await redis_connection.set(key + '/', '1')
+        await redis_connection.set(key + "/", "1")
 
 
 # Get value from cash:
@@ -183,7 +187,10 @@ async def post_request(request: Request):
 
         task_UUID = uuid.uuid4()  # Generate current new UUID
 
-        return {"Code Status": "201 Created", "Object": ObjectX(status="running", dimensions=task_UUID)}
+        return {
+            "Code Status": "201 Created",
+            "Object": ObjectX(status="running", dimensions=task_UUID),
+        }
 
     else:
         return "Request already done!"

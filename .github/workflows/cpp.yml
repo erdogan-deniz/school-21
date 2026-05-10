@@ -84,8 +84,8 @@ jobs:
 
   apps-cpp-tests:
     # GUI applications: only the C++-business-logic test target,
-    # which does not depend on Qt. The qmake-driven Qt GUI build is
-    # handled in a separate Qt-aware job (planned, not yet implemented).
+    # which does not depend on Qt. The qmake-driven Qt GUI build runs
+    # in apps-qt-build below.
     name: apps C++-only tests
     runs-on: ubuntu-latest
     continue-on-error: true
@@ -121,4 +121,49 @@ jobs:
           else
             echo "no 'test' or 'tests' Makefile target — skipping"
           fi
+        continue-on-error: true
+
+  apps-qt-build:
+    # Qt6 GUI build for the four C++ Qt apps.
+    # Uses jurplel/install-qt-action to provision Qt, then runs the
+    # subproject's own 'install' / 'all' Makefile target via xvfb.
+    name: apps Qt6 GUI build
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        subproject:
+          - 3DViewer_v2.0
+          - CPP5_3DViewer_v2.1
+          - CPP6_3DViewer_v2.2
+          - SmartCalc_v2.0
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Qt6
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.5.3'
+          host: 'linux'
+          target: 'desktop'
+          arch: 'linux_gcc_64'
+          cache: true
+      - name: Install build deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            xvfb \
+            libgl1-mesa-dev libglu1-mesa-dev \
+            libgtest-dev googletest
+          if [ ! -f /usr/lib/x86_64-linux-gnu/libgtest.a ]; then
+            ( cd /usr/src/googletest && sudo cmake -B build && sudo cmake --build build && sudo cmake --install build )
+          fi
+      - name: GUI build (xvfb-wrapped)
+        working-directory: cpp/${{ matrix.subproject }}/src
+        run: |
+          # Most Qt cpp/ apps use 'make install' as the canonical GUI
+          # build target. Wrap in xvfb-run for any post-build steps
+          # that need a display.
+          xvfb-run -a make install || true
         continue-on-error: true

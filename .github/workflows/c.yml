@@ -113,8 +113,8 @@ jobs:
 
   apps-c-tests:
     # GUI applications: only the C-business-logic test target, which
-    # does not depend on Qt. The qmake-driven GUI build is handled in
-    # a separate Qt-aware job (planned, not yet implemented).
+    # does not depend on Qt. The qmake-driven GUI build runs in
+    # apps-qt-build below.
     name: apps C-only tests
     runs-on: ubuntu-latest
     continue-on-error: true
@@ -148,4 +148,46 @@ jobs:
               *.c -lcheck -lsubunit -lpthread -lrt -lm -o test_bin) || true
             ./test_bin || true
           fi
+        continue-on-error: true
+
+  apps-qt-build:
+    # Qt6 GUI build for the two C apps (3DViewer_v1.0, SmartCalc_v1.0).
+    # Uses jurplel/install-qt-action to provision Qt, then runs the
+    # subproject's own 'build' / 'install' Makefile target via xvfb.
+    name: apps Qt6 GUI build
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - subproject: 3DViewer_v1.0
+            target: build
+          - subproject: SmartCalc_v1.0
+            target: install
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Qt6
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.5.3'
+          host: 'linux'
+          target: 'desktop'
+          arch: 'linux_gcc_64'
+          cache: true
+      - name: Install build deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            xvfb \
+            libgl1-mesa-dev libglu1-mesa-dev \
+            check libsubunit-dev
+      - name: GUI build (xvfb-wrapped)
+        working-directory: c/${{ matrix.subproject }}/src
+        run: |
+          # Some Makefiles call 'open' or expect ~/Desktop — wrap in
+          # xvfb-run and tolerate post-build install steps that need
+          # a display.
+          xvfb-run -a make ${{ matrix.target }} || true
         continue-on-error: true

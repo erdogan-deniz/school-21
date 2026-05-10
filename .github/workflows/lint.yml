@@ -1,0 +1,58 @@
+name: lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lint-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  markdownlint:
+    name: markdownlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install markdownlint-cli2
+        run: npm install -g markdownlint-cli2@0.13.0
+      - name: Run markdownlint
+        run: |
+          markdownlint-cli2 \
+            "**/*.md" \
+            "#**/node_modules/**" \
+            "#**/charisel/**" \
+            "#**/site-packages/**" \
+            "#**/_build/**"
+
+  link-check:
+    name: link-check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run lychee link checker
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --max-concurrency 4
+            --exclude-path data_science/bootcamp/day_03/src/charisel
+            --exclude-path '**/site-packages/**'
+            'README.md'
+            'README2.md'
+            'STATUS.md'
+            'CLAUDE.md'
+            'docs/**/*.md'
+            'content/**/*.md'
+            '*/README.md'
+            '*/*/README.md'
+          fail: false

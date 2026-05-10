@@ -1,0 +1,90 @@
+name: docs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'c/**/*.c'
+      - 'c/**/*.h'
+      - 'cpp/**/*.cc'
+      - 'cpp/**/*.cpp'
+      - 'cpp/**/*.h'
+      - 'cpp/**/*.hpp'
+      - '.github/workflows/docs.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'c/**/*.c'
+      - 'c/**/*.h'
+      - 'cpp/**/*.cc'
+      - 'cpp/**/*.cpp'
+      - 'cpp/**/*.h'
+      - 'cpp/**/*.hpp'
+      - '.github/workflows/docs.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: docs-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  doxygen:
+    name: doxygen (${{ matrix.subproject }})
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        # C and C++ library subprojects only — application Qt apps
+        # have their own qmake-driven docs paths.
+        include:
+          # c/ libraries
+          - subproject: c/SimpleBashUtils
+          - subproject: c/s21_decimal
+          - subproject: c/s21_math
+          - subproject: c/s21_matrix
+          - subproject: c/s21_string+
+          # cpp/ libraries
+          - subproject: cpp/s21_containers
+          - subproject: cpp/s21_matrix+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Doxygen + Graphviz
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen graphviz
+      - name: Generate default Doxyfile
+        working-directory: ${{ matrix.subproject }}
+        run: |
+          # Use the subproject's own Doxyfile if present; otherwise
+          # auto-generate a sane default and patch it.
+          if [ ! -f Doxyfile ]; then
+            doxygen -g Doxyfile.tmp
+            sed -e "s|^PROJECT_NAME .*|PROJECT_NAME = \"${{ matrix.subproject }}\"|" \
+                -e "s|^OUTPUT_DIRECTORY .*|OUTPUT_DIRECTORY = docs/api|" \
+                -e "s|^RECURSIVE .*|RECURSIVE = YES|" \
+                -e "s|^EXTRACT_ALL .*|EXTRACT_ALL = YES|" \
+                -e "s|^EXTRACT_STATIC .*|EXTRACT_STATIC = YES|" \
+                -e "s|^GENERATE_LATEX .*|GENERATE_LATEX = NO|" \
+                -e "s|^HAVE_DOT .*|HAVE_DOT = YES|" \
+                -e "s|^CALL_GRAPH .*|CALL_GRAPH = YES|" \
+                -e "s|^CALLER_GRAPH .*|CALLER_GRAPH = YES|" \
+                -e "s|^EXCLUDE_PATTERNS .*|EXCLUDE_PATTERNS = */build/* */Qt/* */materials/* */gcov_obj/* */obj/* */test_html/*|" \
+                Doxyfile.tmp > Doxyfile
+            rm Doxyfile.tmp
+          fi
+      - name: Run Doxygen
+        working-directory: ${{ matrix.subproject }}
+        run: doxygen Doxyfile || true
+        continue-on-error: true
+      - name: Upload generated docs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: doxygen-${{ matrix.subproject }}
+          path: ${{ matrix.subproject }}/docs/api/
+          if-no-files-found: ignore
+          retention-days: 14

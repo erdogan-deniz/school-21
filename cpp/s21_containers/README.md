@@ -1,21 +1,77 @@
-# s21_containers
+# `s21_containers`
+
+[![CI](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *Own implementation of C++ STL container classes (`list`, `map`, `queue`, `set`, `stack`, `vector`, plus bonus `array`, `multiset`) — header-only template library in the `s21::` namespace, validated against GoogleTest.*
+
+## Quick start
+
+```bash
+cd cpp/s21_containers/src
+
+# Build & run the GoogleTest suite
+make test
+
+# Coverage report (best-effort)
+make gcov_report
+
+# clang-format check
+make clang
+```
+
+For a fully reproducible environment, build inside a Linux container with the
+School 21 toolchain (`g++17`, `libgtest-dev` + googletest sources, `lcov`,
+`gcovr`) — see [`.github/workflows/cpp.yml`](../../.github/workflows/cpp.yml)
+for the canonical install line.
+
+## Demo
+
+> **TODO** — terminal capture of typical container usage (`s21::vector`, `s21::map`, iterator semantics) is planned in the cpp/ Phase 2 demo slice.
+
+## Documentation
+
+- [Container catalogue](#part-1-implementation-of-the-s21_containersh-library) and [insert_many bonus](#part-3-bonus-implementation-of-the-insert_many-method) sections below.
+- API headers: `src/s21_containers.h`, `src/s21_containersplus.h` plus per-container `s21_*.h` files.
+- Doxygen API reference: planned in the cpp/ Phase 2 docs slice.
+
+## Tests
+
+- Framework: **GoogleTest** ([google/googletest](https://github.com/google/googletest)).
+- Pattern: each container method covered with edge cases (empty, single-element,
+  resize, iterator invalidation, copy/move semantics).
+- Run: `make test`.
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+The `LICENSE` file inside this subproject (`# School 21 License`) is preserved
+as educational attribution and historical artefact; it does not override the
+repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
 
 Implementation of the s21_containers.h. library.
 
 The russian version of the task can be found in the repository.
 
-## Contents
+### Contents
 
 1. [Chapter I](#chapter-i) \
    1.1. [Introduction](#introduction)
 2. [Chapter II](#chapter-ii) \
    2.1. [Information](#information)
 3. [Chapter III](#chapter-iii) \
-   3.1. [Part 1](#part-1-implementation-of-the-s21_containersh-library)  
-   3.2. [Part 2](#part-2-bonus-implementation-of-the-s21_containersplush-library)  
+   3.1. [Part 1](#part-1-implementation-of-the-s21_containersh-library) \
+   3.2. [Part 2](#part-2-bonus-implementation-of-the-s21_containersplush-library) \
    3.3. [Part 3](#part-3-bonus-implementation-of-the-insert_many-method)
 
-## Chapter I
+### Chapter I
 
 ![s21_containers](misc/images/s21_containers.png)
 
@@ -23,7 +79,7 @@ Planet Earth, USA, California, somewhere among the massive containers of the Por
 
 *- Do you really think Bjarne will agree to add this to the standard?*
 
-*-- Sure. Especially since he was already interested in templates a couple of years ago, but then they couldn't get enough reliability of the developing library.* - said a middle-aged man wearing a white shirt and an HP Labs nametag that said "A. Stepanov".
+*-- Sure. Especially since he was already interested in templates a couple of years ago, but then they couldn't get enough reliability of the developing library.* — said a middle-aged man wearing a white shirt and an HP Labs nametag that said "A. Stepanov".
 
 *- I saw your presentation on generalized programming. The idea is really impressive, but they wanted to release the new standard by the end of the year. This one will need a lot of adjustments...*
 
@@ -31,7 +87,7 @@ Planet Earth, USA, California, somewhere among the massive containers of the Por
 
 *- Yeah, I think I'm starting to get your idea. You want to implement generalized lists as an example? One template class for all types?*
 
-*-- Not only that. Imagine if any container could be described once and then used with different data types and classes. How much time, effort and resources it would save! Lists, maps, sets!"* - the walk along the Embarcadero promenade was clearly getting more interesting.
+*-- Not only that. Imagine if any container could be described once and then used with different data types and classes. How much time, effort and resources it would save! Lists, maps, sets!"* — the walk along the Embarcadero promenade was clearly getting more interesting.
 
 *- Queues and stacks... Damn, that's genius.*
 
@@ -41,13 +97,13 @@ Planet Earth, USA, California, somewhere among the massive containers of the Por
 
 *-- About two weeks before the presentation meeting in San Jose, then..*
 
-### Introduction
+#### Introduction
 
 As part of the project you need to write your own library that implements the basic standard C++ container classes: `list`, `map`, `queue`, `set`, `stack` and `vector`. Implementations should provide a full set of standard methods and attributes for element handling, container capacity checking and iteration. As a bonus, you can also implement several other container classes from the C++ container library that are not as commonly used, but differ in their implementation details.
 
-## Chapter II
+### Chapter II
 
-### Information
+#### Information
 
 For most people, the word «container» is self-explanatory and comes from the English word: contain. Same in programming: containers are used to contain sets of objects of the same type i.e elements. However, there are a huge number of container classes. This is because container classes differ in the organisation of stored object sets and in the methods provided to interact with them. So, for example, lists (`list`) store any object, while sets (`set`) store only some unique objects.
 
@@ -56,13 +112,9 @@ The very need to separate containers, rather than using the same one for differe
 Each type of containers should provide the user with the following methods:
 
 - standard constructors (default constructor, copy constructor, move constructor, constructor with initialization list, see materials);
-
 - methods for accessing container elements (e.g. accessing an element with the index i);
-
 - methods for checking if a container is full (e.g. the number of elements in the container, check if the container is empty);
-
 - methods for changing the container (removing and adding new elements, cleaning the container);
-
 - methods for dealing with the container iterator.
 
 Iterators provide an access to container elements. The specific type of iterator will be different for each container. This is because of the different kind of object set organisation in container classes, as well as the actual implementation of the container. Iterators are implemented to work in a similar way that a pointer to an array element in C does. So, this approach with iterators allows interaction with any containers in the same way. Containers provide iterators via the `begin()` and `end()` methods, which point to the first and next after the last elements of the container respectively.
@@ -70,13 +122,9 @@ Iterators provide an access to container elements. The specific type of iterator
 Iterator `iter` has the following operations:
 
 - `*iter`: gets the element pointed to by the iterator;
-
 - `++iter`: moves the iterator forward to the next element
-
 - `--iter`: moves the iterator backwards to the previous element;
-
 - `iter1 == iter2`: two iterators are equal if they point to the same element
-
 - `iter1 != iter2`: two iterators are not equal if they point to different elements
 
 Besides the special organisation of objects and the provision of necessary methods, the implementation of container classes requires the templating of objects.
@@ -86,7 +134,7 @@ In C++, containers, along with iterators and some algorithms, are part of the St
 
 There are two main types of containers: sequence and associative containers. To find an element in sequence containers (`list`, `vector`, `array`, `stack`, `queue`), you have to look through the container one by one, while in associative containers (`map`, `set`, `multiset`) you just need to look through the key associated with the value.
 
-## Chapter III
+### Chapter III
 
 - The program must be developed in C++ language of C++17 standard using gcc compiler
 - The program code must be located in the src folder
@@ -98,7 +146,7 @@ There are two main types of containers: sequence and associative containers. To 
 - Copying of the Standard Template Library (STL) implementation is not allowed
 - The logic of the Standard Template Library (STL) must be followed (in terms of checks, memory handling and behaviour in abnormal situations)
 
-### Part 1. Implementation of the s21_containers.h library
+#### Part 1. Implementation of the s21_containers.h library
 
 You need to implement the `s21_containers.h` library classes (specifications are given in the relevant material sections, see **"Main containers"**). \
 List of classes: `list`, `map`, `queue`, `set`, `stack`, `vector`.
@@ -109,7 +157,7 @@ List of classes: `list`, `map`, `queue`, `set`, `stack`, `vector`.
 
 *Tip*: You can move the same implementation of container methods to base classes. For example, for a queue and a stack, or for a list and a vector. There is a UML diagram of the STL library in materials as *one possible example* of hierarchical construction. However, your implementation does not have to be strictly tied to this UML diagram.
 
-### Part 2. Bonus. Implementation of the s21_containersplus.h library.
+#### Part 2. Bonus. Implementation of the s21_containersplus.h library
 
 You need to implement the `s21_containersplus.h` library functions (see **"Additional containers"** for specifications). \
 List of classes to be implemented additionally: `array`, `multiset`.
@@ -118,16 +166,16 @@ List of classes to be implemented additionally: `array`, `multiset`.
 - Provide a Makefile for testing the library (with targets clean, test)
 - The classical implementation of containers should be considered as a basis, but the final choice of the algorithm remains free.
 
-### Part 3. Bonus. Implementation of the `insert_many` method
+#### Part 3. Bonus. Implementation of the `insert_many` method
 
 You need to complete the classes with the appropriate methods, according to the table:
 
-| Modifiers      | Definition                                      | Containers |
-|----------------|-------------------------------------------------| -------------------------------------------|
-| `iterator insert_many(const_iterator pos, Args&&... args)`          | inserts new elements into the container directly before `pos`  | List, Vector |
-| `void insert_many_back(Args&&... args)`          | appends new elements to the end of the container  | List, Vector, Queue |
-| `void insert_many_front(Args&&... args)`          | appends new elements to the top of the container  | List, Stack |
-| `vector<std::pair<iterator,bool>> insert_many(Args&&... args)`          | inserts new elements into the container  | Map, Set, Multiset |
+| Modifiers                                                      | Definition                                                    | Containers          |
+| -------------------------------------------------------------- | ------------------------------------------------------------- | ------------------- |
+| `iterator insert_many(const_iterator pos, Args&&... args)`     | inserts new elements into the container directly before `pos` | List, Vector        |
+| `void insert_many_back(Args&&... args)`                        | appends new elements to the end of the container              | List, Vector, Queue |
+| `void insert_many_front(Args&&... args)`                       | appends new elements to the top of the container              | List, Stack         |
+| `vector<std::pair<iterator,bool>> insert_many(Args&&... args)` | inserts new elements into the container                       | Map, Set, Multiset  |
 
 Note: the arguments are the already created elements of the appropriate container that should be inserted into this container.
 

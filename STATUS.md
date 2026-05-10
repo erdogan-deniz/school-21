@@ -42,13 +42,13 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject         | A | B | C | D | E | F | G | H | Flagship | Notes                                                       |
 | ------------------ | - | - | - | - | - | - | - | - | -------- | ----------------------------------------------------------- |
-| `3DViewer_v1.0`    | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | C tests in c.yml; Qt GUI build deferred to follow-up        |
-| `SimpleBashUtils`  | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | CI in c.yml matrix (build/test informational)               |
-| `s21_decimal`      | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | CI in c.yml matrix (build/test informational)               |
-| `s21_math`         | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | CI in c.yml matrix (build/test informational)               |
-| `s21_matrix`       | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | CI in c.yml matrix (build/test informational)               |
-| `s21_string+`      | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | CI in c.yml matrix (build/test informational)               |
-| `SmartCalc_v1.0`   | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | C tests in c.yml; Qt GUI build deferred; rename in a6744d9d |
+| `3DViewer_v1.0`    | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; C tests in c.yml; Qt GUI build deferred     |
+| `SimpleBashUtils`  | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; CI in c.yml matrix (informational)          |
+| `s21_decimal`      | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; CI in c.yml matrix (informational)          |
+| `s21_math`         | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; CI in c.yml matrix (informational)          |
+| `s21_matrix`       | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; CI in c.yml matrix (informational)          |
+| `s21_string+`      | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; CI in c.yml matrix (informational)          |
+| `SmartCalc_v1.0`   | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README adopted; C tests in c.yml; rename in a6744d9d        |
 
 ### `career_track/`
 
@@ -134,7 +134,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | Track                | Subprojects | DoD cells filled | % done   |
 | -------------------- | ----------- | ---------------- | -------- |
 | `algorithms/`        | 1           | 0 / 8            | 0 %      |
-| `c/`                 | 7           | 22 / 56          | 39 %     |
+| `c/`                 | 7           | 25.5 / 56        | 46 %     |
 | `career_track/`      | 9           | 9 / 72           | 13 %     |
 | `cpp/`               | 6           | 12 / 48          | 25 %     |
 | `data_science/`      | 2           | 1 / 16           | 6 %      |
@@ -145,7 +145,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `qa/`                | 2           | 0 / 16           | 0 %      |
 | `sql/`               | 1           | 1 / 8            | 13 %     |
 | `survival_camp/`     | 1           | 0 / 8            | 0 %      |
-| **Total**            | **37**      | **52 / 296**     | **18 %** |
+| **Total**            | **37**      | **55.5 / 296**   | **19 %** |
 
 > "DoD cells filled" counts ✓ as 1 and ◐ as 0.5. The "School 21
 > License" placeholders count ◐ for the F column — they are

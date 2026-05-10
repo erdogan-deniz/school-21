@@ -79,8 +79,8 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject   | A | B | C | D | E | F | G | H | Flagship | Notes                                                 |
 | ------------ | - | - | - | - | - | - | - | - | -------- | ----------------------------------------------------- |
-| `bootcamp`   | ✗ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | committed venv evicted from index (op 1.3 / 554dc46a) |
-| `project_01` | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |          |                                                       |
+| `bootcamp`   | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | top-level README; venv evicted (op 1.3 / 554dc46a)    |
+| `project_01` | ✓ | ✗ | ◐ | ◐ | ✓ | ◐ | ✗ | ✗ |          | NLP "Tweets"; Makefile venv reproducible              |
 
 ### `devops/`
 
@@ -137,7 +137,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `c/`                 | 7           | 25.5 / 56        | 46 %     |
 | `career_track/`      | 9           | 9 / 72           | 13 %     |
 | `cpp/`               | 6           | 21 / 48          | 44 %     |
-| `data_science/`      | 2           | 1 / 16           | 6 %      |
+| `data_science/`      | 2           | 6 / 16           | 38 %     |
 | `devops/`            | 5           | 5 / 40           | 13 %     |
 | `internship/`        | 1           | 1 / 8            | 13 %     |
 | `machine_learning/`  | 1           | 0 / 8            | 0 %      |
@@ -145,7 +145,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `qa/`                | 2           | 0 / 16           | 0 %      |
 | `sql/`               | 1           | 1 / 8            | 13 %     |
 | `survival_camp/`     | 1           | 0 / 8            | 0 %      |
-| **Total**            | **37**      | **70 / 296**     | **24 %** |
+| **Total**            | **37**      | **75 / 296**     | **25 %** |
 
 > "DoD cells filled" counts ✓ as 1 and ◐ as 0.5. The "School 21
 > License" placeholders count ◐ for the F column — they are

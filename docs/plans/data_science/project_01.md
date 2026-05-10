@@ -13,21 +13,26 @@
 
 ## Definition of Done — checklist
 
-- [ ] **A.** README adopts the repo template (production fold + preserved task)
-- [ ] **B.** Unit tests + coverage % visible in README
-- [ ] **C.** GitHub Actions CI green + badge in README
-- [ ] **D.** Linter / formatter applied
-- [ ] **E.** Reproducible build (Dockerfile or Makefile — one command)
-- [ ] **F.** `LICENSE` present (MIT root + School 21 placeholder kept)
-- [ ] **G.** Demo (gif / screenshot / asciinema)
-- [ ] **H.** Doxygen / Sphinx API docs
+- [x] **A.** README adopts the repo template (production fold + preserved task)
+- [ ] **B.** No formal pytest yet — accuracy threshold (≥ 0.832) checked from notebook runs
+- [~] **C.** Covered by `python.yml` ruff job (lint over `data_science/`)
+- [~] **D.** Repo-wide `.ruff.toml`; deliberate format pass pending
+- [x] **E.** `Makefile` + `requirements.txt` make the venv setup reproducible (cross-platform via `OS` branch)
+- [~] **F.** Root MIT `LICENSE` ✓; subproject `LICENSE` is the School 21 placeholder (kept by design)
+- [ ] **G.** Demo (notebook screenshot) — top-10 cosine similarity output preview
+- [ ] **H.** Sphinx HTML for the notebook utilities
+
+> Legend: `[x]` done · `[~]` partial / pending follow-up · `[ ]` not started.
 
 ## Subproject-specific tasks
 
-- [ ] (placeholder — fill in during per-subproject review)
+- [ ] Add a CI smoke job: install deps, execute `notebooks/preprocessing.ipynb` headlessly, fail if cells error.
+- [ ] Pin `scipy==1.10.1` is fragile — confirm it still installs on Python 3.12 (project may need a >= bound).
+- [ ] Track accuracy / similarity output as a versioned artefact (badge: model accuracy % in README).
+- [ ] Decide whether NLP corpus / models go into git LFS.
 
 ## History
 
 <!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/Deniz211/school-21/commit/<sha>)) -->
 
-- *(no entries yet)*
+- 2026-05-11: README adopted from repo template + Original task preserved (this commit).

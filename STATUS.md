@@ -66,8 +66,8 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 ### `cpp/`
 
-| Subproject              | A | B | C | D | E | F | G | H | Flagship | Notes                    |
-| ----------------------- | - | - | - | - | - | - | - | - | -------- | ------------------------ |
+| Subproject              | A | B | C | D | E | F | G | H | Flagship | Notes                                                    |
+| ----------------------- | - | - | - | - | - | - | - | - | -------- | -------------------------------------------------------- |
 | `3DViewer_v2.0`         | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | C++ tests in cpp.yml; Qt GUI build deferred to follow-up |
 | `CPP5_3DViewer_v2.1`    | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | C++ tests in cpp.yml; Qt GUI build deferred to follow-up |
 | `CPP6_3DViewer_v2.2`    | ◐ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | C++ tests in cpp.yml; Qt GUI build deferred to follow-up |

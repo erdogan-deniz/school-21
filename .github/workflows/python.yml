@@ -79,3 +79,43 @@ jobs:
       - name: Run tests
         working-directory: ${{ matrix.workdir }}
         run: pytest -v || true
+
+  sphinx:
+    name: sphinx (${{ matrix.subproject }})
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        # Subprojects that ship a Sphinx setup. Day 07 is the
+        # canonical case (Sphinx is part of the original task).
+        include:
+          - subproject: python/bootcamp/old/day_07
+            workdir: python/bootcamp/old/day_07
+            docs_dir: docs
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Sphinx + project requirements
+        working-directory: ${{ matrix.workdir }}
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          # Belt-and-braces: ensure sphinx is present even if not pinned.
+          pip install sphinx furo
+      - name: Build HTML
+        working-directory: ${{ matrix.workdir }}/${{ matrix.docs_dir }}
+        run: |
+          # Standard Sphinx project: `make html` from the docs dir.
+          make html || sphinx-build -b html source build/html
+        continue-on-error: true
+      - name: Upload generated docs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sphinx-${{ matrix.subproject }}
+          path: ${{ matrix.workdir }}/${{ matrix.docs_dir }}/build/html/
+          if-no-files-found: ignore
+          retention-days: 14

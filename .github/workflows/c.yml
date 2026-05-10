@@ -1,0 +1,114 @@
+name: c
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'c/**'
+      - '.clang-format'
+      - '.github/workflows/c.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'c/**'
+      - '.clang-format'
+      - '.github/workflows/c.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: c-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  format-check:
+    name: clang-format check
+    runs-on: ubuntu-latest
+    continue-on-error: true  # informational until we land a repo-wide format pass
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install clang-format
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang-format
+      - name: Check C source formatting
+        run: |
+          # Exclude vendored / build / generated paths.
+          mapfile -t files < <(
+            find c/ \( -name '*.c' -o -name '*.h' \) \
+              -not -path '*/Qt/*' \
+              -not -path '*/build*/*' \
+              -not -path '*/QtGifImage*/*' \
+              -not -path '*moc_*' \
+              -not -path '*ui_*'
+          )
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "No C sources found."
+            exit 0
+          fi
+          echo "Checking ${#files[@]} files..."
+          clang-format --dry-run -Werror "${files[@]}"
+
+  build-and-test:
+    # Library subprojects only — Qt-using applications (3DViewer_v1.0,
+    # SmartCalc_v1.0) need Qt6 in the runner and are addressed in a
+    # follow-up batch.
+    name: build & test
+    runs-on: ubuntu-latest
+    continue-on-error: true  # initial pass: collect data without gating
+    strategy:
+      fail-fast: false
+      matrix:
+        subproject:
+          - SimpleBashUtils
+          - s21_decimal
+          - s21_math
+          - s21_matrix
+          - s21_string+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            check libsubunit-dev \
+            lcov gcovr
+      - name: Detect build entry point
+        id: entry
+        working-directory: c/${{ matrix.subproject }}/src
+        run: |
+          if [ -f Makefile ]; then
+            echo "kind=top" >> "$GITHUB_OUTPUT"
+            echo "Found c/${{ matrix.subproject }}/src/Makefile"
+          else
+            # SimpleBashUtils has per-utility Makefiles (cat/, grep/) — handle below.
+            echo "kind=split" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Build
+        working-directory: c/${{ matrix.subproject }}/src
+        run: |
+          if [ "${{ steps.entry.outputs.kind }}" = "top" ]; then
+            make
+          else
+            for d in */ ; do
+              if [ -f "$d/Makefile" ]; then ( cd "$d" && make ); fi
+            done
+          fi
+      - name: Test
+        working-directory: c/${{ matrix.subproject }}/src
+        run: |
+          if [ "${{ steps.entry.outputs.kind }}" = "top" ]; then
+            make test || true   # surface failures, don't gate yet
+          else
+            for d in */ ; do
+              if [ -f "$d/Makefile" ]; then ( cd "$d" && make test 2>/dev/null || true ); fi
+            done
+          fi
+      - name: Coverage report (best-effort)
+        working-directory: c/${{ matrix.subproject }}/src
+        run: |
+          make gcov_report 2>/dev/null || true
+        continue-on-error: true

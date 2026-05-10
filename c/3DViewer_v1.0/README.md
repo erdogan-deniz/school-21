@@ -1,10 +1,71 @@
-# 3DViewer v1.0
+# `3DViewer_v1.0`
+
+[![CI](https://github.com/Deniz211/school-21/actions/workflows/c.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/c.yml)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *Qt-based desktop viewer for 3D wireframe `.obj` models in C — translate, rotate, scale, choose projection, customise edges/vertices, record screencasts.*
+
+## Quick start
+
+```bash
+cd c/3DViewer_v1.0/src
+
+# Build the Qt GUI (requires Qt 6.x + qmake on PATH)
+make build
+
+# Install: copies the bundle to ~/Desktop/3d_viewer_v1.0/
+make install
+
+# Uninstall
+make uninstall
+
+# Run the C-only test suite (libcheck, no Qt needed)
+gcc -Wall -Wextra -std=c11 *.c -lcheck -lsubunit -lpthread -lrt -lm -o test
+./test
+```
+
+For a fully reproducible environment, build inside a Linux container with the
+School 21 toolchain (`gcc`, `check`, `libsubunit-dev`, `lcov`) plus `qt6-base-dev`
+for the GUI portion. The C-only test job is wired into
+[`.github/workflows/c.yml`](../../.github/workflows/c.yml); a Qt-aware GUI job
+is planned in the c/ Phase 2 slice 2 follow-up.
+
+## Demo
+
+> **TODO** — a short GIF of loading and orbiting a 1M-vertex `.obj` is planned in the c/ Phase 2 demo slice; the bonus `gif-record` button (see Part 3) is the natural source.
+
+## Documentation
+
+- [Affine transformations](#affine-transformations) and [.obj file format](#obj-file-format-for-representing-the-definition-of-3d-objects) sections below.
+- Source layout: `src/qt_viewer/` (Qt UI), `src/3d_viewer.{c,h}` (model + transforms), `src/3d_viewer_test.c` (Check tests).
+- Doxygen API reference: planned in the c/ Phase 2 docs slice.
+
+## Tests
+
+- Framework: **Check** for the C-only model and affine-transform layer (`src/3d_viewer_test.c`).
+- GUI smoke tests: planned via `xvfb-run` in the Qt-aware CI follow-up.
+- Performance contract: the program must keep the UI responsive (no >0.5 s freeze) for
+  models up to 1,000,000 vertices.
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+The `LICENSE` file inside this subproject (`# School 21 License`) is preserved
+as educational attribution and historical artefact; it does not override the
+repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
 
 Implementation of 3DViewer v1.0.
 
 The russian version of the task can be found in the repository.
 
-## Preamble
+### Preamble
 
 ![3DViewer](misc/images/3dviewer.png)
 
@@ -36,19 +97,19 @@ You realised that Lasseter's arguments were too convincing and there was no poin
 
 Pixar had over 100 computers to render the 3d scenes. Recognising the potential of such power, you gave an inspirational speech to your team praising 3d visualisation technology and then quickly got to work! This cartoon is destined to make history...
 
-## Chapter I
+### Chapter I
 
-## Introduction
+### Introduction
 
 In this project you will implement a program to view 3D wireframe models (3D Viewer) in the C programming language. The models themselves must be loaded from .obj files and be viewable on the screen with the ability to rotate, scale and translate.
 
-## Chapter II
+### Chapter II
 
-## Information
+### Information
 
 A wireframe model is a model of an object in 3D graphics, which is a set of vertices and edges that defines the shape of the displayed polyhedral object in three-dimensional space.
 
-### Structured programming reminder
+#### Structured programming reminder
 
 Structured programming based on two main principles:
 
@@ -57,7 +118,7 @@ Structured programming based on two main principles:
 
 Thus, using a structured style results in the program being built like a puff pastry pie from top to bottom. Errors are generated at the lower levels and thrown up to the top, where they are displayed to the user.
 
-### .Obj file format for representing the definition of 3D objects
+#### .Obj file format for representing the definition of 3D objects
 
 .Obj file is a geometry definition file format first developed by Wavefront Technologies. The file format is open and accepted by many 3D graphics application vendors.
 
@@ -65,7 +126,7 @@ The .obj file format is a simple data format that represents only three-dimensio
 
 The example of .obj file format:
 
-```
+```text
   # List of geometric vertices, with (x, y, z [,w]) coordinates, w is optional and defaults to 1.0.
   v 0.123 0.234 0.345 1.0
   v ...
@@ -91,11 +152,11 @@ The example of .obj file format:
   ...
   # Object
   o Object1
-  ```
+```
 
 In this project, you will only need to implement vertices and surfaces list support. Everything else is optional.
 
-### Affine transformations
+#### Affine transformations
 
 This section will describe basic affine transformations (translation, rotation, scaling) in the plane, using two-dimensional objects (images) as an example. Similarly, affine transformations can also be used for three-dimensional space.
 
@@ -111,11 +172,11 @@ Properties of affine transformations:
 - The ratio of areas is conserved.
 - The ratio of lengths of line segments is conserved.
 
-#### Translation
+##### Translation
 
 Translation matrix in uniform two-dimensional coordinates
 
-```
+```text
 1 0 a
 0 1 b
 0 0 1
@@ -123,19 +184,19 @@ Translation matrix in uniform two-dimensional coordinates
 
 where *a* and *b* are the values on *x* and *y* by which the source point should be moved. Thus, to move a point, you must multiply the translation matrix by it.
 
-```
-x1     1 0 a     x 
+```text
+x1     1 0 a     x
 y1  =  0 1 b    y
 1      0 0 1     1
 ```
 
 where *x* and *y* are the original coordinates of the point and *x1* and *y1* are the resulting coordinates of the new point after translation.
 
-#### Rotation
+##### Rotation
 
 Clockwise rotation matrix in uniform two-dimensional coordinates
 
-```
+```text
 cos(a)  sin(a) 0
 -sin(a) cos(a) 0
 0       0      1
@@ -143,17 +204,17 @@ cos(a)  sin(a) 0
 
 where *a* is the rotation angle in two-dimensional space. To get the coordinates of the new point it is necessary to multiply the rotation matrix by the original point in the same way as the translation matrix
 
-```
-x1     cos(a)  sin(a) 0     x 
+```text
+x1     cos(a)  sin(a) 0     x
 y1  =  -sin(a) cos(a) 0    y
 1      0       0      1     1
 ```
 
-#### Scaling
+##### Scaling
 
 Scaling matrix in uniform two-dimensional coordinates
 
-```
+```text
 a 0 0
 0 b 0
 0 0 1
@@ -161,9 +222,9 @@ a 0 0
 
 where *a* and *b* are the scaling factors for the OX and OY axes respectively. Obtaining coordinates of a new point is similar to the cases described above.
 
-## Chapter III
+### Chapter III
 
-## Part 1. 3DViewer
+### Part 1. 3DViewer
 
 You need to develop a program to visualise 3D wireframe models:
 
@@ -179,8 +240,8 @@ You need to develop a program to visualise 3D wireframe models:
   - Translate the model by a given distance in relation to the X, Y, Z axes.
   - Rotate the model by a given angle relative to its X, Y, Z axes.
   - Scale the model by a given value.
-- GUI implementation, based on any GUI library with API for C89/C99/C11 <br/>
-  - For Linix: GTK+, CEF, Qt<br/>
+- GUI implementation, based on any GUI library with API for C89/C99/C11
+  - For Linix: GTK+, CEF, Qt
   - For Mac: GTK+, Nuklear, raygui, microui, libagar, libui, IUP, LCUI, CEF, Qt
 - The graphical user interface must contain:
   - A button to select the model file and a field to output its name.
@@ -193,14 +254,14 @@ You need to develop a program to visualise 3D wireframe models:
 
 *Note:* **Don't upload heavy files (>10 mb) to git.**
 
-## Part 2. Bonus. Settings
+### Part 2. Bonus. Settings
 
 - The program must allow customizing the type of projection (parallel and central)
 - The program must allow setting up the type (solid, dashed), color and thickness of the edges, display method (none, circle, square), color and size of the vertices
 - The program must allow choosing the background color
 - Settings must be saved between program restarts
 
-## Part 3. Bonus. Record
+### Part 3. Bonus. Record
 
 - The program must allow saving the captured (rendered) images as bmp and jpeg files.
 - The program must allow recording small screencasts by a special button - the current custom affine transformation of the loaded object into gif-animation (640x480, 10fps, 5s)

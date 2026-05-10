@@ -13,21 +13,28 @@
 
 ## Definition of Done — checklist
 
-- [ ] **A.** README adopts the repo template (production fold + preserved task)
-- [ ] **B.** Unit tests + coverage % visible in README
-- [ ] **C.** GitHub Actions CI green + badge in README
-- [ ] **D.** Linter / formatter applied
-- [ ] **E.** Reproducible build (Dockerfile or Makefile — one command)
-- [ ] **F.** `LICENSE` present (MIT root + School 21 placeholder kept)
-- [ ] **G.** Demo (gif / screenshot / asciinema)
-- [ ] **H.** Doxygen / Sphinx API docs
+- [x] **A.** README adopts the repo template (production fold + preserved task)
+- [ ] **B.** Unit tests — `3d_viewer_test.c` exists, coverage badge pending
+- [~] **C.** C-only test job in `c.yml` `apps-c-tests` matrix (informational); Qt-aware GUI build job pending (slice 2 follow-up)
+- [~] **D.** Repo-wide `.clang-format`; deliberate format pass pending (slice 4)
+- [~] **E.** `make build` reproducible **only with Qt6 / qmake on PATH**; needs `qt6-base-dev` + headless GL for CI; document Docker recipe
+- [~] **F.** Root MIT `LICENSE` ✓; subproject `LICENSE` is the School 21 placeholder (kept by design)
+- [ ] **G.** Demo (gif) — orbit of a 1M-vertex `.obj`, recordable via the bonus Part 3 button
+- [ ] **H.** Doxygen API reference
+
+> Legend: `[x]` done · `[~]` partial / pending follow-up · `[ ]` not started.
 
 ## Subproject-specific tasks
 
-- [ ] (placeholder — fill in during per-subproject review)
+- [ ] Add Qt-aware CI job (`jurplel/install-qt-action` + `xvfb-run`) to `c.yml` to actually build the GUI in CI.
+- [ ] Audit `qt_viewer/` `.pro` for hard-coded Windows paths leaked from the original Qt Creator project.
+- [ ] Confirm `make install` target works on Linux as well as macOS (currently uses `~/Desktop/`).
+- [ ] Sample `.obj` models (cube, teapot, low-poly toy) committed to `misc/samples/` — referenced from demo.
+- [ ] Doxygen comments on `3d_viewer.h`.
 
 ## History
 
 <!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/Deniz211/school-21/commit/<sha>)) -->
 
-- *(no entries yet)*
+- 2026-05-11: README adopted from repo template + Original task preserved (this commit).
+- 2026-05-11: Included in `c.yml` `apps-c-tests` matrix for the C-only test layer ([30441670](https://github.com/Deniz211/school-21/commit/30441670)).

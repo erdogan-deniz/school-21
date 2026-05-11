@@ -13,18 +13,18 @@ EXPOSE 81/tcp
 RUN chmod 777 run.sh; \
     gcc main.c -lfcgi -o main; \
     chmod 777 server; \
-    chown 755 /bin/su; \
-    chown 755 /usr/bin/chfn; \
-    chown 755 /usr/bin/chage; \
-    chown 755 /sbin/unix_chkpwd; \
-    chown 755 /bin/umount; \
-    chown 755 /usr/bin/gpasswd; \
-    chown 755 /usr/bin/wall; \
-    chown 755 /usr/bin/expiry; \
-    chown 755 /usr/bin/newgrp; \
-    chown 755 /usr/bin/passwd; \
-    chown 755 /bin/mount; \
-    chown 755 /usr/bin/chsh; \
+    chmod 755 /bin/su; \
+    chmod 755 /usr/bin/chfn; \
+    chmod 755 /usr/bin/chage; \
+    chmod 755 /sbin/unix_chkpwd; \
+    chmod 755 /bin/umount; \
+    chmod 755 /usr/bin/gpasswd; \
+    chmod 755 /usr/bin/wall; \
+    chmod 755 /usr/bin/expiry; \
+    chmod 755 /usr/bin/newgrp; \
+    chmod 755 /usr/bin/passwd; \
+    chmod 755 /bin/mount; \
+    chmod 755 /usr/bin/chsh; \
     touch /var/run/nginx.pid; \
     chown -R $USERNAME:$USERNAME /var/run/nginx.pid; \
     chown -R $USERNAME:$USERNAME /var/log/nginx; \

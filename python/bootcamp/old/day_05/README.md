@@ -1,6 +1,53 @@
-# Day 05 - Python Bootcamp
+# `python/bootcamp/old/day_05`
 
-## Wibbly-wobbly, timey-wimey stuff
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/python.yml)
+[![codecov](https://codecov.io/gh/erdogan-deniz/school-21/branch/main/graph/badge.svg?flag=python-bootcamp-old-day_05)](https://codecov.io/gh/erdogan-deniz/school-21?flags%5B0%5D=python-bootcamp-old-day_05)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../../../LICENSE)
+
+> *Day 05 — Flask web app with login (sessions), interactive forms,
+> static / templates layout, and a tiny test suite. The "Wibbly-wobbly,
+> timey-wimey stuff" theme is the Doctor Who reference baked into the
+> School 21 task title.*
+
+## Quick start
+
+```bash
+cd python/bootcamp/old/day_05/src
+
+# Install deps (Flask + PyYaml; previously listed `atexit` which is
+# stdlib — corrected upstream in commit cb5655c5).
+pip install -r requirements.txt
+
+# Run the Flask dev server.
+python doctors.py
+
+# Run the day's pytest suite (test_ex00.py).
+pytest -v
+```
+
+## Tests
+
+Wired into `.github/workflows/python.yml`'s pytest matrix as
+`python-bootcamp-old-day_05`. Coverage published per-flag to Codecov
+— see the badge above.
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum
+(analogue of School 42). The repository as a whole is licensed under
+the **MIT License** — see the root [`LICENSE`](../../../../LICENSE).
+
+The subproject `LICENSE` file (`# School 21 License`) is preserved as
+educational attribution and historical artefact; it does not override
+the repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
+
+### Day 05 — Python Bootcamp
+
+#### Wibbly-wobbly, timey-wimey stuff
 
 <h2 id="chapter-i" >Chapter I</h2>
 <h2 id="general-rules" >General rules</h2>

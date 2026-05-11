@@ -36,6 +36,11 @@ jobs:
       - name: Run actionlint
         uses: reviewdog/action-actionlint@v1
         with:
-          fail_on_error: false
+          # Hard-gated: actionlint reports are usually real issues
+          # (deprecated `uses:` versions, malformed `if:` exprs,
+          # shellcheck findings inside `run:` blocks). If a warning
+          # is a false positive, suppress it at the source via
+          # `# shellcheck disable=SCxxxx` or `# actionlint-disable`.
+          fail_on_error: true
           reporter: github-check
           level: warning

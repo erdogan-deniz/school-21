@@ -133,8 +133,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # Days that ship test files. Add new entries here as more days
-        # gain test coverage.
+        # Days / subprojects that ship test files. Add new entries here
+        # as more subprojects gain test coverage.
         include:
           - day: python/bootcamp/old/day_05
             workdir: python/bootcamp/old/day_05/src
@@ -142,6 +142,8 @@ jobs:
             workdir: python/bootcamp/old/day_07
           - day: python/bootcamp/old/day_09
             workdir: python/bootcamp/old/day_09/src
+          - day: data_science/project_01
+            workdir: data_science/project_01/src
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

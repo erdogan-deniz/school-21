@@ -1,3 +1,4 @@
+import os
 from logging.config import fileConfig
 
 from alembic import context
@@ -6,6 +7,18 @@ from sqlalchemy import engine_from_config, pool
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
+
+# Build the connection string from environment variables — keeps the
+# password out of alembic.ini (and out of git history). Defaults match
+# the bootcamp's local dev container.
+config.set_main_option(
+    "sqlalchemy.url",
+    "postgresql://{user}:{pwd}@localhost/{db}".format(
+        user=os.environ.get("DB_USER", "postgres"),
+        pwd=os.environ.get("DB_PASSWORD", "1969"),
+        db=os.environ.get("DB_NAME", "spaceships"),
+    ),
+)
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.

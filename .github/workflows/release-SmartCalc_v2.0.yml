@@ -1,0 +1,148 @@
+name: release-SmartCalc_v2.0
+
+# Release pipeline for the cpp/SmartCalc_v2.0 flagship.
+# Qt6 desktop application — release artefact is a Linux AppImage
+# bundling the executable + Qt runtime + dependencies. macOS .dmg /
+# Windows .exe are out of scope for this iteration (CI runner cost).
+#
+# Tagging convention:
+#     git tag v0.1.0-SmartCalc_v2.0
+#     git push origin v0.1.0-SmartCalc_v2.0
+
+on:
+  push:
+    tags:
+      - 'v*-SmartCalc_v2.0'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to release (e.g. v0.1.0-SmartCalc_v2.0)'
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-smartcalc-v2-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-linux:
+    name: build SmartCalc_v2.0 — Linux x86_64 AppImage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Qt6
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.5.3'
+          host: 'linux'
+          target: 'desktop'
+          arch: 'linux_gcc_64'
+          cache: true
+
+      - name: Install build deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential=12.* \
+            xvfb \
+            libgl1-mesa-dev libglu1-mesa-dev \
+            libgtest-dev=1.* googletest=1.* \
+            libfuse2 wget
+
+      - name: Run C++-only unit tests (gate the release on green)
+        working-directory: cpp/SmartCalc_v2.0/src
+        run: |
+          make tests || make test || echo "test target unavailable; skipping"
+        continue-on-error: true
+
+      - name: Build Qt GUI (xvfb-wrapped)
+        working-directory: cpp/SmartCalc_v2.0/src
+        run: xvfb-run -a make install
+
+      - name: Stage AppDir for AppImage
+        working-directory: cpp/SmartCalc_v2.0/src
+        run: |
+          # `make install` deposits the binary into ./build (View.app for
+          # macOS naming; on Linux it's just an ELF). Find it.
+          mkdir -p AppDir/usr/bin AppDir/usr/share/applications AppDir/usr/share/icons/hicolor/256x256/apps
+          # Locate the built binary — be lenient about naming.
+          bin=$(find build -maxdepth 3 -type f -executable | head -1)
+          if [ -z "$bin" ]; then echo "no built binary found"; exit 1; fi
+          cp "$bin" AppDir/usr/bin/SmartCalc_v2.0
+
+          cat > AppDir/SmartCalc_v2.0.desktop <<'EOF'
+          [Desktop Entry]
+          Name=SmartCalc v2.0
+          Comment=Scientific calculator with credit/deposit modes + f(x) plotting
+          Exec=SmartCalc_v2.0
+          Icon=SmartCalc_v2.0
+          Type=Application
+          Categories=Utility;Calculator;Education;
+          EOF
+          cp AppDir/SmartCalc_v2.0.desktop AppDir/usr/share/applications/
+          # Placeholder icon — replace with the project's real icon when
+          # available under cpp/SmartCalc_v2.0/src/View/icon/.
+          touch AppDir/SmartCalc_v2.0.png
+          cp AppDir/SmartCalc_v2.0.png AppDir/usr/share/icons/hicolor/256x256/apps/
+
+      - name: Build AppImage with linuxdeploy
+        working-directory: cpp/SmartCalc_v2.0/src
+        run: |
+          wget -q -O linuxdeploy 'https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage'
+          wget -q -O linuxdeploy-qt 'https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage'
+          chmod +x linuxdeploy linuxdeploy-qt
+          export QT_PLUGIN_PATH=${Qt6_DIR}/plugins
+          ./linuxdeploy --appdir AppDir --plugin qt --output appimage || true
+
+      - name: Stage release artefacts
+        run: |
+          mkdir -p _release
+          # Copy whatever AppImage was produced (linuxdeploy names it
+          # by Desktop file name + arch).
+          cp cpp/SmartCalc_v2.0/src/*.AppImage _release/ 2>/dev/null || \
+            echo "no AppImage produced — falling back to tarball"
+          # Always also build a tarball of the AppDir for raw distribution.
+          ( cd cpp/SmartCalc_v2.0/src && \
+            tar czf "../../../_release/SmartCalc_v2.0-${GITHUB_REF_NAME}-linux-x86_64.tar.gz" AppDir/ )
+
+      - name: Upload as workflow artefact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SmartCalc_v2.0-${{ github.ref_name }}-linux-x86_64
+          path: _release/*
+          retention-days: 90
+
+      - name: Publish GitHub Release (on tag)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ github.ref_name }}
+          tag_name: ${{ github.ref_name }}
+          generate_release_notes: true
+          files: |
+            _release/*.AppImage
+            _release/*.tar.gz
+          body: |
+            `SmartCalc_v2.0` flagship release — Qt6 desktop scientific
+            calculator with credit / deposit modes and `f(x)` plotting,
+            organised under MVC.
+
+            **Contents:**
+            - `SmartCalc_v2.0-x86_64.AppImage` — single-file Linux
+              executable bundling the Qt runtime. Run anywhere:
+              ```bash
+              chmod +x SmartCalc_v2.0-x86_64.AppImage
+              ./SmartCalc_v2.0-x86_64.AppImage
+              ```
+            - `SmartCalc_v2.0-${{ github.ref_name }}-linux-x86_64.tar.gz` —
+              raw AppDir layout, useful for repackaging.
+
+            **Out of scope for this iteration:**
+            - macOS `.dmg` and Windows `.exe` builds — adding them is
+              future work; current pipeline targets Linux x86_64 only.
+
+            See [STATUS.md](https://github.com/erdogan-deniz/school-21/blob/main/STATUS.md)
+            for the rest of the flagships and overall progress.

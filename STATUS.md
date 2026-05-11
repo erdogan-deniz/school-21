@@ -127,7 +127,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject   | A | B | C | D | E | F | G | H | Flagship | Notes |
 | ------------ | - | - | - | - | - | - | - | - | -------- | ----- |
-| `project_01` | ✓ | ✗ | ◐ | ✓ | ✗ | ✗ | ✗ | ✗ |          | ruff format applied via python.yml |
+| `project_01` | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | ruff format applied via python.yml; School 21 placeholder LICENSE |
 
 ### `python/`
 
@@ -165,12 +165,12 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `data_science/`      | 2           | 7 / 16           | 44 %     |
 | `devops/`            | 5           | 18 / 40          | 45 %     |
 | `internship/`        | 1           | 1.5 / 8          | 19 %     |
-| `machine_learning/`  | 1           | 2.5 / 8          | 31 %     |
+| `machine_learning/`  | 1           | 3 / 8            | 38 %     |
 | `python/`            | 1           | 4.5 / 8          | 56 %     |
 | `qa/`                | 2           | 6 / 16           | 38 %     |
 | `sql/`               | 1           | 2.5 / 8          | 31 %     |
 | `survival_camp/`     | 1           | 1 / 8            | 13 %     |
-| **Total**            | **37**      | **137.5 / 296**  | **46 %** |
+| **Total**            | **37**      | **138 / 296**    | **47 %** |
 
 > "DoD cells filled" counts ✓ as 1 and ◐ as 0.5. The "School 21
 > License" placeholders count ◐ for the F column — they are

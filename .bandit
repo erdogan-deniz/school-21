@@ -1,0 +1,42 @@
+# bandit configuration for school-21.
+#
+# Repo is a polyglot education portfolio; many bootcamp days use
+# patterns that bandit flags as "issues" in production code but are
+# fine (or required) in a learning context. Skip those rule IDs here
+# rather than adding `# nosec` comments to every line.
+
+[bandit]
+
+# Recursive scan from the repo root would include vendored libs +
+# data files. Constrain at the workflow level via positional args.
+# This file only encodes the skip-list + per-path exclusions.
+
+# Skipped checks:
+#   B101  assert_used — assertions are core to test files and many
+#                       bootcamp exercises.
+#   B404  blacklist_imports/subprocess — used responsibly in CI helpers.
+#   B603  subprocess_without_shell_equals_true — same.
+#   B311  random_used_for_security — bootcamp/ML code uses `random` for
+#                                    non-crypto purposes (shuffling
+#                                    datasets, picking samples).
+#   B324  hashlib_insecure_function — `md5` shows up in bootcamp hashing
+#                                     exercises (Day 09 utilities); not
+#                                     used for password storage.
+#   B608  hardcoded_sql_expressions — bootcamp SQL exercises build
+#                                     queries from string templates for
+#                                     pedagogical clarity.
+skips = ['B101', 'B404', 'B603', 'B311', 'B324', 'B608']
+
+# Exclude vendored / generated content from the scan.
+exclude_dirs = [
+    '.venv',
+    'venv',
+    'env',
+    '__pycache__',
+    'site-packages',
+    'build',
+    'dist',
+    '.eggs',
+    'docs/build',
+    'sphinx/build',
+]

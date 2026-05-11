@@ -1,6 +1,7 @@
 # `s21_matrix+`
 
 [![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/cpp.yml)
+[![codecov](https://codecov.io/gh/erdogan-deniz/school-21/branch/main/graph/badge.svg?flag=cpp-s21_matrix%2B)](https://codecov.io/gh/erdogan-deniz/school-21?flag=cpp-s21_matrix%2B)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 > *Object-oriented C++ matrix library — `s21::S21Matrix` class with overloaded operators (`+`, `-`, `*`, `==`, `=`, `+=`, `-=`, `*=`, `(i, j)`), packaged as a static library `s21_matrix_oop.a`.*

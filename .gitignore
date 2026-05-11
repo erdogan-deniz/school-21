@@ -124,6 +124,11 @@ docs/latex/
 coverage/
 *.lcov
 
+# --- Claude Code internal artefacts ---
+# The superpowers plugin caches itself wherever it's invoked from.
+**/superpowers/
+.claude/
+
 # --- Misc ---
 *.log
 *.tmp

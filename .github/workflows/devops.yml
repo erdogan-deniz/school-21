@@ -81,3 +81,41 @@ jobs:
           recursive: true
           dockerfile: 'devops/**/Dockerfile*'
           failure-threshold: warning
+
+  simple-docker-smoke:
+    name: simple_docker smoke (compose up + curl)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    # End-to-end smoke: build the FCGI server + nginx proxy from
+    # devops/simple_docker/src/docker-compose.yml, wait for the proxy
+    # healthcheck, GET http://localhost/, assert "Hello World!" in
+    # body, tear down. This is the only non-trivial code in
+    # devops/simple_docker — a green smoke proves the bootcamp's
+    # multi-service Docker example actually works against current
+    # Docker / docker-compose releases.
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show docker + compose versions
+        run: |
+          docker --version
+          docker compose version
+      - name: Build + start the stack
+        working-directory: devops/simple_docker/src
+        run: docker compose up -d --build
+      - name: Wait for the proxy to respond
+        run: |
+          for i in $(seq 1 30); do
+            body=$(curl -sS --max-time 2 http://localhost:80 || true)
+            if [[ "$body" == *"Hello World"* ]]; then
+              echo "Proxy returned Hello World after ${i}s"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "Proxy never returned Hello World — dumping logs:"
+          docker compose -f devops/simple_docker/src/docker-compose.yml logs --tail=200 || true
+          exit 1
+      - name: Tear down
+        if: always()
+        working-directory: devops/simple_docker/src
+        run: docker compose down -v --remove-orphans

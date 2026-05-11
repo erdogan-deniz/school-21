@@ -115,7 +115,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `linux`                 | ✓ | n/a | n/a | n/a | n/a | ◐ | n/a | n/a |          | report-driven (markdown notes + screenshots only); only A + F apply |
 | `linux_monitoring_v1.0` | ✓ | ✓ | ◐ | ◐ | ✓ | ◐ | ✗ | ✗ |          | 47 bats tests across Parts 1-5 + smoke; shellcheck + hadolint |
 | `linux_network`         | ✓ | n/a | n/a | n/a | n/a | ◐ | n/a | n/a |          | report-driven (markdown notes + screenshots only); only A + F apply |
-| `simple_docker`         | ✓ | ✗ | ◐ | ◐ | ✓ | ◐ | ✗ | ✗ |          | docker-compose; hadolint via devops.yml  |
+| `simple_docker`         | ✓ | ◐ | ◐ | ◐ | ✓ | ◐ | ✗ | ✗ |          | docker-compose smoke (compose up + curl) in devops.yml; chown→chmod bug fix; hadolint |
 
 ### `internship/`
 
@@ -163,14 +163,14 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `career_track/`      | 9           | 13.5 / 18        | 75 %     |
 | `cpp/`               | 6           | 25 / 48          | 52 %     |
 | `data_science/`      | 2           | 7 / 16           | 44 %     |
-| `devops/`            | 5           | 12.5 / 28        | 45 %     |
+| `devops/`            | 5           | 13 / 28          | 46 %     |
 | `internship/`        | 1           | 1.5 / 2          | 75 %     |
 | `machine_learning/`  | 1           | 4 / 8            | 50 %     |
 | `python/`            | 1           | 4.5 / 8          | 56 %     |
 | `qa/`                | 2           | 3 / 4            | 75 %     |
 | `sql/`               | 1           | 4 / 8            | 50 %     |
 | `survival_camp/`     | 1           | 1 / 2            | 50 %     |
-| **Total**            | **37**      | **110.5 / 206**  | **54 %** |
+| **Total**            | **37**      | **111 / 206**    | **54 %** |
 
 > Roll-up arithmetic: ✓ = 1.0, ◐ = 0.5, ✗ = 0.0 (stays in the
 > denominator as a real gap), **n/a = excluded from the denominator**

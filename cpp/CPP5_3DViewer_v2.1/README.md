@@ -1,6 +1,6 @@
 # `CPP5_3DViewer_v2.1`
 
-[![CI](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml)
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/cpp.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 > *3DViewer v2.1 — extends [v2.0](../3DViewer_v2.0/) with surface shading (Gouraud / Phong), normals support, lighting model, and bonus texture mapping.*

@@ -61,7 +61,7 @@ jobs:
           </head>
           <body>
             <h1>school-21 — generated docs</h1>
-            <p>Auto-published from <a href="https://github.com/Deniz211/school-21">Deniz211/school-21</a> on every push to <code>main</code>.</p>
+            <p>Auto-published from <a href="https://github.com/erdogan-deniz/school-21">erdogan-deniz/school-21</a> on every push to <code>main</code>.</p>
 
             <h2>Doxygen — C / C++ libraries</h2>
             <ul>
@@ -81,8 +81,8 @@ jobs:
 
             <h2>Repo</h2>
             <ul>
-              <li><a href="https://github.com/Deniz211/school-21/blob/main/STATUS.md">STATUS.md (production-readiness dashboard)</a></li>
-              <li><a href="https://github.com/Deniz211/school-21/blob/main/docs/specs/2026-05-11-production-grade-overhaul.md">design-doc: production-grade overhaul</a></li>
+              <li><a href="https://github.com/erdogan-deniz/school-21/blob/main/STATUS.md">STATUS.md (production-readiness dashboard)</a></li>
+              <li><a href="https://github.com/erdogan-deniz/school-21/blob/main/docs/specs/2026-05-11-production-grade-overhaul.md">design-doc: production-grade overhaul</a></li>
             </ul>
           </body>
           </html>

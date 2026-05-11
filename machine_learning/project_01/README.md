@@ -1,6 +1,6 @@
 # `machine_learning/project_01`
 
-[![CI](https://github.com/Deniz211/school-21/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/python.yml)
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/python.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 > *Introduction to Machine Learning + data analysis — practical project covering exploratory analysis, classical algorithms, and evaluation.*

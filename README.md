@@ -24,14 +24,14 @@ A repository is a collection of completed *School 2️⃣1️⃣* projects.
 
 This repo is undergoing a production-grade overhaul (2026-05). Live status:
 
-[![lint](https://github.com/Deniz211/school-21/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/lint.yml)
-[![c](https://github.com/Deniz211/school-21/actions/workflows/c.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/c.yml)
-[![cpp](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml)
-[![python](https://github.com/Deniz211/school-21/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/python.yml)
-[![sql](https://github.com/Deniz211/school-21/actions/workflows/sql.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/sql.yml)
-[![devops](https://github.com/Deniz211/school-21/actions/workflows/devops.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/devops.yml)
-[![docs](https://github.com/Deniz211/school-21/actions/workflows/docs.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/docs.yml)
-[![pages](https://github.com/Deniz211/school-21/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/pages.yml)
+[![lint](https://github.com/erdogan-deniz/school-21/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/lint.yml)
+[![c](https://github.com/erdogan-deniz/school-21/actions/workflows/c.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/c.yml)
+[![cpp](https://github.com/erdogan-deniz/school-21/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/cpp.yml)
+[![python](https://github.com/erdogan-deniz/school-21/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/python.yml)
+[![sql](https://github.com/erdogan-deniz/school-21/actions/workflows/sql.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/sql.yml)
+[![devops](https://github.com/erdogan-deniz/school-21/actions/workflows/devops.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/devops.yml)
+[![docs](https://github.com/erdogan-deniz/school-21/actions/workflows/docs.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/docs.yml)
+[![pages](https://github.com/erdogan-deniz/school-21/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/pages.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 - **Top-level dashboard:** [`STATUS.md`](STATUS.md) — production-readiness matrix
@@ -42,7 +42,7 @@ This repo is undergoing a production-grade overhaul (2026-05). Live status:
 - **Working agreement:** [`CLAUDE.md`](CLAUDE.md) — repo-wide rules and conventions.
 - **Toolchain pins:** [`docs/TOOLCHAIN.md`](docs/TOOLCHAIN.md) — every language / linter / framework version, single source of truth.
 - **Changelog:** [`CHANGELOG.md`](CHANGELOG.md) — Keep-a-Changelog record of the 2026-05-11 production-grade overhaul.
-- **Generated docs site:** [Deniz211.github.io/school-21](https://Deniz211.github.io/school-21/) — Doxygen + Sphinx HTML, built and deployed by [`pages.yml`](.github/workflows/pages.yml).
+- **Generated docs site:** [erdogan-deniz.github.io/school-21](https://erdogan-deniz.github.io/school-21/) — Doxygen + Sphinx HTML, built and deployed by [`pages.yml`](.github/workflows/pages.yml).
 
 ## Repository Source File Structure
 

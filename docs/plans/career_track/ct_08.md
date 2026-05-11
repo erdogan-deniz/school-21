@@ -26,6 +26,6 @@
 
 ## History
 
-<!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/Deniz211/school-21/commit/<sha>)) -->
+<!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/erdogan-deniz/school-21/commit/<sha>)) -->
 
 - 2026-05-11: README adopted from repo template + Original task preserved.

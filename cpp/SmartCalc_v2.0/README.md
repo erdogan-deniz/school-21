@@ -1,6 +1,6 @@
 # `SmartCalc_v2.0`
 
-[![CI](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml)
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/cpp.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 > *Object-oriented C++ rewrite of [SmartCalc v1.0](../../c/SmartCalc_v1.0/) — Qt-based scientific calculator under MVC, with `f(x)` plotting plus credit and deposit calculators.*

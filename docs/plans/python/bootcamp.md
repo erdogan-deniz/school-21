@@ -34,8 +34,8 @@
 
 ## History
 
-<!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/Deniz211/school-21/commit/<sha>)) -->
+<!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/erdogan-deniz/school-21/commit/<sha>)) -->
 
-- 2026-05-11: README adopted from former root `README2.md` ([c53e9251](https://github.com/Deniz211/school-21/commit/c53e9251)).
+- 2026-05-11: README adopted from former root `README2.md` ([c53e9251](https://github.com/erdogan-deniz/school-21/commit/c53e9251)).
 - 2026-05-11: Repo-wide `.ruff.toml` and `python.yml` workflow (ruff + per-day pytest matrix) added (this commit).
 - 2026-05-11: README brought to repo template (production fold + day-by-day index) (this commit).

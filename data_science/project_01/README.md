@@ -1,6 +1,6 @@
 # `data_science/project_01`
 
-[![CI](https://github.com/Deniz211/school-21/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/python.yml)
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/python.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 > *"Tweets" — NLP project: sentiment-analysis classifier on labelled tweets via bag-of-words / TF-IDF / word2vec, with stemming, lemmatisation, cosine-similarity top-10 and ≥ 0.832 accuracy target.*

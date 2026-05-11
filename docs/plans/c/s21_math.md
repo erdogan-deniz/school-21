@@ -32,7 +32,7 @@
 
 ## History
 
-<!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/Deniz211/school-21/commit/<sha>)) -->
+<!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/erdogan-deniz/school-21/commit/<sha>)) -->
 
-- 2026-05-11: README adopted from repo template + Original task preserved ([3a8752a7](https://github.com/Deniz211/school-21/commit/3a8752a7)).
-- 2026-05-11: Repo-wide `.clang-format` and `c.yml` workflow with build/test matrix added ([3f64148d](https://github.com/Deniz211/school-21/commit/3f64148d), [8c5bd24d](https://github.com/Deniz211/school-21/commit/8c5bd24d)).
+- 2026-05-11: README adopted from repo template + Original task preserved ([3a8752a7](https://github.com/erdogan-deniz/school-21/commit/3a8752a7)).
+- 2026-05-11: Repo-wide `.clang-format` and `c.yml` workflow with build/test matrix added ([3f64148d](https://github.com/erdogan-deniz/school-21/commit/3f64148d), [8c5bd24d](https://github.com/erdogan-deniz/school-21/commit/8c5bd24d)).

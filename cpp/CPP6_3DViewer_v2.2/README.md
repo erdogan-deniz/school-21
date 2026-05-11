@@ -1,6 +1,6 @@
 # `CPP6_3DViewer_v2.2`
 
-[![CI](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml)
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/cpp.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 > *3DViewer v2.2 — extends [v2.1](../CPP5_3DViewer_v2.1/) with ray-traced rendering, multi-model scenes, primitive-pool objects (sphere, cylinder, cone, cube, pyramid), KD-tree intersection optimisation.*

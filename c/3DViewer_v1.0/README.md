@@ -1,6 +1,6 @@
 # `3DViewer_v1.0`
 
-[![CI](https://github.com/Deniz211/school-21/actions/workflows/c.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/c.yml)
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/c.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/c.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 > *Qt-based desktop viewer for 3D wireframe `.obj` models in C — translate, rotate, scale, choose projection, customise edges/vertices, record screencasts.*

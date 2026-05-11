@@ -1,6 +1,6 @@
 # `SimpleBashUtils`
 
-[![CI](https://github.com/Deniz211/school-21/actions/workflows/c.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/c.yml)
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/c.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/c.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 > *Own implementations of `cat` and `grep` in C — packaged as `s21_cat` and `s21_grep` executables, validated against the host system's GNU utilities.*

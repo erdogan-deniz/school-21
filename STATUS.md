@@ -113,7 +113,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | ----------------------- | - | - | - | - | - | - | - | - | -------- | ----- |
 | `ci_cd`                 | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | report-driven; shellcheck via devops.yml |
 | `linux`                 | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | report-driven; shellcheck via devops.yml |
-| `linux_monitoring_v1.0` | ✓ | ✗ | ◐ | ◐ | ✓ | ◐ | ✗ | ✗ |          | bash 0x/main.sh; shellcheck via devops.yml |
+| `linux_monitoring_v1.0` | ✓ | ◐ | ◐ | ◐ | ✓ | ◐ | ✗ | ✗ |          | bats suite for Part 1; shellcheck + hadolint via devops.yml |
 | `linux_network`         | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | report-driven; shellcheck via devops.yml |
 | `simple_docker`         | ✓ | ✗ | ◐ | ◐ | ✓ | ◐ | ✗ | ✗ |          | docker-compose; hadolint via devops.yml  |
 
@@ -163,14 +163,14 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `career_track/`      | 9           | 13.5 / 72        | 19 %     |
 | `cpp/`               | 6           | 25 / 48          | 52 %     |
 | `data_science/`      | 2           | 7 / 16           | 44 %     |
-| `devops/`            | 5           | 17 / 40          | 43 %     |
+| `devops/`            | 5           | 17.5 / 40        | 44 %     |
 | `internship/`        | 1           | 1.5 / 8          | 19 %     |
 | `machine_learning/`  | 1           | 2.5 / 8          | 31 %     |
 | `python/`            | 1           | 4.5 / 8          | 56 %     |
 | `qa/`                | 2           | 6 / 16           | 38 %     |
 | `sql/`               | 1           | 2.5 / 8          | 31 %     |
 | `survival_camp/`     | 1           | 1 / 8            | 13 %     |
-| **Total**            | **37**      | **130 / 296**    | **44 %** |
+| **Total**            | **37**      | **130.5 / 296**  | **44 %** |
 
 > "DoD cells filled" counts ✓ as 1 and ◐ as 0.5. The "School 21
 > License" placeholders count ◐ for the F column — they are

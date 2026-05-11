@@ -1,0 +1,41 @@
+name: actionlint
+
+# Meta-CI: lint the other workflows.
+# Catches typos in `uses:` references, invalid `if:` expressions,
+# unknown context keys, deprecated action versions, shellcheck issues
+# inside `run:` blocks.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/**'
+      - '.github/dependabot.yml'
+      - 'codecov.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/**'
+      - '.github/dependabot.yml'
+      - 'codecov.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: actionlint-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  actionlint:
+    name: actionlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run actionlint
+        uses: reviewdog/action-actionlint@v1
+        with:
+          fail_on_error: false
+          reporter: github-check
+          level: warning

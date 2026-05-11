@@ -102,10 +102,15 @@ jobs:
       fail-fast: false
       matrix:
         # Subprojects that ship a Sphinx setup. Day 07 is the
-        # canonical case (Sphinx is part of the original task).
+        # canonical case (Sphinx is part of the original task);
+        # day_01 from the new track adopted the same skeleton so its
+        # rich docstrings render the same way.
         include:
           - subproject: python/bootcamp/old/day_07
             workdir: python/bootcamp/old/day_07
+            docs_dir: docs
+          - subproject: python/bootcamp/new/day_01
+            workdir: python/bootcamp/new/day_01
             docs_dir: docs
     steps:
       - uses: actions/checkout@v4
@@ -117,7 +122,12 @@ jobs:
         working-directory: ${{ matrix.workdir }}
         run: |
           python -m pip install --upgrade pip
+          # Sphinx-specific requirements live in docs/requirements.txt
+          # (day_01 layout); the day_07 layout puts them at the project
+          # root. Check both before falling back to sphinx + furo.
+          if [ -f ${{ matrix.docs_dir }}/requirements.txt ]; then pip install -r ${{ matrix.docs_dir }}/requirements.txt; fi
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f pyproject.toml ]; then pip install -e . || true; fi
           # Belt-and-braces: ensure sphinx is present even if not pinned.
           pip install sphinx furo
       - name: Build HTML

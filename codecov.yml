@@ -1,0 +1,59 @@
+# Codecov configuration for school-21.
+# Reference: https://docs.codecov.com/docs/codecov-yaml
+
+coverage:
+  # Sensible thresholds — informational, not gating, while the test
+  # suites stabilise. Tighten once each subproject's baseline is known.
+  status:
+    project:
+      default:
+        target: auto
+        threshold: 1%
+        if_ci_failed: ignore
+    patch:
+      default:
+        target: 80%
+        threshold: 5%
+        if_ci_failed: ignore
+
+  # Round to whole percentages on the badge.
+  round: nearest
+  precision: 0
+
+  # Per-subproject flags. Each CI matrix entry uploads its tracefile
+  # tagged with a flag like `c-s21_math` or `cpp-s21_containers`.
+  # Defined under `flag_management` so Codecov knows about them ahead
+  # of the first upload.
+  flag_management:
+    default_rules:
+      carryforward: true
+      statuses:
+        - type: project
+          target: auto
+          threshold: 1%
+
+# Files / directories that should NOT count toward coverage.
+ignore:
+  - "**/test_*"
+  - "**/tests/**"
+  - "**/*test*.c"
+  - "**/*test*.cc"
+  - "**/*tests*.cc"
+  - "**/unit_test.c"
+  - "**/code-samples/**"
+  - "**/materials/**"
+  - "**/build/**"
+  - "**/Qt/**"
+  - "**/QtGifImage*/**"
+  - "**/site-packages/**"
+  - "**/charisel/**"
+  - "**/moc_*"
+  - "**/ui_*"
+
+# Pull request comment — concise, only show files that changed.
+comment:
+  layout: "header, diff, files, footer"
+  behavior: default
+  require_changes: true
+  require_base: false
+  require_head: true

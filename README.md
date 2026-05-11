@@ -32,6 +32,7 @@ This repo is undergoing a production-grade overhaul (2026-05). Live status:
 [![devops](https://github.com/erdogan-deniz/school-21/actions/workflows/devops.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/devops.yml)
 [![docs](https://github.com/erdogan-deniz/school-21/actions/workflows/docs.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/docs.yml)
 [![pages](https://github.com/erdogan-deniz/school-21/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/pages.yml)
+[![codecov](https://codecov.io/gh/erdogan-deniz/school-21/branch/main/graph/badge.svg)](https://codecov.io/gh/erdogan-deniz/school-21)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 - **Top-level dashboard:** [`STATUS.md`](STATUS.md) — production-readiness matrix

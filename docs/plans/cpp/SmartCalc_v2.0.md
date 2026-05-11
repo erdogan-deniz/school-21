@@ -9,7 +9,7 @@
 - **Language:** C++ + Qt
 - **Build system:** Makefile + qmake
 - **Tests on disk:** varies
-- **Flagship:** no
+- **Flagship:** **yes (★)** — designated 2026-05-11; release pipeline pending
 
 ## Definition of Done — checklist
 

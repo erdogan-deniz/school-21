@@ -12,6 +12,31 @@ has its own plan file generated from
 [`docs/plans/_TEMPLATE.md`](docs/plans/_TEMPLATE.md). The matrix below
 stays high-level; the plans hold the detail.
 
+## Flagships
+
+Three subprojects are designated **flagship** — they target DoD-C
+("use as a dependency") in addition to the universal A + B (evaluate +
+clone & run) treatment:
+
+| ★ | Subproject | Distribution shape | Why this one |
+| -- | ---------- | ------------------ | ------------ |
+| ★ | [`cpp/s21_containers`](cpp/s21_containers/) | Header-only C++ library — Conan / vcpkg candidate | STL replica (list, map, queue, set, stack, vector, array, multiset). Drop-in for any C++17 project; immediate reusability. |
+| ★ | [`c/s21_math`](c/s21_math/)                 | Static library `s21_math.a` — drop-in `math.h` replacement | Simple, well-scoped, easiest first flagship to validate the release pipeline. |
+| ★ | [`cpp/SmartCalc_v2.0`](cpp/SmartCalc_v2.0/) | Packaged desktop app — GitHub Releases `.AppImage` / `.dmg` / `.exe` | Demonstrates the full end-user distribution cycle (Qt + MVC + cross-platform installer). Different category from the two libraries above. |
+
+Per-flagship work in scope:
+
+- `release.yml` GitHub Actions workflow — builds artefacts, tags semver,
+  publishes to GitHub Releases.
+- Semantic-version git tags (`v0.1.0`, `v1.0.0`, ...).
+- For libraries: a curated `package.{conan,vcpkg}.{py,json}` so the
+  library can be consumed as a dependency.
+- For the app: per-OS installer build (Linux AppImage, macOS dmg,
+  Windows exe).
+
+Designated 2026-05-11. Other 34 subprojects retain A + B scope only;
+their READMEs say so explicitly.
+
 ## Legend
 
 | Symbol | Meaning                                           |
@@ -45,7 +70,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `3DViewer_v1.0`    | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | clang-format applied; C tests + Qt GUI build in c.yml (xvfb) |
 | `SimpleBashUtils`  | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + Doxygen                            |
 | `s21_decimal`      | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + Doxygen                            |
-| `s21_math`         | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + curated Doxyfile                   |
+| `s21_math`         | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ | ★        | clang-format applied; CI + curated Doxyfile                   |
 | `s21_matrix`       | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + Doxygen                            |
 | `s21_string+`      | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + Doxygen                            |
 | `SmartCalc_v1.0`   | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | clang-format applied; C tests + Qt GUI build in c.yml (xvfb) |
@@ -71,8 +96,8 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `3DViewer_v2.0`         | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | clang-format applied; C++ tests + Qt GUI build (xvfb)        |
 | `CPP5_3DViewer_v2.1`    | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | clang-format applied; C++ tests + Qt GUI build (xvfb)        |
 | `CPP6_3DViewer_v2.2`    | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | clang-format applied; C++ tests + Qt GUI build (xvfb)        |
-| `SmartCalc_v2.0`        | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | clang-format applied; C++ tests + Qt GUI build (xvfb)        |
-| `s21_containers`        | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + Doxygen                           |
+| `SmartCalc_v2.0`        | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ | ★        | clang-format applied; C++ tests + Qt GUI build (xvfb)        |
+| `s21_containers`        | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ | ★        | clang-format applied; CI + Doxygen                           |
 | `s21_matrix+`           | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + Doxygen                           |
 
 ### `data_science/`

@@ -9,7 +9,7 @@
 - **Language:** C
 - **Build system:** Makefile
 - **Tests on disk:** yes (`src/unit_test.c`)
-- **Flagship:** no
+- **Flagship:** **yes (★)** — designated 2026-05-11; release pipeline pending
 
 ## Definition of Done — checklist
 

@@ -1,0 +1,18 @@
+# Dependabot — keep CI tooling up to date without manual chasing.
+# Limited to GitHub Actions versions; per-subproject pip / cargo / npm
+# ecosystems are left to the subproject's own discretion (educational
+# code is often pinned to course-version artefacts).
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "ci"
+    commit-message:
+      prefix: "chore(ci):"
+      include: "scope"

@@ -1,0 +1,140 @@
+name: release-s21_containers
+
+# Release pipeline for the cpp/s21_containers flagship.
+# Header-only C++17 STL replica — release artefact is a tarball of
+# the s21_containers.h umbrella header + the s21_containers/ sub-
+# headers + tests + LICENSE.
+#
+# Tagging convention:
+#     git tag v0.1.0-s21_containers
+#     git push origin v0.1.0-s21_containers
+
+on:
+  push:
+    tags:
+      - 'v*-s21_containers'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to release (e.g. v0.1.0-s21_containers)'
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-s21_containers-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: build + test s21_containers (header-only)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install build deps (pinned)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential=12.* \
+            libgtest-dev=1.* \
+            googletest=1.* \
+            lcov=2.* \
+            doxygen=1.9.* \
+            graphviz=2.42.*
+          # libgtest-dev ships sources only on older Ubuntu — build + install.
+          if [ ! -f /usr/lib/x86_64-linux-gnu/libgtest.a ]; then
+            sudo cmake -S /usr/src/googletest -B /tmp/gtest-build
+            sudo cmake --build /tmp/gtest-build
+            sudo cmake --install /tmp/gtest-build
+          fi
+
+      - name: Build + run test suite (gate the release on green)
+        working-directory: cpp/s21_containers/src
+        run: |
+          make test
+          ./test
+
+      - name: Coverage report
+        working-directory: cpp/s21_containers/src
+        run: make gcov_report
+        continue-on-error: true
+
+      - name: Doxygen API docs
+        working-directory: cpp/s21_containers
+        run: |
+          # Use existing Doxyfile if present, otherwise generate a default.
+          if [ ! -f Doxyfile ]; then
+            doxygen -g Doxyfile.tmp >/dev/null
+            sed -e 's|^PROJECT_NAME .*|PROJECT_NAME = "s21_containers"|' \
+                -e 's|^PROJECT_BRIEF .*|PROJECT_BRIEF = "Header-only STL replica in s21:: namespace"|' \
+                -e 's|^OUTPUT_DIRECTORY .*|OUTPUT_DIRECTORY = docs/api|' \
+                -e 's|^RECURSIVE .*|RECURSIVE = YES|' \
+                -e 's|^EXTRACT_ALL .*|EXTRACT_ALL = YES|' \
+                -e 's|^GENERATE_LATEX .*|GENERATE_LATEX = NO|' \
+                -e 's|^HAVE_DOT .*|HAVE_DOT = YES|' \
+                Doxyfile.tmp > Doxyfile
+            rm Doxyfile.tmp
+          fi
+          doxygen Doxyfile
+        continue-on-error: true
+
+      - name: Stage release artefacts
+        run: |
+          mkdir -p _release/s21_containers/include _release/s21_containers/tests
+          cp cpp/s21_containers/src/s21_containers.h        _release/s21_containers/include/
+          cp -r cpp/s21_containers/src/s21_containers       _release/s21_containers/include/
+          cp cpp/s21_containers/src/tests.cc                _release/s21_containers/tests/
+          cp cpp/s21_containers/src/Makefile                _release/s21_containers/tests/
+          cp -r cpp/s21_containers/docs/api/html            _release/s21_containers/api-docs 2>/dev/null || true
+          cp cpp/s21_containers/LICENSE                     _release/s21_containers/SCHOOL21_LICENSE
+          cp LICENSE                                        _release/s21_containers/LICENSE
+          cp cpp/s21_containers/README.md                   _release/s21_containers/README.md
+          cd _release && tar czf "s21_containers-${GITHUB_REF_NAME}.tar.gz" s21_containers/
+
+      - name: Upload tarball as workflow artefact
+        uses: actions/upload-artifact@v4
+        with:
+          name: s21_containers-${{ github.ref_name }}
+          path: _release/s21_containers-*.tar.gz
+          retention-days: 90
+
+      - name: Publish GitHub Release (on tag)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ github.ref_name }}
+          tag_name: ${{ github.ref_name }}
+          generate_release_notes: true
+          files: _release/s21_containers-*.tar.gz
+          body: |
+            `s21_containers` flagship release — header-only C++17 STL
+            replica in the `s21::` namespace.
+
+            **Contents (untarred):**
+            - `include/s21_containers.h` — umbrella header (single `#include`).
+            - `include/s21_containers/` — per-container headers (`s21_list.h`,
+              `s21_vector.h`, `s21_map.h`, `s21_set.h`, `s21_stack.h`,
+              `s21_queue.h`, `s21_array.h`, `s21_multiset.h`).
+            - `tests/` — GoogleTest suite + Makefile for verifying behaviour
+              against `std::*` baselines.
+            - `api-docs/` — Doxygen HTML reference.
+            - `LICENSE` (MIT root) + `SCHOOL21_LICENSE` (placeholder
+              attribution).
+
+            **Use as a dependency:**
+
+            ```bash
+            tar xzf s21_containers-${{ github.ref_name }}.tar.gz
+            # In your CMakeLists.txt:
+            #   target_include_directories(my_target PRIVATE
+            #     s21_containers/include)
+            #   target_compile_features(my_target PRIVATE cxx_std_17)
+            ```
+
+            Drop-in for any C++17 project — no build step required for the
+            library itself; only your code that uses it needs compiling.
+
+            See [STATUS.md](https://github.com/erdogan-deniz/school-21/blob/main/STATUS.md)
+            for the rest of the flagships and overall progress.

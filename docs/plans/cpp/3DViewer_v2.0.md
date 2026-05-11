@@ -20,7 +20,7 @@
 - [~] **E.** `make install` requires Qt6 / qmake; document Docker recipe
 - [~] **F.** Root MIT `LICENSE` ✓; subproject `LICENSE` is the School 21 placeholder (kept by design)
 - [ ] **G.** Demo (gif) — orbit of a 1M-vertex `.obj`, recordable via the bonus Part 3 button
-- [ ] **H.** Doxygen API reference
+- [x] **H.** Doxygen API reference — file preambles + class docs on `controller/controller.h`, `model/{objectmod,transform}.h`, `view/{glwidget,viewer}.h` (legacy fixed-function GL pipeline; Object/ReadFile/Transform architecture)
 
 > Legend: `[x]` done · `[~]` partial / pending follow-up · `[ ]` not started.
 
@@ -37,3 +37,4 @@
 
 - 2026-05-11: Included in `cpp.yml` `apps-cpp-tests` matrix ([cc0ebb33](https://github.com/erdogan-deniz/school-21/commit/cc0ebb33)).
 - 2026-05-11: README adopted from repo template + Original task preserved ([80403498](https://github.com/erdogan-deniz/school-21/commit/80403498)).
+- 2026-05-11: Doxygen rollout — Controller / Model / View headers documented ([d7960ba6](https://github.com/erdogan-deniz/school-21/commit/d7960ba6)).

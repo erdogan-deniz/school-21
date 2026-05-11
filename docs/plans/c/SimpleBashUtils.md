@@ -20,7 +20,7 @@
 - [x] **E.** `make` targets reproducible on the canonical Linux toolchain
 - [~] **F.** Root MIT `LICENSE` ✓; subproject `LICENSE` is the School 21 placeholder (kept by design)
 - [ ] **G.** Demo (asciinema) — `s21_cat -benst` and `s21_grep -in '...'`
-- [ ] **H.** Doxygen API reference
+- [x] **H.** Doxygen API reference — file preambles + flag-mask / `GrepArgs` struct docs on `s21_cat.h` and `s21_grep.h`
 
 > Legend: `[x]` done · `[~]` partial / pending follow-up · `[ ]` not started.
 
@@ -36,3 +36,4 @@
 
 - 2026-05-11: README adopted from repo template + Original task preserved (this commit).
 - 2026-05-11: Included in `c.yml` build/test matrix (split-Makefile branch handles cat/ and grep/ separately) ([8c5bd24d](https://github.com/erdogan-deniz/school-21/commit/8c5bd24d)).
+- 2026-05-11: Doxygen rollout — `s21_cat.h` + `s21_grep.h` documented ([9def2070](https://github.com/erdogan-deniz/school-21/commit/9def2070)).

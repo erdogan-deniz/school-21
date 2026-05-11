@@ -6,6 +6,7 @@
 # (Make, bash, Python, gcc, qmake) all see the same content.
 *.sh        text eol=lf
 *.bash      text eol=lf
+*.bats      text eol=lf
 *.py        text eol=lf
 *.c         text eol=lf
 *.h         text eol=lf

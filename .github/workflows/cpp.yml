@@ -26,7 +26,7 @@ jobs:
   format-check:
     name: clang-format check
     runs-on: ubuntu-latest
-    continue-on-error: true  # informational until we land a repo-wide format pass
+    # Repo-wide format pass landed in commit e3590aa1; gate is now hard.
     steps:
       - uses: actions/checkout@v4
       - name: Install clang-format

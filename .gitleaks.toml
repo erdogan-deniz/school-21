@@ -1,0 +1,51 @@
+# gitleaks configuration for school-21.
+#
+# Extends the default rule set with a small allow-list scoped to:
+#  - historical leaks that have been rotated (no point re-flagging them
+#    on every PR — the value is dead);
+#  - educational placeholder credentials in the data_science/Python
+#    bootcamp days (e.g. the `postgres:1969` local Postgres password
+#    embedded as a default fall-back when no env override is set).
+#
+# Rotation rule: when a real secret is found, ROTATE FIRST (upstream
+# revocation), then refactor the source to read from env vars, then
+# add the value here only if the regex would otherwise false-positive.
+# Never add a still-active credential to this file.
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "School 21 bootcamp placeholders + rotated historical leaks"
+
+# Regex allow-list. Each entry must point at a credential that is
+# either:
+#   (a) a bootcamp-local default (visible elsewhere in the codebase as
+#       an env-var fall-back), or
+#   (b) a rotated former value, no longer active anywhere.
+regexes = [
+    # bootcamp default: postgres:1969 inside src/arguments.py and
+    # src/alembic/env.py — env-var driven at runtime, the literal is
+    # only a no-secret-set fall-back for local dev.
+    '''(?i)(USER_PASSWORD\s*=\s*os\.environ\.get\(.*"1969".*\))''',
+    '''(?i)(DB_PASSWORD.*"1969")''',
+
+    # Historical Telegram-bot-token leak in
+    # devops/ci_cd/src/notify.sh, rotated 2026-05-11 (commit 8c98f9be).
+    # Kept here so `gitleaks detect` doesn't fail on the historical
+    # blame; the live secret is gone (env vars now).
+    '''8015361574:AAFjUnW5hv_62Dsa9SfIkDgjCnAxraoxw8A''',
+]
+
+# Path allow-list — exclude commonly-noisy directories from default
+# rules where the matches are guaranteed-not-real (vendored libs,
+# generated docs, test fixtures, *.pyc).
+paths = [
+    '''(?i).*/qtgifimage.*''',          # vendored GIF library
+    '''(?i).*/giflib/.*''',             # vendored
+    '''(?i).*/build/.*''',              # build artefacts
+    '''(?i).*/build-.*-debug/.*''',     # qmake debug build dirs
+    '''(?i).*/__pycache__/.*''',
+    '''(?i).*\.pyc$''',
+    '''(?i).*\.ipynb$''',               # notebooks often embed base64 image blobs
+]

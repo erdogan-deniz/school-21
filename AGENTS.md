@@ -54,6 +54,15 @@ maintainer.
    *both* [`STATUS.md`](STATUS.md) (the dashboard) *and* the relevant
    [`docs/plans/<track>/<subproject>.md`](docs/plans/) file. Plans
    stay in sync with code, not lagging behind.
+7. **Never commit secrets.** API keys, bot tokens, DB passwords,
+   private keys — read them from environment variables (or a secret
+   store) at runtime. The `gitleaks` pre-commit hook + the
+   [`secrets.yml`](.github/workflows/secrets.yml) CI job back this up
+   with mechanical enforcement. If `gitleaks` flags real
+   credentials: **rotate first** (upstream revocation), refactor the
+   source to env vars, then if necessary allow-list the rotated
+   value in [`.gitleaks.toml`](.gitleaks.toml). Never allow-list a
+   live secret.
 
 ## Soft rules (override only with good reason)
 

@@ -52,21 +52,22 @@ for `main`:
 
 ## Required status checks
 
-The 9 workflows live under [`.github/workflows/`](../.github/workflows/).
+The workflows live under [`.github/workflows/`](../.github/workflows/).
 Once they run green consistently, mark the following job IDs as
 required (use the **exact** job name shown in a recent workflow run
 URL — GitHub will surface the live list once at least one run has
 completed for each):
 
-| Workflow file | Required job(s)                                          |
-| ------------- | -------------------------------------------------------- |
-| `c.yml`       | `clang-format-check`, `libs-build`, `apps-c-tests`, `apps-qt-build` |
-| `cpp.yml`     | `clang-format-check`, `libs-build`, `apps-cpp-tests`, `apps-qt-build` |
-| `python.yml`  | `ruff` (gating format check), `pytest (...)`, `sphinx (...)` |
-| `sql.yml`     | `sqlfluff`                                               |
-| `devops.yml`  | `shellcheck`, `bats`, `hadolint`                         |
-| `docs.yml`    | `doxygen`                                                |
-| `pages.yml`   | leave **off** required list — deploy job is best-effort  |
+| Workflow file  | Required job(s)                                          |
+| -------------- | -------------------------------------------------------- |
+| `c.yml`        | `clang-format-check`, `libs-build`, `apps-c-tests`, `apps-qt-build` |
+| `cpp.yml`      | `clang-format-check`, `libs-build`, `apps-cpp-tests`, `apps-qt-build` |
+| `python.yml`   | `ruff` (gating format check), `pytest (...)`, `sphinx (...)` |
+| `sql.yml`      | `sqlfluff`, `bootcamp-schema-load`                       |
+| `devops.yml`   | `shellcheck`, `bats`, `hadolint`                         |
+| `docs.yml`     | `doxygen`                                                |
+| `secrets.yml`  | `gitleaks` — **non-negotiable**, blocks merge on any new secret leak |
+| `pages.yml`    | leave **off** required list — deploy job is best-effort  |
 | `actionlint.yml` | `actionlint`                                          |
 | `lint.yml`    | `markdownlint`, `lychee` (link-check)                    |
 

@@ -263,37 +263,146 @@
    "Memory page has hardware error"}
 #endif
 
+/**
+ * @file s21_string.h
+ * @brief Own implementation of the C standard `string.h` library, plus
+ *        partial `sprintf` / `sscanf` and a handful of C# `String`-class
+ *        helpers.
+ *
+ * All public entry points are prefixed `s21_` to coexist with libc in
+ * the same translation unit. Behaviour follows the standard `<string.h>`
+ * semantics for sentinel values (NULL on error), buffer assumptions, and
+ * length handling.
+ *
+ * Errno table: `s21_strerror` is portable across macOS and Linux via the
+ * `__APPLE__ && __MACH__` preprocessor branch that selects the right
+ * platform-specific error message array. Tables are defined verbatim
+ * above this section.
+ */
+
+/** @name Memory operations
+ *  @{
+ */
+
+/** @brief Locate first occurrence of byte `c` in first `n` bytes of `str`.
+ *  @return Pointer to match, or @ref s21_NULL if not found. */
 void *s21_memchr(const void *str, int c, s21_size_t n);
+
+/** @brief Compare first `n` bytes of two buffers.
+ *  @return `< 0` / `0` / `> 0` per memcmp(3). */
 int s21_memcmp(const void *str1, const void *str2, s21_size_t n);
+
+/** @brief Copy `n` bytes from `src` to `dest` (no overlap allowed). */
 void *s21_memcpy(void *dest, const void *src, s21_size_t n);
+
+/** @brief Copy `n` bytes from `src` to `dest` (overlap handled). */
 void *s21_memmove(void *dest, const void *src, s21_size_t n);
+
+/** @brief Fill first `n` bytes of `str` with byte `c`. */
 void *s21_memset(void *str, int c, s21_size_t n);
+
+/** @} */
+
+/** @name C-string operations
+ *  @{
+ */
+
+/** @brief Concatenate: append `src` to `dest`; `dest` must have room. */
 char *s21_strcat(char *dest, const char *src);
+
+/** @brief Concatenate at most `n` bytes from `src` onto `dest`. */
 char *s21_strncat(char *dest, const char *src, s21_size_t n);
+
+/** @brief First occurrence of `c` in `str`; @ref s21_NULL if not found. */
 char *s21_strchr(const char *str, int c);
+
+/** @brief Lexicographic compare two C-strings. */
 int s21_strcmp(const char *str1, const char *str2);
+
+/** @brief Lexicographic compare at most `n` bytes. */
 int s21_strncmp(const char *str1, const char *str2, s21_size_t n);
+
+/** @brief Copy `src` (including terminator) into `dest`. */
 char *s21_strcpy(char *dest, const char *src);
+
+/** @brief Copy at most `n` bytes from `src` into `dest` (pad NUL if short). */
 char *s21_strncpy(char *dest, const char *src, s21_size_t n);
+
+/** @brief Length of `str` (excluding terminator). */
 s21_size_t s21_strlen(const char *str);
+
+/** @brief Platform-portable `strerror`: looks up `errnum` in the
+ *         macOS or Linux error table defined above. */
 char *s21_strerror(int errnum);
+
+/** @brief Length of initial `str1` segment of chars not in `str2`. */
 s21_size_t s21_strcspn(const char *str1, const char *str2);
+
+/** @brief First char in `str1` matching any in `str2`. */
 char *s21_strpbrk(const char *str1, const char *str2);
+
+/** @brief Last occurrence of `c` in `str`. */
 char *s21_strrchr(const char *str, int c);
+
+/** @brief Length of initial `str1` segment of chars all in `str2`. */
 s21_size_t s21_strspn(const char *str1, const char *str2);
+
+/** @brief First occurrence of `needle` in `haystack`. */
 char *s21_strstr(const char *haystack, const char *needle);
+
+/** @brief Tokenise `str` by any char in `delim`. Stateful across calls. */
 char *s21_strtok(char *str, const char *delim);
+
+/** @} */
+
+/** @name Internal scan helpers (exposed for sscanf testing)
+ *  @{
+ */
+
+/** @brief Is `ch` present in C-string `str`? */
 int in(char ch, const char *str);
+
+/** @brief Advance `*str` past any character in `sep`. */
 void skipSeps(char **str, const char *sep);
+
+/** @brief Advance `*str` past characters NOT in `sep`. */
 void skipNonSeps(char **str, const char *sep);
 
+/** @} */
+
+/** @name C# `String`-class extensions
+ *  Each returns a freshly-allocated buffer the caller must `free`; or
+ *  @ref s21_NULL on error.
+ *  @{
+ */
+
+/** @brief Uppercase copy of `str`. */
 void *s21_to_upper(const char *str);
+
+/** @brief Lowercase copy of `str`. */
 void *s21_to_lower(const char *str);
+
+/** @brief Insert `str` into `src` at byte position `start_index`. */
 void *s21_insert(const char *src, const char *str, s21_size_t start_index);
+
+/** @brief Strip leading / trailing chars from `src` that appear in `trim_chars`. */
 void *s21_trim(const char *src, const char *trim_chars);
 
+/** @} */
+
+/** @name Formatted I/O
+ *  Partial replacements for `<stdio.h>` `sprintf` / `sscanf`. See
+ *  the project README for the supported specifier / flag / width /
+ *  precision / length matrix.
+ *  @{
+ */
+
+/** @brief Format args into `str` per the printf-style `format`. */
 int s21_sprintf(char *str, const char *format, ...);
 
+/** @brief Parse `str` per the scanf-style `format` into the variadic outputs. */
 int s21_sscanf(const char *str, const char *format, ...);
+
+/** @} */
 
 #endif  // SRC_S21_STRING_H_

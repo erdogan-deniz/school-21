@@ -69,10 +69,10 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | ------------------ | - | - | - | - | - | - | - | - | -------- | ----------------------------------------------------------- |
 | `3DViewer_v1.0`    | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | clang-format applied; C tests + Qt GUI build in c.yml (xvfb) |
 | `SimpleBashUtils`  | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + Doxygen                            |
-| `s21_decimal`      | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + Doxygen                            |
+| `s21_decimal`      | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen comments on every public decl                          |
 | `s21_math`         | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ | ★        | flagship; release-s21_math.yml; curated Doxyfile + comments   |
-| `s21_matrix`       | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + Doxygen                            |
-| `s21_string+`      | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + Doxygen                            |
+| `s21_matrix`       | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen comments on every public decl                          |
+| `s21_string+`      | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen comments + per-platform errno table preserved          |
 | `SmartCalc_v1.0`   | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | clang-format applied; C tests + Qt GUI build in c.yml (xvfb) |
 
 ### `career_track/`
@@ -98,7 +98,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `CPP6_3DViewer_v2.2`    | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | clang-format applied; C++ tests + Qt GUI build (xvfb)        |
 | `SmartCalc_v2.0`        | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ | ★        | clang-format applied; C++ tests + Qt GUI build (xvfb)        |
 | `s21_containers`        | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ | ★        | clang-format applied; CI + Doxygen                           |
-| `s21_matrix+`           | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + Doxygen                           |
+| `s21_matrix+`           | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen comments on every public decl + class                |
 
 ### `data_science/`
 
@@ -159,7 +159,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | Track                | Subprojects | DoD cells filled | % done   |
 | -------------------- | ----------- | ---------------- | -------- |
 | `algorithms/`        | 1           | 3.5 / 8          | 44 %     |
-| `c/`                 | 7           | 32 / 56          | 57 %     |
+| `c/`                 | 7           | 33.5 / 56        | 60 %     |
 | `career_track/`      | 9           | 13.5 / 72        | 19 %     |
 | `cpp/`               | 6           | 25 / 48          | 52 %     |
 | `data_science/`      | 2           | 7 / 16           | 44 %     |
@@ -170,7 +170,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `qa/`                | 2           | 6 / 16           | 38 %     |
 | `sql/`               | 1           | 2.5 / 8          | 31 %     |
 | `survival_camp/`     | 1           | 1 / 8            | 13 %     |
-| **Total**            | **37**      | **124 / 296**    | **42 %** |
+| **Total**            | **37**      | **126.5 / 296**  | **43 %** |
 
 > "DoD cells filled" counts ✓ as 1 and ◐ as 0.5. The "School 21
 > License" placeholders count ◐ for the F column — they are

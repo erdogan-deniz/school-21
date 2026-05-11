@@ -189,14 +189,17 @@ jobs:
       matrix:
         # Subprojects that ship a Sphinx setup. Day 07 is the
         # canonical case (Sphinx is part of the original task);
-        # day_01 from the new track adopted the same skeleton so its
-        # rich docstrings render the same way.
+        # day_01 (new track) and the "Tweets" NLP project adopted the
+        # same skeleton so their rich docstrings render the same way.
         include:
           - subproject: python/bootcamp/old/day_07
             workdir: python/bootcamp/old/day_07
             docs_dir: docs
           - subproject: python/bootcamp/new/day_01
             workdir: python/bootcamp/new/day_01
+            docs_dir: docs
+          - subproject: data_science/project_01
+            workdir: data_science/project_01
             docs_dir: docs
     steps:
       - uses: actions/checkout@v4

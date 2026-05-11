@@ -1,6 +1,60 @@
-# Day 07 - Python Bootcamp
+# `python/bootcamp/old/day_07`
 
-## Is there a difference?
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/python.yml)
+[![codecov](https://codecov.io/gh/erdogan-deniz/school-21/branch/main/graph/badge.svg?flag=python-bootcamp-old-day_07)](https://codecov.io/gh/erdogan-deniz/school-21?flags%5B0%5D=python-bootcamp-old-day_07)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../../../LICENSE)
+
+> *Day 07 — Voight-Kampff: a Blade Runner-themed retirement-plan
+> calculator built as a question/answer dialogue, with formal pytest
+> coverage and Sphinx HTML docs (the day's original task asked for
+> both).*
+
+## Quick start
+
+```bash
+cd python/bootcamp/old/day_07
+
+# Install deps (pytest + sphinx + furo theme).
+pip install -r requirements.txt
+
+# Run the question/answer dialogue.
+cd src && python main.py
+
+# Run the pytest suite.
+cd ../ && pytest -v src/tests/
+
+# Build Sphinx HTML docs.
+cd docs && make html       # output: build/html/index.html
+```
+
+## Documentation
+
+Sphinx HTML auto-publishes to the unified Pages site under
+[`sphinx/python/bootcamp/old/day_07/`](https://erdogan-deniz.github.io/school-21/sphinx/python/bootcamp/old/day_07/).
+
+## Tests
+
+Wired into `.github/workflows/python.yml`'s pytest matrix as
+`python-bootcamp-old-day_07`. Coverage published per-flag to Codecov
+— see the badge above.
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum
+(analogue of School 42). The repository as a whole is licensed under
+the **MIT License** — see the root [`LICENSE`](../../../../LICENSE).
+
+The subproject `LICENSE` file (`# School 21 License`) is preserved as
+educational attribution and historical artefact; it does not override
+the repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
+
+### Day 07 — Python Bootcamp
+
+#### Is there a difference?
 
 ## Contents
 

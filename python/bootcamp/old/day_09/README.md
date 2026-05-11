@@ -1,6 +1,52 @@
-# Day 09 - Python Bootcamp
+# `python/bootcamp/old/day_09`
 
-## Fast and Curious
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/python.yml)
+[![codecov](https://codecov.io/gh/erdogan-deniz/school-21/branch/main/graph/badge.svg?flag=python-bootcamp-old-day_09)](https://codecov.io/gh/erdogan-deniz/school-21?flags%5B0%5D=python-bootcamp-old-day_09)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../../../LICENSE)
+
+> *Day 09 — Cython-accelerated matrix multiplication, C-extension
+> calculator, and a comparative-benchmark harness across Python /
+> NumPy / Cython / C implementations.*
+
+## Quick start
+
+```bash
+cd python/bootcamp/old/day_09/src
+
+# Install deps (Cython only — numpy expected from system / venv).
+pip install -r requirements.txt
+
+# Build the Cython extension in place.
+python setup.py build_ext --inplace
+
+# Run the perf-benchmark test (it asserts that the Cython multiply is
+# faster than the pure-Python baseline by some margin).
+pytest -v test_mul_perf.py
+```
+
+## Tests
+
+Wired into `.github/workflows/python.yml`'s pytest matrix as
+`python-bootcamp-old-day_09`. Coverage published per-flag to Codecov
+— see the badge above.
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum
+(analogue of School 42). The repository as a whole is licensed under
+the **MIT License** — see the root [`LICENSE`](../../../../LICENSE).
+
+The subproject `LICENSE` file (`# School 21 License`) is preserved as
+educational attribution and historical artefact; it does not override
+the repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
+
+### Day 09 — Python Bootcamp
+
+#### Fast and Curious
 
 ## Contents
 

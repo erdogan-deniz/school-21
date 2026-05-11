@@ -39,7 +39,7 @@ static int EGifCompressOutput(GifFileType *GifFile, int Code);
 static int EGifBufferedOutput(GifFileType *GifFile, GifByteType *Buf, int c);
 
 /* extract bytes from an unsigned word */
-#define LOBYTE(x) ((x)&0xff)
+#define LOBYTE(x) ((x) & 0xff)
 #define HIBYTE(x) (((x) >> 8) & 0xff)
 
 /******************************************************************************

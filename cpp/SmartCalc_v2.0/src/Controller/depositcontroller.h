@@ -6,8 +6,8 @@
 namespace s21 {
 class DepositController {
  public:
-  DepositController(){};
-  ~DepositController(){};
+  DepositController() {};
+  ~DepositController() {};
 
   // Calculate result
   DepositResult& Run(DepositInfo& deposit_info) {

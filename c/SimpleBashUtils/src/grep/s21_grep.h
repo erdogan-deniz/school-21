@@ -34,4 +34,4 @@ static struct option long_options[] = {{"e", required_argument, NULL, 'e'},
                                        {"f", required_argument, NULL, 'f'},
                                        {NULL, 0, NULL, 0}};
 
-#endif // SRC_GREP_S21_GREP_H_
+#endif  // SRC_GREP_S21_GREP_H_

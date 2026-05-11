@@ -60,7 +60,7 @@ struct Calculator {
   // Constructor
   Calculator(int operation) : operation(operation) {}
   // Destructor
-  ~Calculator(){};
+  ~Calculator() {};
 
   // Perform arithmetic calculations based on the selected operation.
   void ArithmeticCalculation() {

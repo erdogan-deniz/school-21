@@ -9,8 +9,7 @@ bool S21Matrix ::EqMatrix(const S21Matrix &matrix) const {
   else
     for (int i = 0; i < GetRows(); ++i)
       for (int j = 0; j < GetColumns(); ++j)
-        if (!IsEqualValue((*this)(i, j), matrix(i, j)))
-          status = false;
+        if (!IsEqualValue((*this)(i, j), matrix(i, j))) status = false;
 
   return status;
 }

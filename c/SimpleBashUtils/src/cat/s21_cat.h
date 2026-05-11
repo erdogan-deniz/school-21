@@ -22,14 +22,14 @@
 
 #define STDERR_STR(msg) STDERR("%s", msg);
 
-#define STDERR(fmt, msg)                                                       \
+#define STDERR(fmt, msg) \
   { fprintf(stderr, fmt, msg); }
 
-#define USAGE(fmt, option)                                                     \
+#define USAGE(fmt, option) \
   { STDERR(fmt, option); }
 
-#define USAGE_TEXT                                                             \
-  "cat: illegal option -- %c\n"                                                \
+#define USAGE_TEXT              \
+  "cat: illegal option -- %c\n" \
   "usage: cat [-benstuv] [file ...]\n"
 
 int handle_flags(int argc, char **argv, uint8_t *flags);
@@ -43,4 +43,4 @@ void line_operation(const uint8_t flags, int *line_cnt, char *line,
 
 int line_empty(char *line);
 
-#endif // !_CAT_MAIN_H
+#endif  // !_CAT_MAIN_H

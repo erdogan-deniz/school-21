@@ -6,8 +6,8 @@
 namespace s21 {
 class CreditController {
  public:
-  CreditController(){};
-  ~CreditController(){};
+  CreditController() {};
+  ~CreditController() {};
 
   // Calculate result
   CreditResult& Run(CreditInfo& info) { return model_.CalculateResult(info); }

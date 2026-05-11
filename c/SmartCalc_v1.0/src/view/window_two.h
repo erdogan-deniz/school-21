@@ -43,7 +43,7 @@ class Window_Two : public QWidget {
   void on_line_term_textEdited();
 
  private:
-  Ui :: Window_Two* ui;
+  Ui ::Window_Two* ui;
 };
 
 #endif  // WINDOW_TWO_H

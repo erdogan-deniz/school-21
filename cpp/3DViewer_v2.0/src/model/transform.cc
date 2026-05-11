@@ -9,7 +9,8 @@ void Transform::clear() {
 
 void Transform::moveX(double x) {
   if (fabs(x - moveX_) <= ACCURACY) return;
-  for (long unsigned int i = 0; i < object_->getPoints()->vertexes_.size(); ++i) {
+  for (long unsigned int i = 0; i < object_->getPoints()->vertexes_.size();
+       ++i) {
     if (i % 3 == 0) object_->getPoints()->vertexes_[i] += (x - moveX_);
   }
   moveX_ = x;
@@ -17,7 +18,8 @@ void Transform::moveX(double x) {
 
 void Transform::moveY(double y) {
   if (fabs(y - moveY_) <= ACCURACY) return;
-  for (long unsigned int i = 0; i < object_->getPoints()->vertexes_.size(); ++i) {
+  for (long unsigned int i = 0; i < object_->getPoints()->vertexes_.size();
+       ++i) {
     if (i % 3 == 1) object_->getPoints()->vertexes_[i] += (y - moveY_);
   }
   moveY_ = y;
@@ -25,7 +27,8 @@ void Transform::moveY(double y) {
 
 void Transform::moveZ(double z) {
   if (fabs(z - moveZ_) <= ACCURACY) return;
-  for (long unsigned int i = 0; i < object_->getPoints()->vertexes_.size(); ++i) {
+  for (long unsigned int i = 0; i < object_->getPoints()->vertexes_.size();
+       ++i) {
     if (i % 3 == 2) object_->getPoints()->vertexes_[i] += (z - moveZ_);
   }
   moveZ_ = z;
@@ -35,7 +38,8 @@ void Transform::rotationX(double rotate) {
   if (fabs(rotate - rotateX_) <= ACCURACY) return;
   double Y = 0;
   double Z = 0;
-  for (long unsigned int i = 0; i < object_->getPoints()->vertexes_.size(); i++) {
+  for (long unsigned int i = 0; i < object_->getPoints()->vertexes_.size();
+       i++) {
     if (i % 3 == 0) {
       Y = object_->getPoints()->vertexes_[i + 1];
       Z = object_->getPoints()->vertexes_[i + 2];
@@ -52,7 +56,8 @@ void Transform::rotationY(double rotate) {
   if (fabs(rotate - rotateY_) <= ACCURACY) return;
   double X = 0;
   double Z = 0;
-  for (long unsigned int i = 0; i < object_->getPoints()->vertexes_.size(); i++) {
+  for (long unsigned int i = 0; i < object_->getPoints()->vertexes_.size();
+       i++) {
     if (i % 3 == 0) {
       X = object_->getPoints()->vertexes_[i];
       Z = object_->getPoints()->vertexes_[i + 2];
@@ -69,7 +74,8 @@ void Transform::rotationZ(double rotate) {
   if (fabs(rotate - rotateZ_) <= ACCURACY) return;
   double X = 0;
   double Y = 0;
-  for (long unsigned int i = 0; i < object_->getPoints()->vertexes_.size(); i++) {
+  for (long unsigned int i = 0; i < object_->getPoints()->vertexes_.size();
+       i++) {
     if (i % 3 == 0) {
       X = object_->getPoints()->vertexes_[i];
       Y = object_->getPoints()->vertexes_[i + 1];
@@ -84,7 +90,8 @@ void Transform::rotationZ(double rotate) {
 
 void Transform::changeSize(double size) {
   if (size <= 0.1) return;
-  for (long unsigned int i = 0; i < object_->getPoints()->vertexes_.size(); i++) {
+  for (long unsigned int i = 0; i < object_->getPoints()->vertexes_.size();
+       i++) {
     object_->getPoints()->vertexes_[i] =
         object_->getPoints()->vertexes_[i] / size_ * size;
   }

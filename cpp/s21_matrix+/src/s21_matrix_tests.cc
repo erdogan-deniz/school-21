@@ -1,5 +1,6 @@
-#include "s21_matrix_oop.h"
 #include <gtest/gtest.h>
+
+#include "s21_matrix_oop.h"
 
 // --------------------ADDITIONAL-------------------- //
 
@@ -603,7 +604,6 @@ TEST(S21MatrixMethods, determinant_test_medium) {
 // }
 
 TEST(S21MatrixMethods, inverse_matrix_test) {
-
   S21Matrix result(3, 3);
 
   result(0, 0) = 1;

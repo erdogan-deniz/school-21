@@ -117,15 +117,17 @@ jobs:
           - SmartCalc_v2.0
     steps:
       - uses: actions/checkout@v4
-      - name: Install dependencies
+      - name: Install dependencies (cached)
+        uses: awalsh128/cache-apt-pkgs-action@v1
+        with:
+          packages: build-essential libgtest-dev googletest lcov gcovr
+          version: 1.0
+      - name: Build libgtest static lib if missing
         run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            build-essential \
-            libgtest-dev googletest \
-            lcov gcovr
           if [ ! -f /usr/lib/x86_64-linux-gnu/libgtest.a ]; then
-            ( cd /usr/src/googletest && sudo cmake -B build && sudo cmake --build build && sudo cmake --install build )
+            sudo cmake -S /usr/src/googletest -B /tmp/gtest-build
+            sudo cmake --build /tmp/gtest-build
+            sudo cmake --install /tmp/gtest-build
           fi
       - name: Run C++-only tests
         working-directory: cpp/${{ matrix.subproject }}/src
@@ -166,16 +168,17 @@ jobs:
           target: 'desktop'
           arch: 'linux_gcc_64'
           cache: true
-      - name: Install build deps
+      - name: Install build deps (cached)
+        uses: awalsh128/cache-apt-pkgs-action@v1
+        with:
+          packages: build-essential xvfb libgl1-mesa-dev libglu1-mesa-dev libgtest-dev googletest
+          version: 1.0
+      - name: Build libgtest static lib if missing
         run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            build-essential \
-            xvfb \
-            libgl1-mesa-dev libglu1-mesa-dev \
-            libgtest-dev googletest
           if [ ! -f /usr/lib/x86_64-linux-gnu/libgtest.a ]; then
-            ( cd /usr/src/googletest && sudo cmake -B build && sudo cmake --build build && sudo cmake --install build )
+            sudo cmake -S /usr/src/googletest -B /tmp/gtest-build
+            sudo cmake --build /tmp/gtest-build
+            sudo cmake --install /tmp/gtest-build
           fi
       - name: GUI build (xvfb-wrapped)
         working-directory: cpp/${{ matrix.subproject }}/src

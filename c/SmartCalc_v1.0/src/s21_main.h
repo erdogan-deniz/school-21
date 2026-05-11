@@ -1,3 +1,13 @@
+/**
+ * @file s21_main.h
+ * @brief Umbrella include — every public C header in `SmartCalc_v1.0`.
+ *
+ * Pulling this single header is enough to use every internal module
+ * (parser, calculator, list / stack containers, transform helpers,
+ * validation, financial extras). The public-facing entry point is
+ * still `s21_calculator()` from @ref s21_calculator.h.
+ */
+
 #ifndef SRC_S21_MAIN_H_
 #define SRC_S21_MAIN_H_
 

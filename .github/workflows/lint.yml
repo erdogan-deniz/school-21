@@ -48,9 +48,10 @@ jobs:
             --exclude-path data_science/bootcamp/day_03/src/charisel
             --exclude-path '**/site-packages/**'
             'README.md'
-            'README2.md'
             'STATUS.md'
             'CLAUDE.md'
+            'AGENTS.md'
+            'CHANGELOG.md'
             'docs/**/*.md'
             'content/**/*.md'
             '*/README.md'

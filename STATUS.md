@@ -45,7 +45,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `3DViewer_v1.0`    | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | clang-format applied; C tests + Qt GUI build in c.yml (xvfb) |
 | `SimpleBashUtils`  | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + Doxygen                            |
 | `s21_decimal`      | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + Doxygen                            |
-| `s21_math`         | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + Doxygen                            |
+| `s21_math`         | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + curated Doxyfile                   |
 | `s21_matrix`       | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + Doxygen                            |
 | `s21_string+`      | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + Doxygen                            |
 | `SmartCalc_v1.0`   | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | clang-format applied; C tests + Qt GUI build in c.yml (xvfb) |

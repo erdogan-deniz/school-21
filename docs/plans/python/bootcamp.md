@@ -20,7 +20,7 @@
 - [~] **E.** `pip install -e .` reproducible only for `new/day_*` (real pyproject.toml); `old/day_*` is loose-script style
 - [~] **F.** Root MIT `LICENSE` ✓; per-day `LICENSE` files preserved as School 21 placeholders
 - [ ] **G.** Demo (asciinema) — Day 05 Flask REST API or Day 08 async crawler
-- [ ] **H.** Sphinx HTML for Day 07 (Voight-Kampff), API references for `new/day_*`
+- [~] **H.** Sphinx HTML for Day 07 (Voight-Kampff) ✓ and `new/day_01` (utils + models) ✓ — remaining `new/day_02` + most `old/day_*` still pending
 
 > Legend: `[x]` done · `[~]` partial / pending follow-up · `[ ]` not started.
 
@@ -28,9 +28,10 @@
 
 - [ ] Backfill tests for days 00, 01, 02, 03, 04, 06, 08, team_00, team_01.
 - [ ] Migrate every `old/day_*` to `new/day_*` style (`pyproject.toml`, src layout, ruff-clean).
-- [ ] Sphinx for Day 07 — already part of the original task ("Created project documentation using Sphinx").
+- [x] Sphinx for Day 07 — part of the original task ("Created project documentation using Sphinx").
+- [x] Sphinx skeleton for `new/day_01` mirroring day_07 (this commit).
 - [ ] Decide a global Python toolchain (3.12 currently) and pin in CI.
-- [ ] Address the 2 untracked items in `python/bootcamp/new/day_01/` (`docs/`, `src/models/__init__.py`) — they appeared in `git status` since session start.
+- [x] Address the 2 untracked items in `python/bootcamp/new/day_01/` — `docs/` now a Sphinx skeleton; `src/models/__init__.py` already tracked ([9791a38f](https://github.com/erdogan-deniz/school-21/commit/9791a38f)).
 
 ## History
 
@@ -39,3 +40,4 @@
 - 2026-05-11: README adopted from former root `README2.md` ([c53e9251](https://github.com/erdogan-deniz/school-21/commit/c53e9251)).
 - 2026-05-11: Repo-wide `.ruff.toml` and `python.yml` workflow (ruff + per-day pytest matrix) added (this commit).
 - 2026-05-11: README brought to repo template (production fold + day-by-day index) (this commit).
+- 2026-05-11: Sphinx skeleton for `new/day_01` — `docs/source/{conf.py,index.rst,modules.rst}` + Makefile/make.bat + docs/requirements.txt; wired into `python.yml` sphinx matrix and `pages.yml` unified site (this commit).

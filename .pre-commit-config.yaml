@@ -81,3 +81,14 @@ repos:
         # School 21 content — don't auto-fix them.
         args: ['--no-write']
         exclude: README.md|docs/plans/.*
+
+  # --- Secret scanning (gitleaks) ---
+  # Triggered after the 2026-05-11 incident — a Telegram bot token had
+  # been hard-coded in devops/ci_cd/src/notify.sh. Scans staged content
+  # (delta mode), so pre-commit catches the issue *before* the leak is
+  # ever recorded in git. The mirrored CI job (secrets.yml) scans every
+  # push/PR's working tree as a belt-and-braces second pass.
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.4
+    hooks:
+      - id: gitleaks

@@ -1,0 +1,32 @@
+# Reproducible Postgres environment for the SQL Bootcamp days.
+#
+# Usage:
+#   make up                    # start postgres (waits for ready)
+#   make seed DAY=00           # load day_NN/materials/model.sql (or resources/)
+#   make psql DAY=00           # seed + drop into a psql shell
+#   make test-all              # seed every day in a fresh schema; CI-friendly
+#   make down                  # stop + remove volume
+#
+# The whole bootcamp tree is bind-mounted at /workspace, so any `\i` path
+# inside psql works without extra setup.
+
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: school21
+      POSTGRES_PASSWORD: school21
+      POSTGRES_DB: bootcamp
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./:/workspace:ro
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U school21 -d bootcamp"]
+      interval: 2s
+      timeout: 5s
+      retries: 15
+
+volumes:
+  pg_data:

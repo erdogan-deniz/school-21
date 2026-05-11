@@ -7,21 +7,34 @@
 
 ## Quick start
 
-Each day is a self-contained set of SQL scripts under `day_NN/src/`. Pattern:
+```bash
+cd sql/bootcamp
+
+make up                 # spin up Postgres 16 in Docker (blocks until healthy)
+make seed DAY=00        # load day_00/materials/model.sql into the bootcamp db
+make psql DAY=00        # seed + drop into an interactive psql shell
+make test-all           # smoke-test every day's schema in a fresh public schema
+make down               # tear down (drops the volume)
+```
+
+That gets you a clean Postgres 16 on `localhost:5432`
+(`user=school21 / pass=school21 / db=bootcamp`) with the chosen day's
+schema preloaded. The entire bootcamp tree is bind-mounted at
+`/workspace` inside the container, so `\i /workspace/day_NN/src/...` works
+from the psql shell without extra setup.
+
+Per-day exercises live under `day_NN/src/`; run individual scripts as
+`make psql DAY=NN` then `\i src/<script>.sql`.
+
+For lint:
 
 ```bash
-cd sql/bootcamp/day_NN
-
-# Run against a local Postgres instance:
-psql -U postgres -d <db> -f src/<script>.sql
-
-# Lint everything (sqlfluff respects the workflow config)
 pip install sqlfluff==3.2.5
 sqlfluff lint sql/ --dialect postgres
 ```
 
-For a fully reproducible environment, use Postgres 16 inside a Linux container —
-see [`.github/workflows/sql.yml`](../../.github/workflows/sql.yml).
+CI runs the same lint and `make test-all` equivalents — see
+[`.github/workflows/sql.yml`](../../.github/workflows/sql.yml).
 
 ## Demo
 

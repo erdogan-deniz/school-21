@@ -37,3 +37,50 @@ jobs:
         # PostgreSQL is the canonical School 21 dialect; days 08/09
         # demonstrate transaction isolation and triggers respectively.
         run: sqlfluff lint sql/ --dialect postgres || true
+
+  bootcamp-schema-load:
+    name: bootcamp schema-load (postgres 16)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    # Spin up a Postgres 16 service and verify every numbered day's
+    # `model.sql` loads end-to-end against a fresh `public` schema. This
+    # is the smoke-equivalent of `make test-all` from sql/bootcamp/.
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: school21
+          POSTGRES_PASSWORD: school21
+          POSTGRES_DB: bootcamp
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U school21 -d bootcamp"
+          --health-interval 2s
+          --health-timeout 5s
+          --health-retries 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install psql client
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends postgresql-client
+      - name: Verify every day's schema loads
+        working-directory: sql/bootcamp
+        env:
+          PGPASSWORD: school21
+        run: |
+          set -e
+          for d in 00 01 02 03 04 05 06 07 08 09; do
+            echo "=== day_$d ==="
+            psql -h localhost -U school21 -d bootcamp -v ON_ERROR_STOP=1 \
+              -c "DROP SCHEMA public CASCADE; CREATE SCHEMA public;" > /dev/null
+            if [ -f "day_$d/materials/model.sql" ]; then
+              psql -h localhost -U school21 -d bootcamp -v ON_ERROR_STOP=1 \
+                -f "day_$d/materials/model.sql" > /dev/null
+            elif [ -f "day_$d/resources/model.sql" ]; then
+              psql -h localhost -U school21 -d bootcamp -v ON_ERROR_STOP=1 \
+                -f "day_$d/resources/model.sql" > /dev/null
+            else
+              echo "  skip — no model.sql"
+            fi
+          done
+          echo "All numbered days loaded cleanly."

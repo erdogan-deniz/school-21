@@ -41,12 +41,12 @@ their READMEs say so explicitly.
 
 | Symbol | Meaning                                           |
 | ------ | ------------------------------------------------- |
-| ✓      | Done                                              |
-| ◐      | Partially done / in progress                      |
-| ✗      | Not done                                          |
-| n/a    | Not applicable for this subproject                |
-| ★      | Flagship — also targets DoD-C (use as dependency) |
-| ⚠      | Known broken / blocked by a tactical issue        |
+| ✓      | Done — counts as 1.0 in the roll-up                                              |
+| ◐      | Partially done / in progress — counts as 0.5                                     |
+| ✗      | Not done — counts as 0.0, but the cell stays in the denominator (real gap)       |
+| n/a    | Not applicable — cell is **excluded from the denominator** (does not exist here) |
+| ★      | Flagship — also targets DoD-C (use as dependency)                                |
+| ⚠      | Known broken / blocked by a tactical issue                                       |
 
 ## Definition of Done — column key
 
@@ -79,15 +79,15 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject | A | B | C | D | E | F | G | H | Flagship | Notes |
 | ---------- | - | - | - | - | - | - | - | - | -------- | ----- |
-| `ct_00`    | ✓ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | text-only career project |
-| `ct_01`    | ✓ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | text-only career project |
-| `ct_02`    | ✓ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | text-only career project |
-| `ct_03`    | ✓ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | text-only career project |
-| `ct_04`    | ✓ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | text-only career project |
-| `ct_05`    | ✓ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | text-only career project |
-| `ct_06`    | ✓ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | text-only career project |
-| `ct_07`    | ✓ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | text-only career project |
-| `ct_08`    | ✓ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | text-only career project |
+| `ct_00`    | ✓ | n/a | n/a | n/a | n/a | ◐ | n/a | n/a |          | text-only career project — only A + F apply |
+| `ct_01`    | ✓ | n/a | n/a | n/a | n/a | ◐ | n/a | n/a |          | text-only career project — only A + F apply |
+| `ct_02`    | ✓ | n/a | n/a | n/a | n/a | ◐ | n/a | n/a |          | text-only career project — only A + F apply |
+| `ct_03`    | ✓ | n/a | n/a | n/a | n/a | ◐ | n/a | n/a |          | text-only career project — only A + F apply |
+| `ct_04`    | ✓ | n/a | n/a | n/a | n/a | ◐ | n/a | n/a |          | text-only career project — only A + F apply |
+| `ct_05`    | ✓ | n/a | n/a | n/a | n/a | ◐ | n/a | n/a |          | text-only career project — only A + F apply |
+| `ct_06`    | ✓ | n/a | n/a | n/a | n/a | ◐ | n/a | n/a |          | text-only career project — only A + F apply |
+| `ct_07`    | ✓ | n/a | n/a | n/a | n/a | ◐ | n/a | n/a |          | text-only career project — only A + F apply |
+| `ct_08`    | ✓ | n/a | n/a | n/a | n/a | ◐ | n/a | n/a |          | text-only career project — only A + F apply |
 
 ### `cpp/`
 
@@ -121,7 +121,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject     | A | B | C | D | E | F | G | H | Flagship | Notes |
 | -------------- | - | - | - | - | - | - | - | - | -------- | ----- |
-| `internship`   | ✓ | ✗ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |          | report subproject |
+| `internship`   | ✓ | n/a | n/a | n/a | n/a | ◐ | n/a | n/a |          | report subproject — only A + F apply |
 
 ### `machine_learning/`
 
@@ -139,8 +139,8 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject   | A | B | C | D | E | F | G | H | Flagship | Notes |
 | ------------ | - | - | - | - | - | - | - | - | -------- | ----- |
-| `project_01` | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | report subproject; ruff format applied |
-| `project_02` | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | report subproject; ruff format applied |
+| `project_01` | ✓ | n/a | n/a | n/a | n/a | ◐ | n/a | n/a |          | report subproject — no source files (manual-QA artefact is the report) |
+| `project_02` | ✓ | n/a | n/a | n/a | n/a | ◐ | n/a | n/a |          | report subproject — no source files (manual-QA artefact is the report) |
 
 ### `sql/`
 
@@ -152,27 +152,42 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject       | A | B | C | D | E | F | G | H | Flagship | Notes |
 | ---------------- | - | - | - | - | - | - | - | - | -------- | ----- |
-| `survival_camp`  | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |          | historical record |
+| `survival_camp`  | ✓ | n/a | n/a | n/a | n/a | ✗ | n/a | n/a |          | historical record — only A + F apply; F gap because no LICENSE file shipped |
 
 ## Roll-up
 
 | Track                | Subprojects | DoD cells filled | % done   |
 | -------------------- | ----------- | ---------------- | -------- |
-| `algorithms/`        | 1           | 3.5 / 8          | 44 %     |
-| `c/`                 | 7           | 38.5 / 56        | 69 %     |
-| `career_track/`      | 9           | 13.5 / 72        | 19 %     |
-| `cpp/`               | 6           | 29 / 48          | 60 %     |
-| `data_science/`      | 2           | 7 / 16           | 44 %     |
-| `devops/`            | 5           | 18 / 40          | 45 %     |
-| `internship/`        | 1           | 1.5 / 8          | 19 %     |
+| `algorithms/`        | 1           | 4 / 8            | 50 %     |
+| `c/`                 | 7           | 30.5 / 56        | 54 %     |
+| `career_track/`      | 9           | 13.5 / 18        | 75 %     |
+| `cpp/`               | 6           | 25 / 48          | 52 %     |
+| `data_science/`      | 2           | 6 / 16           | 38 %     |
+| `devops/`            | 5           | 15.5 / 40        | 39 %     |
+| `internship/`        | 1           | 1.5 / 2          | 75 %     |
 | `machine_learning/`  | 1           | 3 / 8            | 38 %     |
 | `python/`            | 1           | 4.5 / 8          | 56 %     |
-| `qa/`                | 2           | 6 / 16           | 38 %     |
+| `qa/`                | 2           | 3 / 4            | 75 %     |
 | `sql/`               | 1           | 2.5 / 8          | 31 %     |
-| `survival_camp/`     | 1           | 1 / 8            | 13 %     |
-| **Total**            | **37**      | **138 / 296**    | **47 %** |
+| `survival_camp/`     | 1           | 1 / 2            | 50 %     |
+| **Total**            | **37**      | **110 / 218**    | **50 %** |
 
-> "DoD cells filled" counts ✓ as 1 and ◐ as 0.5. The "School 21
-> License" placeholders count ◐ for the F column — they are
-> historical attribution but not sufficient on their own; the root
-> MIT `LICENSE` (Phase 0) closes the gap repo-wide.
+> Roll-up arithmetic: ✓ = 1.0, ◐ = 0.5, ✗ = 0.0 (stays in the
+> denominator as a real gap), **n/a = excluded from the denominator**
+> (cell does not exist for this subproject — see Legend).
+>
+> The "School 21 License" placeholders count ◐ for the F column —
+> they are historical attribution but not sufficient on their own;
+> the root MIT `LICENSE` (Phase 0) closes the gap repo-wide.
+>
+> Text-only / report-driven subprojects (`career_track/ct_*`,
+> `internship/internship`, `qa/project_0*`, `survival_camp/`) mark
+> B / C / D / E / G / H as **n/a** since there is no source code to
+> test, lint, build, demo, or API-document. Only A (README) and F
+> (LICENSE) are meaningful, so the denominator for those rows is 2.
+> Previous roll-ups penalised these rows for "missing" work that was
+> never in scope; the 2026-05-11 honesty pass corrected this.
+>
+> Numerator totals were also recounted from current cell values in
+> the same pass (the prior 138/296 figure had drifted +25 cells over
+> incremental updates).

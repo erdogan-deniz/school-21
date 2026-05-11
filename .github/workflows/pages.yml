@@ -12,6 +12,7 @@ on:
       - 'cpp/**/*.hpp'
       - 'python/bootcamp/old/day_07/**'
       - 'python/bootcamp/new/day_01/**'
+      - 'data_science/project_01/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -79,6 +80,7 @@ jobs:
             <ul>
               <li><a href="sphinx/python/bootcamp/old/day_07/">python/bootcamp/old/day_07 (Voight-Kampff)</a></li>
               <li><a href="sphinx/python/bootcamp/new/day_01/">python/bootcamp/new/day_01 (utils + models)</a></li>
+              <li><a href="sphinx/data_science/project_01/">data_science/project_01 ("Tweets" NLP)</a></li>
             </ul>
 
             <h2>Repo</h2>
@@ -139,6 +141,19 @@ jobs:
           if [ -d python/bootcamp/new/day_01/docs/build/html ]; then
             cp -r python/bootcamp/new/day_01/docs/build/html/. \
                   _site/sphinx/python/bootcamp/new/day_01/
+          fi
+        continue-on-error: true
+
+      - name: Build Sphinx for data_science/project_01 ("Tweets" NLP)
+        run: |
+          ( cd data_science/project_01 && \
+            pip install -r docs/requirements.txt && \
+            cd docs && \
+            ( make html || sphinx-build -b html source build/html ) )
+          mkdir -p _site/sphinx/data_science/project_01
+          if [ -d data_science/project_01/docs/build/html ]; then
+            cp -r data_science/project_01/docs/build/html/. \
+                  _site/sphinx/data_science/project_01/
           fi
         continue-on-error: true
 

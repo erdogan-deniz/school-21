@@ -61,7 +61,7 @@ jobs:
           fi
       - name: Run hadolint
         if: steps.find.outputs.no_files == 'false'
-        uses: hadolint/hadolint-action@v3.1.0
+        uses: hadolint/hadolint-action@v3.3.0
         with:
           recursive: true
           dockerfile: 'devops/**/Dockerfile*'

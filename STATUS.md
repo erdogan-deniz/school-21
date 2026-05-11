@@ -127,7 +127,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject   | A | B | C | D | E | F | G | H | Flagship | Notes |
 | ------------ | - | - | - | - | - | - | - | - | -------- | ----- |
-| `project_01` | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | ruff format applied via python.yml; School 21 placeholder LICENSE |
+| `project_01` | ✓ | ✗ | ◐ | ✓ | ✓ | ◐ | ✗ | ✗ |          | Makefile venv (`make install/notebook/clear`); pinned reqs; ruff via python.yml |
 
 ### `python/`
 
@@ -165,12 +165,12 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `data_science/`      | 2           | 6 / 16           | 38 %     |
 | `devops/`            | 5           | 15.5 / 40        | 39 %     |
 | `internship/`        | 1           | 1.5 / 2          | 75 %     |
-| `machine_learning/`  | 1           | 3 / 8            | 38 %     |
+| `machine_learning/`  | 1           | 4 / 8            | 50 %     |
 | `python/`            | 1           | 4.5 / 8          | 56 %     |
 | `qa/`                | 2           | 3 / 4            | 75 %     |
 | `sql/`               | 1           | 4 / 8            | 50 %     |
 | `survival_camp/`     | 1           | 1 / 2            | 50 %     |
-| **Total**            | **37**      | **111.5 / 218**  | **51 %** |
+| **Total**            | **37**      | **112.5 / 218**  | **52 %** |
 
 > Roll-up arithmetic: ✓ = 1.0, ◐ = 0.5, ✗ = 0.0 (stays in the
 > denominator as a real gap), **n/a = excluded from the denominator**

@@ -10,11 +10,23 @@
 ```bash
 cd machine_learning/project_01
 
-# Lint (ruff respects the repo-wide .ruff.toml)
-ruff check .
+# Create a clean virtualenv and install the pinned deps (numpy / scipy /
+# pandas / xgboost / matplotlib / scikit-learn).
+make install
 
-# Run the notebooks
-jupyter notebook
+# Open Jupyter Lab on the workflow notebook.
+make notebook
+
+# Tear down when done.
+make clear
+```
+
+The `Makefile` works on Linux, macOS and Windows (uses `os.name`
+detection for the venv paths). For lint:
+
+```bash
+# Repo-wide .ruff.toml applies.
+ruff check .
 ```
 
 For a fully reproducible environment, use Python 3.12 inside a Linux container —

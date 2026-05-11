@@ -68,11 +68,11 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | Subproject         | A | B | C | D | E | F | G | H | Flagship | Notes                                                       |
 | ------------------ | - | - | - | - | - | - | - | - | -------- | ----------------------------------------------------------- |
 | `3DViewer_v1.0`    | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen on 3d_viewer.h + qt_viewer headers                   |
-| `SimpleBashUtils`  | ✓ | ◐ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen on s21_cat.h + s21_grep.h; Codecov upload             |
-| `s21_decimal`      | ✓ | ◐ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen comments; Codecov upload                              |
-| `s21_math`         | ✓ | ◐ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ | ★        | flagship; release-s21_math.yml; Codecov upload                |
-| `s21_matrix`       | ✓ | ◐ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen comments; Codecov upload                              |
-| `s21_string+`      | ✓ | ◐ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen comments; errno table preserved; Codecov upload       |
+| `SimpleBashUtils`  | ✓ | ◐ | ◐ | ✓ | ◐ | ◐ | ✗ | ✓ |          | `make` builds both cat + grep (one-cmd, plain gcc); Doxygen on headers; Codecov |
+| `s21_decimal`      | ✓ | ◐ | ◐ | ✓ | ◐ | ◐ | ✗ | ✓ |          | `make` one-command build + test + lcov (needs `libcheck-dev`); Codecov |
+| `s21_math`         | ✓ | ◐ | ◐ | ✓ | ◐ | ◐ | ✗ | ✓ | ★        | flagship; `make` one-command build + lcov (needs `libcheck-dev`); release-s21_math.yml |
+| `s21_matrix`       | ✓ | ◐ | ◐ | ✓ | ◐ | ◐ | ✗ | ✓ |          | `make` one-command build + lcov (needs `libcheck-dev`); Doxygen; Codecov |
+| `s21_string+`      | ✓ | ◐ | ◐ | ✓ | ◐ | ◐ | ✗ | ✓ |          | `make` one-command build + lcov (needs `libcheck-dev`); errno table preserved |
 | `SmartCalc_v1.0`   | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen on core (parser/calc/transform/stack/list/etc) + Qt views |
 
 ### `career_track/`
@@ -97,8 +97,8 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `CPP5_3DViewer_v2.1`    | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen comments on Controller/Parsing/GLWidget/Viewer       |
 | `CPP6_3DViewer_v2.2`    | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen comments on Controller/Parsing/GLWidget/Viewer       |
 | `SmartCalc_v2.0`        | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ | ★        | Doxygen comments on MVC Controller + Model headers           |
-| `s21_containers`        | ✓ | ◐ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ | ★        | flagship; release-s21_containers.yml; Codecov upload; per-class Doxygen on all 8 containers |
-| `s21_matrix+`           | ✓ | ◐ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen comments + class; Codecov upload                     |
+| `s21_containers`        | ✓ | ◐ | ◐ | ✓ | ◐ | ◐ | ✗ | ✓ | ★        | flagship; `make` builds + tests (needs `libgtest-dev`); per-class Doxygen on all 8 containers |
+| `s21_matrix+`           | ✓ | ◐ | ◐ | ✓ | ◐ | ◐ | ✗ | ✓ |          | `make` one-command build + test (needs `libgtest-dev`); Doxygen + class |
 
 ### `data_science/`
 
@@ -159,9 +159,9 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | Track                | Subprojects | DoD cells filled | % done   |
 | -------------------- | ----------- | ---------------- | -------- |
 | `algorithms/`        | 1           | 4 / 8            | 50 %     |
-| `c/`                 | 7           | 30.5 / 56        | 54 %     |
+| `c/`                 | 7           | 33 / 56          | 59 %     |
 | `career_track/`      | 9           | 13.5 / 18        | 75 %     |
-| `cpp/`               | 6           | 25 / 48          | 52 %     |
+| `cpp/`               | 6           | 26 / 48          | 54 %     |
 | `data_science/`      | 2           | 8 / 16           | 50 %     |
 | `devops/`            | 5           | 13 / 28          | 46 %     |
 | `internship/`        | 1           | 1.5 / 2          | 75 %     |
@@ -170,7 +170,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `qa/`                | 2           | 3 / 4            | 75 %     |
 | `sql/`               | 1           | 4 / 8            | 50 %     |
 | `survival_camp/`     | 1           | 1 / 2            | 50 %     |
-| **Total**            | **37**      | **112 / 206**    | **54 %** |
+| **Total**            | **37**      | **115.5 / 206**  | **56 %** |
 
 > Roll-up arithmetic: ✓ = 1.0, ◐ = 0.5, ✗ = 0.0 (stays in the
 > denominator as a real gap), **n/a = excluded from the denominator**

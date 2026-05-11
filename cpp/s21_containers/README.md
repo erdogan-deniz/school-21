@@ -1,7 +1,7 @@
 # `s21_containers`
 
 [![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/cpp.yml)
-[![codecov](https://codecov.io/gh/erdogan-deniz/school-21/branch/main/graph/badge.svg?flag=cpp-s21_containers)](https://codecov.io/gh/erdogan-deniz/school-21?flag=cpp-s21_containers)
+[![codecov](https://codecov.io/gh/erdogan-deniz/school-21/branch/main/graph/badge.svg?flag=cpp-s21_containers)](https://codecov.io/gh/erdogan-deniz/school-21?flags%5B0%5D=cpp-s21_containers)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 > *Own implementation of C++ STL container classes (`list`, `map`, `queue`, `set`, `stack`, `vector`, plus bonus `array`, `multiset`) — header-only template library in the `s21::` namespace, validated against GoogleTest.*

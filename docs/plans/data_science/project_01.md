@@ -24,14 +24,14 @@
 - [x] **E.** `Makefile` + `requirements.txt` make the venv setup reproducible (cross-platform via `OS` branch)
 - [~] **F.** Root MIT `LICENSE` ✓; subproject `LICENSE` is the School 21 placeholder (kept by design)
 - [ ] **G.** Demo (notebook screenshot) — top-10 cosine similarity output preview
-- [ ] **H.** Sphinx HTML for the notebook utilities
+- [x] **H.** Sphinx HTML — `docs/source/{conf.py,index.rst,modules.rst}` + Makefile/requirements; autodoc over `models.text_preprocessor`, `models.text_features_converter`, `utilities.decorators`, `utilities.functions`; `autodoc_mock_imports = [spacy, gensim, nltk, symspellpy, sklearn]` so the build is heavy-import-free. Wired into `python.yml sphinx` matrix and the unified `pages.yml` site.
 
 > Legend: `[x]` done · `[~]` partial / pending follow-up · `[ ]` not started.
 
 ## Subproject-specific tasks
 
 - [ ] Add a CI smoke job: install deps, execute `notebooks/preprocessing.ipynb` headlessly, fail if cells error.
-- [ ] Pin `scipy==1.10.1` is fragile — confirm it still installs on Python 3.12 (project may need a >= bound).
+- [x] Pin `scipy==1.10.1` is fragile — confirm it still installs on Python 3.12 (project may need a >= bound) ([bf49b31b](https://github.com/erdogan-deniz/school-21/commit/bf49b31b)).
 - [ ] Track accuracy / similarity output as a versioned artefact (badge: model accuracy % in README).
 - [ ] Decide whether NLP corpus / models go into git LFS.
 
@@ -42,4 +42,6 @@
 - 2026-05-11: README adopted from repo template + Original task preserved (this commit).
 - 2026-05-11: pytest scaffold under `src/tests/` — 17 unit tests across `text_preprocessor.clean_text` / `stem_text` and `utilities.functions.top_similar_vectors`; wired into `python.yml` pytest matrix (this commit).
 - 2026-05-11: `requirements.txt` semver-bound across all 8 deps; `scipy==1.10.1` → `scipy>=1.11,<2` to unblock Python 3.12 (the hard pin had silently dropped 3.12 wheel support) ([bf49b31b](https://github.com/erdogan-deniz/school-21/commit/bf49b31b)).
-- 2026-05-11: 8 more tests in `test_text_features_converter.py` covering the three sklearn-backed encoders (`one_hot` / `word_count` / `tfidf`) + `initialize_tools` post-state; total now 25 (this commit).
+- 2026-05-11: 8 more tests in `test_text_features_converter.py` covering the three sklearn-backed encoders (`one_hot` / `word_count` / `tfidf`) + `initialize_tools` post-state; total now 25 ([1f75efbb](https://github.com/erdogan-deniz/school-21/commit/1f75efbb)).
+- 2026-05-11: Codecov flag sanitised to `data_science-project_01`; per-flag badge added to README ([e920b520](https://github.com/erdogan-deniz/school-21/commit/e920b520)).
+- 2026-05-11: Sphinx skeleton — `docs/source/{conf.py,index.rst,modules.rst}` mirroring the `new/day_01` pattern; `autodoc_mock_imports` for the heavy NLP/ML deps; wired into `python.yml sphinx` matrix and `pages.yml` unified site (this commit).

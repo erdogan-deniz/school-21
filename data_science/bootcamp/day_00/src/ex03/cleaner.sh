@@ -1,4 +1,4 @@
-#!/bin/sh.
+#!/bin/sh
 
 CUT_FLAG_ONE="-d"
 CUT_FLAG_TWO="-f"

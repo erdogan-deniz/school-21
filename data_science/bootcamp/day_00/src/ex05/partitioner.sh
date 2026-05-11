@@ -1,4 +1,4 @@
-#!/bin/sh.
+#!/bin/sh
 
 AWK_FLAG="-F"
 AWK_FLAG_VAL=','

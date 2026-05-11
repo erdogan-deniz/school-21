@@ -1,7 +1,7 @@
-six
-zipp
-pytest
-wcwidth
-soupsieve
-termgraph
-beautifulsoup4
+six>=1.16,<2
+zipp>=3.17,<4
+pytest>=8.0,<9
+wcwidth>=0.2,<1
+soupsieve>=2.5,<3
+termgraph>=0.5,<1
+beautifulsoup4>=4.12,<5

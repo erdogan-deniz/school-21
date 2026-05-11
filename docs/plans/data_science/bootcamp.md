@@ -17,7 +17,7 @@
 - [ ] **B.** Per-day pytest TBD (no day in this bootcamp ships test files yet)
 - [~] **C.** Covered by `python.yml` ruff job (lint over `data_science/`)
 - [~] **D.** Repo-wide `.ruff.toml`; deliberate format pass pending
-- [ ] **E.** Per-day reproducible build varies (notebooks vs scripts vs venvs)
+- [x] **E.** Top-level `data_science/bootcamp/Makefile` — per-day isolated `.venv` workflow (`make install / jupyter / clear DAY=NN`); pinned `requirements.txt` for day_03/08, team_00/01; days 00-04 are shell-based and run their `src/setup.sh` directly
 - [~] **F.** Root MIT `LICENSE` ✓; per-day `LICENSE` files preserved as School 21 placeholders
 - [ ] **G.** Demo (asciinema) — choose a representative day (Day 06 SQL or Day 08 ML)
 - [ ] **H.** Sphinx HTML for the bootcamp as a whole
@@ -37,3 +37,4 @@
 
 - 2026-05-11: Committed virtualenv (`charisel/`) evicted from index ([554dc46a](https://github.com/erdogan-deniz/school-21/commit/554dc46a)).
 - 2026-05-11: Top-level README created from repo template + day-by-day index; `python.yml` extended to lint `data_science/` (this commit).
+- 2026-05-11: Top-level `Makefile` for per-day venv workflow (`make install / jupyter / clear DAY=NN`); pinned `requirements.txt` for day_03/08, team_00/01 with semver upper bounds; README rewritten around the new workflow + production fold. STATUS DS bootcamp E ✗→✓ (this commit).

@@ -11,6 +11,7 @@ on:
       - 'cpp/**/*.h'
       - 'cpp/**/*.hpp'
       - 'python/bootcamp/old/day_07/**'
+      - 'python/bootcamp/new/day_01/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -77,6 +78,7 @@ jobs:
             <h2>Sphinx — Python projects</h2>
             <ul>
               <li><a href="sphinx/python/bootcamp/old/day_07/">python/bootcamp/old/day_07 (Voight-Kampff)</a></li>
+              <li><a href="sphinx/python/bootcamp/new/day_01/">python/bootcamp/new/day_01 (utils + models)</a></li>
             </ul>
 
             <h2>Repo</h2>
@@ -123,6 +125,20 @@ jobs:
           if [ -d python/bootcamp/old/day_07/docs/build/html ]; then
             cp -r python/bootcamp/old/day_07/docs/build/html/. \
                   _site/sphinx/python/bootcamp/old/day_07/
+          fi
+        continue-on-error: true
+
+      - name: Build Sphinx for day_01 (new track)
+        run: |
+          ( cd python/bootcamp/new/day_01 && \
+            pip install -r docs/requirements.txt && \
+            pip install -e . || true && \
+            cd docs && \
+            ( make html || sphinx-build -b html source build/html ) )
+          mkdir -p _site/sphinx/python/bootcamp/new/day_01
+          if [ -d python/bootcamp/new/day_01/docs/build/html ]; then
+            cp -r python/bootcamp/new/day_01/docs/build/html/. \
+                  _site/sphinx/python/bootcamp/new/day_01/
           fi
         continue-on-error: true
 

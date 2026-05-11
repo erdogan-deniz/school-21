@@ -133,7 +133,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject  | A | B | C | D | E | F | G | H | Flagship | Notes                                                       |
 | ----------- | - | - | - | - | - | - | - | - | -------- | ----------------------------------------------------------- |
-| `bootcamp`  | ✓ | ◐ | ◐ | ✓ | ◐ | ◐ | ✗ | ◐ |          | ruff format applied + pytest + Sphinx (day_07) + Pages     |
+| `bootcamp`  | ✓ | ◐ | ◐ | ✓ | ◐ | ◐ | ✗ | ◐ |          | ruff format applied + pytest + Sphinx (day_07 + new/day_01) + Pages |
 
 ### `qa/`
 

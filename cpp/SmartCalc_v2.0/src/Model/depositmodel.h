@@ -1,3 +1,8 @@
+/**
+ * @file depositmodel.h
+ * @brief Deposit-calculator model — interest accrual + tax adjustment.
+ */
+
 #ifndef SRC_MODEL_DEPOSIT_H
 #define SRC_MODEL_DEPOSIT_H
 
@@ -6,10 +11,18 @@
 
 namespace s21 {
 
-// Enum representing different frequency options for deposit calculation.
+/**
+ * @brief Interest-accrual frequency selector for @ref DepositModel.
+ *
+ * `kEnd` means accrue once at maturity; the others compound at the
+ * stated cadence.
+ */
 enum Frequency { kDaily, kMonthly, kQuarterly, kHalfYearly, kYearly, kEnd };
 
-// Structure to hold the information about deposit
+/**
+ * @brief Inputs to a deposit calculation: principal, term, rate, tax
+ *        rate, accrual @ref Frequency.
+ */
 struct DepositInfo {
   int days{};
   int months{};
@@ -22,7 +35,10 @@ struct DepositInfo {
   ~DepositInfo() {}
 };
 
-// Structure to hold the calculated result including income, tax, and end sum.
+/**
+ * @brief Outputs of a deposit calculation: accrued interest, tax due,
+ *        principal-plus-interest end balance.
+ */
 struct DepositResult {
   int income{};
   int tax{};
@@ -32,16 +48,28 @@ struct DepositResult {
   ~DepositResult() {}
 };
 
+/**
+ * @brief Deposit-calculator business logic.
+ *
+ * Dispatches to one of @ref CalculateDaily / @ref CalculateMonthly /
+ * @ref CalculateQuarterly / @ref CalculateHalfYear /
+ * @ref CalculateYearly / @ref CalculateEnd based on `info.frequency`,
+ * then applies the tax adjustment.
+ */
 class DepositModel {
  public:
-  // Constructor
   DepositModel() {};
-  // Copy Contructor
+
+  /** @brief Copy constructor — defensive (the controller passes by &). */
   DepositModel(const DepositModel& other)
       : info_(other.info_), result_(other.result_) {}
-  // Destructor
+
   ~DepositModel() {};
-  // Initiates the deposit calculation based on the selected frequency.
+
+  /**
+   * @brief Compute deposit profitability for the given inputs.
+   * @return Reference to the owned @ref DepositResult.
+   */
   DepositResult& Calculate(DepositInfo& info_);
 
  private:

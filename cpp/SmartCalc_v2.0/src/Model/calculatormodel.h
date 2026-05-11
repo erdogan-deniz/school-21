@@ -1,3 +1,20 @@
+/**
+ * @file calculatormodel.h
+ * @brief Calculator model — Dijkstra's shunting-yard tokeniser +
+ *        infix-to-RPN converter + RPN evaluator.
+ *
+ * The model is the entire business logic of `SmartCalc_v2.0`: it
+ * accepts a textual infix expression (optionally containing the
+ * literal `x`), tokenises it, applies the shunting-yard algorithm to
+ * convert to Reverse Polish Notation, then evaluates the RPN stack.
+ * Error state is exposed via @ref GetError; the numeric result via
+ * @ref GetResult.
+ *
+ * The arithmetic and trigonometric sub-evaluations live in
+ * @ref Calculator (helper struct). @ref Token + @ref TokenType +
+ * @ref TokenPriority form the parser's vocabulary.
+ */
+
 #ifndef SRC_MODEL_CALCULATORMODEL_H
 #define SRC_MODEL_CALCULATORMODEL_H
 
@@ -8,39 +25,50 @@
 #include <stack>
 
 namespace s21 {
-// Token types used to represent different elements of a mathematical
-// expression.
+
+/**
+ * @brief Token kinds emitted by the tokeniser and consumed by the
+ *        shunting-yard / RPN evaluator.
+ */
 enum TokenType {
-  kNumber,         // Number
-  kPlus,           // Addition operator
-  kMinus,          // Subtraction operator
-  kMultiply,       // Multiplication operator
-  kDivide,         // Division operator
-  kMod,            // Modulus operator
-  kPow,            // Exponentiation operator
-  kSqrt,           // Square root function
-  kCos,            // Cosine function
-  kSin,            // Sine function
-  kTan,            // Tangent function
-  kAcos,           // Arccosine function
-  kAsin,           // Arcsine function
-  kAtan,           // Arctangent function
-  kLn,             // Natural logarithm function
-  kLog,            // Base-10 logarithm function
-  kOpenBrackets,   // Opening bracket
-  kCloseBrackets,  // Closing bracket
+  kNumber,         ///< Numeric literal (value lives in @ref Token::value).
+  kPlus,           ///< Addition operator.
+  kMinus,          ///< Subtraction operator.
+  kMultiply,       ///< Multiplication operator.
+  kDivide,         ///< Division operator.
+  kMod,            ///< Modulus operator.
+  kPow,            ///< Exponentiation operator.
+  kSqrt,           ///< Square-root function.
+  kCos,            ///< Cosine function.
+  kSin,            ///< Sine function.
+  kTan,            ///< Tangent function.
+  kAcos,           ///< Arc-cosine function.
+  kAsin,           ///< Arc-sine function.
+  kAtan,           ///< Arc-tangent function.
+  kLn,             ///< Natural logarithm function.
+  kLog,            ///< Base-10 logarithm function.
+  kOpenBrackets,   ///< Opening bracket `(`.
+  kCloseBrackets,  ///< Closing bracket `)`.
 };
 
-// Token priorities that determine their significance during calculations.
+/**
+ * @brief Operator priorities used by the shunting-yard algorithm.
+ *
+ * Higher value = binds tighter. Brackets sit above everything so they
+ * always stay on the stack until their matching close.
+ */
 enum TokenPriority {
-  kLow,     // Low priority
-  kMiddle,  // Medium priority
-  kUnary,   // Unary operators
-  kHigh,    // High priority
-  kBracket  // Brackets
+  kLow,     ///< Low priority (+, -).
+  kMiddle,  ///< Medium priority (*, /, mod).
+  kUnary,   ///< Unary +/− priority.
+  kHigh,    ///< High priority (^, functions).
+  kBracket  ///< Brackets — top of the priority stack.
 };
 
-// Structure representing a token in the mathematical expression.
+/**
+ * @brief Single token: a numeric value (if @ref TokenType is
+ *        @ref kNumber), an operator, a function, or a bracket.
+ */
 struct Token {
   double value{};
   TokenType type{};
@@ -51,18 +79,21 @@ struct Token {
   ~Token() {}
 };
 
+/**
+ * @brief Stateless-ish helper bundling left / right operand and the
+ *        operation kind; performs one arithmetic or trigonometric
+ *        evaluation per invocation.
+ */
 struct Calculator {
   int operation{};
   double left_operand{};
   double right_operand{};
   double result{};
 
-  // Constructor
   Calculator(int operation) : operation(operation) {}
-  // Destructor
   ~Calculator() {};
 
-  // Perform arithmetic calculations based on the selected operation.
+  /** @brief Evaluate the binary arithmetic operation in @ref operation. */
   void ArithmeticCalculation() {
     switch (operation) {
       case kPlus:
@@ -86,7 +117,7 @@ struct Calculator {
     }
   }
 
-  // Perform trigonometric calculations based on the selected operation.
+  /** @brief Evaluate the unary trigonometric / log / sqrt operation. */
   void TrigonometricCalculation() {
     switch (operation) {
       case kCos:
@@ -120,16 +151,34 @@ struct Calculator {
   }
 };
 
+/**
+ * @brief Calculator business logic — the **M** of `SmartCalc_v2.0`'s
+ *        MVC layering.
+ *
+ * Owns the parser stack and the result / error flag. Public API is
+ * intentionally minimal: feed an expression with
+ * @ref RunModelCalculation, read @ref GetResult and @ref GetError.
+ */
 class CalculatorModel {
  public:
   CalculatorModel() {}
   ~CalculatorModel() {}
 
+  /** @brief Last computed numeric result. */
   double GetResult() const { return result_; }
+
+  /** @brief Error flag from the most recent @ref RunModelCalculation;
+   *         0 = OK, non-zero = parse / domain error. */
   int GetError() const { return error_; }
 
+  /** @brief Override the error flag (used by the controller to clear state). */
   void SetError(int number) { error_ = number; }
 
+  /**
+   * @brief Tokenise, convert to RPN, evaluate.
+   * @param problem Infix expression; may contain the literal `x`.
+   * @param value Stringified value substituted for every `x` occurrence.
+   */
   void RunModelCalculation(std::string problem, std::string value);
 
  private:
@@ -154,6 +203,7 @@ class CalculatorModel {
   int IsBracket(std::stack<Token>& numbers);
   void Calculate(std::stack<Token>& numbers, int operation);
 };
+
 }  // namespace s21
 
 #endif  // SRC_MODEL_CALCULATORMODEL_H

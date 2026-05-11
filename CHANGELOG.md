@@ -109,13 +109,47 @@ Eight GitHub Actions workflows now cover the polyglot repo:
 - `.editorconfig` for IDE consistency.
 - `.github/dependabot.yml` for automated GitHub Actions version bumps.
 
+### Pushed (2026-05-11)
+
+All commits up to and including the flagship-designation commit
+were pushed to `origin/main` (`14daa67a` initial push, then
+`040c50af` for flagships, plus the URL-rename fix in `14daa67a`).
+8 GitHub Actions workflows now run on every push/PR; GitHub Pages
+deploys to `erdogan-deniz.github.io/school-21` on changes to source
+files referenced in `pages.yml`.
+
+### Flagships designated (2026-05-11)
+
+Three subprojects flagged **★** in STATUS.md, targeting DoD-C
+("use as a dependency"):
+
+- `cpp/s21_containers` — header-only STL replica (Conan/vcpkg candidate).
+- `c/s21_math` — standalone `math.h` replacement (simplest first
+  release pipeline).
+- `cpp/SmartCalc_v2.0` — packaged desktop app (GitHub Releases
+  artefact — AppImage/dmg/exe).
+
+Per-flagship release pipelines, semver tags, and packaging are queued
+as a follow-up batch.
+
 ### Hygiene findings (deferred)
 
-- **History-level virtualenv purge** (`git filter-repo`): the eviction in
-  `554dc46a` removed `charisel/` from HEAD, but the 3502 files still
-  inflate clone size when traversing history. A `git filter-repo` pass
-  to remove them from history is queued as Phase 1 op 1.4 — destructive,
-  awaits explicit user opt-in.
+- **History-level virtualenv purge** (`git filter-repo`): the eviction
+  in `554dc46a` removed `charisel/` from HEAD, but the 3502 files
+  still inflate clone size when traversing history. A `git filter-repo`
+  pass is technically prepared (`backup-pre-filter-repo` branch
+  exists, `git-filter-repo` installed locally) but the Claude Code
+  agent harness blocks force-push + history-rewrite operations even
+  with verbal user consent — they require either a `Bash(git
+  filter-repo:*)` permission rule in `~/.claude/settings.json` or
+  manual execution via shell. Concrete recipe is documented in the
+  history-rewrite follow-up message; queued as Phase 1 op 1.4.
+- **Demo gif/asciinema**: per-subproject demos require local
+  execution of subprojects, not autonomously schedulable.
+- **Build/test gates**: `c.yml`, `cpp.yml`, `python.yml` build/test
+  jobs are still `continue-on-error: true`. Hardening pending stable
+  green runs in CI after first push (which has now happened — review
+  Actions tab).
 - **Demo gif/asciinema**: per-subproject demos require local execution
   of subprojects, not autonomously schedulable.
 - **Build/test gates**: `c.yml`, `cpp.yml`, `python.yml` build/test jobs

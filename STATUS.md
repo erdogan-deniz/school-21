@@ -146,7 +146,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject  | A | B | C | D | E | F | G | H | Flagship | Notes |
 | ----------- | - | - | - | - | - | - | - | - | -------- | ----- |
-| `bootcamp`  | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | README templated; sqlfluff in sql.yml      |
+| `bootcamp`  | ✓ | ◐ | ◐ | ◐ | ✓ | ◐ | ✗ | ✗ |          | docker-compose + Makefile + per-day schema-load CI; sqlfluff in sql.yml |
 
 ### `survival_camp/`
 
@@ -168,9 +168,9 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `machine_learning/`  | 1           | 3 / 8            | 38 %     |
 | `python/`            | 1           | 4.5 / 8          | 56 %     |
 | `qa/`                | 2           | 3 / 4            | 75 %     |
-| `sql/`               | 1           | 2.5 / 8          | 31 %     |
+| `sql/`               | 1           | 4 / 8            | 50 %     |
 | `survival_camp/`     | 1           | 1 / 2            | 50 %     |
-| **Total**            | **37**      | **110 / 218**    | **50 %** |
+| **Total**            | **37**      | **111.5 / 218**  | **51 %** |
 
 > Roll-up arithmetic: ✓ = 1.0, ◐ = 0.5, ✗ = 0.0 (stays in the
 > denominator as a real gap), **n/a = excluded from the denominator**

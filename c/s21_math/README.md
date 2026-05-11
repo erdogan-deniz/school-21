@@ -1,6 +1,7 @@
 # `s21_math`
 
 [![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/c.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/c.yml)
+[![codecov](https://codecov.io/gh/erdogan-deniz/school-21/branch/main/graph/badge.svg?flag=c-s21_math)](https://codecov.io/gh/erdogan-deniz/school-21?flag=c-s21_math)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 > *Own implementation of the C standard `math.h` library — packaged as a static library `s21_math.a` with full unit-test coverage against `libcheck`.*

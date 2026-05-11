@@ -41,6 +41,21 @@ jobs:
           echo "Checking ${#files[@]} files..."
           shellcheck "${files[@]}" || true
 
+  bats:
+    name: bats (linux_monitoring_v1.0)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install bats (cached)
+        uses: awalsh128/cache-apt-pkgs-action@v1
+        with:
+          packages: bats
+          version: 1.0
+      - name: Run bats suite
+        working-directory: devops/linux_monitoring_v1.0
+        run: bats tests/ || true
+
   hadolint:
     name: hadolint (Dockerfile lint)
     runs-on: ubuntu-latest

@@ -1,7 +1,29 @@
+/**
+ * @file s21_map.h
+ * @brief `s21::map<Key, T>` — ordered associative container with
+ *        unique keys, STL `std::map` parallel.
+ *
+ * Backed by an unbalanced binary search tree (`Node` with
+ * `left`/`right`/`parent` pointers). This means operations are O(log
+ * n) average / O(n) worst-case — the canonical `std::map`
+ * red-black-tree guarantee is *not* preserved. For balanced trees,
+ * see external libraries.
+ *
+ * Differs from `std::map` in a few accessors: only `insert` /
+ * `insert_or_assign` are provided (no `emplace*`); `merge` consumes
+ * @p other (clearing it).
+ */
+
 #ifndef S21_CONTAINERS_SRC_S21_MAP_H_
 #define S21_CONTAINERS_SRC_S21_MAP_H_
 
 namespace s21 {
+/**
+ * @brief STL-parallel `map<Key, T>` over an unbalanced BST.
+ *
+ * The bidirectional in-order @ref iterator walks the tree by
+ * tracking parent pointers — no extra stack required.
+ */
 template <typename Key, typename T>
 class map {
  public:
@@ -9,6 +31,11 @@ class map {
   using reference = value_type &;
   using const_reference = const value_type &;
 
+  /**
+   * @brief BST node — holds a key/value pair plus three navigation
+   *        pointers. Parent pointer lets the iterator walk in
+   *        in-order without an explicit stack.
+   */
   struct Node {
     value_type data;
     Node *left;
@@ -19,6 +46,14 @@ class map {
         : data(data), left(nullptr), right(nullptr), parent(nullptr) {}
   };
 
+  /**
+   * @brief Bidirectional in-order iterator over @ref map.
+   *
+   * Increment walks to the successor in sorted order: the minimum
+   * node of the right subtree if it exists, otherwise the nearest
+   * ancestor whose left subtree contains the current node.
+   * Decrement is symmetric.
+   */
   class iterator {
    public:
     inline iterator(Node *current = nullptr) noexcept : current_(current) {}

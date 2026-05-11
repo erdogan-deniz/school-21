@@ -1,7 +1,24 @@
+/**
+ * @file s21_set.h
+ * @brief `s21::set<Key>` — ordered associative container with unique
+ *        keys, STL `std::set` parallel.
+ *
+ * Backed by the same unbalanced BST shape as @ref s21::map but with
+ * `Key` as the stored value (no associated `T`). Provides @c iterator
+ * + @c const_iterator separately (unlike @ref s21::map which only
+ * exposes a mutable iterator).
+ *
+ * Differences from `std::set`: O(log n) average / O(n) worst-case
+ * (no red-black balancing); `merge` consumes @p other (clearing it).
+ */
+
 #ifndef S21_CONTAINERS_SRC_S21_SET_H_
 #define S21_CONTAINERS_SRC_S21_SET_H_
 
 namespace s21 {
+/**
+ * @brief STL-parallel `set<Key>` over an unbalanced BST.
+ */
 template <class Key>
 class set {
  private:

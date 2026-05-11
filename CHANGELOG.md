@@ -250,6 +250,103 @@ working-agreement rule "Both layers move together" is now enforced
 per batch, not retrofitted. (`7b446971`, plus plan entries within
 each subsequent feature commit)
 
+**Silent shebang typos — two classes pattern-detected and fixed.**
+Both followed the same "single broken template, copy-pasted across a
+day" pathology — scripts ran in practice only because every consumer
+invoked them via `bash script.sh` / `bats tests/`, which ignores the
+shebang. `chmod +x && ./script.sh` would have hit ENOENT.
+
+- `linux_monitoring_v1.0/src/{01,02,03}/main.sh` and
+  `src/05/script.sh`: `#!/bin/bush` → `#!/bin/bash`. (`2e9737b8`)
+- `data_science/bootcamp/day_00/src/{setup,ex00/hh,ex01/json_to_csv,
+  ex02/sorter,ex03/cleaner,ex04/counter,ex05/partitioner}.sh`:
+  `#!/bin/sh.` → `#!/bin/sh`. (`b44662e3`)
+
+**Shellcheck-class cleanup on `linux_monitoring_v1.0/src/05/script.sh`.**
+Six categories of fix on the filesystem-report helper: quote every
+`$path` / `$file_path` / `$1` (SC2086 ×10), drop the unquoted
+`find $path*` glob, switch symlink counting from `ls -lR | grep ^l`
+to `find -type l`, dedupe the `-name '*.tar'` from the archive
+find, swap `wc | awk '{print $1}'` for `wc -l`, and replace the
+O(N²) `find ... | sed "${i}q;d"` loop with a `mapfile` of the
+10 results up front + array iteration — ~10× speedup on large
+trees. (`d378359f`)
+
+**`data_science/project_01` ("Tweets" NLP) — full B + H closure.**
+The lowest-coverage project before this batch (no tests, no API
+docs, hard-pinned scipy that didn't install on Python 3.12) is now
+the most documented Python subproject:
+
+- pytest scaffold under `src/tests/` with `conftest.py` that places
+  `src/` on `sys.path` (mirrors what `text_preprocessor.py` does at
+  module-import time). (`8c33b51f`)
+- 17 initial tests across `TextPreprocessor.clean_text` (10 — empty,
+  already-clean, lowercase, strip punctuation / digits, **preserve
+  apostrophe** for downstream tokenizer contractions, collapse
+  spaces, strip whitespace, combined, non-string returns None),
+  `TextPreprocessor.stem_text` (4 — running/runs/ran, plurals,
+  single word, empty), and `utilities.functions.top_similar_vectors`
+  (3 — identical rows top the cosine ranking, n parameter respected,
+  default n=10 on C(5,2)=10 pairs). (`8c33b51f`)
+- 8 more tests in `test_text_features_converter.py` covering the
+  sklearn-backed encoders — `one_hot_texts_encoding` shape /
+  binary / known-token (3), `word_count_texts_encoding` shape /
+  repeat counts (2), `tfidf_texts_encoding` shape / non-negativity
+  (2), `initialize_tools` post-state (1, the four model attributes
+  flip from None to real `TfidfVectorizer` / `CountVectorizer` /
+  `Word2Vec` instances). Total now **25 tests**. (`1f75efbb`)
+- `requirements.txt` semver-bound across all 8 deps;
+  `scipy==1.10.1` → `scipy>=1.11,<2` (the hard pin had silently
+  dropped Python 3.12 wheel support — pytest matrix entry was
+  uninstallable until this fix). (`bf49b31b`)
+- Sphinx skeleton — `docs/source/{conf.py,index.rst,modules.rst}` +
+  Makefile + requirements; autodoc over `models.text_preprocessor`,
+  `models.text_features_converter`, `utilities.decorators`,
+  `utilities.functions`; `autodoc_mock_imports = [spacy, gensim,
+  nltk, symspellpy, sklearn]` keeps the build heavy-import-free
+  (saves ~700 MB spaCy `en_core_web_lg` download per CI run).
+  Wired into `python.yml sphinx` matrix and `pages.yml` unified
+  site (third Sphinx subproject after `day_07` and `new/day_01`).
+  (`93864d61`)
+- README sync after the drift accumulated across the four batches —
+  Quick start uses `make install` / `make clear`, Tests section
+  enumerates the 25-test breakdown, Documentation points at the
+  Pages-hosted Sphinx HTML. (`935966a8`)
+
+STATUS: `data_science/project_01` B ✗ → ◐, H ✗ → ✓; track 7.5/16 →
+8/16 (47 % → 50 %).
+
+**Codecov per-flag dashboard fix.** Latent bug in the python.yml
+pytest matrix: `flags: python-${{ matrix.day }}` template against
+`matrix.day = python/bootcamp/old/day_05` produced flag names with
+`/` separators that Codecov normalises (stripping or collapsing).
+Per-subproject separation silently broke — multiple subprojects'
+traces could merge under the same sanitised key.
+
+Added explicit `flag:` field to every matrix entry with a hyphen-
+separated, slash-free name (`python-bootcamp-old-day_05` etc.),
+and updated the upload step to use `${{ matrix.flag }}` instead.
+`codecov.yml` needed no change — `flag_management.default_rules`
+auto-applies carryforward + status thresholds to any new flag.
+First per-flag Codecov badge landed in
+`data_science/project_01/README.md`. (`e920b520`)
+
+**Three day READMEs adopted the production-fold template.**
+`python/bootcamp/old/day_05` (Flask + sessions), `day_07`
+(Voight-Kampff retirement-plan dialogue with Sphinx HTML built into
+the unified Pages site), and `day_09` (Cython-accelerated matrix
+multiply + perf benchmark) had been carrying raw School 21 task
+text without badges. Adopted the template: three badges (CI +
+per-flag Codecov + MIT licence), Quick start with the pytest-relevant
+commands, License & attribution block. Preserved School 21 content
+intact — original `# Day NN` H1 demoted to H3 under
+`## Original task (School 21)` to satisfy markdownlint MD025 (one
+H1 per file). `.markdownlint.json` gained `hr-style: false` (MD035)
+to allow the preserved `-----` 5-dash HRs in narratives to coexist
+with the production fold's `---` 3-dash separator — same disable
+pattern as MD036 (italic-as-heading) and MD060 (long preserved
+tables) added earlier. (`6a131592`)
+
 ### Flagships designated (2026-05-11)
 
 Three subprojects flagged **★** in STATUS.md, targeting DoD-C

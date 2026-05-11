@@ -1,4 +1,4 @@
-#!/bin/bush 
+#!/bin/bash
 
 if [ $# != 4 ]
 then

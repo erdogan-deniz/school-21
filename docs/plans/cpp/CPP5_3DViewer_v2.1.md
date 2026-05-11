@@ -20,7 +20,7 @@
 - [~] **E.** `make install` requires Qt6 / qmake
 - [~] **F.** Root MIT `LICENSE` ✓; subproject `LICENSE` is the School 21 placeholder (kept by design)
 - [ ] **G.** Demo (gif) — wireframe → flat → Gouraud → Phong shading toggle
-- [ ] **H.** Doxygen API reference
+- [x] **H.** Doxygen API reference — file preambles + class docs on `Controller`, `Parse` singleton, `scene` (modern shader-based QOpenGLWidget), and `viewer` (texture / lighting / UV-export host)
 
 > Legend: `[x]` done · `[~]` partial / pending follow-up · `[ ]` not started.
 
@@ -37,3 +37,4 @@
 
 - 2026-05-11: Included in `cpp.yml` `apps-cpp-tests` matrix ([cc0ebb33](https://github.com/erdogan-deniz/school-21/commit/cc0ebb33)).
 - 2026-05-11: README adopted from repo template + Original task preserved (this commit).
+- 2026-05-11: Doxygen rollout — Controller / Parsing / GLWidget / Viewer headers documented ([d7960ba6](https://github.com/erdogan-deniz/school-21/commit/d7960ba6)).

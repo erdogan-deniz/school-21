@@ -1,0 +1,47 @@
+# Doxyfile for cpp/s21_containers.
+# Used by .github/workflows/docs.yml; overrides the autogen fallback.
+# Header-only library — Doxygen scans .h files only.
+
+PROJECT_NAME           = "s21_containers"
+PROJECT_BRIEF          = "Header-only C++17 STL replica in the s21:: namespace (list, map, queue, set, stack, vector, array, multiset)."
+PROJECT_NUMBER         = "1.0"
+OUTPUT_DIRECTORY       = docs/api
+OUTPUT_LANGUAGE        = English
+
+INPUT                  = src/
+RECURSIVE              = YES
+FILE_PATTERNS          = *.h *.hpp *.hh
+EXCLUDE_PATTERNS       = */test_html/* */obj/* */code-samples/* */gtest/* tests.cc
+
+EXTRACT_ALL            = YES
+EXTRACT_STATIC         = YES
+EXTRACT_PRIVATE        = NO
+HIDE_UNDOC_MEMBERS     = NO
+
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+GENERATE_TREEVIEW      = YES
+HTML_DYNAMIC_MENUS     = YES
+DISABLE_INDEX          = NO
+
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+
+HAVE_DOT               = YES
+DOT_NUM_THREADS        = 0
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+CLASS_DIAGRAMS         = YES
+COLLABORATION_GRAPH    = YES
+TEMPLATE_RELATIONS     = YES
+
+QUIET                  = YES
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = NO
+WARN_NO_PARAMDOC       = NO
+
+OPTIMIZE_OUTPUT_FOR_C  = NO
+
+GENERATE_TAGFILE       = docs/api/s21_containers.tag

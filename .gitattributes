@@ -1,0 +1,72 @@
+# Auto-detect text vs binary. Without this, every commit on Windows
+# spits CRLF/LF normalisation warnings. With it, git decides per-file.
+* text=auto
+
+# Explicit text files: force LF endings so cross-platform scripts
+# (Make, bash, Python, gcc, qmake) all see the same content.
+*.sh        text eol=lf
+*.bash      text eol=lf
+*.py        text eol=lf
+*.c         text eol=lf
+*.h         text eol=lf
+*.cc        text eol=lf
+*.cpp       text eol=lf
+*.cxx       text eol=lf
+*.hh        text eol=lf
+*.hpp       text eol=lf
+*.md        text eol=lf
+*.yml       text eol=lf
+*.yaml      text eol=lf
+*.json      text eol=lf
+*.toml      text eol=lf
+*.cfg       text eol=lf
+*.ini       text eol=lf
+*.sql       text eol=lf
+*.rst       text eol=lf
+*.txt       text eol=lf
+Makefile    text eol=lf
+*.mk        text eol=lf
+.gitignore  text eol=lf
+.gitattributes text eol=lf
+
+# Windows-only scripts must keep CRLF.
+*.bat       text eol=crlf
+*.cmd       text eol=crlf
+*.ps1       text eol=crlf
+
+# Jupyter notebooks: text JSON, but DO NOT force LF — keep whatever
+# the notebook tooling wrote, since notebooks contain embedded base64
+# image data that some tools are sensitive to.
+*.ipynb     text
+
+# Binary — never normalise.
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.ico       binary
+*.bmp       binary
+*.tif       binary
+*.tiff      binary
+*.svg       binary
+*.pdf       binary
+*.mp3       binary
+*.wav       binary
+*.ogg       binary
+*.zip       binary
+*.tar       binary
+*.gz        binary
+*.bz2       binary
+*.7z        binary
+*.rar       binary
+*.jar       binary
+*.qm        binary
+*.so        binary
+*.dll       binary
+*.dylib     binary
+*.a         binary
+*.lib       binary
+*.exe       binary
+*.app       binary
+*.o         binary
+*.obj       binary

@@ -109,9 +109,27 @@ jobs:
             done
           fi
       - name: Coverage report (best-effort)
+        id: coverage
         working-directory: c/${{ matrix.subproject }}/src
         run: |
           make gcov_report 2>/dev/null || true
+          # Subproject Makefiles produce *.info via lcov; find what was generated.
+          info=$(find . -maxdepth 1 -name '*.info' -type f | head -1)
+          if [ -n "$info" ]; then
+            echo "info=$info" >> "$GITHUB_OUTPUT"
+            echo "Coverage tracefile: $info"
+          fi
+        continue-on-error: true
+
+      - name: Upload coverage to Codecov
+        if: steps.coverage.outputs.info != ''
+        uses: codecov/codecov-action@v4
+        with:
+          files: c/${{ matrix.subproject }}/src/${{ steps.coverage.outputs.info }}
+          flags: c-${{ matrix.subproject }}
+          name: c-${{ matrix.subproject }}-coverage
+          fail_ci_if_error: false
+          verbose: false
         continue-on-error: true
 
   apps-c-tests:

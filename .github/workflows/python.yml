@@ -42,6 +42,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: 'pip'
       - name: Install ruff
         run: python -m pip install --upgrade pip ruff==0.6.9
       - name: Lint (informational)
@@ -70,6 +71,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: 'pip'
       - name: Install dependencies
         working-directory: ${{ matrix.workdir }}
         run: |
@@ -110,6 +112,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: 'pip'
       - name: Install Sphinx + project requirements
         working-directory: ${{ matrix.workdir }}
         run: |

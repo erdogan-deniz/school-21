@@ -1,9 +1,10 @@
 name: release-SmartCalc_v2.0
 
-# Release pipeline for the cpp/SmartCalc_v2.0 flagship.
-# Qt6 desktop application — release artefact is a Linux AppImage
-# bundling the executable + Qt runtime + dependencies. macOS .dmg /
-# Windows .exe are out of scope for this iteration (CI runner cost).
+# Multi-platform release pipeline for the cpp/SmartCalc_v2.0 flagship.
+# Triggered by `v*-SmartCalc_v2.0` tag push. Builds:
+# - Linux x86_64:  .AppImage via linuxdeploy + linuxdeploy-plugin-qt
+# - macOS:         .dmg     via macdeployqt + create-dmg
+# - Windows:       .zip     via windeployqt (binary + runtime DLLs)
 #
 # Tagging convention:
 #     git tag v0.1.0-SmartCalc_v2.0
@@ -27,93 +28,145 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build-linux:
-    name: build SmartCalc_v2.0 — Linux x86_64 AppImage
-    runs-on: ubuntu-latest
+  build:
+    name: build ${{ matrix.target }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: linux
+            os: ubuntu-latest
+            qt_host: linux
+            qt_arch: linux_gcc_64
+            artifact: SmartCalc_v2.0-x86_64.AppImage
+          - target: macos
+            os: macos-latest
+            qt_host: mac
+            qt_arch: clang_64
+            artifact: SmartCalc_v2.0.dmg
+          - target: windows
+            os: windows-latest
+            qt_host: windows
+            qt_arch: win64_msvc2019_64
+            artifact: SmartCalc_v2.0-windows-x64.zip
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Qt6
+      - name: Install Qt6 (cached)
         uses: jurplel/install-qt-action@v4
         with:
           version: '6.5.3'
-          host: 'linux'
+          host: ${{ matrix.qt_host }}
           target: 'desktop'
-          arch: 'linux_gcc_64'
+          arch: ${{ matrix.qt_arch }}
           cache: true
 
-      - name: Install build deps
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
-            build-essential=12.* \
-            xvfb \
-            libgl1-mesa-dev libglu1-mesa-dev \
-            libgtest-dev=1.* googletest=1.* \
-            libfuse2 wget
+      # ---------- Linux ----------
+      - name: Linux — build deps (cached)
+        if: matrix.target == 'linux'
+        uses: awalsh128/cache-apt-pkgs-action@v1
+        with:
+          packages: build-essential xvfb libgl1-mesa-dev libglu1-mesa-dev libgtest-dev googletest libfuse2
+          version: 1.0
 
-      - name: Run C++-only unit tests (gate the release on green)
-        working-directory: cpp/SmartCalc_v2.0/src
-        run: |
-          make tests || make test || echo "test target unavailable; skipping"
-        continue-on-error: true
-
-      - name: Build Qt GUI (xvfb-wrapped)
+      - name: Linux — GUI build (xvfb-wrapped)
+        if: matrix.target == 'linux'
         working-directory: cpp/SmartCalc_v2.0/src
         run: xvfb-run -a make install
 
-      - name: Stage AppDir for AppImage
+      - name: Linux — Build AppImage
+        if: matrix.target == 'linux'
         working-directory: cpp/SmartCalc_v2.0/src
         run: |
-          # `make install` deposits the binary into ./build (View.app for
-          # macOS naming; on Linux it's just an ELF). Find it.
           mkdir -p AppDir/usr/bin AppDir/usr/share/applications AppDir/usr/share/icons/hicolor/256x256/apps
-          # Locate the built binary — be lenient about naming.
           bin=$(find build -maxdepth 3 -type f -executable | head -1)
-          if [ -z "$bin" ]; then echo "no built binary found"; exit 1; fi
           cp "$bin" AppDir/usr/bin/SmartCalc_v2.0
-
           cat > AppDir/SmartCalc_v2.0.desktop <<'EOF'
           [Desktop Entry]
           Name=SmartCalc v2.0
-          Comment=Scientific calculator with credit/deposit modes + f(x) plotting
+          Comment=Scientific calculator + f(x) plotting + credit/deposit
           Exec=SmartCalc_v2.0
           Icon=SmartCalc_v2.0
           Type=Application
           Categories=Utility;Calculator;Education;
           EOF
           cp AppDir/SmartCalc_v2.0.desktop AppDir/usr/share/applications/
-          # Placeholder icon — replace with the project's real icon when
-          # available under cpp/SmartCalc_v2.0/src/View/icon/.
           touch AppDir/SmartCalc_v2.0.png
           cp AppDir/SmartCalc_v2.0.png AppDir/usr/share/icons/hicolor/256x256/apps/
-
-      - name: Build AppImage with linuxdeploy
-        working-directory: cpp/SmartCalc_v2.0/src
-        run: |
           wget -q -O linuxdeploy 'https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage'
           wget -q -O linuxdeploy-qt 'https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage'
           chmod +x linuxdeploy linuxdeploy-qt
           export QT_PLUGIN_PATH=${Qt6_DIR}/plugins
-          ./linuxdeploy --appdir AppDir --plugin qt --output appimage || true
+          ./linuxdeploy --appdir AppDir --plugin qt --output appimage
+          mv SmartCalc_v2.0-x86_64.AppImage "$GITHUB_WORKSPACE/${{ matrix.artifact }}" 2>/dev/null || \
+            mv *.AppImage "$GITHUB_WORKSPACE/${{ matrix.artifact }}"
 
-      - name: Stage release artefacts
+      # ---------- macOS ----------
+      - name: macOS — install create-dmg
+        if: matrix.target == 'macos'
+        run: brew install create-dmg
+
+      - name: macOS — GUI build
+        if: matrix.target == 'macos'
+        working-directory: cpp/SmartCalc_v2.0/src
+        run: make install
+
+      - name: macOS — package .app + .dmg
+        if: matrix.target == 'macos'
+        working-directory: cpp/SmartCalc_v2.0/src
         run: |
-          mkdir -p _release
-          # Copy whatever AppImage was produced (linuxdeploy names it
-          # by Desktop file name + arch).
-          cp cpp/SmartCalc_v2.0/src/*.AppImage _release/ 2>/dev/null || \
-            echo "no AppImage produced — falling back to tarball"
-          # Always also build a tarball of the AppDir for raw distribution.
-          ( cd cpp/SmartCalc_v2.0/src && \
-            tar czf "../../../_release/SmartCalc_v2.0-${GITHUB_REF_NAME}-linux-x86_64.tar.gz" AppDir/ )
+          app=$(find build -maxdepth 2 -name '*.app' -type d | head -1)
+          if [ -z "$app" ]; then echo "no .app bundle found"; exit 1; fi
+          macdeployqt "$app"
+          create-dmg \
+            --volname "SmartCalc v2.0" \
+            --window-pos 200 120 \
+            --window-size 600 300 \
+            --icon-size 100 \
+            --icon "$(basename "$app")" 150 150 \
+            --hide-extension "$(basename "$app")" \
+            --app-drop-link 450 150 \
+            "$GITHUB_WORKSPACE/${{ matrix.artifact }}" \
+            "$app" || \
+            hdiutil create -volname "SmartCalc v2.0" -srcfolder "$app" -ov -format UDZO \
+                          "$GITHUB_WORKSPACE/${{ matrix.artifact }}"
 
+      # ---------- Windows ----------
+      - name: Windows — Setup MSVC
+        if: matrix.target == 'windows'
+        uses: ilammy/msvc-dev-cmd@v1
+
+      - name: Windows — GUI build
+        if: matrix.target == 'windows'
+        working-directory: cpp/SmartCalc_v2.0/src
+        shell: cmd
+        run: |
+          if not exist build mkdir build
+          cd build
+          qmake -r ..\View\View.pro
+          nmake
+
+      - name: Windows — package .zip with Qt runtime
+        if: matrix.target == 'windows'
+        working-directory: cpp/SmartCalc_v2.0/src
+        shell: pwsh
+        run: |
+          $exe = Get-ChildItem -Path build -Recurse -Filter '*.exe' | Select-Object -First 1
+          if (-not $exe) { throw "no .exe found in build/" }
+          New-Item -ItemType Directory -Force -Path build/dist | Out-Null
+          Copy-Item $exe.FullName -Destination build/dist/SmartCalc_v2.0.exe
+          windeployqt build/dist/SmartCalc_v2.0.exe
+          Compress-Archive -Path build/dist/* -DestinationPath "$env:GITHUB_WORKSPACE/${{ matrix.artifact }}"
+
+      # ---------- Upload + Release ----------
       - name: Upload as workflow artefact
         uses: actions/upload-artifact@v4
         with:
-          name: SmartCalc_v2.0-${{ github.ref_name }}-linux-x86_64
-          path: _release/*
+          name: SmartCalc_v2.0-${{ github.ref_name }}-${{ matrix.target }}
+          path: ${{ matrix.artifact }}
           retention-days: 90
+          if-no-files-found: warn
 
       - name: Publish GitHub Release (on tag)
         if: startsWith(github.ref, 'refs/tags/')
@@ -122,27 +175,22 @@ jobs:
           name: ${{ github.ref_name }}
           tag_name: ${{ github.ref_name }}
           generate_release_notes: true
-          files: |
-            _release/*.AppImage
-            _release/*.tar.gz
+          files: ${{ matrix.artifact }}
+          fail_on_unmatched_files: false
           body: |
             `SmartCalc_v2.0` flagship release — Qt6 desktop scientific
             calculator with credit / deposit modes and `f(x)` plotting,
             organised under MVC.
 
-            **Contents:**
-            - `SmartCalc_v2.0-x86_64.AppImage` — single-file Linux
-              executable bundling the Qt runtime. Run anywhere:
-              ```bash
-              chmod +x SmartCalc_v2.0-x86_64.AppImage
-              ./SmartCalc_v2.0-x86_64.AppImage
-              ```
-            - `SmartCalc_v2.0-${{ github.ref_name }}-linux-x86_64.tar.gz` —
-              raw AppDir layout, useful for repackaging.
+            **Platforms in this release:**
+            - **Linux x86_64** — single-file `.AppImage`
+            - **macOS** — drag-to-Applications `.dmg`
+            - **Windows x64** — portable `.zip` with Qt runtime DLLs
 
-            **Out of scope for this iteration:**
-            - macOS `.dmg` and Windows `.exe` builds — adding them is
-              future work; current pipeline targets Linux x86_64 only.
+            **Installation:**
+            - Linux: `chmod +x *.AppImage && ./*.AppImage`
+            - macOS: mount the `.dmg`, drag into Applications.
+            - Windows: unzip and run `SmartCalc_v2.0.exe`.
 
             See [STATUS.md](https://github.com/erdogan-deniz/school-21/blob/main/STATUS.md)
             for the rest of the flagships and overall progress.

@@ -93,10 +93,10 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject              | A | B | C | D | E | F | G | H | Flagship | Notes                                                    |
 | ----------------------- | - | - | - | - | - | - | - | - | -------- | -------------------------------------------------------- |
-| `3DViewer_v2.0`         | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | clang-format applied; C++ tests + Qt GUI build (xvfb)        |
-| `CPP5_3DViewer_v2.1`    | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | clang-format applied; C++ tests + Qt GUI build (xvfb)        |
-| `CPP6_3DViewer_v2.2`    | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | clang-format applied; C++ tests + Qt GUI build (xvfb)        |
-| `SmartCalc_v2.0`        | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ | ★        | clang-format applied; C++ tests + Qt GUI build (xvfb)        |
+| `3DViewer_v2.0`         | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen comments on Controller/Model/View headers            |
+| `CPP5_3DViewer_v2.1`    | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen comments on Controller/Parsing/GLWidget/Viewer       |
+| `CPP6_3DViewer_v2.2`    | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen comments on Controller/Parsing/GLWidget/Viewer       |
+| `SmartCalc_v2.0`        | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ | ★        | Doxygen comments on MVC Controller + Model headers           |
 | `s21_containers`        | ✓ | ◐ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ | ★        | flagship; release-s21_containers.yml; Codecov upload         |
 | `s21_matrix+`           | ✓ | ◐ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen comments + class; Codecov upload                     |
 
@@ -161,7 +161,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `algorithms/`        | 1           | 3.5 / 8          | 44 %     |
 | `c/`                 | 7           | 36 / 56          | 64 %     |
 | `career_track/`      | 9           | 13.5 / 72        | 19 %     |
-| `cpp/`               | 6           | 25 / 48          | 52 %     |
+| `cpp/`               | 6           | 29 / 48          | 60 %     |
 | `data_science/`      | 2           | 7 / 16           | 44 %     |
 | `devops/`            | 5           | 17.5 / 40        | 44 %     |
 | `internship/`        | 1           | 1.5 / 8          | 19 %     |
@@ -170,7 +170,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `qa/`                | 2           | 6 / 16           | 38 %     |
 | `sql/`               | 1           | 2.5 / 8          | 31 %     |
 | `survival_camp/`     | 1           | 1 / 8            | 13 %     |
-| **Total**            | **37**      | **130.5 / 296**  | **44 %** |
+| **Total**            | **37**      | **134.5 / 296**  | **45 %** |
 
 > "DoD cells filled" counts ✓ as 1 and ◐ as 0.5. The "School 21
 > License" placeholders count ◐ for the F column — they are

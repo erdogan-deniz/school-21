@@ -34,7 +34,9 @@ jobs:
   ruff:
     name: ruff (lint + format check)
     runs-on: ubuntu-latest
-    continue-on-error: true  # informational until we land a deliberate format pass
+    # Format pass landed in commits 4243c5d2 + db3f12e4; format gate
+    # is now hard. Lint gate stays soft until the remaining 181
+    # findings (unsafe-fix territory) get per-subproject triage.
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -42,10 +44,10 @@ jobs:
           python-version: '3.12'
       - name: Install ruff
         run: python -m pip install --upgrade pip ruff==0.6.9
-      - name: Lint
+      - name: Lint (informational)
         run: ruff check python/ algorithms/python/ data_science/ machine_learning/ qa/ || true
-      - name: Format check
-        run: ruff format --check python/ algorithms/python/ data_science/ machine_learning/ qa/ || true
+      - name: Format check (gating)
+        run: ruff format --check python/ algorithms/python/ data_science/ machine_learning/ qa/
 
   pytest:
     name: pytest (${{ matrix.day }})

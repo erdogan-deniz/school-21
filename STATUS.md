@@ -104,7 +104,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject   | A | B | C | D | E | F | G | H | Flagship | Notes                                                 |
 | ------------ | - | - | - | - | - | - | - | - | -------- | ----------------------------------------------------- |
-| `bootcamp`   | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | top-level README; venv evicted (op 1.3 / 554dc46a)    |
+| `bootcamp`   | ✓ | ✗ | ◐ | ◐ | ✓ | ◐ | ✗ | ✗ |          | top-level Makefile (per-day .venv); pinned reqs day_03/08, team_00/01 |
 | `project_01` | ✓ | ✗ | ◐ | ◐ | ✓ | ◐ | ✗ | ✗ |          | NLP "Tweets"; Makefile venv reproducible              |
 
 ### `devops/`
@@ -162,7 +162,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `c/`                 | 7           | 30.5 / 56        | 54 %     |
 | `career_track/`      | 9           | 13.5 / 18        | 75 %     |
 | `cpp/`               | 6           | 25 / 48          | 52 %     |
-| `data_science/`      | 2           | 6 / 16           | 38 %     |
+| `data_science/`      | 2           | 7 / 16           | 44 %     |
 | `devops/`            | 5           | 15.5 / 40        | 39 %     |
 | `internship/`        | 1           | 1.5 / 2          | 75 %     |
 | `machine_learning/`  | 1           | 4 / 8            | 50 %     |
@@ -170,7 +170,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `qa/`                | 2           | 3 / 4            | 75 %     |
 | `sql/`               | 1           | 4 / 8            | 50 %     |
 | `survival_camp/`     | 1           | 1 / 2            | 50 %     |
-| **Total**            | **37**      | **112.5 / 218**  | **52 %** |
+| **Total**            | **37**      | **113.5 / 218**  | **52 %** |
 
 > Roll-up arithmetic: ✓ = 1.0, ◐ = 0.5, ✗ = 0.0 (stays in the
 > denominator as a real gap), **n/a = excluded from the denominator**

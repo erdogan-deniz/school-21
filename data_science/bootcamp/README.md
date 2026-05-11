@@ -1,4 +1,61 @@
-# Data Science Bootcamp
+# `data_science/bootcamp`
+
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/python.yml)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *Day-by-day School 21 Data Science Bootcamp — UNIX data wrangling →
+> Python packaging → async scraping → profiling → Pandas → SQL+Pandas →
+> visualization → classical ML → ML ensembles, plus 2 team projects (an
+> async film-analytics report and a diet-recommendation system).*
+
+## Quick start
+
+Per-day environments are isolated so cross-day dependency conflicts
+(e.g. numpy 1.x vs 2.x between teams) never matter:
+
+```bash
+cd data_science/bootcamp
+
+make list                  # show which days ship a requirements.txt
+make install DAY=08        # create day_08/.venv and install its pinned reqs
+make jupyter DAY=07        # install + launch Jupyter Lab on day_07/
+make clear DAY=08          # drop day_08/.venv
+```
+
+`DAY=NN` also accepts the literal `team_00` / `team_01` folder names.
+Each isolated `.venv` lives next to its day folder under `day_NN/.venv`.
+
+Days 00 to 04 are shell-based (UNIX pipes, `curl`, `jq`) and need no
+Python venv — run their `src/setup.sh` directly:
+
+```bash
+bash day_00/src/setup.sh
+```
+
+## Demo
+
+> **TODO** — short asciinema cast of a Day 05 Pandas workflow or the
+> Day 09 ML pipeline is planned in the python/ Phase 2 demo slice.
+
+## Documentation
+
+- Per-day folders contain their own task descriptions (`content/` and
+  `src/`).
+- See the **Original task** section below for the full bootcamp curriculum.
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+The per-day `LICENSE` files (`# School 21 License`) are preserved as
+educational attribution and historical artefact; they do not override
+the repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
 
 Project technologies: OOP, Math, SOLID, Databases, Data Engineering, Data
 Visualization, Backend Development, Data Science and Machine Learning

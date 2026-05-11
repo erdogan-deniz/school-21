@@ -1,6 +1,6 @@
 # `s21_string+`
 
-[![CI](https://github.com/Deniz211/school-21/actions/workflows/c.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/c.yml)
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/c.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/c.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 > *Own implementation of the C standard `string.h` library plus partial `sprintf`, `sscanf`, and a handful of C# `String`-class utilities — packaged as a static library `s21_string.a`.*

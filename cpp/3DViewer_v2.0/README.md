@@ -1,6 +1,6 @@
 # `3DViewer_v2.0`
 
-[![CI](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/cpp.yml)
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/cpp.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 > *Object-oriented C++ rewrite of [3DViewer v1.0](../../c/3DViewer_v1.0/) — Qt-based desktop viewer for `.obj` wireframe models, organised under MVC + at least three additional design patterns.*

@@ -1,6 +1,6 @@
 # `algorithms/python/maze`
 
-[![CI](https://github.com/Deniz211/school-21/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/python.yml)
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/python.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](../../../LICENSE)
 
 > *Python maze + cave generator/renderer/solver — Eller's algorithm for perfect mazes, cellular-automaton caves, A* / Q-learning agents, GUI + web interface.*

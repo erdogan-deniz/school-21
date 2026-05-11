@@ -34,8 +34,8 @@
 
 ## History
 
-<!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/Deniz211/school-21/commit/<sha>)) -->
+<!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/erdogan-deniz/school-21/commit/<sha>)) -->
 
-- 2026-05-11: SmartCalc rename to PascalCase canonical, dead-code/MOC eviction, Qt asset recovery from history ([a6744d9d](https://github.com/Deniz211/school-21/commit/a6744d9d)).
-- 2026-05-11: Included in `c.yml` `apps-c-tests` matrix for the C-only test layer ([30441670](https://github.com/Deniz211/school-21/commit/30441670)).
+- 2026-05-11: SmartCalc rename to PascalCase canonical, dead-code/MOC eviction, Qt asset recovery from history ([a6744d9d](https://github.com/erdogan-deniz/school-21/commit/a6744d9d)).
+- 2026-05-11: Included in `c.yml` `apps-c-tests` matrix for the C-only test layer ([30441670](https://github.com/erdogan-deniz/school-21/commit/30441670)).
 - 2026-05-11: README adopted from repo template + Original task preserved (this commit).

@@ -1,0 +1,46 @@
+# Doxyfile for c/s21_string+.
+# Used by .github/workflows/docs.yml; overrides the autogen fallback.
+
+PROJECT_NAME           = "s21_string+"
+PROJECT_BRIEF          = "Own string.h + partial sprintf/sscanf + C# String-class extensions."
+PROJECT_NUMBER         = "1.0"
+OUTPUT_DIRECTORY       = docs/api
+OUTPUT_LANGUAGE        = English
+
+INPUT                  = src/
+RECURSIVE              = YES
+FILE_PATTERNS          = *.c *.h
+EXCLUDE_PATTERNS       = */test_html/* */gcov_obj/* */obj/* */code-samples/* s21_string_test.c
+
+EXTRACT_ALL            = YES
+EXTRACT_STATIC         = YES
+EXTRACT_PRIVATE        = NO
+HIDE_UNDOC_MEMBERS     = NO
+
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+GENERATE_TREEVIEW      = YES
+HTML_DYNAMIC_MENUS     = YES
+DISABLE_INDEX          = NO
+
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+
+HAVE_DOT               = YES
+DOT_NUM_THREADS        = 0
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+CLASS_DIAGRAMS         = YES
+COLLABORATION_GRAPH    = YES
+
+QUIET                  = YES
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = NO
+WARN_NO_PARAMDOC       = NO
+
+OPTIMIZE_OUTPUT_FOR_C  = YES
+TYPEDEF_HIDES_STRUCT   = YES
+
+GENERATE_TAGFILE       = docs/api/s21_string_plus.tag

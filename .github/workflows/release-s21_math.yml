@@ -1,0 +1,113 @@
+name: release-s21_math
+
+# Release pipeline for the c/s21_math flagship.
+# Triggered by tag push matching v*-s21_math (e.g. v0.1.0-s21_math),
+# builds the static library + tarball artefact, publishes a GitHub
+# Release with the artefact attached.
+#
+# Tagging convention:
+#     git tag v0.1.0-s21_math
+#     git push origin v0.1.0-s21_math
+#
+# Per-flagship tag suffix lets the three flagships have independent
+# version trajectories without one tagging-namespace per release.
+
+on:
+  push:
+    tags:
+      - 'v*-s21_math'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to release (e.g. v0.1.0-s21_math)'
+        required: true
+
+permissions:
+  contents: write  # required to create the Release
+
+concurrency:
+  group: release-s21_math-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: build s21_math.a
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install build deps (pinned)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential=12.* \
+            check=0.15.* \
+            libsubunit-dev=1.4.* \
+            lcov=2.* \
+            doxygen=1.9.* \
+            graphviz=2.42.*
+
+      - name: Build static library + tests
+        working-directory: c/s21_math/src
+        run: |
+          make s21_math.a
+          make test
+
+      - name: Run test suite (gate the release on green)
+        working-directory: c/s21_math/src
+        run: ./test
+
+      - name: Coverage report
+        working-directory: c/s21_math/src
+        run: make gcov_report
+        continue-on-error: true
+
+      - name: Doxygen API docs
+        working-directory: c/s21_math
+        run: doxygen Doxyfile
+        continue-on-error: true
+
+      - name: Stage release artefacts
+        run: |
+          mkdir -p _release/s21_math
+          cp c/s21_math/src/s21_math.a            _release/s21_math/
+          cp c/s21_math/src/s21_math.h            _release/s21_math/
+          cp -r c/s21_math/docs/api/html          _release/s21_math/api-docs 2>/dev/null || true
+          cp -r c/s21_math/src/test_html          _release/s21_math/coverage 2>/dev/null || true
+          cp c/s21_math/LICENSE                   _release/s21_math/SCHOOL21_LICENSE
+          cp LICENSE                              _release/s21_math/LICENSE
+          cp c/s21_math/README.md                 _release/s21_math/README.md
+          cd _release && tar czf "s21_math-${GITHUB_REF_NAME}.tar.gz" s21_math/
+
+      - name: Upload tarball as workflow artefact (always)
+        uses: actions/upload-artifact@v4
+        with:
+          name: s21_math-${{ github.ref_name }}
+          path: _release/s21_math-*.tar.gz
+          retention-days: 90
+
+      - name: Publish GitHub Release (on tag)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ github.ref_name }}
+          tag_name: ${{ github.ref_name }}
+          generate_release_notes: true
+          files: _release/s21_math-*.tar.gz
+          body: |
+            `s21_math` flagship release — own implementation of the C
+            standard `math.h` library, packaged as a static archive
+            with full Doxygen API docs + lcov coverage report.
+
+            Built and tested on ubuntu-latest with gcc/libcheck/lcov
+            (versions pinned in `docs/TOOLCHAIN.md`).
+
+            Drop `s21_math.h` + `s21_math.a` into any C11 project:
+
+            ```bash
+            tar xzf s21_math-${{ github.ref_name }}.tar.gz
+            cp s21_math/{s21_math.a,s21_math.h} <your-project>/
+            ```
+
+            See [STATUS.md](https://github.com/erdogan-deniz/school-21/blob/main/STATUS.md)
+            for the rest of the flagships and overall progress.

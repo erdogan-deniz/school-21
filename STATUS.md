@@ -70,7 +70,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `3DViewer_v1.0`    | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | clang-format applied; C tests + Qt GUI build in c.yml (xvfb) |
 | `SimpleBashUtils`  | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + Doxygen                            |
 | `s21_decimal`      | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + Doxygen                            |
-| `s21_math`         | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ | ★        | clang-format applied; CI + curated Doxyfile                   |
+| `s21_math`         | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ | ★        | flagship; release-s21_math.yml; curated Doxyfile + comments   |
 | `s21_matrix`       | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + Doxygen                            |
 | `s21_string+`      | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; CI + Doxygen                            |
 | `SmartCalc_v1.0`   | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | clang-format applied; C tests + Qt GUI build in c.yml (xvfb) |
@@ -159,7 +159,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | Track                | Subprojects | DoD cells filled | % done   |
 | -------------------- | ----------- | ---------------- | -------- |
 | `algorithms/`        | 1           | 3.5 / 8          | 44 %     |
-| `c/`                 | 7           | 31.5 / 56        | 56 %     |
+| `c/`                 | 7           | 32 / 56          | 57 %     |
 | `career_track/`      | 9           | 13.5 / 72        | 19 %     |
 | `cpp/`               | 6           | 25 / 48          | 52 %     |
 | `data_science/`      | 2           | 7 / 16           | 44 %     |
@@ -170,7 +170,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `qa/`                | 2           | 6 / 16           | 38 %     |
 | `sql/`               | 1           | 2.5 / 8          | 31 %     |
 | `survival_camp/`     | 1           | 1 / 8            | 13 %     |
-| **Total**            | **37**      | **123.5 / 296**  | **42 %** |
+| **Total**            | **37**      | **124 / 296**    | **42 %** |
 
 > "DoD cells filled" counts ✓ as 1 and ◐ as 0.5. The "School 21
 > License" placeholders count ◐ for the F column — they are

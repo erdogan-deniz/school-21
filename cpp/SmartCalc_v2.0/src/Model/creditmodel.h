@@ -1,3 +1,9 @@
+/**
+ * @file creditmodel.h
+ * @brief Credit-calculator model — annuity / differentiated payment
+ *        schedule computation.
+ */
+
 #ifndef SRC_MODEL_CREDIT_H
 #define SRC_MODEL_CREDIT_H
 
@@ -6,7 +12,10 @@
 
 namespace s21 {
 
-// Struct to hold credit information.
+/**
+ * @brief Inputs to a credit calculation: principal, term, rate, plus
+ *        period / payment-type discriminators.
+ */
 struct CreditInfo {
   double sum{};
   double months{};
@@ -27,7 +36,10 @@ struct CreditInfo {
   ~CreditInfo() {}
 };
 
-// Struct to hold calculated credit results.
+/**
+ * @brief Outputs of a credit calculation: highest / lowest monthly
+ *        payment, total overpayment, total amount paid.
+ */
 struct CreditResult {
   double max_pay{};
   double min_pay{};
@@ -39,14 +51,23 @@ struct CreditResult {
   ~CreditResult() {};
 };
 
-// Class representing a credit calculation.
+/**
+ * @brief Credit-calculator business logic.
+ *
+ * Dispatches to annuity or differentiated formula based on
+ * `info.payment` and writes the result into the owned
+ * @ref CreditResult.
+ */
 class CreditModel {
  public:
-  // Constructors
   CreditModel() {};
   ~CreditModel() {}
 
-  // Calculate result using CreditInfo struct
+  /**
+   * @brief Compute credit schedule from the given @ref CreditInfo.
+   * @return Reference to the owned @ref CreditResult (max/min pay,
+   *         overpay, total sum).
+   */
   CreditResult& CalculateResult(CreditInfo& info);
 
  private:

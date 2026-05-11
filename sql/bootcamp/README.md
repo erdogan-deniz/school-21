@@ -1,6 +1,6 @@
 # `sql/bootcamp`
 
-[![CI](https://github.com/Deniz211/school-21/actions/workflows/sql.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/sql.yml)
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/sql.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/sql.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 > *Day-by-day School 21 SQL Bootcamp — relational model → JOINs → relational algebra → DML → views → indexes → schema design → OLAP → transaction isolation → procedures, plus 2 team projects (TSP-in-SQL and a full DWH/ETL).*

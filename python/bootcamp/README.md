@@ -1,6 +1,6 @@
 # `python/bootcamp`
 
-[![CI](https://github.com/Deniz211/school-21/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/python.yml)
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/python.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 > *Day-by-day School 21 Python Bootcamp curriculum and team projects — 10 instructional days plus 2 team projects, modernised in `new/day_01`+ with `pyproject.toml` + `ruff`.*

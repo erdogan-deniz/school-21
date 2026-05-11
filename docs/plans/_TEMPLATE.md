@@ -43,7 +43,7 @@
 
 <!--
   Append entries chronologically as work happens.
-  Format: - YYYY-MM-DD: short description ([commit](https://github.com/Deniz211/school-21/commit/<sha>))
+  Format: - YYYY-MM-DD: short description ([commit](https://github.com/erdogan-deniz/school-21/commit/<sha>))
 -->
 
 - *(no entries yet)*

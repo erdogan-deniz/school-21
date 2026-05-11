@@ -1,6 +1,6 @@
 # `devops/ci_cd`
 
-[![CI](https://github.com/Deniz211/school-21/actions/workflows/devops.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/devops.yml)
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/devops.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/devops.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 > *GitLab CI/CD pipeline for [`c/SimpleBashUtils`](../../c/SimpleBashUtils/) — runner setup, build/codestyle/integration test stages, deploy via SSH/SCP, Telegram notifications.*

@@ -1,6 +1,6 @@
 # `SmartCalc_v1.0`
 
-[![CI](https://github.com/Deniz211/school-21/actions/workflows/c.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/c.yml)
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/c.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/c.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 > *Qt-based scientific calculator in C — RPN evaluator (Dijkstra shunting-yard), `f(x)` plotting, plus credit and deposit calculators.*

@@ -1,6 +1,6 @@
 # `devops/linux_network`
 
-[![CI](https://github.com/Deniz211/school-21/actions/workflows/devops.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/devops.yml)
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/devops.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/devops.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 > *Linux networking on VMs — `ipcalc`, static + dynamic routing, `iperf3` benchmarks, `iptables` firewall, DHCP, NAT (SNAT + DNAT), SSH local/remote tunnels.*

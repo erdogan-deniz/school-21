@@ -1,6 +1,6 @@
 # `devops/linux_monitoring_v1.0`
 
-[![CI](https://github.com/Deniz211/school-21/actions/workflows/devops.yml/badge.svg?branch=main)](https://github.com/Deniz211/school-21/actions/workflows/devops.yml)
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/devops.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/devops.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 > *Bash scripting suite for system & filesystem inspection — input validation, system summary (`HOSTNAME`, `RAM_*`, `SPACE_ROOT_*`), colourised output via configurable parameters / config file, deep filesystem traversal with size/hash/extension stats.*

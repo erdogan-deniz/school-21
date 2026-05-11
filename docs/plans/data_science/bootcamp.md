@@ -33,7 +33,7 @@
 
 ## History
 
-<!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/Deniz211/school-21/commit/<sha>)) -->
+<!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/erdogan-deniz/school-21/commit/<sha>)) -->
 
-- 2026-05-11: Committed virtualenv (`charisel/`) evicted from index ([554dc46a](https://github.com/Deniz211/school-21/commit/554dc46a)).
+- 2026-05-11: Committed virtualenv (`charisel/`) evicted from index ([554dc46a](https://github.com/erdogan-deniz/school-21/commit/554dc46a)).
 - 2026-05-11: Top-level README created from repo template + day-by-day index; `python.yml` extended to lint `data_science/` (this commit).

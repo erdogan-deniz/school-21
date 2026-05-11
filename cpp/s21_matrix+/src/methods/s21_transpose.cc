@@ -7,8 +7,7 @@ S21Matrix S21Matrix ::Transpose() const {
     S21Matrix matrix(GetColumns(), GetRows());
 
     for (int i = 0; i < GetRows(); ++i)
-      for (int j = 0; j < GetColumns(); ++j)
-        matrix(j, i) = (*this)(i, j);
+      for (int j = 0; j < GetColumns(); ++j) matrix(j, i) = (*this)(i, j);
 
     return matrix;
   }

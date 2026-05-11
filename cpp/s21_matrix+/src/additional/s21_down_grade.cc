@@ -10,14 +10,12 @@ void S21Matrix ::DownGrade(const int n, const int m, S21Matrix &matrix) const {
     int dj = 0;
 
     for (int i = 0; i < GetRows(); ++i) {
-      if (i == n)
-        continue;
+      if (i == n) continue;
 
       di = (i > n) ? 1 : 0;
 
       for (int j = 0; j < GetColumns(); ++j) {
-        if (j == m)
-          continue;
+        if (j == m) continue;
 
         dj = (j > m) ? 1 : 0;
         matrix(i - di, j - dj) = (*this)(i, j);

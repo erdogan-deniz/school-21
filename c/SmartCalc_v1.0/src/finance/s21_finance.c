@@ -1,4 +1,5 @@
 #include "s21_finance.h"
+
 #include <math.h>
 
 int s21_loan_annuity(double principal, int months, double annual_rate,
@@ -21,49 +22,48 @@ int s21_loan_annuity(double principal, int months, double annual_rate,
   }
 
   *monthly_payment = payment;
-  *total           = payment * months;
-  *overpayment     = *total - principal;
+  *total = payment * months;
+  *overpayment = *total - principal;
   return 0;
 }
 
 int s21_loan_differentiated(double principal, int months, double annual_rate,
-                             double *payments_out, double *overpayment,
-                             double *total) {
+                            double *payments_out, double *overpayment,
+                            double *total) {
   if (principal <= 0.0 || months <= 0 || annual_rate < 0.0) return 1;
   if (!payments_out || !overpayment || !total) return 1;
 
-  double r              = annual_rate / 12.0 / 100.0;
+  double r = annual_rate / 12.0 / 100.0;
   double principal_part = principal / months;
-  double sum            = 0.0;
+  double sum = 0.0;
 
   /* Caller must allocate payments_out[months] before calling. */
   for (int i = 0; i < months; i++) {
-    double remaining  = principal - principal_part * i;
-    payments_out[i]   = principal_part + remaining * r;
-    sum              += payments_out[i];
+    double remaining = principal - principal_part * i;
+    payments_out[i] = principal_part + remaining * r;
+    sum += payments_out[i];
   }
 
-  *total       = sum;
+  *total = sum;
   *overpayment = sum - principal;
   return 0;
 }
 
 int s21_deposit(double amount, int months, double annual_rate, double tax_rate,
-                int periods_per_year, int capitalize,
-                const int *add_months, const double *add_amounts, int add_count,
-                const int *wd_months, const double *wd_amounts, int wd_count,
-                double *total_interest, double *tax_out, double *final_amount) {
-  if (amount <= 0.0 || months <= 0 || annual_rate < 0.0 ||
-      tax_rate < 0.0 || tax_rate > 100.0 ||
-      periods_per_year <= 0 || 12 % periods_per_year != 0)
+                int periods_per_year, int capitalize, const int *add_months,
+                const double *add_amounts, int add_count, const int *wd_months,
+                const double *wd_amounts, int wd_count, double *total_interest,
+                double *tax_out, double *final_amount) {
+  if (amount <= 0.0 || months <= 0 || annual_rate < 0.0 || tax_rate < 0.0 ||
+      tax_rate > 100.0 || periods_per_year <= 0 || 12 % periods_per_year != 0)
     return 1;
   if (!total_interest || !tax_out || !final_amount) return 1;
 
   double monthly_rate = annual_rate / 12.0 / 100.0;
-  int    pay_every    = 12 / periods_per_year;
-  double balance      = amount;
-  double total_int    = 0.0;
-  double accrued      = 0.0;
+  int pay_every = 12 / periods_per_year;
+  double balance = amount;
+  double total_int = 0.0;
+  double accrued = 0.0;
 
   for (int month = 1; month <= months; month++) {
     /* Apply scheduled additions */
@@ -94,8 +94,8 @@ int s21_deposit(double amount, int months, double annual_rate, double tax_rate,
   }
 
   *total_interest = total_int;
-  *tax_out        = total_int * tax_rate / 100.0;
-  double gross    = capitalize ? balance : (balance + total_int);
-  *final_amount   = gross - *tax_out;
+  *tax_out = total_int * tax_rate / 100.0;
+  double gross = capitalize ? balance : (balance + total_int);
+  *final_amount = gross - *tax_out;
   return 0;
 }

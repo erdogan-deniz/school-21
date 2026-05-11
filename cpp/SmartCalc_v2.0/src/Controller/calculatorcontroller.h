@@ -6,8 +6,8 @@
 namespace s21 {
 class CalculatorController {
  public:
-  CalculatorController(){};
-  ~CalculatorController(){};
+  CalculatorController() {};
+  ~CalculatorController() {};
   // Getters
   double GetResult() const { return model_.GetResult(); }
   int GetError() const { return model_.GetError(); }

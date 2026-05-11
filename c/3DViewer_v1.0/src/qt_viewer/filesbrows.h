@@ -1,38 +1,36 @@
 #ifndef FILESBROWS_H
 #define FILESBROWS_H
 
-#include <QWidget>
-#include <QFileSystemModel>
 #include <QDir>
+#include <QFileSystemModel>
+#include <QWidget>
+
 #include "miwidget.h"
-
-
 
 namespace Ui {
 class FilesBrows;
 }
 
-class FilesBrows : public QWidget
-{
-    Q_OBJECT
+class FilesBrows : public QWidget {
+  Q_OBJECT
 
-public:
-    explicit FilesBrows(QWidget *parent = nullptr);
-    ~FilesBrows();
+ public:
+  explicit FilesBrows(QWidget *parent = nullptr);
+  ~FilesBrows();
 
-public slots:
-    void on_listView_doubleClicked(const QModelIndex &index);
+ public slots:
+  void on_listView_doubleClicked(const QModelIndex &index);
 
-signals:
-    void nameChanged(const QString&);
-    void objFile(obj_data);
+ signals:
+  void nameChanged(const QString &);
+  void objFile(obj_data);
 
-private:
-    Ui::FilesBrows *ui;
+ private:
+  Ui::FilesBrows *ui;
 
-    QFileSystemModel* model;
+  QFileSystemModel *model;
 
-    miwidget pathToFile;
+  miwidget pathToFile;
 };
 
-#endif // FILESBROWS_H
+#endif  // FILESBROWS_H

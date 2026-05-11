@@ -6,7 +6,7 @@
 #include "window_two.h"
 
 namespace Ui {
-    class Window_Three;
+class Window_Three;
 }
 
 class Window_Three : public QWidget {
@@ -31,7 +31,7 @@ class Window_Three : public QWidget {
   void on_button_plus2_clicked();
 
  private:
-  Ui :: Window_Three* ui;
+  Ui ::Window_Three* ui;
 };
 
 #endif  // WINDOW_THREE_H

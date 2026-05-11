@@ -1,0 +1,83 @@
+# Pre-commit hooks for school-21.
+# Install: pip install pre-commit && pre-commit install
+# Run manually on all files: pre-commit run --all-files
+#
+# These hooks mirror the format-check jobs in the GitHub Actions workflows,
+# so issues surface at git-commit time instead of in CI.
+
+repos:
+  # --- Generic hygiene ---
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: \.md$  # markdown uses trailing whitespace for hard line breaks
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-toml
+      - id: check-added-large-files
+        args: ['--maxkb=1024']  # 1 MB cap; venv eviction was the lesson
+      - id: check-merge-conflict
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+        exclude: \.(bat|cmd|ps1)$
+
+  # --- Python: ruff (lint + format) ---
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
+    hooks:
+      - id: ruff
+        args: ['--fix']
+        types_or: [python]
+      - id: ruff-format
+        types_or: [python]
+
+  # --- C / C++: clang-format ---
+  - repo: https://github.com/pre-commit/mirrors-clang-format
+    rev: v18.1.8
+    hooks:
+      - id: clang-format
+        types_or: [c, c++]
+        exclude: |
+          (?x)^(
+            .*/Qt/.*|
+            .*/build.*/.*|
+            .*/QtGifImage.*/.*|
+            .*/moc_.*|
+            .*/ui_.*|
+            .*/site-packages/.*
+          )$
+
+  # --- Markdown ---
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.42.0
+    hooks:
+      - id: markdownlint
+        args: ['--config', '.markdownlint.json']
+
+  # --- SQL ---
+  - repo: https://github.com/sqlfluff/sqlfluff
+    rev: 3.2.5
+    hooks:
+      - id: sqlfluff-lint
+        args: ['--dialect', 'postgres']
+        files: ^sql/.*\.sql$
+
+  # --- Shell ---
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.10.0.1
+    hooks:
+      - id: shellcheck
+        files: ^devops/.*\.(sh|bash)$
+
+  # --- Typos ---
+  - repo: https://github.com/crate-ci/typos
+    rev: v1.24.6
+    hooks:
+      - id: typos
+        # The original task narratives contain "weird" educational typos
+        # ("tecgnique", "wawe", "harry") that are part of preserved
+        # School 21 content — don't auto-fix them.
+        args: ['--no-write']
+        exclude: README.md|docs/plans/.*

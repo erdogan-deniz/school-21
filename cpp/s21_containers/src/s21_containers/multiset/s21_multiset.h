@@ -1,7 +1,25 @@
+/**
+ * @file s21_multiset.h
+ * @brief `s21::multiset<Key>` — ordered associative container
+ *        allowing duplicate keys, STL `std::multiset` parallel.
+ *
+ * Unlike @ref s21::set, each @ref Node carries a `count` field so
+ * repeated insertions of the same key bump the count instead of
+ * allocating new nodes. `count(key)` aggregates the count field over
+ * matching nodes; `lower_bound` / `upper_bound` / `equal_range` give
+ * the canonical std::multiset range semantics.
+ *
+ * Backing structure: unbalanced BST (same caveats as @ref s21::set).
+ */
+
 #ifndef S21_CONTAINERS_SRC_S21_MULTISET_H_
 #define S21_CONTAINERS_SRC_S21_MULTISET_H_
 
 namespace s21 {
+/**
+ * @brief STL-parallel `multiset<Key>` — duplicates collapsed into a
+ *        single node with a count.
+ */
 template <typename Key>
 class multiset {
  private:

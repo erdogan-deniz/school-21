@@ -1,7 +1,21 @@
+/**
+ * @file s21_queue.h
+ * @brief `s21::Queue<T>` — FIFO container adapter, STL `std::queue`
+ *        parallel.
+ *
+ * Internally backed by an owned doubly-linked list of `Node`s with
+ * head/tail pointers; `push` appends at the tail, `pop` removes from
+ * the head. `front` / `back` peek at the two ends. Method definitions
+ * live in `s21_queue.tpp`.
+ */
+
 #ifndef CPP2_S21_CONTAINERS_S21_QUEUE_H_
 #define CPP2_S21_CONTAINERS_S21_QUEUE_H_
 
 namespace s21 {
+/**
+ * @brief STL-parallel FIFO adapter over a custom doubly-linked list.
+ */
 template <typename T>
 class Queue {
  public:
@@ -10,21 +24,33 @@ class Queue {
   using const_reference = const T &;
   using size_type = size_t;
 
-  Queue();
-  Queue(const Queue &q);
-  Queue(Queue &&q);
-  void operator=(Queue &q);
-  ~Queue();
+  /// @name Construction / destruction
+  /// @{
+  Queue();                    ///< Default ctor — empty queue.
+  Queue(const Queue &q);      ///< Copy ctor — deep-copies every node.
+  Queue(Queue &&q);           ///< Move ctor.
+  void operator=(Queue &q);   ///< Copy assignment.
+  ~Queue();                   ///< Releases every node.
+  /// @}
 
-  const_reference front();
-  const_reference back();
+  /// @name Element access
+  /// @{
+  const_reference front();    ///< Peek at the head (next to `pop`).
+  const_reference back();     ///< Peek at the tail (last pushed).
+  /// @}
 
+  /// @name Capacity
+  /// @{
   bool empty() { return this->size() > 0 ? 0 : 1; }
   size_type size() { return this->Size; }
+  /// @}
 
-  void push(const_reference value);
-  void pop();
-  void swap(Queue<T> &other);
+  /// @name Modifiers
+  /// @{
+  void push(const_reference value);  ///< Enqueue at the tail.
+  void pop();                        ///< Dequeue from the head.
+  void swap(Queue<T> &other);        ///< O(1) swap with @p other.
+  /// @}
 
  private:
   template <typename>

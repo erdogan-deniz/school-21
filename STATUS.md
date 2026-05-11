@@ -97,7 +97,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `CPP5_3DViewer_v2.1`    | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen comments on Controller/Parsing/GLWidget/Viewer       |
 | `CPP6_3DViewer_v2.2`    | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen comments on Controller/Parsing/GLWidget/Viewer       |
 | `SmartCalc_v2.0`        | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ | ★        | Doxygen comments on MVC Controller + Model headers           |
-| `s21_containers`        | ✓ | ◐ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ | ★        | flagship; release-s21_containers.yml; Codecov upload         |
+| `s21_containers`        | ✓ | ◐ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ | ★        | flagship; release-s21_containers.yml; Codecov upload; per-class Doxygen on all 8 containers |
 | `s21_matrix+`           | ✓ | ◐ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen comments + class; Codecov upload                     |
 
 ### `data_science/`

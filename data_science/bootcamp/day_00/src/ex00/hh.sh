@@ -1,4 +1,4 @@
-#!/bin/sh.
+#!/bin/sh
 
 URL="https://api.hh.ru/"
 

@@ -11,7 +11,7 @@ def check_command(command, expected_output, test_number):
     print("Наш вывод:\n", result.stdout, sep="")
 
     if expected_output in result.stdout:  # Check are they equal
-        print(f"*********Тест - пройден!*********\n")
+        print("*********Тест - пройден!*********\n")
     else:
         print("*********Тест - не пройден!*********\n")
 

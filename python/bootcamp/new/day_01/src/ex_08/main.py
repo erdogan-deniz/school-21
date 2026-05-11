@@ -3,7 +3,6 @@ Exercise 08: a different numbers - solution module.
 """
 
 import sys
-
 from pathlib import Path
 
 sys.path.append(

@@ -3,7 +3,6 @@ Exercise 07: a robot - solution module.
 """
 
 import sys
-
 from pathlib import Path
 
 sys.path.append(

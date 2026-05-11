@@ -1,6 +1,7 @@
 # First of all, we don't save any other elements in the dictionary
-import ex00  # Module for functions
 import unittest  # Module for tests
+
+import ex00  # Module for functions
 
 
 def decorator(func: object) -> object:

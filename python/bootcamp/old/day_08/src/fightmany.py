@@ -1,6 +1,7 @@
 # Necessary modules:
-import fight
 import random
+
+import fight
 
 
 # Function checks that agents already are defeated:

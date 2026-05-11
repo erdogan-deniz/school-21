@@ -1,6 +1,6 @@
 # Module for installing:
-import sys
 import subprocess
+import sys
 
 
 # Function to run command:

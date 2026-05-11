@@ -1,10 +1,10 @@
-import re  # Module for regular expression of audio format files
-import sys  # Module for parsing cmd args
-import yaml  # Module for working temporary file
 import atexit  # Module for "last" function
+import re  # Module for regular expression of audio format files
 import subprocess  # Module for using linux command
-
+import sys  # Module for parsing cmd args
 from os import walk  # Function for working with file in the current directory
+
+import yaml  # Module for working temporary file
 from flask import Flask, render_template, request  # Flask functions
 
 

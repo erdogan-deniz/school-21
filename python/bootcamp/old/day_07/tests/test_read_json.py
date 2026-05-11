@@ -1,5 +1,6 @@
-import sys
 import os.path
+import sys
+
 import support
 
 # Add our files:

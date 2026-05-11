@@ -13,9 +13,9 @@ functions:
 """
 
 # Necessary modules:
+import json
 import sys
 import time
-import json
 
 
 # Function to read json data:

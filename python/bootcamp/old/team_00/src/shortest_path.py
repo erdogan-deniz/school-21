@@ -1,6 +1,6 @@
-import os
-import json
 import argparse
+import json
+import os
 import urllib.parse
 
 

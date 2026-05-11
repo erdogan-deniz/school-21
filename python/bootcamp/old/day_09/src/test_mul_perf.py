@@ -1,8 +1,8 @@
 # Necessary modules:
 import time
-import multiply
-import example_mul
 
+import example_mul
+import multiply
 
 # Data for tests:
 A_matrix = [

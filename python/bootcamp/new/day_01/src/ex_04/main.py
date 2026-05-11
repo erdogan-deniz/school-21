@@ -3,7 +3,6 @@ Exercise 04: a "Pascal's triangle" - solution module.
 """
 
 import sys
-
 from pathlib import Path
 
 sys.path.append(

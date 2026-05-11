@@ -1,5 +1,5 @@
-import time  # Module for little freezing
 import random as rd  # Module for randomize value
+import time  # Module for little freezing
 
 
 def emit_gel(step: int = 2):  # Main function for generated pressure

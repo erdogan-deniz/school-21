@@ -1,8 +1,7 @@
 # Necessary modules:
 import asyncio
-
-from random import choice
 from enum import Enum, auto
+from random import choice
 
 
 # Class of actions:

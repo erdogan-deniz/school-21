@@ -18,17 +18,16 @@ sys.path.append(
     ),
 )
 
-from typing import Any
-from pandas import DataFrame
-from dotenv import load_dotenv
 from json import JSONDecodeError, load
+from typing import Any
+
+from dotenv import load_dotenv
 from httpx import (
-    HTTPError,
-    AsyncClient,
     AsyncClient,
     ConnectTimeout,
+    HTTPError,
 )
-
+from pandas import DataFrame
 from src.utils import get_conversion_multiplier_to_g
 
 

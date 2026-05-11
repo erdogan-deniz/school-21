@@ -2,9 +2,7 @@
 Decorators Python module.
 """
 
-import sys
 import functools
-
 from typing import Any, Callable
 
 

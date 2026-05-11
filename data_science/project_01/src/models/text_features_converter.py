@@ -28,14 +28,13 @@ sys.path.append(
 )
 
 from gensim.models import Word2Vec
-from pandas import Series, DataFrame
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from numpy import (
-    ndarray,
     mean,
+    ndarray,
     zeros,
 )
-
+from pandas import DataFrame, Series
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from utilities import handle_errors
 
 

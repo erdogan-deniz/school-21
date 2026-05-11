@@ -1,9 +1,8 @@
 #! /usr/bin/env python
 
 import json  # For serialization in json
-
-from urllib.parse import parse_qs  # Function for parsing get requests
 from html import escape  # Function for checking url on scripts
+from urllib.parse import parse_qs  # Function for parsing get requests
 from wsgiref.simple_server import make_server  # Function for creating server
 
 # Our species:

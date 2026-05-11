@@ -49,11 +49,11 @@ sys.path.append(
     ),
 )
 
-from typing import Literal
 from collections import defaultdict
+from typing import Literal
 
 from src.parse_utils import fetch_movies_webpage_text_fields
-from src.utils import extract_price_from_string, extract_minutes_from_string
+from src.utils import extract_minutes_from_string, extract_price_from_string
 
 
 class Link:

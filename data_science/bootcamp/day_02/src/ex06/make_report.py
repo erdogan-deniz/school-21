@@ -1,17 +1,18 @@
-from logging import INFO, info, error, basicConfig
+from logging import INFO, basicConfig, error, info
+
 from analytics import (
-    Research,
     Analytics,
+    Research,
     get_count_of_heads,
     prepare_report_content,
 )
 from config import (
-    CHAT_ID,
     BASE_URL,
     BOT_TOKEN,
-    FILE_PATH,
-    FILE_NAME,
+    CHAT_ID,
     FILE_FORMAT,
+    FILE_NAME,
+    FILE_PATH,
     LOGGING_FILE,
     NUM_OF_GEN_PAIRS,
 )

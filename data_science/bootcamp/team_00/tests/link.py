@@ -7,9 +7,10 @@ Examples of usage:
     >>> pytest link.py -m calculations -v
 """
 
+import json
 import os
 import sys
-import json
+
 import pytest
 
 sys.path.append(
@@ -21,7 +22,7 @@ sys.path.append(
 )
 
 from src.movielens_analysis.models.link import Link
-from src.utils import extract_price_from_string, extract_minutes_from_string
+from src.utils import extract_minutes_from_string, extract_price_from_string
 
 
 @pytest.mark.link

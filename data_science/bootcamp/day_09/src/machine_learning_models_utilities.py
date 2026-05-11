@@ -2,13 +2,19 @@
 Utilities for machine learning models.
 """
 
-from pandas import DataFrame
-from tqdm.notebook import tqdm
 from typing import Any, Literal
+
 from numpy import (
+    mean,
     ndarray,
     std,
-    mean,
+)
+from pandas import DataFrame
+from sklearn.metrics import (
+    accuracy_score,
+    precision_score,
+    recall_score,
+    roc_auc_score,
 )
 from sklearn.model_selection import (
     KFold,
@@ -16,12 +22,7 @@ from sklearn.model_selection import (
     cross_val_score,
     train_test_split,
 )
-from sklearn.metrics import (
-    recall_score,
-    roc_auc_score,
-    accuracy_score,
-    precision_score,
-)
+from tqdm.notebook import tqdm
 
 
 def print_classification_model_cross_validation(

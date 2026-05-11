@@ -4,8 +4,8 @@ Utility functions.
 
 from numpy import ndarray
 from pandas import DataFrame
-from sklearn.model_selection import KFold
 from sklearn.metrics import root_mean_squared_error
+from sklearn.model_selection import KFold
 
 
 def print_regression_model_cross_validation(

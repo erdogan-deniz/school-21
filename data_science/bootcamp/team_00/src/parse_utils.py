@@ -65,15 +65,16 @@ Examples of usage:
     >>> ], ), )
 """
 
-from typing import Literal
-from bs4 import BeautifulSoup
-from requests import Response, get
 from json import JSONDecodeError, load
+from typing import Literal
+
+from bs4 import BeautifulSoup
 from bs4.builder import ParserRejectedMarkup
+from requests import Response, get
 from requests.exceptions import (
-    Timeout,
     HTTPError,
     RequestException,
+    Timeout,
 )
 
 

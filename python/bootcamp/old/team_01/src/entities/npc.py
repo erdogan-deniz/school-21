@@ -9,10 +9,10 @@ Functions:
 
 # Necessary modules:
 import database
+from additional import clear_string
 
 # Necessary functions and classes:
 from aiogram.types import Message
-from additional import clear_string
 from entities.location import Location
 
 
@@ -82,7 +82,7 @@ class NPC:
         """
 
         await message.answer(
-            f"<u>NPC DATA:</u>\n\n"
+            "<u>NPC DATA:</u>\n\n"
             + f"<b>NPC name</b>: <code>{clear_string(self.name)}</code>\n"
             + f"<b>NPC description</b>: <code>{clear_string(self.description)}</code>\n"
         )

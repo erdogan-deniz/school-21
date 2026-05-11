@@ -135,15 +135,23 @@ jobs:
       matrix:
         # Days / subprojects that ship test files. Add new entries here
         # as more subprojects gain test coverage.
+        #
+        # `flag` is the Codecov flag name (sanitised — no slashes,
+        # since Codecov normalises `/` and we'd lose per-subproject
+        # separation in the dashboard).
         include:
           - day: python/bootcamp/old/day_05
             workdir: python/bootcamp/old/day_05/src
+            flag: python-bootcamp-old-day_05
           - day: python/bootcamp/old/day_07
             workdir: python/bootcamp/old/day_07
+            flag: python-bootcamp-old-day_07
           - day: python/bootcamp/old/day_09
             workdir: python/bootcamp/old/day_09/src
+            flag: python-bootcamp-old-day_09
           - day: data_science/project_01
             workdir: data_science/project_01/src
+            flag: data_science-project_01
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -166,8 +174,8 @@ jobs:
         uses: codecov/codecov-action@v4
         with:
           files: ${{ matrix.workdir }}/coverage.xml
-          flags: python-${{ matrix.day }}
-          name: python-${{ matrix.day }}-coverage
+          flags: ${{ matrix.flag }}
+          name: ${{ matrix.flag }}-coverage
           fail_ci_if_error: false
           verbose: false
         continue-on-error: true

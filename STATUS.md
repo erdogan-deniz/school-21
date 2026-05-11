@@ -111,10 +111,10 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject              | A | B | C | D | E | F | G | H | Flagship | Notes |
 | ----------------------- | - | - | - | - | - | - | - | - | -------- | ----- |
-| `ci_cd`                 | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | report-driven; shellcheck via devops.yml |
-| `linux`                 | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | report-driven; shellcheck via devops.yml |
+| `ci_cd`                 | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | deploy.sh + notify.sh + .gitlab-ci.yml; Telegram token de-hardcoded → env vars; shellcheck via devops.yml |
+| `linux`                 | ✓ | n/a | n/a | n/a | n/a | ◐ | n/a | n/a |          | report-driven (markdown notes + screenshots only); only A + F apply |
 | `linux_monitoring_v1.0` | ✓ | ✓ | ◐ | ◐ | ✓ | ◐ | ✗ | ✗ |          | 47 bats tests across Parts 1-5 + smoke; shellcheck + hadolint |
-| `linux_network`         | ✓ | ✗ | ◐ | ◐ | ✗ | ◐ | ✗ | ✗ |          | report-driven; shellcheck via devops.yml |
+| `linux_network`         | ✓ | n/a | n/a | n/a | n/a | ◐ | n/a | n/a |          | report-driven (markdown notes + screenshots only); only A + F apply |
 | `simple_docker`         | ✓ | ✗ | ◐ | ◐ | ✓ | ◐ | ✗ | ✗ |          | docker-compose; hadolint via devops.yml  |
 
 ### `internship/`
@@ -163,14 +163,14 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `career_track/`      | 9           | 13.5 / 18        | 75 %     |
 | `cpp/`               | 6           | 25 / 48          | 52 %     |
 | `data_science/`      | 2           | 7 / 16           | 44 %     |
-| `devops/`            | 5           | 15.5 / 40        | 39 %     |
+| `devops/`            | 5           | 12.5 / 28        | 45 %     |
 | `internship/`        | 1           | 1.5 / 2          | 75 %     |
 | `machine_learning/`  | 1           | 4 / 8            | 50 %     |
 | `python/`            | 1           | 4.5 / 8          | 56 %     |
 | `qa/`                | 2           | 3 / 4            | 75 %     |
 | `sql/`               | 1           | 4 / 8            | 50 %     |
 | `survival_camp/`     | 1           | 1 / 2            | 50 %     |
-| **Total**            | **37**      | **113.5 / 218**  | **52 %** |
+| **Total**            | **37**      | **110.5 / 206**  | **54 %** |
 
 > Roll-up arithmetic: ✓ = 1.0, ◐ = 0.5, ✗ = 0.0 (stays in the
 > denominator as a real gap), **n/a = excluded from the denominator**

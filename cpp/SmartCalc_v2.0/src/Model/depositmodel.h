@@ -35,12 +35,12 @@ struct DepositResult {
 class DepositModel {
  public:
   // Constructor
-  DepositModel(){};
+  DepositModel() {};
   // Copy Contructor
   DepositModel(const DepositModel& other)
       : info_(other.info_), result_(other.result_) {}
   // Destructor
-  ~DepositModel(){};
+  ~DepositModel() {};
   // Initiates the deposit calculation based on the selected frequency.
   DepositResult& Calculate(DepositInfo& info_);
 

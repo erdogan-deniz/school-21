@@ -4,8 +4,9 @@ void S21Matrix ::MulMatrix(const S21Matrix &matrix) {
   if (!IsCorrectMatrix() || !matrix.IsCorrectMatrix())
     throw std ::invalid_argument("INCORRECT MATRIX!");
   else if (GetColumns() != matrix.GetRows())
-    throw std ::logic_error("COUNT OF FIRST MATRIX COLUMNS DOESN'T EQUAL "
-                            "SECOND MATRIX COUNT ROWS!");
+    throw std ::logic_error(
+        "COUNT OF FIRST MATRIX COLUMNS DOESN'T EQUAL "
+        "SECOND MATRIX COUNT ROWS!");
   else {
     S21Matrix matrix_two(GetRows(), matrix.GetColumns());
 

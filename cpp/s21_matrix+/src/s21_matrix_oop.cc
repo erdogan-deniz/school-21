@@ -35,8 +35,7 @@ S21Matrix ::S21Matrix(const S21Matrix &matrix) {
     SetMatrix();
 
     for (int i = 0; i < GetRows(); ++i)
-      for (int j = 0; j < GetColumns(); ++j)
-        (*this)(i, j) = matrix(i, j);
+      for (int j = 0; j < GetColumns(); ++j) (*this)(i, j) = matrix(i, j);
   }
 }
 

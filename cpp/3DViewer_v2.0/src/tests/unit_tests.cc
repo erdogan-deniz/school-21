@@ -2,7 +2,6 @@
 
 #include "../controller/controller.h"
 
-
 TEST(MainTest, Cube) {
   s21::Object obj;
   s21::ReadFile parser;
@@ -138,7 +137,8 @@ TEST(TransformTest, Normalization) {
   obj.normalization();
 
   const auto& vertexes = obj.getPoints()->vertexes_;
-  const std::vector<double> vertexes_test = {1.0, 2.0, 3.0,2.0, 3.0, 4.0,3.0, 4.0, 5.0};
+  const std::vector<double> vertexes_test = {1.0, 2.0, 3.0, 2.0, 3.0,
+                                             4.0, 3.0, 4.0, 5.0};
 
   double expectedCentrX = (1.0 + 3.0) / 2.0;
   double expectedCentrY = (2.0 + 4.0) / 2.0;
@@ -161,4 +161,3 @@ int main(int argc, char** argv) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
 }
-

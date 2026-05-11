@@ -34,16 +34,16 @@ struct CreditResult {
   double overpay{};
   double sum_total{};
   // Default constroctur
-  CreditResult(){};
+  CreditResult() {};
   // Destructor
-  ~CreditResult(){};
+  ~CreditResult() {};
 };
 
 // Class representing a credit calculation.
 class CreditModel {
  public:
   // Constructors
-  CreditModel(){};
+  CreditModel() {};
   ~CreditModel() {}
 
   // Calculate result using CreditInfo struct

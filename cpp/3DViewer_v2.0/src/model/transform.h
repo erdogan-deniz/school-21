@@ -14,7 +14,7 @@ class Transform {
   Transform() = default;
   Transform(const Transform&) = delete;
   Transform(Transform&&) = delete;
-  Transform(Object* obj) : object_(obj){};
+  Transform(Object* obj) : object_(obj) {};
   ~Transform() = default;
   void setObj(Object* obj) { object_ = obj; };
   void moveX(double x);

@@ -15,8 +15,7 @@ void S21Matrix ::SetRows(const int rows) {
       SetMatrix();
 
       for (int i = 0; (i < GetRows()) && (i < matrix.GetRows()); ++i)
-        for (int j = 0; j < GetColumns(); ++j)
-          (*this)(i, j) = matrix(i, j);
+        for (int j = 0; j < GetColumns(); ++j) (*this)(i, j) = matrix(i, j);
     }
   }
 }

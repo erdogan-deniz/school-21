@@ -10,7 +10,7 @@
 #include <QtMultimedia/QMediaPlayer>
 
 namespace Ui {
-    class Window_One;
+class Window_One;
 }
 
 class Window_One : public QWidget {
@@ -31,7 +31,7 @@ class Window_One : public QWidget {
  private slots:
   void add_digit();
   void draw_graph(char* formula, double xBegin, double xEnd, double yBegin,
-                  double yEnd, long double* X, Ui :: Window_One* sx);
+                  double yEnd, long double* X, Ui ::Window_One* sx);
 };
 
 #endif  // WINDOW_ONE_H

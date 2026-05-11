@@ -11,7 +11,7 @@
 #define EMPTY 0
 
 class S21Matrix {
-public:
+ public:
   // ADDITIONAL:
   void CopyMatrix(const S21Matrix &matrix);
   void DeleteMatrix();
@@ -61,9 +61,9 @@ public:
   S21Matrix(S21Matrix &&matrix);
   ~S21Matrix();
 
-private:
+ private:
   int rows_ = EMPTY, columns_ = EMPTY;
   double **matrix_ = nullptr;
 };
 
-#endif // SRC_S21_MATRIX_OOP_H_
+#endif  // SRC_S21_MATRIX_OOP_H_

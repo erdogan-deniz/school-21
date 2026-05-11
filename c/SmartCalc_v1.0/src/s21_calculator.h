@@ -11,9 +11,9 @@
 #include <string.h>
 
 #ifdef _WIN32
-#  define S21_API __declspec(dllexport)
+#define S21_API __declspec(dllexport)
 #else
-#  define S21_API
+#define S21_API
 #endif
 
 S21_API long double s21_calculator(char* string, long double* x);

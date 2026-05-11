@@ -14,7 +14,7 @@
 ## Definition of Done — checklist
 
 - [x] **A.** README adopts the repo template (production fold + preserved task)
-- [ ] **B.** No bats test coverage yet — bash scripts are tested manually by running each `0x/main.sh`
+- [x] **B.** 47 bats tests across Parts 1-5 + smoke (input validation, file fixtures, `colors.cfg` sourcing, branch coverage of Y/N save path); bash-level line coverage (kcov / bashcov) still pending
 - [~] **C.** Covered by `devops.yml` (shellcheck across the 5 task `0x/main.sh` chains)
 - [~] **D.** shellcheck via `devops.yml`
 - [x] **E.** `bash 0x/main.sh ...` reproducible on any POSIX shell (Ubuntu 20.04 Server LTS canonical)
@@ -26,7 +26,7 @@
 
 ## Subproject-specific tasks
 
-- [ ] Add `bats` (Bash Automated Testing System) coverage for `02/main.sh` (interactive Y/N branch) and `05/main.sh` (filesystem stats).
+- [x] bats coverage for all 5 Parts + smoke ([ff0e0416](https://github.com/erdogan-deniz/school-21/commit/ff0e0416) Part 1 + smoke; this commit Parts 2 + 4).
 - [ ] Address shellcheck warnings before flipping `continue-on-error` to false on `devops.yml`.
 - [ ] Consider a tiny Dockerfile that bundles the scripts for one-line `docker run`.
 
@@ -35,3 +35,5 @@
 <!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/erdogan-deniz/school-21/commit/<sha>)) -->
 
 - 2026-05-11: README adopted from repo template + Original task preserved; `devops.yml` workflow (shellcheck + hadolint) added (this commit).
+- 2026-05-11: bats Part 1 + smoke wired into `devops.yml` ([ff0e0416](https://github.com/erdogan-deniz/school-21/commit/ff0e0416)).
+- 2026-05-11: bats coverage extended to Parts 2 and 4 — interactive Y/N save path, ANSI-coloured output, colour-code config sanity (this commit).

@@ -50,6 +50,82 @@ jobs:
       - name: Format check (gating)
         run: ruff format --check python/ algorithms/python/ data_science/ machine_learning/ qa/
 
+  bandit:
+    name: bandit (Python SAST)
+    runs-on: ubuntu-latest
+    # Soft-gated for the first week: bandit on a bootcamp tree will
+    # flag a lot of educational `assert`, `random` for non-crypto,
+    # `subprocess` without shell, etc. Triage and config-tune via
+    # `.bandit` (or skip-list in the run line) before flipping hard.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - name: Install bandit
+        run: python -m pip install --upgrade pip 'bandit[toml]==1.7.10'
+      - name: Run bandit
+        # `-r` recursive, `-c .bandit` picks up the repo-level config
+        # (skips, exclude paths). Severity / confidence filters apply
+        # to the report only — full scan still runs.
+        run: |
+          bandit -r \
+            -c .bandit \
+            --severity-level medium \
+            --confidence-level medium \
+            python/ algorithms/python/ data_science/ machine_learning/ qa/ \
+            || true
+
+  pip-audit:
+    name: pip-audit (vulnerable deps)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    # Scans every requirements.txt across the Python subprojects for
+    # known-CVE packages via PyPI's advisory database. Same soft gate
+    # initial-pass story as bandit — flip hard once we've triaged
+    # whatever historical pins surface.
+    strategy:
+      fail-fast: false
+      matrix:
+        # Subprojects with a real requirements.txt worth scanning.
+        # Drop the entry when a sub-day shares the parent's reqs (e.g.
+        # python/bootcamp/old/day_06/src/requirements.txt fixed in
+        # cb5655c5).
+        include:
+          - reqs: machine_learning/project_01/requirements.txt
+          - reqs: data_science/project_01/requirements.txt
+          - reqs: data_science/bootcamp/day_03/src/requirements.txt
+          - reqs: data_science/bootcamp/day_08/requirements.txt
+          - reqs: data_science/bootcamp/day_09/requirements.txt
+          - reqs: data_science/bootcamp/team_00/requirements.txt
+          - reqs: data_science/bootcamp/team_01/requirements.txt
+          - reqs: python/bootcamp/old/day_05/requirements.txt
+          - reqs: python/bootcamp/old/day_06/src/requirements.txt
+          - reqs: python/bootcamp/old/day_07/requirements.txt
+          - reqs: python/bootcamp/old/day_08/requirements.txt
+          - reqs: python/bootcamp/old/day_09/src/requirements.txt
+          - reqs: python/bootcamp/old/team_01/src/requirements.txt
+          - reqs: python/bootcamp/new/day_02/requirements.txt
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - name: Install pip-audit
+        run: python -m pip install --upgrade pip 'pip-audit==2.7.3'
+      - name: Audit ${{ matrix.reqs }}
+        run: |
+          if [ -f "${{ matrix.reqs }}" ]; then
+            # `-r` reads requirements file; `--strict` would fail on any
+            # vuln but the soft gate is `|| true` for now.
+            pip-audit -r "${{ matrix.reqs }}" || true
+          else
+            echo "Requirements file not found: ${{ matrix.reqs }}"
+          fi
+
   pytest:
     name: pytest (${{ matrix.day }})
     runs-on: ubuntu-latest

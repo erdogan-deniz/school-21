@@ -63,6 +63,17 @@ maintainer.
    source to env vars, then if necessary allow-list the rotated
    value in [`.gitleaks.toml`](.gitleaks.toml). Never allow-list a
    live secret.
+8. **Security scanners are signal, not noise.** [`bandit`][bandit]
+   (Python SAST) and [`pip-audit`][pa] (vulnerable deps) run as
+   `python.yml` jobs. When they flag something, the response order is
+   the same as for `gitleaks`: triage the finding, fix the underlying
+   issue (or refactor away the pattern), and *only* skip in
+   [`.bandit`](.bandit) if the rule is genuinely inapplicable in
+   educational context (the existing skip list covers `assert`-in-
+   tests, non-crypto `random`, and bootcamp SQL string templates).
+
+[bandit]: https://bandit.readthedocs.io/
+[pa]: https://pypi.org/project/pip-audit/
 
 ## Soft rules (override only with good reason)
 

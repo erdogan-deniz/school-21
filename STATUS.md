@@ -67,13 +67,13 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 
 | Subproject         | A | B | C | D | E | F | G | H | Flagship | Notes                                                       |
 | ------------------ | - | - | - | - | - | - | - | - | -------- | ----------------------------------------------------------- |
-| `3DViewer_v1.0`    | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | clang-format applied; C tests + Qt GUI build in c.yml (xvfb) |
-| `SimpleBashUtils`  | ✓ | ◐ | ◐ | ✓ | ✗ | ◐ | ✗ | ◐ |          | clang-format applied; Codecov upload                          |
+| `3DViewer_v1.0`    | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen on 3d_viewer.h + qt_viewer headers                   |
+| `SimpleBashUtils`  | ✓ | ◐ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen on s21_cat.h + s21_grep.h; Codecov upload             |
 | `s21_decimal`      | ✓ | ◐ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen comments; Codecov upload                              |
 | `s21_math`         | ✓ | ◐ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ | ★        | flagship; release-s21_math.yml; Codecov upload                |
 | `s21_matrix`       | ✓ | ◐ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen comments; Codecov upload                              |
 | `s21_string+`      | ✓ | ◐ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen comments; errno table preserved; Codecov upload       |
-| `SmartCalc_v1.0`   | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✗ |          | clang-format applied; C tests + Qt GUI build in c.yml (xvfb) |
+| `SmartCalc_v1.0`   | ✓ | ✗ | ◐ | ✓ | ✗ | ◐ | ✗ | ✓ |          | Doxygen on core (parser/calc/transform/stack/list/etc) + Qt views |
 
 ### `career_track/`
 
@@ -159,7 +159,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | Track                | Subprojects | DoD cells filled | % done   |
 | -------------------- | ----------- | ---------------- | -------- |
 | `algorithms/`        | 1           | 3.5 / 8          | 44 %     |
-| `c/`                 | 7           | 36 / 56          | 64 %     |
+| `c/`                 | 7           | 38.5 / 56        | 69 %     |
 | `career_track/`      | 9           | 13.5 / 72        | 19 %     |
 | `cpp/`               | 6           | 29 / 48          | 60 %     |
 | `data_science/`      | 2           | 7 / 16           | 44 %     |
@@ -170,7 +170,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `qa/`                | 2           | 6 / 16           | 38 %     |
 | `sql/`               | 1           | 2.5 / 8          | 31 %     |
 | `survival_camp/`     | 1           | 1 / 8            | 13 %     |
-| **Total**            | **37**      | **134.5 / 296**  | **45 %** |
+| **Total**            | **37**      | **137 / 296**    | **46 %** |
 
 > "DoD cells filled" counts ✓ as 1 and ◐ as 0.5. The "School 21
 > License" placeholders count ◐ for the F column — they are

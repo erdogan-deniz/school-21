@@ -1,3 +1,23 @@
+/**
+ * @file s21_vector.h
+ * @brief `s21::vector<T>` — dynamic contiguous-storage array, STL
+ *        `std::vector` parallel.
+ *
+ * Mirrors the public API of `std::vector<T>` (modulo the
+ * SCREAMING_SNAKE / `noexcept` polish): default + sized + initialiser
+ * list + copy + move ctors, element access (`at` / `operator[]` /
+ * `front` / `back` / `data`), iterators, capacity (`empty` / `size` /
+ * `max_size` / `capacity` / `reserve` / `shrink_to_fit`), modifiers
+ * (`clear` / `insert` / `erase` / `push_back` / `pop_back` / `swap`).
+ *
+ * Iterators are implemented as wrapper types (@ref VectorIterator,
+ * @ref VectorConstIterator) around a raw `T*`, with implicit
+ * conversion `VectorIterator → VectorConstIterator`.
+ *
+ * Method definitions live in `s21_vector.tpp` (included at the bottom
+ * of this header).
+ */
+
 #ifndef VECTOR_H
 #define VECTOR_H
 #include <cmath>
@@ -12,6 +32,10 @@ class VectorIterator;
 template <class T>
 class VectorConstIterator;
 
+/**
+ * @brief STL-parallel `vector<T>` — owns a contiguous heap buffer
+ *        whose capacity grows geometrically on `push_back` overflow.
+ */
 template <class T>
 class vector {
  public:
@@ -25,43 +49,53 @@ class vector {
   using pointer = T *;
 
  public:
-  // Vector Member functions
-  vector();
-  vector(size_type n);
-  vector(std::initializer_list<value_type> const &items);
-  vector(const vector &v);
-  vector(vector &&v);
-  ~vector();
-  vector &operator=(vector &&v);
+  /// @name Member functions — construction / destruction / assignment
+  /// @{
+  vector();                                                ///< Default ctor — empty, capacity 0.
+  vector(size_type n);                                     ///< Construct with @p n default-initialised elements.
+  vector(std::initializer_list<value_type> const &items);  ///< Brace-list ctor.
+  vector(const vector &v);                                 ///< Copy ctor.
+  vector(vector &&v);                                      ///< Move ctor.
+  ~vector();                                               ///< Releases the heap buffer.
+  vector &operator=(vector &&v);                           ///< Move assignment.
+  /// @}
 
-  // Vector Element access
-  reference at(size_type pos);
-  reference operator[](size_type pos);
-  const_reference front();
-  const_reference back();
-  pointer data();
+  /// @name Element access
+  /// @{
+  reference at(size_type pos);              ///< Bounds-checked access; throws on out-of-range.
+  reference operator[](size_type pos);      ///< Unchecked access.
+  const_reference front();                  ///< First element (UB if empty).
+  const_reference back();                   ///< Last element (UB if empty).
+  pointer data();                           ///< Raw pointer to the underlying buffer.
+  /// @}
 
-  // Vector Iterators
+  /// @name Iterators
+  /// @{
   iterator begin();
   iterator end();
   const_iterator begin() const;
   const_iterator end() const;
+  /// @}
 
-  // Vector Capacity
-  bool empty() const;
-  size_type size() const;
-  size_type max_size() const;
-  size_type capacity() const;
-  void reserve(size_type size);
-  void shrink_to_fit();
+  /// @name Capacity
+  /// @{
+  bool empty() const;                       ///< True iff size == 0.
+  size_type size() const;                   ///< Number of elements currently stored.
+  size_type max_size() const;               ///< Implementation-defined upper bound.
+  size_type capacity() const;               ///< Allocated buffer size in elements.
+  void reserve(size_type size);             ///< Grow the buffer to at least @p size.
+  void shrink_to_fit();                     ///< Trim capacity down to size.
+  /// @}
 
-  // Vector Modifiers
-  void clear();
-  iterator insert(iterator pos, const_reference value);
-  void erase(iterator pos);
-  void push_back(const_reference value);
-  void pop_back();
-  void swap(vector &other);
+  /// @name Modifiers
+  /// @{
+  void clear();                                          ///< Drop every element (capacity preserved).
+  iterator insert(iterator pos, const_reference value);  ///< Insert before @p pos.
+  void erase(iterator pos);                              ///< Remove element at @p pos.
+  void push_back(const_reference value);                 ///< Append at the back.
+  void pop_back();                                       ///< Drop the back element.
+  void swap(vector &other);                              ///< O(1) swap with @p other.
+  /// @}
 
  private:
   size_type size_;
@@ -76,6 +110,14 @@ class vector {
   void remove();
 };
 
+/**
+ * @brief Mutable random-access iterator over @ref vector.
+ *
+ * Lightweight wrapper around a raw `T*`. Supports `*`, `->`, prefix
+ * and postfix `++` / `--`, arithmetic `+` / `-` with `size_t`, and
+ * `==` / `!=` against another @ref VectorIterator. Implicitly
+ * convertible to @ref VectorConstIterator.
+ */
 template <class T>
 class VectorIterator {
   friend class vector<T>;
@@ -136,6 +178,13 @@ class VectorIterator {
   pointer ptr_;
 };
 
+/**
+ * @brief Read-only random-access iterator over @ref vector.
+ *
+ * Same shape as @ref VectorIterator but `operator*` returns by value
+ * (preserving const-correctness in const-context use). Implicitly
+ * convertible to @ref VectorIterator for round-trip mutation paths.
+ */
 template <class T>
 class VectorConstIterator {
   friend class vector<T>;

@@ -1,7 +1,30 @@
+/**
+ * @file s21_list.h
+ * @brief `s21::List<T>` — doubly-linked list, STL `std::list` parallel.
+ *
+ * Differs from `s21::vector` in that storage is node-by-node on the
+ * heap (each `Node` owns `data` + `ptrNext` + `ptrPrev`). Supports
+ * O(1) `push_front` / `pop_front` / `push_back` / `pop_back` plus
+ * the canonical list-only ops `merge` / `reverse` / `unique` / `sort`
+ * / `splice`.
+ *
+ * Note the public class name is `List` (not `list`), and `size()` /
+ * `empty()` return `int` / `bool` directly rather than via STL
+ * `size_type`. Method definitions live in `s21_list.tpp`.
+ */
+
 #ifndef CPP2_S21_CONTAINERS_S21_LIST_H_
 #define CPP2_S21_CONTAINERS_S21_LIST_H_
 
 namespace s21 {
+/**
+ * @brief STL-parallel doubly-linked list with head/tail pointers.
+ *
+ * Iterators come in two flavours: @c iterator (mutable) and
+ * @c const_iterator (read-only, currently a thin shim over the
+ * mutable variant). Both expose `*`, `->`, pre/post `++` / `--`, and
+ * comparison.
+ */
 template <typename T>
 class List {
  public:
@@ -10,29 +33,50 @@ class List {
   using const_reference = const T &;
   using size_type = size_t;
 
-  List();
-  List(size_type n);
-  List(const List &l);
-  List(List &&l);
-  ~List();
+  /// @name Member functions — construction / destruction
+  /// @{
+  List();              ///< Default ctor — empty list.
+  List(size_type n);   ///< Construct with @p n default-initialised nodes.
+  List(const List &l); ///< Copy ctor — deep-copies every node.
+  List(List &&l);      ///< Move ctor.
+  ~List();             ///< Releases every node.
+  /// @}
 
-  const_reference front();
-  const_reference back();
+  /// @name Element access
+  /// @{
+  const_reference front();  ///< First element (UB if empty).
+  const_reference back();   ///< Last element (UB if empty).
+  /// @}
 
-  void push_front(const_reference value);
-  void pop_front();
-  void push_back(const_reference value);
-  void pop_back();
-  T &operator[](const int index);
-  void operator=(List &l);
+  /// @name Modifiers — head / tail
+  /// @{
+  void push_front(const_reference value);  ///< Prepend; O(1).
+  void pop_front();                        ///< Drop the head; O(1).
+  void push_back(const_reference value);   ///< Append; O(1).
+  void pop_back();                         ///< Drop the tail; O(1).
+  /// @}
+
+  /// @name Random access / assignment
+  /// @{
+  T &operator[](const int index);          ///< Linear-scan random access; O(n).
+  void operator=(List &l);                 ///< Copy assignment.
+  /// @}
+
+  /// @name Capacity
+  /// @{
   size_type size() { return this->Size; }
   bool empty() { return this->Size > 0 ? 0 : 1; }
-  void swap(List<T> &other);
-  void merge(List<T> &other);
-  void reverse();
-  void unique();
-  void sort();
-  void clear();
+  /// @}
+
+  /// @name List operations
+  /// @{
+  void swap(List<T> &other);    ///< O(1) swap.
+  void merge(List<T> &other);   ///< Merge two sorted lists into `*this`.
+  void reverse();               ///< Reverse the link order in place.
+  void unique();                ///< Drop consecutive duplicates.
+  void sort();                  ///< In-place sort (merge-sort-ish).
+  void clear();                 ///< Drop every node.
+  /// @}
 
  private:
   template <typename>
@@ -157,11 +201,14 @@ class List {
  public:
   using iterator = ListIterator<T>;
   using const_iterator = ListConstIterator<T>;
+  /// @name Iterators + positional ops
+  /// @{
   iterator begin();
   iterator end();
-  void erase(iterator pos);
-  iterator insert(iterator pos, const_reference value);
-  void splice(const_iterator pos, List<T> &other);
+  void erase(iterator pos);                              ///< Remove node at @p pos.
+  iterator insert(iterator pos, const_reference value);  ///< Insert before @p pos.
+  void splice(const_iterator pos, List<T> &other);       ///< Move every node of @p other before @p pos.
+  /// @}
 
  private:
   iterator *iter;

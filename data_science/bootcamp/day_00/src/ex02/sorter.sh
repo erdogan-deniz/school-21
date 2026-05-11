@@ -1,4 +1,4 @@
-#!/bin/sh.
+#!/bin/sh
 
 HEAD_FLAG="-n"
 HEAD_FLAG_VAL='1'

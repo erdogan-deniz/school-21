@@ -3,7 +3,6 @@ Exercise 10: a machines - solution module.
 """
 
 import sys
-
 from pathlib import Path
 
 sys.path.append(

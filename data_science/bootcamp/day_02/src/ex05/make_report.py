@@ -1,11 +1,10 @@
-from config import FILE_PATH, FILE_NAME, FILE_FORMAT, NUM_OF_GEN_PAIRS
 from analytics import (
-    Research,
     Analytics,
+    Research,
     get_count_of_heads,
     prepare_report_content,
 )
-
+from config import FILE_FORMAT, FILE_NAME, FILE_PATH, NUM_OF_GEN_PAIRS
 
 if __name__ == "__main__":
     researcher: Research = Research()

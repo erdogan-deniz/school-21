@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 
-import sys
-import bs4
-import pstats
-import aiohttp
 import asyncio
 import cProfile
+import pstats
+import sys
+
+import aiohttp
+import bs4
 
 
 async def get_url_content(request_url: str, request_headers: dict) -> str:

@@ -7,9 +7,10 @@ Examples of usage:
     >>> pytest tag.py -m calculations -v
 """
 
+import json
 import os
 import sys
-import json
+
 import pytest
 
 sys.path.append(

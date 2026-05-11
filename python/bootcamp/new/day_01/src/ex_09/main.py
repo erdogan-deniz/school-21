@@ -3,7 +3,6 @@ Exercise 09: the derivative at a point - solution module.
 """
 
 import sys
-
 from pathlib import Path
 
 sys.path.append(

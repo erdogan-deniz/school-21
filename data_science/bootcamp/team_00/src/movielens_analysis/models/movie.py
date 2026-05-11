@@ -39,16 +39,16 @@ sys.path.append(
     ),
 )
 
-from re import error, compile
-from typing import Any, Literal
 from collections import (
     Counter,
     OrderedDict,
     defaultdict,
 )
+from re import compile, error
+from typing import Any, Literal
 
-from src.utils import calculate_metric
 from src.movielens_analysis.models.rating import Rating
+from src.utils import calculate_metric
 
 
 class Movie:

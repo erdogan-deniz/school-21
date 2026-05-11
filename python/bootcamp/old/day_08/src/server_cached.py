@@ -1,9 +1,10 @@
 # Necessary modules:
 import uuid
-import uvicorn
-import fastapi
+
 import aiohttp
 import aioredis
+import fastapi
+import uvicorn
 
 # Necessary imports:
 from fastapi import Request

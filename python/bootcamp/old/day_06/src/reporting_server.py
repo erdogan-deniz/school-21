@@ -1,10 +1,10 @@
 # Necessary modules:
+import random
 from concurrent import futures
 
-import grpc
-import random
 import ex00_pb2
 import ex00_pb2_grpc
+import grpc
 
 # Ship data:
 ship_list = [

@@ -43,25 +43,26 @@ Handlers:
 # Necessary modules:
 import asyncio
 import logging
-import database
-import entities.npc
-import entities.task
-import entities.enemy
-import entities.location
-import entities.protagonist
 
 # Necessary classes and functions:
 from asyncio import sleep
-from aiogram.filters import Command
-from entities.npc import NPC, set_npc
-from entities.location import Location
+
+import database
+import entities.enemy
+import entities.location
+import entities.npc
+import entities.protagonist
+import entities.task
+from additional import get_dialogs, print_dialogs
 from aiogram import Bot, Dispatcher, F
+from aiogram.filters import Command
+from aiogram.types import FSInputFile, KeyboardButton, Message, ReplyKeyboardMarkup
 from bot_data import ADMIN_ID, TOKEN_API
-from entities.task import Task, set_task
 from entities.enemy import Enemy, set_enemy
+from entities.location import Location
+from entities.npc import NPC, set_npc
 from entities.protagonist import Protagonist
-from additional import print_dialogs, get_dialogs
-from aiogram.types import Message, KeyboardButton, ReplyKeyboardMarkup, FSInputFile
+from entities.task import Task, set_task
 
 # Starter type and item:
 hero_type = "Bladerunner"
@@ -709,7 +710,7 @@ async def end(message: Message):
 
     await message.answer(
         f"Hello new hero, <b>{message.from_user.first_name}</b>!"
-        + f'\nWelcome to the game 🏃‍♂️<tg-spoiler>️"Escape From Cyber World"</tg-spoiler> 🌐\n'
+        + '\nWelcome to the game 🏃‍♂️<tg-spoiler>️"Escape From Cyber World"</tg-spoiler> 🌐\n'
     )
     await message.answer(
         "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n"
@@ -735,7 +736,7 @@ async def start(message: Message):
 
     await message.answer(
         f"Hello new hero, <b>{message.from_user.first_name}</b>!"
-        + f'\nWelcome to the game 🏃‍♂️<tg-spoiler>️"Escape From Cyber World"</tg-spoiler> 🌐\n'
+        + '\nWelcome to the game 🏃‍♂️<tg-spoiler>️"Escape From Cyber World"</tg-spoiler> 🌐\n'
     )
     await message.answer(
         "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n"
@@ -842,7 +843,7 @@ async def exit_menu(message: Message):
 
     await message.answer(
         f"Hello new hero, <b>{message.from_user.first_name}</b>!"
-        + f'\nWelcome to the game 🏃‍♂️<tg-spoiler>️"Escape From Cyber World"</tg-spoiler> 🌐\n'
+        + '\nWelcome to the game 🏃‍♂️<tg-spoiler>️"Escape From Cyber World"</tg-spoiler> 🌐\n'
     )
     await message.answer(
         "<u>PLEASE, CHOICE THE BUTTON AND PRESS IT</u>:\n\n"

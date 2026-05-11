@@ -4,8 +4,8 @@ Exercise 06: a movies - solution module.
 
 from json import (
     JSONDecodeError,
-    load,
     dumps,
+    load,
 )
 
 

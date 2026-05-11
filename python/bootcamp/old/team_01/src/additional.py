@@ -11,13 +11,14 @@ Functions:
 """
 
 # Necessary modules:
-import data
-import time
 import random
-import database
+import time
 
 # Necessary functions and classes:
 from asyncio import sleep
+
+import data
+import database
 from aiogram.types import Message
 
 

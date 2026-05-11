@@ -3,9 +3,10 @@ from __future__ import print_function
 
 # Necessary modules:
 import sys
-import grpc
+
 import ex00_pb2
 import ex00_pb2_grpc
+import grpc
 
 # Data for translation:
 alignment_list = ["Ally", "Enemy"]

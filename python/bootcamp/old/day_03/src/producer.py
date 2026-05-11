@@ -1,9 +1,10 @@
 # Don't forget to start redis server - "sudo service redis-server start"
 # Should start with argument case like "python producer.py 1"
-import sys  # Module for invariant cases
 import json  # Module for serialization json data
-import redis  # Module for pub/sub process
 import random  # Module for generate numbers
+import sys  # Module for invariant cases
+
+import redis  # Module for pub/sub process
 
 
 # Main function for task

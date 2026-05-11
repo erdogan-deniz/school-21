@@ -1,13 +1,14 @@
 # Necessary modules:
 
 from __future__ import print_function
-from typing import List
-from pydantic import BaseModel, ConfigDict
 
 import sys
-import grpc
+from typing import List
+
 import ex00_pb2
 import ex00_pb2_grpc
+import grpc
+from pydantic import BaseModel, ConfigDict
 
 # Data for translation:
 alignment_list = ["Ally", "Enemy"]

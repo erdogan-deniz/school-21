@@ -3,7 +3,6 @@ Exercise 03: a figures - solution module.
 """
 
 import sys
-
 from pathlib import Path
 
 sys.path.append(

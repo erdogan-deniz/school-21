@@ -1,9 +1,9 @@
 import os
 import sys
-import requests
-
 from logging import info
 from random import randint
+
+import requests
 from config import REPORT_TEMPL
 
 

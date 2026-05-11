@@ -9,10 +9,10 @@ Functions:
 
 # Necessary modules:
 import database
+from additional import clear_string
 
 # Necessary functions and classes:
 from aiogram.types import Message
-from additional import clear_string
 from entities.location import Location
 
 

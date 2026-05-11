@@ -1,15 +1,16 @@
 from __future__ import print_function
-from sqlalchemy.orm import Session
 
 # Necessary modules:
 import sys
+
+import arguments
+import ex00_pb2
+import ex00_pb2_grpc
 import grpc
 import models
-import ex00_pb2
-import arguments
-import sqlalchemy
-import ex00_pb2_grpc
 import reporting_client_v3
+import sqlalchemy
+from sqlalchemy.orm import Session
 
 # Data for translation:
 alignment_list = ["Ally", "Enemy"]
@@ -66,7 +67,7 @@ def find_traitors(engine):
 # Function for connection:
 def create_connection(USER_NAME: str, USER_PASSWORD: str, DATABASE_NAME: str):
     engine = sqlalchemy.create_engine(
-        f"postgresql+psycopg2://" + USER_NAME + ":" + USER_PASSWORD + "@localhost/" + DATABASE_NAME
+        "postgresql+psycopg2://" + USER_NAME + ":" + USER_PASSWORD + "@localhost/" + DATABASE_NAME
     )
     engine.connect()
 

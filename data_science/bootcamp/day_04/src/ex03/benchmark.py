@@ -2,7 +2,6 @@
 
 import sys
 import timeit
-
 from functools import reduce
 
 

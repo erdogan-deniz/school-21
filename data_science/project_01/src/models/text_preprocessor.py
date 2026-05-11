@@ -19,8 +19,8 @@ Text preprocessing Python module.
 """
 
 import os
-import sys
 import string
+import sys
 
 sys.path.append(
     os.path.abspath(
@@ -33,11 +33,10 @@ sys.path.append(
     ),
 )
 
-from spacy import load
-from symspellpy import SymSpell
-from spacy.lang.en import English
 from nltk.stem import PorterStemmer
-
+from spacy import load
+from spacy.lang.en import English
+from symspellpy import SymSpell
 from utilities import handle_errors
 
 

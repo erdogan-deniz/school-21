@@ -11,17 +11,25 @@
 ```bash
 cd data_science/project_01
 
-# Create venv + install deps (Makefile handles cross-platform venv path)
-make check
-pip install -r requirements.txt
-python -m spacy download en_core_web_lg
+# Cross-platform Makefile creates .venv and installs pinned deps
+# (numpy / scipy / pandas / scikit-learn / nltk / spacy / gensim /
+#  symspellpy / ipykernel — all semver-bounded).
+make install
 
-# Open the notebooks
-jupyter notebook notebooks/preprocessing.ipynb
-jupyter notebook notebooks/analysis.ipynb
+# spaCy's English model is needed for tokenize_text / lemmatize_text.
+# Fetch the large variant the project trains on (~700 MB).
+.venv/bin/python -m spacy download en_core_web_lg
+
+# Open the notebooks.
+.venv/bin/jupyter notebook notebooks/preprocessing.ipynb
+.venv/bin/jupyter notebook notebooks/analysis.ipynb
+
+# Run the pytest suite (25 tests over the lightweight API surface).
+.venv/bin/pytest -v src/tests/
+
+# Drop the venv when done.
+make clear
 ```
-
-For a fully reproducible environment, use Python 3.12 inside a Linux container.
 
 ## Demo
 
@@ -29,16 +37,29 @@ For a fully reproducible environment, use Python 3.12 inside a Linux container.
 
 ## Documentation
 
+- Sphinx API reference: [erdogan-deniz.github.io/school-21/sphinx/data_science/project_01/](https://erdogan-deniz.github.io/school-21/sphinx/data_science/project_01/)
+  (autodoc over `src/models/` + `src/utilities/`; rebuilt by [`pages.yml`](../../.github/workflows/pages.yml) on every push).
 - [Workflow](#workflow) section below.
 - Notebooks: `notebooks/preprocessing.ipynb`, `notebooks/analysis.ipynb`.
-- Models: `notebooks/models/`, utilities: `notebooks/utilities/`.
-- Source: `src/`.
+- Source modules under `src/models/` (TextPreprocessor, TextToFeaturesConverter)
+  and `src/utilities/` (handle_errors decorator, top_similar_vectors).
 
 ## Tests
 
-- Workflow validates against the original task accuracy bounds: ≥ `0.832`
-  baseline, ≥ `0.873` bonus.
-- CI lint coverage via `ruff` in [`.github/workflows/python.yml`](../../.github/workflows/python.yml).
+- **25 pytest unit tests** under `src/tests/` covering the lightweight
+  API surface — `TextPreprocessor.clean_text` (10, incl. the apostrophe-
+  preservation contract that lets the downstream spaCy tokenizer split
+  contractions correctly), `TextPreprocessor.stem_text` (4, PorterStemmer-
+  backed), `TextToFeaturesConverter` one-hot / word-count / TF-IDF
+  encoders + `initialize_tools` (8), `top_similar_vectors` (3).
+- Heavy methods (spaCy / SymSpell / gensim Word2Vec model loads)
+  deliberately uncovered — they belong to a slow-test suite, not the
+  per-PR gate.
+- Notebook-level acceptance: ≥ 0.832 accuracy on the test dataset
+  (baseline), ≥ 0.873 (bonus).
+- CI: pytest matrix entry `data_science-project_01` in
+  [`.github/workflows/python.yml`](../../.github/workflows/python.yml);
+  per-flag Codecov badge above.
 
 ## License & attribution
 

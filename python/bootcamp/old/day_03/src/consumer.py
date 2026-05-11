@@ -1,9 +1,10 @@
-import redis  # Module for pub/sub
 import json  # For deserialization
-import time  # Module for output freezing
-import sys  # Module for reading arguments
 import logging.handlers  # For putting in the file
 import subprocess  # Module for subprocess commands
+import sys  # Module for reading arguments
+import time  # Module for output freezing
+
+import redis  # Module for pub/sub
 
 connection = redis.Redis(
     host="localhost", port=6379, db=1

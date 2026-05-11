@@ -3,10 +3,10 @@ The launch point module of the nutriologist's app.
 """
 
 from typing import Any
-from pandas import DataFrame, read_csv
 
 from models.nutritionist import Nutritionist
-from utils import unpack_model, get_script_arguments
+from pandas import DataFrame, read_csv
+from utils import get_script_arguments, unpack_model
 
 
 def main(

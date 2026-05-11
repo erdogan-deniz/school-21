@@ -3,7 +3,6 @@ Exercise 02: a palindrome - solution module.
 """
 
 import sys
-
 from pathlib import Path
 
 sys.path.append(
@@ -14,7 +13,7 @@ sys.path.append(
     ),
 )
 
-from utils import is_symmetric_list, convert_integer_to_list
+from utils import convert_integer_to_list, is_symmetric_list
 
 
 def main() -> None:

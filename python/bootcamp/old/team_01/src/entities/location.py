@@ -9,7 +9,7 @@ import additional
 
 # Necessary functions and classes:
 from additional import clear_string
-from aiogram.types import Message, FSInputFile
+from aiogram.types import FSInputFile, Message
 
 
 class Location:

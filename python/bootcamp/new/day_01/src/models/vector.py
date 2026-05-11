@@ -121,7 +121,7 @@ class Vector:
                 != self.dim
             ):
                 raise Exception(
-                    f"\nFile: {__file__}\n" + f"Message: incorrect vector dimension values.",
+                    f"\nFile: {__file__}\n" + "Message: incorrect vector dimension values.",
                 )
         except ValueError as val_err:
             raise ValueError(

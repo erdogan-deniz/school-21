@@ -1,11 +1,11 @@
-import json
-import neonx
-import logging
 import argparse
-import requests
-import networkx
+import json
+import logging
 import urllib.parse
 
+import neonx
+import networkx
+import requests
 from bs4 import BeautifulSoup
 
 logging.basicConfig(level=logging.INFO)

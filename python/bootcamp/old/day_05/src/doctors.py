@@ -1,6 +1,6 @@
-import time  # Module for time freezing
 import random  # For shuffle doctors
 import threading  # Module for threats and mutex
+import time  # Module for time freezing
 
 locker = threading.Lock()  # Locker
 

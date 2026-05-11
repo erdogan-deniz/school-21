@@ -1,6 +1,6 @@
 import sys
-
 from random import randint
+
 from config import REPORT_TEMPL
 
 

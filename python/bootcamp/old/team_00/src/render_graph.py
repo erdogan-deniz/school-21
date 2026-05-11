@@ -1,8 +1,9 @@
-import os
 import json
+import os
+
+import matplotlib.pyplot
 import networkx
 import nx_altair
-import matplotlib.pyplot
 
 if __name__ == "__main__":
     wiki_path = os.getenv("WIKI_FILE")

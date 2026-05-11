@@ -3,8 +3,8 @@ Additional utilities module.
 """
 
 import sys
-
 from typing import Any
+
 from joblib import load
 
 

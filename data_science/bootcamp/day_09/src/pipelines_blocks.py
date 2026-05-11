@@ -3,14 +3,15 @@ A collection of components for building machine learning pipelines.
 """
 
 from typing import Any
+
 from joblib import dump
-from tqdm.notebook import tqdm
 from numpy import ndarray, prod
 from pandas import DataFrame, concat
-from sklearn.metrics import accuracy_score
-from sklearn.preprocessing import OneHotEncoder
 from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.metrics import accuracy_score
 from sklearn.model_selection import GridSearchCV, train_test_split
+from sklearn.preprocessing import OneHotEncoder
+from tqdm.notebook import tqdm
 
 
 class FeatureExtractor(BaseEstimator, TransformerMixin):

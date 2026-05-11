@@ -1,6 +1,7 @@
 # Necessary modules:
-import sys
 import os.path
+import sys
+
 import process
 
 # Add our files:

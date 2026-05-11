@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
-import timeit
 import random
-
+import timeit
 from collections import Counter
 
 

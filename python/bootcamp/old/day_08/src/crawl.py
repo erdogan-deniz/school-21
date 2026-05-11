@@ -1,9 +1,9 @@
 # Necessary modules:
-import sys
-import json
-import aiohttp
 import asyncio
+import json
+import sys
 
+import aiohttp
 
 # Necessary data:
 found_uuid = ""  # UUID of task

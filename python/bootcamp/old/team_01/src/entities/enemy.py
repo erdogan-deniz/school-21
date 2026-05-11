@@ -9,10 +9,10 @@ Functions:
 
 # Necessary modules:
 import database
+from additional import clear_string
 
 # Necessary functions and classes:
 from aiogram.types import Message
-from additional import clear_string
 from entities.location import Location
 
 
@@ -93,7 +93,7 @@ class Enemy:
         """
 
         await message.answer(
-            f"<u>ENEMY DATA</u>:\n\n"
+            "<u>ENEMY DATA</u>:\n\n"
             + f"<b>Enemy name</b>: <code>{clear_string(self.name)}</code>\n"
             + f"<b>Enemy armor</b>: <code>{self.armor}</code>\n"
             + f"<b>Enemy health</b>: <code>{self.health}</code>\n"

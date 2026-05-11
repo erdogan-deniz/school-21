@@ -3,7 +3,6 @@
 import asyncio
 
 import aiohttp
-
 from display import print_summary
 from downloader import download_image
 from validator import get_valid_save_dir

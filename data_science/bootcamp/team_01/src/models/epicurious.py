@@ -24,14 +24,14 @@ sys.path.append(
 )
 
 from typing import Any
+
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 from httpx import (
-    HTTPError,
     AsyncClient,
     ConnectTimeout,
+    HTTPError,
 )
-
 from src.utils import get_clear_string
 
 

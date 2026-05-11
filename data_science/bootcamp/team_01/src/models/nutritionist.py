@@ -18,9 +18,10 @@ sys.path.append(
     ),
 )
 
-from typing import Any
-from numpy import ndarray
 from random import choice
+from typing import Any
+
+from numpy import ndarray
 from pandas import DataFrame
 from sklearn.metrics.pairwise import cosine_similarity
 

@@ -2,9 +2,9 @@
 Plotting utilities.
 """
 
-import matplotlib.pyplot as plt
-
 from typing import Any
+
+import matplotlib.pyplot as plt
 from numpy import ndarray
 from pandas import DataFrame
 from sklearn.metrics import silhouette_score

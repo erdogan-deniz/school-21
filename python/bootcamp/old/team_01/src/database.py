@@ -11,10 +11,10 @@ Functions:
 """
 
 # Necessary modules:
-import psycopg2
-
 # Necessary functions and classes:
 from configparser import ConfigParser
+
+import psycopg2
 
 
 def configuration_database(filename: str = "database.ini", section: str = "postgresql"):

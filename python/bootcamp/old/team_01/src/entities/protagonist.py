@@ -5,14 +5,15 @@ Classes:
 """
 
 # Necessary modules:
-import time
 import random
+import time
+
 import additional
+from additional import clear_string
+from aiogram.types import Message
 
 # Necessary functions and classes:
 from entities.enemy import Enemy
-from aiogram.types import Message
-from additional import clear_string
 from entities.location import Location
 
 

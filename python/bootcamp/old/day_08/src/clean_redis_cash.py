@@ -1,6 +1,6 @@
 # For start linux command:
-import time as t
 import subprocess
+import time as t
 
 
 # For taking time from user:

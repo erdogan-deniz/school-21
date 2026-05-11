@@ -38,7 +38,7 @@ jobs:
     # is now hard. Lint gate stays soft until the remaining 181
     # findings (unsafe-fix territory) get per-subproject triage.
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -59,7 +59,7 @@ jobs:
     # `.bandit` (or skip-list in the run line) before flipping hard.
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -109,7 +109,7 @@ jobs:
           - reqs: python/bootcamp/old/team_01/src/requirements.txt
           - reqs: python/bootcamp/new/day_02/requirements.txt
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -153,7 +153,7 @@ jobs:
             workdir: data_science/project_01/src
             flag: data_science-project_01
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -202,7 +202,7 @@ jobs:
             workdir: data_science/project_01
             docs_dir: docs
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'

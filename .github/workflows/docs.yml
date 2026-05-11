@@ -51,7 +51,7 @@ jobs:
           - subproject: cpp/s21_containers
           - subproject: cpp/s21_matrix+
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install Doxygen + Graphviz
         run: |
           sudo apt-get update

@@ -42,6 +42,8 @@ This repo is undergoing a production-grade overhaul (2026-05). Live status:
   per subproject.
 - **Design doc:** [`docs/specs/2026-05-11-production-grade-overhaul.md`](docs/specs/2026-05-11-production-grade-overhaul.md).
 - **Working agreement:** [`CLAUDE.md`](CLAUDE.md) — repo-wide rules and conventions.
+- **AI-coding-agent contract:** [`AGENTS.md`](AGENTS.md) — public counterpart of CLAUDE.md, read by Copilot CLI / Cursor / Aider on session start.
+- **Security policy:** [`SECURITY.md`](SECURITY.md) — how to report vulnerabilities + the three-layer leak-prevention stack (gitleaks pre-commit + secrets.yml CI + bandit + pip-audit).
 - **Toolchain pins:** [`docs/TOOLCHAIN.md`](docs/TOOLCHAIN.md) — every language / linter / framework version, single source of truth.
 - **Changelog:** [`CHANGELOG.md`](CHANGELOG.md) — Keep-a-Changelog record of the 2026-05-11 production-grade overhaul.
 - **Generated docs site:** [erdogan-deniz.github.io/school-21](https://erdogan-deniz.github.io/school-21/) — Doxygen + Sphinx HTML, built and deployed by [`pages.yml`](.github/workflows/pages.yml).

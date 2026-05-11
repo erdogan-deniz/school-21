@@ -1,8 +1,6 @@
-uuid
 redis
 uvicorn
 fastapi
 aiohttp
-asyncio
 aioredis
 redis-tools

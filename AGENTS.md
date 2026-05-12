@@ -164,6 +164,9 @@ independently inside this monorepo.
 
 - [`STATUS.md`](STATUS.md) — current production-readiness state.
 - [`SECURITY.md`](SECURITY.md) — vulnerability-reporting protocol and the three-layer leak-prevention stack.
+- Root [`Makefile`](Makefile) — `make install` / `make precommit-all` /
+  `make lint-{md,shell,python,cpp,sql,secrets}` shortcuts. `make help`
+  lists every target.
 - [`docs/specs/2026-05-11-production-grade-overhaul.md`](docs/specs/2026-05-11-production-grade-overhaul.md)
   — the design doc behind the recent overhaul.
 - [`docs/TOOLCHAIN.md`](docs/TOOLCHAIN.md) — pinned tool versions.

@@ -347,6 +347,67 @@ with the production fold's `---` 3-dash separator — same disable
 pattern as MD036 (italic-as-heading) and MD060 (long preserved
 tables) added earlier. (`6a131592`)
 
+**STATUS.md E-column honesty audit.** Seven c/ + cpp/ libraries
+had E ✗ (Reproducible build) on the dashboard despite each
+shipping a one-command `make` target that builds the library, runs
+the test suite, and produces an lcov report. The c.yml / cpp.yml
+workflows already prove the pipeline works on a fresh Ubuntu runner
+after a single `apt-get install libcheck-dev` (or `libgtest-dev`
+for the C++ libs). Bumped E ✗ → ◐ for `c/{SimpleBashUtils,
+s21_decimal, s21_math, s21_matrix, s21_string+}` and `cpp/{s21_containers,
+s21_matrix+}`. The ◐ (not ✓) reflects the implicit system-package
+prerequisite. Qt-dependent apps stay E ✗ because Qt6 install is
+heavyweight enough to make "one command" misleading. Roll-up
+112/206 → 115.5/206 (54 % → 56 %). (`0e39ef30`)
+
+**`SECURITY.md` at repo root.** GitHub-recognised special file that
+unlocks three UI affordances at once: Insights → Security tab,
+"Report a vulnerability" link in the Issues UI, and Private
+Vulnerability Reporting (PVR) opt-in. The file documents the
+private reporting channel, frames the repo as an educational
+portfolio (not production-deployed), summarises the three-layer
+leak-prevention stack already in place (gitleaks pre-commit +
+secrets.yml CI + bandit + pip-audit), references the rotate-first
+protocol from AGENTS.md rule #7, and explicitly enumerates
+deliberately-NOT-addressed concerns (threat modelling, auto-merge,
+history rewrite) so reports stay scoped. Cross-linked from root
+README and AGENTS.md. (`3b873a0f`)
+
+**Codecov badge href fix — second class of the
+slash-flag bug.** In e920b520 the python.yml matrix had
+`flags: python-${{ matrix.day }}` producing slash-containing flag
+names that Codecov silently normalised. This batch fixes the
+*click-target* equivalent in seven c/cpp library READMEs: the
+href used `?flag=X` (the singular form, valid only on the badge
+image URL — not on the dashboard filter). Codecov silently
+ignored the parameter and dropped the user on the unfiltered
+overview. Switched to `?flags%5B0%5D=X` (URL-encoded array form)
+in `c/{SimpleBashUtils, s21_decimal, s21_math, s21_matrix,
+s21_string+}` + `cpp/{s21_containers, s21_matrix+}`. Image URLs
+unchanged — those were already correct. (`9599498b`)
+
+**Repo-root `Makefile` — dev-experience aggregator.** Twelve
+targets that aggregate the cross-cutting concerns across the
+polyglot tree (per-subproject Makefiles keep their own targets,
+none are shadowed):
+
+- `help` — self-documenting via `awk` introspection on the
+  `# target: ## description` pattern.
+- `install` — pip install pre-commit + ruff + sqlfluff at pinned
+  versions, then `pre-commit install`.
+- `precommit` / `precommit-all` — run the hook stack on staged
+  or all-tracked files.
+- `lint-{md,shell,python,cpp,sql,secrets}` — surgical per-language
+  runners. Each checks the tool is on PATH and prints an
+  actionable install hint if not (POSIX-safe `command -v`).
+- `clean` — wipe `__pycache__` / `.ruff_cache` / `.pytest_cache`.
+
+`SHELL := /bin/bash` at the top so `mapfile` works in Alpine /
+dash defaults. Tool versions pinned in variables matching
+`.pre-commit-config.yaml` and the CI workflows. Cross-linked from
+root README and AGENTS.md so a fresh contributor (or AI agent)
+sees it on first orientation. (`1e826ba4`, `404ee72d`)
+
 ### Flagships designated (2026-05-11)
 
 Three subprojects flagged **★** in STATUS.md, targeting DoD-C

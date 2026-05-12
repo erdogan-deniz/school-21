@@ -88,7 +88,7 @@ jobs:
         run: doxygen Doxyfile
       - name: Upload generated docs
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: doxygen-${{ matrix.subproject }}
           path: ${{ matrix.subproject }}/docs/api/

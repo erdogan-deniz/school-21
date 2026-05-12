@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true  # informational until a deliberate format pass lands
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -60,7 +60,7 @@ jobs:
           --health-timeout 5s
           --health-retries 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install psql client
         run: sudo apt-get update && sudo apt-get install -y --no-install-recommends postgresql-client
       - name: Verify every day's schema loads

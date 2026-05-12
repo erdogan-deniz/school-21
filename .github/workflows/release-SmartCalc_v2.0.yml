@@ -51,7 +51,7 @@ jobs:
             qt_arch: win64_msvc2019_64
             artifact: SmartCalc_v2.0-windows-x64.zip
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Install Qt6 (cached)
         uses: jurplel/install-qt-action@v4

@@ -34,7 +34,7 @@ jobs:
     name: build s21_math.a
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Install build deps (pinned)
         run: |

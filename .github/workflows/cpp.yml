@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     # Repo-wide format pass landed in commit e3590aa1; gate is now hard.
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install clang-format
         run: |
           sudo apt-get update
@@ -61,7 +61,7 @@ jobs:
           - s21_containers
           - s21_matrix+
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install dependencies
         run: |
           sudo apt-get update
@@ -116,7 +116,7 @@ jobs:
           - CPP6_3DViewer_v2.2
           - SmartCalc_v2.0
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install dependencies (cached)
         uses: awalsh128/cache-apt-pkgs-action@v1
         with:
@@ -159,7 +159,7 @@ jobs:
           - CPP6_3DViewer_v2.2
           - SmartCalc_v2.0
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install Qt6
         uses: jurplel/install-qt-action@v4
         with:

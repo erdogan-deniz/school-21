@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true  # informational until a deliberate format pass lands
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install shellcheck
         run: |
           sudo apt-get update
@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install bats (cached)
         uses: awalsh128/cache-apt-pkgs-action@v1
         with:
@@ -61,7 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Find Dockerfiles
         id: find
         run: |
@@ -94,7 +94,7 @@ jobs:
     # multi-service Docker example actually works against current
     # Docker / docker-compose releases.
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Show docker + compose versions
         run: |
           docker --version

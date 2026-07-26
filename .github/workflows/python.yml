@@ -227,7 +227,7 @@ jobs:
         continue-on-error: true
       - name: Upload generated docs
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: sphinx-${{ matrix.subproject }}
           path: ${{ matrix.workdir }}/${{ matrix.docs_dir }}/build/html/

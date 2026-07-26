@@ -80,7 +80,7 @@ jobs:
           cd _release && tar czf "s21_math-${GITHUB_REF_NAME}.tar.gz" s21_math/
 
       - name: Upload tarball as workflow artefact (always)
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: s21_math-${{ github.ref_name }}
           path: _release/s21_math-*.tar.gz

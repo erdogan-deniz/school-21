@@ -1,3 +1,33 @@
+# ── Общий блок — одинаков во всех Claude-проектах Дениза ──
+# Правишь его — правь во всех сразу. Список проектов и правило синхронизации
+# — в life/CLAUDE.md, раздел 5. Правила самого проекта — ниже, после блока.
+
+# Служебная авто-история плагина remember: генерируется сама, руками не правим.
+.remember/
+
+# Артефакты Claude Code и плагинов: локальные worktree, личные настройки сессии,
+# логи браузерной автоматизации, состояние brainstorming-компаньона.
+.claude/worktrees/
+.claude/settings.local.json
+.playwright-mcp/
+.superpowers/
+
+# Аварийные дампы Git Bash / MSYS — появляются в корне сами, содержимого не несут.
+# Дважды попадали в историю через `git add -A`: life 21.08.2026, ai-agency 07.09.2026.
+*.stackdump
+
+# Системный мусор Windows / macOS, временные файлы редакторов и Office.
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
+*.tmp
+*.bak
+*~
+~$*
+nul
+# ── конец общего блока ──
+
 # --- Operating system noise ---
 .DS_Store
 Thumbs.db

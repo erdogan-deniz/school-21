@@ -100,7 +100,7 @@ jobs:
           export QT_PLUGIN_PATH=${Qt6_DIR}/plugins
           ./linuxdeploy --appdir AppDir --plugin qt --output appimage
           mv SmartCalc_v2.0-x86_64.AppImage "$GITHUB_WORKSPACE/${{ matrix.artifact }}" 2>/dev/null || \
-            mv *.AppImage "$GITHUB_WORKSPACE/${{ matrix.artifact }}"
+            mv ./*.AppImage "$GITHUB_WORKSPACE/${{ matrix.artifact }}"
 
       # ---------- macOS ----------
       - name: macOS — install create-dmg

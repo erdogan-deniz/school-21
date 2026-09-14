@@ -53,3 +53,8 @@ ignore = [
 [format]
 quote-style = "double"
 indent-style = "space"
+# Jupyter notebooks are lint-checked but never reformatted: the
+# 43 bootcamp / project notebooks are graded artefacts whose cell
+# source is left exactly as submitted. `ruff format --check` in
+# python.yml therefore gates .py files only.
+exclude = ["*.ipynb"]

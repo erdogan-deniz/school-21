@@ -69,10 +69,12 @@ jobs:
           if [ -z "$files" ]; then
             echo "no_files=true" >> "$GITHUB_OUTPUT"
           else
-            echo "no_files=false" >> "$GITHUB_OUTPUT"
-            echo "files<<EOF" >> "$GITHUB_OUTPUT"
-            echo "$files" >> "$GITHUB_OUTPUT"
-            echo "EOF" >> "$GITHUB_OUTPUT"
+            {
+              echo "no_files=false"
+              echo "files<<EOF"
+              echo "$files"
+              echo "EOF"
+            } >> "$GITHUB_OUTPUT"
           fi
       - name: Run hadolint
         if: steps.find.outputs.no_files == 'false'

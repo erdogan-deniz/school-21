@@ -161,8 +161,8 @@ jobs:
             make test
           else
             echo "no 'test' target; attempting direct compile of *_test.c"
-            $(CC=${CC:-gcc}; $CC -Wall -Wextra -Wno-error -std=c11 \
-              *.c -lcheck -lsubunit -lpthread -lrt -lm -o test_bin) || true
+            "${CC:-gcc}" -Wall -Wextra -Wno-error -std=c11 \
+              ./*.c -lcheck -lsubunit -lpthread -lrt -lm -o test_bin || true
             ./test_bin || true
           fi
         continue-on-error: true

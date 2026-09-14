@@ -26,6 +26,10 @@ extend-exclude = [
     "**/.mypy_cache/**",
     # Sphinx / docs builds.
     "**/docs/_build/**",
+    # SmartCalc_v3.0 carries its own strict [tool.ruff] (ruff >= 0.14,
+    # preview rules such as RUF059 / DOC) that the repo-wide ruff 0.6.9
+    # cannot parse. It gets a dedicated job in python.yml instead.
+    "python/SmartCalc_v3.0",
 ]
 
 [lint]

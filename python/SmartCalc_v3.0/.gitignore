@@ -1,0 +1,18 @@
+# SmartCalc_v3.0 — subproject-level ignores (root .gitignore covers the rest:
+# .venv/, __pycache__/, *.dll / *.so / *.dylib, build/, dist/, .vscode/, caches).
+
+# Compiled C core lives here after `make lib`; never committed.
+src/libs/*
+!src/libs/.gitkeep
+
+# App runtime data: rotating logs and the SQLite history DB.
+logs/*
+!logs/.gitkeep
+*.db
+
+# PyInstaller / Inno Setup output.
+installer_output/
+*.spec.bak
+
+# hypothesis example database (property-based tests).
+.hypothesis/

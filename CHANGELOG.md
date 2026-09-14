@@ -26,6 +26,12 @@ overhaul"* sections rather than versions.
   including the header failed to compile since the May Doxygen rollout.
 - `STATUS.md` roll-up recounted from cell values (`data_science/` +0.5,
   `devops/` +1.0 drift).
+- **`python/SmartCalc_v3.0`**: `TestHistoryAppDir` asserted a Windows-joined
+  literal and left `os.name` monkeypatched while pytest rendered the
+  failure, so on the Linux runner the job died with
+  `NotImplementedError: cannot instantiate 'WindowsPath'` instead of a
+  readable assertion. Expected paths now use `os.path.join`; the patch is
+  scoped to `monkeypatch.context()` and undone before the `assert`.
 
 ### Changed
 

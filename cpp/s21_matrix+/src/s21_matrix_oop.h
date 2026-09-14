@@ -45,28 +45,35 @@ class S21Matrix {
    *  Internal-but-public utilities exposed for fine-grained tests.
    *  @{
    */
-  void CopyMatrix(const S21Matrix &matrix);              ///< Deep copy of `matrix` into `*this`.
-  void DeleteMatrix();                                   ///< Free the payload; resets dims to `EMPTY`.
-  void DownGrade(const int n, const int m, S21Matrix &matrix) const;  ///< Build minor by deleting row n, col m.
-  void FillMatrix();                                     ///< Set every cell to `EMPTY`.
-  bool IsCorrectMatrix() const;                          ///< `rows_ > 0 && cols_ > 0 && matrix_ != nullptr`.
-  bool IsEqualValue(const double v1, const double v2) const;  ///< `|v1 - v2| < PRECISION`.
-  void PrintMatrix() const;                              ///< Pretty-print to stdout.
+  void CopyMatrix(
+      const S21Matrix &matrix);  ///< Deep copy of `matrix` into `*this`.
+  void DeleteMatrix();           ///< Free the payload; resets dims to `EMPTY`.
+  void DownGrade(const int n, const int m, S21Matrix &matrix)
+      const;          ///< Build minor by deleting row n, col m.
+  void FillMatrix();  ///< Set every cell to `EMPTY`.
+  bool IsCorrectMatrix()
+      const;  ///< `rows_ > 0 && cols_ > 0 && matrix_ != nullptr`.
+  bool IsEqualValue(const double v1,
+                    const double v2) const;  ///< `|v1 - v2| < PRECISION`.
+  void PrintMatrix() const;                  ///< Pretty-print to stdout.
   /** @} */
 
   /** @name Core methods
    *  Match the operations described in the original School 21 task.
    *  @{
    */
-  bool EqMatrix(const S21Matrix &matrix) const;          ///< Element-wise `|a-b| < PRECISION`.
-  void SumMatrix(const S21Matrix &matrix);               ///< `*this += matrix` (in-place).
-  void SubMatrix(const S21Matrix &matrix);               ///< `*this -= matrix` (in-place).
-  void MulNumber(const double number);                   ///< `*this *= number` (in-place).
-  void MulMatrix(const S21Matrix &matrix);               ///< `*this = *this * matrix` (dim check).
-  S21Matrix Transpose() const;                           ///< Returns transposed copy.
-  S21Matrix CalcComplements() const;                     ///< Returns algebraic-complement matrix.
-  double Determinant() const;                            ///< Returns determinant (square only).
-  S21Matrix InverseMatrix() const;                       ///< Returns `*this^(-1)` (square, det != 0).
+  bool EqMatrix(
+      const S21Matrix &matrix) const;  ///< Element-wise `|a-b| < PRECISION`.
+  void SumMatrix(const S21Matrix &matrix);  ///< `*this += matrix` (in-place).
+  void SubMatrix(const S21Matrix &matrix);  ///< `*this -= matrix` (in-place).
+  void MulNumber(const double number);      ///< `*this *= number` (in-place).
+  void MulMatrix(
+      const S21Matrix &matrix);       ///< `*this = *this * matrix` (dim check).
+  S21Matrix Transpose() const;        ///< Returns transposed copy.
+  S21Matrix CalcComplements() const;  ///< Returns algebraic-complement matrix.
+  double Determinant() const;         ///< Returns determinant (square only).
+  S21Matrix InverseMatrix()
+      const;  ///< Returns `*this^(-1)` (square, det != 0).
   /** @} */
 
   /** @name Overloaded operators
@@ -83,8 +90,9 @@ class S21Matrix {
   void operator-=(const S21Matrix &other);
   void operator*=(const S21Matrix &other);
   void operator*=(const double number);
-  double &operator()(const int i, const int j);          ///< `m(i,j)` mutable access.
-  double operator()(const int i, const int j) const;     ///< `m(i,j)` const access.
+  double &operator()(const int i, const int j);  ///< `m(i,j)` mutable access.
+  double operator()(const int i,
+                    const int j) const;  ///< `m(i,j)` const access.
   /** @} */
 
   /** @name Accessors / mutators
@@ -97,16 +105,16 @@ class S21Matrix {
   double **GetMatrix() const;
   void SetRows(const int rows);
   void SetColumns(const int columns);
-  void SetMatrix();                                      ///< Re-allocate `matrix_` for current dims.
+  void SetMatrix();  ///< Re-allocate `matrix_` for current dims.
   /** @} */
 
   /** @name Constructors / destructor
    *  @{
    */
-  S21Matrix();                                           ///< Default — `SIZE × SIZE` zeroed.
-  S21Matrix(const int rows, const int columns);          ///< Parameterised.
-  S21Matrix(const S21Matrix &matrix);                    ///< Copy.
-  S21Matrix(S21Matrix &&matrix);                         ///< Move.
+  S21Matrix();  ///< Default — `SIZE × SIZE` zeroed.
+  S21Matrix(const int rows, const int columns);  ///< Parameterised.
+  S21Matrix(const S21Matrix &matrix);            ///< Copy.
+  S21Matrix(S21Matrix &&matrix);                 ///< Move.
   ~S21Matrix();
   /** @} */
 

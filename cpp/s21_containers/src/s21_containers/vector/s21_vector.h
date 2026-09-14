@@ -51,22 +51,23 @@ class vector {
  public:
   /// @name Member functions — construction / destruction / assignment
   /// @{
-  vector();                                                ///< Default ctor — empty, capacity 0.
-  vector(size_type n);                                     ///< Construct with @p n default-initialised elements.
+  vector();             ///< Default ctor — empty, capacity 0.
+  vector(size_type n);  ///< Construct with @p n default-initialised elements.
   vector(std::initializer_list<value_type> const &items);  ///< Brace-list ctor.
   vector(const vector &v);                                 ///< Copy ctor.
   vector(vector &&v);                                      ///< Move ctor.
-  ~vector();                                               ///< Releases the heap buffer.
-  vector &operator=(vector &&v);                           ///< Move assignment.
+  ~vector();                      ///< Releases the heap buffer.
+  vector &operator=(vector &&v);  ///< Move assignment.
   /// @}
 
   /// @name Element access
   /// @{
-  reference at(size_type pos);              ///< Bounds-checked access; throws on out-of-range.
-  reference operator[](size_type pos);      ///< Unchecked access.
-  const_reference front();                  ///< First element (UB if empty).
-  const_reference back();                   ///< Last element (UB if empty).
-  pointer data();                           ///< Raw pointer to the underlying buffer.
+  reference at(
+      size_type pos);  ///< Bounds-checked access; throws on out-of-range.
+  reference operator[](size_type pos);  ///< Unchecked access.
+  const_reference front();              ///< First element (UB if empty).
+  const_reference back();               ///< Last element (UB if empty).
+  pointer data();  ///< Raw pointer to the underlying buffer.
   /// @}
 
   /// @name Iterators
@@ -79,23 +80,24 @@ class vector {
 
   /// @name Capacity
   /// @{
-  bool empty() const;                       ///< True iff size == 0.
-  size_type size() const;                   ///< Number of elements currently stored.
-  size_type max_size() const;               ///< Implementation-defined upper bound.
-  size_type capacity() const;               ///< Allocated buffer size in elements.
-  void reserve(size_type size);             ///< Grow the buffer to at least @p size.
-  void shrink_to_fit();                     ///< Trim capacity down to size.
+  bool empty() const;            ///< True iff size == 0.
+  size_type size() const;        ///< Number of elements currently stored.
+  size_type max_size() const;    ///< Implementation-defined upper bound.
+  size_type capacity() const;    ///< Allocated buffer size in elements.
+  void reserve(size_type size);  ///< Grow the buffer to at least @p size.
+  void shrink_to_fit();          ///< Trim capacity down to size.
   /// @}
 
   /// @name Modifiers
   /// @{
-  void clear();                                          ///< Drop every element (capacity preserved).
-  iterator insert(iterator pos, const_reference value);  ///< Insert before @p pos.
-  void erase(iterator pos);                              ///< Remove element at @p pos.
-  void push_back(const_reference value);                 ///< Append at the back.
-  void pop_back();                                       ///< Drop the back element.
-  void swap(vector &other);                              ///< O(1) swap with @p other.
-  /// @}
+  void clear();  ///< Drop every element (capacity preserved).
+  iterator insert(iterator pos,
+                  const_reference value);  ///< Insert before @p pos.
+  void erase(iterator pos);                ///< Remove element at @p pos.
+  void push_back(const_reference value);   ///< Append at the back.
+  void pop_back();                         ///< Drop the back element.
+  void swap(vector &other);                ///< O(1) swap with @p other.
+                                           /// @}
 
  private:
   size_type size_;

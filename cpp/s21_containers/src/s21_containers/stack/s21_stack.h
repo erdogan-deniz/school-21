@@ -26,16 +26,16 @@ class Stack {
 
   /// @name Construction / destruction
   /// @{
-  Stack();                    ///< Default ctor — empty stack.
-  Stack(const Stack &s);      ///< Copy ctor — deep-copies every node.
-  Stack(Stack &&s);           ///< Move ctor.
-  ~Stack();                   ///< Releases every node.
-  void operator=(Stack &s);   ///< Copy assignment.
+  Stack();                   ///< Default ctor — empty stack.
+  Stack(const Stack &s);     ///< Copy ctor — deep-copies every node.
+  Stack(Stack &&s);          ///< Move ctor.
+  ~Stack();                  ///< Releases every node.
+  void operator=(Stack &s);  ///< Copy assignment.
   /// @}
 
   /// @name Element access
   /// @{
-  const_reference top();      ///< Peek at the head (next to `pop`).
+  const_reference top();  ///< Peek at the head (next to `pop`).
   /// @}
 
   /// @name Capacity
@@ -49,7 +49,7 @@ class Stack {
   void push(const_reference value);  ///< Push on top.
   void pop();                        ///< Pop the top.
   void swap(Stack<T> &other);        ///< O(1) swap with @p other.
-  /// @}
+                                     /// @}
 
  private:
   template <typename>

@@ -58,13 +58,13 @@ struct DepositResult {
  */
 class DepositModel {
  public:
-  DepositModel() {};
+  DepositModel(){};
 
   /** @brief Copy constructor — defensive (the controller passes by &). */
   DepositModel(const DepositModel& other)
       : info_(other.info_), result_(other.result_) {}
 
-  ~DepositModel() {};
+  ~DepositModel(){};
 
   /**
    * @brief Compute deposit profitability for the given inputs.

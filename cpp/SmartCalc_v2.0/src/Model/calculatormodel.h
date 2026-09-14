@@ -91,7 +91,7 @@ struct Calculator {
   double result{};
 
   Calculator(int operation) : operation(operation) {}
-  ~Calculator() {};
+  ~Calculator(){};
 
   /** @brief Evaluate the binary arithmetic operation in @ref operation. */
   void ArithmeticCalculation() {

@@ -57,24 +57,27 @@ class scene : public QOpenGLWidget, protected QOpenGLFunctions {
    *         (used by the GIF / image export path). */
   QList<QLine> GetLines(QPixmap map);
 
-  QVector3D light_pos, light_color, move_object;             ///< Phong light + model translation.
-  QColor background, vertices_color, lines_color;            ///< Rendering palette.
-  unsigned line_width, vertex_size;                          ///< Edge / point sizes.
-  bool circle_square, dashed_solid, is_none;                 ///< Vertex / line style flags.
+  QVector3D light_pos, light_color,
+      move_object;  ///< Phong light + model translation.
+  QColor background, vertices_color, lines_color;  ///< Rendering palette.
+  unsigned line_width, vertex_size;                ///< Edge / point sizes.
+  bool circle_square, dashed_solid, is_none;  ///< Vertex / line style flags.
 
-  float scale_factor;                                        ///< Uniform model scale.
-  float r_x, r_y, r_z;                                       ///< Accumulated Euler rotation.
+  float scale_factor;   ///< Uniform model scale.
+  float r_x, r_y, r_z;  ///< Accumulated Euler rotation.
 
-  bool projection_type, wireframe, flat_shading;             ///< Perspective vs ortho; render-mode flags.
-  bool has_texture, has_normals, is_light_enabled;           ///< Per-frame feature toggles.
+  bool projection_type, wireframe,
+      flat_shading;  ///< Perspective vs ortho; render-mode flags.
+  bool has_texture, has_normals,
+      is_light_enabled;  ///< Per-frame feature toggles.
 
   QSettings *settings;  ///< Borrowed settings store (lifetime owned by viewer).
 
-  QOpenGLShaderProgram program, light;                       ///< Main + light-volume shaders.
-  QOpenGLVertexArrayObject vao, vao_light;                   ///< VAOs for model and light.
-  QOpenGLBuffer vbo, ebo;                                    ///< Vertex / element buffers.
-  QOpenGLTexture *texture;                                   ///< Optional model texture.
-  QMatrix4x4 view, projection;                               ///< Cached camera matrices.
+  QOpenGLShaderProgram program, light;      ///< Main + light-volume shaders.
+  QOpenGLVertexArrayObject vao, vao_light;  ///< VAOs for model and light.
+  QOpenGLBuffer vbo, ebo;                   ///< Vertex / element buffers.
+  QOpenGLTexture *texture;                  ///< Optional model texture.
+  QMatrix4x4 view, projection;              ///< Cached camera matrices.
 
  protected:
   void initializeGL() override;

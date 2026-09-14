@@ -19,8 +19,8 @@ namespace s21 {
  */
 class CreditController {
  public:
-  CreditController() {};
-  ~CreditController() {};
+  CreditController(){};
+  ~CreditController(){};
 
   /**
    * @brief Compute annuity or differentiated credit payments.

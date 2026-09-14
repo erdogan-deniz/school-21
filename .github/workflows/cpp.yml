@@ -163,10 +163,17 @@ jobs:
       - name: Install Qt6
         uses: jurplel/install-qt-action@v4
         with:
-          version: '6.5.3'
+          # Qt 6.8 is the current open-source LTS (Oct 2024; 6.11 is
+          # not LTS). 6.5.3 dropped out of the online mirror's
+          # `linux_gcc_64` listing, which surfaced as aqt's
+          # "packages ['qt_base'] were not found". aqtinstall is pinned
+          # too so the action does not silently pick up a newer aqt
+          # whose package metadata differs.
+          version: '6.8.3'
           host: 'linux'
           target: 'desktop'
           arch: 'linux_gcc_64'
+          aqtversion: '==3.3.*'
           cache: true
       - name: Install build deps (cached)
         uses: awalsh128/cache-apt-pkgs-action@v1

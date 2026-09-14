@@ -74,7 +74,9 @@ class array {
 
   inline const_reference back() const noexcept { return arr[N - 1]; }
 
-  inline iterator data() const noexcept { return arr; }  ///< Raw pointer to storage.
+  inline iterator data() const noexcept {
+    return arr;
+  }  ///< Raw pointer to storage.
   /// @}
 
   /// @name Iterators
@@ -85,9 +87,13 @@ class array {
 
   /// @name Capacity
   /// @{
-  inline bool empty() const noexcept { return size() == 0; }  ///< True iff `N == 0`.
-  inline size_type size() const noexcept { return N; }        ///< Always `N`.
-  inline size_type max_size() const noexcept { return N; }    ///< Same as @ref size — fixed-size.
+  inline bool empty() const noexcept {
+    return size() == 0;
+  }  ///< True iff `N == 0`.
+  inline size_type size() const noexcept { return N; }  ///< Always `N`.
+  inline size_type max_size() const noexcept {
+    return N;
+  }  ///< Same as @ref size — fixed-size.
   /// @}
 
   /// @name Operations

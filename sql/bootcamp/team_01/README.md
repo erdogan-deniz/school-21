@@ -13,9 +13,9 @@ Resume: Today you will know what DWH is and how to create a first ETL process.
 3. [Chapter III](#chapter-iii) \
     3.1. [Rules of the day](#rules-of-the-day)  
 4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 00 — Classical DWH](#exercise-00-classical-dwh)  
+    4.1. [Exercise 00 — Classical DWH](#exercise-00--classical-dwh)  
 5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 01 — Detailed Query](#exercise-01-detailed-query)  
+    5.1. [Exercise 01 — Detailed Query](#exercise-01--detailed-query)  
 
 ## Chapter I
 

@@ -13,25 +13,25 @@ Resume: Today you will see how to use specific OLAP constructions to get a "Valu
 3. [Chapter III](#chapter-iii) \
     3.1. [Rules of the day](#rules-of-the-day)  
 4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 00 — Simple aggregated information](#exercise-00-simple-aggregated-information)  
+    4.1. [Exercise 00 — Simple aggregated information](#exercise-00--simple-aggregated-information)  
 5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 01 — Let’s see real names](#exercise-01-lets-see-real-names)  
+    5.1. [Exercise 01 — Let’s see real names](#exercise-01--lets-see-real-names)  
 6. [Chapter VI](#chapter-vi) \
-    6.1. [Exercise 02 — Restaurants statistics](#exercise-02-restaurants-statistics)  
+    6.1. [Exercise 02 — Restaurants statistics](#exercise-02--restaurants-statistics)  
 7. [Chapter VII](#chapter-vii) \
-    7.1. [Exercise 03 — Restaurants statistics #2](#exercise-03-restaurants-statistics-2)  
+    7.1. [Exercise 03 — Restaurants statistics #2](#exercise-03--restaurants-statistics-2)  
 8. [Chapter VIII](#chapter-viii) \
-    8.1. [Exercise 04 — Clause for groups](#exercise-04-clause-for-groups)
+    8.1. [Exercise 04 — Clause for groups](#exercise-04--clause-for-groups)
 9. [Chapter IX](#chapter-ix) \
-    9.1. [Exercise 05 — Person's uniqueness](#exercise-05-persons-uniqueness)
+    9.1. [Exercise 05 — Person's uniqueness](#exercise-05--persons-uniqueness)
 10. [Chapter X](#chapter-x) \
-    10.1. [Exercise 06 — Restaurant metrics](#exercise-06-restaurant-metrics)
+    10.1. [Exercise 06 — Restaurant metrics](#exercise-06--restaurant-metrics)
 11. [Chapter XI](#chapter-xi) \
-    11.1. [Exercise 07 — Average global rating](#exercise-07-average-global-rating)
+    11.1. [Exercise 07 — Average global rating](#exercise-07--average-global-rating)
 12. [Chapter XII](#chapter-xii) \
-    12.1. [Exercise 08 — Find pizzeria’s restaurant locations](#exercise-08-find-pizzerias-restaurant-locations)
+    12.1. [Exercise 08 — Find pizzeria’s restaurant locations](#exercise-08--find-pizzerias-restaurant-locations)
 13. [Chapter XIII](#chapter-xiii) \
-    13.1. [Exercise 09 — Explicit type transformation](#exercise-09-explicit-type-transformation)
+    13.1. [Exercise 09 — Explicit type transformation](#exercise-09--explicit-type-transformation)
 
 ## Chapter I
 

@@ -36,7 +36,7 @@ End of the script
 
 Note that if you try to use a function before defining it, you will have an error.
 
-### Using the return command
+## Using the return command
 
 The return command allows you to specify an integer termination code returned by the function. What the function returned is in the $? variable.
 
@@ -56,7 +56,7 @@ myfunc
 echo "The new value is $?"
 ```
 
-### Writing function output to variable
+## Writing function output to variable
 
 Another way to return the results of a function is to record the data output by the function into a variable. This approach allows you to bypass the limitations of the return command and return any data from the function.
 
@@ -71,7 +71,7 @@ result=$( myfunc)
 echo "The value is $result"
 ```
 
-### Function Arguments
+## Function Arguments
 
 Function arguments in bash work in the same way as the command line parameters passed to the script.
 
@@ -127,7 +127,7 @@ echo "The original array is ${myarray[*]}"
 myfunc ${myarray[*]}
 ```
 
-### Global and local variables
+## Global and local variables
 
 The way global and local variables work in bash scripts is the same as in other programming languages.
 
@@ -138,7 +138,7 @@ To create a local variable, add the word local before its name:
 local temp=$(( $value + 5 ))
 ```
 
-### Creating and using libraries
+## Creating and using libraries
 
 To use functions described in another file in the script, use the source command or the "dot" operator.
 

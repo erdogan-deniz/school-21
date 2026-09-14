@@ -119,21 +119,21 @@ about methods and constructors later, forget about them in this exercise).
   
 Example of launching the script:
 
-    ```
-    $ python3 first_class.py
-    head,tail
-    0,1
-    1,0
-    0,1
-    1,0
-    0,1
-    0,1
-    0,1
-    1,0
-    1,0
-    0,1
-    1,0
-    ```
+```
+$ python3 first_class.py
+head,tail
+0,1
+1,0
+0,1
+1,0
+0,1
+0,1
+0,1
+1,0
+1,0
+0,1
+1,0
+```
 
 ### Exercise 01 : Method
 

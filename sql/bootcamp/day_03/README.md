@@ -13,33 +13,33 @@ Resume: Today you will see how to change data based on DML language.
 3. [Chapter III](#chapter-iii) \
     3.1. [Rules of the day](#rules-of-the-day)  
 4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 00 - Let’s find appropriate prices for Kate](#exercise-00-lets-find-appropriate-prices-for-kate)  
+    4.1. [Exercise 00 - Let’s find appropriate prices for Kate](#exercise-00---lets-find-appropriate-prices-for-kate)  
 5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 01 - Let’s find forgotten menus](#exercise-01-lets-find-forgotten-menus)  
+    5.1. [Exercise 01 - Let’s find forgotten menus](#exercise-01---lets-find-forgotten-menus)  
 6. [Chapter VI](#chapter-vi) \
-    6.1. [Exercise 02 - Let’s find forgotten pizza and pizzerias](#exercise-02-lets-find-forgotten-pizza-and-pizzerias)  
+    6.1. [Exercise 02 - Let’s find forgotten pizza and pizzerias](#exercise-02---lets-find-forgotten-pizza-and-pizzerias)  
 7. [Chapter VII](#chapter-vii) \
-    7.1. [Exercise 03 - Let’s compare visits](#exercise-03-lets-compare-visits)  
+    7.1. [Exercise 03 - Let’s compare visits](#exercise-03---lets-compare-visits)  
 8. [Chapter VIII](#chapter-viii) \
-    8.1. [Exercise 04 - Let’s compare orders](#exercise-04-lets-compare-orders)
+    8.1. [Exercise 04 - Let’s compare orders](#exercise-04---lets-compare-orders)
 9. [Chapter IX](#chapter-ix) \
-    9.1. [Exercise 05 - Visited but did not make any order](#exercise-05-visited-but-did-not-make-any-order)
+    9.1. [Exercise 05 - Visited but did not make any order](#exercise-05---visited-but-did-not-make-any-order)
 10. [Chapter X](#chapter-x) \
-    10.1. [Exercise 06 - Find price-similarity pizzas](#exercise-06-find-price-similarity-pizzas)
+    10.1. [Exercise 06 - Find price-similarity pizzas](#exercise-06---find-price-similarity-pizzas)
 11. [Chapter XI](#chapter-xi) \
-    11.1. [Exercise 07 - Let’s cook a new type of pizza](#exercise-07-lets-cook-a-new-type-of-pizza)
+    11.1. [Exercise 07 - Let’s cook a new type of pizza](#exercise-07---lets-cook-a-new-type-of-pizza)
 12. [Chapter XII](#chapter-xii) \
-    12.1. [Exercise 08 - Let’s cook a new type of pizza with more dynamics](#exercise-08-lets-cook-a-new-type-of-pizza-with-more-dynamics)
+    12.1. [Exercise 08 - Let’s cook a new type of pizza with more dynamics](#exercise-08---lets-cook-a-new-type-of-pizza-with-more-dynamics)
 13. [Chapter XIII](#chapter-xiii) \
-    13.1. [Exercise 09 - New pizza means new visits](#exercise-09-new-pizza-means-new-visits)
+    13.1. [Exercise 09 - New pizza means new visits](#exercise-09---new-pizza-means-new-visits)
 14. [Chapter XIV](#chapter-xiv) \
-    14.1. [Exercise 10 - New visits means new orders](#exercise-10-new-visits-means-new-orders)
+    14.1. [Exercise 10 - New visits means new orders](#exercise-10---new-visits-means-new-orders)
 15. [Chapter XV](#chapter-xv) \
-    15.1. [Exercise 11 - “Improve” a price for clients](#exercise-11-improve-a-price-for-clients)
+    15.1. [Exercise 11 - “Improve” a price for clients](#exercise-11---improve-a-price-for-clients)
 16. [Chapter XVI](#chapter-xvi) \
-    16.1. [Exercise 12 - New orders are coming!](#exercise-12-new-orders-are-coming)
+    16.1. [Exercise 12 - New orders are coming!](#exercise-12---new-orders-are-coming)
 17. [Chapter XVII](#chapter-xvii) \
-    17.1. [Exercise 13 - Money back to our customers](#exercise-13-money-back-to-our-customers)
+    17.1. [Exercise 13 - Money back to our customers](#exercise-13---money-back-to-our-customers)
 
 ## Chapter I
 
@@ -358,10 +358,9 @@ Please change the price of "greek pizza" to -10% of the current value.
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 | SQL Syntax Construction                        | `generate_series(...)`                                                                                              |
-| SQL Syntax Patten                        | Please use “insert-select” pattern
-`INSERT INTO ... SELECT ...`|
+| SQL Syntax Patten                        | Please use “insert-select” pattern `INSERT INTO ... SELECT ...` |
 | **Denied**                               |                                                                                                                          |
-| SQL Syntax Patten                        | - Don’t use direct numbers for identifiers of Primary Key, and menu
+| SQL Syntax Patten                        | - Don’t use direct numbers for identifiers of Primary Key, and menu |
 
 - Don’t use window functions like `ROW_NUMBER( )`
 - Don’t use atomic `INSERT` statements |

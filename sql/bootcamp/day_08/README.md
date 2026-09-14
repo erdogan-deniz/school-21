@@ -13,21 +13,21 @@ Resume: Today you will see how database works with transactions and isolation le
 3. [Chapter III](#chapter-iii) \
     3.1. [Rules of the day](#rules-of-the-day)  
 4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 00 — Simple transaction](#exercise-00-simple-transaction)  
+    4.1. [Exercise 00 — Simple transaction](#exercise-00--simple-transaction)  
 5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 01 — Lost Update Anomaly](#exercise-01-lost-update-anomaly)  
+    5.1. [Exercise 01 — Lost Update Anomaly](#exercise-01--lost-update-anomaly)  
 6. [Chapter VI](#chapter-vi) \
-    6.1. [Exercise 02 — Lost Update for Repeatable Read](#exercise-02-lost-update-for-repeatable-read)  
+    6.1. [Exercise 02 — Lost Update for Repeatable Read](#exercise-02--lost-update-for-repeatable-read)  
 7. [Chapter VII](#chapter-vii) \
-    7.1. [Exercise 03 — Non-Repeatable Reads Anomaly](#exercise-03-non-repeatable-reads-anomaly)  
+    7.1. [Exercise 03 — Non-Repeatable Reads Anomaly](#exercise-03--non-repeatable-reads-anomaly)  
 8. [Chapter VIII](#chapter-viii) \
-    8.1. [Exercise 04 — Non-Repeatable Reads for Serialization](#exercise-04-non-repeatable-reads-for-serialization)
+    8.1. [Exercise 04 — Non-Repeatable Reads for Serialization](#exercise-04--non-repeatable-reads-for-serialization)
 9. [Chapter IX](#chapter-ix) \
-    9.1. [Exercise 05 — Phantom Reads Anomaly](#exercise-05-phantom-reads-anomaly)
+    9.1. [Exercise 05 — Phantom Reads Anomaly](#exercise-05--phantom-reads-anomaly)
 10. [Chapter X](#chapter-x) \
-    10.1. [Exercise 06 — Phantom Reads for Repeatable Read](#exercise-06-phantom-reads-for-repeatable-read)
+    10.1. [Exercise 06 — Phantom Reads for Repeatable Read](#exercise-06--phantom-reads-for-repeatable-read)
 11. [Chapter XI](#chapter-xi) \
-    11.1. [Exercise 07 — Deadlock](#exercise-07-deadlock)
+    11.1. [Exercise 07 — Deadlock](#exercise-07--deadlock)
 
 ## Chapter I
 
@@ -50,8 +50,8 @@ Therefore, there are different isolation levels in ANSI SQL standard that preven
 
 From one point of view, this matrix should be a standard for any Relational Database, but reality... looks a bit different.
 
-|  |  | |
-| ------ | ------ | ------ |
+|  |  |
+| ------ | ------ |
 | PostgreSQL | ![D08_03](misc/images/D08_03.png) |
 | Oracle | ![D08_04](misc/images/D08_04.png) |
 | MySQL | ![D08_05](misc/images/D08_05.png) |

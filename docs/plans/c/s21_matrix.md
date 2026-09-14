@@ -36,3 +36,4 @@
 
 - 2026-05-11: README adopted from repo template + Original task preserved ([03a799f2](https://github.com/erdogan-deniz/school-21/commit/03a799f2)).
 - 2026-05-11: Included in `c.yml` build/test matrix ([8c5bd24d](https://github.com/erdogan-deniz/school-21/commit/8c5bd24d)).
+- 2026-09-14: clang-format 18.1.3 pass (the runner's version; 18.1.8 accepted the file) — `c / clang-format check` green again ([75f638e](https://github.com/erdogan-deniz/school-21/commit/75f638e)).

@@ -86,8 +86,8 @@ python_smart_calc/
 ## Development Setup
 
 ```bash
-git clone <repo-url>
-cd python_smart_calc
+git clone https://github.com/erdogan-deniz/school-21.git
+cd school-21/python/SmartCalc_v3.0
 
 python3.11 -m venv .venv
 source .venv/bin/activate      # Windows: .venv\Scripts\activate
@@ -95,7 +95,7 @@ source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -e ".[dev]"
 ```
 
-Place the C sources at `smart_calculator/src/` (copy from the original project), then build the library:
+Inside the school-21 monorepo the C sources are picked up automatically from `../../c/SmartCalc_v1.0/src`; standalone, place them at `smart_calculator/src/` (copy from the original project). Then build the library:
 
 ```bash
 make lib                      # Linux / macOS — requires GCC
@@ -138,8 +138,9 @@ gcc -shared -fPIC -std=c11 -lm <sources> -o src/libs/libsmartcalc.so
 The build system looks for C sources in this order:
 
 1. `SMARTCALC_C_SRC` environment variable
-2. `smart_calculator/src/` — local copy placed alongside the Python project
-3. `c_src/` — git submodule fallback
+2. `../../c/SmartCalc_v1.0/src` — the monorepo layout (`school-21/c/SmartCalc_v1.0`)
+3. `smart_calculator/src/` — local copy placed alongside the Python project
+4. `c_src/` — git submodule fallback
 
 ---
 

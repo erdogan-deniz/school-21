@@ -111,8 +111,10 @@ def _find_c_src() -> str:
 
     Tries, in order:
     1. SMARTCALC_C_SRC environment variable
-    2. smart_calculator/src/ bundled inside this repo
-    3. c_src/ subdirectory inside this repo (e.g. git submodule)
+    2. ../../c/SmartCalc_v1.0/src — the C core as it lives in the
+       school-21 monorepo (this subproject sits at python/SmartCalc_v3.0)
+    3. smart_calculator/src/ bundled inside this repo
+    4. c_src/ subdirectory inside this repo (e.g. git submodule)
 
     Returns:
         Absolute path to the C source directory.
@@ -124,8 +126,10 @@ def _find_c_src() -> str:
     """
     # scripts/ is one level below the project root
     project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    repo_root = os.path.dirname(os.path.dirname(project_root))
     candidates = [
         os.environ.get("SMARTCALC_C_SRC", ""),
+        os.path.join(repo_root, "c", "SmartCalc_v1.0", "src"),
         os.path.join(project_root, "smart_calculator", "src"),
         os.path.join(project_root, "c_src"),
     ]
@@ -134,8 +138,8 @@ def _find_c_src() -> str:
             return path
     raise RuntimeError(
         "C source directory not found. Set the SMARTCALC_C_SRC environment "
-        "variable to the path of the smart_calculator/src/ directory, or place "
-        "the sources in c_src/.\n"
+        "variable to the path of the SmartCalc_v1.0 src/ directory, or place "
+        "the sources in smart_calculator/src/ or c_src/.\n"
         f"Tried: {[c for c in candidates if c]}"
     )
 

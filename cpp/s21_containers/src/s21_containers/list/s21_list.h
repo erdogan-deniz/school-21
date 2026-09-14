@@ -35,11 +35,11 @@ class List {
 
   /// @name Member functions — construction / destruction
   /// @{
-  List();              ///< Default ctor — empty list.
-  List(size_type n);   ///< Construct with @p n default-initialised nodes.
-  List(const List &l); ///< Copy ctor — deep-copies every node.
-  List(List &&l);      ///< Move ctor.
-  ~List();             ///< Releases every node.
+  List();               ///< Default ctor — empty list.
+  List(size_type n);    ///< Construct with @p n default-initialised nodes.
+  List(const List &l);  ///< Copy ctor — deep-copies every node.
+  List(List &&l);       ///< Move ctor.
+  ~List();              ///< Releases every node.
   /// @}
 
   /// @name Element access
@@ -58,8 +58,8 @@ class List {
 
   /// @name Random access / assignment
   /// @{
-  T &operator[](const int index);          ///< Linear-scan random access; O(n).
-  void operator=(List &l);                 ///< Copy assignment.
+  T &operator[](const int index);  ///< Linear-scan random access; O(n).
+  void operator=(List &l);         ///< Copy assignment.
   /// @}
 
   /// @name Capacity
@@ -70,13 +70,13 @@ class List {
 
   /// @name List operations
   /// @{
-  void swap(List<T> &other);    ///< O(1) swap.
-  void merge(List<T> &other);   ///< Merge two sorted lists into `*this`.
-  void reverse();               ///< Reverse the link order in place.
-  void unique();                ///< Drop consecutive duplicates.
-  void sort();                  ///< In-place sort (merge-sort-ish).
-  void clear();                 ///< Drop every node.
-  /// @}
+  void swap(List<T> &other);   ///< O(1) swap.
+  void merge(List<T> &other);  ///< Merge two sorted lists into `*this`.
+  void reverse();              ///< Reverse the link order in place.
+  void unique();               ///< Drop consecutive duplicates.
+  void sort();                 ///< In-place sort (merge-sort-ish).
+  void clear();                ///< Drop every node.
+                               /// @}
 
  private:
   template <typename>
@@ -205,10 +205,12 @@ class List {
   /// @{
   iterator begin();
   iterator end();
-  void erase(iterator pos);                              ///< Remove node at @p pos.
-  iterator insert(iterator pos, const_reference value);  ///< Insert before @p pos.
-  void splice(const_iterator pos, List<T> &other);       ///< Move every node of @p other before @p pos.
-  /// @}
+  void erase(iterator pos);  ///< Remove node at @p pos.
+  iterator insert(iterator pos,
+                  const_reference value);  ///< Insert before @p pos.
+  void splice(const_iterator pos,
+              List<T> &other);  ///< Move every node of @p other before @p pos.
+                                /// @}
 
  private:
   iterator *iter;

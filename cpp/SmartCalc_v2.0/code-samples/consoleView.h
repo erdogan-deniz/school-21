@@ -18,7 +18,7 @@ class ConsoleView {
   ExampleController *controller;
 
  public:
-  ConsoleView(ExampleController *c) : controller(c) {};
+  ConsoleView(ExampleController *c) : controller(c){};
   void displayMenu();
   int performChoice();
   double performNumericInput();

@@ -19,8 +19,8 @@ namespace s21 {
  */
 class DepositController {
  public:
-  DepositController() {};
-  ~DepositController() {};
+  DepositController(){};
+  ~DepositController(){};
 
   /**
    * @brief Compute deposit profitability given the input parameters.

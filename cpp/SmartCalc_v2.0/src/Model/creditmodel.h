@@ -46,9 +46,9 @@ struct CreditResult {
   double overpay{};
   double sum_total{};
   // Default constroctur
-  CreditResult() {};
+  CreditResult(){};
   // Destructor
-  ~CreditResult() {};
+  ~CreditResult(){};
 };
 
 /**
@@ -60,7 +60,7 @@ struct CreditResult {
  */
 class CreditModel {
  public:
-  CreditModel() {};
+  CreditModel(){};
   ~CreditModel() {}
 
   /**

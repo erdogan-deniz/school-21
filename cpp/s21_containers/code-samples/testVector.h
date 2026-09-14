@@ -42,7 +42,7 @@ class Vector {
   Vector(std::initializer_list<value_type> const &items);
   // copy constructor with simplified syntax
   Vector(const Vector &v)
-      : m_size(v.m_size), m_capacity(v.m_capacity), arr(v.arr) {};
+      : m_size(v.m_size), m_capacity(v.m_capacity), arr(v.arr){};
   // move constructor with simplified syntax
   Vector(Vector &&v) : m_size(v.m_size), m_capacity(v.m_capacity), arr(v.arr) {
     v.arr = nullptr;

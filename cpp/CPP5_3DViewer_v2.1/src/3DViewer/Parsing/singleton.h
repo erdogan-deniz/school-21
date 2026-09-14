@@ -15,7 +15,7 @@
 #include <QVector3D>
 #include <QVector>
 #include <QWidget>
-using GLfloat = float;     ///< Alias for OpenGL float without pulling `<GL/gl.h>`.
+using GLfloat = float;  ///< Alias for OpenGL float without pulling `<GL/gl.h>`.
 using GLuint = unsigned int;  ///< Alias for OpenGL unsigned int.
 
 namespace s21 {

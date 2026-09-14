@@ -24,16 +24,18 @@ namespace s21 {
  */
 class CalculatorController {
  public:
-  CalculatorController() {};
-  ~CalculatorController() {};
+  CalculatorController(){};
+  ~CalculatorController(){};
 
   /** @brief Last computed numeric result (0 on uninitialised). */
   double GetResult() const { return model_.GetResult(); }
 
-  /** @brief Error code from the most recent Run; 0 = OK, non-zero = parse / domain error. */
+  /** @brief Error code from the most recent Run; 0 = OK, non-zero = parse /
+   * domain error. */
   int GetError() const { return model_.GetError(); }
 
-  /** @brief Override the error flag (useful for clearing prior error state from the view). */
+  /** @brief Override the error flag (useful for clearing prior error state from
+   * the view). */
   void SetError(int number) { model_.SetError(number); }
 
   /**

@@ -29,7 +29,8 @@ class GLWidget : public QOpenGLWidget {
   Q_OBJECT
  public:
   explicit GLWidget(QWidget *parent = nullptr);
-  /** @brief Inject the controller singleton. Must be called before any paint. */
+  /** @brief Inject the controller singleton. Must be called before any paint.
+   */
   void setControll(s21::Controller *control) { controller_ = control; };
   /**
    * @brief Load a new OBJ file path; updates vertex / line counts.
@@ -43,17 +44,19 @@ class GLWidget : public QOpenGLWidget {
     countVertexes = controller_->getCountVertexes();
     countLines = controller_->getCountLines();
   }
-  double moveX_ = 0, moveY_ = 0, moveZ_ = 0;   ///< Camera-space translation.
-  double rotationX_ = 0, rotationY_ = 0, rotationZ_ = 0;  ///< Euler-angle rotation (radians).
-  double size_ = 1, sizeP_ = 1, sizeL_ = 1;    ///< Uniform scale, point size, line width.
-  int countVertexes = 0;                       ///< Cached vertex count for the loaded model.
-  int countLines = 0;                          ///< Cached edge-line count.
-  int typeP = 3;                               ///< Vertex display style (none / square / round).
-  int typeL = 3;                               ///< Line display style (none / dotted / solid).
-  int typeProect = 2;                          ///< Projection mode (parallel / central).
-  QColor colorWidget;                          ///< Background color.
-  QColor colorLines;                           ///< Edge color.
-  QColor colorVertices;                        ///< Vertex point color.
+  double moveX_ = 0, moveY_ = 0, moveZ_ = 0;  ///< Camera-space translation.
+  double rotationX_ = 0, rotationY_ = 0,
+         rotationZ_ = 0;  ///< Euler-angle rotation (radians).
+  double size_ = 1, sizeP_ = 1,
+         sizeL_ = 1;      ///< Uniform scale, point size, line width.
+  int countVertexes = 0;  ///< Cached vertex count for the loaded model.
+  int countLines = 0;     ///< Cached edge-line count.
+  int typeP = 3;          ///< Vertex display style (none / square / round).
+  int typeL = 3;          ///< Line display style (none / dotted / solid).
+  int typeProect = 2;     ///< Projection mode (parallel / central).
+  QColor colorWidget;     ///< Background color.
+  QColor colorLines;      ///< Edge color.
+  QColor colorVertices;   ///< Vertex point color.
 
  private:
   float xRot, yRot, zRot;

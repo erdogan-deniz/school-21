@@ -8,7 +8,7 @@ class ExampleController {
   ExampleModel *model;
 
  public:
-  ExampleController(ExampleModel *m) : model(m) {};
+  ExampleController(ExampleModel *m) : model(m){};
   double add(double a);
   double sub(double a);
   double mult(double a);

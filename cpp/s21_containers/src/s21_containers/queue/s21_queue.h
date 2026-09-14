@@ -26,17 +26,17 @@ class Queue {
 
   /// @name Construction / destruction
   /// @{
-  Queue();                    ///< Default ctor — empty queue.
-  Queue(const Queue &q);      ///< Copy ctor — deep-copies every node.
-  Queue(Queue &&q);           ///< Move ctor.
-  void operator=(Queue &q);   ///< Copy assignment.
-  ~Queue();                   ///< Releases every node.
+  Queue();                   ///< Default ctor — empty queue.
+  Queue(const Queue &q);     ///< Copy ctor — deep-copies every node.
+  Queue(Queue &&q);          ///< Move ctor.
+  void operator=(Queue &q);  ///< Copy assignment.
+  ~Queue();                  ///< Releases every node.
   /// @}
 
   /// @name Element access
   /// @{
-  const_reference front();    ///< Peek at the head (next to `pop`).
-  const_reference back();     ///< Peek at the tail (last pushed).
+  const_reference front();  ///< Peek at the head (next to `pop`).
+  const_reference back();   ///< Peek at the tail (last pushed).
   /// @}
 
   /// @name Capacity
@@ -50,7 +50,7 @@ class Queue {
   void push(const_reference value);  ///< Enqueue at the tail.
   void pop();                        ///< Dequeue from the head.
   void swap(Queue<T> &other);        ///< O(1) swap with @p other.
-  /// @}
+                                     /// @}
 
  private:
   template <typename>

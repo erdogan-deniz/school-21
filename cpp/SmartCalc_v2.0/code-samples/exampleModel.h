@@ -6,7 +6,7 @@ class ExampleModel {
   double data;
 
  public:
-  ExampleModel() : data(0) {};
+  ExampleModel() : data(0){};
   void add(double a);
   void mult(double a);
   void reset();

@@ -54,16 +54,17 @@ class viewer : public QMainWindow {
   void keyPressEvent(QKeyEvent *event) override;
 
  private slots:
-  void on_actionOpen_triggered();                  ///< Open OBJ file via QFileDialog.
-  void on_actionClose_triggered();                 ///< Quit the application.
-  void on_actionInfo_triggered();                  ///< Show About dialog.
-  void on_actionOrthographic_Perspective_triggered();  ///< Toggle projection mode.
-  void on_actionHide_triggered();                  ///< Hide / show side panels.
-  void on_actionLight_triggered();                 ///< Toggle Phong lighting.
+  void on_actionOpen_triggered();   ///< Open OBJ file via QFileDialog.
+  void on_actionClose_triggered();  ///< Quit the application.
+  void on_actionInfo_triggered();   ///< Show About dialog.
+  void
+  on_actionOrthographic_Perspective_triggered();  ///< Toggle projection mode.
+  void on_actionHide_triggered();                 ///< Hide / show side panels.
+  void on_actionLight_triggered();                ///< Toggle Phong lighting.
 
-  void on_pushButton_bg_clicked();                 ///< Pick background color.
-  void on_pushButton_vertex_clicked();             ///< Pick vertex color.
-  void on_pushButton_lines_clicked();              ///< Pick edge color.
+  void on_pushButton_bg_clicked();      ///< Pick background color.
+  void on_pushButton_vertex_clicked();  ///< Pick vertex color.
+  void on_pushButton_lines_clicked();   ///< Pick edge color.
 
   void on_horizontalSlider_lineWidth_sliderMoved(int position);
   void on_horizontalSlider_lineWidth_sliderPressed();
@@ -72,12 +73,12 @@ class viewer : public QMainWindow {
   void on_horizontalSlider_scale_sliderMoved(int position);
   void on_horizontalSlider_scale_sliderPressed();
 
-  void on_pushButton_line_solid_clicked();         ///< Solid line style.
-  void on_pushButton_line_dashed_clicked();        ///< Dashed line style.
-  void on_pushButton_ver_circle_clicked();         ///< Circular vertex markers.
-  void on_pushButton_ver_square_clicked();         ///< Square vertex markers.
-  void on_pushButton_ver_none_clicked();           ///< Hide vertex markers.
-  void on_pushButton_wireframe_clicked();          ///< Toggle wireframe.
+  void on_pushButton_line_solid_clicked();   ///< Solid line style.
+  void on_pushButton_line_dashed_clicked();  ///< Dashed line style.
+  void on_pushButton_ver_circle_clicked();   ///< Circular vertex markers.
+  void on_pushButton_ver_square_clicked();   ///< Square vertex markers.
+  void on_pushButton_ver_none_clicked();     ///< Hide vertex markers.
+  void on_pushButton_wireframe_clicked();    ///< Toggle wireframe.
 
   void on_doubleSpinBox_x_move_valueChanged();
   void on_doubleSpinBox_y_move_valueChanged();
@@ -87,17 +88,17 @@ class viewer : public QMainWindow {
   void on_spinBox_y_rot_valueChanged(int);
   void on_spinBox_z_rot_valueChanged(int);
 
-  void on_actionJPEG_triggered();                  ///< Save current frame as JPEG.
-  void on_actionBMP_triggered();                   ///< Save current frame as BMP.
+  void on_actionJPEG_triggered();  ///< Save current frame as JPEG.
+  void on_actionBMP_triggered();   ///< Save current frame as BMP.
 
-  void on_actionGIF_triggered();                   ///< Start 5-second GIF recording.
+  void on_actionGIF_triggered();  ///< Start 5-second GIF recording.
 
-  void on_pushButton_apply_texture_clicked();      ///< Load + bind a texture image.
-  void on_pushButton_unload_texture_clicked();     ///< Detach the active texture.
-  void on_pushButton_save_uvmap_clicked();         ///< Export UV map as PNG.
+  void on_pushButton_apply_texture_clicked();  ///< Load + bind a texture image.
+  void on_pushButton_unload_texture_clicked();  ///< Detach the active texture.
+  void on_pushButton_save_uvmap_clicked();      ///< Export UV map as PNG.
 
-  void on_pushButton_flat_shading_clicked();       ///< Flat normals.
-  void on_pushButton_smooth_shading_clicked();     ///< Smooth normals.
+  void on_pushButton_flat_shading_clicked();    ///< Flat normals.
+  void on_pushButton_smooth_shading_clicked();  ///< Smooth normals.
 
   void on_doubleSpinBox_x_light_pos_valueChanged(double arg1);
   void on_doubleSpinBox_y_light_pos_valueChanged(double arg1);

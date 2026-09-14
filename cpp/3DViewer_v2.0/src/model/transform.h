@@ -33,7 +33,7 @@ class Transform {
   Transform(const Transform&) = delete;
   Transform(Transform&&) = delete;
   /** @brief Construct already bound to @p obj. */
-  Transform(Object* obj) : object_(obj) {};
+  Transform(Object* obj) : object_(obj){};
   ~Transform() = default;
 
   /** @brief Re-target the helper at a different (or freshly loaded) model. */

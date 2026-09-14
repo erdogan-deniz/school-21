@@ -23,10 +23,10 @@ namespace s21 {
  *        buffers plus their counts.
  */
 struct Points {
-  int count_vertex_;                ///< Number of vertices (`v` lines in OBJ).
-  int count_poligons_;              ///< Number of polygon faces (`f` lines).
-  std::vector<double> vertexes_;    ///< Flat (x, y, z, x, y, z, ...) buffer.
-  std::vector<int> poligons_;       ///< Flat edge-index buffer for line drawing.
+  int count_vertex_;              ///< Number of vertices (`v` lines in OBJ).
+  int count_poligons_;            ///< Number of polygon faces (`f` lines).
+  std::vector<double> vertexes_;  ///< Flat (x, y, z, x, y, z, ...) buffer.
+  std::vector<int> poligons_;     ///< Flat edge-index buffer for line drawing.
 };
 
 /**

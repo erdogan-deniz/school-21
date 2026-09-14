@@ -36,3 +36,4 @@
 
 - 2026-05-11: README adopted from repo template + Original task preserved; `devops.yml` workflow (shellcheck + hadolint) added (this commit).
 - 2026-05-11: `simple-docker-smoke` job added to `devops.yml` — full compose up + curl smoke; concurrent `chown 755` → `chmod 755` bug fix in the root Dockerfile (12 lines; the proxy Dockerfile already used `chmod`). STATUS B ✗→◐ (this commit).
+- 2026-09-14: `devops / hadolint` unmasked — `failure-threshold: error`, `continue-on-error` removed; DL3006 / DL3008 / DL3015 in the task Dockerfile stay as warnings ([bcb3e16](https://github.com/erdogan-deniz/school-21/commit/bcb3e16)).

@@ -36,3 +36,4 @@
 
 - 2026-05-11: README adopted from repo template + Original task preserved ([3a8752a7](https://github.com/erdogan-deniz/school-21/commit/3a8752a7)).
 - 2026-05-11: Repo-wide `.clang-format` and `c.yml` workflow with build/test matrix added ([3f64148d](https://github.com/erdogan-deniz/school-21/commit/3f64148d), [8c5bd24d](https://github.com/erdogan-deniz/school-21/commit/8c5bd24d)).
+- 2026-09-14: Makefile links Check via `pkg-config --libs check` (bare `-lcheck` fallback); `open` of the lcov report skipped when `CI` is set so the runner's `make` no longer dies on `xdg-open`. Verified on Linux with lcov 2.0: `make` / `make test` / `make gcov_report` exit 0, 100 % lines ([bcc2e1f](https://github.com/erdogan-deniz/school-21/commit/bcc2e1f)).

@@ -46,7 +46,9 @@ class CalcViewModel:
 
         """
         self.display_changed: Signal = Signal()
-        self.result_changed: Signal = Signal()  # emits formatted result str (no prefix)
+        self.result_changed: Signal = (
+            Signal()
+        )  # emits formatted result str (no prefix)
         self.error_occurred: Signal = Signal()
         self.history_updated: Signal = Signal()
         self.graph_ready: Signal = Signal()
@@ -136,9 +138,7 @@ class CalcViewModel:
 
         """
         if not self._expression:
-            self.error_occurred.emit(
-                "Введите выражение для построения графика"
-            )
+            self.error_occurred.emit("Введите выражение для построения графика")
             return
         try:
             xs, ys = self._calc.get_graph_points(
@@ -170,7 +170,10 @@ class CalcViewModel:
     def _prepare_history(self) -> list[dict]:
         """Return history entries enriched with display_text for the View."""
         return [
-            {**entry, "display_text": f"{entry['expression']} = {entry['result']}"}
+            {
+                **entry,
+                "display_text": f"{entry['expression']} = {entry['result']}",
+            }
             for entry in self._history.get_history()
         ]
 

@@ -69,12 +69,12 @@ class TestPeriods:
     ) -> None:
         """Payout frequency doesn't change total interest (no compounding)."""
         monthly = dep.calculate(100_000, 12, 12.0, 0.0, "monthly", False)
-        quarterly = dep.calculate(
-            100_000, 12, 12.0, 0.0, "quarterly", False
-        )
+        quarterly = dep.calculate(100_000, 12, 12.0, 0.0, "quarterly", False)
         assert math.isclose(
-            monthly["total_interest"], quarterly["total_interest"],
-            rel_tol=1e-9, abs_tol=1e-6,
+            monthly["total_interest"],
+            quarterly["total_interest"],
+            rel_tol=1e-9,
+            abs_tol=1e-6,
         )
 
     def test_annually_supported(self, dep: DepositCalculator) -> None:
@@ -86,9 +86,7 @@ class TestPeriods:
 class TestAdditionsAndWithdrawals:
     """Tests for scheduled additions and partial withdrawals."""
 
-    def test_addition_increases_interest(
-        self, dep: DepositCalculator
-    ) -> None:
+    def test_addition_increases_interest(self, dep: DepositCalculator) -> None:
         """Verifies that a mid-term deposit addition raises total interest."""
         base = dep.calculate(100_000, 12, 10.0, 0.0, "monthly", False)
         with_add = dep.calculate(
@@ -113,9 +111,7 @@ class TestPartialPeriodAndWithdrawals:
         result = dep.calculate(100_000, 5, 12.0, 0.0, "quarterly", False)
         assert result["total_interest"] > 0
 
-    def test_withdrawal_reduces_balance(
-        self, dep: DepositCalculator
-    ) -> None:
+    def test_withdrawal_reduces_balance(self, dep: DepositCalculator) -> None:
         """Verifies that a mid-term withdrawal lowers total interest."""
         base = dep.calculate(100_000, 12, 10.0, 0.0, "monthly", False)
         with_wd = dep.calculate(
@@ -144,9 +140,7 @@ class TestPartialPeriodAndWithdrawals:
         )
         assert result["final_amount"] >= 0
 
-    def test_partial_period_capitalize(
-        self, dep: DepositCalculator
-    ) -> None:
+    def test_partial_period_capitalize(self, dep: DepositCalculator) -> None:
         """Verify tail-period interest accrues with and without cap."""
         # Capitalize with non-divisible months should still accumulate
         # tail interest

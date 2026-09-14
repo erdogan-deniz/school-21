@@ -1,10 +1,10 @@
 """Calculator model: ctypes wrapper around the C shared library."""
 
 import ctypes
-from decimal import Decimal, InvalidOperation
 import math
 import os
 import re
+from decimal import Decimal, InvalidOperation
 from typing import ClassVar
 
 from model.lib_loader import load_lib
@@ -41,17 +41,15 @@ class Calculator:
         self._lib: ctypes.CDLL = load_lib()
         # MSVC x64 compiles long double as 64-bit double; GCC uses 80-bit.
         # Use c_double on Windows for correct ABI compatibility.
-        float_type = (
-            ctypes.c_double if os.name == "nt" else ctypes.c_longdouble
-        )
+        float_type = ctypes.c_double if os.name == "nt" else ctypes.c_longdouble
         self._lib.s21_calculator.restype = float_type
         self._lib.s21_calculator.argtypes = [
             ctypes.c_char_p,
             ctypes.POINTER(float_type),
         ]
-        self.float_type: (
-            type[ctypes.c_double] | type[ctypes.c_longdouble]
-        ) = float_type
+        self.float_type: type[ctypes.c_double] | type[ctypes.c_longdouble] = (
+            float_type
+        )
 
     def calculate(self, expression: str, x: float = 0.0) -> float:
         """Evaluate an arithmetic expression.

@@ -19,7 +19,7 @@ DEPOSIT_CASES = [
     (100_000, 12, 12.0, 0.0, "monthly", True),
     (50_000, 12, 6.0, 13.0, "quarterly", False),
     (200_000, 24, 10.0, 0.0, "annually", False),
-    (100_000, 12, 0.0, 0.0, "monthly", False),   # zero rate
+    (100_000, 12, 0.0, 0.0, "monthly", False),  # zero rate
     (100_000, 13, 12.0, 0.0, "annually", False),  # tail period
 ]
 

@@ -1,8 +1,8 @@
 """History model: persistent operation history using SQLite."""
 
-from datetime import UTC, datetime
 import os
 import sqlite3
+from datetime import UTC, datetime
 from typing import ClassVar
 
 from model.results import HistoryEntry
@@ -32,8 +32,8 @@ class History:
 
     _DB_FILENAME: ClassVar[str] = "history.db"
     _APP_DIR: ClassVar[str] = _history_app_dir()
-    _MAX_ENTRIES: ClassVar[int] = 1000   # oldest rows pruned after each insert
-    _MAX_DISPLAY: ClassVar[int] = 100    # rows returned by get_history()
+    _MAX_ENTRIES: ClassVar[int] = 1000  # oldest rows pruned after each insert
+    _MAX_DISPLAY: ClassVar[int] = 100  # rows returned by get_history()
 
     def __init__(self, db_path: str | None = None) -> None:
         """Open the database and create the history table if absent.

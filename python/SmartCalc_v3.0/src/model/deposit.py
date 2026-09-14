@@ -33,21 +33,21 @@ class DepositCalculator(FinanceCalculator):
 
         self._lib.s21_deposit.restype = c_int
         self._lib.s21_deposit.argtypes = [
-            c_double,                   # amount
-            c_int,                      # months
-            c_double,                   # rate
-            c_double,                   # tax
-            c_int,                      # periods_per_year
-            c_int,                      # capitalize
-            ctypes.POINTER(c_int),      # add_months
-            ctypes.POINTER(c_double),   # add_amounts
-            c_int,                      # add_count
-            ctypes.POINTER(c_int),      # wd_months
-            ctypes.POINTER(c_double),   # wd_amounts
-            c_int,                      # wd_count
-            ctypes.POINTER(c_double),   # total_interest (out)
-            ctypes.POINTER(c_double),   # tax_out        (out)
-            ctypes.POINTER(c_double),   # final_amount   (out)
+            c_double,  # amount
+            c_int,  # months
+            c_double,  # rate
+            c_double,  # tax
+            c_int,  # periods_per_year
+            c_int,  # capitalize
+            ctypes.POINTER(c_int),  # add_months
+            ctypes.POINTER(c_double),  # add_amounts
+            c_int,  # add_count
+            ctypes.POINTER(c_int),  # wd_months
+            ctypes.POINTER(c_double),  # wd_amounts
+            c_int,  # wd_count
+            ctypes.POINTER(c_double),  # total_interest (out)
+            ctypes.POINTER(c_double),  # tax_out        (out)
+            ctypes.POINTER(c_double),  # final_amount   (out)
         ]
 
     def calculate(
@@ -90,12 +90,12 @@ class DepositCalculator(FinanceCalculator):
         # Build flat ctypes arrays for additions; pass None (NULL) if empty.
         add_count = len(additions)
         if add_count > 0:
-            add_months_arr = (c_int * add_count)(
-                *[a["month"] for a in additions]
-            )
-            add_amounts_arr = (c_double * add_count)(
-                *[a["amount"] for a in additions]
-            )
+            add_months_arr = (c_int * add_count)(*[
+                a["month"] for a in additions
+            ])
+            add_amounts_arr = (c_double * add_count)(*[
+                a["amount"] for a in additions
+            ])
         else:
             add_months_arr = None
             add_amounts_arr = None
@@ -103,12 +103,12 @@ class DepositCalculator(FinanceCalculator):
         # Build flat ctypes arrays for withdrawals; pass None (NULL) if empty.
         wd_count = len(withdrawals)
         if wd_count > 0:
-            wd_months_arr = (c_int * wd_count)(
-                *[w["month"] for w in withdrawals]
-            )
-            wd_amounts_arr = (c_double * wd_count)(
-                *[w["amount"] for w in withdrawals]
-            )
+            wd_months_arr = (c_int * wd_count)(*[
+                w["month"] for w in withdrawals
+            ])
+            wd_amounts_arr = (c_double * wd_count)(*[
+                w["amount"] for w in withdrawals
+            ])
         else:
             wd_months_arr = None
             wd_amounts_arr = None

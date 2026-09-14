@@ -515,9 +515,7 @@ class TestVariableXPreprocessing:
 class TestGetGraphPointsEdgeCases:
     """Tests for get_graph_points edge cases — bug fix coverage."""
 
-    def test_zero_num_points_raises_value_error(
-        self, calc: Calculator
-    ) -> None:
+    def test_zero_num_points_raises_value_error(self, calc: Calculator) -> None:
         """Verify ValueError (not ZeroDivisionError) when num_points=0."""
         with pytest.raises(ValueError):
             calc.get_graph_points("x", -1.0, 1.0, num_points=0)

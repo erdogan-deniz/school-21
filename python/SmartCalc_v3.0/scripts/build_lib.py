@@ -15,6 +15,7 @@ import sys
 # Toolchain discovery (Windows)
 # ---------------------------------------------------------------------------
 
+
 def _ver(name: str) -> tuple[int, ...]:
     """Parse a dotted version string into a tuple of ints for sorting.
 
@@ -50,11 +51,19 @@ def _find_msvc() -> str:
         )
     result = subprocess.run(
         [
-            vswhere, "-latest", "-products", "*",
-            "-requires", "Microsoft.VisualStudio.Component.VC.Tools.x86.x64",
-            "-format", "json", "-utf8",
+            vswhere,
+            "-latest",
+            "-products",
+            "*",
+            "-requires",
+            "Microsoft.VisualStudio.Component.VC.Tools.x86.x64",
+            "-format",
+            "json",
+            "-utf8",
         ],
-        capture_output=True, text=True, check=True,
+        capture_output=True,
+        text=True,
+        check=True,
     )
     installs = json.loads(result.stdout)
     if not installs:
@@ -95,7 +104,8 @@ def _find_winsdk() -> tuple[str, str]:
         )
     versions = sorted(
         (v for v in os.listdir(include_root) if v.startswith("10.")),
-        key=_ver, reverse=True,
+        key=_ver,
+        reverse=True,
     )
     if not versions:
         raise RuntimeError(f"No SDK versions found in {include_root}")
@@ -105,6 +115,7 @@ def _find_winsdk() -> tuple[str, str]:
 # ---------------------------------------------------------------------------
 # C source location
 # ---------------------------------------------------------------------------
+
 
 def _find_c_src() -> str:
     """Return the path to the smart_calculator C sources.
@@ -169,6 +180,7 @@ def _collect_sources(c_src: str) -> list[str]:
 # Platform-specific build
 # ---------------------------------------------------------------------------
 
+
 def _build_windows(c_src: str, out: str) -> None:
     """Compile libsmartcalc.dll using MSVC cl.exe.
 
@@ -203,9 +215,14 @@ def _build_windows(c_src: str, out: str) -> None:
     )
 
     cmd = [
-        cl, "/LD", f"/Fe:{out}", f"/Fo{obj_dir}",
-        "/D_USE_MATH_DEFINES", "/D_CRT_SECURE_NO_WARNINGS",
-        f"/I{c_src}", *sources,
+        cl,
+        "/LD",
+        f"/Fe:{out}",
+        f"/Fo{obj_dir}",
+        "/D_USE_MATH_DEFINES",
+        "/D_CRT_SECURE_NO_WARNINGS",
+        f"/I{c_src}",
+        *sources,
         "/link",
         "/EXPORT:s21_calculator",
         "/EXPORT:s21_loan_annuity",
@@ -220,9 +237,13 @@ def _build_windows(c_src: str, out: str) -> None:
     print(f"Output       : {out}")
 
     result = subprocess.run(
-        cmd, env=env, capture_output=True, text=True,
+        cmd,
+        env=env,
+        capture_output=True,
+        text=True,
         encoding=locale.getpreferredencoding(False) or "utf-8",
-        errors="replace", check=False,
+        errors="replace",
+        check=False,
     )
     if result.returncode != 0:
         print(result.stdout[-2000:])
@@ -244,10 +265,14 @@ def _build_unix(c_src: str, out: str, compiler: str) -> None:
 
     cmd = [
         compiler,
-        "-shared", "-fPIC", "-std=c11", "-lm",
+        "-shared",
+        "-fPIC",
+        "-std=c11",
+        "-lm",
         f"-I{c_src}",
         *sources,
-        "-o", out,
+        "-o",
+        out,
     ]
 
     print(f"Compiler     : {compiler}")
@@ -266,6 +291,7 @@ def _build_unix(c_src: str, out: str, compiler: str) -> None:
 # ---------------------------------------------------------------------------
 # Entry point
 # ---------------------------------------------------------------------------
+
 
 def build() -> None:
     """Detect platform and compile the appropriate shared library."""

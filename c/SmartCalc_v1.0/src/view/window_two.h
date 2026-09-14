@@ -23,9 +23,9 @@
  *        independent.
  */
 typedef struct s21_payments {
-  long double debt;             ///< Remaining principal at month end.
-  long double percents;         ///< Interest accrued this month.
-  int month_number;             ///< 1-based month index.
+  long double debt;      ///< Remaining principal at month end.
+  long double percents;  ///< Interest accrued this month.
+  int month_number;      ///< 1-based month index.
   struct s21_payments* next;
   struct s21_payments* prev;
 } s21_payments;

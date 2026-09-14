@@ -35,11 +35,11 @@ class Window_One : public QWidget {
  public:
   explicit Window_One(QWidget* parent = nullptr);
   ~Window_One();
-  QMovie* gif;                  ///< Animated banner.
-  QLabel* label;                ///< Banner host widget.
-  QMediaPlayer* player;         ///< Sound-effect player.
-  QAudioOutput* audioOutput;    ///< Audio sink for @ref player.
-  int graph_count;              ///< Number of plotted graphs (for legend).
+  QMovie* gif;                ///< Animated banner.
+  QLabel* label;              ///< Banner host widget.
+  QMediaPlayer* player;       ///< Sound-effect player.
+  QAudioOutput* audioOutput;  ///< Audio sink for @ref player.
+  int graph_count;            ///< Number of plotted graphs (for legend).
 
  private:
   Ui ::Window_One* ui;

@@ -47,7 +47,7 @@ class FilesBrows : public QWidget {
 
   QFileSystemModel *model;  ///< Model backing the list view.
 
-  miwidget pathToFile;       ///< Helper owning the parser entry point.
+  miwidget pathToFile;  ///< Helper owning the parser entry point.
 };
 
 #endif  // FILESBROWS_H

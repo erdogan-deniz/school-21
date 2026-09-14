@@ -15,11 +15,11 @@
  * @brief Per-month entry in a credit / deposit schedule.
  */
 typedef struct s21_payments {
-  long double debt;             ///< Remaining principal at month end.
-  long double percents;         ///< Interest accrued this month.
-  int month_number;             ///< 1-based month index in the schedule.
-  struct s21_payments* next;    ///< Next month (NULL at the tail).
-  struct s21_payments* prev;    ///< Previous month (NULL at the head).
+  long double debt;           ///< Remaining principal at month end.
+  long double percents;       ///< Interest accrued this month.
+  int month_number;           ///< 1-based month index in the schedule.
+  struct s21_payments* next;  ///< Next month (NULL at the tail).
+  struct s21_payments* prev;  ///< Previous month (NULL at the head).
 } s21_payments;
 
 #define empty 0

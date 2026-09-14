@@ -38,3 +38,4 @@
 - 2026-05-11: Included in `c.yml` build/test matrix (split-Makefile branch handles cat/ and grep/ separately) ([8c5bd24d](https://github.com/erdogan-deniz/school-21/commit/8c5bd24d)).
 - 2026-05-11: Doxygen rollout — `s21_cat.h` + `s21_grep.h` documented ([9def2070](https://github.com/erdogan-deniz/school-21/commit/9def2070)).
 - 2026-09-14: clang-format 18.1.3 pass (the runner's version; 18.1.8 accepted the file) — `c / clang-format check` green again ([75f638e](https://github.com/erdogan-deniz/school-21/commit/75f638e)).
+- 2026-09-14: `docs / doxygen` job unmasked — it had failed on every run since May ("Output directory 'docs/api' does not exist"); the workflow now `mkdir -p docs/api` before `doxygen Doxyfile` and no longer carries `continue-on-error` ([4ec1fb4](https://github.com/erdogan-deniz/school-21/commit/4ec1fb4)).

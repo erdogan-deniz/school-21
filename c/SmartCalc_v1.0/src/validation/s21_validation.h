@@ -36,7 +36,7 @@ int s21_sin_sqrt_validation(char *string);
 int s21_tan_validation(char *string);
 
 // Other validations:
-/** @brief Detects `+*`, `*/` and other illegal binary-op sequences. */
+/** @brief Detects `+*`, star-then-slash and other illegal binary-op pairs. */
 int s21_binary_operator_validation(char *string);
 /** @brief Detects numeric literals with two decimal points. */
 int s21_double_number_validation(char *string);

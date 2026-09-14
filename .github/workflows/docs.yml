@@ -47,16 +47,25 @@ jobs:
       matrix:
         # C and C++ library subprojects only — application Qt apps
         # have their own qmake-driven docs paths.
+        # `artifact` is the slash-free name for upload-artifact@v4,
+        # which rejects `/` in artifact names (same as sphinx in python.yml).
         include:
           # c/ libraries
           - subproject: c/SimpleBashUtils
+            artifact: doxygen-c-SimpleBashUtils
           - subproject: c/s21_decimal
+            artifact: doxygen-c-s21_decimal
           - subproject: c/s21_math
+            artifact: doxygen-c-s21_math
           - subproject: c/s21_matrix
+            artifact: doxygen-c-s21_matrix
           - subproject: c/s21_string+
+            artifact: doxygen-c-s21_string+
           # cpp/ libraries
           - subproject: cpp/s21_containers
+            artifact: doxygen-cpp-s21_containers
           - subproject: cpp/s21_matrix+
+            artifact: doxygen-cpp-s21_matrix+
     steps:
       - uses: actions/checkout@v4
       - name: Install Doxygen + Graphviz
@@ -95,7 +104,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: doxygen-${{ matrix.subproject }}
+          name: ${{ matrix.artifact }}
           path: ${{ matrix.subproject }}/docs/api/
           if-no-files-found: ignore
           retention-days: 14

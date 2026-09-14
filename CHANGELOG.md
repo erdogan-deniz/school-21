@@ -72,6 +72,13 @@ overhaul"* sections rather than versions.
     job-level `continue-on-error: true` kept the workflow green. The Run
     step now `mkdir -p docs/api` first and the mask is gone; locally all
     seven produce `docs/api/html/index.html` with exit 0 (`4ec1fb4`).
+    The upload then failed on `doxygen-c/s21_math` — upload-artifact@v4
+    rejects `/` — so each matrix entry carries a slash-free `artifact`
+    name, as sphinx does in `python.yml` (`31822b5`).
+  - `devops / hadolint` — red under `continue-on-error: true` on DL3006 /
+    DL3008 / DL3015 (warning / info) in `devops/simple_docker`, a School 21
+    task Dockerfile kept as submitted. `failure-threshold` moves
+    `warning` → `error`, the mask is gone (`bcb3e16`).
 
 ### Changed
 

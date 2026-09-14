@@ -29,7 +29,7 @@ The script can now be run by entering in the command line:
 ./myscript
 ```
 
-### Text output
+## Text output
 
 The echo command is used to output text to the Linux console:
 
@@ -37,7 +37,7 @@ The echo command is used to output text to the Linux console:
 echo "Hello World"
 ```
 
-### Variables
+## Variables
 
 There are two types of variables that can be used in bash scripts:
 
@@ -60,7 +60,7 @@ person="Adam"
 echo "$person is a good boy, he is in grade $grade"
 ```
 
-### Command substitution
+## Command substitution
 
 The bash script allows you to get information from the command output and assign it to variables.
 
@@ -76,7 +76,7 @@ mydir=`pwd`
 mydir=$(pwd)
 ```
 
-### Mathematical operations
+## Mathematical operations
 
 You can use $((*operation*)) to perform mathematical operations in a script file:
 
@@ -85,7 +85,7 @@ var1=$(( 5 + 5 ))
 var2=$(( $var1 * 2 ))
 ```
 
-### Conditional statement
+## Conditional statement
 
 The conditional statement in bash is implemented like this:
 
@@ -116,7 +116,7 @@ echo "The user $user doesn’t exist"
 fi
 ```
 
-### Comparison
+## Comparison
 
 Numerical values can be compared in scripts. Here is a list of corresponding commands:
 
@@ -169,7 +169,7 @@ fi
 
 3. In comparison commands upper case letters are smaller than lower case letters because string comparisons are done by comparing ASCII character codes.
 
-### File checks
+## File checks
 
 The following commands allow you to check various file conditions:
 

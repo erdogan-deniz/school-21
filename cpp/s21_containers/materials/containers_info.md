@@ -9,15 +9,15 @@
 List is a sequence container that stores a set of elements with arbitrary size, in the form of nodes connected in sequence by pointers. Each node stores a value corresponding to an element in the list, and a pointer to the next element.
 This container design allows you to avoid a rigidly fixed size, such as in a static array, and makes adding a new element to the container more user-friendly.
 
-![](misc/images/list_01.png)
+![list_01](misc/images/list_01.png)
 
 The above is an example of a list of four elements. Each of the list elements is represented as a structure with two fields: a node value and a pointer to the next list element. The last element in the list does not point to anything.
 
-![](misc/images/list_02.png)
+![list_02](misc/images/list_02.png)
 
 This type of list structure allows you to simply (without cascading) add elements to both the end and the middle of the list. Adding an element to a specific position in the list creates a new node pointing to the next element after that position, after which the pointer of the previous element is moved to the new one.
 
-![](misc/images/list_03.png)
+![list_03](misc/images/list_03.png)
 
 Removing an element from the list frees the corresponding node, and the pointers of neighbouring elements change values: the previous element moves the pointer to the next after the deleted element.
 
@@ -117,15 +117,15 @@ This table contains the public methods for modifying a container:
 A map (dictionary) is an associative container that stores key-value pairs sorted in ascending order. It means that each element is associated with some unique key, and its position in the map is determined by its key. Maps come in handy when you want to associate elements with some other value (not an index).
 For example, an enterprise is purchasing equipment, and each item has to be purchased more than once. In this case, it is convenient to use a map with a position identifier - purchase volume pair. Here the identifier can be not only a number, but also a string. So, the search is not performed by an index, as in an array, but by an identifier, i.e. a word.
 
-![](misc/images/map_01.png)
+![map_01](misc/images/map_01.png)
 
 But how does a map allow you to refer to pairs by key and yet always appear sorted? Actually, the map has a binary search tree structure (in the C++ implementation this tree is red-black), which allows you to immediately add elements to the map in a direct order and find elements more efficiently than looking through all the elements in the map directly.
 
-![](misc/images/map_02.png)
+![map_02](misc/images/map_02.png)
 
 A binary search tree is also a structure consisting of nodes, but each node has two pointers to two other nodes - "descendants". In this case, the current node is called the "parent" node. Generally speaking, a binary search tree ensures that if the current node has descendants, the left "descendant" contains an element with a smaller value, and the right "descendant" contains an element with a larger value. So, to search for an element in the tree, it is enough to compare a search value with the value of the current node using the special function: comparator (in the case of a map, this function depends on the type of key). If the value is higher, go to the "right" descendant, lower to the left one, and if the value is equal, then the element we are looking for is found.
 
-![](misc/images/map_03.png)
+![map_03](misc/images/map_03.png)
 
 </details>
 
@@ -221,7 +221,7 @@ This table contains the public methods for viewing the container:
 
 Queue is a container with elements organized according to FIFO (First-In, First-Out) principle. Just like a list, an object of the queue container class has pointers to the "tail" and "head" of the queue, but the deletion is performed strictly from the "head", and the addition of new elements is performed strictly in the "tail". It is convenient to think of a queue as a kind of pipe, with elements entering at one end and exiting at another one.
 
-![](misc/images/queue01.png)
+![queue01](misc/images/queue01.png)
 
 </details>
 
@@ -377,7 +377,7 @@ This table contains the public methods for viewing the container:
 
 Stack is a container with elements organized according to LIFO (Last-In, First-Out) principle. A stack container class object contains pointers to the "head" of the stack; removing and adding elements is done strictly from the "head". You can think of the stack as a glass or a pipe with one sealed end: in order to get to the element placed in the container first, you must take out all the elements on top.
 
-![](misc/images/stack01.png)
+![stack01](misc/images/stack01.png)
 
 </details>
 

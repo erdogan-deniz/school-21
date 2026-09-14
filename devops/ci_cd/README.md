@@ -59,7 +59,7 @@ The russian version of the task can be found in the repository.
 
 1. [Chapter I](#chapter-i)
 2. [Chapter II](#chapter-ii) \
-    2.1. [CI/CD basics](#ci-cd-basics)  
+    2.1. [CI/CD basics](#cicd-basics)  
     2.2. [CI basics](#ci-basics)  
     2.3. [CD basics](#cd-basics)
 3. [Chapter III](#chapter-iii) \
@@ -161,13 +161,13 @@ If you need any information, I recommend looking for answers in the official doc
 
 **== Task ==**
 
-##### Start *Ubuntu Server 22.04 LTS* virtual machine
+#### Start *Ubuntu Server 22.04 LTS* virtual machine
 
 *Be prepared to save a dump of the virtual machine image at the end of the project.*
 
-##### Download and install **gitlab-runner** on the virtual machine
+#### Download and install **gitlab-runner** on the virtual machine
 
-##### Run **gitlab-runner** and register it for use in the current project (*DO6_CICD*)
+#### Run **gitlab-runner** and register it for use in the current project (*DO6_CICD*)
 
 - You will need a URL and a token for runner registration, that can be obtained from the task page on the platform.
 
@@ -216,7 +216,7 @@ Now I have readjusted the tests, making them more difficult and less flattering.
 
 **== Task ==**
 
-##### Start the second virtual machine *Ubuntu Server 22.04 LTS*
+#### Start the second virtual machine *Ubuntu Server 22.04 LTS*
 
 #### Write a stage for **CD** that "deploys" the project on another virtual machine
 
@@ -246,7 +246,7 @@ As a result, you should have applications from the *C2_SimpleBashUtils* (s21_cat
 
 **== Task ==**
 
-##### Set up notifications of successful/unsuccessful pipeline execution via bot named "[your nickname] DO6 CI/CD" in *Telegram*
+#### Set up notifications of successful/unsuccessful pipeline execution via bot named "[your nickname] DO6 CI/CD" in *Telegram*
 
 - The text of the notification must contain information on the successful passing of both **CI** and **CD** stages.
 - The rest of the notification text may be arbitrary.

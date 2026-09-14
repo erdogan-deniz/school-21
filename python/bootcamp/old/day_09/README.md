@@ -113,7 +113,7 @@ Dominic scratched his head for a second, then nodded.
  "For example. I know you know basic C already. Anyway, I doubt it will be a problem
  for you to write a function to, say, sum up two numbers?"
 
------
+---
 
 You have to write a simple calculator module for Python (using Python C API) with four functions:
 
@@ -187,7 +187,7 @@ Dominic raised an eyebrow, but Letty immediately responded:
  "Oh, I remember it now," Dominic stood up to shake Brian's hand. "That's why digital
  car parts have monotonic clocks."
 
------
+---
 
 You need to use a built-in `ctypes` library in Python to implement an interface to a monotonic
 clock in your operating system. Windows, Linux and MacOS have the function as a part of a standard
@@ -220,7 +220,7 @@ Brian smiled and then just whispered one phrase trying to sound as spooky as pos
 
  "It multiplies matrices!"
 
------
+---
 
 This time you need to use a third way to speed up computation in Python, which is [Cython](https://cython.org/).
 We don't go into Data Science, but [multiplying matrices](https://en.wikipedia.org/wiki/Matrix_multiplication) is a pretty easy and

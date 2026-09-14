@@ -13,23 +13,23 @@ Resume: Today you will see how to create and use functional blocks in Databases.
 3. [Chapter III](#chapter-iii) \
     3.1. [Rules of the day](#rules-of-the-day)  
 4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 00 — Audit of incoming inserts](#exercise-00-audit-of-incoming-inserts)  
+    4.1. [Exercise 00 — Audit of incoming inserts](#exercise-00--audit-of-incoming-inserts)  
 5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 01 — Audit of incoming updates](#exercise-01-audit-of-incoming-updates)  
+    5.1. [Exercise 01 — Audit of incoming updates](#exercise-01--audit-of-incoming-updates)  
 6. [Chapter VI](#chapter-vi) \
-    6.1. [Exercise 02 — Audit of incoming deletes](#exercise-02-audit-of-incoming-deletes)  
+    6.1. [Exercise 02 — Audit of incoming deletes](#exercise-02--audit-of-incoming-deletes)  
 7. [Chapter VII](#chapter-vii) \
-    7.1. [Exercise 03 — Generic Audit](#exercise-03-generic-audit)  
+    7.1. [Exercise 03 — Generic Audit](#exercise-03--generic-audit)  
 8. [Chapter VIII](#chapter-viii) \
-    8.1. [Exercise 04 — Database View VS Database Function](#exercise-04-database-view-vs-database-function)
+    8.1. [Exercise 04 — Database View VS Database Function](#exercise-04--database-view-vs-database-function)
 9. [Chapter IX](#chapter-ix) \
-    9.1. [Exercise 05 — Parameterized Database Function](#exercise-05-parameterized-database-function)
+    9.1. [Exercise 05 — Parameterized Database Function](#exercise-05--parameterized-database-function)
 10. [Chapter X](#chapter-x) \
-    10.1. [Exercise 06 — Function like a function-wrapper](#exercise-06-function-like-a-function-wrapper)
+    10.1. [Exercise 06 — Function like a function-wrapper](#exercise-06--function-like-a-function-wrapper)
 11. [Chapter XI](#chapter-xi) \
-    11.1. [Exercise 07 — Different view to find a Minimum](#exercise-07-different-view-to-find-a-minimum)
+    11.1. [Exercise 07 — Different view to find a Minimum](#exercise-07--different-view-to-find-a-minimum)
 12. [Chapter XII](#chapter-xii) \
-    12.1. [Exercise 08 — Fibonacci algorithm is in a function](#exercise-08-fibonacci-algorithm-is-in-a-function)
+    12.1. [Exercise 08 — Fibonacci algorithm is in a function](#exercise-08--fibonacci-algorithm-is-in-a-function)
 
 ## Chapter I
 

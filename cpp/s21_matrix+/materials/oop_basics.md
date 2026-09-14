@@ -22,7 +22,7 @@ Main principals of the OOP:
 Based on the principle of abstraction, object-oriented programming leads to a more "natural" decomposition and separation of abstractions. For example, a matrix. In the structured approach, you need to define the matrix structure `struct matrix` and all the necessary functions to work with it.
 The OOP methodology, on the other hand, solves this problem differently: it creates a new object class, a matrix, with which some fields and functions, called methods, are associated. With this approach, all the characteristics of a matrix are encapsulated in some implementation of the class and can be used through the matrix object itself while it exists in the program.
 
-# Exception handling
+## Exception handling
 
 The way exceptions are handled in the OOP is also different. In structured programming, the key strategy for handling exceptions was the return of the function error codes. They gradually floated to the main function, which for the most part had to consist of error handlers in the form of conditional statements of varying nesting.
 The OOP, however, offers to use an exception system. Exception is a special class that can be " thrown" when an error occurs in a program.
@@ -69,7 +69,7 @@ int main()
 
 It is possible to create custom classes from the base exception class in order to distinguish between exception types or to pass additional information along with the exception object. To do this, you can create your own exception class and inherit it from `std::exception`.
 
-# Class structure
+## Class structure
 
 In C++, classes look like structures:
 
@@ -179,7 +179,7 @@ namespace Family
 
 Now it is enough to use the following syntax to refer to these classes outside the corresponding namespace `<Namespace name>::<name>`. For example, to refer to a family tree, we get `Family::Tree`. Namespaces can have a complex hierarchical structure, i.e. some of the namespaces may be defined within others and then, when referenced, they must be listed in the nesting order. To avoid writing the namespace name every time in cases when conflicts are not worth worrying about, you can use the `using` keyword.
 
-# Overloading
+## Overloading
 
 Overloading is the ability to create several **different** functions and methods with the same name, but with different arguments and return value types. You may need to do this if you want to create a universal function. For example, we want to create a function for adding two numbers. Its prototype could be the following function:
 
@@ -207,7 +207,7 @@ It is also possible to define a `sum` function for more parameters:
 int sum(int a, int b, int c);        // will be called if three values of int type are passed
 ```
 
-# Operator overloading
+## Operator overloading
 
 Object-oriented programming has also made operator overloading possible. Any standard operator (binary or unary) can be defined for any new class. For example, multiplication. There is a need to define an object multiplication by a matrix, not through the `mult(Matrix, Matrix)` function, but through the `*` operator. It is a binary operator whose left and right parts are represented by matrices:
 
@@ -247,7 +247,7 @@ When overloading operators, it is always worth remembering the following rules:
 
 So, that’s what the operator overloading is: using several different implementations of an operator depending on the given signature.
 
-# The rule of five
+## The rule of five
 
 `The rule of five` says that in general, if there is a need to independently determine one of the operations of copying, moving or destroying an object, then most likely for correct operation it will be necessary to implement:
 

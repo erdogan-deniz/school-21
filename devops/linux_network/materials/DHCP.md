@@ -12,7 +12,7 @@ This process is called *DORA* by the first letters of each step:
 
 <img src="../misc/images/dhcp.png" alt="network_route" width="500"/>
 
-#### **DHCP** Options
+### **DHCP** Options
 
 The client needs not only the IP but also other **DHCP** options for networking - such as subnet mask, default gateway and server address. Options represent numbered points, lines of data that contain the configuration parameters required by the server client.
 

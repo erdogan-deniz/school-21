@@ -9,7 +9,7 @@
 1. [Chapter I](#chapter-i) \
     1.1. [Preamble](#preamble)
 2. [Chapter II](#chapter-ii) \
-    2.1. [General rules](#general-rules)
+    2.1. [General rules](README.md#general-rules)
 3. [Chapter III](#chapter-iii) \
     3.1. Как планировать карьеру
     3.2. Когда говорить с руководителем о том, что тебе важен рост  

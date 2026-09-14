@@ -34,14 +34,14 @@ jobs:
   doxygen:
     name: doxygen (${{ matrix.subproject }})
     runs-on: ubuntu-latest
-    # Job-level continue-on-error stays for one more iteration — gives
-    # us a yellow-warning signal on the PR check without blocking merge.
-    # Step-level swallowing (`|| true` + step-level continue-on-error)
-    # was removed in this commit so a *real* Doxygen error (malformed
-    # @directive, missing input path) actually marks the step failed
-    # in the UI rather than disappearing. Once two weeks of green
-    # runs land on origin, flip this to `false`.
-    continue-on-error: true
+    # No continue-on-error at any level: since May every matrix job
+    # failed on "Output directory 'docs/api' does not exist and cannot
+    # be created" while the workflow stayed green, and the mask hid it
+    # for four months. Doxygen creates only the leaf of OUTPUT_DIRECTORY,
+    # never the parent, and no library subproject ships a `docs/` dir —
+    # the Run step pre-creates it. A red job here is a real Doxygen
+    # error (malformed @directive, missing input path); fix the source
+    # or the Doxyfile, do not re-add the mask.
     strategy:
       fail-fast: false
       matrix:
@@ -85,7 +85,12 @@ jobs:
           fi
       - name: Run Doxygen
         working-directory: ${{ matrix.subproject }}
-        run: doxygen Doxyfile
+        run: |
+          # Doxygen refuses to run when the parent of OUTPUT_DIRECTORY is
+          # missing (it mkdirs one level only); every Doxyfile here points
+          # at docs/api and no subproject has a docs/ directory.
+          mkdir -p docs/api
+          doxygen Doxyfile
       - name: Upload generated docs
         if: always()
         uses: actions/upload-artifact@v4

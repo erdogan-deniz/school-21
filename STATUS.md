@@ -34,7 +34,7 @@ Per-flagship work in scope:
 - For the app: per-OS installer build (Linux AppImage, macOS dmg,
   Windows exe).
 
-Designated 2026-05-11. Other 34 subprojects retain A + B scope only;
+Designated 2026-05-11. Other 35 subprojects retain A + B scope only;
 their READMEs say so explicitly.
 
 ## Legend
@@ -134,6 +134,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | Subproject  | A | B | C | D | E | F | G | H | Flagship | Notes                                                       |
 | ----------- | - | - | - | - | - | - | - | - | -------- | ----------------------------------------------------------- |
 | `bootcamp`  | ✓ | ◐ | ◐ | ✓ | ◐ | ◐ | ✗ | ◐ |          | ruff format applied + pytest + Sphinx (day_07 + new/day_01) + Pages |
+| `SmartCalc_v3.0` | ✓ | ✓ | ◐ | ✓ | ◐ | ◐ | ✗ | ◐ |     | PyQt6 MVVM over the `c/SmartCalc_v1.0` core via ctypes; 361 pytest + hypothesis, 99 % model coverage; own ruff/mypy; hand-written API/user/dev guides; imported 2026-09-14 |
 
 ### `qa/`
 
@@ -162,15 +163,15 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | `c/`                 | 7           | 33 / 56          | 59 %     |
 | `career_track/`      | 9           | 13.5 / 18        | 75 %     |
 | `cpp/`               | 6           | 26 / 48          | 54 %     |
-| `data_science/`      | 2           | 8 / 16           | 50 %     |
-| `devops/`            | 5           | 13 / 28          | 46 %     |
+| `data_science/`      | 2           | 8.5 / 16         | 53 %     |
+| `devops/`            | 5           | 14 / 28          | 50 %     |
 | `internship/`        | 1           | 1.5 / 2          | 75 %     |
 | `machine_learning/`  | 1           | 4 / 8            | 50 %     |
-| `python/`            | 1           | 4.5 / 8          | 56 %     |
+| `python/`            | 2           | 9.5 / 16         | 59 %     |
 | `qa/`                | 2           | 3 / 4            | 75 %     |
 | `sql/`               | 1           | 4 / 8            | 50 %     |
 | `survival_camp/`     | 1           | 1 / 2            | 50 %     |
-| **Total**            | **37**      | **115.5 / 206**  | **56 %** |
+| **Total**            | **38**      | **122 / 214**    | **57 %** |
 
 > Roll-up arithmetic: ✓ = 1.0, ◐ = 0.5, ✗ = 0.0 (stays in the
 > denominator as a real gap), **n/a = excluded from the denominator**
@@ -190,4 +191,6 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 >
 > Numerator totals were also recounted from current cell values in
 > the same pass (the prior 138/296 figure had drifted +25 cells over
-> incremental updates).
+> incremental updates). Recounted again 2026-09-14 when
+> `python/SmartCalc_v3.0` was added: `data_science/` and `devops/` had
+> drifted by +0.5 and +1.0 respectively.

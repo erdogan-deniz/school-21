@@ -1,4 +1,69 @@
-# Smart calculator version 3.0
+# `SmartCalc_v3.0`
+
+[![CI](https://github.com/erdogan-deniz/school-21/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/erdogan-deniz/school-21/actions/workflows/python.yml)
+[![Coverage](https://img.shields.io/badge/coverage-99%25-brightgreen.svg)](#tests)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
+
+> *PyQt6 desktop calculator on top of the [`c/SmartCalc_v1.0`](../../c/SmartCalc_v1.0/) C core (loaded via `ctypes`) — strict MVVM, expression evaluation with `x`, function plotting, loan and deposit modes, persistent history, config file and rotating logs.*
+
+## Quick start
+
+```bash
+cd python/SmartCalc_v3.0
+python3.11 -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+
+# Build
+make install-dev   # pip install -e ".[dev]"  (PyQt6, matplotlib, pytest, hypothesis, ruff, mypy)
+make lib           # compiles ../../c/SmartCalc_v1.0/src -> src/libs/libsmartcalc.{so,dylib,dll}
+
+# Run
+make run           # PyQt6 GUI
+
+# Test
+make test          # pytest + coverage (361 tests)
+```
+
+`make lib` needs a C toolchain: `gcc` on Linux, `clang` on macOS, MSVC Build Tools on
+Windows (discovered through `vswhere.exe`; run `python scripts/build_lib.py` there). The
+C sources are resolved in this order: `$SMARTCALC_C_SRC`, `../../c/SmartCalc_v1.0/src`
+(this repo), `smart_calculator/src/`, `c_src/`. Packaging: `make dist` (PyInstaller,
+`smartcalc.spec`) and `make installer` (Inno Setup, `installer.iss`). Python is pinned to
+3.11 (`requires-python = ">=3.11,<3.12"`).
+
+## Demo
+
+> **TODO** — short capture of evaluating an expression, plotting `f(x)` and switching to the
+> deposit mode is planned in the python/ demo slice.
+
+## Documentation
+
+- [`docs/user-guide.md`](docs/user-guide.md) — interface walkthrough, expression syntax, config keys.
+- [`docs/developer-guide.md`](docs/developer-guide.md) — MVVM layering, build of the C core, packaging, how to add a C export.
+- [`docs/api.md`](docs/api.md) — model-layer API (`Calculator`, `LoanCalculator`, `DepositCalculator`, `History`, results and enums).
+- Layout: `src/model/` (ctypes wrapper, finance, history) · `src/viewmodel/` (Qt-free observable state) · `src/view/` (PyQt6 widgets, zero business logic) · `src/utils/` (config, logger).
+- Sphinx HTML build: planned — the docstrings already follow the Google convention (ruff rule sets `D` and `DOC`).
+
+## Tests
+
+- Framework: **pytest** + **hypothesis** (property-based) + **pytest-cov**; static checks: **ruff** (strict, see `pyproject.toml`) and **mypy**.
+- 361 tests across `tests/model`, `tests/viewmodel`, `tests/utils`, `tests/integration`, `tests/property_based`.
+- Coverage: **99 %** of `src/model`, `src/viewmodel`, `src/utils` (the `src/view` layer and `main.py` are excluded by design — see `[tool.coverage.run]`).
+- CI: the `smartcalc-v3` job in [`.github/workflows/python.yml`](../../.github/workflows/python.yml) builds the C core, runs ruff and pytest on Python 3.11 and uploads coverage to Codecov (flag `python-SmartCalc_v3.0`).
+- The shared library must exist before the tests run — `make lib` first.
+
+## License & attribution
+
+This project was developed as part of the **School 21** curriculum (analogue of
+School 42). The repository as a whole is licensed under the **MIT License** —
+see the root [`LICENSE`](../../LICENSE).
+
+The `LICENSE` file inside this subproject (`# School 21 License`) is preserved
+as educational attribution and historical artefact; it does not override the
+repo-wide MIT licence.
+
+---
+
+## Original task (School 21)
 
 ![Project header](content/images/project_header.jpg)
 

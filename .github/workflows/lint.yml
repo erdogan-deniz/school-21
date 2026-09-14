@@ -24,15 +24,11 @@ jobs:
         with:
           node-version: '20'
       - name: Install markdownlint-cli2
-        run: npm install -g markdownlint-cli2@0.13.0
+        run: npm install -g markdownlint-cli2@0.23.2
       - name: Run markdownlint
-        run: |
-          markdownlint-cli2 \
-            "**/*.md" \
-            "#**/node_modules/**" \
-            "#**/charisel/**" \
-            "#**/site-packages/**" \
-            "#**/_build/**"
+        # Globs, rule set and ignores all come from .markdownlint-cli2.jsonc,
+        # so CI, `make lint-md` and pre-commit lint exactly the same files.
+        run: markdownlint-cli2
 
   link-check:
     name: link-check

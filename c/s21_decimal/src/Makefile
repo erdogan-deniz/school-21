@@ -1,13 +1,11 @@
 CC=gcc
 FLAGS=-Wall -Wextra -Werror
 
-OS = $(shell uname)
-
-ifeq ($(OS), Linux)
-	TEST_FLAGS=-lcheck -lgcov -lm -lsubunit
-else
-	TEST_FLAGS = -lcheck -lgcov
-endif
+# Check's link line differs per platform (Linux additionally needs
+# -lsubunit -lrt -lpthread); ask pkg-config and fall back to the bare
+# -lcheck for setups without pkg-config (e.g. Homebrew on macOS).
+CHECK_LIBS = $(shell pkg-config --libs check 2>/dev/null || echo -lcheck)
+TEST_FLAGS = $(CHECK_LIBS) -lgcov -lm
 
 SRC_DECIMAL=./s21_util/util.c ./s21_another/s21_another.c ./s21_another/s21_floor.c ./s21_another/s21_negate.c ./s21_another/s21_round.c \
 ./s21_arithmetic/s21_arithmetic.c ./s21_arithmetic/s21_mul.c ./s21_arithmetic/s21_add.c ./s21_arithmetic/s21_div.c ./s21_arithmetic/s21_mod.c ./s21_arithmetic/s21_sub.c \
@@ -38,7 +36,7 @@ gcov_report: test
 	./test
 	lcov -t "gcov_report" -o gcov_report.info -c -d ./
 	genhtml -o report gcov_report.info;
-	open report/index.html
+	@[ -n "$$CI" ] || open report/index.html || true
 
 cpplint:
 	python3 ../materials/linters/cpplint.py s21_util/*.c s21_convertors/*.c s21_comparison/*.c s21_arithmetic/*.c s21_another/*.c *.h *.c

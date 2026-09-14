@@ -1,10 +1,11 @@
 CC=gcc
 CFLAGS=-Wall -Wextra -Werror -std=c11
 GCOVFLAGS:=-fprofile-arcs -ftest-coverage
-LDFLAGS:=-lcheck -lgcov -fprofile-arcs --coverage
-ifeq ($(shell uname), Linux)
-LDFLAGS +=-pthread -lcheck_pic -lrt -lm -lsubunit
-endif
+# Check's link line differs per platform (Linux additionally needs
+# -lsubunit -lrt -lpthread); ask pkg-config and fall back to the bare
+# -lcheck for setups without pkg-config (e.g. Homebrew on macOS).
+CHECK_LIBS = $(shell pkg-config --libs check 2>/dev/null || echo -lcheck)
+LDFLAGS:=$(CHECK_LIBS) -lm -lgcov -fprofile-arcs --coverage
 
 SOURCES:= s21_memchr.c s21_memcmp.c s21_memcpy.c s21_memmove.c \
 s21_memset.c s21_strcat.c s21_strncat.c s21_strchr.c s21_strcmp.c s21_sscanf.c \
@@ -31,7 +32,7 @@ test: gcov_obj/s21_string_test.o s21_string_gcov.a
 
 gcov_report:
 	$(CC) $(CFLAGS) --coverage s21_string_test.c $(SOURCES) -o gcovreport \
-	`pkg-config --cflags --libs check`
+	$(CHECK_LIBS) -lm
 	./gcovreport
 	lcov -t "gcovreport" -o gcovreport.info -c -d .
 	genhtml -o report gcovreport.info

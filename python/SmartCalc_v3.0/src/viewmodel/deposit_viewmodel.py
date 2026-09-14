@@ -8,6 +8,7 @@ from model.enums import AccrualPeriod
 from model.results import DepositEntry
 from viewmodel import Signal
 
+
 # Entry type used in the public API: raw text pairs read from the table by View.
 TableRow = tuple[str, str]
 
@@ -36,9 +37,9 @@ class DepositViewResult(TypedDict):
     total_interest: float
     tax_amount: float
     final_amount: float
-    total_interest_text: str   # Formatted display string for total interest.
-    tax_amount_text: str       # Formatted display string for tax amount.
-    final_amount_text: str     # Formatted display string for final amount.
+    total_interest_text: str  # Formatted display string for total interest.
+    tax_amount_text: str  # Formatted display string for tax amount.
+    final_amount_text: str  # Formatted display string for final amount.
 
 
 # Human-readable labels for AccrualPeriod, in enum declaration order.
@@ -163,8 +164,8 @@ class DepositViewModel:
                 tax_rate,
                 period,
                 capitalize,
-                parsed_additions if parsed_additions else None,
-                parsed_withdrawals if parsed_withdrawals else None,
+                parsed_additions or None,
+                parsed_withdrawals or None,
             )
             _logger.info(
                 "Deposit calculated: amount=%.2f months=%d rate=%.2f period=%s",

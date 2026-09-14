@@ -199,8 +199,13 @@ class TestSetupLogger:
         handler._current_month = cur % 12 + 1  # noqa: SLF001
 
         dummy = logging.LogRecord(
-            name="test", level=logging.INFO,
-            pathname="", lineno=0, msg="", args=(), exc_info=None,
+            name="test",
+            level=logging.INFO,
+            pathname="",
+            lineno=0,
+            msg="",
+            args=(),
+            exc_info=None,
         )
         assert handler.shouldRollover(dummy) == 1
         handler.close()
@@ -216,8 +221,13 @@ class TestSetupLogger:
             filename=log_file, backupCount=1, encoding="utf-8"
         )
         dummy = logging.LogRecord(
-            name="test", level=logging.INFO,
-            pathname="", lineno=0, msg="", args=(), exc_info=None,
+            name="test",
+            level=logging.INFO,
+            pathname="",
+            lineno=0,
+            msg="",
+            args=(),
+            exc_info=None,
         )
         assert handler.shouldRollover(dummy) == 0
         handler.close()

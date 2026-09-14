@@ -1,9 +1,9 @@
 """Application logger: timed rotating file handler with custom naming."""
 
-from datetime import UTC, datetime
 import logging
-from logging.handlers import TimedRotatingFileHandler
 import os
+from datetime import UTC, datetime
+from logging.handlers import TimedRotatingFileHandler
 from typing import Any, Final
 
 
@@ -58,7 +58,7 @@ def _date_namer(default_name: str) -> str:
 
     """
     dir_name = os.path.dirname(default_name)
-    suffix = default_name[default_name.rfind(".log.") + 5:]
+    suffix = default_name[default_name.rfind(".log.") + 5 :]
     return os.path.join(dir_name, f"{suffix}.log")
 
 

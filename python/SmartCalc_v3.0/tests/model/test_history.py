@@ -117,6 +117,7 @@ class TestHistoryAppDir:
         monkeypatch.setattr(os, "name", "nt")
         monkeypatch.setenv("APPDATA", r"C:\Roaming")
         from model.history import _history_app_dir
+
         assert _history_app_dir() == r"C:\Roaming\smartcalc_v3"
 
     def test_windows_fallback_without_appdata(
@@ -126,16 +127,16 @@ class TestHistoryAppDir:
         monkeypatch.setattr(os, "name", "nt")
         monkeypatch.delenv("APPDATA", raising=False)
         from model.history import _history_app_dir
+
         assert _history_app_dir() == os.path.join(
             os.path.expanduser("~"), ".smartcalc_v3"
         )
 
-    def test_posix_uses_home(
-        self, monkeypatch: pytest.MonkeyPatch
-    ) -> None:
+    def test_posix_uses_home(self, monkeypatch: pytest.MonkeyPatch) -> None:
         """On non-Windows, always use ~/.smartcalc_v3."""
         monkeypatch.setattr(os, "name", "posix")
         from model.history import _history_app_dir
+
         assert _history_app_dir() == os.path.join(
             os.path.expanduser("~"), ".smartcalc_v3"
         )
@@ -144,13 +145,14 @@ class TestHistoryAppDir:
 class TestHistoryInit:
     """Tests for __init__ error handling (connection cleanup on failure)."""
 
-    def test_create_table_failure_closes_connection(
-        self, db_path: str
-    ) -> None:
+    def test_create_table_failure_closes_connection(self, db_path: str) -> None:
         """Verify the SQLite connection is closed when _create_table raises."""
-        with patch.object(
-            History,
-            "_create_table",
-            side_effect=sqlite3.OperationalError("boom"),
-        ), pytest.raises(sqlite3.OperationalError, match="boom"):
+        with (
+            patch.object(
+                History,
+                "_create_table",
+                side_effect=sqlite3.OperationalError("boom"),
+            ),
+            pytest.raises(sqlite3.OperationalError, match="boom"),
+        ):
             History(db_path=db_path)

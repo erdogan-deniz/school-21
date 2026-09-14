@@ -7,6 +7,7 @@ from model.enums import PaymentType
 from model.loan import LoanCalculator
 from viewmodel import Signal
 
+
 # Input range constraints for the loan form.
 AMOUNT_MIN: float = 1.0
 AMOUNT_MAX: float = 1_000_000_000.0
@@ -40,14 +41,14 @@ class LoanViewResult(TypedDict):
     """
 
     monthly_payment: float | None  # Fixed instalment (annuity only).
-    first_payment: float | None    # Largest instalment (differentiated only).
-    last_payment: float | None     # Smallest instalment (differentiated only).
-    overpayment: float             # Total interest paid over the loan term.
-    total: float                   # Sum of all monthly payments.
-    payments: list[float] | None   # Per-month amounts (differentiated only).
-    monthly_payment_text: str      # Formatted display string for monthly payment.
-    overpayment_text: str          # Formatted display string for overpayment.
-    total_text: str                # Formatted display string for total.
+    first_payment: float | None  # Largest instalment (differentiated only).
+    last_payment: float | None  # Smallest instalment (differentiated only).
+    overpayment: float  # Total interest paid over the loan term.
+    total: float  # Sum of all monthly payments.
+    payments: list[float] | None  # Per-month amounts (differentiated only).
+    monthly_payment_text: str  # Formatted display string for monthly payment.
+    overpayment_text: str  # Formatted display string for overpayment.
+    total_text: str  # Formatted display string for total.
 
 
 _logger = logging.getLogger("smartcalc")

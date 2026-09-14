@@ -77,7 +77,8 @@ class AppConfig:
         if clamped != value:
             _logger.warning(
                 "config.ini: font_size=%d out of range [6, 72], using %d.",
-                value, clamped,
+                value,
+                clamped,
             )
         return clamped
 
@@ -95,7 +96,8 @@ class AppConfig:
         if clamped != value:
             _logger.warning(
                 "config.ini: precision=%d out of range [1, 15], using %d.",
-                value, clamped,
+                value,
+                clamped,
             )
         return clamped
 

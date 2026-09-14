@@ -22,9 +22,9 @@ class LoanCalculator(FinanceCalculator):
 
         self._lib.s21_loan_annuity.restype = c_int
         self._lib.s21_loan_annuity.argtypes = [
-            c_double,                  # principal
-            c_int,                     # months
-            c_double,                  # rate
+            c_double,  # principal
+            c_int,  # months
+            c_double,  # rate
             ctypes.POINTER(c_double),  # *monthly_payment (out)
             ctypes.POINTER(c_double),  # *overpayment     (out)
             ctypes.POINTER(c_double),  # *total           (out)
@@ -32,9 +32,9 @@ class LoanCalculator(FinanceCalculator):
 
         self._lib.s21_loan_differentiated.restype = c_int
         self._lib.s21_loan_differentiated.argtypes = [
-            c_double,                  # principal
-            c_int,                     # months
-            c_double,                  # rate
+            c_double,  # principal
+            c_int,  # months
+            c_double,  # rate
             ctypes.POINTER(c_double),  # *payments_out array (out)
             ctypes.POINTER(c_double),  # *overpayment        (out)
             ctypes.POINTER(c_double),  # *total              (out)

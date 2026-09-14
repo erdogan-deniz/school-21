@@ -2,8 +2,8 @@
 
 import sys
 
-from PyQt6.QtCore import QCoreApplication
 import pytest
+from PyQt6.QtCore import QCoreApplication
 
 from model.calculator import Calculator
 from model.deposit import DepositCalculator

@@ -7,8 +7,8 @@ are captured with a plain list connected via signal.connect(list.append).
 
 import threading
 
-from PyQt6.QtCore import QCoreApplication
 import pytest
+from PyQt6.QtCore import QCoreApplication
 
 from model.calculator import Calculator
 from model.deposit import DepositCalculator
@@ -486,7 +486,12 @@ class TestDepositViewModelParseTableRows:
         warnings: list[str] = []
         deposit_vm.warning_occurred.connect(warnings.append)
         deposit_vm.calculate(
-            100_000, 6, 8.0, 13.0, 0, False,
+            100_000,
+            6,
+            8.0,
+            13.0,
+            0,
+            False,
             additions=[("10", "1000")],  # month 10 > term 6
         )
         assert warnings and warnings[-1] != ""
@@ -498,7 +503,12 @@ class TestDepositViewModelParseTableRows:
         warnings: list[str] = []
         deposit_vm.warning_occurred.connect(warnings.append)
         deposit_vm.calculate(
-            100_000, 12, 8.0, 13.0, 0, False,
+            100_000,
+            12,
+            8.0,
+            13.0,
+            0,
+            False,
             additions=[("3", "5000")],
         )
         assert warnings and warnings[-1] == ""
@@ -524,8 +534,7 @@ class TestSignalThreadSafety:
 
         sig.connect(cb)
         threads = [
-            threading.Thread(target=sig.emit, args=(i,))
-            for i in range(100)
+            threading.Thread(target=sig.emit, args=(i,)) for i in range(100)
         ]
         for t in threads:
             t.start()
@@ -541,8 +550,10 @@ class TestSignalThreadSafety:
 
         def worker() -> None:
             try:
+
                 def cb(_: object) -> None:
                     pass
+
                 sig.connect(cb)
                 sig.emit(1)
                 sig.disconnect(cb)

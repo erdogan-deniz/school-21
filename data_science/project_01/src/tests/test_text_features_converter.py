@@ -45,9 +45,7 @@ class TestOneHotTextsEncoding:
         # 3 docs × 4 unique tokens (alpha, beta, gamma, delta).
         assert df.shape == (3, 4)
 
-    def test_values_are_binary(
-        self, converter: TextToFeaturesConverter, texts: pd.Series
-    ) -> None:
+    def test_values_are_binary(self, converter: TextToFeaturesConverter, texts: pd.Series) -> None:
         df = converter.one_hot_texts_encoding(texts)
         # binary=True → every cell is 0 or 1, even if a word repeats.
         assert set(df.values.flatten().tolist()) <= {0, 1}
@@ -61,15 +59,11 @@ class TestOneHotTextsEncoding:
 
 
 class TestWordCountTextsEncoding:
-    def test_shape(
-        self, converter: TextToFeaturesConverter, texts: pd.Series
-    ) -> None:
+    def test_shape(self, converter: TextToFeaturesConverter, texts: pd.Series) -> None:
         df = converter.word_count_texts_encoding(texts)
         assert df.shape == (3, 4)
 
-    def test_counts_repeat_tokens(
-        self, converter: TextToFeaturesConverter
-    ) -> None:
+    def test_counts_repeat_tokens(self, converter: TextToFeaturesConverter) -> None:
         # "alpha alpha" in doc 0 should produce a count of 2 for that cell.
         texts = pd.Series(["alpha alpha", "alpha beta"])
         df = converter.word_count_texts_encoding(texts)
@@ -77,15 +71,11 @@ class TestWordCountTextsEncoding:
 
 
 class TestTfidfTextsEncoding:
-    def test_shape(
-        self, converter: TextToFeaturesConverter, texts: pd.Series
-    ) -> None:
+    def test_shape(self, converter: TextToFeaturesConverter, texts: pd.Series) -> None:
         df = converter.tfidf_texts_encoding(texts)
         assert df.shape == (3, 4)
 
-    def test_values_nonnegative(
-        self, converter: TextToFeaturesConverter, texts: pd.Series
-    ) -> None:
+    def test_values_nonnegative(self, converter: TextToFeaturesConverter, texts: pd.Series) -> None:
         df = converter.tfidf_texts_encoding(texts)
         # TF-IDF is non-negative by construction.
         assert (df.values >= 0).all()

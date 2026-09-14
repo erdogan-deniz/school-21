@@ -38,7 +38,7 @@ In this project, you will learn what corporate culture is and how to immerse you
 3. [Chapter III](#chapter-iii) \
     3.1. Corporate Culture / Corporate Etiquette \
     3.2. Safety culture
-4. [Chapter IV](#chapter-iv) 
+4. [Chapter IV](#chapter-iv)
 
 ## Chapter I
 
@@ -71,6 +71,7 @@ References:
 9. Movie "The Intern", 2015.
 
 ## Chapter II
+
 ## General rules
 
 1. Along the way, you'll feel a sense of uncertainty and a severe lack of information. Don't worry: this is perfectly normal. Remember, the information in the repository and on Google is always with you, as are your peers and Rocket.Chat. Communicate, search, use common sense, and don't be afraid to make mistakes.
@@ -83,10 +84,11 @@ References:
 8. Don't try to cheat the system or the people around you. After all, you're only fooling yourself.
 9. Got a question? Ask your peers.
 10. When you ask someone for help, always make sure you understand why, how, and for what purpose. Otherwise, the help won't help you.
-11. Always _push_ only to the _develop_ branch! The _master_ branch is ignored. Work in the _src_ directory.
+11. Always *push* only to the *develop* branch! The *master* branch is ignored. Work in the *src* directory.
 12. There should be no files in your directory other than those specified in the tasks.
 
 ## Chapter III
+
 ## Corporate Culture / Corporate Etiquette
 
 Why research a company's culture, understand the rules, and play by them? Doesn't that limit your freedom to be yourself?
@@ -109,7 +111,7 @@ Recommendations:
 
 ### Appearance
 
-_Coco Chanel once said: "You will not have a second chance to make a first impression"._
+*Coco Chanel once said: "You will not have a second chance to make a first impression".*
 
 What is important about an employee's appearance?
  Shoes, clothes, well groomed skin, nails, hair.
@@ -216,7 +218,9 @@ Learn more about cybersecurity:
 3. [What is cybersecurity?](https://www.sap.com/central-asia-caucasus/products/financial-management/what-is-cybersecurity.html)
 
 ## Chapter IV
+
 ## Exercise 00
+
 ### Before starting an internship/job
 
 You have already selected several positions in Project01 that match your values and priorities. Now you need to learn more about the company and prepare for the internship.
@@ -231,6 +235,7 @@ You have already selected several positions in Project01 that match your values 
 2. Make a list of questions you couldn't find answers to that you will ask on the first day.
 
 ## Exercise 01
+
 ### Your first day
 
 Now imagine it's your first day on the job at the company. You need to write a cover letter to introduce yourself to the team.

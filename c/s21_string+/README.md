@@ -193,7 +193,7 @@ where:
 | No. | Width    | Description |
 | --- | -------- | ----------- |
 | 1   | (number) | Minimum number of characters to be printed. If the value to be printed is shorter than this number, the result is padded with blank spaces. The value is not truncated even if the result is larger. |
-| 2   | *        | In sprintf the * sign means that the width is not specified in the format string but as an additional integer value argument preceding the argument that has to be formatted. In sscanf the * sign placed after % and before the format specifier reads data of the specified type, but suppresses their assignment. |
+| 2   | *        | In sprintf the *sign means that the width is not specified in the format string but as an additional integer value argument preceding the argument that has to be formatted. In sscanf the* sign placed after % and before the format specifier reads data of the specified type, but suppresses their assignment. |
 
 #### sprintf Precision Description
 

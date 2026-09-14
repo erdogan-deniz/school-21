@@ -1,6 +1,7 @@
 # Bash scripts: beginning
 
 In the first line, we need to specify what kind of shell we are going to use. We are interested in bash, so the first line of the file will be:
+
 ```shell
 #!/bin/bash
 ```
@@ -8,6 +9,7 @@ In the first line, we need to specify what kind of shell we are going to use. We
 Other lines in this file use a hash character to indicate comments that the shell does not handle. However, the first line is a special case, with a hash followed by an exclamation mark (this sequence is called a shebang)
 
 Shell commands are separated by a newline character. This is how it looks like:
+
 ```shell
 #!/bin/bash
 # This is a comment
@@ -22,6 +24,7 @@ chmod +x ./myscript
 ```
 
 The script can now be run by entering in the command line:
+
 ```shell
 ./myscript
 ```
@@ -29,6 +32,7 @@ The script can now be run by entering in the command line:
 ### Text output
 
 The echo command is used to output text to the Linux console:
+
 ```shell
 echo "Hello World"
 ```
@@ -36,10 +40,12 @@ echo "Hello World"
 ### Variables
 
 There are two types of variables that can be used in bash scripts:
+
 - Environment variables
 - User variables
 
 Environment variables store some system data, such as the current user's home directory:
+
 ```shell
 echo "Home for the current user is: $HOME"
 ```
@@ -64,6 +70,7 @@ There are two ways to do this:
 - Using the $() construction
 
 So, saving the output of the pwd command to the mydir variable could look like this:
+
 ```shell
 mydir=`pwd`
 mydir=$(pwd)
@@ -72,6 +79,7 @@ mydir=$(pwd)
 ### Mathematical operations
 
 You can use $((*operation*)) to perform mathematical operations in a script file:
+
 ```shell
 var1=$(( 5 + 5 ))
 var2=$(( $var1 * 2 ))
@@ -80,6 +88,7 @@ var2=$(( $var1 * 2 ))
 ### Conditional statement
 
 The conditional statement in bash is implemented like this:
+
 ```shell
 if command
 then
@@ -93,6 +102,7 @@ fi
 ```
 
 Here is an example of using a conditional statement:
+
 ```shell
 user=anotherUser
 if grep $user /etc/passwd
@@ -109,6 +119,7 @@ fi
 ### Comparison
 
 Numerical values can be compared in scripts. Here is a list of corresponding commands:
+
 - n1 -eq n2 -- Returns true value if n1 equals n2.
 - n1 -ge n2 -- Returns true value if n1 is greater than or equal to n2.
 - n1 -gt n2 -- Returns true value if n1 is greater than n2.
@@ -117,6 +128,7 @@ Numerical values can be compared in scripts. Here is a list of corresponding com
 - n1 -ne n2 -- Returns true value if n1 is not equal to n2.
 
 String values can also be compared in scripts. Here is a list of operators:
+
 - str1 = str2 -- Checks strings for equality, returns true if strings are identical.
 - str1 != str2 -- Returns true if strings are not identical.
 - str1 < str2 -- Returns true if str1 is less than str2.
@@ -125,6 +137,7 @@ String values can also be compared in scripts. Here is a list of operators:
   -z str1 -- Returns true if str1 length is zero.
 
 An example of performing comparison operations:
+
 ```shell
 #!/bin/bash
 val1=text
@@ -142,6 +155,7 @@ String comparison operations have certain features:
 1. ">" and "<" operators must be escaped with a backslash, otherwise the script will not work correctly, although no error messages will appear. The script interprets the ">" as a redirect output command.
 
 2. To make the script work without warnings, variables whose values contain more than one word should be enclosed in double quotes:
+
 ```shell
 val1=text
 val2="another text"
@@ -158,6 +172,7 @@ fi
 ### File checks
 
 The following commands allow you to check various file conditions:
+
 - -d file -- Checks if file exists and is a directory.
 - -e file -- Checks if file exists.
 - -f file -- Checks if file exists and is a file.
@@ -171,6 +186,7 @@ The following commands allow you to check various file conditions:
 - -G file -- Checks if file exists and if its group ID matches the current user's group ID.
 
 As an example, here is a script that outputs the contents of an existing directory:
+
 ```shell
 mydir=/home/likegeeks
 if [ -d $mydir ]

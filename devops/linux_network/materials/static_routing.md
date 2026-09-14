@@ -44,7 +44,6 @@ Repeat this process for each node.
 The routers each use three of the four available network adapters to connect to internal networks.
 The PCs each use one network adapter to connect to internal networks.
 
-
 ## How to add static routes in Ubuntu Linux
 
 Static route addition in Linux may be performed by the command:

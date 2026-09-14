@@ -39,7 +39,7 @@ In this project, you will learn how to plan your career after you start working,
     3.1. How to plan a career \
     3.2. When to talk to a manager about your career advancement and its importance to you \
     3.3. Key competencies for career growth
-4. [Chapter IV](#chapter-iv) 
+4. [Chapter IV](#chapter-iv)
 
 ## Chapter I
 
@@ -55,6 +55,7 @@ References:
 1. [Be Your Own Brand: A Breakthrough Formula for Standing Out from the Crowd by David McNally](materials/Сам_себе_бренд.pdf).
 
 ## Chapter II
+
 ## General rules
 
 1. Along the way, you'll feel a sense of uncertainty and a severe lack of information. Don't worry: this is perfectly normal. Remember, the information in the repository and on Google is always with you, as are your peers and Rocket.Chat. Communicate, search, use common sense, and don't be afraid to make mistakes.
@@ -67,7 +68,7 @@ References:
 8. Don't try to cheat the system or the people around you. After all, you're only fooling yourself.
 9. Got a question? Ask your peers.
 10. When you ask someone for help, always make sure you understand why, how, and for what purpose. Otherwise, the help won't help you.
-11. Always _push_ only to the _develop_ branch! The _master_ branch is ignored. Work in the _src_ directory.
+11. Always *push* only to the *develop* branch! The *master* branch is ignored. Work in the *src* directory.
 12. There should be no files in your directory other than those specified in the tasks.
 
 ## Chapter III
@@ -111,13 +112,13 @@ When it comes to career development, there are two key competencies that will he
 
 What is the difference between the mindset of a person who grows, develops, gets a new position, and the mindset of a person who doesn't grow? We all live under certain constraints, most of the time we lack time, money, people, knowledge, experience. Let's look at some examples.
 
-_Example #1_: The manager is unable to give you a new position. No vacancy, no budget, etc. Right now, you can bump into this limitation and do nothing. You can complain about the inadequacies of the company's processes, or you can start looking at the situation from a different angle.
+*Example #1*: The manager is unable to give you a new position. No vacancy, no budget, etc. Right now, you can bump into this limitation and do nothing. You can complain about the inadequacies of the company's processes, or you can start looking at the situation from a different angle.
 
 For example, you look at where you want to go (to point C) and you look at what skills and competencies you need. You start to develop and see opportunities for growth, while promotion to a new position is not possible for you at the moment. You learn what else to study, who to go to for mentoring or guidance, what skills to develop on the job, and who else to meet. The power of opportunity lies in understanding what cross-functional area you need to master.
 
 You don't need to focus on limitations; you need to focus on what is possible for you in a given situation.
 
-_Example #2_: I can't plan my career because I don't know if I can and will get a new position next year, so I won't do anything. Why should I try if the result is not guaranteed?
+*Example #2*: I can't plan my career because I don't know if I can and will get a new position next year, so I won't do anything. Why should I try if the result is not guaranteed?
 
 Or
 
@@ -132,12 +133,15 @@ The ability to notice and talk about your daily results. If no one but you knows
 Gone are the days when simply doing a good job was enough to advance your career. If you want to grow, it's important to be able to see and talk about the results of your work.
 
 ## Chapter IV
+
 ## Exercise 00
+
 ### Present your results
 
 You must list and present at least five of your accomplishments during your time at School 21.
 
 ## Exercise 01
+
 ### Building Your Development Plan
 
 Complete the Expanded Career Goals Worksheet, taking into account all of the material you have studied throughout the course.

@@ -1,4 +1,4 @@
-## Routing. Example.
+## Routing. Example
 
 <img src="../misc/images/network_route.png" alt="network_route" width="500"/>
 
@@ -10,6 +10,7 @@ The second entry is the default route, which is applied to all packets sent in t
 The last entry in the routing table is for IP *128.17.75.20* and is routed to the lo interface, so if the machine connects to itself on *128.17.75.20*, all packets will be sent to *127.0.0.1* interface.
 
 An example of a routing table for an eggplant host:
+
 ```
 [root@eggplant ~]# netstat -rn
 Kernel IP routing table
@@ -30,8 +31,8 @@ Such packets are received by all network hosts.
 Let's consider a situation where a host eggplant wants to send a packet to a pear host, for example, or even further away?
 In this case, the destination of the packet will be - *128.17.112.21*, the IP protocol will try to find a route for *128.17.112* in the routing table, but this route is not there, so it will choose the default route, the gateway of which is papaya (*128.17.75.98*).
 
-
 After receiving the packet, papaya will look up the destination address in its routing table:
+
 ```
 [root@papaya ~]# netstat -rn
 Kernel IP routing table

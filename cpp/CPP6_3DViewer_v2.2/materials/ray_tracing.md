@@ -15,7 +15,7 @@ The intensity of a pixel is determined mostly by its degree of illumination. Wit
 
 - Global illumination - some background intensity value, or basic intensity in the shade. In the real world, completely black shadows are very rare and do not look realistic.
 
-## Factors affecting the ray path.
+## Factors affecting the ray path
 
 In general, to calculate the illuminance of an individual pixel, the amount of light brought in by each light source is calculated and added together to get a number that represents the total amount of light a pixel receives. Then you can multiply the surface color at that point by that amount to get the exact color shade the pixel should be painted with.
 

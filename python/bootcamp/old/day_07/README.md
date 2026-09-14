@@ -89,23 +89,23 @@ the repo-wide MIT licence.
 <h2 id="intro" >Intro</h2>
 
  "It seems you feel our work is not a benefit to the public."
- 
+
  "Replicants are like any other machine. They're either a benefit or a hazard. If they're a benefit, it's not my problem."
- 
+
  "May I ask you a personal question?"
 
 Deckard sat down on a chair.
- 
+
  "Sure."
- 
+
  "Have you ever retired a human by mistake?"
- 
+
  "No," he didn't even blink.
- 
+
  "But in your position that is a risk?"
 
 Deckard prepared to give some meaningful response, but then another person appeared in the room.
-It was a tall man, presumably in his fifties, wearing an impeccable black suit and some kind of 
+It was a tall man, presumably in his fifties, wearing an impeccable black suit and some kind of
 advanced tech multifaceted glasses.
 
 <h2 id="chapter-iv" >Chapter IV</h2>
@@ -124,7 +124,7 @@ Rachael decided to keep the formalities.
  of people with a very busy schedule.
 
 Several minutes have passed and discussion went on. Even being young and bold, Deckard came to
-realize that the Voight-Kampff test is far more dangerous than it seems. There had to be a lot of 
+realize that the Voight-Kampff test is far more dangerous than it seems. There had to be a lot of
 work put into it to make it reliable.
 
 -----
@@ -146,7 +146,7 @@ After ten questions and variable measurements, the test should print out a stric
 whether a responding subject is a human or a replicant. In this exercise, you can invent your own
 logic to use for making this decision.
 
-Try to split your business logic into separate files based on tasks components solve. The starting 
+Try to split your business logic into separate files based on tasks components solve. The starting
 script should be called `main.py`. All interaction with the test should work via command line.
 
 <h2 id="chapter-v" >Chapter V</h2>
@@ -172,26 +172,26 @@ What if the file with questions is empty? Could it be that there is an equal pro
 output to be human or replicant based on the data?
 
 Your VK test implementation most likely consists of several functions and, supposedly, classes.
-Your goal here is to cover all the corner cases for all the components with tests. Basically, 
+Your goal here is to cover all the corner cases for all the components with tests. Basically,
 whenever a test operator inputs something wrong (like, selecting non-existent answer or
 out-of-bounds numbers for measurements, e.g. negative heart rate) he or she should receive a
 meaningful information message and a possibility to repeat the input.
 
 During this exercise you will most likely rewrite at least some of the code from EX00, but that's
-the whole point. Also, it is highly recommended to use Pytest framework when writing tests (see 
+the whole point. Also, it is highly recommended to use Pytest framework when writing tests (see
 Reading section below). All the tests should be inside `tests` directory.
 
 <h2 id="chapter-vi" >Chapter VI</h2>
 <h3 id="exercise-02-for-the-future">Exercise 02: For the Future</h3>
 
 ...But did it matter? After all what happened in the next week, the line separating humans and
-replicants has practically disappeared for Deckard. He knew it existed, because the test said 
+replicants has practically disappeared for Deckard. He knew it existed, because the test said
 it existed, but that was about all he had.
 
-Blade runners still had to use the test when hunting the escaped replicants. It was their 
+Blade runners still had to use the test when hunting the escaped replicants. It was their
 way to make sure that they are doing the right thing.
 
- "What are you working at?" Rachael asked him one day. 
+ "What are you working at?" Rachael asked him one day.
 
  "I want... to write about it. I think it's more of an art piece for me now, rather than a
  weapon."
@@ -214,8 +214,8 @@ For the second part, you'll need to add comments to all entities in your code - 
 functions, classes, etc. You can find a link to the guide on how to write docstrings in Reading
 section.
 
-You should also add a proper title and logo to your project for the documentation. Don't include 
-the generated docs into your submission though, it should be buildable with `make html` on your 
+You should also add a proper title and logo to your project for the documentation. Don't include
+the generated docs into your submission though, it should be buildable with `make html` on your
 peer's side if all the requirements are installed.
 
 <h2 id="chapter-vii" >Chapter VII</h2>

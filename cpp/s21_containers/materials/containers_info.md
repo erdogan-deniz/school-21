@@ -244,7 +244,6 @@ This table contains in-class type overrides (typical for the standard STL librar
 
 This table contains the main public methods for interacting with the class:
 
-
 | Functions      | Definition                                      |
 |----------------|-------------------------------------------------|
 | `queue()`  | default constructor, creates an empty queue                                 |
@@ -517,7 +516,6 @@ This table contains the public methods for accessing the container capacity info
 *Vector Modifiers*
 
 This table contains the public methods for modifying a container:
-
 
 | Modifiers      | Definition                                      |
 |----------------|-------------------------------------------------|

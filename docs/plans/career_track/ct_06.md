@@ -22,8 +22,6 @@
 
 ## Subproject-specific tasks
 
-
-
 ## History
 
 <!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/erdogan-deniz/school-21/commit/<sha>)) -->

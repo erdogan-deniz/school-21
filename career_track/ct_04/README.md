@@ -46,8 +46,8 @@ You cannot complete Project 04 until you have completed individual Projects 05 a
     3.3. Use of the Kanban method. How to apply it in real life? \
     3.4. Formal and informal rules. What are they for?
 4. [Chapter IV](#chapter-iv) \
-    [Задача](#задача)    
-5. [Chapter V](#chapter-v) 
+    [Задача](#задача)
+5. [Chapter V](#chapter-v)
 
 ## Chapter I
 
@@ -76,6 +76,7 @@ While working on a project, you'll strengthen your teamwork skills and get answe
 8. Book "Agile Retrospective: How to Turn a Good Team into a Great One".
 
 ## Chapter II
+
 ## General rules
 
 1. Along the way, you'll feel a sense of uncertainty and a severe lack of information. Don't worry: this is perfectly normal. Remember, the information in the repository and on Google is always with you, as are your peers and Rocket.Chat. Communicate, search, use common sense, and don't be afraid to make mistakes.
@@ -88,10 +89,11 @@ While working on a project, you'll strengthen your teamwork skills and get answe
 8. Don't try to cheat the system or the people around you. After all, you're only fooling yourself.
 9. Got a question? Ask your peers.
 10. When you ask someone for help, always make sure you understand why, how, and for what purpose. Otherwise, the help won't help you.
-11. Always _push_ only to the _develop_ branch! The _master_ branch is ignored. Work in the _src_ directory.
+11. Always *push* only to the *develop* branch! The *master* branch is ignored. Work in the *src* directory.
 12. There should be no files in your directory other than those specified in the tasks.
 
 ## Chapter III
+
 ## Why understand the methodology if I'm just here to code?
 
 Let's imagine your first days in the company. You have joined a team of developers, there are a lot of unfamiliar people and new words around, there are meetings scheduled in the calendar, and as a possible result you may experience a lack of understanding of how everything works in this company at the initial stage.
@@ -101,9 +103,9 @@ The sooner you understand how the team is organized, what the rules are, and how
 You will also have an additional factor for rapid growth, and you will be able to actively participate in the life of the team and suggest improvements.
 
 *Example:* A team has been working successfully for a long time. It has been using one of the methodologies. A developer who didn't know it and didn't want to get involved joined the team. Out of a great desire to prove himself, he/she:
-* Starts inventing and immediately implementing new features in addition to his tasks, which may not be needed by the customer; 
-* Stops going to team meetings because he/she doesn't understand why he/she is there; 
-* Tries to implement all the functionality all at once, instead of taking it one step at a time and breaking it down into smaller tasks.
+- Starts inventing and immediately implementing new features in addition to his tasks, which may not be needed by the customer;
+- Stops going to team meetings because he/she doesn't understand why he/she is there;
+- Tries to implement all the functionality all at once, instead of taking it one step at a time and breaking it down into smaller tasks.
 
 Since each team member is dependent on the others, actions such as those described above can result in missed deadlines and lost money.
 
@@ -126,6 +128,7 @@ For many people, this may be new: "Why should I tell the whole team about my tas
 Such actions help teams to organize themselves and produce a high quality product that the market needs.
 
 ## Scrum Framework. What to be prepared for?
+
 Scrum is a way of organizing work that is particularly popular with IT teams. It's very likely that you'll be working within this framework.
 
 The basic unit of Scrum is a self-organized and cross-functional team, which means that:
@@ -138,7 +141,7 @@ Scrum is suitable for teams involved in product development. It is suitable when
 
 SCRUM explicitly regulates the values, the distribution of roles, the organization of events (meetings) and the artifacts used during the workflow. These rules of thumb are described in the Scrum Guide.
 
-![SCRUM](misc/images/CT04.01.png) 
+![SCRUM](misc/images/CT04.01.png)
 
 Let's take a closer look at the Scrum Retrospective tool. This meeting is needed to reflect on the work done by all participants in order to plan quality or efficiency improvements. You will conduct it as part of your current project. The algorithm for running a retrospective consists of 5 steps:
 
@@ -151,7 +154,8 @@ Let's take a closer look at the Scrum Retrospective tool. This meeting is needed
 Learn [more](https://filipyev.ru/2018/07/25/pyat-shagov-restrospektivy-konceptualnaya-karta/) about the session. Use this [tool](https://retromat.org/ru/?id=114-35-74-100-109) to select exercises for your retrospective.
 
 ## Use of the Kanban method. How to apply it in real life?
-The Kanban method can be applied to any process you're involved in and make it more agile: at work, at school, and in your personal life. It's an evolutionary approach, which means you don't have to rebuild your team or implement everything at once to use it. You can start applying the practices gradually. 
+
+The Kanban method can be applied to any process you're involved in and make it more agile: at work, at school, and in your personal life. It's an evolutionary approach, which means you don't have to rebuild your team or implement everything at once to use it. You can start applying the practices gradually.
 
 The essence of applying the Kanban method is to see how the current work process is organized and then improve that process, making useful changes and correcting ineffective ones.
 
@@ -171,11 +175,11 @@ For example, almost all teams have **task trackers** that help make SCRUM or Kan
 
 This is what the board looks like, showing all the tasks that are in the sprint and that we need to accomplish the sprint goal:
 
-![Jira](misc/images/CT04.03.png) 
+![Jira](misc/images/CT04.03.png)
 
 And below is an example of a product backlog, based on which the product owner can assign goals and tasks to sprints in advance.
 
-![бэклога](misc/images/CT04.04.png) 
+![бэклога](misc/images/CT04.04.png)
 
 Such a tool allows you to:
 
@@ -193,11 +197,12 @@ In addition to Jira, there are of course many other useful online task boards. F
 - Kaiten;
 - Yandex.Tracker, etc.
 
-Also, one of the formal rules of teamwork can be to maintain a corporate knowledge base. As the team works on the project, they gain new knowledge about its implementation, make mistakes, new arrangements, and so on. This knowledge is kept in one place for preservation and training of new employees. Teams often use Confluence to create team rooms and upload articles, documents, and attachments. 
+Also, one of the formal rules of teamwork can be to maintain a corporate knowledge base. As the team works on the project, they gain new knowledge about its implementation, make mistakes, new arrangements, and so on. This knowledge is kept in one place for preservation and training of new employees. Teams often use Confluence to create team rooms and upload articles, documents, and attachments.
 
 Don't be afraid to speak up, ask questions, and suggest changes! Good luck in your new job!
 
 ## Chapter IV
+
 ## Task 1
 
 You need to spend the next week on the development team using common practices like working with a task board and attending retrospectives. Once you try them for yourself, you'll understand why they're necessary. You'll also get a deeper understanding of how SCRUM is applied and take the test.
@@ -205,16 +210,20 @@ You need to spend the next week on the development team using common practices l
 **Note!**
 You cannot complete Project 04 until you have completed individual Projects 05 and 06. If you complete Project 04, you won't be able to complete the following projects.
 
-![SCRUM](misc/images/CT04.02.png) 
+![SCRUM](misc/images/CT04.02.png)
 
 ## Chapter V
+
 ## Exercise 00
+
 ### Create and maintain a team board with learning objectives
+
 1. Create a board on any convenient platform for the entire team.
 2. Place all the tasks of the third block on this board and keep them updated. (Project 04, Project 05, Project 06). All team members must maintain them. Tasks can be related not only to specific assignments, but also to the study of relevant supplemental materials.
 3. Make sure that everyone can follow the link and see the task board.
 
 ## Exercise 01
+
 ### Conducting a Team Retrospective
 
 1. After all participants have completed the day's tasks (Project 05, Project 06), a retrospective must be held using the online board (Miro, Metroretro, Trello, etc.) according to the 5 stages of the meeting.
@@ -224,6 +233,8 @@ You cannot complete Project 04 until you have completed individual Projects 05 a
 The retrospective videos and links to the boards should be uploaded. They need to be clickable so that people can click on them and see the results of the discussions.
 
 ## Exercise 02
+
 ### Passing the SCRUM Assessments
+
 1. Each participant is required to take a [Scrum](https://www.scrum.org/open-assessments/scrum-open) comprehension quiz.
 2. The test result must be higher than 70%. The screenshot with the result must be attached. For better preparation you can study the latest version of the [Scrum Guide](materials/Scrum_Guide.pdf) (available for download in the materials -> Scrum-Guide folder). You will find all the answers there.

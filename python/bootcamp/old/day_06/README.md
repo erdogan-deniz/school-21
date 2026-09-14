@@ -29,7 +29,7 @@ General rules
 
 Ender started to read through the project documentation. It turns out, there is a ton of scanners
 and detectors Federation deployed across the galaxy to monitor various sectors of space and keep
-track of all the spaceships currently going through, both allies and enemies. 
+track of all the spaceships currently going through, both allies and enemies.
 
 Every spaceship had several characteristics:
 
@@ -58,21 +58,21 @@ Even though Ender kinda got used to it already.
 The main protocol used for interspace communication was called 'Protobuf 2.0'. The entries were
 being sent over the transport called 'gRPC'. So, this was the first layer Ender had to implement.
 
-As gRPC is a client-server communication framework, two components had to be implemented - 
+As gRPC is a client-server communication framework, two components had to be implemented -
 'reporting_server.py' and 'reporting_client.py'. The server should provide a response-streaming
 endpoint, where it receives a set of coordinates (Ender was allowed to use [any particular system](https://en.wikipedia.org/wiki/Astronomical_coordinate_systems)
 he likes), and responds with a stream of Spaceship entries.
 
-As this is currently a test environment, even though every Spaceship should still have all the 
+As this is currently a test environment, even though every Spaceship should still have all the
 parameters mentioned, they could be random. Also, they should be strictly typed, e.g.:
 
- - Alignment is an enum
- - Name is a string
- - Length is a float
- - Class is an enum
- - Size is an integer
- - Armed status is a bool
- - Each officer on board should have first name, last name and rank as strings
+- Alignment is an enum
+- Name is a string
+- Length is a float
+- Class is an enum
+- Size is an integer
+- Armed status is a bool
+- Each officer on board should have first name, last name and rank as strings
 
 The number of officers on board is a random number from 0 (for enemy ships only) to 10.
 
@@ -84,6 +84,7 @@ The workflow should go like this:
 `~$ ./reporting_client.py 17 45 40.0409 −29 00 28.118`
 
   An example given is galactic coordinates for [Sagittarius A\*](https://en.wikipedia.org/wiki/Sagittarius_A*)
+
 1) these coordinates are sent to the server, and server responds with a random (1-10) number
   of Spaceships in a gRPC stream to the client
 2) the client prints to standard output all the received ships as a set of serialized JSON
@@ -140,8 +141,8 @@ The boy decided to represent these limitations as Pydantic data types (see Readi
 
 That way it will not just be easier to validate incoming data, but also serialization to JSON
 becomes a lot easier. He decided to make another version of the client ('reporting_client_v2.py'),
-which will work with the same server. But this time it should validate the stream of Spaceships 
-using Pydantic and filter out those which have some parameters out of bounds, according to the 
+which will work with the same server. But this time it should validate the stream of Spaceships
+using Pydantic and filter out those which have some parameters out of bounds, according to the
 table above. The rest should be printed exactly as in EX00.
 
 Additionally, from the first part Ender already knew that Name could be 'Unknown' ONLY for enemy
@@ -150,7 +151,7 @@ ships.
 <h3 id="exercise-02-keeping-records">Exercise 02: Keeping Records</h3>
 
 How good are reports if we are not storing them? For the last Storage layer there had to be yet
-another representation of a Spaceship, now as an ORM model (or a set of models, he thought, 
+another representation of a Spaceship, now as an ORM model (or a set of models, he thought,
 remembering about officers).
 
 Now Ender's project will have to include 'reporting_client_v3.py' script which is responsible
@@ -163,7 +164,7 @@ manually, as long as there is a description in comments/text file in the submitt
 
 Another case that colonel asked Ender to implement was searching for 'traitors'. Sometimes the same
 officers (with unique combination of first name, last name and rank) may have been encountered
-both on ally and enemy ships. So, the scan interface in version 3 should look like this (mind the 
+both on ally and enemy ships. So, the scan interface in version 3 should look like this (mind the
 word 'scan'):
 
 `~$ ./reporting_client.py scan 17 45 40.0409 −29 00 28.118`

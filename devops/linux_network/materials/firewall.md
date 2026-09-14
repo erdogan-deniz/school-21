@@ -9,6 +9,7 @@ If it doesn’t find one, it resorts to the default action.
 Nmap is Linux command-line tool for network exploration and security auditing.
 This tool is generally used by hackers and cybersecurity enthusiasts and even by network and system administrators.
 It is used for the following purposes:
+
 - Real time information of a network
 - Detailed information of all the IPs activated on your network
 - Number of ports open in a network

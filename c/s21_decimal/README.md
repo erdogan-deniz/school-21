@@ -253,4 +253,4 @@ The functions of the decimal.h library described [above](#information) must be i
 - Trailing zeros can be as preserved as deleted (except for the `s21_truncate` function)
 - The defined type must support numbers from -79,228,162,514,264,337,593,543,950,335 to +79,228,162,514,264,337,593,543,950,335.
 
-💡[ Tap here](https://forms.yandex.ru/u/6357d97684227c2f9d626b7c/) **to leave your feedback on the project**. Pedago Team really tries to make your educational experience better.
+💡[Tap here](https://forms.yandex.ru/u/6357d97684227c2f9d626b7c/) **to leave your feedback on the project**. Pedago Team really tries to make your educational experience better.

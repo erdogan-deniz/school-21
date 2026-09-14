@@ -56,7 +56,6 @@ If tests didn't pass, `"fail"` the pipeline. In the pipeline, display the output
   * The tests logs are:
   ![Basic CI/CD](screenshots/tests_status.jpg)
 
-
 ## Part 5. Deployment stage
 
 * Let's launch the second virtual machine *Ubuntu Server 22.04 LTS*.

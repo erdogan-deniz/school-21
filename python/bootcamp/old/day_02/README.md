@@ -20,6 +20,7 @@ Discover the mysteries of a closed Vault!
     6.1. [Reading and tips](#reading-and-tips)
 
 ## Chapter I
+
 ### General rules
 
 - Your scripts should not quit unexpectedly (giving an error on a valid input). If this happens, your project will be considered non functional and will receive a 0 during the evaluation.
@@ -30,6 +31,7 @@ Discover the mysteries of a closed Vault!
 - It is also recommended (though not strictly required) that you use type hinting in your code. You can refer to [this article](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html) for a short tutorial.
 
 ## Chapter II
+
 ### Rules of the day
 
 - You should only turn in `*.py` files
@@ -37,20 +39,21 @@ Discover the mysteries of a closed Vault!
 - You can guess (or model) the solution for EX01, or you can go through [this small tutorial on Game Theory](https://ncase.me/trust/) to help you with that
 
 ## Chapter III
+
 ### Intro
 
 The Chosen One stood before a massive door, which was well hidden in an
 underground cave stretched deep into the mountain. A closed door, especially
 one that never opened during more than a hundred years, is definitely
-preserving a mystery. It may be dark and sorrowful, or it may be fun 
+preserving a mystery. It may be dark and sorrowful, or it may be fun
 and adventurous. These guys may even have a spare GECK!
 
 But our hero's attention was tied to the console next to the door. He slowly
 approached it, watching his steps carefully, just in case. Then, pulled an
-electronic lockpick (made by Wattz Electronics, Mk2!) from the pocket and 
+electronic lockpick (made by Wattz Electronics, Mk2!) from the pocket and
 plugged it into a slot on the side.
 
-The screen lit up and the Chosen One sighed with relief - at least vault's 
+The screen lit up and the Chosen One sighed with relief - at least vault's
 reactor was online and this thing still had power. This could be worked with.
 
 But instead of regular hex dumps where he could search for password it showed
@@ -68,8 +71,8 @@ AssertionError: str(key) == "GeneralTsoKeycard"
 Okay, right, the lockpick is programmable. But what the hell is with this
 error?
 
-
 ## Chapter IV
+
 ### Exercise 00: Gaining Access
 
 Our hero put his backpack on the ground and got out a thick book called
@@ -79,11 +82,11 @@ sole purpose is to check if a certain condition is met. Apparently, in this
 case the system expected that the introduced digital key would pass several
 checks before opening the door.
 
-But it still was weird. First two lines implied that 'key' is a list, but 
+But it still was weird. First two lines implied that 'key' is a list, but
 then comparing it with number 9000 ruined that assumption completely. Looks
 like a custom data type had to be introduced.
 
-At the final chapter, the book also mentioned that custom types can be 
+At the final chapter, the book also mentioned that custom types can be
 introduced using classes. There was still one thing though - a lockpick
 he had had a very tiny memory and couldn't really store 1337 elements in it,
 even worse, it couldn't hold 404, either. Was there a way to bypass it?
@@ -110,15 +113,16 @@ checking according to the errors above (and to simplify peer review).
 This is graded as a bonus.
 
 ## Chapter V
+
 ### Exercise 01: Morality
 
-Finally, the massive door started to open! Just in case, the Chosen One 
+Finally, the massive door started to open! Just in case, the Chosen One
 put his hand on the holster. Last time opening such door lead to a long
 shootout with ghouls.
 
 But the space behind the door was empty. And clean. In fact, there wasn't
 much space there at all - just one small room with a terminal and no way
-deeper into the vault. 
+deeper into the vault.
 
 The screen on a terminal lit up showing a logo of something called "ZAX 2.0"
 and a strange synthetic voice echoed through the room.
@@ -142,18 +146,18 @@ to the horizon, it was reprogrammed based on the same principles to "rule
 the world", so to speak, which meant "provide optimizations for supply
 chains". Basically, the whole vault was just a single big computer.
 
-The artificial intelligence started asking the Chosen One many questions 
+The artificial intelligence started asking the Chosen One many questions
 about what's going on on the surface, and also about how long will it take
-to bring the current "big shots" here, into the vault, so it could start 
+to bring the current "big shots" here, into the vault, so it could start
 its "life's work".
 
- "I'm currently processing the thing you people are calling 
+ "I'm currently processing the thing you people are calling
  'Prisoner's Dilemma'," acknowledged ZAX. "During my time here based on
  all the information I had I've started classifying people by their
  behavior."
 
 ZAX told about the simple game with candy, where there is a machine that
-controls the supply of candy for two groups of people based on whether 
+controls the supply of candy for two groups of people based on whether
 one or both of two operators put one in it:
 
 |  | Both cooperate | 1 cheats, 2 cooperates | 1 cooperates, 2 cheats | Both cheat |
@@ -203,8 +207,8 @@ class Game(object):
 ```
 
 Here, `registry` is used to keep track of the current number of candy
-during the game, while `player1` and `player2` are instances of 
-subclasses of `Player` (each being one of 5 behavior types). Calling 
+during the game, while `player1` and `player2` are instances of
+subclasses of `Player` (each being one of 5 behavior types). Calling
 `play()` method of a `Game` instance should perform a simulation
 of a specified number of matches between players of a given behavior.
 
@@ -220,12 +224,12 @@ grudger 8
 By default, your code when run should simulate 10 matches (one call of
 `play()`) between every pair of two players with *different* behavior
 types (total 10 rounds by 10 matches each, no matches between two
-copies of the same behavior) and print top three winners after the 
+copies of the same behavior) and print top three winners after the
 whole game.
 
 You are strongly encouraged to experiment around with different
 behaviors and writing your own behavior class (this is graded as a
-bonus). You can get even more bonus points if an instance of your 
+bonus). You can get even more bonus points if an instance of your
 class performs better in the same "contest between each pair of
 players" check that at least three of five provided behaviors.
 
@@ -242,13 +246,14 @@ like ZAX. Not like wild raiders would ever pass the crown to a tin
 can. Not like the Chosen One himself would.
 
 ## Chapter VI
+
 ### Reading and tips
 
 Classes in Python fully support inheritance, but do not provide encapsulation very well. Probably
-one of the most interesting things to look at in Python OOP is `super()`, you can read about it 
+one of the most interesting things to look at in Python OOP is `super()`, you can read about it
 [here, for example](https://realpython.com/python-super/).
 
-Another thing to read about is a "constructor", which in Python is complex and includes at least 
-two methods - `__new__` and `__init__`. Here is [some more information](https://medium.com/thedevproject/new-vs-init-in-python-a-most-known-resource-7beb538dc3b) on topic.   
+Another thing to read about is a "constructor", which in Python is complex and includes at least
+two methods - `__new__` and `__init__`. Here is [some more information](https://medium.com/thedevproject/new-vs-init-in-python-a-most-known-resource-7beb538dc3b) on topic.
 
 **Please leave your feedback [here](https://forms.gle/oMEJnwqt5pkLydYy5)**

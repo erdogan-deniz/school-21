@@ -1,9 +1,8 @@
 # Day 05 - Piscine SQL
 
-## I improved my SQL Query! Please, provide proof!
+## I improved my SQL Query! Please, provide proof
 
 Resume: Today you will see how and when to create database indexes
-
 
 ## Chapter I
 

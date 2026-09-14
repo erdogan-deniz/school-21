@@ -30,7 +30,7 @@ In this project, you'll lay the foundation for your career trajectory, identify 
 ## Contents
 
 1. [Chapter I](#chapter-i) \
- 1.1. [Preamble](#preamble) 
+ 1.1. [Preamble](#preamble)
 2. [Chapter II](#chapter-ii) \
  2.1. [General rules](#general-rules)
 3. [Chapter III](#chapter-iii) \
@@ -61,10 +61,12 @@ We can divide the job search into several stages:
 But before you start searching for your dream job and the right company for you, you need to think about your future career trajectory. This is the stage where your professional journey and your further development begins. In this lesson, you'll learn all the steps you need to take before writing a CV (resume).
 
 In this project, you'll learn how to:
+
 - define your values;
 - set goals and plan your career.
 
 By working on this project, you will learn:
+
 - how to articulate your career values which directly influence your choice of future company and vacancy;
 - how to set and specify goals that will help you build a career trajectory.
 
@@ -90,7 +92,7 @@ References:
 8. Don't try to cheat the system and those around you. After all, you're fooling yourself first and foremost.
 9. Got a question? Ask your peers.
 10. When you resort to someone else's help, make sure you always understand why, how, and for what purpose. Otherwise, the help won't do you any good.
-11. Always _push_ only to the _develop_ branch! The _master_ branch will be ignored. Work in the _src_ directory.
+11. Always *push* only to the *develop* branch! The *master* branch will be ignored. Work in the *src* directory.
 12. There should be no files in your directory other than those designated in the assignments.
 
 ## Chapter III
@@ -104,6 +106,7 @@ Your job search starts with setting your goal and planning. Before looking for a
 ![Колеса карьерных приоритетов](misc/images/CT00.1.png)
 
 **What could those criteria be?**
+
 - ability to work remotely;
 - desired salary range;
 - health insurance/social benefits;
@@ -111,7 +114,7 @@ Your job search starts with setting your goal and planning. Before looking for a
 
 The criteria must be determined by you and you only. You need to rate (on a 10-point scale) where each criterion stands now and what you are working towards.
 
-_Why do it?_ To see what career you're aiming for, what you want to improve, and what steps to take to achieve those goals. Setting your priorities will help you create your resume, pick companies and go through interviews later in your career. Employers pay special attention to and recognize those candidates who know exactly what they want. When you're going to choose between several job offers, you can always address your priorities and make the right choice.
+*Why do it?* To see what career you're aiming for, what you want to improve, and what steps to take to achieve those goals. Setting your priorities will help you create your resume, pick companies and go through interviews later in your career. Employers pay special attention to and recognize those candidates who know exactly what they want. When you're going to choose between several job offers, you can always address your priorities and make the right choice.
 
 [Recommendations](https://everpracticalsolutions.com/koleso-balansa-raboti-i-drugie-tipi/)
 
@@ -188,7 +191,7 @@ To accomplish this task, you need to map out your career track for the next 3-5 
 
 1. Write out at least five job selection criteria and rate on a scale of 1 to 10 the status of these criteria now.
 2. Make a second wheel with the same criteria and rate them again from 1 to 10 to show what you would like these criteria to be in the future.
-3. For each criterion, come up with and write down the action steps to show what you'll do to achieve the desired state. We recommend you to complete this exercise in MIRO. Please upload a visualization of the final wheel (2 pcs) to the _src_ folder.
+3. For each criterion, come up with and write down the action steps to show what you'll do to achieve the desired state. We recommend you to complete this exercise in MIRO. Please upload a visualization of the final wheel (2 pcs) to the *src* folder.
 
 ## Exercise 01
 

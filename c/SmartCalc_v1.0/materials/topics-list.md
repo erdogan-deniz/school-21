@@ -1,8 +1,9 @@
 Hello, student of School21!😉
 
-To make it easier for you to navigate the material, we have prepared a list of topics that you will learn in this project. 
+To make it easier for you to navigate the material, we have prepared a list of topics that you will learn in this project.
 
-We will study: 
+We will study:
+
 - polish notation;
 - stack;
 - working with GUI library;

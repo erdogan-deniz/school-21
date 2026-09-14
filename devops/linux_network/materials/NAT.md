@@ -5,7 +5,7 @@
 
 <img src="../misc/images/nat.png" alt="network_route" width="500"/>
 
-PARAMETER|	**SNAT**|	**DNAT**
+PARAMETER| **SNAT**| **DNAT**
 ---------|----------|-----------
 Abbreviation for |Source **NAT**|Destination **NAT**
 Terminology|**SNAT** changes the private IP address of the source host to public IP address. It may also change the source port in the TCP/UDP headers. **SNAT** is typically used by internal users to access the Internet. |Destination **NAT** changes the destination address in IP header of a packet. It may also change the destination port in the TCP/UDP headers. **DNAT** is used when we need to redirect incoming packets with a destination of a public address/port to a private IP address/port inside your network.

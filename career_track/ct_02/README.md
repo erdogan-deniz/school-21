@@ -36,7 +36,7 @@ In this project, you will write your own resume according to the basic rules for
 2. [Chapter II](#chapter-ii)  
  2.1. [General rules](#general-rules)  
 3. [Chapter III](#chapter-iii)  
- 3.1. Position and contact information   
+ 3.1. Position and contact information
  3.2. Skills  
  3.3. Experience  
  3.4. Where to make a resume?  
@@ -45,7 +45,7 @@ In this project, you will write your own resume according to the basic rules for
  3.7. How do you talk about salary?
 4. [Chapter IV](#chapter-iv)  
  [Task](#task)  
-5. [Chapter V](#chapter-v) 
+5. [Chapter V](#chapter-v)
 
 ## Chapter I
 
@@ -78,6 +78,7 @@ In this project, you'll learn how to:
 4. [The Perfect Resume for a Developer](https://habr.com/ru/post/542372/).
 
 ## Chapter II
+
 ## General Rules
 
 1. Along the way, you'll feel a sense of uncertainty and a severe lack of information. Don't worry: this is normal. Remember that the information in the repository and on Google is always with you, as are your peers and Rocket.Chat. Communicate, search, use common sense, and don't be afraid to make mistakes.
@@ -90,10 +91,11 @@ In this project, you'll learn how to:
 8. Don't try to cheat the system or the people around you. You'll only be cheating yourself.
 9. Got a question? Ask your peers.
 10. When you ask someone for help, always make sure you understand why, how, and to what end. Otherwise, the help won't help you.
-11. Always _push_ only to the _develop_ branch! The _master_ branch will be ignored. Work in the _src_ directory.
+11. Always *push* only to the *develop* branch! The *master* branch will be ignored. Work in the *src* directory.
 12. There should be no files in your directory other than those specified in the tasks.
 
 ## Chapter III
+
 ## Position and Contact Information
 
 Contact information is the first thing a recruiter will see. You might think there's no room for error. But let's compare the two versions:
@@ -162,7 +164,7 @@ What is important to include in your work experience?
 **3. Position**
 State the position you held. Preferably, your job title and your desired position should be the same.
 
-**4. Objectives** 
+**4. Objectives**
  Questions to help you describe your past experience:
 
 1. How did I add value to the company?
@@ -176,9 +178,9 @@ State the position you held. Preferably, your job title and your desired positio
 
 It's important to write exactly what you did and what the challenges were. It is not recommended to copy and paste job descriptions: no one reads them.
 
-**Sample job description:** 
+**Sample job description:**
 
-_Job Responsibilities._ The analyst performs the following duties:
+*Job Responsibilities.* The analyst performs the following duties:
 
 1. Organizes analytical support of scientific and methodological work in the course of implementation of the program of experimental work.
 2. Interacts with the deputy director of scientific and methodological work and methodologist.
@@ -218,7 +220,7 @@ What should you write in the "About me" section?
 
 2. Write about your desire and ambition to develop in a new area. Tell people why you want to develop, what brought you to this field, etc. You can also include a link to your portfolio/website/professional blog.
 
-_Tip #1_
+*Tip #1*
 
 1. In this section, you can state your purpose. Write about why you love what you do and what inspires you.
 2. Include your qualities that are unrelated to the position, such as your athletic accomplishments.
@@ -234,10 +236,10 @@ _Tip #1_
 5. Create a resume in Word, save it to Google Drive, and send a link to your resume. (Don't forget to open access.)
 6. Create a resume in Notion.
 
-_Tip #1. Create two resumes: One on HH.ru and the second in any builder._ 
+*Tip #1. Create two resumes: One on HH.ru and the second in any builder.*
 HH.ru is a starting point for your job search. You can use a different resume for other career sites or when looking for a job in telegram channels.
 
-_Tip #2. Not more than 2 pages, preferably one._  
+*Tip #2. Not more than 2 pages, preferably one.*  
  The standard resume is 2 pages. You should put the most important information on the first page. But remember, it doesn't matter how many pages your resume has, what matters is that your resume is interesting.
 
 The School 21 PIN team has prepared a resume checklist for you, as well as a resume template in Figma (Materials -> Instructions for creating a resume).
@@ -302,7 +304,7 @@ Example of a [Cover Letter](Materials/Cover_Letter.pdf). (available for download
 Try to stay on top of the salary analysis market. You can always look at your job analysis file.  
  There's a lot of information in open sources about the average salary range for professionals.
 
-_Useful Salary Analytics Resources:_
+*Useful Salary Analytics Resources:*
 
 1. Zarplatomer (SuperJob -\> Zarplatomer);
 2. Salary Survey (CAUS - Salary Survey);
@@ -328,7 +330,9 @@ It is desirable to evaluate each block of the resume:
 4. Whether you are a good fit for a particular position.
 
 ## Chapter V
+
 ## Exercise 00
+
 ### Your resume
 
 Action Algorithm:
@@ -338,14 +342,15 @@ Action Algorithm:
 3. Create a resume for the desired position.
 4. Complete the "About Me" section.  
 5. Complete the "Contact Information" section.  
-6. Complete the "Work Experience" section. 
+6. Complete the "Work Experience" section.
 7. Complete the "Projects" section.
 8. Complete the "Education" section.  
 9. Complete the "Skills" section appropriate to the position.  
 10. Submit the resume.  
-11. Attach the completed resume to the _src_ folder. 
+11. Attach the completed resume to the *src* folder.
 
 ## Exercise 01
+
 ### Checking resumes
 
 Action Algorithm:
@@ -365,5 +370,6 @@ Action Algorithm:
 
 1. Write a cover letter for the selected job opening.
 2. Answer the two main questions in your cover letter:
-  - Why does the company need you?
-  - Why do you need the company?
+
+- Why does the company need you?
+- Why do you need the company?

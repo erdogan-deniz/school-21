@@ -1,4 +1,5 @@
 ## Using the **CRON** job scheduler
+
 CRON is a daemon program. Its main task is to perform user-specified processes at user-specified times, e.g. at certain intervals.
 
 Let's take a look at the syntax for setting up a single cron job: \
@@ -7,6 +8,7 @@ Let's take a look at the syntax for setting up a single cron job: \
 It has to be said that it is necessary to write the full path to the command, because the PATH environment variable will be different for commands run under the cron. The date and time are specified using numbers or the '*' symbol. This symbol means that the process must be executed every time.
 
 Cron settings examples:
+
 - First, you can view the cron tasks for the superuser, for this you can run the crontab –l command: \
   ![cron1](../misc/images/cron1.png)
 - You can remove all the existing tasks with -r command

@@ -67,7 +67,7 @@ the repo-wide MIT licence.
 
  "Who was that, Doctor? We barely made out alive!"
 
- "They are called daleks, one of the most merciless and violent species in the universe. 
+ "They are called daleks, one of the most merciless and violent species in the universe.
  Nevermind though, they can't get us here."
 
  "In this police box? By the way, why is it bigger on the inside?"
@@ -87,13 +87,13 @@ the repo-wide MIT licence.
 
  "Are you really with the UN?"
 
- "With what now? Nevermind. The thing is it shows you what you want to see and can possibly 
+ "With what now? Nevermind. The thing is it shows you what you want to see and can possibly
  save us some time. And you will need something similar at that place we're going to."
 
 <h2 id="chapter-iv" >Chapter IV</h2>
 <h3 id="exercise-00-fool-me-once">Exercise 00: Fool Me Once</h3>
 
-In the next moment two weird-looking devices appear from the Doctor's pockets. One looks like a 
+In the next moment two weird-looking devices appear from the Doctor's pockets. One looks like a
 very unusual screwdriver, and the other one is like a smartphone, but with a couple of tentacles
 on its sides.
 
@@ -103,7 +103,7 @@ on its sides.
 You take the device and point its tentacles to the Doctor. The 'smartphone' thinks for a moment
 and then the words 'Time Lord' appear on its screen in English.
 
- "Now, every species in a galactic database has a specific leadership figure or at least 
+ "Now, every species in a galactic database has a specific leadership figure or at least
  some name that will make them stumble for a moment and give you a temporary advantage."
 
 On one of the TARDIS' screens appears a list of species with examples:
@@ -138,10 +138,10 @@ Also, while plugging together some cables Doctor gives you one last remark:
 
 ---
 
-Your goal is to implement a WSGI server with an HTTP wrapper without using any external 
+Your goal is to implement a WSGI server with an HTTP wrapper without using any external
 dependencies (see "Reading" section). It should listen on local port 8888 and parse GET
 parameters from a URL, for any species title giving you back a JSON (it should be HTTP code 200,
-also mind the appropriate 'Content-Type' header and URL encoding). Exaple using cURL might look 
+also mind the appropriate 'Content-Type' header and URL encoding). Exaple using cURL might look
 like this:
 
 ```
@@ -183,7 +183,7 @@ on the webpage.
 Also, the server should perform a [MIME type](https://en.wikipedia.org/wiki/Media_type) check, so
 only audio files are accepted (e.g. `mp3`, `ogg` and `wav`). If a non-audio file is uploaded (e.g.
 `jpg`, `exe` or `docx`), it should be discarded and the webpage should show the message "Non-audio
-file detected". 
+file detected".
 
 For some bonus points, you can implement playing uploaded sound files directly from the webpage.
 
@@ -207,7 +207,7 @@ performing HTTP queries.
 <h2 id="chapter-vi" >Chapter VI</h2>
 <h3 id="exercise-02-good-timing">Exercise 02: Good Timing</h3>
 
-After some time traveling with the Doctor you couldn't say that you can easily be surprised. But 
+After some time traveling with the Doctor you couldn't say that you can easily be surprised. But
 this time the situation kinda got out of control. Or at least you thought so, looking at five
 time lords staying around the TARDIS and aiming at the approaching cybermen. It's not the fact that
 it was five of them, more the attempt to grasp that all of them are actually the same person, just
@@ -235,18 +235,19 @@ Oh boy. There are five unpredictable time lords at our hands. Think of them as t
 moment in time there is no way to predict which of them will be acting. So you have to synchronize
 their actions somehow.
 
-Each Doctor has a screwdriver it his/her right hand, but the required minimum to act is two. So, 
+Each Doctor has a screwdriver it his/her right hand, but the required minimum to act is two. So,
 to get two at a time, the Doctor should grab the screwdriver from another Doctor on the left. But
-if everybody does it, then nothing is really changed, as every doctor will still have just one 
+if everybody does it, then nothing is really changed, as every doctor will still have just one
 screwdriver left.
 
-Start by representing both doctors and screwdrivers as Python classes. Doctors are numbered from 
+Start by representing both doctors and screwdrivers as Python classes. Doctors are numbered from
 9 to 13, and everyone of them has to make one blast using two screwdrivers.
 
-*NOTE:* this is a variation of a well-known parallel programming problem usually referred to as 
+*NOTE:* this is a variation of a well-known parallel programming problem usually referred to as
 "Dining Philosophers" (see the link in `Reading`).
 
 The output of your threaded program should look like this:
+
 ```
 Doctor 11: BLAST!
 Doctor 9: BLAST!

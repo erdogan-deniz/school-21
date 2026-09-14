@@ -40,7 +40,7 @@ In this project, you'll learn the main stages of job search, how to analyze job 
  3.4. Analysis of candidate requirements.
 4. [Chapter IV](#chapter-iv)  
  [Task](#task)  
-5. [Chapter V](#chapter-v) 
+5. [Chapter V](#chapter-v)
 
 ## Chapter I
 
@@ -62,6 +62,7 @@ Within the project, you will:
 - Choose relevant vacancies that match your priorities and experience.
 
 ## Chapter II
+
 ## General rules
 
 1. All along the way, you'll be accompanied by a sense of uncertainty and a severe lack of information. Don't worry: it's perfectly normal. Don't forget that the information in the repository and Google is always with you, as are the peers and Rocket.Chat. Communicate, search, use common sense and don't be afraid of mistakes.
@@ -74,18 +75,19 @@ Within the project, you will:
 8. Don't try to cheat the system and those around you. After all, you're fooling yourself first and foremost.
 9. Got a question? Ask your peers.
 10. When you resort to someone else's help, make sure you always understand why, how, and for what purpose. Otherwise, the help won't do you any good.
-11. Always _push_ only to the _develop_ branch! The _master_ branch will be ignored. Work in the _src_ directory.
+11. Always *push* only to the *develop* branch! The *master* branch will be ignored. Work in the *src* directory.
 12. There should be no files in your directory other than those designated in the assignments.
 
 ## Chapter III
-## Market analytics.
 
-Where and how to search for job vacancies and internship _programs?_ Job market analysis is the key to finding a job. Analysis will help you understand which positions you are suitable for, what skills you already have, and which ones you need to improve or acquire. Job analytics will help you understand the specifics of a particular position that you like.
+## Market analytics
 
-_How to conduct such an analysis?_ Enter various desired positions into the table and determine which requirements and responsibilities are most commonly encountered.
+Where and how to search for job vacancies and internship *programs?* Job market analysis is the key to finding a job. Analysis will help you understand which positions you are suitable for, what skills you already have, and which ones you need to improve or acquire. Job analytics will help you understand the specifics of a particular position that you like.
+
+*How to conduct such an analysis?* Enter various desired positions into the table and determine which requirements and responsibilities are most commonly encountered.
 [Example of the "Market Analysis" table](materials/Анализ_вакансий.xlsx) (available for download in the folder materials -> Анализ_вакансий).
 
-_Why is it necessary to perform such analysis?_
+*Why is it necessary to perform such analysis?*
 
 1. to have a clear understanding of your future job;
 2. to determine what skills are lacking and what needs to be improved;
@@ -99,7 +101,7 @@ _Why is it necessary to perform such analysis?_
 4. Sometimes, after a well-done analysis, a person realizes that they don't want this job at all and starts looking for something else.
 5. When you do job market analysis, you will form a complete understanding of what you are striving for. Then you can take specific steps towards the goal.
 
-_Where can I find the resources for finding job openings?_
+*Where can I find the resources for finding job openings?*
 
 1. Main resources:
 
@@ -135,7 +137,7 @@ If it is an international company (even if the office is located in Russia), it 
 3. Don't forget about additional foreign job search sites: Glassdor, for example.
 4. Sign up for the company's job newsletter and monitor it.
 
-_Common tips for all job search goals:_ ***Develop networking***
+*Common tips for all job search goals:* ***Develop networking***
 
 1. RandomCoffee. Choose communities that are interesting for you, make useful acquaintances, and exchange experience. Meetings are held once a week. You get a person to meet through a telegram bot (you can choose whether you'll do it online or offline). There are also large networking sessions for 20-25 people held every 2-3 months.
 2. Participate in professional communities (e.g. proftalk, mesto.co) and hackathons. You can follow the [events](https://it-events.com/).
@@ -148,6 +150,7 @@ Such meetings will give you new opportunities:
 - an advanced search for a mentor for yourself.
 
 ## Skills Analysis: hard and soft skills
+
 ### How to analyze your skills for resume writing
 
 There are different methods to analyze your skills. One of the most popular is the SWOT analysis.
@@ -195,11 +198,12 @@ A job search diary helps you analyze job responses to understand what you can im
 [Diary example](./materials/Diary.xlsx) (available for download in the folder materials -\> Diary).
 
 ## Criteria for selecting a vacancy and a company
+
 ### How to make the right choice?
 
 A typical candidate mistake is to respond to all job openings or all companies in a row. That's not the way to do it. Irrelevant responses are not reviewed by recruiters.
 
-_Remember your goal and prioritize what you're looking for._ Determine what positions you might be a good fit for based on your experience, Make your job selection checklist. Example of criteria:
+*Remember your goal and prioritize what you're looking for.* Determine what positions you might be a good fit for based on your experience, Make your job selection checklist. Example of criteria:
 
 - High salary;
 - The financial stability of the company;
@@ -216,9 +220,9 @@ _Remember your goal and prioritize what you're looking for._ Determine what posi
 
 Once you write down your search criteria, it will be easier to navigate the huge pool of different jobs.
 
-## Analysis of candidate requirements.
+## Analysis of candidate requirements
 
-_What do employers pay attention to?_
+*What do employers pay attention to?*
  The requirements for candidates can be divided into 3 parts:
 
 1. Analyzing a candidate's resume.
@@ -260,12 +264,15 @@ These skills are tested:
 A person cannot know everything, but one can strive to continually gain new knowledge and become an expert in their field. So, don't be afraid of making mistakes, take feedback from more experienced colleagues, read more professional literature and solve test tasks, for example: here [leetcode](https://leetcode.com/) or here [codewars](https://www.codewars.com/) or here [projecteuler](https://projecteuler.net/).
 
 ## Chapter IV
+
 ## Task
 
 To solve the problem, you need to decide on a job market and pick Russian or foreign. There are no right or wrong answers to this question. You can use any helping tools, ask clarifying questions, take notes and draw mind maps to reach the goal. You should end up with 1-2 vacancies for which you will prepare your resume.
 
 ## Chapter V
+
 ## Exercise 00
+
 ### Company selection
 
 1. Make your checklist for choosing a company. Make sure to look at the career wheel exercise done on DAY 00 to make sure all desired criteria are met, and put this list into Trello (we recommend using this tool). This will be board #1 (10 criteria and more).
@@ -274,6 +281,7 @@ To solve the problem, you need to decide on a job market and pick Russian or for
 4. Subscribe to 1-2 companies' career newsletters.
 
 ## Exercise 01
+
 ### Vacancy analysis
 
 1. Create a table named "Vacancy Analysis" (we recommend using Google Sheets).
@@ -284,6 +292,7 @@ To solve the problem, you need to decide on a job market and pick Russian or for
 6. Go back to the career goals table and, based on the analysis of the requirements and responsibilities, write down steps to achieve the goals in 2-3 years.
 
 ## Exercise 02
+
 ### Skills Analysis
 
 1. Draw a SWOT analysis table in MIRO (we recommend using this tool).

@@ -39,7 +39,7 @@ In this project, you will learn how to manage your performance and how to build 
  3.1. Result management \
  3.2. Communication with the manager \
  3.3. Communication with coworkers/peers.
-4. [Chapter IV](#chapter-iv) 
+4. [Chapter IV](#chapter-iv)
 
 ## Chapter I
 
@@ -67,6 +67,7 @@ References:
 4. "Career Rules. Everything you need for career advancement" by Templar Richard.
 
 ## Chapter II
+
 ## General rules
 
 1. Along the way, you'll feel a sense of uncertainty and a severe lack of information. Don't worry: this is perfectly normal. Remember, the information in the repository and on Google is always with you, as are your peers and Rocket.Chat. Communicate, search, use common sense, and don't be afraid to make mistakes.
@@ -79,10 +80,11 @@ References:
 8. Don't try to cheat the system or the people around you. After all, you're only fooling yourself.
 9. Got a question? Ask your peers.
 10. When you ask someone for help, always make sure you understand why, how, and for what purpose. Otherwise, the help won't help you.
-11. Always _push_ only to the _develop_ branch! The _master_ branch is ignored. Work in the _src_ directory.
+11. Always *push* only to the *develop* branch! The *master* branch is ignored. Work in the *src* directory.
 12. There should be no files in your directory other than those specified in the tasks.
 
 ## Chapter III
+
 ## Result management
 
 The result of your work is what you get when you complete certain actions or activities, a result that shows your current level of professional development and growth. The result of your work also shows how you benefit and contribute to the development of the company.
@@ -123,7 +125,7 @@ If you don't think through your goals and results, you won't be successful in yo
 One of the easiest ways to make sure you have what it takes to accomplish a task is to use the SMART Goal Setting technique.
 
 **SMART Goals in Goal Setting**
- 
+
 SMART is a way of describing goals. It was developed by George T. Doran in the 80's, but hasn't lost its relevance. The method establishes criteria for effective goal setting. The goal should be:
 
 - **S**pecific: The goal should be specific and clear: not "gather task requirements", but "meet with four key project customers and input product requirements into the ToR".
@@ -157,7 +159,7 @@ Your goal for the first 1-3 months is to set up a regular (once a week) one-on-o
 
 ## If something doesn't work out
 
-_There are times when it's hard to reach an agreement or you and your supervisor disagree on something. What to do?_
+*There are times when it's hard to reach an agreement or you and your supervisor disagree on something. What to do?*
 
 The first step is to talk directly with your manager. Then, if you don't know how to structure the conversation or don't have someone to consult with about how best to have the conversation, you can always talk to a HR representative. You should not discuss the difficulty of dealing with your supervisor with your coworkers.
 
@@ -185,7 +187,9 @@ You may feel comfortable if coworkers just smile and say hello when you meet the
 Relationships with colleagues, the quality and warmth of communication will depend on you — on your openness and willingness to communicate, to show empathy and support, to turn a neutral or friendly connection with strangers into a warm and friendly one.
 
 ## Chapter IV
+
 ## Exercise 00
+
 ### Result management
 
 An example of a task received from a supervisor: correct a typo in the program interface.
@@ -193,6 +197,7 @@ An example of a task received from a supervisor: correct a typo in the program i
 In response to receiving the task, write a letter to the supervisor using the following structure: appropriate greeting; gratitude for the trust placed in you; a request for clarification of the timeframe; clarifying questions for the supervisor to help you complete the task successfully.
 
 ## Exercise 01
+
 ### Managing the Relationship with the Manager
 
 1. Write a letter to your manager requesting a feedback meeting.
@@ -201,6 +206,7 @@ In response to receiving the task, write a letter to the supervisor using the fo
 Give a detailed answer.
 
 ## Exercise 02
+
 ### Building relationships with colleagues
 
 1. What actions can you take to build pleasant relationships with your coworkers?

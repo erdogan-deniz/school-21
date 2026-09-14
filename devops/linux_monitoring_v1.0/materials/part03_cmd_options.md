@@ -1,11 +1,13 @@
 # Bash scripts, part 3: parameters and command line keys
 
 The most common way to pass data to scripts is by using command line parameters. It looks like this:
+
 ```shell
-$ ./myscript 10 20
+./myscript 10 20
 ```
 
 The bash shell assigns special variables, called position parameters, to the command line parameters entered when the script is called:
+
 - $0 - name of the script.
 - $1 - first parameter.
 - $2 - second parameter.
@@ -14,6 +16,7 @@ The bash shell assigns special variables, called position parameters, to the com
 - ${10} - tenth parameter.
 
 Here's how you can use the command line parameters in a script using these variables:
+
 ```shell
 echo $0
 echo ${11}
@@ -24,6 +27,7 @@ Note that command line parameters are separated by spaces. If a parameter contai
 ### Parameter check
 
 To check if the parameters passed to the script when it is called, you can do the following:
+
 ```shell
 if [ -n "$1" ]
 then
@@ -38,6 +42,7 @@ fi
 The $# variable contains the number of parameters passed to the script when called.
 
 This variable provides an unusual way to get the last of the parameters passed to the script without needing to know the number of parameters. Here's how it looks like:
+
 ```shell
 echo The last parameter was ${!#}
 ```
@@ -55,6 +60,7 @@ The $@ variable contains all parameters entered via command line as an array. Yo
 The shift command, by default, shifts the values of the position parameters to the left. For example, the value of $3 variable becomes the value of $2 variable, the value of $2 becomes the value of $1, and what was before in $1 is lost. Note that the value of  $0 variable, which contains the script name, does not change.
 
 Using the shift command, let's look at another way of parameters iteration passed to the script:
+
 ```shell
 count=1
 while [ -n "$1" ]
@@ -69,6 +75,7 @@ done
 
 Command line options usually look like letters preceded by a dash.
 They are used to manage scripts. This is an example:
+
 ```shell
 echo
 while [ -n "$1" ]
@@ -84,11 +91,13 @@ done
 ```
 
 Run the script:
+
 ```shell
-$ ./myscript –a –b –c –d
+./myscript –a –b –c –d
 ```
 
 The output of the script in the terminal:
+
 ```shell
 Found the -a option
 Found the -b option
@@ -104,6 +113,7 @@ If the passed value is found in this list, the appropriate branch of code is exe
 It is common when writing bash scripts to use both command line parameters and options. The typical way to do this is to use a special sequence of characters that tells the script when options end and parameters begin.
 
 This sequence is a double dash. The shell uses it to indicate the position at which the list of keys ends. Let's look at an example:
+
 ```shell
 while [ -n "$1" ]
 do
@@ -133,12 +143,14 @@ As you can see, when the script, parsing the data passed to it, finds a double d
 
 As your scripts get more complex, you will face situations where normal options are no longer sufficient, which means that you have to use options with some values.
 For example, a script call that uses such a feature looks like this:
+
 ```shell
 ./myscript -a test1 -b -c test2
 ```
 
 The script should be able to detect when additional parameters are used along with the command line options.
 Here is an example of processing an option that needs a parameter:
+
 ```shell
 -b) param="$2"
 echo "Found the -b option, with parameter value $param"
@@ -148,6 +160,7 @@ shift ;;
 ### Using standard options
 
 When writing bash scripts you can select any letters for the command line options and randomly set how the script reacts to those options. However, in the Linux world, the values of some options have become something of a standard to which it is good to follow. Here is the list of this options:
+
 - -a -- List all items.
 - -c -- Get the count of items.
 - -d -- Output directory.
@@ -168,6 +181,7 @@ When writing bash scripts you can select any letters for the command line option
 ### Receiving data from the user
 
 The bash shell has a read command for user input at runtime. After receiving the data, this command stores it in a variable:
+
 ```shell
 echo -n "Enter your name: "
 read name
@@ -176,6 +190,7 @@ read name
 Note that the echo command, which outputs the prompt, is called with -n option. This results in no line break character being displayed at the end of the prompt, allowing the script user to enter data where the prompt is located, rather than on the next line.
 
 You can specify multiple inputs:
+
 ```shell
 read -p "Enter your name: " first last
 ```

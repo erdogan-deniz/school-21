@@ -9,6 +9,7 @@ A TCP socket file descriptor can be got like this:
 `int sockfd = FCGX_OpenSocket("/var/run/fcgi.sock", 100);`
 
 With the socket it can be written then:
+
 ```
 FCGX_Request req;
 FCGX_InitRequest(&req, sockfd, 0);

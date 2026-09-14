@@ -1,7 +1,9 @@
 ## Using the **du** utility
+
 du is a command to get an approximate amount of disk space used by the specified files or directories.
 
 Here are some examples of how to use the du command:
+
 - To simply list the folders in a certain directory and how much space they take up, for example in /var, run: \
   ![du1](../misc/images/du1.png)
 - By default the size is output in bytes. Use option -h to output the size in a more readable way: \

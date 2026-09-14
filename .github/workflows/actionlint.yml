@@ -41,6 +41,8 @@ jobs:
           # shellcheck findings inside `run:` blocks). If a warning
           # is a false positive, suppress it at the source via
           # `# shellcheck disable=SCxxxx` or `# actionlint-disable`.
-          fail_on_error: true
+          # `fail_level: any` = exit 1 on any finding, regardless of
+          # severity (replaces the deprecated `fail_on_error: true`).
+          fail_level: any
           reporter: github-check
           level: warning

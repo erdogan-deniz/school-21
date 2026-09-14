@@ -108,38 +108,54 @@ class TestHistoryOperations:
 
 
 class TestHistoryAppDir:
-    """Verify platform-appropriate directory selection for history DB."""
+    """Verify platform-appropriate directory selection for history DB.
+
+    ``_history_app_dir`` branches on ``os.name`` but joins with the *host*
+    ``os.path``, so the expected values are built with ``os.path.join`` too
+    (on Linux the separator stays ``/`` even when ``os.name`` says "nt").
+
+    The ``os.name`` patch is scoped to ``monkeypatch.context()`` and undone
+    before the ``assert``: while it is active ``pathlib.Path()`` resolves to
+    the other platform's flavour and raises ``NotImplementedError``, and
+    pytest instantiates ``Path`` while rendering a failure report, so a
+    plain assertion failure would surface as an INTERNALERROR instead.
+    """
 
     def test_windows_uses_appdata(
         self, monkeypatch: pytest.MonkeyPatch
     ) -> None:
         """On Windows with APPDATA set, use APPDATA/smartcalc_v3."""
-        monkeypatch.setattr(os, "name", "nt")
-        monkeypatch.setenv("APPDATA", r"C:\Roaming")
         from model.history import _history_app_dir
 
-        assert _history_app_dir() == r"C:\Roaming\smartcalc_v3"
+        with monkeypatch.context() as m:
+            m.setattr(os, "name", "nt")
+            m.setenv("APPDATA", r"C:\Roaming")
+            result = _history_app_dir()
+
+        assert result == os.path.join(r"C:\Roaming", "smartcalc_v3")
 
     def test_windows_fallback_without_appdata(
         self, monkeypatch: pytest.MonkeyPatch
     ) -> None:
         """On Windows without APPDATA, fall back to ~/.smartcalc_v3."""
-        monkeypatch.setattr(os, "name", "nt")
-        monkeypatch.delenv("APPDATA", raising=False)
         from model.history import _history_app_dir
 
-        assert _history_app_dir() == os.path.join(
-            os.path.expanduser("~"), ".smartcalc_v3"
-        )
+        with monkeypatch.context() as m:
+            m.setattr(os, "name", "nt")
+            m.delenv("APPDATA", raising=False)
+            result = _history_app_dir()
+
+        assert result == os.path.join(os.path.expanduser("~"), ".smartcalc_v3")
 
     def test_posix_uses_home(self, monkeypatch: pytest.MonkeyPatch) -> None:
         """On non-Windows, always use ~/.smartcalc_v3."""
-        monkeypatch.setattr(os, "name", "posix")
         from model.history import _history_app_dir
 
-        assert _history_app_dir() == os.path.join(
-            os.path.expanduser("~"), ".smartcalc_v3"
-        )
+        with monkeypatch.context() as m:
+            m.setattr(os, "name", "posix")
+            result = _history_app_dir()
+
+        assert result == os.path.join(os.path.expanduser("~"), ".smartcalc_v3")
 
 
 class TestHistoryInit:

@@ -47,9 +47,16 @@ overhaul"* sections rather than versions.
   - `c / build & test` — s21_math, s21_decimal, s21_string+ link Check
     via `pkg-config --libs check`; `open` of the lcov report is skipped
     under `CI`; s21_string+'s two `"%%"` sprintf tests pass literal
-    formats (`-Wformat-security` + `-Werror`). Still red on purpose:
-    s21_string+ `sprintf_null_ptr` (glibc prints `%p` of NULL as
-    `(nil)`, `s21_sprintf` as `0x0`) — pre-existing, needs a decision.
+    formats (`-Wformat-security` + `-Werror`).
+  - `c / build & test (s21_string+)` — `sprintf_null_ptr` asserted byte
+    parity with the host `sprintf()` for `%p` of NULL, which is
+    implementation-defined (glibc `(nil)`, macOS / musl `0x0`); the
+    test now accepts either spelling, `s21_sprintf` unchanged
+    (`6e27ec9`). The job had been *failing* all along — the workflow
+    showed green only because the job is `continue-on-error: true` and
+    the Makefile's `all` target runs the tests inside the Build step.
+  - `actionlint` — `reviewdog/action-actionlint`'s deprecated
+    `fail_on_error: true` replaced by `fail_level: any` (`d320776`).
 
 ### Changed
 

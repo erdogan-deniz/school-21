@@ -58,14 +58,10 @@ precommit-all:         ## Run every pre-commit hook over every tracked file.
 
 lint: precommit-all    ## Alias for `precommit-all`.
 
-lint-md:               ## markdownlint over every *.md, sans vendor folders.
+lint-md:               ## markdownlint over every *.md (globs + ignores from .markdownlint-cli2.jsonc).
 	@command -v markdownlint-cli2 > /dev/null || { \
 	    echo "markdownlint-cli2 not found — install via 'npm i -g markdownlint-cli2'"; exit 1; }
-	markdownlint-cli2 \
-	    '**/*.md' \
-	    '#**/node_modules/**' \
-	    '#**/charisel/**' \
-	    '#**/site-packages/**'
+	markdownlint-cli2
 
 lint-shell:            ## shellcheck over every devops/**/*.sh + *.bash.
 	@command -v shellcheck > /dev/null || { \

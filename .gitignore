@@ -146,6 +146,8 @@ ui_*.h
 docs/_build/
 docs/html/
 docs/latex/
+# Doxygen output of every library subproject (OUTPUT_DIRECTORY = docs/api)
+**/docs/api/
 *.aux
 *.toc
 *.synctex.gz

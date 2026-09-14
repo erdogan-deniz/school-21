@@ -59,7 +59,11 @@ jobs:
   hadolint:
     name: hadolint (Dockerfile lint)
     runs-on: ubuntu-latest
-    continue-on-error: true
+    # No continue-on-error: the mask hid a permanently red job. The
+    # gate is `error` because the remaining findings in
+    # devops/simple_docker (DL3006 untagged base image, DL3008 unpinned
+    # apt versions, DL3015 --no-install-recommends) are warning/info
+    # level in a School 21 task Dockerfile that stays as submitted.
     steps:
       - uses: actions/checkout@v4
       - name: Find Dockerfiles
@@ -82,7 +86,7 @@ jobs:
         with:
           recursive: true
           dockerfile: 'devops/**/Dockerfile*'
-          failure-threshold: warning
+          failure-threshold: error
 
   simple-docker-smoke:
     name: simple_docker smoke (compose up + curl)

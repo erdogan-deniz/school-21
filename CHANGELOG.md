@@ -7,6 +7,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 where applicable. Pre-1.0 work is tracked here under dated *"production-grade
 overhaul"* sections rather than versions.
 
+## [Unreleased] — 2026-09-14 SmartCalc v3.0 import + markdownlint consolidation
+
+### Added
+
+- **`python/SmartCalc_v3.0`** — the Python / PyQt6 calculator (MVVM over the
+  `c/SmartCalc_v1.0` C core via ctypes) imported as a one-commit snapshot of
+  the School 21 GitLab repo; README in the repo template, plan file, STATUS
+  row (38 subprojects now). 361 pytest + hypothesis tests, 99 % model
+  coverage, own strict ruff/mypy config. `make lib` compiles the C core from
+  `../../c/SmartCalc_v1.0/src` — no duplicated C sources. Dedicated
+  `smartcalc-v3` job in `python.yml` (Python 3.11, ruff ≥ 0.14).
+
+### Fixed
+
+- **`c/SmartCalc_v1.0`**: Doxygen comment in `s21_validation.h` quoted `*/`
+  inside backticks and terminated the comment early — every translation unit
+  including the header failed to compile since the May Doxygen rollout.
+- `STATUS.md` roll-up recounted from cell values (`data_science/` +0.5,
+  `devops/` +1.0 drift).
+
+### Changed
+
+- **markdownlint**: `.markdownlint-cli2.jsonc` is the single config; the
+  competing `.markdownlint.json` (which re-enabled MD024/29/33/34/40/41 via
+  `default: true`) is gone, CI / Makefile / pre-commit all run bare
+  `markdownlint-cli2` v0.23.2 on the same file set. Findings 2393 → 24
+  (config 2393 → 2005, `--fix` → 196, manual anchors / heading levels /
+  tables → 24). The 24 left are MD059 "[here]" link texts inside verbatim
+  School 21 task text.
+- Repo-wide ruff 0.6.9 (`.ruff.toml`, pre-commit) excludes
+  `python/SmartCalc_v3.0`, which carries its own ruff ≥ 0.14 config.
+
 ## [Unreleased] — 2026-05-11 production-grade overhaul
 
 The repo went from "ad-hoc collection of completed School 21 projects" to

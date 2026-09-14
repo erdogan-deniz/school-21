@@ -1,6 +1,6 @@
 ## Addressing. Continuation
 
-#### IP Classification
+### IP Classification
 
 There are classifications of IP addresses as "private" and "public". The following ranges of addresses are reserved for private (aka LAN) networks:
 
@@ -9,7 +9,7 @@ There are classifications of IP addresses as "private" and "public". The followi
 - *192.168.0.0* — *192.168.255.255* (*192.168.0.0/16*).
 - *127.0.0.0* — *127.255.255.255* (Reserved for loopback interfaces (not used for communication between network nodes), so called localhost)
 
-#### Ports
+### Ports
 
 The standard defines for each of the **TCP** and **UDP** protocols the ability to simultaneously allocate up to 65536 unique ports on a host,
 identified by numbers from 0 to 65535.
@@ -24,7 +24,7 @@ The whole range of ports is divided into 3 groups:
 **ipcalc** is a utility that can perform simple manipulations of IPv4 addresses.
 If you just type **ipcalc** without any input option, it will give you a nice ‘help’ output with some examples which are very helpful to get you started.
 
-#### **ipcalc** Examples
+### **ipcalc** Examples
 
 Let’s look at some examples. If you give the IPv4 address as the input of your host, you will get the following output:
 
@@ -41,7 +41,7 @@ You can also give the netmask as input, and here is a simple example of that:
 
 Unfortunately, you can't give binary form of address as input of **ipcalc** :(
 
-##### Subnets
+#### Subnets
 
 One of the most useful capabilities of ipcalc is its ability to calculate network segments. Here is an example of how this works when we want to assign 10 and 20 addresses to two different subnets:
 

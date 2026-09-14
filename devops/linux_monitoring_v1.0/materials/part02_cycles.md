@@ -28,7 +28,7 @@ echo " $var"
 done
 ```
 
-### Field separators
+## Field separators
 
 In the previous example, all list items, within a file, are separated by spaces, tabs or line breaks.
 
@@ -75,7 +75,7 @@ done
 done
 ```
 
-### Iterating over directory files
+## Iterating over directory files
 
 Another example of using loops is iterating over directory files:
 
@@ -87,7 +87,7 @@ fi
 done
 ```
 
-### While loops
+## While loops
 
 Besides for loop, you can also use while loop in bash, for example:
 
@@ -100,7 +100,7 @@ var1=$[ $var1 - 1 ]
 done
 ```
 
-### C-style for loops
+## C-style for loops
 
 In bash scripts, you can use for loops that look very similar to C-style loops, for example:
 
@@ -113,7 +113,7 @@ done
 
 There are break and continue commands in bash scripts that work just like their C counterparts. You can use them not only in C-style for loops, but also in standard for and while loops.
 
-### Processing output in a loop
+## Processing output in a loop
 
 Data output in a loop can be processed by either redirecting the output or passing it to a pipeline. This is done by adding output processing commands after the done instruction.
 

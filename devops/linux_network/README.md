@@ -58,7 +58,7 @@ The russian version of the task can be found in the repository.
    2.2. [Addressing](#addressing) \
    2.3. [Routing](#routing)
 3. [Chapter III](#chapter-iii) \
-   3.1. [ipcalc tool](#ipcalc-tool) \
+   3.1. [ipcalc tool](#part-1-ipcalc-tool) \
    3.2. [Static routing between two machines](#part-2-static-routing-between-two-machines) \
    3.3. [iperf3 utility](#part-3-iperf3-utility) \
    3.4. [Network firewall](#part-4-network-firewall) \
@@ -189,7 +189,7 @@ As a result of the work you should provide a report with completed tasks. Each p
 
 **== Task ==**
 
-##### Start a virtual machine (hereafter -- ws1)
+### Start a virtual machine (hereafter -- ws1)
 
 #### 1.1. Networks and Masks
 
@@ -219,17 +219,17 @@ As a result of the work you should provide a report with completed tasks. Each p
 
 **== Task ==**
 
-##### Start two virtual machines (hereafter -- ws1 and ws2)
+### Start two virtual machines (hereafter -- ws1 and ws2)
 
-##### View existing network interfaces with the `ip a` command
+### View existing network interfaces with the `ip a` command
 
 - Add a screenshot with the call and output of the used command to the report.
 
-##### Describe the network interface corresponding to the internal network on both machines and set the following addresses and masks: ws1 - *192.168.100.10*, mask */16*, ws2 - *172.24.116.8*, mask */12*
+### Describe the network interface corresponding to the internal network on both machines and set the following addresses and masks: ws1 - *192.168.100.10*, mask */16*, ws2 - *172.24.116.8*, mask */12*
 
 - Add screenshots of the changed *etc/netplan/00-installer-config.yaml* file for each machine to the report.
 
-##### Run the `netplan apply` command to restart the network service
+### Run the `netplan apply` command to restart the network service
 
 - Add a screenshot with the call and output of the used command to the report.
 
@@ -268,13 +268,13 @@ As a result of the work you should provide a report with completed tasks. Each p
 
 - In this task you need to use ws1 and ws2 from *Part 2*.
 
-#### 3.1. Connection speed
+### 3.1. Connection speed
 
-##### Convert and write results in the report: 8 Mbps to MB/s, 100 MB/s to Kbps, 1 Gbps to Mbps
+#### Convert and write results in the report: 8 Mbps to MB/s, 100 MB/s to Kbps, 1 Gbps to Mbps
 
-#### 3.2. **iperf3** utility
+### 3.2. **iperf3** utility
 
-##### Measure connection speed between ws1 and ws2
+#### Measure connection speed between ws1 and ws2
 
 - Add a screenshots with the call and output of the used commands to the report.
 
@@ -286,9 +286,9 @@ As a result of the work you should provide a report with completed tasks. Each p
 
 - In this task you need to use ws1 and ws2 from *Part 2*.
 
-#### 4.1. **iptables** utility
+### 4.1. **iptables** utility
 
-##### Create a */etc/firewall.sh* file simulating the firewall on ws1 and ws2
+#### Create a */etc/firewall.sh* file simulating the firewall on ws1 and ws2
 
 ```shell
 #!/bin/sh
@@ -298,34 +298,34 @@ iptables -F
 iptables –X
 ```
 
-##### The following rules should be added to the file in a row
+#### The following rules should be added to the file in a row
 
-##### 1) on ws1 apply a strategy where a deny rule is written at the beginning and an allow rule is written at the end (this applies to points 4 and 5)
+#### 1) on ws1 apply a strategy where a deny rule is written at the beginning and an allow rule is written at the end (this applies to points 4 and 5)
 
-##### 2) on ws2 apply a strategy where an allow rule is written at the beginning and a deny rule is written at the end (this applies to points 4 and 5)
+#### 2) on ws2 apply a strategy where an allow rule is written at the beginning and a deny rule is written at the end (this applies to points 4 and 5)
 
-##### 3) open access on machines for port 22 (ssh) and port 80 (http)
+#### 3) open access on machines for port 22 (ssh) and port 80 (http)
 
-##### 4) reject *echo reply* (machine must not ping, i.e. there must be a lock on OUTPUT)
+#### 4) reject *echo reply* (machine must not ping, i.e. there must be a lock on OUTPUT)
 
-##### 5) allow *echo reply* (machine must be pinged)
+#### 5) allow *echo reply* (machine must be pinged)
 
 - Add screenshots of the */etc/firewall* file for each machine to the report.
 
-##### Run the files on both machines with `chmod +x /etc/firewall.sh` and `/etc/firewall.sh` commands
+#### Run the files on both machines with `chmod +x /etc/firewall.sh` and `/etc/firewall.sh` commands
 
 - Add screenshots of both files running to the report.
 - Describe in the report the difference between the strategies used in the first and second files.
 
-#### 4.2. **nmap** utility
+### 4.2. **nmap** utility
 
-##### Use **ping** command to find a machine which is not pinged, then use **nmap** utility to show that the machine host is up
+#### Use **ping** command to find a machine which is not pinged, then use **nmap** utility to show that the machine host is up
 
 *Check: nmap output should say: `Host is up`*.
 
 - Add screenshots with the call and output of the **ping** and **nmap** commands to the report.
 
-##### Save dumps of the virtual machine images
+#### Save dumps of the virtual machine images
 
 **p.s. Do not upload dumps to git under any circumstances!**
 
@@ -338,7 +338,7 @@ iptables –X
 Network: \
 ![part5_network](misc/images/part5_network.png)
 
-##### Start five virtual machines (3 workstations (ws11, ws21, ws22) and 2 routers (r1, r2))
+### Start five virtual machines (3 workstations (ws11, ws21, ws22) and 2 routers (r1, r2))
 
 #### 5.1. Configuration of machine addresses
 
@@ -458,9 +458,9 @@ Here is an example of the **traceroute** utility output after adding a gateway:
 
 *In this task you need to use virtual machines from Part 5*
 
-##### For r2, configure the **DHCP** service in the */etc/dhcp/dhcpd.conf* file
+### For r2, configure the **DHCP** service in the */etc/dhcp/dhcpd.conf* file
 
-##### 1) specify the default router address, DNS-server and internal network address. Here is an example of a file for r2
+### 1) specify the default router address, DNS-server and internal network address. Here is an example of a file for r2
 
 ```shell
 subnet 10.100.0.0 netmask 255.255.0.0 {}
@@ -473,30 +473,30 @@ subnet 10.20.0.0 netmask 255.255.255.192
 }
 ```
 
-##### 2) write `nameserver 8.8.8.8.` in a *resolv.conf* file
+### 2) write `nameserver 8.8.8.8.` in a *resolv.conf* file
 
 - Add screenshots of the changed files to the report.
 
-##### Restart the **DHCP** service with `systemctl restart isc-dhcp-server`. Reboot the ws21 machine with `reboot` and show with `ip a` that it has got an address. Also ping ws22 from ws21
+### Restart the **DHCP** service with `systemctl restart isc-dhcp-server`. Reboot the ws21 machine with `reboot` and show with `ip a` that it has got an address. Also ping ws22 from ws21
 
 - Add a screenshot with the call and the output of the used commands to the report.
 
-##### Specify MAC address at ws11 by adding to *etc/netplan/00-installer-config.yaml*
+### Specify MAC address at ws11 by adding to *etc/netplan/00-installer-config.yaml*
 
 `macaddress: 10:10:10:10:10:BA`, `dhcp4: true`
 
 - Add a screenshot of the changed *etc/netplan/00-installer-config.yaml* file to the report.
 
-##### Сonfigure r1 the same way as r2, but make the assignment of addresses strictly linked to the MAC-address (ws11). Run the same tests
+### Сonfigure r1 the same way as r2, but make the assignment of addresses strictly linked to the MAC-address (ws11). Run the same tests
 
 - Describe this part in the report the same way as for r2.
 
-##### Request ip address update from ws21
+### Request ip address update from ws21
 
 - Add screenshots of ip before and after update to the report
 - Describe in the report what **DHCP** server options were used in this point.
 
-##### Save dumps of virtual machine images
+### Save dumps of virtual machine images
 
 **p.s. Do not upload dumps to git under any circumstances!**
 
@@ -508,65 +508,65 @@ And finally, the cherry on the cake, let me tell you about network address trans
 
 *In this task you need to use virtual machines from Part 5*
 
-##### In */etc/apache2/ports.conf* file change the line `Listen 80` to `Listen 0.0.0.0:80`on ws22 and r1, i.e. make the Apache2 server public
+### In */etc/apache2/ports.conf* file change the line `Listen 80` to `Listen 0.0.0.0:80`on ws22 and r1, i.e. make the Apache2 server public
 
 - Add a screenshot of the changed file to the report
 
-##### Start the Apache web server with `service apache2 start` command on ws22 and r1
+### Start the Apache web server with `service apache2 start` command on ws22 and r1
 
 - Add screenshots with the call and the output of the used command to the report.
 
-##### Add the following rules to the firewall, created similarly to the firewall from Part 4, on r2
+### Add the following rules to the firewall, created similarly to the firewall from Part 4, on r2
 
-##### 1) delete rules in the filter table - `iptables -F`
+### 1) delete rules in the filter table - `iptables -F`
 
-##### 2) delete rules in the "NAT" table - `iptables -F -t nat`
+### 2) delete rules in the "NAT" table - `iptables -F -t nat`
 
-##### 3) drop all routed packets - `iptables --policy FORWARD DROP`
+### 3) drop all routed packets - `iptables --policy FORWARD DROP`
 
-##### Run the file as in Part 4
+### Run the file as in Part 4
 
-##### Check the connection between ws22 and r1 with the `ping` command
+### Check the connection between ws22 and r1 with the `ping` command
 
 *When running the file with these rules, ws22 should not ping from r1*
 
 - Add screenshots with the call and the output of the used command to the report.
 
-##### Add another rule to the file
+### Add another rule to the file
 
-##### 4) allow routing of all **ICMP** protocol packets
+### 4) allow routing of all **ICMP** protocol packets
 
-##### Run the file as in Part 4
+### Run the file as in Part 4
 
-##### Check connection between ws22 and r1 with the `ping` command
+### Check connection between ws22 and r1 with the `ping` command
 
 *When running the file with these rules, ws22 should ping from r1*
 
 - Add screenshots with the call and the output of the used command to the report.
 
-##### Add two more rules to the file
+### Add two more rules to the file
 
-##### 5) enable **SNAT**, which is masquerade all local ip from the local network behind r2 (as defined in Part 5 - network 10.20.0.0)
+### 5) enable **SNAT**, which is masquerade all local ip from the local network behind r2 (as defined in Part 5 - network 10.20.0.0)
 
 *Tip: it is worth thinking about routing internal packets as well as external packets with an established connection*
 
-##### 6) enable **DNAT** on port 8080 of r2 machine and add external network access to the Apache web server running on ws22
+### 6) enable **DNAT** on port 8080 of r2 machine and add external network access to the Apache web server running on ws22
 
 *Tip: be aware that when you will try to connect, there will be a new tcp connection for ws22 and port 80
 
 - Add a screenshot of the changed file to the report
 
-##### Run the file as in Part 4
+### Run the file as in Part 4
 
 *Before testing it is recommended to disable the **NAT** network interface in VirtualBox (its presence can be checked with `ip a` command), if it is enabled*
 
-##### Check the TCP connection for **SNAT** by connecting from ws22 to the Apache server on r1 with the `telnet [address] [port]` command
+### Check the TCP connection for **SNAT** by connecting from ws22 to the Apache server on r1 with the `telnet [address] [port]` command
 
-##### Check the TCP connection for **DNAT** by connecting from r1 to the Apache server on ws22 with the `telnet` command (address r2 and port 8080)
+### Check the TCP connection for **DNAT** by connecting from r1 to the Apache server on ws22 with the `telnet` command (address r2 and port 8080)
 
 - Add screenshots with the call and the output of the used commands to the report.
 
-##### Save dumps of virtual machine images
+### Save dumps of virtual machine images
 
 **p.s. Do not upload dumps to git under any circumstances!**
 
@@ -586,19 +586,19 @@ And finally, the cherry on the cake, let me tell you about network address trans
 
 *In this task you need to use virtual machines from Part 5*
 
-##### Run a firewall on r2 with the rules from Part 7
+### Run a firewall on r2 with the rules from Part 7
 
-##### Start the **Apapche** web server on ws22 on localhost only (i.e. in */etc/apache2/ports.conf* file change the line `Listen 80` to `Listen localhost:80`)
+### Start the **Apapche** web server on ws22 on localhost only (i.e. in */etc/apache2/ports.conf* file change the line `Listen 80` to `Listen localhost:80`)
 
-##### Use *Local TCP forwarding* from ws21 to ws22 to access the web server on ws22 from ws21
+### Use *Local TCP forwarding* from ws21 to ws22 to access the web server on ws22 from ws21
 
-##### Use *Remote TCP forwarding* from ws11 to ws22 to access the web server on ws22 from ws11
+### Use *Remote TCP forwarding* from ws11 to ws22 to access the web server on ws22 from ws11
 
-##### To check if the connection worked in both of the previous steps, go to a second terminal (e.g. with the Alt + F2) and run the `telnet 127.0.0.1 [local port]` command
+### To check if the connection worked in both of the previous steps, go to a second terminal (e.g. with the Alt + F2) and run the `telnet 127.0.0.1 [local port]` command
 
 - In the report, describe the commands that you need for doing these 4 steps and add screenshots of their call and output.
 
-##### Save dumps of virtual machine images
+### Save dumps of virtual machine images
 
 **p.s. Do not upload dumps to git under any circumstances!**
 

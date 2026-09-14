@@ -12,17 +12,17 @@ Python and work with virtual environments.
 3. [Chapter III](#chapter-iii) \
     3.1. [Specific instructions for the day](#specific-instructions-for-the-day)
 4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 00 : Virtual Environment](#exercise-00-virtual-environment)
+    4.1. [Exercise 00 : Virtual Environment](#exercise-00--virtual-environment)
 5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 01 : Installing a package](#exercise-01-installing-a-package)
+    5.1. [Exercise 01 : Installing a package](#exercise-01--installing-a-package)
 6. [Chapter VI](#chapter-vi) \
-    6.1. [Exercise 02 : Installing many libraries](#exercise-02-installing-many-libraries)
+    6.1. [Exercise 02 : Installing many libraries](#exercise-02--installing-many-libraries)
 7. [Chapter VII](#chapter-vii) \
-    7.1. [Exercise 03 : Very beautiful soup](#exercise-03-very-beautiful-soup)
+    7.1. [Exercise 03 : Very beautiful soup](#exercise-03--very-beautiful-soup)
 8. [Chapter VIII](#chapter-viii) \
-    8.1. [Part 1](#exercise-04-profiling)
+    8.1. [Part 1](#exercise-04--profiling)
 9. [Chapter IX](#chapter-ix) \
-    9.1. [Exercise 05 : PyTest](#exercise-05-pytest)
+    9.1. [Exercise 05 : PyTest](#exercise-05--pytest)
 
 ## Chapter I
 

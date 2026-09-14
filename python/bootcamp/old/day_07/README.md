@@ -127,7 +127,7 @@ Several minutes have passed and discussion went on. Even being young and bold, D
 realize that the Voight-Kampff test is far more dangerous than it seems. There had to be a lot of
 work put into it to make it reliable.
 
------
+---
 
 You have to design your own version of [Voight-Kampff test](https://bladerunner.fandom.com/wiki/Voight-Kampff_test).
 For this you should prepare a set of questions (at least 10 is enough) with three or four responses
@@ -163,7 +163,7 @@ whole research behind Voight-Kampff, but he wanted to know the algorithm.
 Deckard couldn't really explain why, even to himself. One of the most dangerous thoughts was,
 "I need to know the proper answers if I am ever to be a test subject".
 
------
+---
 
 You already have the implementation of the test from EX00. But does it really work properly?
 In this exercise, you need to write tests to cover all the possible positive and negative cases.
@@ -200,7 +200,7 @@ way to make sure that they are doing the right thing.
 
  "Don't worry about it. Cogito, ergo sum."
 
------
+---
 
 You need to use Sphinx project to auto-generate documentation for your code written in EX00/EX01.
 

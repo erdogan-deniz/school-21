@@ -1,6 +1,6 @@
 ## How to emulate a network using VirtualBox
 
-#### Create base virtual machines
+### Create base virtual machines
 
 To create the network topology, you must first create a new VM, for example Ubuntu Server 20.04 LTS.
 
@@ -21,7 +21,7 @@ Choose virtual machine names to match the node names you need.
 
 Each VM needs to be set up with network interfaces and connected to VirtualBox internal networks to create a network topology.
 
-#### Create VirtualBox internal networks
+### Create VirtualBox internal networks
 
 The VirtualBox graphical user interface supports only four network adapters for each VM.
 This limits the complexity of network scenarios you can create.

@@ -50,7 +50,7 @@ In this project, you will learn basic interview tips, lifehacks for dealing with
        - Know how to present yourself and talk about yourself competently, how to show your value  
        - What you should not talk about at a job interview
 4. [Chapter IV](#chapter-iv) \
-    [Задача](#задача)
+    [Задача](#assignment-1)
 5. [Chapter V](#chapter-v)
 
 ## Chapter I

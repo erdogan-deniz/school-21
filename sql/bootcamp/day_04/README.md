@@ -13,23 +13,23 @@ Resume: Today you will see how to use a virtual view and physical snapshot of da
 3. [Chapter III](#chapter-iii) \
     3.1. [Rules of the day](#rules-of-the-day)  
 4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 00 - Let’s create separated views for persons](#exercise-00-lets-create-separated-views-for-persons)  
+    4.1. [Exercise 00 - Let’s create separated views for persons](#exercise-00---lets-create-separated-views-for-persons)  
 5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 01 - From parts to common view](#exercise-01-from-parts-to-common-view)  
+    5.1. [Exercise 01 - From parts to common view](#exercise-01---from-parts-to-common-view)  
 6. [Chapter VI](#chapter-vi) \
-    6.1. [Exercise 02 - “Store” generated dates in one place](#exercise-02-store-generated-dates-in-one-place)  
+    6.1. [Exercise 02 - “Store” generated dates in one place](#exercise-02---store-generated-dates-in-one-place)  
 7. [Chapter VII](#chapter-vii) \
-    7.1. [Exercise 03 - Find missing visit days with Database View](#exercise-03-find-missing-visit-days-with-database-view)  
+    7.1. [Exercise 03 - Find missing visit days with Database View](#exercise-03---find-missing-visit-days-with-database-view)  
 8. [Chapter VIII](#chapter-viii) \
-    8.1. [Exercise 04 - Let’s find something from Set Theory](#exercise-04-lets-find-something-from-set-theory)
+    8.1. [Exercise 04 - Let’s find something from Set Theory](#exercise-04---lets-find-something-from-set-theory)
 9. [Chapter IX](#chapter-ix) \
-    9.1. [Exercise 05 - Let’s calculate a discount price for each person](#exercise-05-lets-calculate-a-discount-price-for-each-person)
+    9.1. [Exercise 05 - Let’s calculate a discount price for each person](#exercise-05---lets-calculate-a-discount-price-for-each-person)
 10. [Chapter X](#chapter-x) \
-    10.1. [Exercise 06 - Materialization from virtualization](#exercise-06-materialization-from-virtualization)
+    10.1. [Exercise 06 - Materialization from virtualization](#exercise-06---materialization-from-virtualization)
 11. [Chapter XI](#chapter-xi) \
-    11.1. [Exercise 07 - Refresh our state](#exercise-07-refresh-our-state)
+    11.1. [Exercise 07 - Refresh our state](#exercise-07---refresh-our-state)
 12. [Chapter XII](#chapter-xii) \
-    12.1. [Exercise 08 - Just clear our database](#exercise-08-just-clear-our-database)
+    12.1. [Exercise 08 - Just clear our database](#exercise-08---just-clear-our-database)
 
 ## Chapter I
 

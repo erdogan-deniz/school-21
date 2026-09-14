@@ -13,27 +13,27 @@ Resume: Today you will see how to get needed data based on sets constructions an
 3. [Chapter III](#chapter-iii) \
     3.1. [Rules of the day](#rules-of-the-day)  
 4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 00 - Let’s make UNION dance](#exercise-00-lets-make-union-dance)  
+    4.1. [Exercise 00 - Let’s make UNION dance](#exercise-00---lets-make-union-dance)  
 5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 01 - UNION dance with subquery](#exercise-01-union-dance-with-subquery)  
+    5.1. [Exercise 01 - UNION dance with subquery](#exercise-01---union-dance-with-subquery)  
 6. [Chapter VI](#chapter-vi) \
-    6.1. [Exercise 02 - Duplicates or not duplicates](#exercise-02-duplicates-or-not-duplicates)  
+    6.1. [Exercise 02 - Duplicates or not duplicates](#exercise-02---duplicates-or-not-duplicates)  
 7. [Chapter VII](#chapter-vii) \
-    7.1. [Exercise 03 - “Hidden” Insights](#exercise-03-hidden-insights)  
+    7.1. [Exercise 03 - “Hidden” Insights](#exercise-03---hidden-insights)  
 8. [Chapter VIII](#chapter-viii) \
-    8.1. [Exercise 04 - Difference? Yep, let's find the difference between multisets](#exercise-04-difference-yep-lets-find-the-difference-between-multisets)
+    8.1. [Exercise 04 - Difference? Yep, let's find the difference between multisets](#exercise-04---difference-yep-lets-find-the-difference-between-multisets)
 9. [Chapter IX](#chapter-ix) \
-    9.1. [Exercise 05 - Did you hear about Cartesian Product?](#exercise-05-did-you-hear-about-cartesian-product)
+    9.1. [Exercise 05 - Did you hear about Cartesian Product?](#exercise-05---did-you-hear-about-cartesian-product)
 10. [Chapter X](#chapter-x) \
-    10.1. [Exercise 06 - Lets see on “Hidden” Insights](#exercise-06-lets-see-on-hidden-insights)
+    10.1. [Exercise 06 - Lets see on “Hidden” Insights](#exercise-06---lets-see-on-hidden-insights)
 11. [Chapter XI](#chapter-xi) \
-    11.1. [Exercise 07 - Just make a JOIN](#exercise-07-just-make-a-join)
+    11.1. [Exercise 07 - Just make a JOIN](#exercise-07---just-make-a-join)
 12. [Chapter XII](#chapter-xii) \
-    12.1. [Exercise 08 - Migrate JOIN to NATURAL JOIN](#exercise-08-migrate-join-to-natural-join)
+    12.1. [Exercise 08 - Migrate JOIN to NATURAL JOIN](#exercise-08---migrate-join-to-natural-join)
 13. [Chapter XIII](#chapter-xiii) \
-    13.1. [Exercise 09 - IN versus EXISTS](#exercise-09-in-versus-exists)
+    13.1. [Exercise 09 - IN versus EXISTS](#exercise-09---in-versus-exists)
 14. [Chapter XIV](#chapter-xiv) \
-    14.1. [Exercise 10 - Global JOIN](#exercise-10-global-join)
+    14.1. [Exercise 10 - Global JOIN](#exercise-10---global-join)
 
 ## Chapter I
 

@@ -46,7 +46,7 @@ You cannot complete Project 04 until you have completed individual Projects 05 a
     3.3. Use of the Kanban method. How to apply it in real life? \
     3.4. Formal and informal rules. What are they for?
 4. [Chapter IV](#chapter-iv) \
-    [Задача](#задача)
+    [Задача](#task-1)
 5. [Chapter V](#chapter-v)
 
 ## Chapter I
@@ -103,6 +103,7 @@ The sooner you understand how the team is organized, what the rules are, and how
 You will also have an additional factor for rapid growth, and you will be able to actively participate in the life of the team and suggest improvements.
 
 *Example:* A team has been working successfully for a long time. It has been using one of the methodologies. A developer who didn't know it and didn't want to get involved joined the team. Out of a great desire to prove himself, he/she:
+
 - Starts inventing and immediately implementing new features in addition to his tasks, which may not be needed by the customer;
 - Stops going to team meetings because he/she doesn't understand why he/she is there;
 - Tries to implement all the functionality all at once, instead of taking it one step at a time and breaking it down into smaller tasks.

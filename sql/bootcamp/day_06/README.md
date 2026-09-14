@@ -13,19 +13,19 @@ Resume: Today you will see how to add a new business feature into our data model
 3. [Chapter III](#chapter-iii) \
     3.1. [Rules of the day](#rules-of-the-day)  
 4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 00 — Discounts, discounts , everyone loves discounts](#exercise-00-discounts-discounts-everyone-loves-discounts)  
+    4.1. [Exercise 00 — Discounts, discounts , everyone loves discounts](#exercise-00--discounts-discounts--everyone-loves-discounts)  
 5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 01 — Let’s set personal discounts](#exercise-01-lets-set-personal-discounts)  
+    5.1. [Exercise 01 — Let’s set personal discounts](#exercise-01--lets-set-personal-discounts)  
 6. [Chapter VI](#chapter-vi) \
-    6.1. [Exercise 02 — Let’s recalculate a history of orders.](#exercise-02-lets-recalculate-a-history-of-orders)  
+    6.1. [Exercise 02 — Let’s recalculate a history of orders.](#exercise-02--lets-recalculate-a-history-of-orders)  
 7. [Chapter VII](#chapter-vii) \
-    7.1. [Exercise 03 — Improvements are in a way](#exercise-03-improvements-are-in-a-way)  
+    7.1. [Exercise 03 — Improvements are in a way](#exercise-03--improvements-are-in-a-way)  
 8. [Chapter VIII](#chapter-viii) \
-    8.1. [Exercise 04 — We need more Data Consistency](#exercise-04-we-need-more-data-consistency)
+    8.1. [Exercise 04 — We need more Data Consistency](#exercise-04--we-need-more-data-consistency)
 9. [Chapter IX](#chapter-ix) \
-    9.1. [Exercise 05 — Data Governance Rules](#exercise-05-data-governance-rules)
+    9.1. [Exercise 05 — Data Governance Rules](#exercise-05--data-governance-rules)
 10. [Chapter X](#chapter-x) \
-    10.1. [Exercise 06 — Let’s automate Primary Key generation](#exercise-06-lets-automate-primary-key-generation)
+    10.1. [Exercise 06 — Let’s automate Primary Key generation](#exercise-06--lets-automate-primary-key-generation)
 
 ## Chapter I
 

@@ -7,7 +7,7 @@ The bash shell reserves the first three descriptors with identifiers 0, 1 and 2.
 - 1, STDOUT - standard output stream.
 - 2, STDERR - standard error stream.
 
-### STDIN
+## STDIN
 
 STDIN stands for standard input, which is the keyboard by default.
 When scripts use the input redirection character - <, Linux replaces the file descriptor of the standard input with the one specified in the command. The system reads the file and processes the data as if it were entered from the keyboard.
@@ -26,7 +26,7 @@ done
 
 Here the read command, when trying to read data from STDIN, will read it from the file and not from the keyboard.
 
-### STDOUT
+## STDOUT
 
 STDOUT is the standard shell output stream. It is the screen by default.
 Most bash commands output data to STDOUT, which results in it appearing in the console.

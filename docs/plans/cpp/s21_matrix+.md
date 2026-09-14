@@ -37,3 +37,4 @@
 - 2026-05-11: Included in `cpp.yml` build/test matrix ([cc0ebb33](https://github.com/erdogan-deniz/school-21/commit/cc0ebb33)).
 - 2026-05-11: README adopted from repo template + Original task preserved (this commit).
 - 2026-09-14: clang-format 18.1.3 pass (the runner's version; 18.1.8 accepted several of these files) — `cpp / clang-format check` green again ([a1fe146](https://github.com/erdogan-deniz/school-21/commit/a1fe146)).
+- 2026-09-14: `docs / doxygen` job unmasked — it had failed on every run since May ("Output directory 'docs/api' does not exist"); the workflow now `mkdir -p docs/api` before `doxygen Doxyfile` and no longer carries `continue-on-error` ([4ec1fb4](https://github.com/erdogan-deniz/school-21/commit/4ec1fb4)).

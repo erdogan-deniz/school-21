@@ -57,6 +57,21 @@ overhaul"* sections rather than versions.
     the Makefile's `all` target runs the tests inside the Build step.
   - `actionlint` — `reviewdog/action-actionlint`'s deprecated
     `fail_on_error: true` replaced by `fail_level: any` (`d320776`).
+  - `actionlint` — the `fail_level: any` gate then failed on four
+    shellcheck findings that had been silently tolerated: the C-apps
+    fallback compile in `c.yml` was wrapped in `$()`, so bash executed
+    gcc's stdout as a command (SC2091), two bare globs (`*.c`,
+    `*.AppImage`) got `./` (SC2035), and hadolint's four
+    `>> "$GITHUB_OUTPUT"` echoes became one `{ ...; } >>` group (SC2129).
+    Gate unchanged; actionlint 1.7.12 + shellcheck 0.11.0 locally 4 → 0
+    (`da2319d`).
+  - `docs / doxygen (<subproject>)` — all seven matrix jobs had failed on
+    every run since May with "Output directory 'docs/api' does not exist
+    and cannot be created" (Doxygen creates only the leaf of
+    `OUTPUT_DIRECTORY`, no library subproject has a `docs/` dir) while the
+    job-level `continue-on-error: true` kept the workflow green. The Run
+    step now `mkdir -p docs/api` first and the mask is gone; locally all
+    seven produce `docs/api/html/index.html` with exit 0 (`4ec1fb4`).
 
 ### Changed
 

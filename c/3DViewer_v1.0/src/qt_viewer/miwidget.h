@@ -34,35 +34,39 @@ extern "C" {
 }
 
 //?????????????????????//
-static double rotate_y = 0;       ///< Accumulated Y-axis rotation.
-static double rotate_x = 0;       ///< Accumulated X-axis rotation.
-static double rotate_z = 0;       ///< Accumulated Z-axis rotation.
-static double rotate_zoom = 0;    ///< Accumulated zoom factor.
+static double rotate_y = 0;     ///< Accumulated Y-axis rotation.
+static double rotate_x = 0;     ///< Accumulated X-axis rotation.
+static double rotate_z = 0;     ///< Accumulated Z-axis rotation.
+static double rotate_zoom = 0;  ///< Accumulated zoom factor.
 
 // static    double ** matrix_vertexes;
-static double *vert_parsed;       ///< Cached flat vertex buffer for OpenGL.
+static double *vert_parsed;  ///< Cached flat vertex buffer for OpenGL.
 
-static obj_data polygons;         ///< Cached parsed model (single per-process). // mojno ubrat
+static obj_data
+    polygons;  ///< Cached parsed model (single per-process). // mojno ubrat
 static int flag_parsed_file = 0;  ///< Non-zero once a file has been parsed.
 //?????????????????????//
 
-static double min_x = 0;          ///< Bounding-box min along X.
-static double min_y = 0;          ///< Bounding-box min along Y.
-static double min_z = 0;          ///< Bounding-box min along Z.
+static double min_x = 0;  ///< Bounding-box min along X.
+static double min_y = 0;  ///< Bounding-box min along Y.
+static double min_z = 0;  ///< Bounding-box min along Z.
 
-static double max_x = 0;          ///< Bounding-box max along X.
-static double max_y = 0;          ///< Bounding-box max along Y.
-static double max_z = 0;          ///< Bounding-box max along Z.
+static double max_x = 0;  ///< Bounding-box max along X.
+static double max_y = 0;  ///< Bounding-box max along Y.
+static double max_z = 0;  ///< Bounding-box max along Z.
 
-static double BGcolor = 0;        ///< Background grey level (0..255).
-static double lineColor = 100;    ///< Edge line grey level.
-static double lineWidth = 1;      ///< Edge line width in pixels.
-static double vertexWidth = 2;    ///< Vertex point size in pixels.
+static double BGcolor = 0;      ///< Background grey level (0..255).
+static double lineColor = 100;  ///< Edge line grey level.
+static double lineWidth = 1;    ///< Edge line width in pixels.
+static double vertexWidth = 2;  ///< Vertex point size in pixels.
 
-static QString lineType = "Solid lines";  ///< Edge style: "Solid lines" / "Dashed" / "None".
-static QString vertexType = "Point";      ///< Vertex marker: "Point" / "Square" / "None".
-static QString mode = "Edges";            ///< Render mode: "Edges" / "Faces" / etc.
-static QString perspective = "Central";   ///< Projection: "Central" / "Parallel".
+static QString lineType =
+    "Solid lines";  ///< Edge style: "Solid lines" / "Dashed" / "None".
+static QString vertexType =
+    "Point";                    ///< Vertex marker: "Point" / "Square" / "None".
+static QString mode = "Edges";  ///< Render mode: "Edges" / "Faces" / etc.
+static QString perspective =
+    "Central";  ///< Projection: "Central" / "Parallel".
 
 /**
  * @brief OpenGL viewport widget used by @ref MainWindow.

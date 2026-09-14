@@ -22,7 +22,7 @@
 
 #define MAX_LINE_SIZE 4096  ///< Upper bound for a single input line.
 
-#define CAT_PRFX "cat: "    ///< Stderr prefix used by error messages.
+#define CAT_PRFX "cat: "  ///< Stderr prefix used by error messages.
 
 #define VMASK (1 << 6)  ///< `-v` — display non-printing characters.
 #define BMASK (1 << 5)  ///< `-b` — number non-empty output lines.

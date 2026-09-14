@@ -24,10 +24,10 @@
  *        (filled during evaluation).
  */
 typedef struct s21_list {
-  char token[255];          ///< Fixed-capacity token buffer.
-  long double value;        ///< Evaluated value (numeric tokens / partial folds).
-  struct s21_list* next;    ///< Successor node, NULL at the tail.
-  struct s21_list* prev;    ///< Predecessor node, NULL at the head.
+  char token[255];        ///< Fixed-capacity token buffer.
+  long double value;      ///< Evaluated value (numeric tokens / partial folds).
+  struct s21_list* next;  ///< Successor node, NULL at the tail.
+  struct s21_list* prev;  ///< Predecessor node, NULL at the head.
 } s21_list;
 
 // Main functions:

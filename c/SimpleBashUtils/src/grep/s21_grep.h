@@ -44,10 +44,10 @@ typedef struct {
   bool s;  ///< `-s` — suppress errors about missing / unreadable files.
   bool f;  ///< `-f FILE` — read patterns from a file (one per line).
   bool o;  ///< `-o` — print only the matched (non-empty) part.
-  int templates_len;   ///< Total number of patterns to match against.
-  int template_idx;    ///< Current pattern index during the match loop.
-  int filepaths_len;   ///< Number of files passed on the command line.
-  int filepath_idx;    ///< Current file index during iteration.
+  int templates_len;  ///< Total number of patterns to match against.
+  int template_idx;   ///< Current pattern index during the match loop.
+  int filepaths_len;  ///< Number of files passed on the command line.
+  int filepath_idx;   ///< Current file index during iteration.
 } GrepArgs;
 
 /** @brief `getopt_long` table for the long-option-spelt `-e` and `-f` flags. */

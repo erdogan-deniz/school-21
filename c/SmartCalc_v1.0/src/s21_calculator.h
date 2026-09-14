@@ -25,7 +25,7 @@
 #ifdef _WIN32
 #define S21_API __declspec(dllexport)  ///< Windows DLL export decoration.
 #else
-#define S21_API                        ///< Default visibility on Unix.
+#define S21_API  ///< Default visibility on Unix.
 #endif
 
 /**

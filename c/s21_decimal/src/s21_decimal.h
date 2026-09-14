@@ -96,7 +96,8 @@ int s21_from_int_to_decimal(int src, s21_decimal *dst);
  *         of range or `0 < |src| < 1e-28`. Rounds to ≤ 7 significant digits. */
 int s21_from_float_to_decimal(float src, s21_decimal *dst);
 
-/** @brief Convert `s21_decimal` → `int`. Fractional part discarded (toward 0). */
+/** @brief Convert `s21_decimal` → `int`. Fractional part discarded (toward 0).
+ */
 int s21_from_decimal_to_int(s21_decimal src, int *dst);
 
 /** @brief Convert `s21_decimal` → `float`. May lose precision. */

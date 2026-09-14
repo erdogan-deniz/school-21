@@ -27,7 +27,8 @@ int s21_loan_annuity(double principal, int months, double annual_rate,
 
 /**
  * @brief Differentiated-payment loan calculator.
- * @param[out] payments_out Array of `months` monthly payments (caller-allocated).
+ * @param[out] payments_out Array of `months` monthly payments
+ * (caller-allocated).
  */
 int s21_loan_differentiated(double principal, int months, double annual_rate,
                             double *payments_out, double *overpayment,
@@ -40,7 +41,8 @@ int s21_loan_differentiated(double principal, int months, double annual_rate,
  * @param months             Term length.
  * @param annual_rate        Annual interest rate.
  * @param tax_rate           Tax on interest (0..1).
- * @param periods_per_year   Compounding frequency (12 = monthly, 4 = quarterly).
+ * @param periods_per_year   Compounding frequency (12 = monthly, 4 =
+ * quarterly).
  * @param capitalize         1 = re-deposit interest, 0 = pay out.
  * @param add_months / add_amounts / add_count  Replenishment schedule.
  * @param wd_months / wd_amounts / wd_count     Withdrawal schedule.

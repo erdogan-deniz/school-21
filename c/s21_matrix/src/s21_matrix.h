@@ -62,26 +62,30 @@ int s21_sub_matrix(matrix_t *A, matrix_t *B, matrix_t *result);
 /** @brief Scalar multiplication: `*result = A * number`. */
 int s21_mult_number(matrix_t *A, double number, matrix_t *result);
 
-/** @brief Matrix multiplication: `*result = A * B`. `A.cols` must equal `B.rows`. */
+/** @brief Matrix multiplication: `*result = A * B`. `A.cols` must equal
+ * `B.rows`. */
 int s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result);
 
 /** @brief Transpose: `*result = A^T`. */
 int s21_transpose(matrix_t *A, matrix_t *result);
 
-/** @brief Algebraic complements: `*result(i,j) = (-1)^(i+j) * M(i,j)`. A must be square. */
+/** @brief Algebraic complements: `*result(i,j) = (-1)^(i+j) * M(i,j)`. A must
+ * be square. */
 int s21_calc_complements(matrix_t *A, matrix_t *result);
 
 /** @brief Determinant of `A` into `*result`. A must be square. */
 int s21_determinant(matrix_t *A, double *result);
 
-/** @brief Inverse matrix: `*result = A^(-1)`. A must be square with `det(A) != 0`. */
+/** @brief Inverse matrix: `*result = A^(-1)`. A must be square with `det(A) !=
+ * 0`. */
 int s21_inverse_matrix(matrix_t *A, matrix_t *result);
 
 /** @name Internal helpers (exposed for testing)
  *  @{
  */
 
-/** @brief Sanity check: A is non-NULL with positive dimensions and an allocated payload. */
+/** @brief Sanity check: A is non-NULL with positive dimensions and an allocated
+ * payload. */
 bool s21_is_matrix_exists(matrix_t *A);
 
 /** @brief Deep copy: allocates and populates B with the same content as A. */

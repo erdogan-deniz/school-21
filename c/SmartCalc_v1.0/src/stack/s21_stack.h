@@ -35,10 +35,10 @@ typedef enum s21_token_priority {
  * @brief Stack node — token, its priority, and a unary-marker flag.
  */
 typedef struct s21_stack {
-  int is_unary;                       ///< 1 if `+` / `-` was unary at parse time.
-  char* token;                        ///< Heap-allocated token string.
+  int is_unary;  ///< 1 if `+` / `-` was unary at parse time.
+  char* token;   ///< Heap-allocated token string.
   s21_token_priority token_priority;  ///< Operator priority for ordering.
-  struct s21_stack* prev;             ///< Pointer to the node below in the stack.
+  struct s21_stack* prev;  ///< Pointer to the node below in the stack.
 } s21_stack;
 
 // Main functions:

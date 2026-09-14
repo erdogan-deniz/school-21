@@ -22,8 +22,8 @@
  * @brief Single polygon — list of vertex indices that form one face.
  */
 typedef struct polygons {
-  int sum_of_vertexes;   ///< Number of vertices in this polygon.
-  int *polygon_vertex;   ///< Index buffer (1-based, as in OBJ).
+  int sum_of_vertexes;  ///< Number of vertices in this polygon.
+  int *polygon_vertex;  ///< Index buffer (1-based, as in OBJ).
 
 } polygons_t;
 
@@ -46,15 +46,15 @@ typedef struct matrix {
  * routines. The two representations are kept in sync.
  */
 typedef struct obj_data {
-  double *matrix_vertexes;   ///< Flat (x, y, z, ...) buffer for OpenGL.
-  int summ_of_vertexes;      ///< Number of floats in @ref matrix_vertexes.
-  int *matrix_polygons;      ///< Flat index buffer for OpenGL.
-  int summ_of_polygons;      ///< Number of ints in @ref matrix_polygons.
+  double *matrix_vertexes;  ///< Flat (x, y, z, ...) buffer for OpenGL.
+  int summ_of_vertexes;     ///< Number of floats in @ref matrix_vertexes.
+  int *matrix_polygons;     ///< Flat index buffer for OpenGL.
+  int summ_of_polygons;     ///< Number of ints in @ref matrix_polygons.
 
-  int count_of_vertexes;     ///< Vertex count (rows of @ref matrix).
-  int count_of_facets;       ///< Polygon-face count.
-  matrix_t matrix;           ///< Vertex matrix (count_of_vertexes × 3).
-  polygons_t *polygons;      ///< Per-face index lists.
+  int count_of_vertexes;  ///< Vertex count (rows of @ref matrix).
+  int count_of_facets;    ///< Polygon-face count.
+  matrix_t matrix;        ///< Vertex matrix (count_of_vertexes × 3).
+  polygons_t *polygons;   ///< Per-face index lists.
 } obj_data;
 
 /**

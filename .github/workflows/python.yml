@@ -238,16 +238,22 @@ jobs:
         # canonical case (Sphinx is part of the original task);
         # day_01 (new track) and the "Tweets" NLP project adopted the
         # same skeleton so their rich docstrings render the same way.
+        # `artifact` is the upload-artifact name: it must not contain
+        # `/` (upload-artifact@v4 rejects it), so it cannot be derived
+        # from `subproject` in the expression.
         include:
           - subproject: python/bootcamp/old/day_07
             workdir: python/bootcamp/old/day_07
             docs_dir: docs
+            artifact: sphinx-python-bootcamp-old-day_07
           - subproject: python/bootcamp/new/day_01
             workdir: python/bootcamp/new/day_01
             docs_dir: docs
+            artifact: sphinx-python-bootcamp-new-day_01
           - subproject: data_science/project_01
             workdir: data_science/project_01
             docs_dir: docs
+            artifact: sphinx-data_science-project_01
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -276,7 +282,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: sphinx-${{ matrix.subproject }}
+          name: ${{ matrix.artifact }}
           path: ${{ matrix.workdir }}/${{ matrix.docs_dir }}/build/html/
           if-no-files-found: ignore
           retention-days: 14

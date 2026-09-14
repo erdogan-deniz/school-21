@@ -30,8 +30,10 @@ repos:
       - id: ruff
         args: ['--fix']
         types_or: [python]
+        exclude: ^python/SmartCalc_v3\.0/  # own ruff>=0.14 config, see .ruff.toml
       - id: ruff-format
         types_or: [python]
+        exclude: ^python/SmartCalc_v3\.0/
 
   # --- C / C++: clang-format ---
   - repo: https://github.com/pre-commit/mirrors-clang-format

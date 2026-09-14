@@ -32,6 +32,24 @@ overhaul"* sections rather than versions.
   `NotImplementedError: cannot instantiate 'WindowsPath'` instead of a
   readable assertion. Expected paths now use `os.path.join`; the patch is
   scoped to `monkeypatch.context()` and undone before the `assert`.
+- **CI red since May, one commit per cause** (`d7f1453` … `06b3f34`):
+  - `python / ruff format` — 43 of the 44 offenders were notebooks;
+    `*.ipynb` is now excluded from `ruff format` in `.ruff.toml` (still
+    linted), the one `.py` was reformatted with ruff 0.6.9.
+  - `c` / `cpp / clang-format check` — 16 C headers and 27 C++ files
+    reformatted with clang-format 18.1.3, the exact version Ubuntu
+    24.04's apt gives the runner (18.1.8 passes a third of them).
+  - `python / sphinx` — upload-artifact@v4 rejects `/` in artifact
+    names; each matrix entry now carries a slash-free `artifact` field.
+  - `c` / `cpp / apps Qt6 GUI build` — Qt 6.5.3 dropped out of the
+    mirror's `linux_gcc_64` listing (aqt: "packages ['qt_base'] were not
+    found"); moved to Qt 6.8.3 LTS with `aqtversion` pinned.
+  - `c / build & test` — s21_math, s21_decimal, s21_string+ link Check
+    via `pkg-config --libs check`; `open` of the lcov report is skipped
+    under `CI`; s21_string+'s two `"%%"` sprintf tests pass literal
+    formats (`-Wformat-security` + `-Werror`). Still red on purpose:
+    s21_string+ `sprintf_null_ptr` (glibc prints `%p` of NULL as
+    `(nil)`, `s21_sprintf` as `0x0`) — pre-existing, needs a decision.
 
 ### Changed
 

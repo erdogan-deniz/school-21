@@ -40,3 +40,5 @@
 - 2026-05-11: Included in `c.yml` `apps-c-tests` matrix for the C-only test layer ([30441670](https://github.com/erdogan-deniz/school-21/commit/30441670)).
 - 2026-05-11: README adopted from repo template + Original task preserved (this commit).
 - 2026-05-11: Doxygen rollout — full module set documented ([9def2070](https://github.com/erdogan-deniz/school-21/commit/9def2070)).
+- 2026-09-14: clang-format 18.1.3 pass (the runner's version; 18.1.8 accepted the file) — `c / clang-format check` green again ([75f638e](https://github.com/erdogan-deniz/school-21/commit/75f638e)).
+- 2026-09-14: Qt6 GUI build job moved to Qt 6.8.3 LTS with `aqtversion` pinned (6.5.3 vanished from the mirror's `linux_gcc_64` listing) ([615e568](https://github.com/erdogan-deniz/school-21/commit/615e568)).

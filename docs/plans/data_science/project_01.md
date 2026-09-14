@@ -45,3 +45,4 @@
 - 2026-05-11: 8 more tests in `test_text_features_converter.py` covering the three sklearn-backed encoders (`one_hot` / `word_count` / `tfidf`) + `initialize_tools` post-state; total now 25 ([1f75efbb](https://github.com/erdogan-deniz/school-21/commit/1f75efbb)).
 - 2026-05-11: Codecov flag sanitised to `data_science-project_01`; per-flag badge added to README ([e920b520](https://github.com/erdogan-deniz/school-21/commit/e920b520)).
 - 2026-05-11: Sphinx skeleton — `docs/source/{conf.py,index.rst,modules.rst}` mirroring the `new/day_01` pattern; `autodoc_mock_imports` for the heavy NLP/ML deps; wired into `python.yml sphinx` matrix and `pages.yml` unified site (this commit).
+- 2026-09-14: `src/tests/test_text_features_converter.py` reformatted with the repo-wide ruff 0.6.9; notebooks are now excluded from `ruff format` in `.ruff.toml` ([d7f1453](https://github.com/erdogan-deniz/school-21/commit/d7f1453)).

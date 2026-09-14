@@ -37,3 +37,6 @@
 
 - 2026-05-11: README adopted from repo template + Original task preserved (this commit).
 - 2026-05-11: Included in `c.yml` build/test matrix ([8c5bd24d](https://github.com/erdogan-deniz/school-21/commit/8c5bd24d)).
+- 2026-09-14: clang-format 18.1.3 pass (the runner's version; 18.1.8 accepted the file) — `c / clang-format check` green again ([75f638e](https://github.com/erdogan-deniz/school-21/commit/75f638e)).
+- 2026-09-14: Makefile links Check via `pkg-config --libs check` (bare `-lcheck` fallback), replacing the uname branch ([bcc2e1f](https://github.com/erdogan-deniz/school-21/commit/bcc2e1f)); the two `"%%"` sprintf tests pass literal formats so Ubuntu's default `-Wformat-security` + `-Werror` compiles again ([06b3f34](https://github.com/erdogan-deniz/school-21/commit/06b3f34)).
+- 2026-09-14: **Known red:** `sprintf_null_ptr` fails on glibc — `%p` of NULL prints `(nil)` there, `0x0` in `s21_sprintf` (macOS parity). Pre-existing; decide between matching the host libc or making the test platform-tolerant.

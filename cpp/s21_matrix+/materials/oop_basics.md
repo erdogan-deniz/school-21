@@ -213,13 +213,13 @@ Object-oriented programming has also made operator overloading possible. Any sta
 
 ```cpp
 Matrix operator*(Matrix& x);
-``` 
+```
 
 Multiplication of a matrix by a number can also be defined through the same operator, but in a method with a different signature, e.g:
 
 ```cpp
 Matrix operator*(double x);
-``` 
+```
 
 Warning! This method will only work if the matrix is multiplied by a number (in that order). This is because any binary operator in C++ is exposed as an operator between the first and the second operand, and the implementation of the operator that is declared with the first operand is executed. A variable of the double type "doesn't know" how multiplication by a matrix is done. This can be solved as follows. Use an operator with two arguments, but define it **outside the class**. Then the arguments will be treated as corresponding operands. In that case, you will have to make two copies of the overloaded operator with a different order of arguments, e.g:
 
@@ -245,7 +245,7 @@ When overloading operators, it is always worth remembering the following rules:
 
 - You cannot change the number of operands provided by the operator.
 
-So, that’s what the operator overloading is: using several different implementations of an operator depending on the given signature. 
+So, that’s what the operator overloading is: using several different implementations of an operator depending on the given signature.
 
 # The rule of five
 

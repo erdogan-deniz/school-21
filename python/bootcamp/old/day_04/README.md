@@ -20,6 +20,7 @@
     7.1. [Reading and tips](#reading-and-tips)
 
 ## Chapter I
+
 ### General rules
 
 - Your scripts should not quit unexpectedly (giving an error on a valid input). If this happens, your project will be considered non functional and will receive a 0 during the evaluation.
@@ -30,16 +31,18 @@
 - It is also recommended (though not strictly required) that you use type hinting in your code. You can refer to [this article](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html) for a short tutorial.
 
 ## Chapter II
+
 ### Rules of the day
 
 - You should only turn in `*.py` files
 - It is encouraged to write some tests for various cases inside your scripts as well. To make them run only when script is executed directly and not imported from somewhere else you can use `if __name__ == "__main__":` statement. You can read more about it [here](https://www.geeksforgeeks.org/what-does-the-if-__name__-__main__-do/)
 
 ## Chapter III
+
 ### Intro
 
 This was a triumph. At least Chell thought so for a brief moment, when she saw the surface. But
-later, sitting in a storage room and eating a cake, she didn't feel very surprised when the 
+later, sitting in a storage room and eating a cake, she didn't feel very surprised when the
 robotic arm drew the words "HUGE SUCCESS" with a marker on a whiteboard.
 
  "I bet you are very proud of yourself," sound came from one of the personality cores
@@ -50,12 +53,12 @@ Chell sighed. She took the core and threw it as far into the darkness as she cou
  "Physiological parameters are normal," immediately noted another core from the top
  shelf. "Resuming experimentation is recommended."
 
-The door at the far side of the storage suddenly opened, revealing a corridor, apparently 
+The door at the far side of the storage suddenly opened, revealing a corridor, apparently
 leading toanother test chamber. But at the same time the robotic hand tried to grab the
 portal gun. Chell quickly jumped to the side and gave the most angry look to the security
 camera on a wall.
 
- "No need for strong emotions. Aperture Science Handheld Portal Device is not 
+ "No need for strong emotions. Aperture Science Handheld Portal Device is not
  necessarily required for these next tasks. You can hold on to it if you want," the voice
  was as impassive as always. "Please proceed to the Production Center."
 
@@ -63,10 +66,11 @@ Chell hesitated a bit, then shrugged, apparently coming to some conclusion. Afte
 picked up the closest powered personality core from the shelf and went through the door.
 
 ## Chapter IV
+
 ### Exercise 00: Energy Flow
 
 The room turned out to be pretty small. One wall had a large window with a dark behind it.
-Chell's eyes widened in surprise as she realised this was actually a monitoring room for the 
+Chell's eyes widened in surprise as she realised this was actually a monitoring room for the
 test chamber. From the other side.
 
  "Due to mandatory scheduled maintenance, the appropriate chamber for this testing
@@ -92,9 +96,9 @@ A girl with a portal gun moved a chair to the terminal and powered it on.
 
 -----
 
-You need to write a script `energy.py` with a function called `fix_wiring()`, which should accept 
-three iterables (you can test the functionality with just lists) called `cables`, `sockets` and 
-`plugs`. This function shouldn't make any assumptions about the length of those iterables, which 
+You need to write a script `energy.py` with a function called `fix_wiring()`, which should accept
+three iterables (you can test the functionality with just lists) called `cables`, `sockets` and
+`plugs`. This function shouldn't make any assumptions about the length of those iterables, which
 may be different. It should return another iterable over strings with commands like:
 
 `plug cable1 into socket1 using plug1`
@@ -141,10 +145,11 @@ plug cable1 into socket2 using plugY
 ```
 
 To have fun, you can get additional points if the body of your function could be written using only
-one line (starting with `return`), meaning no block-starting colons (like in `if` conditions or 
+one line (starting with `return`), meaning no block-starting colons (like in `if` conditions or
 `try/except`) are used.
 
 ## Chapter V
+
 ### Exercise 01: Personalities
 
  "Did you know turrets also have personalities?"
@@ -182,6 +187,7 @@ Each personality trait should be a random number between 0 and 100, and the sum 
 for every instance should be equal to 100.
 
 ## Chapter VI
+
 ### Exercise 02: Backpressure
 
  "You're showing a great determination to fix that was broken during the... incident. Well
@@ -201,7 +207,7 @@ reconfigured.
 
 First, you need to create a file `pressure.py` a generator function `emit_gel()` which should
 simulate the measured pressure of a liquid. It should generate an infinite stream of numbers going
-from 0 to 100 (values > 100 are considered an error) with a random step sampled from range 
+from 0 to 100 (values > 100 are considered an error) with a random step sampled from range
 `[0, step]` where `step` is an argument of a generator `emit_gel()`.
 
 Second, you need to follow the guidelines for the pressure control. Operating pressure is supposed
@@ -228,18 +234,18 @@ sounded a lot louder and more confident now.
  "I'm glad you've changed your mind and agreed that the goals of Aperture Science about
  making the world a better place are more important than your so called 'freedom'."
 
-Chell turned your face to the camera, smiled and covered her ears with her fingers. If her 
+Chell turned your face to the camera, smiled and covered her ears with her fingers. If her
 calculations were correct, that 'repulsion gel' should start filling up the storage room any second
 now. And then things will probably get really loud for a moment.
 
 And then she will definitely find her way out of this place. After all, she was still alive.
 
 ## Chapter VII
+
 ### Reading and tips
 
 [Basic documentation on Python generators](https://wiki.python.org/moin/Generators)
 
 [Wiki on lazy evaluation](https://en.wikipedia.org/wiki/Lazy_evaluation)
-
 
 **Please leave your feedback [here](https://forms.gle/rnS3JCt86CJyN39B6)**

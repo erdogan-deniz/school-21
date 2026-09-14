@@ -50,8 +50,8 @@ In this project, you will learn basic interview tips, lifehacks for dealing with
        - Know how to present yourself and talk about yourself competently, how to show your value  
        - What you should not talk about at a job interview
 4. [Chapter IV](#chapter-iv) \
-    [Задача](#задача)    
-5. [Chapter V](#chapter-v) 
+    [Задача](#задача)
+5. [Chapter V](#chapter-v)
 
 ## Chapter I
 
@@ -80,6 +80,7 @@ In this project, you'll learn:
 3. [3 tips before interviewing for an internship at a large company](https://journal.tinkoff.ru/internship-interview/).
 
 ## Chapter II
+
 ## General rules
 
 1. Along the way, you'll feel a sense of uncertainty and a severe lack of information. Don't worry: this is perfectly normal. Remember, the information in the repository and on Google is always with you, as are your peers and Rocket.Chat. Communicate, search, use common sense, and don't be afraid to make mistakes.
@@ -92,11 +93,13 @@ In this project, you'll learn:
 8. Don't try to cheat the system or the people around you. After all, you're only fooling yourself.
 9. Got a question? Ask your peers.
 10. When you ask someone for help, always make sure you understand why, how, and for what purpose. Otherwise, the help won't help you.
-11. Always _push_ only to the _develop_ branch! The _master_ branch is ignored. Work in the _src_ directory.
+11. Always *push* only to the *develop* branch! The *master* branch is ignored. Work in the *src* directory.
 12. There should be no files in your directory other than those specified in the tasks.
 
 ## Chapter III
+
 ## Preparing for the interview
+
 ### What does it mean to prepare for an interview?
 
 What kind of interview there might be:
@@ -189,6 +192,7 @@ A few sample questions:
 7. What is a typical day for an employee?
 
 ## Thinking ahead
+
 ### Career Goals
 
 Interviewers often ask job candidates about their career goals. Keep your real goals in mind. Look at your Project 01. If you are clear about your goals, the employer will appreciate it because he/she will understand your motivation. Understanding the career goal also reflects the candidate's responsibility.
@@ -198,13 +202,13 @@ So think ahead about how the dream job will help you achieve your career goal in
 
 ### Salary Questions
 
-Almost every candidate is afraid to talk about salary in an interview. Consider the following phrases: _"I'm afraid to talk about salary because what if I ask for too much and get rejected?"_ This reflects low self-esteem.
+Almost every candidate is afraid to talk about salary in an interview. Consider the following phrases: *"I'm afraid to talk about salary because what if I ask for too much and get rejected?"* This reflects low self-esteem.
 
-_"I'm ashamed to talk about money"_ — this is a common behavioral pattern among Russians who remember Soviet life, when it was inappropriate to talk openly about money, a person just worked and earned the salary that the company assigned.
+*"I'm ashamed to talk about money"* — this is a common behavioral pattern among Russians who remember Soviet life, when it was inappropriate to talk openly about money, a person just worked and earned the salary that the company assigned.
 
-_"I don't know how much money to ask for"_ — it indicates ignorance of how to value one's work, devaluation of one's work, and/or lack of market knowledge.
+*"I don't know how much money to ask for"* — it indicates ignorance of how to value one's work, devaluation of one's work, and/or lack of market knowledge.
 
-_"I don't like asking for money, I feel like a beggar!"_ — it reflects insecurity.
+*"I don't like asking for money, I feel like a beggar!"* — it reflects insecurity.
 
 Each of these fears needs to be worked with so that it doesn't affect your income level.
 
@@ -272,13 +276,14 @@ What to do in these situations and how to respond to an employer's question?
 5. Try to turn an answer to these questions into an appropriate joke.
 
 ## Self-presentation
+
 ### You need to be able to present yourself and speak intelligently about yourself and show your value
 
 Talking about yourself often seems difficult for the candidate. Yet, it is usually the very first question asked by the hiring manager or HR. How do you answer it? You need to have a structure and prepare your answer.
 
 **You don't have to memorize a story about yourself.** When you're nervous, you can get confused and lose focus, so it's better to keep the plan in your head, in a notebook, or on your phone.
 
-**A plan for telling a story about yourself:** 
+**A plan for telling a story about yourself:**
 
 1. Who are you? — What you do for a living, how many years you've been doing it.
 2. Where did you go to college, what's your educational background?
@@ -299,12 +304,15 @@ During the interview process it is strongly discouraged:
 - Bring up matters of religion and politics.
 
 ## Chapter IV
+
 ## Assignment 1
 
 Imagine you've been called in for an interview at your dream company. Prepare answers to 5 typical HR questions. Check your HR: Ask the company five questions.
 
 ## Chapter V
+
 ## Exercise 00
+
 ### 5 Questions from HR
 
 Prepare 5 written answers to the following questions for the position you selected in Project02:
@@ -316,6 +324,7 @@ Prepare 5 written answers to the following questions for the position you select
 5. What made you interested in the company/job?
 
 ## Exercise 01
+
 ### 5 Questions for HR
 
 Research the company website for the job you have chosen and ask HR 5 questions according to your career goals (see Project01).

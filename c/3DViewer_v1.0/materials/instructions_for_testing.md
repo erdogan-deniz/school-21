@@ -1,4 +1,4 @@
-# Instructions for running tests.
+# Instructions for running tests
 
 In addition to testing for correct output data, the autotest system will check your program and its source code for the
 following points:
@@ -23,7 +23,6 @@ following points:
 
   Google Style: https://google.github.io/styleguide/cppguide.html
 
-
 * **Test for correct operation with memory.** When writing C programs, it is very important to watch for memory leaks.
   To do this the _valgrind_ utility is quite often used in Unix-like operating systems. However, OS X has some troubles
   with _valgrind_ support, so it is possible to use the _leaks_ utility instead. We will not go into the mechanism of
@@ -42,6 +41,7 @@ following points:
 
   It’s because _leaks_ did not find _libLeaksAtExit.dylib_ library. \
   You need to type the following commands in this case.
+
   ```sh
   cd /usr/local/lib  
   sudo ln -s /Applications/Xcode.app/Contents/Developer/usr/lib/libLeaksAtExit.dylib
@@ -59,7 +59,7 @@ following points:
    ```sudo apt install valgrind``` \
    To run your executable file using this utility, type in the terminal: \
    ```valgrind --tool=memcheck --leak-check=yes. /main. out```
-   
+
    It is strongly recommended not to use _valgrind_ utility in OS X, use _leaks_ utility instead.
 
 * **Build test.** The program can be checked for correct build on a test system environment. This will require _Docker_

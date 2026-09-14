@@ -1,7 +1,9 @@
 ## Using the **df** utility
+
 df is a command to get a detailed report on the system's disk space usage.
 
 Here are some examples of how to use the df command:
+
 - A simple call to the df command: \
   ![df1](../misc/images/df1.png)
 - Now let's ask the utility to output data in a more readable format using the -h option: \

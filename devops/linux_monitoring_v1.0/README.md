@@ -52,16 +52,16 @@ The russian version of the task can be found in the repository.
 
 ## Contents
 
-1. [Chapter I](#chapter-i) 
+1. [Chapter I](#chapter-i)
 2. [Chapter II](#chapter-ii) \
     2.1. [Bash](#bash) \
     2.2. [Shell](#shell)
 3. [Chapter III](#chapter-iii) \
     3.1. [First effort](#part-1-first-effort)  
     3.2. [System research](#part-2-system-research)  
-    3.3. [Visual output design for the system research script](#part-3-visual-output-design-for-the-system-research-script)   
+    3.3. [Visual output design for the system research script](#part-3-visual-output-design-for-the-system-research-script)
     3.4. [Configuring visual output design for the system research script.](#part-4-configuring-visual-output-design-for-the-system-research-script)  
-    3.5. [File system research](#part-5-file-system-research)    
+    3.5. [File system research](#part-5-file-system-research)
 4. [Chapter IV](#chapter-iv)
 
 ## Chapter I
@@ -138,22 +138,22 @@ Now you’re sure that you’re ready to get down to the initial idea. You quick
 
 Write a bash script. The script should output the following information:
 
-**HOSTNAME** = _network name_  
-**TIMEZONE** = _time zone as: **America/New_York UTC -5** (time zone must be taken from the system and be correct for the current location)_  
-**USER** = _current user who ran the script_  
-**OS** = _type and version of operating system_  
-**DATE** = _current time as: **12 May 2020 12:24:36**_  
-**UPTIME** = _system uptime_  
-**UPTIME_SEC** = _system uptime in seconds_  
+**HOSTNAME** = *network name*  
+**TIMEZONE** = *time zone as: **America/New_York UTC -5** (time zone must be taken from the system and be correct for the current location)*  
+**USER** = *current user who ran the script*  
+**OS** = *type and version of operating system*  
+**DATE** = *current time as: **12 May 2020 12:24:36***  
+**UPTIME** = *system uptime*  
+**UPTIME_SEC** = *system uptime in seconds*  
 **IP** = _ip address of the machine on any of the network interfaces  
-**MASK** = _network mask of any of the network interfaces as: **xxx.xxx.xxx.xxx**_.  
-**GATEWAY** = _default gateway ip_  
-**RAM_TOTAL** = _main memory size in GB with an accuracy of three decimal places as: **3.125 GB**_  
-**RAM_USED** = _used memory size in GB with an accuracy of three decimal places_  
-**RAM_FREE** = _free memory size in GB, with an accuracy of three decimal places_  
-**SPACE_ROOT** = _root partition size in MB, with an accuracy of two decimal places, as **254.25 MB**_  
-**SPACE_ROOT_USED** = _size of used space of the root partition in MB, with an accuracy of two decimal places_  
-**SPACE_ROOT_FREE** = _size of free space of the root partition in MB, with an accuracy of two decimal places_
+**MASK** = *network mask of any of the network interfaces as: **xxx.xxx.xxx.xxx***.  
+**GATEWAY** = *default gateway ip*  
+**RAM_TOTAL** = *main memory size in GB with an accuracy of three decimal places as: **3.125 GB***  
+**RAM_USED** = *used memory size in GB with an accuracy of three decimal places*  
+**RAM_FREE** = *free memory size in GB, with an accuracy of three decimal places*  
+**SPACE_ROOT** = *root partition size in MB, with an accuracy of two decimal places, as **254.25 MB***  
+**SPACE_ROOT_USED** = *size of used space of the root partition in MB, with an accuracy of two decimal places*  
+**SPACE_ROOT_FREE** = *size of free space of the root partition in MB, with an accuracy of two decimal places*
 
 After outputting the values, suggest writing the data to a file (ask the user to answer **Y/N**).  
 Responses **Y** and **y** are considered positive, all others - negative.
@@ -190,6 +190,7 @@ Now everything looks nice! But I don't want to have to enter the colours as para
 Write a bash script. Use the script from [**Part 3**](#part-3-visual-output-design-for-the-system-research-script). The colour designations are similar. The script runs without parameters. The parameters are set in the configuration file before the script is running.
 
 This is how the configuration file must look like:
+
 ```
 column1_background=2
 column1_font_color=4
@@ -199,8 +200,8 @@ column2_font_color=1
 
 If one or more parameters are not set in the configuration file, the colour must be substituted from the default colour scheme. (Choice is at the developer's discretion).
 
-
 After the system information output from [**Part 3**](#part-3-visual-output-design-for-the-system-research-script), you should output the colour scheme by indenting one empty line as follows:
+
 ```
 Column 1 background = 2 (red)
 Column 1 font color = 4 (blue)
@@ -209,6 +210,7 @@ Column 2 font color = 1 (white)
 ```
 
 When running the script with the default colour scheme, the output should look like this:
+
 ```
 Column 1 background = default (black)
 Column 1 font color = default (white)
@@ -227,6 +229,7 @@ The parameter is an absolute or relative path to a directory. The parameter must
 `script05.sh /var/log/`
 
 The script must output the following information about the directory specified in the parameter:
+
 - Total number of folders, including subfolders
 - Top 5 folders with largest size in descending order (path and size)
 - Total number of files
@@ -261,7 +264,6 @@ TOP 10 executable files of the maximum size arranged in descending order (path, 
 etc up to 10  
 Script execution time (in seconds) = 1.5
 ```
-
 
 ## Chapter IV
 

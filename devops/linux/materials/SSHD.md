@@ -1,4 +1,5 @@
 ## Installation and basic configuration of the **SSHD** service
+
 SSH or Secure Shell is a network protocol for secure access from one computer to another over a network. \
 SSHd is a service that accepts connection requests from clients, i.e. other computers. \
 The SSH server is set up by configuring the SSHd daemon program. \

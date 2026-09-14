@@ -1,6 +1,7 @@
 # Bash scripts, part 5: functions and creating libraries
 
 The bash shell provides the ability to create functions. A function in bash can be defined in 2 ways:
+
 ```shell
 functionName {
 }
@@ -10,6 +11,7 @@ functionName1() {
 ```
 
 To call a function in a script, all you have to do is specify its name.
+
 ```shell
 function myfunc {
 echo "This is an example of using a function"
@@ -24,6 +26,7 @@ echo "End of the script"
 ```
 
 The result of the script described above:
+
 ```
 This is an example of using a function
 This is an example of using a function
@@ -42,6 +45,7 @@ If you execute any other command before retrieving the value returned by the fun
 Note that the maximum number the return command can return is 255. If the function needs to return a larger number or string, it will need a different approach.
 
 An example of how the return command works:
+
 ```shell
 function myfunc {
 read -p "Enter a value: " value
@@ -57,6 +61,7 @@ echo "The new value is $?"
 Another way to return the results of a function is to record the data output by the function into a variable. This approach allows you to bypass the limitations of the return command and return any data from the function.
 
 An example of using this approach:
+
 ```shell
 function myfunc {
 read -p "Enter a value: " value
@@ -73,6 +78,7 @@ Function arguments in bash work in the same way as the command line parameters p
 For example, the function name is stored in the $0 parameter, the first argument passed to it in $1, and so on. The number of arguments passed to the function is stored in the $# variable.
 
 An example of using function arguments:
+
 ```shell
 function addnum {
 if [ $# -eq 0 ] || [ $# -gt 2 ]
@@ -102,6 +108,7 @@ echo $value
 Note that the function cannot directly work with parameters that are passed to the script when it is run from the command line.
 
 Passing an array into a function as an argument will not work. This is an example of the wrong approach:
+
 ```shell
 myarray=(1 2 3 4 5)
 echo "The original array is: ${myarray[*]}"
@@ -109,6 +116,7 @@ myfunc $myarray
 ```
 
 Instead, you should pass all the items of the array as separate arguments. An example of the correct approach:
+
 ```shell
 function myfunc {
 newarray=("$@")
@@ -125,6 +133,7 @@ The way global and local variables work in bash scripts is the same as in other 
 
 The only difference is that all variables in the bash script are considered global by default.
 To create a local variable, add the word local before its name:
+
 ```shell
 local temp=$(( $value + 5 ))
 ```
@@ -136,6 +145,7 @@ To use functions described in another file in the script, use the source command
 An example of connecting a function from another file:
 
 The contents of the myfuncs file, which is a library:
+
 ```shell
 function addnum {
 echo $(( $1 + $2 ))
@@ -143,6 +153,7 @@ echo $(( $1 + $2 ))
 ```
 
 Main script:
+
 ```shell
 . ./myfuncs
 result=$(addnum 10 20)

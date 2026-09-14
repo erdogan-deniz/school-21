@@ -1,0 +1,135 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smartcalc"
+version = "3.0.0"
+description = "Extended calculator with loan and deposit modules (School 21)"
+license = { file = "LICENSE" }
+authors = [{ name = "Deniz" }]
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "PyQt6>=6.10,<7",
+    "matplotlib>=3.10,<4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3,<9",
+    "pytest-cov>=7,<8",
+    "coverage>=7.10.6,<8",
+    "hypothesis>=6.100,<7",
+    "mypy>=1.10,<2",
+    "ruff>=0.14,<1",
+]
+
+[project.scripts]
+smartcalc = "main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"*" = ["*.qss", "config.ini"]
+
+# ---------------------------------------------------------------------------
+# pytest
+# ---------------------------------------------------------------------------
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = [
+    "-v",
+    "--tb=short",
+    "--cov=src",
+    "--cov-report=term-missing",
+]
+
+# ---------------------------------------------------------------------------
+# coverage
+# ---------------------------------------------------------------------------
+[tool.coverage.run]
+omit = [
+    "src/view/*",    # UI layer — not covered by unit tests
+    "src/libs/*",    # compiled C library
+    "src/main.py",
+]
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true
+
+# ---------------------------------------------------------------------------
+# ruff
+# ---------------------------------------------------------------------------
+[tool.ruff]
+line-length = 80
+preview = true
+target-version = "py311"
+exclude = [
+    "src/libs",
+    "3DViewer_v1.0",
+    "build",
+    "dist",
+    ".venv",
+]
+
+[tool.ruff.lint]
+# E/W — pycodestyle  F — pyflakes  I — isort  D — pydocstyle (Google convention)
+# N — naming  UP — modern Python  B — bugbear  ANN — annotations
+# SIM — simplify  RET — return  PL — pylint  ARG — unused arguments
+# DOC — pydoclint (Returns/Raises/Yields sections)  RUF — ruff-specific
+select = [
+    "E", "F", "W", "I", "D",
+    "N", "UP", "B", "ANN", "SIM", "RET",
+    "PL", "ARG", "DOC", "RUF", "DTZ", "SLF",
+    "Q", "FURB",
+]
+# DOC502: "Raised exception not explicitly raised" is a known false positive
+# when validation is delegated to a private helper (_validate_inputs pattern).
+ignore = ["DOC502"]
+
+[tool.ruff.lint.per-file-ignores]
+# Cyrillic characters inside triple-quoted HTML strings cannot be suppressed
+# with inline # noqa comments; RUF001 is intentional for Russian UI text.
+"src/view/help_dialog.py" = ["RUF001"]
+"tests/**/*.py" = [
+    # pytest test methods must be instance methods for fixture injection.
+    "PLR6301",
+    # Magic values are expected in test assertions (1_000_001, 255, etc.).
+    "PLR2004",
+    # Local imports are intentional in monkeypatching fixtures.
+    "PLC0415",
+    # Fixture args like `qapp` / `tmp_path` may be used only for side effects.
+    "ARG001",
+    "ARG002",
+    # Pylint simplifications change assertion semantics in tests.
+    "PLC1901",
+    # pytest fixtures return/yield values; DOC sections add noise without value.
+    "DOC201",
+    "DOC402",
+    # Unused unpacked variables in tests are often intentional (xs, ys unpack).
+    "RUF059",
+    # White-box tests import private helpers to verify internal behaviour.
+    "PLC2701",
+]
+
+[tool.ruff.lint.pylint]
+# Domain-specific methods (deposit/graph) legitimately need up to 8 parameters.
+max-args = 8
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
+known-first-party = ["model", "viewmodel", "view", "utils"]
+
+# ---------------------------------------------------------------------------
+# mypy
+# ---------------------------------------------------------------------------
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+exclude = "^(src/libs|3DViewer_v1\\.0|build|dist)"

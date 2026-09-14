@@ -11,14 +11,17 @@ $(error Python 3.11 required, found '$(_PY_VER)'. Run: python3.11 -m venv .venv 
 endif
 endif
 
-# Path to the C sources from smart_calculator.
-# Resolution order:
+# Path to the C sources of SmartCalc v1.0 (the calculator core).
+# Resolution order (mirrors scripts/build_lib.py):
 #   1. SMARTCALC_C_SRC environment variable
-#   2. smart_calculator/src/ inside this repo (bundled copy)
-#   3. c_src/ subdirectory (fallback / git submodule)
-# Example: export SMARTCALC_C_SRC=/path/to/smart_calculator/src
+#   2. ../../c/SmartCalc_v1.0/src — school-21 monorepo layout
+#   3. smart_calculator/src/ inside this folder (bundled copy)
+#   4. c_src/ subdirectory (fallback / git submodule)
+# Example: export SMARTCALC_C_SRC=/path/to/SmartCalc_v1.0/src
 ifdef SMARTCALC_C_SRC
     C_SRC := $(SMARTCALC_C_SRC)
+else ifneq ($(wildcard ../../c/SmartCalc_v1.0/src),)
+    C_SRC := ../../c/SmartCalc_v1.0/src
 else ifneq ($(wildcard smart_calculator/src),)
     C_SRC := smart_calculator/src
 else

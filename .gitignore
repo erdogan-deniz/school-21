@@ -28,6 +28,14 @@ desktop.ini
 nul
 # ── конец общего блока ──
 
+# --- Internal working files: kept locally, never published ---
+# Instructions for AI assistants and the project backlog. Removed from the whole
+# history on 2026-09-24 as well.
+CLAUDE.md
+AGENTS.md
+backlog.md
+ideas.md
+
 # --- Operating system noise ---
 .DS_Store
 Thumbs.db

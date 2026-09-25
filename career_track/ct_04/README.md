@@ -164,7 +164,7 @@ Kanban provides 6 core practices.
 Let's analyze one of them:  
 *Visualize.* All of our work needs to be visualized. This allows us to see our entire current process, understand patterns of performance, and suggest opportunities for improvement. It is often the case that if a task isn't written on the board, it probably won't get done. You should also visualize the rules by which the team operates. For example, visualization will help you see and organize the large flow of incoming requests and inquiries in one place.
 
-Read more about these and [other practices](materials/Канбан.pdf).
+Read more about these and [other practices](materials/канбан.pdf).
 
 The teams using Kanban often have a Service Delivery Manager. This person is responsible for managing the flow of tasks in the Kanban system (he/she doesn't hand out tasks manually) and removing obstacles in the flow. He/she monitors the team's metrics and helps the team plan improvements.
 

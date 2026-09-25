@@ -41,8 +41,6 @@ This repo is undergoing a production-grade overhaul (2026-05). Live status:
 - **Per-subproject plans:** [`docs/plans/`](docs/plans/) — checklist + history
   per subproject.
 - **Design doc:** [`docs/specs/2026-05-11-production-grade-overhaul.md`](docs/specs/2026-05-11-production-grade-overhaul.md).
-- **Working agreement:** [`CLAUDE.md`](CLAUDE.md) — repo-wide rules and conventions.
-- **AI-coding-agent contract:** [`AGENTS.md`](AGENTS.md) — public counterpart of CLAUDE.md, read by Copilot CLI / Cursor / Aider on session start.
 - **Security policy:** [`SECURITY.md`](SECURITY.md) — how to report vulnerabilities + the three-layer leak-prevention stack (gitleaks pre-commit + secrets.yml CI + bandit + pip-audit).
 - **Dev shortcuts:** [`Makefile`](Makefile) — `make install` (pre-commit + dev tooling), `make precommit-all` (run every hook), `make lint-{md,shell,python,cpp,sql,secrets}` for the per-language gates. `make help` lists every target.
 - **Toolchain pins:** [`docs/TOOLCHAIN.md`](docs/TOOLCHAIN.md) — every language / linter / framework version, single source of truth.
@@ -55,7 +53,7 @@ This repo is undergoing a production-grade overhaul (2026-05). Live status:
 - [`content/`](content/) — materials for the repo's design (badge images) and templates ([`content/templates/SUBPROJECT_README.md`](content/templates/SUBPROJECT_README.md)).
 - [`docs/`](docs/) — design specs and per-subproject plans.
 - [`.github/workflows/`](.github/workflows/) — 8 CI workflows (lint, c, cpp, python, sql, devops, docs, pages).
-- [`CLAUDE.md`](CLAUDE.md), [`STATUS.md`](STATUS.md), [`LICENSE`](LICENSE), [`.clang-format`](.clang-format), [`.ruff.toml`](.ruff.toml), [`.gitignore`](.gitignore), [`.markdownlint.json`](.markdownlint.json) — repo-wide configuration and rules.
+- [`STATUS.md`](STATUS.md), [`LICENSE`](LICENSE), [`.clang-format`](.clang-format), [`.ruff.toml`](.ruff.toml), [`.gitignore`](.gitignore), [`.markdownlint-cli2.jsonc`](.markdownlint-cli2.jsonc) — repo-wide configuration and rules.
 - `README.md`: the description file of the repository (you read it).
 
 ## About My Platform Account

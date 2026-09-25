@@ -106,9 +106,9 @@ plus follow-ups). Detail by phase:
   attribution. (`ce85f7a2`)
 - Root `.gitignore` covering OS noise, Python venvs, C/C++ build artefacts,
   editor scratch, coverage outputs. (`0ba3aac8`)
-- [`CLAUDE.md`](CLAUDE.md) — repo-wide working agreement (audience
-  priority, DoD, tracking, autonomy, conventions, naming, README rule).
-  (`04f2a40c`)
+- Repo-wide working agreement (audience priority, DoD, tracking,
+  autonomy, conventions, naming, README rule); kept as a local
+  maintainer file since 2026-09-24. (`04f2a40c`)
 - [`STATUS.md`](STATUS.md) — production-readiness dashboard (37 subprojects ×
   8 DoD items). (`04f2a40c`)
 - [`content/templates/SUBPROJECT_README.md`](content/templates/SUBPROJECT_README.md)
@@ -149,7 +149,7 @@ commits. (`d4cde2a2`)
 
 **Naming convention** — observed two-track convention (`snake_case` for
 libraries, `PascalCase`+version for applications, sequence-suffixed for
-bootcamp days) made explicit in `CLAUDE.md` §7.
+bootcamp days) made explicit in the working agreement.
 
 ### CI workflows (Phase 2 slice 1+2)
 
@@ -189,8 +189,8 @@ Eight GitHub Actions workflows now cover the polyglot repo:
   in preserved School 21 narratives) and MD060 (long preserved-task
   tables). (`5530f24b`, `89e5b0ca`)
 - Root `README.md` gained a Production-readiness section with
-  9 workflow status badges + cross-links to STATUS, plans, design doc,
-  CLAUDE, and the GitHub Pages site. (`642427af`)
+  9 workflow status badges + cross-links to STATUS, plans, design doc
+  and the GitHub Pages site. (`642427af`)
 - `.editorconfig` for IDE consistency.
 - `.github/dependabot.yml` for automated GitHub Actions version bumps.
 
@@ -235,9 +235,7 @@ day_07's canonical setup — autodoc + napoleon + viewcode under furo
 theme; wired into `python.yml` sphinx matrix and `pages.yml` unified
 site. (`a72fda28`)
 
-**`AGENTS.md` + `docs/BRANCH_PROTECTION.md`.** Public counterpart of
-private `CLAUDE.md` covering AI-coding-agent contract; recipe for
-maintainer to apply classic branch protection on `main` once CI
+**`docs/BRANCH_PROTECTION.md`.** Recipe for maintainer to apply classic branch protection on `main` once CI
 stabilises (required-status-check list + tag-protection patterns +
 local pre-commit mirror). (`9352310d`, `24cd9ea6`, `9bffe24e`
 recipe updates)
@@ -312,9 +310,9 @@ defence-in-depth:
 - `pip-audit==2.7.3` matrix job (14 entries) scanning every
   `requirements.txt` against PyPI's CVE / advisory database.
 
-AGENTS.md gained hard rules #7 (never commit secrets — rotate first,
-then refactor, then allow-list rotated values) and #8 (security
-scanners are signal, not noise). (`24cd9ea6`, `9bffe24e`)
+Two hard rules adopted: never commit secrets (rotate first, then
+refactor, then allow-list rotated values) and security scanners are
+signal, not noise. (`24cd9ea6`, `9bffe24e`)
 
 **`devops/simple_docker` smoke + Dockerfile bug fix.** 12 occurrences
 of `chown 755 /bin/...` corrected to `chmod 755` (the sister
@@ -452,11 +450,10 @@ Vulnerability Reporting (PVR) opt-in. The file documents the
 private reporting channel, frames the repo as an educational
 portfolio (not production-deployed), summarises the three-layer
 leak-prevention stack already in place (gitleaks pre-commit +
-secrets.yml CI + bandit + pip-audit), references the rotate-first
-protocol from AGENTS.md rule #7, and explicitly enumerates
-deliberately-NOT-addressed concerns (threat modelling, auto-merge,
-history rewrite) so reports stay scoped. Cross-linked from root
-README and AGENTS.md. (`3b873a0f`)
+secrets.yml CI + bandit + pip-audit), documents the rotate-first
+protocol, and explicitly enumerates deliberately-NOT-addressed
+concerns (threat modelling, auto-merge, history rewrite) so reports
+stay scoped. Cross-linked from root README. (`3b873a0f`)
 
 **Codecov badge href fix — second class of the
 slash-flag bug.** In e920b520 the python.yml matrix had
@@ -490,8 +487,7 @@ none are shadowed):
 `SHELL := /bin/bash` at the top so `mapfile` works in Alpine /
 dash defaults. Tool versions pinned in variables matching
 `.pre-commit-config.yaml` and the CI workflows. Cross-linked from
-root README and AGENTS.md so a fresh contributor (or AI agent)
-sees it on first orientation. (`1e826ba4`, `404ee72d`)
+root README so a fresh contributor sees it on first orientation. (`1e826ba4`, `404ee72d`)
 
 ### Flagships designated (2026-05-11)
 
@@ -513,11 +509,8 @@ as a follow-up batch.
   in `554dc46a` removed `charisel/` from HEAD, but the 3502 files
   still inflate clone size when traversing history. A `git filter-repo`
   pass is technically prepared (`backup-pre-filter-repo` branch
-  exists, `git-filter-repo` installed locally) but the Claude Code
-  agent harness blocks force-push + history-rewrite operations even
-  with verbal user consent — they require either a `Bash(git
-  filter-repo:*)` permission rule in `~/.claude/settings.json` or
-  manual execution via shell. Concrete recipe is documented in the
+  exists, `git-filter-repo` installed locally); history rewrites
+  are run manually by the maintainer. Concrete recipe is documented in the
   history-rewrite follow-up message; queued as Phase 1 op 1.4.
 - **Demo gif/asciinema**: per-subproject demos require local
   execution of subprojects, not autonomously schedulable.

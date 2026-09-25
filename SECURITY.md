@@ -61,10 +61,9 @@ Allowed entries are scoped to two cases only:
    password used as a *default* in `os.environ.get("DB_PASSWORD",
    "1969")` — never a live credential).
 
-**Never** allow-list an active secret. The protocol is documented
-in [`AGENTS.md` rule #7](AGENTS.md): rotate first (upstream
-revocation), refactor source to read from env, then if necessary
-allow-list the rotated value.
+**Never** allow-list an active secret. The protocol: rotate first
+(upstream revocation), refactor source to read from env, then if
+necessary allow-list the rotated value.
 
 ## What's deliberately NOT addressed
 
@@ -77,8 +76,7 @@ allow-list the rotated value.
   All Python and C/C++ pins are deliberate.
 - **History-level secret scrubbing.** A `git filter-repo` pass is
   prepared (`backup-pre-filter-repo` branch exists locally), but
-  history rewrites require the maintainer to run them manually —
-  the Claude Code agent harness blocks force-push by design. The
+  history rewrites are run manually by the maintainer. The
   rotated Telegram bot token and the local Postgres password are
   both **valueless** in their pre-rotation forms, so the practical
   attack surface has been neutralised even before history is

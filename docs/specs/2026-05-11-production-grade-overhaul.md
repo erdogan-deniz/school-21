@@ -2,8 +2,7 @@
 
 > **Status:** approved (2026-05-11)
 > **Owner:** Deniz Erdogan
-> **Implementation lead:** Claude Code (cruise-control mode)
-> **Authoritative companion:** [`CLAUDE.md`](../../CLAUDE.md) (rules), [`STATUS.md`](../../STATUS.md) (live dashboard)
+> **Live dashboard:** [`STATUS.md`](../../STATUS.md)
 
 ## Context
 
@@ -28,8 +27,6 @@ inside subprojects beyond what the DoD requires.
 
 ## Audience and outcomes
 
-(Full text in `CLAUDE.md` §2 and §3. Summary here.)
-
 Audience priority: tech specialists > OSS community > School 21
 students > HR. Outcomes priority: visitor can **evaluate** > visitor
 can **clone and run** > visitor can **use as dependency** (flagships
@@ -52,8 +49,8 @@ exceptions surface explicitly per subproject.
 Goal: minimal production scaffolding without which no later phase
 can land.
 
-Already in place: `CLAUDE.md`, `content/templates/SUBPROJECT_README.md`,
-memory store.
+Already in place: the working agreement and
+`content/templates/SUBPROJECT_README.md`.
 
 Remaining deliverables:
 

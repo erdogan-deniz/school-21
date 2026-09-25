@@ -53,7 +53,7 @@ their READMEs say so explicitly.
 A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 · E Reproducible build · F LICENSE · G Demo · H API docs (Doxygen / Sphinx)
 
-> Full details: [`CLAUDE.md` §4](CLAUDE.md), design: [`docs/specs/2026-05-11-production-grade-overhaul.md`](docs/specs/2026-05-11-production-grade-overhaul.md).
+> Full details and design: [`docs/specs/2026-05-11-production-grade-overhaul.md`](docs/specs/2026-05-11-production-grade-overhaul.md).
 
 ## Subprojects
 

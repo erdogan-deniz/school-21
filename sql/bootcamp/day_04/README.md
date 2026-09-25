@@ -53,7 +53,7 @@ So, what is the difference between 2 objects? The main difference is the "freshn
 |  |  |
 | ------ | ------ |
 | View is a continuous object with the same data like in the underlying table(s), that are used to create this view. Other words, if we select data from view, view reroutes our query to underlying objects and then returns results for us. | ![D04_03](misc/images/d04_03.png) |
-| ![D04_04](misc/images/D04_04.png) | Materialized View is a discrete object. Other words, we need to wait when the Materialized View will be refreshed based on an “event trigger” (for example, time schedule). This object always is behind actual data in underlying tables. |
+| ![D04_04](misc/images/d04_04.png) | Materialized View is a discrete object. Other words, we need to wait when the Materialized View will be refreshed based on an “event trigger” (for example, time schedule). This object always is behind actual data in underlying tables. |
 
 There are also "a few" additional differences between View and Materialized View.
 

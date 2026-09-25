@@ -3,17 +3,17 @@
 * Ubuntu 20.04 Server LTS without GUI was intalled in virtual machine VirtualBox;
 
 * Check Ubuntu version by running the command "cat /etc/issue":
-![Version Ubuntu](Screenshots/task_one_ubuntu_version.png)
+![Version Ubuntu](screenshots/task_one_ubuntu_version.png)
 
 ## Creating a user
 
 * User was created by running the command "sudo useradd denzi33":
-![Creating a user](Screenshots/task_two_create_a_user.png)
+![Creating a user](screenshots/task_two_create_a_user.png)
 
 * User was added to the adm group by running the command "sudo usermod -a -G adm denzi33";
 
 * A list of users and folders show by running the command "sudo cat /etc/passwd":
-![List of users and folders](Screenshots/task_two_list_of_users_and_folders.png)
+![List of users and folders](screenshots/task_two_list_of_users_and_folders.png)
 
 ## Setting up the OS network
 
@@ -26,12 +26,12 @@
 * Timezone has been set by running the command "timedate set-timezone Europe/Moscow";
 
 * Display a list of interfaces by running the command "ifcongfig -a":
-![Displat a list of interfaces](Screenshots/task_three_a_list_of_interfaces.png)
+![Displat a list of interfaces](screenshots/task_three_a_list_of_interfaces.png)
 
   * lo (loopback device) is a virtual interface present by default in any Linux. It is used to debug network programs and run server applications on the local machine. The address 127.0.0.1 is always associated with this interface.;
 
 * Getting the IP address from DHCP by running the command "ip a show":
-![Display IP address from DHCP server](Screenshots/task_three_the_ip_dhcp.png)
+![Display IP address from DHCP server](screenshots/task_three_the_ip_dhcp.png)
 
   * DHCP (Dynamic Host Configuration Protocol) is a network management protocol used to automate the process of configuring devices on IP networks, thus allowing them to use network services such as DNS, NTP, and any communication protocol based on UDP or TCP.;
 
@@ -40,19 +40,19 @@
 * At first install a curl tools by running the command "sudo apt-get install curl";
 
 * Display the external IP address of the gateway by running the command "curl ident.me":
-![Display the external IP address](Screenshots/task_three_external_ip_address.png)
+![Display the external IP address](screenshots/task_three_external_ip_address.png)
 
 * The external IP is 195.133.239.83;
 
 * Display the internal IP address of the gateway by running the command "ip route | grep default":
-![Display the internal IP address](Screenshots/task_three_internal_ip_address.png)
+![Display the internal IP address](screenshots/task_three_internal_ip_address.png)
 
 * Opening a file "00-unstaller-config.yaml" with nano mode;
 
 * Setting the static ip, gw, dns settings by redactoring file;
 
 * Display a settings by running the command "cat /etc/netplan/00-installer-config.yaml":
-![Display static data](Screenshots/task_three_static_settings.png)
+![Display static data](screenshots/task_three_static_settings.png)
 
 * After running the command "sudo netplan apply";
 
@@ -61,7 +61,7 @@
 * Display againg a settings by running the command "cat /etc/netplan/00-installer-config.yaml";
 
 * Ping 1.1.1.1 and ya.ru by running the commands "ping -c 5 1.1.1.1" and "ping -c 5 ya.ru":
-![Ping](Screenshots/task_three_ping.png)
+![Ping](screenshots/task_three_ping.png)
 
 ## OS Update
 
@@ -70,7 +70,7 @@
 * Run the command "sudo apt-get dist-upgrade";
 
 * Run again the last command:
-![Updating Ubuntu](Screenshots/task_four_updating_ubuntu.png)
+![Updating Ubuntu](screenshots/task_four_updating_ubuntu.png)
 
 ## Using the sudo command
 
@@ -83,14 +83,14 @@
 * Change the OS hostname via the user created in part 2 by running the command "sudo hostnamectl set-hostname school21";
 
 * Display the new hostname by running the command "hostname":
-![Display new hostname](Screenshots/task_five_new_hostname.png)
+![Display new hostname](screenshots/task_five_new_hostname.png)
 
 ## Installing and configuring the time service
 
 * Set up the automatic time synchronisation service by running the command "sudo timedatectl set-ntp on";
 
 * Output the time of the time zone in which I currently located by running the command "timedatectl show":
-![Display time zone](Screenshots/task_six_time.png)
+![Display time zone](screenshots/task_six_time.png)
 
 ## Installing and using text editors
 
@@ -99,37 +99,37 @@
 * Create a file with NANO redactor by running the command "nano test_nano.txt";
 
 * Write in file nickname:
-![Create a file with NANO](Screenshots/task_seven_create_a_file_with_nano.png)
+![Create a file with NANO](screenshots/task_seven_create_a_file_with_nano.png)
   * To exit with the changes saved press combination "control" + "X" after press "Y" and "Enter";
 
 * Create a file with VIM redactor by running the command "vim test_vim.txt";
 
 * Write in file nickname:
-![Create a file with VIM](Screenshots/task_seven_create_a_file_with_vim.png)
+![Create a file with VIM](screenshots/task_seven_create_a_file_with_vim.png)
   * To exit with the changes saved press "esc" after write ":wq" and press "Enter";
 
 * Create a file with JOE redactor by running the command "joe test_joe.txt";
 
 * Write in file nickname:
-![Create a file with JOE](Screenshots/task_seven_create_a_file_with_joe.png)
+![Create a file with JOE](screenshots/task_seven_create_a_file_with_joe.png)
   * To exit with the changes saved press combination "control" + "K" after press "Q" and press "Y";
 
 * Open a file with NANO redactor by running the command "nano test_nano.txt";
 
 * Write in file "21 school 21":
-![Open a file with NANO](Screenshots/task_seven_open_a_file_with_nano.png)
+![Open a file with NANO](screenshots/task_seven_open_a_file_with_nano.png)
   * To exit with the changes saved press combination "control" + "X" after press "N";
 
 * Open a file with VIM redactor by running the command "vim test_vim.txt";
 
 * Write in file "21 school 21":
-![Open a file with VIM](Screenshots/task_seven_open_a_file_with_vim.png)
+![Open a file with VIM](screenshots/task_seven_open_a_file_with_vim.png)
   * To exit with the changes saved press "esc" after write ":q!" and press "Enter";
 
 * Open a file with JOE redactor by running the command "joe test_joe.txt";
 
 * Write in file "21 school 21":
-![Open a file with JOE](Screenshots/task_seven_open_a_file_with_joe.png)
+![Open a file with JOE](screenshots/task_seven_open_a_file_with_joe.png)
   * To exit with the changes saved press combination "control" + "K" after press "Z";
 
 * Open a file with NANO redactor by running the command "nano test_nano.txt";
@@ -137,30 +137,30 @@
 * Write in file "one two three";
 
 * Find in file "one":
-![Search in file with NANO](Screenshots/task_seven_search_in_file_with_nano.png)
+![Search in file with NANO](screenshots/task_seven_search_in_file_with_nano.png)
 
 * Replace "one" to "two":
-![Replace in file with NANO](Screenshots/task_seven_replace_in_file_with_nano.png)
+![Replace in file with NANO](screenshots/task_seven_replace_in_file_with_nano.png)
 
 * Open a file with VIM redactor by running the command "vim test_vim.txt";
 
 * Write in file "one two three";
 
 * Find in file "one":
-![Search in file with VIM](Screenshots/task_seven_search_in_file_with_vim.png)
+![Search in file with VIM](screenshots/task_seven_search_in_file_with_vim.png)
 
 * Replace "one" to "two":
-![Replace in file with VIM](Screenshots/task_seven_replace_in_file_with_vim.png)
+![Replace in file with VIM](screenshots/task_seven_replace_in_file_with_vim.png)
 
 * Open a file with JOE redactor by running the command "joe test_joe.txt";
 
 * Write in file "one two three";
 
 * Find in file "one":
-![Search in file with JOE](Screenshots/task_seven_search_in_file_with_joe.png)
+![Search in file with JOE](screenshots/task_seven_search_in_file_with_joe.png)
 
 * Replace "one" to "two":
-![Replace in file with JOE](Screenshots/task_seven_replace_in_file_with_joe.png)
+![Replace in file with JOE](screenshots/task_seven_replace_in_file_with_joe.png)
 
 ## Installing and basic setup of SSHD service
 
@@ -175,14 +175,14 @@
 * Write in last line "Port 2022";
 
 * Show the presence of the sshd process by running the command "ps -C sshd":
-![Display sshds](Screenshots/task_eight_display_sshd.png)
+![Display sshds](screenshots/task_eight_display_sshd.png)
   * ps - report a snapshot of the current processes;
   * -C - select processes by command name;
 
 * We need to install net-tools by running the command "sudo apt install net-tools";
 
 * Using the command "netstat -tan":
-![Display netstat](Screenshots/task_eight_netstat.png)
+![Display netstat](screenshots/task_eight_netstat.png)
 
 * Explain the meaning of the -tan keys, the value of each output column, the value 0.0.0.0. in the report:
   * -t - show only TCP ports;
@@ -213,27 +213,27 @@
 
 * Htop sorted by:
   * PID:
-  ![Sorted PID](Screenshots/task_nine_sorted_pid.png)
+  ![Sorted PID](screenshots/task_nine_sorted_pid.png)
 
   * PERCENT_CPU:
-  ![Sorted PERCENT_CPU](Screenshots/task_nine_sorted_percent_cpu.png)
+  ![Sorted PERCENT_CPU](screenshots/task_nine_sorted_percent_cpu.png)
 
   * PERCENT_MEM:
-  ![Sorted PERCENT_MEM](Screenshots/task_nine_sorted_percent_mem.png)
+  ![Sorted PERCENT_MEM](screenshots/task_nine_sorted_percent_mem.png)
 
   * TIME:
-  ![Sorted TIME](Screenshots/task_nine_sorted_time.png)
+  ![Sorted TIME](screenshots/task_nine_sorted_time.png)
 
   * Filtered sshd process:
-  ![Sshd process](Screenshots/task_nine_filtered_sshd.png)
+  ![Sshd process](screenshots/task_nine_filtered_sshd.png)
 
   * With the syslog process found by searching:
-  ![Display syslog](Screenshots/task_nine_find_syslog.png)
+  ![Display syslog](screenshots/task_nine_find_syslog.png)
 
 * Press combination "Shift" + "s" to redact htop bar after add clock and hostname by the end press "esc";
 
 * Display with hostname, clock and uptime output added:
-  ![Display hostname](Screenshots/task_nine_hostname.png)
+  ![Display hostname](screenshots/task_nine_hostname.png)
 
 ## Using the fdisk utility
 
@@ -272,27 +272,27 @@
 * Run the command "du":
 
 * Size of "/home" is 88 Kbytes:
-![Display size of /home](Screenshots/task_twelve_home.png)
+![Display size of /home](screenshots/task_twelve_home.png)
 
 * Size of "/var" is 711 Mbytes:
-![Display size of /var](Screenshots/task_twelve_var.png)
+![Display size of /var](screenshots/task_twelve_var.png)
 
 * Size of "/var/log" is 19 Mbytes:
-![Display size of /var/log](Screenshots/task_twelve_log.png)
+![Display size of /var/log](screenshots/task_twelve_log.png)
 
 * Size of all contents in "/var/log*":
-![Display all of /var/log](Screenshots/task_twelve_varlog*.png)
+![Display all of /var/log](screenshots/task_twelve_varlog.png)
 
 ## Installing and using the ncdu utility
 
 * Install ncdu by running the command "sudo apt-get install ncdu":
-![Install ncdu](Screenshots/task_thirteen_install_ncdu.png)
+![Install ncdu](screenshots/task_thirteen_install_ncdu.png)
 
 * Run the command "ncdu":
-![Check size of home and var](Screenshots/task_thirteen_var_home.png)
+![Check size of home and var](screenshots/task_thirteen_var_home.png)
 
 * And go to directory var:
-![Check size of var/log](Screenshots/task_thirteen_var_log.png)
+![Check size of var/log](screenshots/task_thirteen_var_log.png)
 
 ## Working with system logs
 
@@ -303,7 +303,7 @@
 * Restart sshd system by running the command "shutdown -r now";
 
 * Check log files by running the command "cat /var/log/auth.log":
-![Restart sshd](Screenshots/task_fourteen_restart.png)
+![Restart sshd](screenshots/task_fourteen_restart.png)
 
 ## Using the CRON job scheduler
 

@@ -297,7 +297,7 @@ Answer the question, "What is it that attracts you? Why do you want to work ther
 5. Again, remind everyone of your motivation. For example: I would like to be considered for this position.
 6. Include your contact information.
 
-Example of a [Cover Letter](Materials/Cover_Letter.pdf). (available for download in the Materials folder -> Cover_Letter)
+Example of a [Cover Letter](materials/Сопроводительное_письмо.pdf) (available for download in the `materials` folder).
 
 ## How do you discuss salary?
 

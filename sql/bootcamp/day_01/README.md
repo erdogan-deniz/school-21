@@ -39,7 +39,7 @@ Resume: Today you will see how to get needed data based on sets constructions an
 
 ## Preamble
 
-![D01_01](misc/images/d01_01.png)
+![D01_01](content/images/day_01_01.png)
 
 In many aspects, sets are used in Relational Databases. Not just, make UNION or find MINUS between sets. Sets are also good candidates to make recursive queries.
 
@@ -55,7 +55,7 @@ The main rules to work with sets are below
 - The main SQL provides final names of attributes for whole query
 - The attributes of controlled SQL should satisfy number of columns and corresponding family types of main SQL
 
-![D01_02](misc/images/d01_02.png)
+![D01_02](content/images/day_01_02.png)
 
 Moreover, SQL sets are useful  to calculate some specific Data Science metrics, for example Jaccard distance between 2 objects based on existing data features.
 
@@ -80,11 +80,11 @@ Moreover, SQL sets are useful  to calculate some specific Data Science metrics, 
 ## Rules of the day
 
 - Please make sure you have an own database and access for it on your PostgreSQL cluster.
-- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community).
+- Please download a [script](resources/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community).
 - All tasks contain a list of Allowed and Denied sections with listed database options, database types, SQL constructions etc. Please have a look at the section before you start.
 - Please take a look at the Logical View of our Database Model.
 
-![schema](misc/images/schema.png)
+![schema](content/images/schema.png)
 
 1. **pizzeria** table (Dictionary Table with available pizzerias)
 

@@ -40,7 +40,7 @@ Write a shell script that:
 The result in the file must be formatted in such a way that each field is placed on a different line.
 See the example below:
 
-![0](misc/images/0.png)
+![0](content/images/0.png)
 
 Your script must be executable.
 The interpreter to use is `/bin/sh`.
@@ -65,7 +65,7 @@ Write a shell script called json_to_csv.sh that:
 
 See the example below:
 
-![1](misc/images/1.png)
+![1](content/images/1.png)
 
 The CSV file must have headers in the first row.
 Your script must be executable. The interpreter to use is /bin/sh.

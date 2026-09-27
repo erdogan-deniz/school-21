@@ -13,7 +13,7 @@ if you scrape `.github/workflows/`.
 | -------- | ------------------- | ---------------------------------------------------------- |
 | C        | C11 (gcc, GNU)      | School 21 standard; pinned in every C subproject Makefile. |
 | C++      | C++17 (g++, GNU)    | School 21 standard for the OOP track.                      |
-| Python   | 3.12                | `.ruff.toml` `target-version`; CI `actions/setup-python@v5` argument. |
+| Python   | 3.12                | `.ruff.toml` `target-version`; CI `actions/setup-python@v6` argument. |
 | SQL      | PostgreSQL 16-ish   | `sql.yml` sqlfluff `--dialect postgres`.                   |
 | Bash     | POSIX + bash 5.x    | Ubuntu LTS shipped by GitHub Actions runners.              |
 | Docker   | latest stable       | Provided by Ubuntu LTS runner image.                       |

@@ -67,7 +67,7 @@ jobs:
           - subproject: cpp/s21_matrix+
             artifact: doxygen-cpp-s21_matrix+
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install Doxygen + Graphviz
         run: |
           sudo apt-get update
@@ -102,7 +102,7 @@ jobs:
           doxygen Doxyfile
       - name: Upload generated docs
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ${{ matrix.artifact }}
           path: ${{ matrix.subproject }}/docs/api/

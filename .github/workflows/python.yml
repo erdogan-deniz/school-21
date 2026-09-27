@@ -38,8 +38,8 @@ jobs:
     # is now hard. Lint gate stays soft until the remaining 181
     # findings (unsafe-fix territory) get per-subproject triage.
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -59,8 +59,8 @@ jobs:
     # `.bandit` (or skip-list in the run line) before flipping hard.
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -109,8 +109,8 @@ jobs:
           - reqs: python/bootcamp/old/team_01/src/requirements.txt
           - reqs: python/bootcamp/new/day_02/requirements.txt
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -153,8 +153,8 @@ jobs:
             workdir: data_science/project_01/src
             flag: data_science-project_01
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -171,7 +171,7 @@ jobs:
         run: |
           pytest -v --cov=. --cov-report=xml --cov-report=term || true
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
           files: ${{ matrix.workdir }}/coverage.xml
           flags: ${{ matrix.flag }}
@@ -193,8 +193,8 @@ jobs:
       run:
         working-directory: python/SmartCalc_v3.0
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
           cache: 'pip'
@@ -218,7 +218,7 @@ jobs:
           QT_QPA_PLATFORM: offscreen
         run: pytest --cov-report=xml
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
           files: python/SmartCalc_v3.0/coverage.xml
           flags: python-SmartCalc_v3.0
@@ -255,8 +255,8 @@ jobs:
             docs_dir: docs
             artifact: sphinx-data_science-project_01
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -280,7 +280,7 @@ jobs:
         continue-on-error: true
       - name: Upload generated docs
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ${{ matrix.artifact }}
           path: ${{ matrix.workdir }}/${{ matrix.docs_dir }}/build/html/

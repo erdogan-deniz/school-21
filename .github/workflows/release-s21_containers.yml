@@ -31,7 +31,7 @@ jobs:
     name: build + test s21_containers (header-only)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Install build deps (pinned)
         run: |
@@ -94,7 +94,7 @@ jobs:
           cd _release && tar czf "s21_containers-${GITHUB_REF_NAME}.tar.gz" s21_containers/
 
       - name: Upload tarball as workflow artefact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: s21_containers-${{ github.ref_name }}
           path: _release/s21_containers-*.tar.gz
@@ -102,7 +102,7 @@ jobs:
 
       - name: Publish GitHub Release (on tag)
         if: startsWith(github.ref, 'refs/tags/')
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           name: ${{ github.ref_name }}
           tag_name: ${{ github.ref_name }}

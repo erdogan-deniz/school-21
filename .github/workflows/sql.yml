@@ -41,7 +41,6 @@ jobs:
   bootcamp-schema-load:
     name: bootcamp schema-load (postgres 16)
     runs-on: ubuntu-latest
-    continue-on-error: true
     # Spin up a Postgres 16 service and verify every numbered day's
     # `model.sql` loads end-to-end against a fresh `public` schema. This
     # is the smoke-equivalent of `make test-all` from sql/bootcamp/.

@@ -61,7 +61,7 @@ In this project, you'll learn how to:
 
 References:
 
-1. [A list of soft skills and how to develop them](materials/Перечень_навыков_.pdf).
+1. [A list of soft skills and how to develop them](materials/skills-list.pdf).
 2. [How to build a perfect relationship with your boss](https://prosto.rabota.ru/post/idealno-s-nachalnikom/).
 3. [How to build a perfect relationship with your colleagues](https://prosto.rabota.ru/post/idealnye-otnosheniya-s-kollegami/).
 4. "Career Rules. Everything you need for career advancement" by Templar Richard.

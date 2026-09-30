@@ -85,7 +85,7 @@ Within the project, you will:
 Where and how to search for job vacancies and internship *programs?* Job market analysis is the key to finding a job. Analysis will help you understand which positions you are suitable for, what skills you already have, and which ones you need to improve or acquire. Job analytics will help you understand the specifics of a particular position that you like.
 
 *How to conduct such an analysis?* Enter various desired positions into the table and determine which requirements and responsibilities are most commonly encountered.
-[Example of the "Market Analysis" table](materials/Анализ_вакансий.xlsx) (available for download in the folder materials -> Анализ_вакансий).
+[Example of the "Market Analysis" table](materials/vacancy-analysis.xlsx) (available for download in the folder materials -> Анализ_вакансий).
 
 *Why is it necessary to perform such analysis?*
 

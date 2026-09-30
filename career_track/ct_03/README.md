@@ -291,7 +291,7 @@ Talking about yourself often seems difficult for the candidate. Yet, it is usual
 4. Where do you work now and what are you responsible for? — Tell the interviewer more about your current responsibilities and results.
 5. Your career goals and motivation.
 
-[Example of a story about yourself](materials/Пример_рассказа_о_себе.pdf)
+[Example of a story about yourself](materials/self-introduction-example.pdf)
 
 ### What not to talk about in an interview
 

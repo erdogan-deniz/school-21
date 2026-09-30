@@ -68,11 +68,11 @@ While working on a project, you'll strengthen your teamwork skills and get answe
 
 1. [Agile Manifesto](https://agilemanifesto.org/iso/ru/manifesto.html).
 2. [SCRUM guide](https://scrumguides.org/scrum-guide.html) (available for download in the materials -> Scrum-Guide folder).
-3. Brief guide to Kanban (available for download in the materials folder -> Канбан).
+3. Brief guide to Kanban (available for download in the materials folder -> kanban).
 4. [Scrum Simulator](https://www.scrum.org/open-assessments/scrum-open).
 5. [Exercises for retro](https://retromat.org/ru/?id=59-128-41-124-112).
 6. The book "The Path of the Scrum Master". #ScrumMasterWay.
-7. The book "Agile Teams Coaching" (available for download in the materials -> Agile-команд, Agile folder).
+7. The book "Agile Teams Coaching" (available for download in the materials -> agile-teams, agile folder).
 8. Book "Agile Retrospective: How to Turn a Good Team into a Great One".
 
 ## Chapter II

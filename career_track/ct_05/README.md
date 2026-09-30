@@ -60,11 +60,11 @@ Let's start with the terminology:
 
 References:
 
-1. ["New Rules of Business Correspondence," M. Ilyakhov](materials/Деловая_переписка.pdf).
+1. ["New Rules of Business Correspondence," M. Ilyakhov](materials/business-correspondence.pdf).
 2. [Big difference: how corporate culture differs between large corporations and IT startups](https://www.forbes.ru/karera-i-svoy-biznes/348291-bolshaya-raznica-chem-razlichaetsya-korporativnaya-kultura-bolshih).
-3. ["Rules of Business Communication. 33 dos and don'ts", N. Zvereva](materials/Правила_делового_общения.pdf).
-4. ["Manners for Careers," O. Sheveleva](materials/Манеры_для_карьеры.pdf).
-5. [The second chapter of Dale Carnegie's book, How to Win Friends and Influence People](materials/Как_завоевать_друзей.pdf).
+3. ["Rules of Business Communication. 33 dos and don'ts", N. Zvereva](materials/business-communication-rules.pdf).
+4. ["Manners for Careers," O. Sheveleva](materials/manners-for-career.pdf).
+5. [The second chapter of Dale Carnegie's book, How to Win Friends and Influence People](materials/how-to-win-friends.pdf).
 6. [Liability for personal data leakage](https://rt-solar.ru/products/solar_dozor/blog/2795/).
 7. [What is cybersecurity?](https://www.kaspersky.ru/resource-center/definitions/what-is-cyber-security)
 8. [What is cybersecurity?](https://www.sap.com/central-asia-caucasus/products/financial-management/what-is-cybersecurity.html)
@@ -98,9 +98,9 @@ Another definition of corporate culture is this: Corporate culture consists of s
 
 Before you go any further, we suggest you read three books:
 
-1. ["New Rules of Business Correspondence," by M. Ilyakhov](materials/Деловая_переписка.pdf).
-2. ["Rules of Business Communication. 33 dos and don'ts" by N. Zvereva](materials/Правила_делового_общения.pdf).
-3. [О. Sheveleva's "Manners for a Career"](materials/Манеры_для_карьеры.pdf).
+1. ["New Rules of Business Correspondence," by M. Ilyakhov](materials/business-correspondence.pdf).
+2. ["Rules of Business Communication. 33 dos and don'ts" by N. Zvereva](materials/business-communication-rules.pdf).
+3. [О. Sheveleva's "Manners for a Career"](materials/manners-for-career.pdf).
 
 Let's break down how to dive in and explore each element of the culture.
 
@@ -156,9 +156,9 @@ Find out if the company has open areas where you can work, such as a coffee shop
 
 The next big block is dedicated to communication. You don't work alone, you work in a team, and it is very important to establish communication in such a way that colleagues would want to talk to you and help you. We recommend you to go through these books:
 
-1. ["New Rules of Business Correspondence," by M. Ilyakhov](materials/Деловая_переписка.pdf).
-2. ["Rules of Business Communication. 33 dos and don'ts" by N. Zvereva](materials/Правила_делового_общения.pdf).
-3. [О. Sheveleva's "Manners for a Career"](materials/Манеры_для_карьеры.pdf).
+1. ["New Rules of Business Correspondence," by M. Ilyakhov](materials/business-correspondence.pdf).
+2. ["Rules of Business Communication. 33 dos and don'ts" by N. Zvereva](materials/business-communication-rules.pdf).
+3. [О. Sheveleva's "Manners for a Career"](materials/manners-for-career.pdf).
 
 **Conversations**
 No matter who you are talking to, you need to get to know them first. Do not hesitate to ask your colleague's name again and ask a few casual questions: how long has he/she been with the company, what does he/she do, etc. Don't forget to introduce yourself, tell them who you are and what you are doing. It's important to say hello if you haven't seen the person that day, and goodbye if the day is ending. Address people by name.

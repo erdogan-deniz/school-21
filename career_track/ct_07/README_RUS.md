@@ -29,7 +29,7 @@
 
 Литература:
 
-1. [Сам себе бренд](materials/Сам_себе_бренд.pdf).
+1. [Сам себе бренд](materials/personal-brand.pdf).
 
 <h2 id="chapter-ii">Chapter II</h2>
 <h2 id="genеral-rules">Genеral rules</h2>  

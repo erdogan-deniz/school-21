@@ -52,7 +52,7 @@ When we talk about career planning, this question seems too complicated. How do 
 Key competencies for career advancement: What competencies are needed for career growth? Understand the difference between a person who sees opportunities and a person who sees limitations, and how to reframe thinking. You'll learn how to develop the most important competencies: opportunity awareness and self-presentation.
 References:
 
-1. [Be Your Own Brand: A Breakthrough Formula for Standing Out from the Crowd by David McNally](materials/Сам_себе_бренд.pdf).
+1. [Be Your Own Brand: A Breakthrough Formula for Standing Out from the Crowd by David McNally](materials/personal-brand.pdf).
 
 ## Chapter II
 

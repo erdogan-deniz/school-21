@@ -37,7 +37,7 @@
 
 <!-- Append: - YYYY-MM-DD: short description ([commit](https://github.com/erdogan-deniz/school-21/commit/<sha>)) -->
 
-- 2026-09-14: Imported as a one-commit snapshot of the School 21 GitLab repo `APP2_SmartCalc_v3.0_Desktop_Python` (branch `develop`, 757e3db) ([25c282c](https://github.com/erdogan-deniz/school-21/commit/25c282c)).
+- 2026-09-14: Imported as a one-commit snapshot of the School 21 GitLab repo `APP2_SmartCalc_v3.0_Desktop_Python` (branch `develop`, aabd717) ([25c282c](https://github.com/erdogan-deniz/school-21/commit/25c282c)).
 - 2026-09-14: C core resolved from `../../c/SmartCalc_v1.0/src` in `build_lib.py` + Makefile ([193dd6a](https://github.com/erdogan-deniz/school-21/commit/193dd6a)); the C header bug that blocked the build fixed in `c/SmartCalc_v1.0` ([26b8310](https://github.com/erdogan-deniz/school-21/commit/26b8310)).
 - 2026-09-14: Dedicated CI job + repo-wide ruff exclusion ([b090dcf](https://github.com/erdogan-deniz/school-21/commit/b090dcf)); ruff format pass ([1fb5bad](https://github.com/erdogan-deniz/school-21/commit/1fb5bad)).
 - 2026-09-14: README brought to repo template, plan created, STATUS row added ([1491cec](https://github.com/erdogan-deniz/school-21/commit/1491cec)).

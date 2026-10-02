@@ -19,7 +19,7 @@ jobs:
     name: markdownlint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v5
         with:
           node-version: '20'
@@ -34,7 +34,7 @@ jobs:
     name: link-check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - name: Run lychee link checker
         uses: lycheeverse/lychee-action@v2
         with:

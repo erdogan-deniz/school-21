@@ -77,7 +77,7 @@
 
 - В папке `docs` есть необходимые файлы (`Makefile`) для автосборки документации при помощи `Sphinx`. Для этого необходимо в папке `docs` ввести команду `make html`;
 
-- Также можно найти уже готовую документацию в папке `docs/build/html`. Это файлы: `index.html`, `manual.html`, `doc.html`;
+- После сборки документация появляется в папке `docs/build/html`. Это файлы: `index.html`, `manual.html`, `doc.html`;
   - `index.html` - документация по игре, геймплею, проекты;
   
   ![Index](description/index.jpg)

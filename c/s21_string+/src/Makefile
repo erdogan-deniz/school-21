@@ -13,8 +13,13 @@ s21_strcpy.c s21_strlen.c s21_strspn.c s21_strncmp.c s21_strncpy.c \
 s21_to_upper.c s21_to_lower.c s21_strcspn.c s21_strrchr.c s21_strstr.c s21_strtok.c \
 s21_trim.c s21_strpbrk.c s21_insert.c s21_sprintf.c s21_strerror.c
 
+# Tests are split by function family; s21_string_test.c is the runner.
+TEST_SOURCES:= s21_string_test.c test_part1.c test_str.c test_mem.c \
+test_part5.c test_sprintf.c test_sprintf_hex.c test_sscanf_1.c test_sscanf_2.c
+
 OBJECTS = $(addprefix obj/,$(SOURCES:.c=.o))
 OBJECTS_GCOV = $(addprefix gcov_obj/,$(SOURCES:.c=.o))
+TEST_OBJECTS_GCOV = $(addprefix gcov_obj/,$(TEST_SOURCES:.c=.o))
 
 .PHONY: all gcov_report clean rebuild
 
@@ -26,18 +31,18 @@ s21_string_gcov.a: $(OBJECTS_GCOV)
 s21_string.a: $(OBJECTS)
 	ar -src $@ $(OBJECTS)
 
-test: gcov_obj/s21_string_test.o s21_string_gcov.a
-	$(CC)  gcov_obj/s21_string_test.o s21_string_gcov.a -o $@ $(LDFLAGS) $(GCOVFLAGS)
+test: $(TEST_OBJECTS_GCOV) s21_string_gcov.a
+	$(CC) $(TEST_OBJECTS_GCOV) s21_string_gcov.a -o $@ $(LDFLAGS) $(GCOVFLAGS)
 	./test
 
 gcov_report:
-	$(CC) $(CFLAGS) --coverage s21_string_test.c $(SOURCES) -o gcovreport \
+	$(CC) $(CFLAGS) --coverage $(TEST_SOURCES) $(SOURCES) -o gcovreport \
 	$(CHECK_LIBS) -lm
 	./gcovreport
 	lcov -t "gcovreport" -o gcovreport.info -c -d .
 	genhtml -o report gcovreport.info
 
-gcov_obj/%.o: %.c
+gcov_obj/%.o: %.c s21_string.h s21_string_test.h
 	$(CC) $(CFLAGS) $(GCOVFLAGS) -c $< -o $@
 
 obj/%.o: %.c

@@ -10,7 +10,7 @@ OUTPUT_LANGUAGE        = English
 INPUT                  = src/
 RECURSIVE              = YES
 FILE_PATTERNS          = *.c *.h
-EXCLUDE_PATTERNS       = */test_html/* */gcov_obj/* */obj/* */code-samples/* s21_string_test.c
+EXCLUDE_PATTERNS       = */test_html/* */gcov_obj/* */obj/* */code-samples/* */s21_string_test.* */test_*.c
 
 EXTRACT_ALL            = YES
 EXTRACT_STATIC         = YES

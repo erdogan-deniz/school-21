@@ -1,6 +1,6 @@
 # `sql/bootcamp` — production-readiness plan
 
-> Status row in [`/STATUS.md`](../../../STATUS.md). Last reviewed: 2026-05-11.
+> Status row in [`/STATUS.md`](../../../STATUS.md). Last reviewed: 2026-10-18.
 
 ## At a glance
 
@@ -38,3 +38,4 @@
 
 - 2026-05-11: README adopted from former empty `#` placeholder + day-by-day index; `sql.yml` workflow added ([4bc35f94](https://github.com/erdogan-deniz/school-21/commit/4bc35f94)).
 - 2026-05-11: `docker-compose.yml` + `Makefile` for one-line reproducible setup; `sql.yml` gains the `bootcamp-schema-load` job spinning up Postgres 16 service container + iterating 10 numbered days (this commit). STATUS sql/bootcamp B ✗→◐, E ✗→✓.
+- 2026-10-18: `team_00` (Traveling Salesman Problem in SQL) restored from the School 21 GitLab team repository — README, task images, `src/ex00`–`src/ex01`; before that the folder was empty and untracked while the bootcamp README already indexed it (this commit).

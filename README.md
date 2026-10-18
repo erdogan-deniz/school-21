@@ -37,10 +37,7 @@ This repo is undergoing a production-grade overhaul (2026-05). Live status:
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 - **Top-level dashboard:** [`STATUS.md`](STATUS.md) — production-readiness matrix
-  for all 37 subprojects across 8 Definition-of-Done items.
-- **Per-subproject plans:** [`docs/plans/`](docs/plans/) — checklist + history
-  per subproject.
-- **Design doc:** [`docs/specs/2026-05-11-production-grade-overhaul.md`](docs/specs/2026-05-11-production-grade-overhaul.md).
+  for all 38 subprojects across 8 Definition-of-Done items.
 - **Security policy:** [`SECURITY.md`](SECURITY.md) — how to report vulnerabilities + the three-layer leak-prevention stack (gitleaks pre-commit + secrets.yml CI + bandit + pip-audit).
 - **Dev shortcuts:** [`Makefile`](Makefile) — `make install` (pre-commit + dev tooling), `make precommit-all` (run every hook), `make lint-{md,shell,python,cpp,sql,secrets}` for the per-language gates. `make help` lists every target.
 - **Toolchain pins:** [`docs/TOOLCHAIN.md`](docs/TOOLCHAIN.md) — every language / linter / framework version, single source of truth.

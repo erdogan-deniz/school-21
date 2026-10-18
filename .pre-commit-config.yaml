@@ -81,7 +81,7 @@ repos:
         # ("tecgnique", "wawe", "harry") that are part of preserved
         # School 21 content — don't auto-fix them.
         args: ['--no-write']
-        exclude: README.md|docs/plans/.*
+        exclude: README.md
 
   # --- Secret scanning (gitleaks) ---
   # Triggered after the 2026-05-11 incident — a Telegram bot token had

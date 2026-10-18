@@ -106,16 +106,11 @@ plus follow-ups). Detail by phase:
   attribution. (`ce85f7a2`)
 - Root `.gitignore` covering OS noise, Python venvs, C/C++ build artefacts,
   editor scratch, coverage outputs. (`0ba3aac8`)
-- Repo-wide working agreement (audience priority, DoD, tracking,
-  autonomy, conventions, naming, README rule); kept as a local
-  maintainer file since 2026-09-24. (`04f2a40c`)
 - [`STATUS.md`](STATUS.md) — production-readiness dashboard (37 subprojects ×
   8 DoD items). (`04f2a40c`)
 - [`content/templates/SUBPROJECT_README.md`](content/templates/SUBPROJECT_README.md)
   — canonical README template (production fold + preserved School 21 task).
   (`04f2a40c`)
-- [`docs/specs/2026-05-11-production-grade-overhaul.md`](docs/specs/2026-05-11-production-grade-overhaul.md)
-  — design document for the overhaul. (`04f2a40c`)
 - `.github/workflows/lint.yml` — markdownlint + lychee link-check on every
   push/PR. (`5ee143b6`)
 
@@ -139,13 +134,6 @@ plus follow-ups). Detail by phase:
 below `## Original task (School 21)`). Across c/, cpp/, python/, sql/,
 data_science/, devops/, qa/, machine_learning/, internship/,
 survival_camp/, career_track/, algorithms/.
-
-**Per-subproject plans** — `docs/plans/<track>/<subproject>.md` for each
-of 37 subprojects, generated from
-[`docs/plans/_TEMPLATE.md`](docs/plans/_TEMPLATE.md). Each plan tracks the
-8-item DoD checklist with three-state ticks (`[x]` / `[~]` / `[ ]`),
-subproject-specific tasks, and a chronological History log linked to
-commits. (`d4cde2a2`)
 
 **Naming convention** — observed two-track convention (`snake_case` for
 libraries, `PascalCase`+version for applications, sequence-suffixed for
@@ -323,15 +311,6 @@ that does `docker compose up -d --build`, polls
 response body, then `docker compose down -v --remove-orphans`.
 End-to-end proof the multi-service stack still works. B column
 ✗ → ◐. (`2819e2e4`)
-
-**Per-subproject plans synced with STATUS.** After several batches
-landed without their plan files moving in lock-step, a sync pass
-brought 11 plans (`docs/plans/c/*`, `docs/plans/cpp/*`,
-`docs/plans/devops/linux_monitoring_v1.0.md`) up to date — DoD ticks
-flipped, history entries appended with commit hashes. The
-working-agreement rule "Both layers move together" is now enforced
-per batch, not retrofitted. (`7b446971`, plus plan entries within
-each subsequent feature commit)
 
 **Silent shebang typos — two classes pattern-detected and fixed.**
 Both followed the same "single broken template, copy-pasted across a

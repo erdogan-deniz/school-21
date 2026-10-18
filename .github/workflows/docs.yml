@@ -67,7 +67,7 @@ jobs:
           - subproject: cpp/s21_matrix+
             artifact: doxygen-cpp-s21_matrix+
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - name: Install Doxygen + Graphviz
         run: |
           sudo apt-get update

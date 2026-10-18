@@ -60,7 +60,7 @@ Settings are read from `src/config.ini` on startup. Edit the file with any text 
 [display]
 theme       = light       # light | dark
 font_size   = 14          # integer, 6–72 pt
-precision   = 7           # decimal digits shown, 1–15
+precision   = 7           # digits after the decimal point, 1–15
 
 [logging]
 rotation_period = day     # hour | day | month
@@ -194,9 +194,10 @@ Click any entry to load its expression back into the calculator input field.
 
 Log files are written to the `logs/` directory inside the application folder.
 
-- The active log is always named `smartcalc.log`
-- Rotated files are named by date: `2026-04-01.log` (daily), `2026-04-01_14.log` (hourly)
-- Up to 30 rotated files are retained
+- One file per rotation period, named `logs_dd-MM-yy-hh-mm-ss.log` after the moment
+  the period started writing, for example `logs_19-10-26-00-41-05.log`
+- A restart within the same period appends to that period's file
+- Up to 30 files are retained; older ones are deleted when a new period starts
 
 The rotation period is set by `rotation_period` in `config.ini`.
 

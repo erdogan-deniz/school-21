@@ -56,7 +56,7 @@ _HELP_TEXT = """
 <ul>
   <li><b>theme</b> — тема оформления: light или dark</li>
   <li><b>font_size</b> — размер шрифта (пункты)</li>
-  <li><b>precision</b> — количество значимых цифр в результате</li>
+  <li><b>precision</b> — количество знаков после запятой в результате</li>
   <li><b>rotation_period</b> — период ротации логов: hour, day, month</li>
 </ul>
 """

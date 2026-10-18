@@ -190,7 +190,7 @@ Reads `src/config.ini`. All properties fall back to built-in defaults if the key
 |-------------------|-------|---------|-----------------------------|
 | `theme`           | `str` | `light` | `light`, `dark`             |
 | `font_size`       | `int` | `14`    | 6–72 pt                     |
-| `precision`       | `int` | `7`     | 1–15 decimal digits         |
+| `precision`       | `int` | `7`     | 1–15 digits after the point |
 | `rotation_period` | `str` | `day`   | `hour`, `day`, `month`      |
 
 ---

@@ -85,7 +85,7 @@ class TestHistoryOperations:
     def test_max_entries_pruning(self, db_path: str) -> None:
         """Verify that only the 1000 newest entries are kept after overflow."""
         h = History(db_path=db_path)
-        limit = History._MAX_ENTRIES  # noqa: SLF001
+        limit = History._MAX_ENTRIES
         # Insert limit//10 entries past the cap; much faster than 1000+ writes
         # while still exercising the pruning SQL on every add_entry call.
         overflow = limit // 10 + 1

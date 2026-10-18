@@ -15,7 +15,7 @@ from model.deposit import DepositCalculator
 from model.history import History
 from model.loan import LoanCalculator
 from model.results import DepositResult
-from viewmodel.calc_viewmodel import CalcViewModel
+from viewmodel.calc_viewmodel import CalcViewModel, format_result
 from viewmodel.deposit_viewmodel import DepositViewModel
 from viewmodel.loan_viewmodel import LoanViewModel
 from viewmodel.signal import Signal
@@ -194,6 +194,41 @@ class TestCalcViewModelCalculate:
         assert history_payloads  # at least one emit
 
 
+class TestFormatResult:
+    """format_result(): 7+ digits after the point, exponent for extremes."""
+
+    @pytest.mark.parametrize(
+        ("value", "expected"),
+        [
+            (5.0, "5"),
+            (1 / 3, "0.3333333"),
+            (123456.789123456, "123456.7891235"),
+            (-2.5, "-2.5"),
+            (-0.0, "0"),
+            (0.0, "0"),
+            (1e20, "1e+20"),
+            (1.5e-9, "1.5e-09"),
+        ],
+    )
+    def test_format(self, value: float, expected: str) -> None:
+        """Verify fixed-point output keeps up to seven decimal places."""
+        assert format_result(value, 7) == expected
+
+    def test_more_decimals(self) -> None:
+        """Verify precision above seven adds decimal places."""
+        assert format_result(1 / 3, 10) == "0.3333333333"
+
+    def test_large_number_keeps_decimals(self, calc_vm: CalcViewModel) -> None:
+        """Verify a large result keeps seven decimals, not seven digits."""
+        calc_vm.clear()
+        for ch in "123456.789123456+0":
+            calc_vm.append_token(ch)
+        results: list[str] = []
+        calc_vm.result_changed.connect(results.append)
+        calc_vm.calculate()
+        assert results == ["123456.7891235"]
+
+
 class TestCalcViewModelGraph:
     """plot_graph() → graph_ready / error_occurred signals."""
 
@@ -206,7 +241,7 @@ class TestCalcViewModelGraph:
         assert errors
 
     def test_valid_expression_emits_graph(self, calc_vm: CalcViewModel) -> None:
-        """Verifies plot_graph on 'x' emits graph_ready with non-empty segments."""
+        """Verify plot_graph on 'x' emits graph_ready with segments."""
         calc_vm.clear()
         for ch in "x":
             calc_vm.append_token(ch)
@@ -432,7 +467,7 @@ class TestDepositViewModelParseTableRows:
         ]
 
     def test_month_exceeding_max_is_skipped_and_warns(self) -> None:
-        """Row with month > max_month is dropped and has_out_of_range is True."""
+        """Row with month > max_month is dropped; has_out_of_range is True."""
         entries, has_warn = DepositViewModel._parse_table_rows(
             [("5", "1000"), ("13", "2000")], max_month=12
         )

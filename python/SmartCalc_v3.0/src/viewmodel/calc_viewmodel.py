@@ -11,6 +11,37 @@ from viewmodel import Signal
 
 _logger = logging.getLogger("smartcalc")
 
+# Fixed-point output is used inside this range; outside it the result is
+# printed in exponential form, as the task allows for input and output.
+_FIXED_MAX: float = 1e15
+
+
+def format_result(value: float, decimals: int) -> str:
+    """Format a calculation result with up to ``decimals`` fractional digits.
+
+    The task requires the fractional part to be accurate to seven or more
+    decimal places, so the precision counts digits after the point.
+    Trailing zeros are dropped. Very large values and
+    values smaller than the last shown decimal use exponential form.
+
+    Args:
+        value: Result returned by the calculator core.
+        decimals: Number of digits after the decimal point.
+
+    Returns:
+        Human-readable result string.
+
+    """
+    if value == 0:
+        return "0"
+    magnitude = abs(value)
+    if magnitude >= _FIXED_MAX or magnitude < 10.0**-decimals:
+        mantissa, exponent = f"{value:.{decimals}e}".split("e")
+        mantissa = mantissa.rstrip("0").rstrip(".")
+        return f"{mantissa}e{exponent}"
+    text = f"{value:.{decimals}f}".rstrip("0").rstrip(".")
+    return "0" if text in {"-0", ""} else text
+
 
 class CalcViewModel:
     """Manage calculator state and notify the View via signals.
@@ -42,13 +73,12 @@ class CalcViewModel:
         Args:
             calculator: Calculator model instance.
             history: History model instance.
-            precision: Number of significant digits for display.
+            precision: Number of digits after the decimal point.
 
         """
         self.display_changed: Signal = Signal()
-        self.result_changed: Signal = (
-            Signal()
-        )  # emits formatted result str (no prefix)
+        # Emits the formatted result string (no prefix).
+        self.result_changed: Signal = Signal()
         self.error_occurred: Signal = Signal()
         self.history_updated: Signal = Signal()
         self.graph_ready: Signal = Signal()
@@ -70,7 +100,7 @@ class CalcViewModel:
 
     @property
     def precision(self) -> int:
-        """Number of significant digits used for result display."""
+        """Number of digits after the decimal point in results."""
         return self._precision
 
     def append_token(self, token: str) -> None:
@@ -114,7 +144,7 @@ class CalcViewModel:
             return
         try:
             result = self._calc.calculate(self._expression, x_value)
-            result_str = f"{result:.{self._precision}g}"
+            result_str = format_result(result, self._precision)
             self._history.add_entry(self._expression, result_str)
             _logger.info("Calculated: %s = %s", self._expression, result_str)
             self.result_changed.emit(result_str)

@@ -34,7 +34,7 @@ class AppConfig:
         [display]
             theme           - 'light' or 'dark'
             font_size       - integer font size in points, clamped to [6, 72]
-            precision       - significant digits shown (1-15)
+            precision       - digits after the decimal point (1-15)
 
         [logging]
             rotation_period - 'hour', 'day', or 'month'
@@ -84,7 +84,7 @@ class AppConfig:
 
     @property
     def precision(self) -> int:
-        """Significant digits ('g' format), clamped to [1, 15]."""
+        """Digits after the decimal point, clamped to [1, 15]."""
         try:
             value = self._parser.getint("display", "precision")
         except ValueError:

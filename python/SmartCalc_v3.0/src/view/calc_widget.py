@@ -229,7 +229,8 @@ class CalcWidget(QWidget):
         """Render the graph once segment data is available from the ViewModel.
 
         Args:
-            segments: Continuous (xs, ys) pairs from CalcViewModel.split_segments().
+            segments: Continuous (xs, ys) pairs from
+                CalcViewModel.split_segments().
 
         """
         self._graph.plot(

@@ -135,10 +135,13 @@ class DepositViewModel:
             months: Term in months.
             annual_rate: Annual interest rate in percent.
             tax_rate: Tax on interest income in percent.
-            period_index: Index into period_labels() selecting the accrual period.
+            period_index: Index into period_labels() selecting the accrual
+                period.
             capitalize: Whether to reinvest interest.
-            additions: Raw (month_text, amount_text) rows from the additions table.
-            withdrawals: Raw (month_text, amount_text) rows from the withdrawals table.
+            additions: Raw (month_text, amount_text) rows from the
+                additions table.
+            withdrawals: Raw (month_text, amount_text) rows from the
+                withdrawals table.
 
         """
         parsed_additions, add_warn = self._parse_table_rows(

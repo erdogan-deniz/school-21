@@ -221,7 +221,15 @@ class DepositWidget(BaseFinanceWidget):
 
     @staticmethod
     def _read_table(table: QTableWidget) -> list[tuple[str, str]]:
-        """Read all non-empty rows from a QTableWidget as raw text pairs."""
+        """Read all non-empty rows from a QTableWidget as raw text pairs.
+
+        Args:
+            table: Additions or withdrawals table.
+
+        Returns:
+            (month_text, amount_text) pairs of the filled rows.
+
+        """
         rows: list[tuple[str, str]] = []
         for row in range(table.rowCount()):
             item0 = table.item(row, 0)

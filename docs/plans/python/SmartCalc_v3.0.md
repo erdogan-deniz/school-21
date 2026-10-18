@@ -42,3 +42,4 @@
 - 2026-09-14: Dedicated CI job + repo-wide ruff exclusion ([b090dcf](https://github.com/erdogan-deniz/school-21/commit/b090dcf)); ruff format pass ([1fb5bad](https://github.com/erdogan-deniz/school-21/commit/1fb5bad)).
 - 2026-09-14: README brought to repo template, plan created, STATUS row added ([1491cec](https://github.com/erdogan-deniz/school-21/commit/1491cec)).
 - 2026-09-14: `TestHistoryAppDir` made cross-platform — expected paths via `os.path.join`, `os.name` patch scoped to `monkeypatch.context()`; the CI job on `ubuntu-latest` crashed with `NotImplementedError: cannot instantiate 'WindowsPath'` (this commit).
+- 2026-10-19: Three gaps against the School 21 task closed in the GitLab repo and brought here: results keep 7+ digits after the decimal point (were 7 significant digits — `123456.789123` showed as `123456.8`); log files are named `logs_dd-MM-yy-hh-mm-ss`, one per rotation period; all ruff findings cleared. 378 tests pass (this commit).

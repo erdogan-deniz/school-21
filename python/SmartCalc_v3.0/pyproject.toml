@@ -113,6 +113,8 @@ ignore = ["DOC502"]
     "RUF059",
     # White-box tests import private helpers to verify internal behaviour.
     "PLC2701",
+    # ...and call private static helpers such as _parse_table_rows directly.
+    "SLF001",
 ]
 
 [tool.ruff.lint.pylint]

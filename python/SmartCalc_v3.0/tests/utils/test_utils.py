@@ -2,12 +2,14 @@
 
 import logging
 import os
+import re
+from datetime import datetime, timedelta
 from pathlib import Path
 
 import pytest
 
 from utils.config import AppConfig
-from utils.logger import setup_logger
+from utils.logger import PeriodFileHandler, setup_logger
 
 
 class TestAppConfig:
@@ -132,7 +134,9 @@ class TestAppConfig:
 
 
 class TestSetupLogger:
-    """Tests for setup_logger with different rotation periods."""
+    """Tests for setup_logger: file per period, task naming pattern."""
+
+    NAME = re.compile(r"^logs_\d{2}-\d{2}-\d{2}-\d{2}-\d{2}-\d{2}\.log$")
 
     @pytest.fixture(autouse=True)
     def _patch_logs_dir(
@@ -142,7 +146,10 @@ class TestSetupLogger:
         import utils.logger as lg_mod
 
         monkeypatch.setattr(lg_mod, "_LOGS_DIR", str(tmp_path))
-        logging.getLogger("smartcalc").handlers.clear()
+        logger = logging.getLogger("smartcalc")
+        for handler in logger.handlers:
+            handler.close()
+        logger.handlers.clear()
 
     def test_returns_logger(self, tmp_path: Path) -> None:
         """Verifies setup_logger returns a Logger named 'smartcalc'."""
@@ -150,94 +157,134 @@ class TestSetupLogger:
         assert isinstance(logger, logging.Logger)
         assert logger.name == "smartcalc"
 
-    def test_log_file_created(self, tmp_path: Path) -> None:
-        """Verify a log file is created in the logs directory after setup."""
-        setup_logger("day")
-        files = list(tmp_path.iterdir())
-        assert len(files) == 1
-        assert files[0].name == "smartcalc.log"
-
-    def test_log_file_name_pattern(self, tmp_path: Path) -> None:
-        """Verify the log filename is the fixed name 'smartcalc.log'."""
-        setup_logger("hour")
-        files = list(tmp_path.iterdir())
-        assert len(files) == 1
-        assert files[0].name == "smartcalc.log"
+    @pytest.mark.parametrize("period", ["hour", "day", "month"])
+    def test_log_file_name_pattern(self, tmp_path: Path, period: str) -> None:
+        """Verify the file is named logs_dd-MM-yy-hh-mm-ss.log."""
+        setup_logger(period).info("x")
+        names = [f.name for f in tmp_path.iterdir()]
+        assert len(names) == 1
+        assert self.NAME.match(names[0])
 
     def test_unknown_period_falls_back_to_day(self, tmp_path: Path) -> None:
         """Verify graceful fallback to daily rotation for an unknown period."""
         logger = setup_logger("unknown_period")
-        assert isinstance(logger, logging.Logger)
+        handler = logger.handlers[0]
+        assert isinstance(handler, PeriodFileHandler)
+        assert handler.period == "day"
 
     def test_can_write_log_message(self, tmp_path: Path) -> None:
         """Verifies that a logged message appears verbatim in the log file."""
         logger = setup_logger("day")
         logger.info("test message")
         files = list(tmp_path.iterdir())
-        content = files[0].read_text(encoding="utf-8")
-        assert "test message" in content
+        assert "test message" in files[0].read_text(encoding="utf-8")
 
-    def test_month_rotation_creates_log_file(self, tmp_path: Path) -> None:
-        """Verify setup_logger('month') creates the log file."""
-        setup_logger("month")
-        files = list(tmp_path.iterdir())
-        assert len(files) == 1
-        assert files[0].name == "smartcalc.log"
 
-    def test_monthly_handler_should_rollover_on_month_change(
-        self, tmp_path: Path
-    ) -> None:
-        """Verify _MonthlyRotatingFileHandler rolls over when month changes."""
-        from utils.logger import _MonthlyRotatingFileHandler
+class _Clock:
+    """Controllable clock for PeriodFileHandler tests."""
 
-        log_file = str(tmp_path / "smartcalc.log")
-        handler = _MonthlyRotatingFileHandler(
-            filename=log_file, backupCount=1, encoding="utf-8"
+    def __init__(self, start: datetime) -> None:
+        self.now = start
+
+    def __call__(self) -> datetime:
+        return self.now
+
+
+def _record(msg: str) -> logging.LogRecord:
+    return logging.LogRecord(
+        name="test",
+        level=logging.INFO,
+        pathname="",
+        lineno=0,
+        msg=msg,
+        args=(),
+        exc_info=None,
+    )
+
+
+class TestPeriodFileHandler:
+    """One file per rotation period; restart appends; old files pruned."""
+
+    START = datetime(2026, 10, 19, 0, 41, 5).astimezone()
+
+    def _names(self, path: Path) -> list[str]:
+        return sorted(f.name for f in path.iterdir())
+
+    def test_name_is_period_start(self, tmp_path: Path) -> None:
+        """Verify the file name carries the time of its first record."""
+        handler = PeriodFileHandler(
+            str(tmp_path), "day", clock=_Clock(self.START)
         )
-        # Simulate a month change by forcing _current_month to a past month.
-        cur = handler._current_month  # noqa: SLF001
-        handler._current_month = cur % 12 + 1  # noqa: SLF001
-
-        dummy = logging.LogRecord(
-            name="test",
-            level=logging.INFO,
-            pathname="",
-            lineno=0,
-            msg="",
-            args=(),
-            exc_info=None,
-        )
-        assert handler.shouldRollover(dummy) == 1
+        handler.emit(_record("a"))
         handler.close()
+        assert self._names(tmp_path) == ["logs_19-10-26-00-41-05.log"]
 
-    def test_monthly_handler_no_rollover_same_month(
-        self, tmp_path: Path
+    @pytest.mark.parametrize(
+        ("period", "step", "files"),
+        [
+            ("hour", timedelta(minutes=10), 1),
+            ("hour", timedelta(hours=1), 2),
+            ("day", timedelta(hours=5), 1),
+            ("day", timedelta(days=1), 2),
+            ("month", timedelta(days=5), 1),
+            ("month", timedelta(days=40), 2),
+        ],
+    )
+    def test_rotation(
+        self, tmp_path: Path, period: str, step: timedelta, files: int
     ) -> None:
-        """Verify _MonthlyRotatingFileHandler returns 0 in the same month."""
-        from utils.logger import _MonthlyRotatingFileHandler
-
-        log_file = str(tmp_path / "smartcalc.log")
-        handler = _MonthlyRotatingFileHandler(
-            filename=log_file, backupCount=1, encoding="utf-8"
-        )
-        dummy = logging.LogRecord(
-            name="test",
-            level=logging.INFO,
-            pathname="",
-            lineno=0,
-            msg="",
-            args=(),
-            exc_info=None,
-        )
-        assert handler.shouldRollover(dummy) == 0
+        """Verify a new file starts exactly when the period changes."""
+        clock = _Clock(self.START)
+        handler = PeriodFileHandler(str(tmp_path), period, clock=clock)
+        handler.emit(_record("first"))
+        clock.now = self.START + step
+        handler.emit(_record("second"))
         handler.close()
+        assert len(self._names(tmp_path)) == files
 
-    def test_date_namer_reorders_suffix(self) -> None:
-        """Verify _date_namer reorders the rotation suffix.
+    def test_restart_appends_to_current_period(self, tmp_path: Path) -> None:
+        """Verify a restart within the same period keeps one file."""
+        clock = _Clock(self.START)
+        first = PeriodFileHandler(str(tmp_path), "day", clock=clock)
+        first.emit(_record("before restart"))
+        first.close()
+        clock.now = self.START + timedelta(hours=2)
+        second = PeriodFileHandler(str(tmp_path), "day", clock=clock)
+        second.emit(_record("after restart"))
+        second.close()
+        names = self._names(tmp_path)
+        assert names == ["logs_19-10-26-00-41-05.log"]
+        text = (tmp_path / names[0]).read_text(encoding="utf-8")
+        assert "before restart" in text
+        assert "after restart" in text
 
-        Converts ``path/smartcalc.log.SUFFIX`` to ``path/SUFFIX.log``.
-        """
-        from utils.logger import _date_namer
+    def test_old_files_pruned(self, tmp_path: Path) -> None:
+        """Verify only the newest backup_count files are kept."""
+        clock = _Clock(self.START)
+        handler = PeriodFileHandler(
+            str(tmp_path), "hour", backup_count=2, clock=clock
+        )
+        for hour in range(4):
+            clock.now = self.START + timedelta(hours=hour)
+            handler.emit(_record(str(hour)))
+        handler.close()
+        assert self._names(tmp_path) == [
+            "logs_19-10-26-02-41-05.log",
+            "logs_19-10-26-03-41-05.log",
+        ]
 
-        result = _date_namer("/var/log/smartcalc.log.2024-01-15")
-        assert result == os.path.join("/var/log", "2024-01-15.log")
+    def test_foreign_files_ignored(self, tmp_path: Path) -> None:
+        """Verify files outside the naming pattern are not reused or pruned."""
+        (tmp_path / "smartcalc.log").write_text("old", encoding="utf-8")
+        bad = tmp_path / "logs_99-99-99-99-99-99.log"
+        bad.write_text("bad", encoding="utf-8")
+        handler = PeriodFileHandler(
+            str(tmp_path), "day", backup_count=1, clock=_Clock(self.START)
+        )
+        handler.emit(_record("a"))
+        handler.close()
+        assert self._names(tmp_path) == [
+            "logs_19-10-26-00-41-05.log",
+            "logs_99-99-99-99-99-99.log",
+            "smartcalc.log",
+        ]

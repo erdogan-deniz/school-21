@@ -46,7 +46,7 @@ class LoanViewResult(TypedDict):
     overpayment: float  # Total interest paid over the loan term.
     total: float  # Sum of all monthly payments.
     payments: list[float] | None  # Per-month amounts (differentiated only).
-    monthly_payment_text: str  # Formatted display string for monthly payment.
+    monthly_payment_text: str  # Display string for monthly payment.
     overpayment_text: str  # Formatted display string for overpayment.
     total_text: str  # Formatted display string for total.
 

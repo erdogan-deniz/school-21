@@ -45,8 +45,6 @@ jobs:
             --exclude-path '**/site-packages/**'
             'README.md'
             'STATUS.md'
-            'CLAUDE.md'
-            'AGENTS.md'
             'CHANGELOG.md'
             'docs/**/*.md'
             'content/**/*.md'

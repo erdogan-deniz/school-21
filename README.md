@@ -1,10 +1,9 @@
-#
-
 <!-- School 21 Logo -->
 <p align="center">
     <img
-    src="https://sun9-38.userapi.com/impg/KJR2NK87iyCNo7L8oZ9379FOTBF2nQJJ3mWvZw/mFRmaBUOkuk.jpg?size=480x360&quality=96&sign=8ffee636080944c3067db7ad320c8400&type=album"
+    src="docs/images/school-21-logo.jpg"
     alt="School 21 Logo"
+    width="480"
     />
 </p>
 
@@ -48,8 +47,8 @@ This repo is undergoing a production-grade overhaul (2026-05). Live status:
 
 - [`algorithms/`](algorithms/), [`c/`](c/), [`career_track/`](career_track/), [`cpp/`](cpp/), [`data_science/`](data_science/), [`devops/`](devops/), [`internship/`](internship/), [`machine_learning/`](machine_learning/), [`python/`](python/), [`qa/`](qa/), [`sql/`](sql/), [`survival_camp/`](survival_camp/) — language / track folders, each with one or more subprojects.
 - [`content/`](content/) — materials for the repo's design (badge images) and templates ([`content/templates/SUBPROJECT_README.md`](content/templates/SUBPROJECT_README.md)).
-- [`docs/`](docs/) — design specs and per-subproject plans.
-- [`.github/workflows/`](.github/workflows/) — 8 CI workflows (lint, c, cpp, python, sql, devops, docs, pages).
+- [`docs/`](docs/) — branch-protection settings ([`BRANCH_PROTECTION.md`](docs/BRANCH_PROTECTION.md)), toolchain pins ([`TOOLCHAIN.md`](docs/TOOLCHAIN.md)) and the logo.
+- [`.github/workflows/`](.github/workflows/) — 13 CI workflows (lint, c, cpp, python, sql, devops, docs, pages, secrets, actionlint and three release workflows).
 - [`STATUS.md`](STATUS.md), [`LICENSE`](LICENSE), [`.clang-format`](.clang-format), [`.ruff.toml`](.ruff.toml), [`.gitignore`](.gitignore), [`.markdownlint-cli2.jsonc`](.markdownlint-cli2.jsonc) — repo-wide configuration and rules.
 - `README.md`: the description file of the repository (you read it).
 

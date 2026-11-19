@@ -55,7 +55,7 @@ In this project, you will learn basic interview tips, lifehacks for dealing with
 
 ## Chapter I
 
-![Project illustration](misc/images/Illustration_03.jpeg)
+![Project illustration](misc/images/illustration_03.jpeg)
 
 ## Preamble
 

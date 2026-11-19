@@ -30,7 +30,7 @@ In this project, you will learn about current methodologies and implementation t
 **Note!**
 You cannot complete Project 04 until you have completed individual Projects 05 and 06. If you complete Project 04, you won't be able to complete the following projects.
 
-![SCRUM](misc/images/CT04.02.png)
+![SCRUM](misc/images/ct04.02.png)
 
 💡 [Tap here](https://new.oprosso.net/p/4cb31ec3f47a4596bc758ea1861fb624) **to leave your feedback on the project**. It's anonymous and will help our team make your educational experience better. We recommend completing the survey immediately after the project.
 
@@ -51,7 +51,7 @@ You cannot complete Project 04 until you have completed individual Projects 05 a
 
 ## Chapter I
 
-![Иллюстрация к проекту](misc/images/Illustration_04.jpeg)  
+![Иллюстрация к проекту](misc/images/illustration_04.jpeg)  
 
 ## Preamble
 
@@ -142,7 +142,7 @@ Scrum is suitable for teams involved in product development. It is suitable when
 
 SCRUM explicitly regulates the values, the distribution of roles, the organization of events (meetings) and the artifacts used during the workflow. These rules of thumb are described in the Scrum Guide.
 
-![SCRUM](misc/images/CT04.01.png)
+![SCRUM](misc/images/ct04.01.png)
 
 Let's take a closer look at the Scrum Retrospective tool. This meeting is needed to reflect on the work done by all participants in order to plan quality or efficiency improvements. You will conduct it as part of your current project. The algorithm for running a retrospective consists of 5 steps:
 
@@ -176,11 +176,11 @@ For example, almost all teams have **task trackers** that help make SCRUM or Kan
 
 This is what the board looks like, showing all the tasks that are in the sprint and that we need to accomplish the sprint goal:
 
-![Jira](misc/images/CT04.03.png)
+![Jira](misc/images/ct04.03.png)
 
 And below is an example of a product backlog, based on which the product owner can assign goals and tasks to sprints in advance.
 
-![бэклога](misc/images/CT04.04.png)
+![бэклога](misc/images/ct04.04.png)
 
 Such a tool allows you to:
 
@@ -211,7 +211,7 @@ You need to spend the next week on the development team using common practices l
 **Note!**
 You cannot complete Project 04 until you have completed individual Projects 05 and 06. If you complete Project 04, you won't be able to complete the following projects.
 
-![SCRUM](misc/images/CT04.02.png)
+![SCRUM](misc/images/ct04.02.png)
 
 ## Chapter V
 
@@ -238,4 +238,4 @@ The retrospective videos and links to the boards should be uploaded. They need t
 ### Passing the SCRUM Assessments
 
 1. Each participant is required to take a [Scrum](https://www.scrum.org/open-assessments/scrum-open) comprehension quiz.
-2. The test result must be higher than 70%. The screenshot with the result must be attached. For better preparation you can study the latest version of the [Scrum Guide](materials/Scrum_Guide.pdf) (available for download in the materials -> Scrum-Guide folder). You will find all the answers there.
+2. The test result must be higher than 70%. The screenshot with the result must be attached. For better preparation you can study the latest version of the [Scrum Guide](materials/scrum-guide.pdf) (available for download in the materials -> Scrum-Guide folder). You will find all the answers there.

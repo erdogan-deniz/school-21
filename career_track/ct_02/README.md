@@ -49,7 +49,7 @@ In this project, you will write your own resume according to the basic rules for
 
 ## Chapter I
 
-![Project illustration](misc/images/Illustration_02.jpeg)
+![Project illustration](misc/images/illustration_02.jpeg)
 
 ## Preamble
 

@@ -172,10 +172,10 @@ jobs:
   apps-qt-build:
     # Qt6 GUI build for the two C apps (3DViewer_v1.0, SmartCalc_v1.0).
     # Uses jurplel/install-qt-action to provision Qt, then runs the
-    # subproject's own 'build' / 'install' Makefile target via xvfb.
+    # subproject's own 'build' / 'gui' Makefile target via xvfb. A failure here
+    # fails the workflow.
     name: apps Qt6 GUI build
     runs-on: ubuntu-24.04
-    continue-on-error: true
     strategy:
       fail-fast: false
       matrix:
@@ -183,7 +183,7 @@ jobs:
           - subproject: 3DViewer_v1.0
             target: build
           - subproject: SmartCalc_v1.0
-            target: install
+            target: gui
     steps:
       - uses: actions/checkout@v7
       - name: Install Qt6
@@ -200,6 +200,8 @@ jobs:
           target: 'desktop'
           arch: 'linux_gcc_64'
           aqtversion: '==3.3.*'
+          # SmartCalc_v1.0 view.pro uses QT += multimedia (QMediaPlayer).
+          modules: 'qtmultimedia'
           cache: true
       - name: Install build deps (cached)
         uses: awalsh128/cache-apt-pkgs-action@v1
@@ -209,8 +211,6 @@ jobs:
       - name: GUI build (xvfb-wrapped)
         working-directory: c/${{ matrix.subproject }}/src
         run: |
-          # Some Makefiles call 'open' or expect ~/Desktop — wrap in
-          # xvfb-run and tolerate post-build install steps that need
-          # a display.
-          xvfb-run -a make ${{ matrix.target }} || true
-        continue-on-error: true
+          # Build only ('build' / 'gui' targets do not start the app);
+          # xvfb-run keeps tools that probe for a display happy.
+          xvfb-run -a make ${{ matrix.target }}

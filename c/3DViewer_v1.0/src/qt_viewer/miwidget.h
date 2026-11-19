@@ -18,15 +18,11 @@
 #ifndef MIWIDGET_H
 #define MIWIDGET_H
 
-#include <QOpenGLFunctions>
-#include <QOpenGLWidget>
-
-// #include <QGLWidget>
-
 #include <GL/gl.h>
 
 #include <QDebug>
-#include <QGLFramebufferObjectFormat>
+#include <QOpenGLFunctions>
+#include <QOpenGLWidget>
 #include <QVector3D>
 
 extern "C" {

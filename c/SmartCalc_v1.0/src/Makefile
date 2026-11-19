@@ -4,20 +4,24 @@ OS = $(shell uname)
 
 ifeq ($(OS), Linux)
 	FLAGS = -lcheck -pthread -lrt -lm -lsubunit
-	BD = cd build;./Smart_Calc
-	DEL = ./Smart_Calc 
+	BD = ./view/view
+	DEL = view
 else
 	FLAGS = -lcheck
-	BD = open build/Smart_Calc.app 
-	DEL = Smart_Calc.app
+	BD = open view/view.app
+	DEL = view.app
 endif
 
+.PHONY: all gui install uninstall
 
 all: uninstall clean install
 
-install: # Doesn't work
-	view/qmake viev.pro
-	make -C view
+# Build the Qt GUI only (view.pro: TARGET = view); CI uses this target.
+gui:
+	cd view && qmake view.pro && $(MAKE)
+
+# Build the GUI and start it.
+install: gui
 	$(BD)
 
 uninstall:

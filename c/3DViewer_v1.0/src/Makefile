@@ -4,13 +4,15 @@ CHECKFLAGS = -lcheck -lsubunit -coverage -pthread -lrt
 APP = build/s21_3dviewer.app
 
 
+.PHONY: all clean build install uninstall
+
 all: install test
 
 clean:
 	rm -rf *.o *.a *.css *.out *.html *.gcno *.gcda *.gcov tests  3d_viewer docs
 
 build:
-	mkdir build
+	mkdir -p build
 	cd ./build/ && qmake ../qt_viewer && make && mv opengl s21_3dviewer.app
 
 install: build

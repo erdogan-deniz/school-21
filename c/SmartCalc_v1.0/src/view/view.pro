@@ -11,7 +11,6 @@ SOURCES += \
     ../additional/s21_get_priority_token.c \
     ../additional/s21_get_value.c \
     ../additional/s21_have_number.c \
-    ../additional/s21_have_point.c \
     ../additional/s21_have_x.c \
     ../additional/s21_is_int.c \
     ../additional/s21_is_sign.c \
@@ -52,7 +51,6 @@ SOURCES += \
     ../stack/s21_create_node_stack.c \
     ../stack/s21_create_stack.c \
     ../stack/s21_fill_node_stack.c \
-    ../stack/s21_free_stack.c \
     ../stack/s21_get_node_priority.c \
     ../stack/s21_pop_stack.c \
     ../stack/s21_push_stack.c \

@@ -25,6 +25,10 @@ python doctors.py
 pytest -v
 ```
 
+`screwdriver.py` (the music player) plays whatever is in `src/music/`. The folder
+is kept empty in git: put your own audio files there (`mp3`, `ogg` or `wav`)
+before starting it.
+
 ## Tests
 
 Wired into `.github/workflows/python.yml`'s pytest matrix as

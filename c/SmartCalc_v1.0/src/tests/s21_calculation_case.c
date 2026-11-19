@@ -43,7 +43,7 @@ START_TEST(test_5) {
 END_TEST
 
 START_TEST(test_6) {
-  long double result_originl = log(+10.2) - log10(10.2);
+  long double result_originl = log10(+10.2) - log(10.2);
   long double result = s21_calculator("log(+10.2)-ln(10.2)", NULL);
 
   ck_assert_double_eq(result_originl, result);
@@ -181,7 +181,7 @@ START_TEST(test_23) {
 END_TEST
 
 START_TEST(test_24) {
-  long double result_originl = sqrt(log10(10));
+  long double result_originl = sqrt(log(10));
   long double result = s21_calculator("sqrt(ln(10))", NULL);
 
   ck_assert_double_eq(result_originl, result);

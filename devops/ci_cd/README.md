@@ -73,7 +73,7 @@ The russian version of the task can be found in the repository.
 
 ## Chapter I
 
-![basic_ci_cd](misc/images/basic_ci_cd.JPG)
+![basic_ci_cd](misc/images/basic_ci_cd.jpg)
 
 Planet Earth, ASI office, today.
 

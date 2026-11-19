@@ -43,7 +43,7 @@ In this project, you'll lay the foundation for your career trajectory, identify 
 
 ## Chapter I
 
-![Иллюстрация к проекту](misc/images/Illustration_00.jpeg)
+![Иллюстрация к проекту](misc/images/illustration_00.jpeg)
 
 ## Preamble
 
@@ -103,7 +103,7 @@ If you don't understand what you want out of your job, the search can drag on fo
 
 Your job search starts with setting your goal and planning. Before looking for a job, you can do a career wheel with your job selection criteria:
 
-![Колеса карьерных приоритетов](misc/images/CT00.1.png)
+![Колеса карьерных приоритетов](misc/images/ct00.1.png)
 
 **What could those criteria be?**
 

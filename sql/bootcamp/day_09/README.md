@@ -35,7 +35,7 @@ Resume: Today you will see how to create and use functional blocks in Databases.
 
 ## Preamble
 
-![D09_01](misc/images/D09_01.png)
+![D09_01](misc/images/d09_01.png)
 
 There are many functional programming languages in the RDBMS world. We can mainly talk about a "one-to-one" dependency between a particular RDBMS engine and the functional language inside it. Please take a look at a sample of these languages:
 
@@ -53,8 +53,8 @@ Please take a look at the 2 simple architectures below.
 
 |  |  |
 | ------ | ------ |
-| ![D09_02](misc/images/D09_02.png) | Everything is clear, frontends and backends work through a special REST API layer that implements all the business logic. It's a really ideal application world. |
-| But there are always some privileged people / applications (like IDE) that work directly with our databases and... our pattern can be broken. | ![D09_03](misc/images/D09_03.png) |
+| ![D09_02](misc/images/d09_02.png) | Everything is clear, frontends and backends work through a special REST API layer that implements all the business logic. It's a really ideal application world. |
+| But there are always some privileged people / applications (like IDE) that work directly with our databases and... our pattern can be broken. | ![D09_03](misc/images/d09_03.png) |
 
 Just think about it and try to create a clean architecture :-)
 

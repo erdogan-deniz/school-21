@@ -21,7 +21,7 @@ Resume: Today you will know what DWH is and how to create a first ETL process.
 
 ## Preamble
 
-![T01_01](misc/images/T01_01.png)
+![T01_01](misc/images/t01_01.png)
 
 A Data Warehousing (DWH) is a process for collecting and managing data from disparate sources to provide meaningful business insights. A data warehouse is typically used to connect and analyze business data from heterogeneous sources. The data warehouse is the core of the BI system built for data analysis and reporting.
 
@@ -29,12 +29,12 @@ There are 2 DWH-"fathers" with opposing opinions on how to make a better DWH fro
 
 |  |  |
 | ------ | ------ |
-| "A DWH is a subject-oriented, integrated, non-volatile, and time-varying collection of data to support management decisions." (Bill Inmon) | ![T01_02](misc/images/T01_02.png) |
-| ![T01_03](misc/images/T01_03.png) | "A DWH is a system that extracts, cleanses, conforms, and delivers source data into a dimensional data store, and then supports and implements query and analysis for decision making." (Ralph Kimball) |
+| "A DWH is a subject-oriented, integrated, non-volatile, and time-varying collection of data to support management decisions." (Bill Inmon) | ![T01_02](misc/images/t01_02.png) |
+| ![T01_03](misc/images/t01_03.png) | "A DWH is a system that extracts, cleanses, conforms, and delivers source data into a dimensional data store, and then supports and implements query and analysis for decision making." (Ralph Kimball) |
 
 Nowadays, Big Data is coming more and more and we need more resources to control, structure and further explore our data. To support classical DataWareHouse systems, there is a new pattern called LakeHouse (based on λ-architecture) = DataLake + DataWareHouse. From a logical point of view, we can imagine a modern LakeHouse as a set of logical data layers.
 
-![T01_04](misc/images/T01_04.png)
+![T01_04](misc/images/t01_04.png)
 
 Therefore, to be a Data Architect you need to know a "bit more" than Relational Modeling.
 Let's look at the list of existing Data Models Patterns:
@@ -90,7 +90,7 @@ Absolutely anything can be represented in SQL! Let's get started and have fun!
 
 Let's take a look at the data sources and the first logical data layer (ODS — Operational Data Store) in the DWH.
 
-![T01_05](misc/images/T01_05.png)
+![T01_05](misc/images/t01_05.png)
 
 `User` table Definition (in a Green Source Database):
 
@@ -239,7 +239,7 @@ Below is a table of result columns and the corresponding calculation formula.
 | currency_name | source: currency.name |
 | currency_in_usd | involved sources: currency.rate_to_usd, currency.updated, balance.updated.Take a look at a graphical interpretation of the formula below.|
 
-![T01_06](misc/images/T01_06.png)
+![T01_06](misc/images/t01_06.png)
 
 - You need to find a nearest rate_to_usd of currency in the past (t1).
 - If t1 is empty (means no rates in the past), then find a nearest rate_to_usd of currency in the future (t2).

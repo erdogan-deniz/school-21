@@ -23,13 +23,13 @@ Resume: Today you will implementing a quick solution on SQL to achieve results o
 
 ## Preamble
 
-![T00_01](misc/images/T00_01.png)
+![T00_01](misc/images/t00_01.png)
 
 Given a finite number of "cities" and the cost of travel between each pair of cities, find the cheapest way to visit all the cities and return to your starting point. (In the picture, the Proctor and Gamble company held a contest in 1962.  The contest required solving a TSP for a given set of 33 cities.  There was a tie between many people who found the optimum.  An early TSP researcher, Professor Gerald Thompson of Carnegie Mellon University, was one of the winners).
 
 The travel costs are symmetric in the sense that traveling from city X to city Y costs as much as traveling from Y to X; the "way to visit all the cities" is simply the order in which the cities are visited. In other words, the data consists of integer weights assigned to the edges of a finite complete graph; the goal is to find a Hamiltonian cycle (i.e., a cycle that passes through all vertices) with the minimum total weight.  In this context, Hamiltonian cycles are commonly called tours.
 
-![T00_00](misc/images/T00_00.png)
+![T00_00](misc/images/t00_00.png)
 
 The origins of the TSP are unclear. In the 1920s, the mathematician and economist Karl Menger published it among his colleagues in Vienna. In the 1930s, the problem resurfaced in mathematical circles in Princeton. In the 1940s, it was studied by statisticians (Mahalanobis (1940), Jessen (1942), Gosh (1948), Marks (1948)) in connection with an agricultural application, and the mathematician Merill Flood popularized it among his colleagues at the RAND Corporation.  Eventually, the TSP became known as the prototype of a hard problem in combinatorial optimization: examining the tours one by one is out of the question due to their large number, and for a long time there was no other idea on the horizon.
 
@@ -68,7 +68,7 @@ Absolutely anything can be represented in SQL! Let's get started and have fun!
 | Language                        | ANSI SQL|
 | SQL Syntax Pattern                        | Recursive Query|
 
-![T00_02](misc/images/T00_02.png)
+![T00_02](misc/images/t00_02.png)
 
 Take a look at the Graph on the left.
 There are 4 cities (a, b, c and d) and arcs between them with costs (or taxes). Actually, the cost is (a,b) = (b,a).

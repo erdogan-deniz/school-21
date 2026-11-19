@@ -6,6 +6,13 @@ OBJS=$(SRCS:.c=.o)
 TESTSFLAGS_MAC=-lcheck -lm -fsanitize=address -g
 TESTSFLAGS_LINUX=-lcheck -lm -lpthread -lrt -lsubunit -fsanitize=address -g
 
+# 'make test' must work on both platforms (CI runs it on Linux).
+ifeq ($(shell uname), Linux)
+TESTSFLAGS=$(TESTSFLAGS_LINUX)
+else
+TESTSFLAGS=$(TESTSFLAGS_MAC)
+endif
+
 all: clean s21_matrix.a
 
 %.o: %.c
@@ -17,7 +24,7 @@ s21_matrix.a: $(OBJS)
 	rm -rf *.o
 
 test: s21_matrix.a 
-	$(CC) $(CFLAGS) test.c -L. s21_matrix.a $(TESTSFLAGS_MAC) -o test
+	$(CC) $(CFLAGS) test.c -L. s21_matrix.a $(TESTSFLAGS) -o test
 	./test
 
 test_linux: s21_matrix.a 

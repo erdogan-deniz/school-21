@@ -3,6 +3,13 @@ CFLAG = -Wall -Wextra -Werror -std=c11
 CHECKFLAGS = -lcheck -lsubunit -coverage -pthread -lrt
 APP = build/s21_3dviewer.app
 
+# Link flags for the Check-based tests differ between Linux and macOS.
+ifeq ($(shell uname), Linux)
+TESTLIBS = -lcheck -lsubunit -lm -lpthread -lrt
+else
+TESTLIBS = -lcheck -lm
+endif
+
 
 .PHONY: all clean build install uninstall
 
@@ -38,8 +45,7 @@ dvi:
 	open dvi.html
 
 test: clean
-	$(CC) $(GCC) $(FLAGS) 3d_viewer.c 3d_viewer_test.c 3d_viewer.h -o 3d_viewer_test.o $(UBUNTU_FLAG)
-	# 3d_viewer.h 
+	$(CC) $(CFLAG) 3d_viewer.c 3d_viewer_test.c $(TESTLIBS) -o 3d_viewer_test.o
 	./3d_viewer_test.o
 
 

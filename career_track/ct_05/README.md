@@ -42,7 +42,7 @@ In this project, you will learn what corporate culture is and how to immerse you
 
 ## Chapter I
 
-![Project illustration](misc/images/Illustration_05.jpeg)  
+![Project illustration](misc/images/illustration_05.jpeg)  
 
 ## Preamble
 

@@ -61,7 +61,7 @@ This repo is undergoing a production-grade overhaul (2026-05). Live status:
 - Nickname: *charisel*
 - Program: *Core program*
 - Level: 12
-- XP: 20975
+- XP: 21995
 - *E-mail*: <charisel@student.21-school.ru>
 
 ### Acquired Skills
@@ -77,29 +77,29 @@ This repo is undergoing a production-grade overhaul (2026-05). Live status:
 | Math | 91 |
 | *QA* | 400 |
 | *C* | 1423 |
-| *OOP* | 1284 |
+| *OOP* | 1326 |
 | *C++* | 1188 |
 | *SQL* | 1183 |
 | DevOps | 264 |
 | *Linux* | 558 |
-| Backend | 153 |
+| Backend | 213 |
 | Analysis | 122 |
-| Graphics | 704 |
-| *Python* | 1936 |
-| Team Work | 940 |
+| Graphics | 746 |
+| *Python* | 1999 |
+| Team Work | 982 |
 | DB & Data | 576 |
 | *ML* & *AI* | 639 |
-| Algorithms | 2091 |
+| Algorithms | 2301 |
 | Leadership | 1339 |
-| Web Development | 136 |
+| Web Development | 436 |
 | *Shell* & *Bash* | 411 |
 | Parallel Computing | 23 |
 | Company Experience | 3574 |
 | Information Security | 36 |
 | Functional Programming | 180 |
 | Structured Programming | 1551 |
-| Types & Data Structures | 873 |
-| Network & System Administration | 506 |
+| Types & Data Structures | 954 |
+| Network & System Administration | 686 |
 
 ### Peers Feedback
 
@@ -108,7 +108,7 @@ This repo is undergoing a production-grade overhaul (2026-05). Live status:
 - Rigorous: 4/4 ⚖️
 - Interested: 4/4 ❓
 
-All peer reviews: 196
+All peer reviews: 203
 
 ### Learning Badges
 

@@ -61,7 +61,7 @@ Implementation of SmartCalc v2.0.
 
 ### Chapter I
 
-![smartcalcv2.0](misc/images/smartcalcv2.0.PNG)
+![smartcalcv2.0](misc/images/smartcalcv2.0.png)
 
 Planet Earth, USA, California, somewhere in Cupertino, 20 August 1983.
 
@@ -111,7 +111,7 @@ A controller is a thin macro component that performs model modifications. It is 
 
 The view includes all code associated with the program interface. An ideal interface code should not contain any business logic. It only represents the form for interaction with the user.
 
-![MVC process](misc/images/MVC-Process.png)
+![MVC process](misc/images/mvc-process.png)
 
 ### Chapter III
 

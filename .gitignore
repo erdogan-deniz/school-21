@@ -130,6 +130,10 @@ qrc_*.cpp
 ui_*.h
 *.user
 *.qm
+.qmake.stash
+Makefile.Debug
+Makefile.Release
+/c/SmartCalc_v1.0/src/view/Makefile
 
 # --- Documentation builds ---
 docs/_build/

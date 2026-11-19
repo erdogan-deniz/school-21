@@ -21,6 +21,10 @@ make install   # produces view/Smart_Calc(.app)
 make uninstall
 ```
 
+The GUI loads `sounds/uzi.mp3` relative to the working directory. The file is not in
+git: put any audio clip with that name into `src/view/sounds/` to get the sound.
+Without it the app starts as usual, with no sound.
+
 For a fully reproducible environment, build inside a Linux container with the
 School 21 toolchain (`gcc`, `check`, `libsubunit-dev`, `lcov`) plus `qt6-base-dev`
 for the GUI portion. The C-only test job is wired into

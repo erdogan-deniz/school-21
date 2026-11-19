@@ -121,6 +121,7 @@ gmon.out
 report/
 build_files/
 cmake-build-*/
+build-*/
 
 # Qt / qmake leftovers
 moc_*.cpp

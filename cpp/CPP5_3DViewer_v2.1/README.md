@@ -71,7 +71,7 @@ The russian version of the task can be found in the repository.
 
 ### Chapter I
 
-![3dviewer2.1](misc/images/3DViewer_v2.1.PNG)
+![3dviewer2.1](misc/images/3dviewer_v2.1.png)
 
 *-- Ah, yes. I also remember when we created the first computer-generated image that looked exactly like a real physical Volkswagen Beetle! The hardest part, however, was not making the computer model look realistic, no. Bui's algorithm handled that perfectly. The most complicated thing was to create the model itself.* \
 *We were lucky, Ivan's wife, Marsha, had a beautiful white '71 Beetle. And so the four of us faced the challenge: to fully measure every millimeter of this global culture icon of its time and transfer it to the computer. There are no modern scanners, no cameras. And do you know what we used?*

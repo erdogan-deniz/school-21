@@ -75,7 +75,7 @@ The russian version of the task can be found in the repository.
 
 ### Chapter I
 
-![3dviewer2.0](misc/images/3dviewer2.0.PNG)
+![3dviewer2.0](misc/images/3dviewer2.0.png)
 
 Somewhere near a coffee machine in the 90s:
 

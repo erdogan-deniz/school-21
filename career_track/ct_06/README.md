@@ -43,7 +43,7 @@ In this project, you will learn how to manage your performance and how to build 
 
 ## Chapter I
 
-![Project illustration](misc/images/Illustration_06.jpeg)  
+![Project illustration](misc/images/illustration_06.jpeg)  
 
 ## Preamble
 

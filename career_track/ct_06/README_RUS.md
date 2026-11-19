@@ -18,7 +18,7 @@
 
 <h2 id="chapter-i" >Chapter I</h2>
 
-![Иллюстрация к проекту](misc/images/Illustration_06.jpeg)  
+![Иллюстрация к проекту](misc/images/illustration_06.jpeg)  
 
 <h2 id="preamble">Preamble</h2>
 

@@ -43,7 +43,7 @@ In this project, you will learn how to plan your career after you start working,
 
 ## Chapter I
 
-![Project illustration](misc/images/Illustration_07.jpeg)
+![Project illustration](misc/images/illustration_07.jpeg)
 
 ## Preamble
 
@@ -86,7 +86,7 @@ Absolutely, **yes**. Having a goal to strive for changes a lot in your life:
 
 Remember that you planned your 5-year career goal in Project 00, which was based on your desires and plans. After you've been working for a while, your career goal may change and you'll have more conditions to analyze. You will need to learn an expanded career goal chart that you can return to throughout your career.
 
-![Expanded career goal](misc/images/CT07.01.png)
+![Expanded career goal](misc/images/ct07.01.png)
 
 1. Begin by defining Point A, the point of the here and now. Think about your present career status. Be honest about your current situation. Even if you're not happy about something, write it as it is.
 2. Point B is your goal one year from now. Think about what you want to accomplish by that time.

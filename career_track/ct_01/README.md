@@ -44,7 +44,7 @@ In this project, you'll learn the main stages of job search, how to analyze job 
 
 ## Chapter I
 
-![Иллюстрация к проекту](misc/images/Illustration_01.jpeg)
+![Иллюстрация к проекту](misc/images/illustration_01.jpeg)
 
 ## Preamble
 
@@ -195,7 +195,7 @@ A job search diary helps you analyze job responses to understand what you can im
 3. If there are more rejections after tech interview/test assignments, pay attention to your hard skills and what needs to be improved.
 4. You can also ask for feedback from [mentors](https://getmentor.dev/) in your field or find someone who is already in the position.
 
-[Diary example](./materials/Diary.xlsx) (available for download in the folder materials -\> Diary).
+[Diary example](./materials/diary.xlsx) (available for download in the folder materials -\> Diary).
 
 ## Criteria for selecting a vacancy and a company
 

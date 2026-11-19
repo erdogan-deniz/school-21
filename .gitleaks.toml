@@ -29,12 +29,6 @@ regexes = [
     # only a no-secret-set fall-back for local dev.
     '''(?i)(USER_PASSWORD\s*=\s*os\.environ\.get\(.*"1969".*\))''',
     '''(?i)(DB_PASSWORD.*"1969")''',
-
-    # Historical Telegram-bot-token leak in
-    # devops/ci_cd/src/notify.sh, rotated 2026-05-11 (commit 8c98f9be).
-    # Kept here so `gitleaks detect` doesn't fail on the historical
-    # blame; the live secret is gone (env vars now).
-    '''8015361574:AAFjUnW5hv_62Dsa9SfIkDgjCnAxraoxw8A''',
 ]
 
 # Path allow-list — exclude commonly-noisy directories from default

@@ -7,7 +7,7 @@ file — never edited by hand.
 
 ## Flagships
 
-Three subprojects are designated **flagship** — they target DoD-C
+Three subprojects are designated **flagship** — they target visitor outcome C
 ("use as a dependency") in addition to the universal A + B (evaluate +
 clone & run) treatment:
 
@@ -38,7 +38,7 @@ their READMEs say so explicitly.
 | ◐      | Partially done / in progress — counts as 0.5                                     |
 | ✗      | Not done — counts as 0.0, but the cell stays in the denominator (real gap)       |
 | n/a    | Not applicable — cell is **excluded from the denominator** (does not exist here) |
-| ★      | Flagship — also targets DoD-C (use as dependency)                                |
+| ★      | Flagship — also targets outcome C (use as dependency)                                    |
 | ⚠      | Known broken / blocked by a tactical issue                                       |
 
 ## Definition of Done — column key
@@ -125,7 +125,7 @@ A README · B Tests + coverage · C CI on GitHub Actions · D Linter/formatter
 | Subproject  | A | B | C | D | E | F | G | H | Flagship | Notes                                                       |
 | ----------- | - | - | - | - | - | - | - | - | -------- | ----------------------------------------------------------- |
 | `bootcamp`  | ✓ | ◐ | ◐ | ✓ | ◐ | ◐ | ✗ | ◐ |          | ruff format applied + pytest + Sphinx (day_07 + new/day_01) + Pages |
-| `SmartCalc_v3.0` | ✓ | ✓ | ◐ | ✓ | ◐ | ◐ | ✗ | ◐ |     | PyQt6 MVVM over the `c/SmartCalc_v1.0` core via ctypes; 361 pytest + hypothesis, 99 % model coverage; own ruff/mypy; hand-written API/user/dev guides; imported 2026-09-14 |
+| `SmartCalc_v3.0` | ✓ | ✓ | ◐ | ✓ | ◐ | ◐ | ✗ | ◐ |     | PyQt6 MVVM over the `c/SmartCalc_v1.0` core via ctypes; 378 pytest + hypothesis, 100 % model coverage (99 % overall); own ruff/mypy; hand-written API/user/dev guides; imported 2026-09-14 |
 
 ### `qa/`
 

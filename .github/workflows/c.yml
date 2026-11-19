@@ -53,14 +53,13 @@ jobs:
           echo "Checking ${#files[@]} files..."
           clang-format --dry-run -Werror "${files[@]}"
 
-  # Build/test gates remain informational while subproject test suites
-  # mature; flip continue-on-error: false once they're stable.
+  # Every job below gates the workflow: a failed build or a failed Check
+  # suite fails the run. Only coverage upload steps stay best-effort.
 
   build-and-test:
     # Library subprojects: full make + make test in c/<sub>/src.
     name: build & test
     runs-on: ubuntu-24.04
-    continue-on-error: true  # initial pass: collect data without gating
     strategy:
       fail-fast: false
       matrix:
@@ -102,10 +101,12 @@ jobs:
         working-directory: c/${{ matrix.subproject }}/src
         run: |
           if [ "${{ steps.entry.outputs.kind }}" = "top" ]; then
-            make test || true   # surface failures, don't gate yet
+            make test
           else
             for d in */ ; do
-              if [ -f "$d/Makefile" ]; then ( cd "$d" && make test 2>/dev/null || true ); fi
+              if [ -f "$d/Makefile" ]; then
+                ( cd "$d" && if make -n test >/dev/null 2>&1; then make test; fi )
+              fi
             done
           fi
       - name: Coverage report (best-effort)
@@ -138,7 +139,6 @@ jobs:
     # apps-qt-build below.
     name: apps C-only tests
     runs-on: ubuntu-24.04
-    continue-on-error: true
     strategy:
       fail-fast: false
       matrix:
@@ -155,19 +155,9 @@ jobs:
       - name: Run C-only tests
         working-directory: c/${{ matrix.subproject }}/src
         run: |
-          # SmartCalc_v1.0 has a dedicated 'test' target that compiles
-          # only business logic (no qmake). 3DViewer_v1.0 historically
-          # uses 3d_viewer_test.c with the same Check-based pattern;
-          # try 'make test' first, fall back to a direct compile.
-          if make -n test >/dev/null 2>&1; then
-            make test
-          else
-            echo "no 'test' target; attempting direct compile of *_test.c"
-            "${CC:-gcc}" -Wall -Wextra -Wno-error -std=c11 \
-              ./*.c -lcheck -lsubunit -lpthread -lrt -lm -o test_bin || true
-            ./test_bin || true
-          fi
-        continue-on-error: true
+          # Business-logic tests (Check), no Qt needed; both apps have a
+          # 'test' target that picks the link flags by OS.
+          make test
 
   apps-qt-build:
     # Qt6 GUI build for the two C apps (3DViewer_v1.0, SmartCalc_v1.0).

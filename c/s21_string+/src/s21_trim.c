@@ -8,7 +8,7 @@ void *s21_trim(const char *src, const char *trim_chars) {
   int is_error = 0;
   char *result = s21_NULL;
   if (src) {
-    char default_chars[7] = " \t\n\v\r\f\0";
+    char default_chars[] = " \t\n\v\r\f";
     if (trim_chars == s21_NULL || s21_strlen(trim_chars) == 0)
       trim_chars = default_chars;
     result = (char *)calloc(s21_strlen(src) + 10, sizeof(char));

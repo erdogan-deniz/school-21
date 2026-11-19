@@ -66,15 +66,18 @@ s21_stack* s21_parser(char* string) {
 
         while (stack) {
           char* symbol = s21_char_to_string(string[i]);
+          // 'm' is the first letter of "mod": looking up "m" gives the
+          // lowest priority and would pop the whole stack, brackets included.
+          s21_token_priority priority =
+              s21_get_priority_token(string[i] == 'm' ? "mod" : symbol);
 
-          while (s21_get_node_priority(stack) >=
-                 s21_get_priority_token(symbol)) {
+          while (s21_get_node_priority(stack) >= priority) {
             final_stack = s21_push_stack(final_stack, stack->token);
             stack = s21_pop_stack(stack);
             break;
           }
 
-          if (s21_get_node_priority(stack) < s21_get_priority_token(symbol)) {
+          if (s21_get_node_priority(stack) < priority) {
             free(symbol);
             break;
           } else {

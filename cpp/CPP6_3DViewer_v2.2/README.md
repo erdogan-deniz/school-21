@@ -58,7 +58,7 @@ Implementation of 3DViewer v2.2
 
 ### Chapter I
 
-![3dviewer2.2](misc/images/3Dviewer2.2.PNG)
+![3dviewer2.2](misc/images/3dviewer2.2.png)
 
 *-- So, in today's episode, we continue our look at ray tracing. Last time we stopped at this notion of path tracing.*
 
